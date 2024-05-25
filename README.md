@@ -10,8 +10,8 @@ C wrappers for [Jolt Physics](https://github.com/jrouwe/JoltPhysics).
 #include "JoltC/JoltC.h"
 
 void createFloor(size: int) {
-  JPC_JoltSettings joltSettings = JPC_JoltSettings_new();
-  JPC_JoltSettings_mMaxBodies_Set(joltSettings, 1);
+  JoltC_JoltSettings joltSettings = JoltC_JoltSettings_new();
+  JoltC_JoltSettings_mMaxBodies_Set(joltSettings, 1);
   // TODO ...
 }
 ```
