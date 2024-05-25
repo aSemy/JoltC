@@ -1,4 +1,4 @@
-# joltc
+# JoltC
 
 C wrappers for [Jolt Physics](https://github.com/jrouwe/JoltPhysics).
 
