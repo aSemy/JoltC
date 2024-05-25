@@ -8,111 +8,134 @@ extern "C" {
 
 //region functions
 
-void JPC_VehicleTransmission_Set(
-  JPC_VehicleTransmission_t * self,
+void JoltC_VehicleTransmission_Set(
+  JoltC_VehicleTransmission_t * self,
   long inCurrentGear,
-  float inClutchFriction
+  float inClutchFriction,
+  char** outErrMsg
 );
 
-long JPC_VehicleTransmission_GetCurrentGear(
-  JPC_VehicleTransmission_t * self
+long JoltC_VehicleTransmission_GetCurrentGear(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-float JPC_VehicleTransmission_GetClutchFriction(
-  JPC_VehicleTransmission_t * self
+float JoltC_VehicleTransmission_GetClutchFriction(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-bool JPC_VehicleTransmission_IsSwitchingGear(
-  JPC_VehicleTransmission_t * self
+bool JoltC_VehicleTransmission_IsSwitchingGear(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-float JPC_VehicleTransmission_GetCurrentRatio(
-  JPC_VehicleTransmission_t * self
+float JoltC_VehicleTransmission_GetCurrentRatio(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_ETransmissionMode JPC_VehicleTransmission_mMode_Get(
-  JPC_VehicleTransmission_t * self
+JoltC_ETransmissionMode JoltC_VehicleTransmission_mMode_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mMode_Set(
-  JPC_VehicleTransmission_t * self,
-  JPC_ETransmissionMode mMode
+void JoltC_VehicleTransmission_mMode_Set(
+  JoltC_VehicleTransmission_t * self,
+  JoltC_ETransmissionMode mMode,
+  char** outErrMsg
 );
 
-JPC_ArrayFloat_t * JPC_VehicleTransmission_mGearRatios_Get(
-  JPC_VehicleTransmission_t * self
+JoltC_ArrayFloat_t * JoltC_VehicleTransmission_mGearRatios_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mGearRatios_Set(
-  JPC_VehicleTransmission_t * self,
-  JPC_ArrayFloat_t * mGearRatios
+void JoltC_VehicleTransmission_mGearRatios_Set(
+  JoltC_VehicleTransmission_t * self,
+  JoltC_ArrayFloat_t * mGearRatios,
+  char** outErrMsg
 );
 
-JPC_ArrayFloat_t * JPC_VehicleTransmission_mReverseGearRatios_Get(
-  JPC_VehicleTransmission_t * self
+JoltC_ArrayFloat_t * JoltC_VehicleTransmission_mReverseGearRatios_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mReverseGearRatios_Set(
-  JPC_VehicleTransmission_t * self,
-  JPC_ArrayFloat_t * mReverseGearRatios
+void JoltC_VehicleTransmission_mReverseGearRatios_Set(
+  JoltC_VehicleTransmission_t * self,
+  JoltC_ArrayFloat_t * mReverseGearRatios,
+  char** outErrMsg
 );
 
-float JPC_VehicleTransmission_mSwitchTime_Get(
-  JPC_VehicleTransmission_t * self
+float JoltC_VehicleTransmission_mSwitchTime_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mSwitchTime_Set(
-  JPC_VehicleTransmission_t * self,
-  float mSwitchTime
+void JoltC_VehicleTransmission_mSwitchTime_Set(
+  JoltC_VehicleTransmission_t * self,
+  float mSwitchTime,
+  char** outErrMsg
 );
 
-float JPC_VehicleTransmission_mClutchReleaseTime_Get(
-  JPC_VehicleTransmission_t * self
+float JoltC_VehicleTransmission_mClutchReleaseTime_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mClutchReleaseTime_Set(
-  JPC_VehicleTransmission_t * self,
-  float mClutchReleaseTime
+void JoltC_VehicleTransmission_mClutchReleaseTime_Set(
+  JoltC_VehicleTransmission_t * self,
+  float mClutchReleaseTime,
+  char** outErrMsg
 );
 
-float JPC_VehicleTransmission_mSwitchLatency_Get(
-  JPC_VehicleTransmission_t * self
+float JoltC_VehicleTransmission_mSwitchLatency_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mSwitchLatency_Set(
-  JPC_VehicleTransmission_t * self,
-  float mSwitchLatency
+void JoltC_VehicleTransmission_mSwitchLatency_Set(
+  JoltC_VehicleTransmission_t * self,
+  float mSwitchLatency,
+  char** outErrMsg
 );
 
-float JPC_VehicleTransmission_mShiftUpRPM_Get(
-  JPC_VehicleTransmission_t * self
+float JoltC_VehicleTransmission_mShiftUpRPM_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mShiftUpRPM_Set(
-  JPC_VehicleTransmission_t * self,
-  float mShiftUpRPM
+void JoltC_VehicleTransmission_mShiftUpRPM_Set(
+  JoltC_VehicleTransmission_t * self,
+  float mShiftUpRPM,
+  char** outErrMsg
 );
 
-float JPC_VehicleTransmission_mShiftDownRPM_Get(
-  JPC_VehicleTransmission_t * self
+float JoltC_VehicleTransmission_mShiftDownRPM_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mShiftDownRPM_Set(
-  JPC_VehicleTransmission_t * self,
-  float mShiftDownRPM
+void JoltC_VehicleTransmission_mShiftDownRPM_Set(
+  JoltC_VehicleTransmission_t * self,
+  float mShiftDownRPM,
+  char** outErrMsg
 );
 
-float JPC_VehicleTransmission_mClutchStrength_Get(
-  JPC_VehicleTransmission_t * self
+float JoltC_VehicleTransmission_mClutchStrength_Get(
+  JoltC_VehicleTransmission_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTransmission_mClutchStrength_Set(
-  JPC_VehicleTransmission_t * self,
-  float mClutchStrength
+void JoltC_VehicleTransmission_mClutchStrength_Set(
+  JoltC_VehicleTransmission_t * self,
+  float mClutchStrength,
+  char** outErrMsg
 );
 
 //endregion properties

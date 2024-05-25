@@ -8,25 +8,30 @@ extern "C" {
 
 //region functions
 
-bool JPC_PathConstraintPath_IsLooping(
-  JPC_PathConstraintPath_t * self
+bool JoltC_PathConstraintPath_IsLooping(
+  JoltC_PathConstraintPath_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintPath_SetIsLooping(
-  JPC_PathConstraintPath_t * self,
-  bool inIsLooping
+void JoltC_PathConstraintPath_SetIsLooping(
+  JoltC_PathConstraintPath_t * self,
+  bool inIsLooping,
+  char** outErrMsg
 );
 
-unsigned long JPC_PathConstraintPath_GetRefCount(
-  JPC_PathConstraintPath_t * self
+unsigned long JoltC_PathConstraintPath_GetRefCount(
+  JoltC_PathConstraintPath_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintPath_AddRef(
-  JPC_PathConstraintPath_t * self
+void JoltC_PathConstraintPath_AddRef(
+  JoltC_PathConstraintPath_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintPath_Release(
-  JPC_PathConstraintPath_t * self
+void JoltC_PathConstraintPath_Release(
+  JoltC_PathConstraintPath_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

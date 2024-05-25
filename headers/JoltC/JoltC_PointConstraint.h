@@ -8,105 +8,129 @@ extern "C" {
 
 //region functions
 
-JPC_Vec3_t * JPC_PointConstraint_GetLocalSpacePoint1(
-  JPC_PointConstraint_t * self
+JoltC_Vec3_t * JoltC_PointConstraint_GetLocalSpacePoint1(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_PointConstraint_GetLocalSpacePoint2(
-  JPC_PointConstraint_t * self
+JoltC_Vec3_t * JoltC_PointConstraint_GetLocalSpacePoint2(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_PointConstraint_GetTotalLambdaPosition(
-  JPC_PointConstraint_t * self
+JoltC_Vec3_t * JoltC_PointConstraint_GetTotalLambdaPosition(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_PointConstraint_GetBody1(
-  JPC_PointConstraint_t * self
+JoltC_Body_t * JoltC_PointConstraint_GetBody1(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_PointConstraint_GetBody2(
-  JPC_PointConstraint_t * self
+JoltC_Body_t * JoltC_PointConstraint_GetBody2(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_PointConstraint_GetConstraintToBody1Matrix(
-  JPC_PointConstraint_t * self
+JoltC_Mat44_t * JoltC_PointConstraint_GetConstraintToBody1Matrix(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_PointConstraint_GetConstraintToBody2Matrix(
-  JPC_PointConstraint_t * self
+JoltC_Mat44_t * JoltC_PointConstraint_GetConstraintToBody2Matrix(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_PointConstraint_GetRefCount(
-  JPC_PointConstraint_t * self
+unsigned long JoltC_PointConstraint_GetRefCount(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraint_AddRef(
-  JPC_PointConstraint_t * self
+void JoltC_PointConstraint_AddRef(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraint_Release(
-  JPC_PointConstraint_t * self
+void JoltC_PointConstraint_Release(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintType JPC_PointConstraint_GetType(
-  JPC_PointConstraint_t * self
+JoltC_EConstraintType JoltC_PointConstraint_GetType(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintSubType JPC_PointConstraint_GetSubType(
-  JPC_PointConstraint_t * self
+JoltC_EConstraintSubType JoltC_PointConstraint_GetSubType(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_PointConstraint_GetConstraintPriority(
-  JPC_PointConstraint_t * self
+unsigned long JoltC_PointConstraint_GetConstraintPriority(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraint_SetConstraintPriority(
-  JPC_PointConstraint_t * self,
-  unsigned long inPriority
+void JoltC_PointConstraint_SetConstraintPriority(
+  JoltC_PointConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 );
 
-void JPC_PointConstraint_SetNumVelocityStepsOverride(
-  JPC_PointConstraint_t * self,
-  long inN
+void JoltC_PointConstraint_SetNumVelocityStepsOverride(
+  JoltC_PointConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_PointConstraint_GetNumVelocityStepsOverride(
-  JPC_PointConstraint_t * self
+long JoltC_PointConstraint_GetNumVelocityStepsOverride(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraint_SetNumPositionStepsOverride(
-  JPC_PointConstraint_t * self,
-  long inN
+void JoltC_PointConstraint_SetNumPositionStepsOverride(
+  JoltC_PointConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_PointConstraint_GetNumPositionStepsOverride(
-  JPC_PointConstraint_t * self
+long JoltC_PointConstraint_GetNumPositionStepsOverride(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraint_SetEnabled(
-  JPC_PointConstraint_t * self,
-  bool inEnabled
+void JoltC_PointConstraint_SetEnabled(
+  JoltC_PointConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 );
 
-bool JPC_PointConstraint_GetEnabled(
-  JPC_PointConstraint_t * self
+bool JoltC_PointConstraint_GetEnabled(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_PointConstraint_IsActive(
-  JPC_PointConstraint_t * self
+bool JoltC_PointConstraint_IsActive(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_PointConstraint_GetUserData(
-  JPC_PointConstraint_t * self
+unsigned long long int JoltC_PointConstraint_GetUserData(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraint_SetUserData(
-  JPC_PointConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_PointConstraint_SetUserData(
+  JoltC_PointConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-void JPC_PointConstraint_ResetWarmStart(
-  JPC_PointConstraint_t * self
+void JoltC_PointConstraint_ResetWarmStart(
+  JoltC_PointConstraint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,13 +8,15 @@ extern "C" {
 
 //region functions
 
-void JPC_StateRecorder_SetValidating(
-  JPC_StateRecorder_t * self,
-  bool inValidating
+void JoltC_StateRecorder_SetValidating(
+  JoltC_StateRecorder_t * self,
+  bool inValidating,
+  char** outErrMsg
 );
 
-bool JPC_StateRecorder_IsValidating(
-  JPC_StateRecorder_t * self
+bool JoltC_StateRecorder_IsValidating(
+  JoltC_StateRecorder_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

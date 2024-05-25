@@ -8,100 +8,122 @@ extern "C" {
 
 //region constructors
 
-JPC_MotorcycleControllerSettings_t * JPC_MotorcycleControllerSettings_new();
+JoltC_MotorcycleControllerSettings_t * JoltC_MotorcycleControllerSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-float JPC_MotorcycleControllerSettings_mMaxLeanAngle_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mMaxLeanAngle_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mMaxLeanAngle_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mMaxLeanAngle
+void JoltC_MotorcycleControllerSettings_mMaxLeanAngle_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mMaxLeanAngle,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleControllerSettings_mLeanSpringConstant_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSpringConstant_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mLeanSpringConstant_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSpringConstant
+void JoltC_MotorcycleControllerSettings_mLeanSpringConstant_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSpringConstant,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleControllerSettings_mLeanSpringDamping_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSpringDamping_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mLeanSpringDamping_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSpringDamping
+void JoltC_MotorcycleControllerSettings_mLeanSpringDamping_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSpringDamping,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficient_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficient_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficient_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSpringIntegrationCoefficient
+void JoltC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficient_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSpringIntegrationCoefficient,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficientDecay_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficientDecay_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficientDecay_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSpringIntegrationCoefficientDecay
+void JoltC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficientDecay_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSpringIntegrationCoefficientDecay,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleControllerSettings_mLeanSmoothingFactor_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSmoothingFactor_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mLeanSmoothingFactor_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSmoothingFactor
+void JoltC_MotorcycleControllerSettings_mLeanSmoothingFactor_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSmoothingFactor,
+  char** outErrMsg
 );
 
-JPC_VehicleEngineSettings_t * JPC_MotorcycleControllerSettings_mEngine_Get(
-  JPC_MotorcycleControllerSettings_t * self
+JoltC_VehicleEngineSettings_t * JoltC_MotorcycleControllerSettings_mEngine_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mEngine_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  JPC_VehicleEngineSettings_t * mEngine
+void JoltC_MotorcycleControllerSettings_mEngine_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  JoltC_VehicleEngineSettings_t * mEngine,
+  char** outErrMsg
 );
 
-JPC_VehicleTransmissionSettings_t * JPC_MotorcycleControllerSettings_mTransmission_Get(
-  JPC_MotorcycleControllerSettings_t * self
+JoltC_VehicleTransmissionSettings_t * JoltC_MotorcycleControllerSettings_mTransmission_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mTransmission_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  JPC_VehicleTransmissionSettings_t * mTransmission
+void JoltC_MotorcycleControllerSettings_mTransmission_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  JoltC_VehicleTransmissionSettings_t * mTransmission,
+  char** outErrMsg
 );
 
-JPC_ArrayVehicleDifferentialSettings_t * JPC_MotorcycleControllerSettings_mDifferentials_Get(
-  JPC_MotorcycleControllerSettings_t * self
+JoltC_ArrayVehicleDifferentialSettings_t * JoltC_MotorcycleControllerSettings_mDifferentials_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mDifferentials_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  JPC_ArrayVehicleDifferentialSettings_t * mDifferentials
+void JoltC_MotorcycleControllerSettings_mDifferentials_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  JoltC_ArrayVehicleDifferentialSettings_t * mDifferentials,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mDifferentialLimitedSlipRatio
+void JoltC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mDifferentialLimitedSlipRatio,
+  char** outErrMsg
 );
 
 //endregion properties

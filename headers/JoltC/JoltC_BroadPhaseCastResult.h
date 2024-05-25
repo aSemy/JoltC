@@ -8,36 +8,43 @@ extern "C" {
 
 //region constructors
 
-JPC_BroadPhaseCastResult_t * JPC_BroadPhaseCastResult_new();
+JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_BroadPhaseCastResult_Reset(
-  JPC_BroadPhaseCastResult_t * self
+void JoltC_BroadPhaseCastResult_Reset(
+  JoltC_BroadPhaseCastResult_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_BodyID_t * JPC_BroadPhaseCastResult_mBodyID_Get(
-  JPC_BroadPhaseCastResult_t * self
+JoltC_BodyID_t * JoltC_BroadPhaseCastResult_mBodyID_Get(
+  JoltC_BroadPhaseCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_BroadPhaseCastResult_mBodyID_Set(
-  JPC_BroadPhaseCastResult_t * self,
-  JPC_BodyID_t * mBodyID
+void JoltC_BroadPhaseCastResult_mBodyID_Set(
+  JoltC_BroadPhaseCastResult_t * self,
+  JoltC_BodyID_t * mBodyID,
+  char** outErrMsg
 );
 
-float JPC_BroadPhaseCastResult_mFraction_Get(
-  JPC_BroadPhaseCastResult_t * self
+float JoltC_BroadPhaseCastResult_mFraction_Get(
+  JoltC_BroadPhaseCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_BroadPhaseCastResult_mFraction_Set(
-  JPC_BroadPhaseCastResult_t * self,
-  float mFraction
+void JoltC_BroadPhaseCastResult_mFraction_Set(
+  JoltC_BroadPhaseCastResult_t * self,
+  float mFraction,
+  char** outErrMsg
 );
 
 //endregion properties

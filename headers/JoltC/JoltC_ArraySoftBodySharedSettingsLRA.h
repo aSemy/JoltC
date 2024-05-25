@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsLRA_empty(
-  JPC_ArraySoftBodySharedSettingsLRA_t * self
+bool JoltC_ArraySoftBodySharedSettingsLRA_empty(
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArraySoftBodySharedSettingsLRA_size(
-  JPC_ArraySoftBodySharedSettingsLRA_t * self
+long JoltC_ArraySoftBodySharedSettingsLRA_size(
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettingsLRA_t * JPC_ArraySoftBodySharedSettingsLRA_at(
-  JPC_ArraySoftBodySharedSettingsLRA_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsLRA_t * JoltC_ArraySoftBodySharedSettingsLRA_at(
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsLRA_push_back(
-  JPC_ArraySoftBodySharedSettingsLRA_t * self,
-  const JPC_SoftBodySharedSettingsLRA_t * inValue
+void JoltC_ArraySoftBodySharedSettingsLRA_push_back(
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
+  const JoltC_SoftBodySharedSettingsLRA_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsLRA_reserve(
-  JPC_ArraySoftBodySharedSettingsLRA_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsLRA_reserve(
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsLRA_resize(
-  JPC_ArraySoftBodySharedSettingsLRA_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsLRA_resize(
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsLRA_clear(
-  JPC_ArraySoftBodySharedSettingsLRA_t * self
+void JoltC_ArraySoftBodySharedSettingsLRA_clear(
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

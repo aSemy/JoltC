@@ -8,55 +8,67 @@ extern "C" {
 
 //region constructors
 
-JPC_MotorSettings_t * JPC_MotorSettings_new();
+JoltC_MotorSettings_t * JoltC_MotorSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-JPC_SpringSettings_t * JPC_MotorSettings_mSpringSettings_Get(
-  JPC_MotorSettings_t * self
+JoltC_SpringSettings_t * JoltC_MotorSettings_mSpringSettings_Get(
+  JoltC_MotorSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorSettings_mSpringSettings_Set(
-  JPC_MotorSettings_t * self,
-  JPC_SpringSettings_t * mSpringSettings
+void JoltC_MotorSettings_mSpringSettings_Set(
+  JoltC_MotorSettings_t * self,
+  JoltC_SpringSettings_t * mSpringSettings,
+  char** outErrMsg
 );
 
-float JPC_MotorSettings_mMinForceLimit_Get(
-  JPC_MotorSettings_t * self
+float JoltC_MotorSettings_mMinForceLimit_Get(
+  JoltC_MotorSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorSettings_mMinForceLimit_Set(
-  JPC_MotorSettings_t * self,
-  float mMinForceLimit
+void JoltC_MotorSettings_mMinForceLimit_Set(
+  JoltC_MotorSettings_t * self,
+  float mMinForceLimit,
+  char** outErrMsg
 );
 
-float JPC_MotorSettings_mMaxForceLimit_Get(
-  JPC_MotorSettings_t * self
+float JoltC_MotorSettings_mMaxForceLimit_Get(
+  JoltC_MotorSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorSettings_mMaxForceLimit_Set(
-  JPC_MotorSettings_t * self,
-  float mMaxForceLimit
+void JoltC_MotorSettings_mMaxForceLimit_Set(
+  JoltC_MotorSettings_t * self,
+  float mMaxForceLimit,
+  char** outErrMsg
 );
 
-float JPC_MotorSettings_mMinTorqueLimit_Get(
-  JPC_MotorSettings_t * self
+float JoltC_MotorSettings_mMinTorqueLimit_Get(
+  JoltC_MotorSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorSettings_mMinTorqueLimit_Set(
-  JPC_MotorSettings_t * self,
-  float mMinTorqueLimit
+void JoltC_MotorSettings_mMinTorqueLimit_Set(
+  JoltC_MotorSettings_t * self,
+  float mMinTorqueLimit,
+  char** outErrMsg
 );
 
-float JPC_MotorSettings_mMaxTorqueLimit_Get(
-  JPC_MotorSettings_t * self
+float JoltC_MotorSettings_mMaxTorqueLimit_Get(
+  JoltC_MotorSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorSettings_mMaxTorqueLimit_Set(
-  JPC_MotorSettings_t * self,
-  float mMaxTorqueLimit
+void JoltC_MotorSettings_mMaxTorqueLimit_Set(
+  JoltC_MotorSettings_t * self,
+  float mMaxTorqueLimit,
+  char** outErrMsg
 );
 
 //endregion properties

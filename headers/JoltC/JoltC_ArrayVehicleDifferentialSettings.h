@@ -8,31 +8,37 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayVehicleDifferentialSettings_empty(
-  JPC_ArrayVehicleDifferentialSettings_t * self
+bool JoltC_ArrayVehicleDifferentialSettings_empty(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayVehicleDifferentialSettings_size(
-  JPC_ArrayVehicleDifferentialSettings_t * self
+long JoltC_ArrayVehicleDifferentialSettings_size(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_VehicleDifferentialSettings_t * JPC_ArrayVehicleDifferentialSettings_at(
-  JPC_ArrayVehicleDifferentialSettings_t * self,
-  long inIndex
+JoltC_VehicleDifferentialSettings_t * JoltC_ArrayVehicleDifferentialSettings_at(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayVehicleDifferentialSettings_push_back(
-  JPC_ArrayVehicleDifferentialSettings_t * self,
-  JPC_VehicleDifferentialSettings_t * inValue
+void JoltC_ArrayVehicleDifferentialSettings_push_back(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  JoltC_VehicleDifferentialSettings_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayVehicleDifferentialSettings_resize(
-  JPC_ArrayVehicleDifferentialSettings_t * self,
-  unsigned long inSize
+void JoltC_ArrayVehicleDifferentialSettings_resize(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayVehicleDifferentialSettings_clear(
-  JPC_ArrayVehicleDifferentialSettings_t * self
+void JoltC_ArrayVehicleDifferentialSettings_clear(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

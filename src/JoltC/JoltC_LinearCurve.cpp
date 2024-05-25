@@ -1,5 +1,6 @@
-#include "JoltC/JPC_LinearCurve.h"
+#include "JoltC/JoltC_LinearCurve.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,82 +8,155 @@ extern "C" {
 
 //region constructors
 
-JPC_LinearCurve_t * JPC_LinearCurve_new() {
-  JPC_LinearCurve_t * cInstance = new JPC_LinearCurve_t();
-  LinearCurve * cppInstance = new LinearCurve();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_LinearCurve_t * JoltC_LinearCurve_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_LinearCurve_t * cInstance = new JoltC_LinearCurve_t();
+    LinearCurve * cppInstance = new LinearCurve();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_LinearCurve_Clear(
-  JPC_LinearCurve_t * self
+void JoltC_LinearCurve_Clear(
+  JoltC_LinearCurve_t * self,
+  char** outErrMsg
 ) {
-  LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  
-  selfCpp->Clear();
+  try {
+    LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
+    
+    selfCpp->Clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_LinearCurve_Reserve(
-  JPC_LinearCurve_t * self,
-  unsigned long inSize
+void JoltC_LinearCurve_Reserve(
+  JoltC_LinearCurve_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  
-  selfCpp->Reserve(
-  inSize
-  );
+  try {
+    LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
+    
+    selfCpp->Reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_LinearCurve_AddPoint(
-  JPC_LinearCurve_t * self,
+void JoltC_LinearCurve_AddPoint(
+  JoltC_LinearCurve_t * self,
   float inX,
-  float inY
+  float inY,
+  char** outErrMsg
 ) {
-  LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  
-  selfCpp->AddPoint(
-  inX,
-  inY
-  );
+  try {
+    LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
+    
+    selfCpp->AddPoint(
+    inX,
+    inY
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_LinearCurve_Sort(
-  JPC_LinearCurve_t * self
+void JoltC_LinearCurve_Sort(
+  JoltC_LinearCurve_t * self,
+  char** outErrMsg
 ) {
-  LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  
-  selfCpp->Sort();
+  try {
+    LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
+    
+    selfCpp->Sort();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_LinearCurve_GetMinX(
-  JPC_LinearCurve_t * self
+float JoltC_LinearCurve_GetMinX(
+  JoltC_LinearCurve_t * self,
+  char** outErrMsg
 ) {
-  LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  float result = selfCpp->GetMinX();
-  return result;
+  try {
+    LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
+    float result = selfCpp->GetMinX();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_LinearCurve_GetMaxX(
-  JPC_LinearCurve_t * self
+float JoltC_LinearCurve_GetMaxX(
+  JoltC_LinearCurve_t * self,
+  char** outErrMsg
 ) {
-  LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  float result = selfCpp->GetMaxX();
-  return result;
+  try {
+    LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
+    float result = selfCpp->GetMaxX();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_LinearCurve_GetValue(
-  JPC_LinearCurve_t * self,
-  float inX
+float JoltC_LinearCurve_GetValue(
+  JoltC_LinearCurve_t * self,
+  float inX,
+  char** outErrMsg
 ) {
-  LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  float result = selfCpp->GetValue(
-  inX
-  );
-  return result;
+  try {
+    LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
+    float result = selfCpp->GetValue(
+    inX
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

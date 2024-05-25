@@ -8,55 +8,66 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_ConvexShapeSettings_GetRefCount(
-  JPC_ConvexShapeSettings_t * self
+unsigned long JoltC_ConvexShapeSettings_GetRefCount(
+  JoltC_ConvexShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShapeSettings_AddRef(
-  JPC_ConvexShapeSettings_t * self
+void JoltC_ConvexShapeSettings_AddRef(
+  JoltC_ConvexShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShapeSettings_Release(
-  JPC_ConvexShapeSettings_t * self
+void JoltC_ConvexShapeSettings_Release(
+  JoltC_ConvexShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_ConvexShapeSettings_Create(
-  JPC_ConvexShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_ConvexShapeSettings_Create(
+  JoltC_ConvexShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShapeSettings_ClearCachedResult(
-  JPC_ConvexShapeSettings_t * self
+void JoltC_ConvexShapeSettings_ClearCachedResult(
+  JoltC_ConvexShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-const JPC_PhysicsMaterial_t * JPC_ConvexShapeSettings_mMaterial_Get(
-  JPC_ConvexShapeSettings_t * self
+const JoltC_PhysicsMaterial_t * JoltC_ConvexShapeSettings_mMaterial_Get(
+  JoltC_ConvexShapeSettings_t * self,
+  char** outErrMsg
 );
 
-const void JPC_ConvexShapeSettings_mMaterial_Set(
-  JPC_ConvexShapeSettings_t * self,
-  const JPC_PhysicsMaterial_t * mMaterial
+const void JoltC_ConvexShapeSettings_mMaterial_Set(
+  JoltC_ConvexShapeSettings_t * self,
+  const JoltC_PhysicsMaterial_t * mMaterial,
+  char** outErrMsg
 );
 
-float JPC_ConvexShapeSettings_mDensity_Get(
-  JPC_ConvexShapeSettings_t * self
+float JoltC_ConvexShapeSettings_mDensity_Get(
+  JoltC_ConvexShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShapeSettings_mDensity_Set(
-  JPC_ConvexShapeSettings_t * self,
-  float mDensity
+void JoltC_ConvexShapeSettings_mDensity_Set(
+  JoltC_ConvexShapeSettings_t * self,
+  float mDensity,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_ConvexShapeSettings_mUserData_Get(
-  JPC_ConvexShapeSettings_t * self
+unsigned long long int JoltC_ConvexShapeSettings_mUserData_Get(
+  JoltC_ConvexShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShapeSettings_mUserData_Set(
-  JPC_ConvexShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_ConvexShapeSettings_mUserData_Set(
+  JoltC_ConvexShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

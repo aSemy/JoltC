@@ -1,5 +1,6 @@
-#include "JoltC/JPC_CollidePointCollector.h"
+#include "JoltC/JoltC_CollidePointCollector.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,85 +8,166 @@ extern "C" {
 
 //region functions
 
-void JPC_CollidePointCollector_Reset(
-  JPC_CollidePointCollector_t * self
+void JoltC_CollidePointCollector_Reset(
+  JoltC_CollidePointCollector_t * self,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
-  selfCpp->Reset();
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    
+    selfCpp->Reset();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollidePointCollector_SetContext(
-  JPC_CollidePointCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CollidePointCollector_SetContext(
+  JoltC_CollidePointCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
-  selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
-  );
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    
+    selfCpp->SetContext(
+    reinterpret_cast<TransformedShape *>(inContext->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_TransformedShape_t * JPC_CollidePointCollector_GetContext(
-  JPC_CollidePointCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CollidePointCollector_GetContext(
+  JoltC_CollidePointCollector_t * self,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JPC_TransformedShape_t *>(result);
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    const TransformedShape * result = selfCpp->GetContext();
+    return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollidePointCollector_UpdateEarlyOutFraction(
-  JPC_CollidePointCollector_t * self,
-  float inFraction
+void JoltC_CollidePointCollector_UpdateEarlyOutFraction(
+  JoltC_CollidePointCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
-  selfCpp->UpdateEarlyOutFraction(
-  inFraction
-  );
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    
+    selfCpp->UpdateEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollidePointCollector_ResetEarlyOutFraction(
-  JPC_CollidePointCollector_t * self,
-  float inFraction
+void JoltC_CollidePointCollector_ResetEarlyOutFraction(
+  JoltC_CollidePointCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
-  selfCpp->ResetEarlyOutFraction(
-  inFraction
-  );
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    
+    selfCpp->ResetEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollidePointCollector_ForceEarlyOut(
-  JPC_CollidePointCollector_t * self
+void JoltC_CollidePointCollector_ForceEarlyOut(
+  JoltC_CollidePointCollector_t * self,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
-  selfCpp->ForceEarlyOut();
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    
+    selfCpp->ForceEarlyOut();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CollidePointCollector_ShouldEarlyOut(
-  JPC_CollidePointCollector_t * self
+bool JoltC_CollidePointCollector_ShouldEarlyOut(
+  JoltC_CollidePointCollector_t * self,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    bool result = selfCpp->ShouldEarlyOut();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CollidePointCollector_GetEarlyOutFraction(
-  JPC_CollidePointCollector_t * self
+float JoltC_CollidePointCollector_GetEarlyOutFraction(
+  JoltC_CollidePointCollector_t * self,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    float result = selfCpp->GetEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CollidePointCollector_GetPositiveEarlyOutFraction(
-  JPC_CollidePointCollector_t * self
+float JoltC_CollidePointCollector_GetPositiveEarlyOutFraction(
+  JoltC_CollidePointCollector_t * self,
+  char** outErrMsg
 ) {
-  CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
+  try {
+    CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
+    float result = selfCpp->GetPositiveEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

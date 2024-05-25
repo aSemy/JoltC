@@ -8,113 +8,137 @@ extern "C" {
 
 //region constructors
 
-JPC_DistanceConstraintSettings_t * JPC_DistanceConstraintSettings_new();
+JoltC_DistanceConstraintSettings_t * JoltC_DistanceConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_Constraint_t * JPC_DistanceConstraintSettings_Create(
-  JPC_DistanceConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_DistanceConstraintSettings_Create(
+  JoltC_DistanceConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_DistanceConstraintSettings_GetRefCount(
-  JPC_DistanceConstraintSettings_t * self
+unsigned long JoltC_DistanceConstraintSettings_GetRefCount(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_AddRef(
-  JPC_DistanceConstraintSettings_t * self
+void JoltC_DistanceConstraintSettings_AddRef(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_Release(
-  JPC_DistanceConstraintSettings_t * self
+void JoltC_DistanceConstraintSettings_Release(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_DistanceConstraintSettings_mSpace_Get(
-  JPC_DistanceConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_DistanceConstraintSettings_mSpace_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mSpace_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_DistanceConstraintSettings_mSpace_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_DistanceConstraintSettings_mPoint1_Get(
-  JPC_DistanceConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_DistanceConstraintSettings_mPoint1_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mPoint1_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint1
+void JoltC_DistanceConstraintSettings_mPoint1_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint1,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_DistanceConstraintSettings_mPoint2_Get(
-  JPC_DistanceConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_DistanceConstraintSettings_mPoint2_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mPoint2_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint2
+void JoltC_DistanceConstraintSettings_mPoint2_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint2,
+  char** outErrMsg
 );
 
-float JPC_DistanceConstraintSettings_mMinDistance_Get(
-  JPC_DistanceConstraintSettings_t * self
+float JoltC_DistanceConstraintSettings_mMinDistance_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mMinDistance_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  float mMinDistance
+void JoltC_DistanceConstraintSettings_mMinDistance_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  float mMinDistance,
+  char** outErrMsg
 );
 
-float JPC_DistanceConstraintSettings_mMaxDistance_Get(
-  JPC_DistanceConstraintSettings_t * self
+float JoltC_DistanceConstraintSettings_mMaxDistance_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mMaxDistance_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  float mMaxDistance
+void JoltC_DistanceConstraintSettings_mMaxDistance_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  float mMaxDistance,
+  char** outErrMsg
 );
 
-JPC_SpringSettings_t * JPC_DistanceConstraintSettings_mLimitsSpringSettings_Get(
-  JPC_DistanceConstraintSettings_t * self
+JoltC_SpringSettings_t * JoltC_DistanceConstraintSettings_mLimitsSpringSettings_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mLimitsSpringSettings_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  JPC_SpringSettings_t * mLimitsSpringSettings
+void JoltC_DistanceConstraintSettings_mLimitsSpringSettings_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  JoltC_SpringSettings_t * mLimitsSpringSettings,
+  char** outErrMsg
 );
 
-bool JPC_DistanceConstraintSettings_mEnabled_Get(
-  JPC_DistanceConstraintSettings_t * self
+bool JoltC_DistanceConstraintSettings_mEnabled_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mEnabled_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_DistanceConstraintSettings_mEnabled_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_DistanceConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_DistanceConstraintSettings_t * self
+long JoltC_DistanceConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_DistanceConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_DistanceConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_DistanceConstraintSettings_t * self
+long JoltC_DistanceConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_DistanceConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_DistanceConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_DistanceConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_DistanceConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

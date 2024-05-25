@@ -8,47 +8,56 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_ConstraintSettings_GetRefCount(
-  JPC_ConstraintSettings_t * self
+unsigned long JoltC_ConstraintSettings_GetRefCount(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConstraintSettings_AddRef(
-  JPC_ConstraintSettings_t * self
+void JoltC_ConstraintSettings_AddRef(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConstraintSettings_Release(
-  JPC_ConstraintSettings_t * self
+void JoltC_ConstraintSettings_Release(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-bool JPC_ConstraintSettings_mEnabled_Get(
-  JPC_ConstraintSettings_t * self
+bool JoltC_ConstraintSettings_mEnabled_Get(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConstraintSettings_mEnabled_Set(
-  JPC_ConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_ConstraintSettings_mEnabled_Set(
+  JoltC_ConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_ConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_ConstraintSettings_t * self
+long JoltC_ConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_ConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_ConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_ConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_ConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_ConstraintSettings_t * self
+long JoltC_ConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_ConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_ConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_ConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

@@ -8,33 +8,40 @@ extern "C" {
 
 //region constructors
 
-JPC_OrientedBox_t * JPC_OrientedBox_new_0();
+JoltC_OrientedBox_t * JoltC_OrientedBox_new_0(
+  char** outErrMsg
+);
 
-JPC_OrientedBox_t * JPC_OrientedBox_new_1(
-  const JPC_Mat44_t * inOrientation,
-  const JPC_Vec3_t * inHalfExtents
+JoltC_OrientedBox_t * JoltC_OrientedBox_new_1(
+  const JoltC_Mat44_t * inOrientation,
+  const JoltC_Vec3_t * inHalfExtents,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region properties
 
-JPC_Mat44_t * JPC_OrientedBox_mOrientation_Get(
-  JPC_OrientedBox_t * self
+JoltC_Mat44_t * JoltC_OrientedBox_mOrientation_Get(
+  JoltC_OrientedBox_t * self,
+  char** outErrMsg
 );
 
-void JPC_OrientedBox_mOrientation_Set(
-  JPC_OrientedBox_t * self,
-  JPC_Mat44_t * mOrientation
+void JoltC_OrientedBox_mOrientation_Set(
+  JoltC_OrientedBox_t * self,
+  JoltC_Mat44_t * mOrientation,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_OrientedBox_mHalfExtents_Get(
-  JPC_OrientedBox_t * self
+JoltC_Vec3_t * JoltC_OrientedBox_mHalfExtents_Get(
+  JoltC_OrientedBox_t * self,
+  char** outErrMsg
 );
 
-void JPC_OrientedBox_mHalfExtents_Set(
-  JPC_OrientedBox_t * self,
-  JPC_Vec3_t * mHalfExtents
+void JoltC_OrientedBox_mHalfExtents_Set(
+  JoltC_OrientedBox_t * self,
+  JoltC_Vec3_t * mHalfExtents,
+  char** outErrMsg
 );
 
 //endregion properties

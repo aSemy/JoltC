@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArraySoftBodySharedSettingsVertexAttributes.h"
+#include "JoltC/JoltC_ArraySoftBodySharedSettingsVertexAttributes.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,81 +8,153 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsVertexAttributes_empty(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+bool JoltC_ArraySoftBodySharedSettingsVertexAttributes_empty(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArraySoftBodySharedSettingsVertexAttributes_size(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+long JoltC_ArraySoftBodySharedSettingsVertexAttributes_size(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_SoftBodySharedSettingsVertexAttributes_t * JPC_ArraySoftBodySharedSettingsVertexAttributes_at(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_ArraySoftBodySharedSettingsVertexAttributes_at(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  SoftBodySharedSettingsVertexAttributes& resultRef = selfCpp->at(
-  inIndex
-  );
-  SoftBodySharedSettingsVertexAttributes * result = &resultRef;
-  return reinterpret_cast<JPC_SoftBodySharedSettingsVertexAttributes_t *>(result);
+  try {
+    ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+    SoftBodySharedSettingsVertexAttributes& resultRef = selfCpp->at(
+    inIndex
+    );
+    SoftBodySharedSettingsVertexAttributes * result = &resultRef;
+    return reinterpret_cast<JoltC_SoftBodySharedSettingsVertexAttributes_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySoftBodySharedSettingsVertexAttributes_push_back(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  const JPC_SoftBodySharedSettingsVertexAttributes_t * inValue
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_push_back(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  const JoltC_SoftBodySharedSettingsVertexAttributes_t * inValue,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<SoftBodySharedSettingsVertexAttributes *>(inValue->obj)
-  );
+  try {
+    ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<SoftBodySharedSettingsVertexAttributes *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySoftBodySharedSettingsVertexAttributes_reserve(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_reserve(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySoftBodySharedSettingsVertexAttributes_resize(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_resize(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySoftBodySharedSettingsVertexAttributes_clear(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_clear(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_SoftBodySharedSettingsVertexAttributes_t * JPC_ArraySoftBodySharedSettingsVertexAttributes_data(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_ArraySoftBodySharedSettingsVertexAttributes_data(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  SoftBodySharedSettingsVertexAttributes * result = selfCpp->data();
-  return reinterpret_cast<JPC_SoftBodySharedSettingsVertexAttributes_t *>(result);
+  try {
+    ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+    SoftBodySharedSettingsVertexAttributes * result = selfCpp->data();
+    return reinterpret_cast<JoltC_SoftBodySharedSettingsVertexAttributes_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

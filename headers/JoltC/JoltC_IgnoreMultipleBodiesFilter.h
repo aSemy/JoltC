@@ -8,24 +8,29 @@ extern "C" {
 
 //region constructors
 
-JPC_IgnoreMultipleBodiesFilter_t * JPC_IgnoreMultipleBodiesFilter_new();
+JoltC_IgnoreMultipleBodiesFilter_t * JoltC_IgnoreMultipleBodiesFilter_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_IgnoreMultipleBodiesFilter_Clear(
-  JPC_IgnoreMultipleBodiesFilter_t * self
+void JoltC_IgnoreMultipleBodiesFilter_Clear(
+  JoltC_IgnoreMultipleBodiesFilter_t * self,
+  char** outErrMsg
 );
 
-void JPC_IgnoreMultipleBodiesFilter_Reserve(
-  JPC_IgnoreMultipleBodiesFilter_t * self,
-  unsigned long inSize
+void JoltC_IgnoreMultipleBodiesFilter_Reserve(
+  JoltC_IgnoreMultipleBodiesFilter_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_IgnoreMultipleBodiesFilter_IgnoreBody(
-  JPC_IgnoreMultipleBodiesFilter_t * self,
-  const JPC_BodyID_t * inBodyID
+void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
+  JoltC_IgnoreMultipleBodiesFilter_t * self,
+  const JoltC_BodyID_t * inBodyID,
+  char** outErrMsg
 );
 
 //endregion functions

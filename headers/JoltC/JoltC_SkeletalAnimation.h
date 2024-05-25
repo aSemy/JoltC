@@ -8,29 +8,35 @@ extern "C" {
 
 //region constructors
 
-JPC_SkeletalAnimation_t * JPC_SkeletalAnimation_new();
+JoltC_SkeletalAnimation_t * JoltC_SkeletalAnimation_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-float JPC_SkeletalAnimation_GetDuration(
-  JPC_SkeletalAnimation_t * self
+float JoltC_SkeletalAnimation_GetDuration(
+  JoltC_SkeletalAnimation_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimation_ScaleJoints(
-  JPC_SkeletalAnimation_t * self,
-  float inScale
+void JoltC_SkeletalAnimation_ScaleJoints(
+  JoltC_SkeletalAnimation_t * self,
+  float inScale,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimation_Sample(
-  JPC_SkeletalAnimation_t * self,
+void JoltC_SkeletalAnimation_Sample(
+  JoltC_SkeletalAnimation_t * self,
   float inTime,
-  JPC_SkeletonPose_t * ioPose
+  JoltC_SkeletonPose_t * ioPose,
+  char** outErrMsg
 );
 
-JPC_ArraySkeletonAnimatedJoint_t * JPC_SkeletalAnimation_GetAnimatedJoints(
-  JPC_SkeletalAnimation_t * self
+JoltC_ArraySkeletonAnimatedJoint_t * JoltC_SkeletalAnimation_GetAnimatedJoints(
+  JoltC_SkeletalAnimation_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

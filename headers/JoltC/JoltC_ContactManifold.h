@@ -8,91 +8,110 @@ extern "C" {
 
 //region constructors
 
-JPC_ContactManifold_t * JPC_ContactManifold_new();
+JoltC_ContactManifold_t * JoltC_ContactManifold_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_ContactManifold_t * JPC_ContactManifold_SwapShapes(
-  JPC_ContactManifold_t * self
+JoltC_ContactManifold_t * JoltC_ContactManifold_SwapShapes(
+  JoltC_ContactManifold_t * self,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_ContactManifold_GetWorldSpaceContactPointOn1(
-  JPC_ContactManifold_t * self,
-  unsigned long inIndex
+JoltC_RVec3_t * JoltC_ContactManifold_GetWorldSpaceContactPointOn1(
+  JoltC_ContactManifold_t * self,
+  unsigned long inIndex,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_ContactManifold_GetWorldSpaceContactPointOn2(
-  JPC_ContactManifold_t * self,
-  unsigned long inIndex
+JoltC_RVec3_t * JoltC_ContactManifold_GetWorldSpaceContactPointOn2(
+  JoltC_ContactManifold_t * self,
+  unsigned long inIndex,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_RVec3_t * JPC_ContactManifold_mBaseOffset_Get(
-  JPC_ContactManifold_t * self
+JoltC_RVec3_t * JoltC_ContactManifold_mBaseOffset_Get(
+  JoltC_ContactManifold_t * self,
+  char** outErrMsg
 );
 
-void JPC_ContactManifold_mBaseOffset_Set(
-  JPC_ContactManifold_t * self,
-  JPC_RVec3_t * mBaseOffset
+void JoltC_ContactManifold_mBaseOffset_Set(
+  JoltC_ContactManifold_t * self,
+  JoltC_RVec3_t * mBaseOffset,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ContactManifold_mWorldSpaceNormal_Get(
-  JPC_ContactManifold_t * self
+JoltC_Vec3_t * JoltC_ContactManifold_mWorldSpaceNormal_Get(
+  JoltC_ContactManifold_t * self,
+  char** outErrMsg
 );
 
-void JPC_ContactManifold_mWorldSpaceNormal_Set(
-  JPC_ContactManifold_t * self,
-  JPC_Vec3_t * mWorldSpaceNormal
+void JoltC_ContactManifold_mWorldSpaceNormal_Set(
+  JoltC_ContactManifold_t * self,
+  JoltC_Vec3_t * mWorldSpaceNormal,
+  char** outErrMsg
 );
 
-float JPC_ContactManifold_mPenetrationDepth_Get(
-  JPC_ContactManifold_t * self
+float JoltC_ContactManifold_mPenetrationDepth_Get(
+  JoltC_ContactManifold_t * self,
+  char** outErrMsg
 );
 
-void JPC_ContactManifold_mPenetrationDepth_Set(
-  JPC_ContactManifold_t * self,
-  float mPenetrationDepth
+void JoltC_ContactManifold_mPenetrationDepth_Set(
+  JoltC_ContactManifold_t * self,
+  float mPenetrationDepth,
+  char** outErrMsg
 );
 
-JPC_SubShapeID_t * JPC_ContactManifold_mSubShapeID1_Get(
-  JPC_ContactManifold_t * self
+JoltC_SubShapeID_t * JoltC_ContactManifold_mSubShapeID1_Get(
+  JoltC_ContactManifold_t * self,
+  char** outErrMsg
 );
 
-void JPC_ContactManifold_mSubShapeID1_Set(
-  JPC_ContactManifold_t * self,
-  JPC_SubShapeID_t * mSubShapeID1
+void JoltC_ContactManifold_mSubShapeID1_Set(
+  JoltC_ContactManifold_t * self,
+  JoltC_SubShapeID_t * mSubShapeID1,
+  char** outErrMsg
 );
 
-JPC_SubShapeID_t * JPC_ContactManifold_mSubShapeID2_Get(
-  JPC_ContactManifold_t * self
+JoltC_SubShapeID_t * JoltC_ContactManifold_mSubShapeID2_Get(
+  JoltC_ContactManifold_t * self,
+  char** outErrMsg
 );
 
-void JPC_ContactManifold_mSubShapeID2_Set(
-  JPC_ContactManifold_t * self,
-  JPC_SubShapeID_t * mSubShapeID2
+void JoltC_ContactManifold_mSubShapeID2_Set(
+  JoltC_ContactManifold_t * self,
+  JoltC_SubShapeID_t * mSubShapeID2,
+  char** outErrMsg
 );
 
-JPC_ContactPoints_t * JPC_ContactManifold_mRelativeContactPointsOn1_Get(
-  JPC_ContactManifold_t * self
+JoltC_ContactPoints_t * JoltC_ContactManifold_mRelativeContactPointsOn1_Get(
+  JoltC_ContactManifold_t * self,
+  char** outErrMsg
 );
 
-void JPC_ContactManifold_mRelativeContactPointsOn1_Set(
-  JPC_ContactManifold_t * self,
-  JPC_ContactPoints_t * mRelativeContactPointsOn1
+void JoltC_ContactManifold_mRelativeContactPointsOn1_Set(
+  JoltC_ContactManifold_t * self,
+  JoltC_ContactPoints_t * mRelativeContactPointsOn1,
+  char** outErrMsg
 );
 
-JPC_ContactPoints_t * JPC_ContactManifold_mRelativeContactPointsOn2_Get(
-  JPC_ContactManifold_t * self
+JoltC_ContactPoints_t * JoltC_ContactManifold_mRelativeContactPointsOn2_Get(
+  JoltC_ContactManifold_t * self,
+  char** outErrMsg
 );
 
-void JPC_ContactManifold_mRelativeContactPointsOn2_Set(
-  JPC_ContactManifold_t * self,
-  JPC_ContactPoints_t * mRelativeContactPointsOn2
+void JoltC_ContactManifold_mRelativeContactPointsOn2_Set(
+  JoltC_ContactManifold_t * self,
+  JoltC_ContactPoints_t * mRelativeContactPointsOn2,
+  char** outErrMsg
 );
 
 //endregion properties

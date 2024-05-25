@@ -8,24 +8,29 @@ extern "C" {
 
 //region functions
 
-bool JPC_Shape_ShapeResult_IsValid(
-  JPC_Shape_ShapeResult_t * self
+bool JoltC_Shape_ShapeResult_IsValid(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 );
 
-bool JPC_Shape_ShapeResult_HasError(
-  JPC_Shape_ShapeResult_t * self
+bool JoltC_Shape_ShapeResult_HasError(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 );
 
-const JPC_JPHString_t * JPC_Shape_ShapeResult_GetError(
-  JPC_Shape_ShapeResult_t * self
+const JoltC_JPHString_t * JoltC_Shape_ShapeResult_GetError(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_t * JPC_Shape_ShapeResult_Get(
-  JPC_Shape_ShapeResult_t * self
+JoltC_Shape_t * JoltC_Shape_ShapeResult_Get(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_Shape_ShapeResult_Clear(
-  JPC_Shape_ShapeResult_t * self
+void JoltC_Shape_ShapeResult_Clear(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

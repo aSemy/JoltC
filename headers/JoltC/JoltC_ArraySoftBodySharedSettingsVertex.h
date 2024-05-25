@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsVertex_empty(
-  JPC_ArraySoftBodySharedSettingsVertex_t * self
+bool JoltC_ArraySoftBodySharedSettingsVertex_empty(
+  JoltC_ArraySoftBodySharedSettingsVertex_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArraySoftBodySharedSettingsVertex_size(
-  JPC_ArraySoftBodySharedSettingsVertex_t * self
+long JoltC_ArraySoftBodySharedSettingsVertex_size(
+  JoltC_ArraySoftBodySharedSettingsVertex_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettingsVertex_t * JPC_ArraySoftBodySharedSettingsVertex_at(
-  JPC_ArraySoftBodySharedSettingsVertex_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsVertex_t * JoltC_ArraySoftBodySharedSettingsVertex_at(
+  JoltC_ArraySoftBodySharedSettingsVertex_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVertex_push_back(
-  JPC_ArraySoftBodySharedSettingsVertex_t * self,
-  const JPC_SoftBodySharedSettingsVertex_t * inValue
+void JoltC_ArraySoftBodySharedSettingsVertex_push_back(
+  JoltC_ArraySoftBodySharedSettingsVertex_t * self,
+  const JoltC_SoftBodySharedSettingsVertex_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVertex_reserve(
-  JPC_ArraySoftBodySharedSettingsVertex_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsVertex_reserve(
+  JoltC_ArraySoftBodySharedSettingsVertex_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVertex_resize(
-  JPC_ArraySoftBodySharedSettingsVertex_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsVertex_resize(
+  JoltC_ArraySoftBodySharedSettingsVertex_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVertex_clear(
-  JPC_ArraySoftBodySharedSettingsVertex_t * self
+void JoltC_ArraySoftBodySharedSettingsVertex_clear(
+  JoltC_ArraySoftBodySharedSettingsVertex_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

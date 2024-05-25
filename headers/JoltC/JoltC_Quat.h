@@ -8,186 +8,228 @@ extern "C" {
 
 //region constructors
 
-JPC_Quat_t * JPC_Quat_new_0();
+JoltC_Quat_t * JoltC_Quat_new_0(
+  char** outErrMsg
+);
 
-JPC_Quat_t * JPC_Quat_new_1(
+JoltC_Quat_t * JoltC_Quat_new_1(
   float inX,
   float inY,
   float inZ,
-  float inW
+  float inW,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-JPC_Quat_t * JPC_Quat_sZero();
-
-JPC_Quat_t * JPC_Quat_sIdentity();
-
-JPC_Quat_t * JPC_Quat_sRotation(
-  const JPC_Vec3_t * inRotation,
-  float inAngle
+JoltC_Quat_t * JoltC_Quat_sZero(
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_Quat_sFromTo(
-  const JPC_Vec3_t * inFrom,
-  const JPC_Vec3_t * inTo
+JoltC_Quat_t * JoltC_Quat_sIdentity(
+  char** outErrMsg
 );
 
-bool JPC_Quat_Equals(
-  JPC_Quat_t * self,
-  const JPC_Quat_t * inQ
+JoltC_Quat_t * JoltC_Quat_sRotation(
+  const JoltC_Vec3_t * inRotation,
+  float inAngle,
+  char** outErrMsg
 );
 
-bool JPC_Quat_NotEquals(
-  JPC_Quat_t * self,
-  const JPC_Quat_t * inQ
+JoltC_Quat_t * JoltC_Quat_sFromTo(
+  const JoltC_Vec3_t * inFrom,
+  const JoltC_Vec3_t * inTo,
+  char** outErrMsg
 );
 
-bool JPC_Quat_IsClose(
-  JPC_Quat_t * self,
-  const JPC_Quat_t * inQ,
-  float inMaxDistSq
+bool JoltC_Quat_Equals(
+  JoltC_Quat_t * self,
+  const JoltC_Quat_t * inQ,
+  char** outErrMsg
 );
 
-bool JPC_Quat_IsNormalized(
-  JPC_Quat_t * self,
-  float inTolerance
+bool JoltC_Quat_NotEquals(
+  JoltC_Quat_t * self,
+  const JoltC_Quat_t * inQ,
+  char** outErrMsg
 );
 
-float JPC_Quat_Length(
-  JPC_Quat_t * self
+bool JoltC_Quat_IsClose(
+  JoltC_Quat_t * self,
+  const JoltC_Quat_t * inQ,
+  float inMaxDistSq,
+  char** outErrMsg
 );
 
-float JPC_Quat_LengthSq(
-  JPC_Quat_t * self
+bool JoltC_Quat_IsNormalized(
+  JoltC_Quat_t * self,
+  float inTolerance,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_Quat_Normalized(
-  JPC_Quat_t * self
+float JoltC_Quat_Length(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_Quat_sEulerAngles(
-  const JPC_Vec3_t * inInput
+float JoltC_Quat_LengthSq(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_Quat_GetEulerAngles(
-  JPC_Quat_t * self
+JoltC_Quat_t * JoltC_Quat_Normalized(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-float JPC_Quat_GetX(
-  JPC_Quat_t * self
+JoltC_Quat_t * JoltC_Quat_sEulerAngles(
+  const JoltC_Vec3_t * inInput,
+  char** outErrMsg
 );
 
-float JPC_Quat_GetY(
-  JPC_Quat_t * self
+const JoltC_Vec3_t * JoltC_Quat_GetEulerAngles(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-float JPC_Quat_GetZ(
-  JPC_Quat_t * self
+float JoltC_Quat_GetX(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-float JPC_Quat_GetW(
-  JPC_Quat_t * self
+float JoltC_Quat_GetY(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_Quat_GetXYZ(
-  JPC_Quat_t * self
+float JoltC_Quat_GetZ(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-void JPC_Quat_SetX(
-  JPC_Quat_t * self,
-  float inX
+float JoltC_Quat_GetW(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-void JPC_Quat_SetY(
-  JPC_Quat_t * self,
-  float inY
+const JoltC_Vec3_t * JoltC_Quat_GetXYZ(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-void JPC_Quat_SetZ(
-  JPC_Quat_t * self,
-  float inZ
+void JoltC_Quat_SetX(
+  JoltC_Quat_t * self,
+  float inX,
+  char** outErrMsg
 );
 
-void JPC_Quat_SetW(
-  JPC_Quat_t * self,
-  float inW
+void JoltC_Quat_SetY(
+  JoltC_Quat_t * self,
+  float inY,
+  char** outErrMsg
 );
 
-void JPC_Quat_Set(
-  JPC_Quat_t * self,
+void JoltC_Quat_SetZ(
+  JoltC_Quat_t * self,
+  float inZ,
+  char** outErrMsg
+);
+
+void JoltC_Quat_SetW(
+  JoltC_Quat_t * self,
+  float inW,
+  char** outErrMsg
+);
+
+void JoltC_Quat_Set(
+  JoltC_Quat_t * self,
   float inX,
   float inY,
   float inZ,
-  float inW
+  float inW,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_Quat_InverseRotate(
-  JPC_Quat_t * self,
-  const JPC_Vec3_t * inV
+const JoltC_Vec3_t * JoltC_Quat_InverseRotate(
+  JoltC_Quat_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_Quat_RotateAxisX(
-  JPC_Quat_t * self
+const JoltC_Vec3_t * JoltC_Quat_RotateAxisX(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_Quat_RotateAxisY(
-  JPC_Quat_t * self
+const JoltC_Vec3_t * JoltC_Quat_RotateAxisY(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_Quat_RotateAxisZ(
-  JPC_Quat_t * self
+const JoltC_Vec3_t * JoltC_Quat_RotateAxisZ(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-float JPC_Quat_Dot(
-  JPC_Quat_t * self,
-  const JPC_Quat_t * inQ
+float JoltC_Quat_Dot(
+  JoltC_Quat_t * self,
+  const JoltC_Quat_t * inQ,
+  char** outErrMsg
 );
 
-const JPC_Quat_t * JPC_Quat_Conjugated(
-  JPC_Quat_t * self
+const JoltC_Quat_t * JoltC_Quat_Conjugated(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-const JPC_Quat_t * JPC_Quat_Inversed(
-  JPC_Quat_t * self
+const JoltC_Quat_t * JoltC_Quat_Inversed(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-const JPC_Quat_t * JPC_Quat_EnsureWPositive(
-  JPC_Quat_t * self
+const JoltC_Quat_t * JoltC_Quat_EnsureWPositive(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-const JPC_Quat_t * JPC_Quat_GetPerpendicular(
-  JPC_Quat_t * self
+const JoltC_Quat_t * JoltC_Quat_GetPerpendicular(
+  JoltC_Quat_t * self,
+  char** outErrMsg
 );
 
-float JPC_Quat_GetRotationAngle(
-  JPC_Quat_t * self,
-  const JPC_Vec3_t * inAxis
+float JoltC_Quat_GetRotationAngle(
+  JoltC_Quat_t * self,
+  const JoltC_Vec3_t * inAxis,
+  char** outErrMsg
 );
 
-const JPC_Quat_t * JPC_Quat_GetTwist(
-  JPC_Quat_t * self,
-  const JPC_Vec3_t * inAxis
+const JoltC_Quat_t * JoltC_Quat_GetTwist(
+  JoltC_Quat_t * self,
+  const JoltC_Vec3_t * inAxis,
+  char** outErrMsg
 );
 
-void JPC_Quat_GetSwingTwist(
-  JPC_Quat_t * self,
-  JPC_Quat_t * outSwing,
-  JPC_Quat_t * outTwist
+void JoltC_Quat_GetSwingTwist(
+  JoltC_Quat_t * self,
+  JoltC_Quat_t * outSwing,
+  JoltC_Quat_t * outTwist,
+  char** outErrMsg
 );
 
-const JPC_Quat_t * JPC_Quat_LERP(
-  JPC_Quat_t * self,
-  const JPC_Quat_t * inDestination,
-  float inFraction
+const JoltC_Quat_t * JoltC_Quat_LERP(
+  JoltC_Quat_t * self,
+  const JoltC_Quat_t * inDestination,
+  float inFraction,
+  char** outErrMsg
 );
 
-const JPC_Quat_t * JPC_Quat_SLERP(
-  JPC_Quat_t * self,
-  const JPC_Quat_t * inDestination,
-  float inFraction
+const JoltC_Quat_t * JoltC_Quat_SLERP(
+  JoltC_Quat_t * self,
+  const JoltC_Quat_t * inDestination,
+  float inFraction,
+  char** outErrMsg
 );
 
 //endregion functions

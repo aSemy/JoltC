@@ -1,5 +1,6 @@
-#include "JoltC/JPC_Shape_ShapeResult.h"
+#include "JoltC/JoltC_Shape_ShapeResult.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,45 +8,90 @@ extern "C" {
 
 //region functions
 
-bool JPC_Shape_ShapeResult_IsValid(
-  JPC_Shape_ShapeResult_t * self
+bool JoltC_Shape_ShapeResult_IsValid(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 ) {
-  Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  bool result = selfCpp->IsValid();
-  return result;
+  try {
+    Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
+    bool result = selfCpp->IsValid();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_Shape_ShapeResult_HasError(
-  JPC_Shape_ShapeResult_t * self
+bool JoltC_Shape_ShapeResult_HasError(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 ) {
-  Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  bool result = selfCpp->HasError();
-  return result;
+  try {
+    Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
+    bool result = selfCpp->HasError();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_JPHString_t * JPC_Shape_ShapeResult_GetError(
-  JPC_Shape_ShapeResult_t * self
+const JoltC_JPHString_t * JoltC_Shape_ShapeResult_GetError(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 ) {
-  Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  const JPHString& resultRef = selfCpp->GetError();
-  const JPHString * result = &resultRef;
-  return reinterpret_cast<const JPC_JPHString_t *>(result);
+  try {
+    Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
+    const JPHString& resultRef = selfCpp->GetError();
+    const JPHString * result = &resultRef;
+    return reinterpret_cast<const JoltC_JPHString_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_t * JPC_Shape_ShapeResult_Get(
-  JPC_Shape_ShapeResult_t * self
+JoltC_Shape_t * JoltC_Shape_ShapeResult_Get(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 ) {
-  Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  Shape * result = selfCpp->Get();
-  return reinterpret_cast<JPC_Shape_t *>(result);
+  try {
+    Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
+    Shape * result = selfCpp->Get();
+    return reinterpret_cast<JoltC_Shape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_Shape_ShapeResult_Clear(
-  JPC_Shape_ShapeResult_t * self
+void JoltC_Shape_ShapeResult_Clear(
+  JoltC_Shape_ShapeResult_t * self,
+  char** outErrMsg
 ) {
-  Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  
-  selfCpp->Clear();
+  try {
+    Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
+    
+    selfCpp->Clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

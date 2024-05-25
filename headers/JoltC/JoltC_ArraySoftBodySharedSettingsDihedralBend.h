@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsDihedralBend_empty(
-  JPC_ArraySoftBodySharedSettingsDihedralBend_t * self
+bool JoltC_ArraySoftBodySharedSettingsDihedralBend_empty(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArraySoftBodySharedSettingsDihedralBend_size(
-  JPC_ArraySoftBodySharedSettingsDihedralBend_t * self
+long JoltC_ArraySoftBodySharedSettingsDihedralBend_size(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettingsDihedralBend_t * JPC_ArraySoftBodySharedSettingsDihedralBend_at(
-  JPC_ArraySoftBodySharedSettingsDihedralBend_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_ArraySoftBodySharedSettingsDihedralBend_at(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsDihedralBend_push_back(
-  JPC_ArraySoftBodySharedSettingsDihedralBend_t * self,
-  const JPC_SoftBodySharedSettingsDihedralBend_t * inValue
+void JoltC_ArraySoftBodySharedSettingsDihedralBend_push_back(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
+  const JoltC_SoftBodySharedSettingsDihedralBend_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsDihedralBend_reserve(
-  JPC_ArraySoftBodySharedSettingsDihedralBend_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsDihedralBend_reserve(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsDihedralBend_resize(
-  JPC_ArraySoftBodySharedSettingsDihedralBend_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsDihedralBend_resize(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsDihedralBend_clear(
-  JPC_ArraySoftBodySharedSettingsDihedralBend_t * self
+void JoltC_ArraySoftBodySharedSettingsDihedralBend_clear(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,66 +8,80 @@ extern "C" {
 
 //region constructors
 
-JPC_CastRayClosestHitCollisionCollector_t * JPC_CastRayClosestHitCollisionCollector_new();
+JoltC_CastRayClosestHitCollisionCollector_t * JoltC_CastRayClosestHitCollisionCollector_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_CastRayClosestHitCollisionCollector_HadHit(
-  JPC_CastRayClosestHitCollisionCollector_t * self
+bool JoltC_CastRayClosestHitCollisionCollector_HadHit(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastRayClosestHitCollisionCollector_Reset(
-  JPC_CastRayClosestHitCollisionCollector_t * self
+void JoltC_CastRayClosestHitCollisionCollector_Reset(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastRayClosestHitCollisionCollector_SetContext(
-  JPC_CastRayClosestHitCollisionCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CastRayClosestHitCollisionCollector_SetContext(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_CastRayClosestHitCollisionCollector_GetContext(
-  JPC_CastRayClosestHitCollisionCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CastRayClosestHitCollisionCollector_GetContext(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastRayClosestHitCollisionCollector_UpdateEarlyOutFraction(
-  JPC_CastRayClosestHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CastRayClosestHitCollisionCollector_UpdateEarlyOutFraction(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CastRayClosestHitCollisionCollector_ResetEarlyOutFraction(
-  JPC_CastRayClosestHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CastRayClosestHitCollisionCollector_ResetEarlyOutFraction(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CastRayClosestHitCollisionCollector_ForceEarlyOut(
-  JPC_CastRayClosestHitCollisionCollector_t * self
+void JoltC_CastRayClosestHitCollisionCollector_ForceEarlyOut(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CastRayClosestHitCollisionCollector_ShouldEarlyOut(
-  JPC_CastRayClosestHitCollisionCollector_t * self
+bool JoltC_CastRayClosestHitCollisionCollector_ShouldEarlyOut(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CastRayClosestHitCollisionCollector_GetEarlyOutFraction(
-  JPC_CastRayClosestHitCollisionCollector_t * self
+float JoltC_CastRayClosestHitCollisionCollector_GetEarlyOutFraction(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CastRayClosestHitCollisionCollector_GetPositiveEarlyOutFraction(
-  JPC_CastRayClosestHitCollisionCollector_t * self
+float JoltC_CastRayClosestHitCollisionCollector_GetPositiveEarlyOutFraction(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_RayCastResult_t * JPC_CastRayClosestHitCollisionCollector_mHit_Get(
-  JPC_CastRayClosestHitCollisionCollector_t * self
+JoltC_RayCastResult_t * JoltC_CastRayClosestHitCollisionCollector_mHit_Get(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastRayClosestHitCollisionCollector_mHit_Set(
-  JPC_CastRayClosestHitCollisionCollector_t * self,
-  JPC_RayCastResult_t * mHit
+void JoltC_CastRayClosestHitCollisionCollector_mHit_Set(
+  JoltC_CastRayClosestHitCollisionCollector_t * self,
+  JoltC_RayCastResult_t * mHit,
+  char** outErrMsg
 );
 
 //endregion properties

@@ -1,5 +1,6 @@
-#include "JoltC/JPC_RayCastSettings.h"
+#include "JoltC/JoltC_RayCastSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,44 +8,58 @@ extern "C" {
 
 //region constructors
 
-JPC_RayCastSettings_t * JPC_RayCastSettings_new() {
-  JPC_RayCastSettings_t * cInstance = new JPC_RayCastSettings_t();
-  RayCastSettings * cppInstance = new RayCastSettings();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_RayCastSettings_t * JoltC_RayCastSettings_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_RayCastSettings_t * cInstance = new JoltC_RayCastSettings_t();
+    RayCastSettings * cppInstance = new RayCastSettings();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region properties
 
-JPC_EBackFaceMode JPC_RayCastSettings_mBackFaceMode_Get(
-  JPC_RayCastSettings_t * self
+JoltC_EBackFaceMode JoltC_RayCastSettings_mBackFaceMode_Get(
+  JoltC_RayCastSettings_t * self,
+  char** outErrMsg
 ) {
   RayCastSettings * selfCpp = static_cast<RayCastSettings *>(self->obj);
   EBackFaceMode result = selfCpp->mBackFaceMode;
-  return static_cast<JPC_EBackFaceMode>(static_cast<int>(result));
+  return static_cast<JoltC_EBackFaceMode>(static_cast<int>(result));
 };
 
-void JPC_RayCastSettings_mBackFaceMode_Set(
-  JPC_RayCastSettings_t * self,
-  JPC_EBackFaceMode mBackFaceMode
+void JoltC_RayCastSettings_mBackFaceMode_Set(
+  JoltC_RayCastSettings_t * self,
+  JoltC_EBackFaceMode mBackFaceMode,
+  char** outErrMsg
 ) {
   RayCastSettings * selfCpp = static_cast<RayCastSettings *>(self->obj);
   selfCpp->mBackFaceMode = static_cast<EBackFaceMode>(static_cast<int>(mBackFaceMode));
 };
 
-bool JPC_RayCastSettings_mTreatConvexAsSolid_Get(
-  JPC_RayCastSettings_t * self
+bool JoltC_RayCastSettings_mTreatConvexAsSolid_Get(
+  JoltC_RayCastSettings_t * self,
+  char** outErrMsg
 ) {
   RayCastSettings * selfCpp = static_cast<RayCastSettings *>(self->obj);
   bool result = selfCpp->mTreatConvexAsSolid;
   return result;
 };
 
-void JPC_RayCastSettings_mTreatConvexAsSolid_Set(
-  JPC_RayCastSettings_t * self,
-  bool mTreatConvexAsSolid
+void JoltC_RayCastSettings_mTreatConvexAsSolid_Set(
+  JoltC_RayCastSettings_t * self,
+  bool mTreatConvexAsSolid,
+  char** outErrMsg
 ) {
   RayCastSettings * selfCpp = static_cast<RayCastSettings *>(self->obj);
   selfCpp->mTreatConvexAsSolid = mTreatConvexAsSolid;

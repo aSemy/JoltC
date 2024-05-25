@@ -8,73 +8,89 @@ extern "C" {
 
 //region constructors
 
-JPC_CollideShapeSettings_t * JPC_CollideShapeSettings_new();
+JoltC_CollideShapeSettings_t * JoltC_CollideShapeSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-float JPC_CollideShapeSettings_mMaxSeparationDistance_Get(
-  JPC_CollideShapeSettings_t * self
+float JoltC_CollideShapeSettings_mMaxSeparationDistance_Get(
+  JoltC_CollideShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeSettings_mMaxSeparationDistance_Set(
-  JPC_CollideShapeSettings_t * self,
-  float mMaxSeparationDistance
+void JoltC_CollideShapeSettings_mMaxSeparationDistance_Set(
+  JoltC_CollideShapeSettings_t * self,
+  float mMaxSeparationDistance,
+  char** outErrMsg
 );
 
-JPC_EBackFaceMode JPC_CollideShapeSettings_mBackFaceMode_Get(
-  JPC_CollideShapeSettings_t * self
+JoltC_EBackFaceMode JoltC_CollideShapeSettings_mBackFaceMode_Get(
+  JoltC_CollideShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeSettings_mBackFaceMode_Set(
-  JPC_CollideShapeSettings_t * self,
-  JPC_EBackFaceMode mBackFaceMode
+void JoltC_CollideShapeSettings_mBackFaceMode_Set(
+  JoltC_CollideShapeSettings_t * self,
+  JoltC_EBackFaceMode mBackFaceMode,
+  char** outErrMsg
 );
 
-JPC_EActiveEdgeMode JPC_CollideShapeSettings_mActiveEdgeMode_Get(
-  JPC_CollideShapeSettings_t * self
+JoltC_EActiveEdgeMode JoltC_CollideShapeSettings_mActiveEdgeMode_Get(
+  JoltC_CollideShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeSettings_mActiveEdgeMode_Set(
-  JPC_CollideShapeSettings_t * self,
-  JPC_EActiveEdgeMode mActiveEdgeMode
+void JoltC_CollideShapeSettings_mActiveEdgeMode_Set(
+  JoltC_CollideShapeSettings_t * self,
+  JoltC_EActiveEdgeMode mActiveEdgeMode,
+  char** outErrMsg
 );
 
-JPC_ECollectFacesMode JPC_CollideShapeSettings_mCollectFacesMode_Get(
-  JPC_CollideShapeSettings_t * self
+JoltC_ECollectFacesMode JoltC_CollideShapeSettings_mCollectFacesMode_Get(
+  JoltC_CollideShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeSettings_mCollectFacesMode_Set(
-  JPC_CollideShapeSettings_t * self,
-  JPC_ECollectFacesMode mCollectFacesMode
+void JoltC_CollideShapeSettings_mCollectFacesMode_Set(
+  JoltC_CollideShapeSettings_t * self,
+  JoltC_ECollectFacesMode mCollectFacesMode,
+  char** outErrMsg
 );
 
-float JPC_CollideShapeSettings_mCollisionTolerance_Get(
-  JPC_CollideShapeSettings_t * self
+float JoltC_CollideShapeSettings_mCollisionTolerance_Get(
+  JoltC_CollideShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeSettings_mCollisionTolerance_Set(
-  JPC_CollideShapeSettings_t * self,
-  float mCollisionTolerance
+void JoltC_CollideShapeSettings_mCollisionTolerance_Set(
+  JoltC_CollideShapeSettings_t * self,
+  float mCollisionTolerance,
+  char** outErrMsg
 );
 
-float JPC_CollideShapeSettings_mPenetrationTolerance_Get(
-  JPC_CollideShapeSettings_t * self
+float JoltC_CollideShapeSettings_mPenetrationTolerance_Get(
+  JoltC_CollideShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeSettings_mPenetrationTolerance_Set(
-  JPC_CollideShapeSettings_t * self,
-  float mPenetrationTolerance
+void JoltC_CollideShapeSettings_mPenetrationTolerance_Set(
+  JoltC_CollideShapeSettings_t * self,
+  float mPenetrationTolerance,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CollideShapeSettings_mActiveEdgeMovementDirection_Get(
-  JPC_CollideShapeSettings_t * self
+JoltC_Vec3_t * JoltC_CollideShapeSettings_mActiveEdgeMovementDirection_Get(
+  JoltC_CollideShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeSettings_mActiveEdgeMovementDirection_Set(
-  JPC_CollideShapeSettings_t * self,
-  JPC_Vec3_t * mActiveEdgeMovementDirection
+void JoltC_CollideShapeSettings_mActiveEdgeMovementDirection_Set(
+  JoltC_CollideShapeSettings_t * self,
+  JoltC_Vec3_t * mActiveEdgeMovementDirection,
+  char** outErrMsg
 );
 
 //endregion properties

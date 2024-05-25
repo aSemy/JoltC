@@ -8,66 +8,80 @@ extern "C" {
 
 //region constructors
 
-JPC_CollidePointClosestHitCollisionCollector_t * JPC_CollidePointClosestHitCollisionCollector_new();
+JoltC_CollidePointClosestHitCollisionCollector_t * JoltC_CollidePointClosestHitCollisionCollector_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_CollidePointClosestHitCollisionCollector_HadHit(
-  JPC_CollidePointClosestHitCollisionCollector_t * self
+bool JoltC_CollidePointClosestHitCollisionCollector_HadHit(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointClosestHitCollisionCollector_Reset(
-  JPC_CollidePointClosestHitCollisionCollector_t * self
+void JoltC_CollidePointClosestHitCollisionCollector_Reset(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointClosestHitCollisionCollector_SetContext(
-  JPC_CollidePointClosestHitCollisionCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CollidePointClosestHitCollisionCollector_SetContext(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_CollidePointClosestHitCollisionCollector_GetContext(
-  JPC_CollidePointClosestHitCollisionCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CollidePointClosestHitCollisionCollector_GetContext(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointClosestHitCollisionCollector_UpdateEarlyOutFraction(
-  JPC_CollidePointClosestHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CollidePointClosestHitCollisionCollector_UpdateEarlyOutFraction(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CollidePointClosestHitCollisionCollector_ResetEarlyOutFraction(
-  JPC_CollidePointClosestHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CollidePointClosestHitCollisionCollector_ResetEarlyOutFraction(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CollidePointClosestHitCollisionCollector_ForceEarlyOut(
-  JPC_CollidePointClosestHitCollisionCollector_t * self
+void JoltC_CollidePointClosestHitCollisionCollector_ForceEarlyOut(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CollidePointClosestHitCollisionCollector_ShouldEarlyOut(
-  JPC_CollidePointClosestHitCollisionCollector_t * self
+bool JoltC_CollidePointClosestHitCollisionCollector_ShouldEarlyOut(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CollidePointClosestHitCollisionCollector_GetEarlyOutFraction(
-  JPC_CollidePointClosestHitCollisionCollector_t * self
+float JoltC_CollidePointClosestHitCollisionCollector_GetEarlyOutFraction(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CollidePointClosestHitCollisionCollector_GetPositiveEarlyOutFraction(
-  JPC_CollidePointClosestHitCollisionCollector_t * self
+float JoltC_CollidePointClosestHitCollisionCollector_GetPositiveEarlyOutFraction(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_CollidePointResult_t * JPC_CollidePointClosestHitCollisionCollector_mHit_Get(
-  JPC_CollidePointClosestHitCollisionCollector_t * self
+JoltC_CollidePointResult_t * JoltC_CollidePointClosestHitCollisionCollector_mHit_Get(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointClosestHitCollisionCollector_mHit_Set(
-  JPC_CollidePointClosestHitCollisionCollector_t * self,
-  JPC_CollidePointResult_t * mHit
+void JoltC_CollidePointClosestHitCollisionCollector_mHit_Set(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self,
+  JoltC_CollidePointResult_t * mHit,
+  char** outErrMsg
 );
 
 //endregion properties

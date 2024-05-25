@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayShapeCastResult.h"
+#include "JoltC/JoltC_ArrayShapeCastResult.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,73 +8,136 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayShapeCastResult_empty(
-  JPC_ArrayShapeCastResult_t * self
+bool JoltC_ArrayShapeCastResult_empty(
+  JoltC_ArrayShapeCastResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayShapeCastResult_size(
-  JPC_ArrayShapeCastResult_t * self
+long JoltC_ArrayShapeCastResult_size(
+  JoltC_ArrayShapeCastResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_ShapeCastResult_t * JPC_ArrayShapeCastResult_at(
-  JPC_ArrayShapeCastResult_t * self,
-  long inIndex
+JoltC_ShapeCastResult_t * JoltC_ArrayShapeCastResult_at(
+  JoltC_ArrayShapeCastResult_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  ShapeCastResult& resultRef = selfCpp->at(
-  inIndex
-  );
-  ShapeCastResult * result = &resultRef;
-  return reinterpret_cast<JPC_ShapeCastResult_t *>(result);
+  try {
+    ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
+    ShapeCastResult& resultRef = selfCpp->at(
+    inIndex
+    );
+    ShapeCastResult * result = &resultRef;
+    return reinterpret_cast<JoltC_ShapeCastResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayShapeCastResult_push_back(
-  JPC_ArrayShapeCastResult_t * self,
-  const JPC_ShapeCastResult_t * inValue
+void JoltC_ArrayShapeCastResult_push_back(
+  JoltC_ArrayShapeCastResult_t * self,
+  const JoltC_ShapeCastResult_t * inValue,
+  char** outErrMsg
 ) {
-  ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<ShapeCastResult *>(inValue->obj)
-  );
+  try {
+    ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<ShapeCastResult *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayShapeCastResult_reserve(
-  JPC_ArrayShapeCastResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayShapeCastResult_reserve(
+  JoltC_ArrayShapeCastResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayShapeCastResult_resize(
-  JPC_ArrayShapeCastResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayShapeCastResult_resize(
+  JoltC_ArrayShapeCastResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayShapeCastResult_clear(
-  JPC_ArrayShapeCastResult_t * self
+void JoltC_ArrayShapeCastResult_clear(
+  JoltC_ArrayShapeCastResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

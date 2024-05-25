@@ -8,40 +8,48 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayVec3_empty(
-  JPC_ArrayVec3_t * self
+bool JoltC_ArrayVec3_empty(
+  JoltC_ArrayVec3_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayVec3_size(
-  JPC_ArrayVec3_t * self
+long JoltC_ArrayVec3_size(
+  JoltC_ArrayVec3_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ArrayVec3_at(
-  JPC_ArrayVec3_t * self,
-  long inIndex
+JoltC_Vec3_t * JoltC_ArrayVec3_at(
+  JoltC_ArrayVec3_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayVec3_push_back(
-  JPC_ArrayVec3_t * self,
-  const JPC_Vec3_t * inValue
+void JoltC_ArrayVec3_push_back(
+  JoltC_ArrayVec3_t * self,
+  const JoltC_Vec3_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayVec3_reserve(
-  JPC_ArrayVec3_t * self,
-  unsigned long inSize
+void JoltC_ArrayVec3_reserve(
+  JoltC_ArrayVec3_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayVec3_resize(
-  JPC_ArrayVec3_t * self,
-  unsigned long inSize
+void JoltC_ArrayVec3_resize(
+  JoltC_ArrayVec3_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayVec3_clear(
-  JPC_ArrayVec3_t * self
+void JoltC_ArrayVec3_clear(
+  JoltC_ArrayVec3_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3MemRef_t * JPC_ArrayVec3_data(
-  JPC_ArrayVec3_t * self
+JoltC_Vec3MemRef_t * JoltC_ArrayVec3_data(
+  JoltC_ArrayVec3_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

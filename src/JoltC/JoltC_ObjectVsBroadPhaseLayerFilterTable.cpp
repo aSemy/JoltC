@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ObjectVsBroadPhaseLayerFilterTable.h"
+#include "JoltC/JoltC_ObjectVsBroadPhaseLayerFilterTable.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,21 +8,30 @@ extern "C" {
 
 //region constructors
 
-JPC_ObjectVsBroadPhaseLayerFilterTable_t * JPC_ObjectVsBroadPhaseLayerFilterTable_new(
-  const JPC_BroadPhaseLayerInterface_t * inBroadPhaseLayerInterface,
+JoltC_ObjectVsBroadPhaseLayerFilterTable_t * JoltC_ObjectVsBroadPhaseLayerFilterTable_new(
+  const JoltC_BroadPhaseLayerInterface_t * inBroadPhaseLayerInterface,
   unsigned long inNumBroadPhaseLayers,
-  const JPC_ObjectLayerPairFilter_t * inObjectLayerPairFilter,
-  unsigned long inNumObjectLayers
+  const JoltC_ObjectLayerPairFilter_t * inObjectLayerPairFilter,
+  unsigned long inNumObjectLayers,
+  char** outErrMsg
 ) {
-  JPC_ObjectVsBroadPhaseLayerFilterTable_t * cInstance = new JPC_ObjectVsBroadPhaseLayerFilterTable_t();
-  ObjectVsBroadPhaseLayerFilterTable * cppInstance = new ObjectVsBroadPhaseLayerFilterTable(
-    *reinterpret_cast<BroadPhaseLayerInterface *>(inBroadPhaseLayerInterface->obj),
-    inNumBroadPhaseLayers,
-    *reinterpret_cast<ObjectLayerPairFilter *>(inObjectLayerPairFilter->obj),
-    inNumObjectLayers
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_ObjectVsBroadPhaseLayerFilterTable_t * cInstance = new JoltC_ObjectVsBroadPhaseLayerFilterTable_t();
+    ObjectVsBroadPhaseLayerFilterTable * cppInstance = new ObjectVsBroadPhaseLayerFilterTable(
+      *reinterpret_cast<BroadPhaseLayerInterface *>(inBroadPhaseLayerInterface->obj),
+      inNumBroadPhaseLayers,
+      *reinterpret_cast<ObjectLayerPairFilter *>(inObjectLayerPairFilter->obj),
+      inNumObjectLayers
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors

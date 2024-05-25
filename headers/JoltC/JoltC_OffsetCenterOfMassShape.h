@@ -8,115 +8,138 @@ extern "C" {
 
 //region constructors
 
-JPC_OffsetCenterOfMassShape_t * JPC_OffsetCenterOfMassShape_new(
-  const JPC_Shape_t * inShape,
-  const JPC_Vec3_t * inOffset
+JoltC_OffsetCenterOfMassShape_t * JoltC_OffsetCenterOfMassShape_new(
+  const JoltC_Shape_t * inShape,
+  const JoltC_Vec3_t * inOffset,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-const JPC_Shape_t * JPC_OffsetCenterOfMassShape_GetInnerShape(
-  JPC_OffsetCenterOfMassShape_t * self
+const JoltC_Shape_t * JoltC_OffsetCenterOfMassShape_GetInnerShape(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_OffsetCenterOfMassShape_GetRefCount(
-  JPC_OffsetCenterOfMassShape_t * self
+unsigned long JoltC_OffsetCenterOfMassShape_GetRefCount(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_OffsetCenterOfMassShape_AddRef(
-  JPC_OffsetCenterOfMassShape_t * self
+void JoltC_OffsetCenterOfMassShape_AddRef(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_OffsetCenterOfMassShape_Release(
-  JPC_OffsetCenterOfMassShape_t * self
+void JoltC_OffsetCenterOfMassShape_Release(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_OffsetCenterOfMassShape_GetType(
-  JPC_OffsetCenterOfMassShape_t * self
+JoltC_EShapeType JoltC_OffsetCenterOfMassShape_GetType(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_OffsetCenterOfMassShape_GetSubType(
-  JPC_OffsetCenterOfMassShape_t * self
+JoltC_EShapeSubType JoltC_OffsetCenterOfMassShape_GetSubType(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_OffsetCenterOfMassShape_MustBeStatic(
-  JPC_OffsetCenterOfMassShape_t * self
+bool JoltC_OffsetCenterOfMassShape_MustBeStatic(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_OffsetCenterOfMassShape_GetLocalBounds(
-  JPC_OffsetCenterOfMassShape_t * self
+JoltC_AABox_t * JoltC_OffsetCenterOfMassShape_GetLocalBounds(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_OffsetCenterOfMassShape_GetWorldSpaceBounds(
-  JPC_OffsetCenterOfMassShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_OffsetCenterOfMassShape_GetWorldSpaceBounds(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_OffsetCenterOfMassShape_GetCenterOfMass(
-  JPC_OffsetCenterOfMassShape_t * self
+JoltC_Vec3_t * JoltC_OffsetCenterOfMassShape_GetCenterOfMass(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_OffsetCenterOfMassShape_GetUserData(
-  JPC_OffsetCenterOfMassShape_t * self
+unsigned long long int JoltC_OffsetCenterOfMassShape_GetUserData(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_OffsetCenterOfMassShape_SetUserData(
-  JPC_OffsetCenterOfMassShape_t * self,
-  unsigned long long int inUserData
+void JoltC_OffsetCenterOfMassShape_SetUserData(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_OffsetCenterOfMassShape_GetSubShapeIDBitsRecursive(
-  JPC_OffsetCenterOfMassShape_t * self
+unsigned long JoltC_OffsetCenterOfMassShape_GetSubShapeIDBitsRecursive(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_OffsetCenterOfMassShape_GetInnerRadius(
-  JPC_OffsetCenterOfMassShape_t * self
+float JoltC_OffsetCenterOfMassShape_GetInnerRadius(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_OffsetCenterOfMassShape_GetMassProperties(
-  JPC_OffsetCenterOfMassShape_t * self
+JoltC_MassProperties_t * JoltC_OffsetCenterOfMassShape_GetMassProperties(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_OffsetCenterOfMassShape_GetMaterial(
-  JPC_OffsetCenterOfMassShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_OffsetCenterOfMassShape_GetMaterial(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_OffsetCenterOfMassShape_GetSurfaceNormal(
-  JPC_OffsetCenterOfMassShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_OffsetCenterOfMassShape_GetSurfaceNormal(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_OffsetCenterOfMassShape_GetSubShapeUserData(
-  JPC_OffsetCenterOfMassShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_OffsetCenterOfMassShape_GetSubShapeUserData(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_OffsetCenterOfMassShape_GetSubShapeTransformedShape(
-  JPC_OffsetCenterOfMassShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_OffsetCenterOfMassShape_GetSubShapeTransformedShape(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_OffsetCenterOfMassShape_GetVolume(
-  JPC_OffsetCenterOfMassShape_t * self
+float JoltC_OffsetCenterOfMassShape_GetVolume(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_OffsetCenterOfMassShape_IsValidScale(
-  JPC_OffsetCenterOfMassShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_OffsetCenterOfMassShape_IsValidScale(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_OffsetCenterOfMassShape_ScaleShape(
-  JPC_OffsetCenterOfMassShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_OffsetCenterOfMassShape_ScaleShape(
+  JoltC_OffsetCenterOfMassShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

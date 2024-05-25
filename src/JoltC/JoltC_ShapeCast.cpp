@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ShapeCast.h"
+#include "JoltC/JoltC_ShapeCast.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,76 +8,98 @@ extern "C" {
 
 //region constructors
 
-JPC_ShapeCast_t * JPC_ShapeCast_new(
-  const JPC_Shape_t * inShape,
-  const JPC_Vec3_t * inScale,
-  const JPC_Mat44_t * inCenterOfMassStart,
-  const JPC_Vec3_t * inDirection
+JoltC_ShapeCast_t * JoltC_ShapeCast_new(
+  const JoltC_Shape_t * inShape,
+  const JoltC_Vec3_t * inScale,
+  const JoltC_Mat44_t * inCenterOfMassStart,
+  const JoltC_Vec3_t * inDirection,
+  char** outErrMsg
 ) {
-  JPC_ShapeCast_t * cInstance = new JPC_ShapeCast_t();
-  ShapeCast * cppInstance = new ShapeCast(
-    reinterpret_cast<Shape *>(inShape->obj),
-    *reinterpret_cast<Vec3 *>(inScale->obj),
-    *reinterpret_cast<Mat44 *>(inCenterOfMassStart->obj),
-    *reinterpret_cast<Vec3 *>(inDirection->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_ShapeCast_t * cInstance = new JoltC_ShapeCast_t();
+    ShapeCast * cppInstance = new ShapeCast(
+      reinterpret_cast<Shape *>(inShape->obj),
+      *reinterpret_cast<Vec3 *>(inScale->obj),
+      *reinterpret_cast<Mat44 *>(inCenterOfMassStart->obj),
+      *reinterpret_cast<Vec3 *>(inDirection->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-const JPC_Vec3_t * JPC_ShapeCast_GetPointOnRay(
-  JPC_ShapeCast_t * self,
-  float inFraction
+const JoltC_Vec3_t * JoltC_ShapeCast_GetPointOnRay(
+  JoltC_ShapeCast_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
-  const Vec3 resultValue = selfCpp->GetPointOnRay(
-  inFraction
-  );
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JPC_Vec3_t *>(result);
+  try {
+    ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
+    const Vec3 resultValue = selfCpp->GetPointOnRay(
+    inFraction
+    );
+    const Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-const JPC_Shape_t * JPC_ShapeCast_mShape_Get(
-  JPC_ShapeCast_t * self
+const JoltC_Shape_t * JoltC_ShapeCast_mShape_Get(
+  JoltC_ShapeCast_t * self,
+  char** outErrMsg
 ) {
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
   const Shape * result = selfCpp->mShape;
-  return reinterpret_cast<const JPC_Shape_t *>(result);
+  return reinterpret_cast<const JoltC_Shape_t *>(result);
 };
 
-const JPC_Vec3_t * JPC_ShapeCast_mScale_Get(
-  JPC_ShapeCast_t * self
+const JoltC_Vec3_t * JoltC_ShapeCast_mScale_Get(
+  JoltC_ShapeCast_t * self,
+  char** outErrMsg
 ) {
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
   const Vec3 resultValue = selfCpp->mScale;
   const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JPC_Vec3_t *>(result);
+  return reinterpret_cast<const JoltC_Vec3_t *>(result);
 };
 
-const JPC_Mat44_t * JPC_ShapeCast_mCenterOfMassStart_Get(
-  JPC_ShapeCast_t * self
+const JoltC_Mat44_t * JoltC_ShapeCast_mCenterOfMassStart_Get(
+  JoltC_ShapeCast_t * self,
+  char** outErrMsg
 ) {
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
   const Mat44 resultValue = selfCpp->mCenterOfMassStart;
   const Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<const JPC_Mat44_t *>(result);
+  return reinterpret_cast<const JoltC_Mat44_t *>(result);
 };
 
-const JPC_Vec3_t * JPC_ShapeCast_mDirection_Get(
-  JPC_ShapeCast_t * self
+const JoltC_Vec3_t * JoltC_ShapeCast_mDirection_Get(
+  JoltC_ShapeCast_t * self,
+  char** outErrMsg
 ) {
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
   const Vec3 resultValue = selfCpp->mDirection;
   const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JPC_Vec3_t *>(result);
+  return reinterpret_cast<const JoltC_Vec3_t *>(result);
 };
 
 //endregion properties

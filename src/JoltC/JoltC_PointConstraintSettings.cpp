@@ -1,5 +1,6 @@
-#include "JoltC/JPC_PointConstraintSettings.h"
+#include "JoltC/JoltC_PointConstraintSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,151 +8,209 @@ extern "C" {
 
 //region constructors
 
-JPC_PointConstraintSettings_t * JPC_PointConstraintSettings_new() {
-  JPC_PointConstraintSettings_t * cInstance = new JPC_PointConstraintSettings_t();
-  PointConstraintSettings * cppInstance = new PointConstraintSettings();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_PointConstraintSettings_t * JoltC_PointConstraintSettings_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_PointConstraintSettings_t * cInstance = new JoltC_PointConstraintSettings_t();
+    PointConstraintSettings * cppInstance = new PointConstraintSettings();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-JPC_Constraint_t * JPC_PointConstraintSettings_Create(
-  JPC_PointConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_PointConstraintSettings_Create(
+  JoltC_PointConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 ) {
-  PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
-  );
-  return reinterpret_cast<JPC_Constraint_t *>(result);
+  try {
+    PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
+    Constraint * result = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
+    );
+    return reinterpret_cast<JoltC_Constraint_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_PointConstraintSettings_GetRefCount(
-  JPC_PointConstraintSettings_t * self
+unsigned long JoltC_PointConstraintSettings_GetRefCount(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PointConstraintSettings_AddRef(
-  JPC_PointConstraintSettings_t * self
+void JoltC_PointConstraintSettings_AddRef(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PointConstraintSettings_Release(
-  JPC_PointConstraintSettings_t * self
+void JoltC_PointConstraintSettings_Release(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_PointConstraintSettings_mSpace_Get(
-  JPC_PointConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_PointConstraintSettings_mSpace_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   EConstraintSpace result = selfCpp->mSpace;
-  return static_cast<JPC_EConstraintSpace>(static_cast<int>(result));
+  return static_cast<JoltC_EConstraintSpace>(static_cast<int>(result));
 };
 
-void JPC_PointConstraintSettings_mSpace_Set(
-  JPC_PointConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_PointConstraintSettings_mSpace_Set(
+  JoltC_PointConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
 };
 
-JPC_RVec3_t * JPC_PointConstraintSettings_mPoint1_Get(
-  JPC_PointConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_PointConstraintSettings_mPoint1_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   RVec3 resultValue = selfCpp->mPoint1;
   RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JPC_RVec3_t *>(result);
+  return reinterpret_cast<JoltC_RVec3_t *>(result);
 };
 
-void JPC_PointConstraintSettings_mPoint1_Set(
-  JPC_PointConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint1
+void JoltC_PointConstraintSettings_mPoint1_Set(
+  JoltC_PointConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint1,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mPoint1 = *reinterpret_cast<RVec3 *>(mPoint1->obj);
 };
 
-JPC_RVec3_t * JPC_PointConstraintSettings_mPoint2_Get(
-  JPC_PointConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_PointConstraintSettings_mPoint2_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   RVec3 resultValue = selfCpp->mPoint2;
   RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JPC_RVec3_t *>(result);
+  return reinterpret_cast<JoltC_RVec3_t *>(result);
 };
 
-void JPC_PointConstraintSettings_mPoint2_Set(
-  JPC_PointConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint2
+void JoltC_PointConstraintSettings_mPoint2_Set(
+  JoltC_PointConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint2,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mPoint2 = *reinterpret_cast<RVec3 *>(mPoint2->obj);
 };
 
-bool JPC_PointConstraintSettings_mEnabled_Get(
-  JPC_PointConstraintSettings_t * self
+bool JoltC_PointConstraintSettings_mEnabled_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   bool result = selfCpp->mEnabled;
   return result;
 };
 
-void JPC_PointConstraintSettings_mEnabled_Set(
-  JPC_PointConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_PointConstraintSettings_mEnabled_Set(
+  JoltC_PointConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
 };
 
-long JPC_PointConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_PointConstraintSettings_t * self
+long JoltC_PointConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   long result = selfCpp->mNumVelocityStepsOverride;
   return result;
 };
 
-void JPC_PointConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_PointConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_PointConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_PointConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
 };
 
-long JPC_PointConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_PointConstraintSettings_t * self
+long JoltC_PointConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   long result = selfCpp->mNumPositionStepsOverride;
   return result;
 };
 
-void JPC_PointConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_PointConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_PointConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_PointConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;

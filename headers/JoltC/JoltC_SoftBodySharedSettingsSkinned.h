@@ -8,51 +8,61 @@ extern "C" {
 
 //region properties
 
-unsigned long JPC_SoftBodySharedSettingsSkinned_mVertex_Get(
-  JPC_SoftBodySharedSettingsSkinned_t * self
+unsigned long JoltC_SoftBodySharedSettingsSkinned_mVertex_Get(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsSkinned_mVertex_Set(
-  JPC_SoftBodySharedSettingsSkinned_t * self,
-  unsigned long mVertex
+void JoltC_SoftBodySharedSettingsSkinned_mVertex_Set(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  unsigned long mVertex,
+  char** outErrMsg
 );
 
-size_t JPC_SoftBodySharedSettingsSkinned_mWeights_Get(
-  JPC_SoftBodySharedSettingsSkinned_t * self,
-  JPC_SoftBodySharedSettingsSkinWeight_t * * outValue
+size_t JoltC_SoftBodySharedSettingsSkinned_mWeights_Get(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  JoltC_SoftBodySharedSettingsSkinWeight_t * * outValue,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsSkinned_mWeights_Set(
-  JPC_SoftBodySharedSettingsSkinned_t * self,
-  JPC_SoftBodySharedSettingsSkinWeight_t * * mWeights,
-  size_t mWeightsSize
+void JoltC_SoftBodySharedSettingsSkinned_mWeights_Set(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  JoltC_SoftBodySharedSettingsSkinWeight_t * * mWeights,
+  size_t mWeightsSize,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsSkinned_mMaxDistance_Get(
-  JPC_SoftBodySharedSettingsSkinned_t * self
+float JoltC_SoftBodySharedSettingsSkinned_mMaxDistance_Get(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsSkinned_mMaxDistance_Set(
-  JPC_SoftBodySharedSettingsSkinned_t * self,
-  float mMaxDistance
+void JoltC_SoftBodySharedSettingsSkinned_mMaxDistance_Set(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  float mMaxDistance,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsSkinned_mBackStopDistance_Get(
-  JPC_SoftBodySharedSettingsSkinned_t * self
+float JoltC_SoftBodySharedSettingsSkinned_mBackStopDistance_Get(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsSkinned_mBackStopDistance_Set(
-  JPC_SoftBodySharedSettingsSkinned_t * self,
-  float mBackStopDistance
+void JoltC_SoftBodySharedSettingsSkinned_mBackStopDistance_Set(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  float mBackStopDistance,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsSkinned_mBackStopRadius_Get(
-  JPC_SoftBodySharedSettingsSkinned_t * self
+float JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Get(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsSkinned_mBackStopRadius_Set(
-  JPC_SoftBodySharedSettingsSkinned_t * self,
-  float mBackStopRadius
+void JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Set(
+  JoltC_SoftBodySharedSettingsSkinned_t * self,
+  float mBackStopRadius,
+  char** outErrMsg
 );
 
 //endregion properties

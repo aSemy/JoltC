@@ -1,5 +1,6 @@
-#include "JoltC/JPC_BodyID.h"
+#include "JoltC/JoltC_BodyID.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,42 +8,79 @@ extern "C" {
 
 //region constructors
 
-JPC_BodyID_t * JPC_BodyID_new_0() {
-  JPC_BodyID_t * cInstance = new JPC_BodyID_t();
-  BodyID * cppInstance = new BodyID();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_BodyID_t * JoltC_BodyID_new_0(
+  char** outErrMsg
+) {
+  try {
+    JoltC_BodyID_t * cInstance = new JoltC_BodyID_t();
+    BodyID * cppInstance = new BodyID();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_BodyID_t * JPC_BodyID_new_1(
-  unsigned long inIndexAndSequenceNumber
+JoltC_BodyID_t * JoltC_BodyID_new_1(
+  unsigned long inIndexAndSequenceNumber,
+  char** outErrMsg
 ) {
-  JPC_BodyID_t * cInstance = new JPC_BodyID_t();
-  BodyID * cppInstance = new BodyID(
-    inIndexAndSequenceNumber
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_BodyID_t * cInstance = new JoltC_BodyID_t();
+    BodyID * cppInstance = new BodyID(
+      inIndexAndSequenceNumber
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_BodyID_GetIndex(
-  JPC_BodyID_t * self
+unsigned long JoltC_BodyID_GetIndex(
+  JoltC_BodyID_t * self,
+  char** outErrMsg
 ) {
-  BodyID * selfCpp = static_cast<BodyID *>(self->obj);
-  unsigned long result = selfCpp->GetIndex();
-  return result;
+  try {
+    BodyID * selfCpp = static_cast<BodyID *>(self->obj);
+    unsigned long result = selfCpp->GetIndex();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_BodyID_GetIndexAndSequenceNumber(
-  JPC_BodyID_t * self
+unsigned long JoltC_BodyID_GetIndexAndSequenceNumber(
+  JoltC_BodyID_t * self,
+  char** outErrMsg
 ) {
-  BodyID * selfCpp = static_cast<BodyID *>(self->obj);
-  unsigned long result = selfCpp->GetIndexAndSequenceNumber();
-  return result;
+  try {
+    BodyID * selfCpp = static_cast<BodyID *>(self->obj);
+    unsigned long result = selfCpp->GetIndexAndSequenceNumber();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

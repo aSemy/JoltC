@@ -8,28 +8,34 @@ extern "C" {
 
 //region constructors
 
-JPC_Skeleton_t * JPC_Skeleton_new();
+JoltC_Skeleton_t * JoltC_Skeleton_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-long JPC_Skeleton_AddJoint(
-  JPC_Skeleton_t * self,
-  const JPC_JPHString_t * inName,
-  long inParentIndex
+long JoltC_Skeleton_AddJoint(
+  JoltC_Skeleton_t * self,
+  const JoltC_JPHString_t * inName,
+  long inParentIndex,
+  char** outErrMsg
 );
 
-long JPC_Skeleton_GetJointCount(
-  JPC_Skeleton_t * self
+long JoltC_Skeleton_GetJointCount(
+  JoltC_Skeleton_t * self,
+  char** outErrMsg
 );
 
-bool JPC_Skeleton_AreJointsCorrectlyOrdered(
-  JPC_Skeleton_t * self
+bool JoltC_Skeleton_AreJointsCorrectlyOrdered(
+  JoltC_Skeleton_t * self,
+  char** outErrMsg
 );
 
-void JPC_Skeleton_CalculateParentJointIndices(
-  JPC_Skeleton_t * self
+void JoltC_Skeleton_CalculateParentJointIndices(
+  JoltC_Skeleton_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

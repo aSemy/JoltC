@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SwingTwistConstraint.h"
+#include "JoltC/JoltC_SwingTwistConstraint.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,478 +8,946 @@ extern "C" {
 
 //region functions
 
-JPC_Vec3_t * JPC_SwingTwistConstraint_GetLocalSpacePosition1(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetLocalSpacePosition1(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetLocalSpacePosition1();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Vec3 resultValue = selfCpp->GetLocalSpacePosition1();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_SwingTwistConstraint_GetLocalSpacePosition2(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetLocalSpacePosition2(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetLocalSpacePosition2();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Vec3 resultValue = selfCpp->GetLocalSpacePosition2();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Quat_t * JPC_SwingTwistConstraint_GetConstraintToBody1(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Quat_t * JoltC_SwingTwistConstraint_GetConstraintToBody1(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Quat resultValue = selfCpp->GetConstraintToBody1();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JPC_Quat_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Quat resultValue = selfCpp->GetConstraintToBody1();
+    Quat* result = new Quat(resultValue);
+    return reinterpret_cast<JoltC_Quat_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Quat_t * JPC_SwingTwistConstraint_GetConstraintToBody2(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Quat_t * JoltC_SwingTwistConstraint_GetConstraintToBody2(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Quat resultValue = selfCpp->GetConstraintToBody2();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JPC_Quat_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Quat resultValue = selfCpp->GetConstraintToBody2();
+    Quat* result = new Quat(resultValue);
+    return reinterpret_cast<JoltC_Quat_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SwingTwistConstraint_GetNormalHalfConeAngle(
-  JPC_SwingTwistConstraint_t * self
+float JoltC_SwingTwistConstraint_GetNormalHalfConeAngle(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  float result = selfCpp->GetNormalHalfConeAngle();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    float result = selfCpp->GetNormalHalfConeAngle();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetNormalHalfConeAngle(
-  JPC_SwingTwistConstraint_t * self,
-  float inAngle
+void JoltC_SwingTwistConstraint_SetNormalHalfConeAngle(
+  JoltC_SwingTwistConstraint_t * self,
+  float inAngle,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetNormalHalfConeAngle(
-  inAngle
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetNormalHalfConeAngle(
+    inAngle
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SwingTwistConstraint_GetPlaneHalfConeAngle(
-  JPC_SwingTwistConstraint_t * self
+float JoltC_SwingTwistConstraint_GetPlaneHalfConeAngle(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  float result = selfCpp->GetPlaneHalfConeAngle();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    float result = selfCpp->GetPlaneHalfConeAngle();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetPlaneHalfConeAngle(
-  JPC_SwingTwistConstraint_t * self,
-  float inAngle
+void JoltC_SwingTwistConstraint_SetPlaneHalfConeAngle(
+  JoltC_SwingTwistConstraint_t * self,
+  float inAngle,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetPlaneHalfConeAngle(
-  inAngle
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetPlaneHalfConeAngle(
+    inAngle
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SwingTwistConstraint_GetTwistMinAngle(
-  JPC_SwingTwistConstraint_t * self
+float JoltC_SwingTwistConstraint_GetTwistMinAngle(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  float result = selfCpp->GetTwistMinAngle();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    float result = selfCpp->GetTwistMinAngle();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetTwistMinAngle(
-  JPC_SwingTwistConstraint_t * self,
-  float inAngle
+void JoltC_SwingTwistConstraint_SetTwistMinAngle(
+  JoltC_SwingTwistConstraint_t * self,
+  float inAngle,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetTwistMinAngle(
-  inAngle
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetTwistMinAngle(
+    inAngle
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SwingTwistConstraint_GetTwistMaxAngle(
-  JPC_SwingTwistConstraint_t * self
+float JoltC_SwingTwistConstraint_GetTwistMaxAngle(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  float result = selfCpp->GetTwistMaxAngle();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    float result = selfCpp->GetTwistMaxAngle();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetTwistMaxAngle(
-  JPC_SwingTwistConstraint_t * self,
-  float inAngle
+void JoltC_SwingTwistConstraint_SetTwistMaxAngle(
+  JoltC_SwingTwistConstraint_t * self,
+  float inAngle,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetTwistMaxAngle(
-  inAngle
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetTwistMaxAngle(
+    inAngle
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_MotorSettings_t * JPC_SwingTwistConstraint_GetSwingMotorSettings(
-  JPC_SwingTwistConstraint_t * self
+JoltC_MotorSettings_t * JoltC_SwingTwistConstraint_GetSwingMotorSettings(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  MotorSettings& resultRef = selfCpp->GetSwingMotorSettings();
-  MotorSettings * result = &resultRef;
-  return reinterpret_cast<JPC_MotorSettings_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    MotorSettings& resultRef = selfCpp->GetSwingMotorSettings();
+    MotorSettings * result = &resultRef;
+    return reinterpret_cast<JoltC_MotorSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_MotorSettings_t * JPC_SwingTwistConstraint_GetTwistMotorSettings(
-  JPC_SwingTwistConstraint_t * self
+JoltC_MotorSettings_t * JoltC_SwingTwistConstraint_GetTwistMotorSettings(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  MotorSettings& resultRef = selfCpp->GetTwistMotorSettings();
-  MotorSettings * result = &resultRef;
-  return reinterpret_cast<JPC_MotorSettings_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    MotorSettings& resultRef = selfCpp->GetTwistMotorSettings();
+    MotorSettings * result = &resultRef;
+    return reinterpret_cast<JoltC_MotorSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetMaxFrictionTorque(
-  JPC_SwingTwistConstraint_t * self,
-  float inFrictionTorque
+void JoltC_SwingTwistConstraint_SetMaxFrictionTorque(
+  JoltC_SwingTwistConstraint_t * self,
+  float inFrictionTorque,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetMaxFrictionTorque(
-  inFrictionTorque
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetMaxFrictionTorque(
+    inFrictionTorque
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SwingTwistConstraint_GetMaxFrictionTorque(
-  JPC_SwingTwistConstraint_t * self
+float JoltC_SwingTwistConstraint_GetMaxFrictionTorque(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  float result = selfCpp->GetMaxFrictionTorque();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    float result = selfCpp->GetMaxFrictionTorque();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetSwingMotorState(
-  JPC_SwingTwistConstraint_t * self,
-  JPC_EMotorState inState
+void JoltC_SwingTwistConstraint_SetSwingMotorState(
+  JoltC_SwingTwistConstraint_t * self,
+  JoltC_EMotorState inState,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetSwingMotorState(
-  static_cast<EMotorState>(static_cast<int>(inState))
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetSwingMotorState(
+    static_cast<EMotorState>(static_cast<int>(inState))
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EMotorState JPC_SwingTwistConstraint_GetSwingMotorState(
-  JPC_SwingTwistConstraint_t * self
+JoltC_EMotorState JoltC_SwingTwistConstraint_GetSwingMotorState(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  EMotorState result = selfCpp->GetSwingMotorState();
-  return static_cast<JPC_EMotorState>(static_cast<int>(result));
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    EMotorState result = selfCpp->GetSwingMotorState();
+    return static_cast<JoltC_EMotorState>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetTwistMotorState(
-  JPC_SwingTwistConstraint_t * self,
-  JPC_EMotorState inState
+void JoltC_SwingTwistConstraint_SetTwistMotorState(
+  JoltC_SwingTwistConstraint_t * self,
+  JoltC_EMotorState inState,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetTwistMotorState(
-  static_cast<EMotorState>(static_cast<int>(inState))
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetTwistMotorState(
+    static_cast<EMotorState>(static_cast<int>(inState))
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EMotorState JPC_SwingTwistConstraint_GetTwistMotorState(
-  JPC_SwingTwistConstraint_t * self
+JoltC_EMotorState JoltC_SwingTwistConstraint_GetTwistMotorState(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  EMotorState result = selfCpp->GetTwistMotorState();
-  return static_cast<JPC_EMotorState>(static_cast<int>(result));
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    EMotorState result = selfCpp->GetTwistMotorState();
+    return static_cast<JoltC_EMotorState>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetTargetAngularVelocityCS(
-  JPC_SwingTwistConstraint_t * self,
-  const JPC_Vec3_t * inAngularVelocity
+void JoltC_SwingTwistConstraint_SetTargetAngularVelocityCS(
+  JoltC_SwingTwistConstraint_t * self,
+  const JoltC_Vec3_t * inAngularVelocity,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetTargetAngularVelocityCS(
-  *reinterpret_cast<Vec3 *>(inAngularVelocity->obj)
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetTargetAngularVelocityCS(
+    *reinterpret_cast<Vec3 *>(inAngularVelocity->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_SwingTwistConstraint_GetTargetAngularVelocityCS(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetTargetAngularVelocityCS(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTargetAngularVelocityCS();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Vec3 resultValue = selfCpp->GetTargetAngularVelocityCS();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetTargetOrientationCS(
-  JPC_SwingTwistConstraint_t * self,
-  const JPC_Quat_t * inOrientation
+void JoltC_SwingTwistConstraint_SetTargetOrientationCS(
+  JoltC_SwingTwistConstraint_t * self,
+  const JoltC_Quat_t * inOrientation,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetTargetOrientationCS(
-  *reinterpret_cast<Quat *>(inOrientation->obj)
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetTargetOrientationCS(
+    *reinterpret_cast<Quat *>(inOrientation->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Quat_t * JPC_SwingTwistConstraint_GetTargetOrientationCS(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Quat_t * JoltC_SwingTwistConstraint_GetTargetOrientationCS(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Quat resultValue = selfCpp->GetTargetOrientationCS();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JPC_Quat_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Quat resultValue = selfCpp->GetTargetOrientationCS();
+    Quat* result = new Quat(resultValue);
+    return reinterpret_cast<JoltC_Quat_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetTargetOrientationBS(
-  JPC_SwingTwistConstraint_t * self,
-  const JPC_Quat_t * inOrientation
+void JoltC_SwingTwistConstraint_SetTargetOrientationBS(
+  JoltC_SwingTwistConstraint_t * self,
+  const JoltC_Quat_t * inOrientation,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetTargetOrientationBS(
-  *reinterpret_cast<Quat *>(inOrientation->obj)
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetTargetOrientationBS(
+    *reinterpret_cast<Quat *>(inOrientation->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Quat_t * JPC_SwingTwistConstraint_GetRotationInConstraintSpace(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Quat_t * JoltC_SwingTwistConstraint_GetRotationInConstraintSpace(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Quat resultValue = selfCpp->GetRotationInConstraintSpace();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JPC_Quat_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Quat resultValue = selfCpp->GetRotationInConstraintSpace();
+    Quat* result = new Quat(resultValue);
+    return reinterpret_cast<JoltC_Quat_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_SwingTwistConstraint_GetTotalLambdaPosition(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetTotalLambdaPosition(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTotalLambdaPosition();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Vec3 resultValue = selfCpp->GetTotalLambdaPosition();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SwingTwistConstraint_GetTotalLambdaTwist(
-  JPC_SwingTwistConstraint_t * self
+float JoltC_SwingTwistConstraint_GetTotalLambdaTwist(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaTwist();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    float result = selfCpp->GetTotalLambdaTwist();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SwingTwistConstraint_GetTotalLambdaSwingY(
-  JPC_SwingTwistConstraint_t * self
+float JoltC_SwingTwistConstraint_GetTotalLambdaSwingY(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaSwingY();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    float result = selfCpp->GetTotalLambdaSwingY();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SwingTwistConstraint_GetTotalLambdaSwingZ(
-  JPC_SwingTwistConstraint_t * self
+float JoltC_SwingTwistConstraint_GetTotalLambdaSwingZ(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaSwingZ();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    float result = selfCpp->GetTotalLambdaSwingZ();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_SwingTwistConstraint_GetTotalLambdaMotor(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetTotalLambdaMotor(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTotalLambdaMotor();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Vec3 resultValue = selfCpp->GetTotalLambdaMotor();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_SwingTwistConstraint_GetBody1(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Body_t * JoltC_SwingTwistConstraint_GetBody1(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody1();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_SwingTwistConstraint_GetBody2(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Body_t * JoltC_SwingTwistConstraint_GetBody2(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody2();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_SwingTwistConstraint_GetConstraintToBody1Matrix(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Mat44_t * JoltC_SwingTwistConstraint_GetConstraintToBody1Matrix(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_SwingTwistConstraint_GetConstraintToBody2Matrix(
-  JPC_SwingTwistConstraint_t * self
+JoltC_Mat44_t * JoltC_SwingTwistConstraint_GetConstraintToBody2Matrix(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_SwingTwistConstraint_GetRefCount(
-  JPC_SwingTwistConstraint_t * self
+unsigned long JoltC_SwingTwistConstraint_GetRefCount(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_AddRef(
-  JPC_SwingTwistConstraint_t * self
+void JoltC_SwingTwistConstraint_AddRef(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_Release(
-  JPC_SwingTwistConstraint_t * self
+void JoltC_SwingTwistConstraint_Release(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintType JPC_SwingTwistConstraint_GetType(
-  JPC_SwingTwistConstraint_t * self
+JoltC_EConstraintType JoltC_SwingTwistConstraint_GetType(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  EConstraintType result = selfCpp->GetType();
-  return static_cast<JPC_EConstraintType>(static_cast<int>(result));
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    EConstraintType result = selfCpp->GetType();
+    return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintSubType JPC_SwingTwistConstraint_GetSubType(
-  JPC_SwingTwistConstraint_t * self
+JoltC_EConstraintSubType JoltC_SwingTwistConstraint_GetSubType(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  EConstraintSubType result = selfCpp->GetSubType();
-  return static_cast<JPC_EConstraintSubType>(static_cast<int>(result));
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    EConstraintSubType result = selfCpp->GetSubType();
+    return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_SwingTwistConstraint_GetConstraintPriority(
-  JPC_SwingTwistConstraint_t * self
+unsigned long JoltC_SwingTwistConstraint_GetConstraintPriority(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetConstraintPriority();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetConstraintPriority(
-  JPC_SwingTwistConstraint_t * self,
-  unsigned long inPriority
+void JoltC_SwingTwistConstraint_SetConstraintPriority(
+  JoltC_SwingTwistConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetConstraintPriority(
-  inPriority
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetConstraintPriority(
+    inPriority
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetNumVelocityStepsOverride(
-  JPC_SwingTwistConstraint_t * self,
-  long inN
+void JoltC_SwingTwistConstraint_SetNumVelocityStepsOverride(
+  JoltC_SwingTwistConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetNumVelocityStepsOverride(
-  inN
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetNumVelocityStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_SwingTwistConstraint_GetNumVelocityStepsOverride(
-  JPC_SwingTwistConstraint_t * self
+long JoltC_SwingTwistConstraint_GetNumVelocityStepsOverride(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    long result = selfCpp->GetNumVelocityStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetNumPositionStepsOverride(
-  JPC_SwingTwistConstraint_t * self,
-  long inN
+void JoltC_SwingTwistConstraint_SetNumPositionStepsOverride(
+  JoltC_SwingTwistConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetNumPositionStepsOverride(
-  inN
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetNumPositionStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_SwingTwistConstraint_GetNumPositionStepsOverride(
-  JPC_SwingTwistConstraint_t * self
+long JoltC_SwingTwistConstraint_GetNumPositionStepsOverride(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    long result = selfCpp->GetNumPositionStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetEnabled(
-  JPC_SwingTwistConstraint_t * self,
-  bool inEnabled
+void JoltC_SwingTwistConstraint_SetEnabled(
+  JoltC_SwingTwistConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetEnabled(
-  inEnabled
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetEnabled(
+    inEnabled
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_SwingTwistConstraint_GetEnabled(
-  JPC_SwingTwistConstraint_t * self
+bool JoltC_SwingTwistConstraint_GetEnabled(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    bool result = selfCpp->GetEnabled();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_SwingTwistConstraint_IsActive(
-  JPC_SwingTwistConstraint_t * self
+bool JoltC_SwingTwistConstraint_IsActive(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    bool result = selfCpp->IsActive();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_SwingTwistConstraint_GetUserData(
-  JPC_SwingTwistConstraint_t * self
+unsigned long long int JoltC_SwingTwistConstraint_GetUserData(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_SetUserData(
-  JPC_SwingTwistConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_SwingTwistConstraint_SetUserData(
+  JoltC_SwingTwistConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SwingTwistConstraint_ResetWarmStart(
-  JPC_SwingTwistConstraint_t * self
+void JoltC_SwingTwistConstraint_ResetWarmStart(
+  JoltC_SwingTwistConstraint_t * self,
+  char** outErrMsg
 ) {
-  SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  
-  selfCpp->ResetWarmStart();
+  try {
+    SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
+    
+    selfCpp->ResetWarmStart();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

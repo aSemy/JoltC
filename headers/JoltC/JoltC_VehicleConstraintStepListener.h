@@ -8,8 +8,9 @@ extern "C" {
 
 //region constructors
 
-JPC_VehicleConstraintStepListener_t * JPC_VehicleConstraintStepListener_new(
-  JPC_VehicleConstraint_t * inConstraint
+JoltC_VehicleConstraintStepListener_t * JoltC_VehicleConstraintStepListener_new(
+  JoltC_VehicleConstraint_t * inConstraint,
+  char** outErrMsg
 );
 
 //endregion constructors

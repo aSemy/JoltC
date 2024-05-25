@@ -8,180 +8,221 @@ extern "C" {
 
 //region functions
 
-float JPC_SliderConstraint_GetCurrentPosition(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetCurrentPosition(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetMaxFrictionForce(
-  JPC_SliderConstraint_t * self,
-  float inFrictionForce
+void JoltC_SliderConstraint_SetMaxFrictionForce(
+  JoltC_SliderConstraint_t * self,
+  float inFrictionForce,
+  char** outErrMsg
 );
 
-float JPC_SliderConstraint_GetMaxFrictionForce(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetMaxFrictionForce(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_MotorSettings_t * JPC_SliderConstraint_GetMotorSettings(
-  JPC_SliderConstraint_t * self
+JoltC_MotorSettings_t * JoltC_SliderConstraint_GetMotorSettings(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetMotorState(
-  JPC_SliderConstraint_t * self,
-  JPC_EMotorState inState
+void JoltC_SliderConstraint_SetMotorState(
+  JoltC_SliderConstraint_t * self,
+  JoltC_EMotorState inState,
+  char** outErrMsg
 );
 
-JPC_EMotorState JPC_SliderConstraint_GetMotorState(
-  JPC_SliderConstraint_t * self
+JoltC_EMotorState JoltC_SliderConstraint_GetMotorState(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetTargetVelocity(
-  JPC_SliderConstraint_t * self,
-  float inVelocity
+void JoltC_SliderConstraint_SetTargetVelocity(
+  JoltC_SliderConstraint_t * self,
+  float inVelocity,
+  char** outErrMsg
 );
 
-float JPC_SliderConstraint_GetTargetVelocity(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetTargetVelocity(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetTargetPosition(
-  JPC_SliderConstraint_t * self,
-  float inPosition
+void JoltC_SliderConstraint_SetTargetPosition(
+  JoltC_SliderConstraint_t * self,
+  float inPosition,
+  char** outErrMsg
 );
 
-float JPC_SliderConstraint_GetTargetPosition(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetTargetPosition(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetLimits(
-  JPC_SliderConstraint_t * self,
+void JoltC_SliderConstraint_SetLimits(
+  JoltC_SliderConstraint_t * self,
   float inLimitsMin,
-  float inLimitsMax
+  float inLimitsMax,
+  char** outErrMsg
 );
 
-float JPC_SliderConstraint_GetLimitsMin(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetLimitsMin(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-float JPC_SliderConstraint_GetLimitsMax(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetLimitsMax(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_SliderConstraint_HasLimits(
-  JPC_SliderConstraint_t * self
+bool JoltC_SliderConstraint_HasLimits(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_SpringSettings_t * JPC_SliderConstraint_GetLimitsSpringSettings(
-  JPC_SliderConstraint_t * self
+JoltC_SpringSettings_t * JoltC_SliderConstraint_GetLimitsSpringSettings(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetLimitsSpringSettings(
-  JPC_SliderConstraint_t * self,
-  const JPC_SpringSettings_t * inLimitsSpringSettings
+void JoltC_SliderConstraint_SetLimitsSpringSettings(
+  JoltC_SliderConstraint_t * self,
+  const JoltC_SpringSettings_t * inLimitsSpringSettings,
+  char** outErrMsg
 );
 
-JPC_Vector2_t * JPC_SliderConstraint_GetTotalLambdaPosition(
-  JPC_SliderConstraint_t * self
+JoltC_Vector2_t * JoltC_SliderConstraint_GetTotalLambdaPosition(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-float JPC_SliderConstraint_GetTotalLambdaPositionLimits(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetTotalLambdaPositionLimits(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SliderConstraint_GetTotalLambdaRotation(
-  JPC_SliderConstraint_t * self
+JoltC_Vec3_t * JoltC_SliderConstraint_GetTotalLambdaRotation(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-float JPC_SliderConstraint_GetTotalLambdaMotor(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetTotalLambdaMotor(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_SliderConstraint_GetBody1(
-  JPC_SliderConstraint_t * self
+JoltC_Body_t * JoltC_SliderConstraint_GetBody1(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_SliderConstraint_GetBody2(
-  JPC_SliderConstraint_t * self
+JoltC_Body_t * JoltC_SliderConstraint_GetBody2(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_SliderConstraint_GetConstraintToBody1Matrix(
-  JPC_SliderConstraint_t * self
+JoltC_Mat44_t * JoltC_SliderConstraint_GetConstraintToBody1Matrix(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_SliderConstraint_GetConstraintToBody2Matrix(
-  JPC_SliderConstraint_t * self
+JoltC_Mat44_t * JoltC_SliderConstraint_GetConstraintToBody2Matrix(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_SliderConstraint_GetRefCount(
-  JPC_SliderConstraint_t * self
+unsigned long JoltC_SliderConstraint_GetRefCount(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_AddRef(
-  JPC_SliderConstraint_t * self
+void JoltC_SliderConstraint_AddRef(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_Release(
-  JPC_SliderConstraint_t * self
+void JoltC_SliderConstraint_Release(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintType JPC_SliderConstraint_GetType(
-  JPC_SliderConstraint_t * self
+JoltC_EConstraintType JoltC_SliderConstraint_GetType(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintSubType JPC_SliderConstraint_GetSubType(
-  JPC_SliderConstraint_t * self
+JoltC_EConstraintSubType JoltC_SliderConstraint_GetSubType(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_SliderConstraint_GetConstraintPriority(
-  JPC_SliderConstraint_t * self
+unsigned long JoltC_SliderConstraint_GetConstraintPriority(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetConstraintPriority(
-  JPC_SliderConstraint_t * self,
-  unsigned long inPriority
+void JoltC_SliderConstraint_SetConstraintPriority(
+  JoltC_SliderConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetNumVelocityStepsOverride(
-  JPC_SliderConstraint_t * self,
-  long inN
+void JoltC_SliderConstraint_SetNumVelocityStepsOverride(
+  JoltC_SliderConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_SliderConstraint_GetNumVelocityStepsOverride(
-  JPC_SliderConstraint_t * self
+long JoltC_SliderConstraint_GetNumVelocityStepsOverride(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetNumPositionStepsOverride(
-  JPC_SliderConstraint_t * self,
-  long inN
+void JoltC_SliderConstraint_SetNumPositionStepsOverride(
+  JoltC_SliderConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_SliderConstraint_GetNumPositionStepsOverride(
-  JPC_SliderConstraint_t * self
+long JoltC_SliderConstraint_GetNumPositionStepsOverride(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetEnabled(
-  JPC_SliderConstraint_t * self,
-  bool inEnabled
+void JoltC_SliderConstraint_SetEnabled(
+  JoltC_SliderConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 );
 
-bool JPC_SliderConstraint_GetEnabled(
-  JPC_SliderConstraint_t * self
+bool JoltC_SliderConstraint_GetEnabled(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_SliderConstraint_IsActive(
-  JPC_SliderConstraint_t * self
+bool JoltC_SliderConstraint_IsActive(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_SliderConstraint_GetUserData(
-  JPC_SliderConstraint_t * self
+unsigned long long int JoltC_SliderConstraint_GetUserData(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_SetUserData(
-  JPC_SliderConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_SliderConstraint_SetUserData(
+  JoltC_SliderConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-void JPC_SliderConstraint_ResetWarmStart(
-  JPC_SliderConstraint_t * self
+void JoltC_SliderConstraint_ResetWarmStart(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,107 +8,129 @@ extern "C" {
 
 //region constructors
 
-JPC_MotorcycleController_t * JPC_MotorcycleController_new(
-  const JPC_MotorcycleControllerSettings_t * inSettings,
-  JPC_VehicleConstraint_t * inConstraint
+JoltC_MotorcycleController_t * JoltC_MotorcycleController_new(
+  const JoltC_MotorcycleControllerSettings_t * inSettings,
+  JoltC_VehicleConstraint_t * inConstraint,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-float JPC_MotorcycleController_GetWheelBase(
-  JPC_MotorcycleController_t * self
+float JoltC_MotorcycleController_GetWheelBase(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_EnableLeanController(
-  JPC_MotorcycleController_t * self,
-  bool inEnable
+void JoltC_MotorcycleController_EnableLeanController(
+  JoltC_MotorcycleController_t * self,
+  bool inEnable,
+  char** outErrMsg
 );
 
-bool JPC_MotorcycleController_IsLeanControllerEnabled(
-  JPC_MotorcycleController_t * self
+bool JoltC_MotorcycleController_IsLeanControllerEnabled(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_SetDriverInput(
-  JPC_MotorcycleController_t * self,
+void JoltC_MotorcycleController_SetDriverInput(
+  JoltC_MotorcycleController_t * self,
   float inForward,
   float inRight,
   float inBrake,
-  float inHandBrake
+  float inHandBrake,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_SetForwardInput(
-  JPC_MotorcycleController_t * self,
-  float inForward
+void JoltC_MotorcycleController_SetForwardInput(
+  JoltC_MotorcycleController_t * self,
+  float inForward,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleController_GetForwardInput(
-  JPC_MotorcycleController_t * self
+float JoltC_MotorcycleController_GetForwardInput(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_SetRightInput(
-  JPC_MotorcycleController_t * self,
-  float inRight
+void JoltC_MotorcycleController_SetRightInput(
+  JoltC_MotorcycleController_t * self,
+  float inRight,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleController_GetRightInput(
-  JPC_MotorcycleController_t * self
+float JoltC_MotorcycleController_GetRightInput(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_SetBrakeInput(
-  JPC_MotorcycleController_t * self,
-  float inBrake
+void JoltC_MotorcycleController_SetBrakeInput(
+  JoltC_MotorcycleController_t * self,
+  float inBrake,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleController_GetBrakeInput(
-  JPC_MotorcycleController_t * self
+float JoltC_MotorcycleController_GetBrakeInput(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_SetHandBrakeInput(
-  JPC_MotorcycleController_t * self,
-  float inHandBrake
+void JoltC_MotorcycleController_SetHandBrakeInput(
+  JoltC_MotorcycleController_t * self,
+  float inHandBrake,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleController_GetHandBrakeInput(
-  JPC_MotorcycleController_t * self
+float JoltC_MotorcycleController_GetHandBrakeInput(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-JPC_VehicleEngine_t * JPC_MotorcycleController_GetEngine(
-  JPC_MotorcycleController_t * self
+JoltC_VehicleEngine_t * JoltC_MotorcycleController_GetEngine(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-JPC_VehicleTransmission_t * JPC_MotorcycleController_GetTransmission(
-  JPC_MotorcycleController_t * self
+JoltC_VehicleTransmission_t * JoltC_MotorcycleController_GetTransmission(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-JPC_ArrayVehicleDifferentialSettings_t * JPC_MotorcycleController_GetDifferentials(
-  JPC_MotorcycleController_t * self
+JoltC_ArrayVehicleDifferentialSettings_t * JoltC_MotorcycleController_GetDifferentials(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleController_GetDifferentialLimitedSlipRatio(
-  JPC_MotorcycleController_t * self
+float JoltC_MotorcycleController_GetDifferentialLimitedSlipRatio(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_SetDifferentialLimitedSlipRatio(
-  JPC_MotorcycleController_t * self,
-  float inV
+void JoltC_MotorcycleController_SetDifferentialLimitedSlipRatio(
+  JoltC_MotorcycleController_t * self,
+  float inV,
+  char** outErrMsg
 );
 
-float JPC_MotorcycleController_GetWheelSpeedAtClutch(
-  JPC_MotorcycleController_t * self
+float JoltC_MotorcycleController_GetWheelSpeedAtClutch(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_MotorcycleController_GetRefCount(
-  JPC_MotorcycleController_t * self
+unsigned long JoltC_MotorcycleController_GetRefCount(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_AddRef(
-  JPC_MotorcycleController_t * self
+void JoltC_MotorcycleController_AddRef(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotorcycleController_Release(
-  JPC_MotorcycleController_t * self
+void JoltC_MotorcycleController_Release(
+  JoltC_MotorcycleController_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

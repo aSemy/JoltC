@@ -1,5 +1,6 @@
-#include "JoltC/JPC_BroadPhaseLayerFilter.h"
+#include "JoltC/JoltC_BroadPhaseLayerFilter.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,11 +8,21 @@ extern "C" {
 
 //region constructors
 
-JPC_BroadPhaseLayerFilter_t * JPC_BroadPhaseLayerFilter_new() {
-  JPC_BroadPhaseLayerFilter_t * cInstance = new JPC_BroadPhaseLayerFilter_t();
-  BroadPhaseLayerFilter * cppInstance = new BroadPhaseLayerFilter();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_BroadPhaseLayerFilter_t * JoltC_BroadPhaseLayerFilter_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_BroadPhaseLayerFilter_t * cInstance = new JoltC_BroadPhaseLayerFilter_t();
+    BroadPhaseLayerFilter * cppInstance = new BroadPhaseLayerFilter();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors

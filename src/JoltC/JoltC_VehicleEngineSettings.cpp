@@ -1,5 +1,6 @@
-#include "JoltC/JPC_VehicleEngineSettings.h"
+#include "JoltC/JoltC_VehicleEngineSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,98 +8,110 @@ extern "C" {
 
 //region properties
 
-float JPC_VehicleEngineSettings_mMaxTorque_Get(
-  JPC_VehicleEngineSettings_t * self
+float JoltC_VehicleEngineSettings_mMaxTorque_Get(
+  JoltC_VehicleEngineSettings_t * self,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   float result = selfCpp->mMaxTorque;
   return result;
 };
 
-void JPC_VehicleEngineSettings_mMaxTorque_Set(
-  JPC_VehicleEngineSettings_t * self,
-  float mMaxTorque
+void JoltC_VehicleEngineSettings_mMaxTorque_Set(
+  JoltC_VehicleEngineSettings_t * self,
+  float mMaxTorque,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mMaxTorque = mMaxTorque;
 };
 
-float JPC_VehicleEngineSettings_mMinRPM_Get(
-  JPC_VehicleEngineSettings_t * self
+float JoltC_VehicleEngineSettings_mMinRPM_Get(
+  JoltC_VehicleEngineSettings_t * self,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   float result = selfCpp->mMinRPM;
   return result;
 };
 
-void JPC_VehicleEngineSettings_mMinRPM_Set(
-  JPC_VehicleEngineSettings_t * self,
-  float mMinRPM
+void JoltC_VehicleEngineSettings_mMinRPM_Set(
+  JoltC_VehicleEngineSettings_t * self,
+  float mMinRPM,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mMinRPM = mMinRPM;
 };
 
-float JPC_VehicleEngineSettings_mMaxRPM_Get(
-  JPC_VehicleEngineSettings_t * self
+float JoltC_VehicleEngineSettings_mMaxRPM_Get(
+  JoltC_VehicleEngineSettings_t * self,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   float result = selfCpp->mMaxRPM;
   return result;
 };
 
-void JPC_VehicleEngineSettings_mMaxRPM_Set(
-  JPC_VehicleEngineSettings_t * self,
-  float mMaxRPM
+void JoltC_VehicleEngineSettings_mMaxRPM_Set(
+  JoltC_VehicleEngineSettings_t * self,
+  float mMaxRPM,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mMaxRPM = mMaxRPM;
 };
 
-JPC_LinearCurve_t * JPC_VehicleEngineSettings_mNormalizedTorque_Get(
-  JPC_VehicleEngineSettings_t * self
+JoltC_LinearCurve_t * JoltC_VehicleEngineSettings_mNormalizedTorque_Get(
+  JoltC_VehicleEngineSettings_t * self,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   LinearCurve resultValue = selfCpp->mNormalizedTorque;
   LinearCurve* result = new LinearCurve(resultValue);
-  return reinterpret_cast<JPC_LinearCurve_t *>(result);
+  return reinterpret_cast<JoltC_LinearCurve_t *>(result);
 };
 
-void JPC_VehicleEngineSettings_mNormalizedTorque_Set(
-  JPC_VehicleEngineSettings_t * self,
-  JPC_LinearCurve_t * mNormalizedTorque
+void JoltC_VehicleEngineSettings_mNormalizedTorque_Set(
+  JoltC_VehicleEngineSettings_t * self,
+  JoltC_LinearCurve_t * mNormalizedTorque,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mNormalizedTorque = *reinterpret_cast<LinearCurve *>(mNormalizedTorque->obj);
 };
 
-float JPC_VehicleEngineSettings_mInertia_Get(
-  JPC_VehicleEngineSettings_t * self
+float JoltC_VehicleEngineSettings_mInertia_Get(
+  JoltC_VehicleEngineSettings_t * self,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   float result = selfCpp->mInertia;
   return result;
 };
 
-void JPC_VehicleEngineSettings_mInertia_Set(
-  JPC_VehicleEngineSettings_t * self,
-  float mInertia
+void JoltC_VehicleEngineSettings_mInertia_Set(
+  JoltC_VehicleEngineSettings_t * self,
+  float mInertia,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mInertia = mInertia;
 };
 
-float JPC_VehicleEngineSettings_mAngularDamping_Get(
-  JPC_VehicleEngineSettings_t * self
+float JoltC_VehicleEngineSettings_mAngularDamping_Get(
+  JoltC_VehicleEngineSettings_t * self,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   float result = selfCpp->mAngularDamping;
   return result;
 };
 
-void JPC_VehicleEngineSettings_mAngularDamping_Set(
-  JPC_VehicleEngineSettings_t * self,
-  float mAngularDamping
+void JoltC_VehicleEngineSettings_mAngularDamping_Set(
+  JoltC_VehicleEngineSettings_t * self,
+  float mAngularDamping,
+  char** outErrMsg
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mAngularDamping = mAngularDamping;

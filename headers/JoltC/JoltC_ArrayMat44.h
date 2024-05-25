@@ -8,40 +8,48 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayMat44_empty(
-  JPC_ArrayMat44_t * self
+bool JoltC_ArrayMat44_empty(
+  JoltC_ArrayMat44_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayMat44_size(
-  JPC_ArrayMat44_t * self
+long JoltC_ArrayMat44_size(
+  JoltC_ArrayMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_ArrayMat44_at(
-  JPC_ArrayMat44_t * self,
-  long inIndex
+JoltC_Mat44_t * JoltC_ArrayMat44_at(
+  JoltC_ArrayMat44_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayMat44_push_back(
-  JPC_ArrayMat44_t * self,
-  const JPC_Mat44_t * inValue
+void JoltC_ArrayMat44_push_back(
+  JoltC_ArrayMat44_t * self,
+  const JoltC_Mat44_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayMat44_reserve(
-  JPC_ArrayMat44_t * self,
-  unsigned long inSize
+void JoltC_ArrayMat44_reserve(
+  JoltC_ArrayMat44_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayMat44_resize(
-  JPC_ArrayMat44_t * self,
-  unsigned long inSize
+void JoltC_ArrayMat44_resize(
+  JoltC_ArrayMat44_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayMat44_clear(
-  JPC_ArrayMat44_t * self
+void JoltC_ArrayMat44_clear(
+  JoltC_ArrayMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44MemRef_t * JPC_ArrayMat44_data(
-  JPC_ArrayMat44_t * self
+JoltC_Mat44MemRef_t * JoltC_ArrayMat44_data(
+  JoltC_ArrayMat44_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

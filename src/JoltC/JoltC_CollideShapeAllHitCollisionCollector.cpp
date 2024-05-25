@@ -1,5 +1,6 @@
-#include "JoltC/JPC_CollideShapeAllHitCollisionCollector.h"
+#include "JoltC/JoltC_CollideShapeAllHitCollisionCollector.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,130 +8,241 @@ extern "C" {
 
 //region constructors
 
-JPC_CollideShapeAllHitCollisionCollector_t * JPC_CollideShapeAllHitCollisionCollector_new() {
-  JPC_CollideShapeAllHitCollisionCollector_t * cInstance = new JPC_CollideShapeAllHitCollisionCollector_t();
-  CollideShapeAllHitCollisionCollector * cppInstance = new CollideShapeAllHitCollisionCollector();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_CollideShapeAllHitCollisionCollector_t * JoltC_CollideShapeAllHitCollisionCollector_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_CollideShapeAllHitCollisionCollector_t * cInstance = new JoltC_CollideShapeAllHitCollisionCollector_t();
+    CollideShapeAllHitCollisionCollector * cppInstance = new CollideShapeAllHitCollisionCollector();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_CollideShapeAllHitCollisionCollector_Sort(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+void JoltC_CollideShapeAllHitCollisionCollector_Sort(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  
-  selfCpp->Sort();
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    
+    selfCpp->Sort();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CollideShapeAllHitCollisionCollector_HadHit(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+bool JoltC_CollideShapeAllHitCollisionCollector_HadHit(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  bool result = selfCpp->HadHit();
-  return result;
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    bool result = selfCpp->HadHit();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollideShapeAllHitCollisionCollector_Reset(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+void JoltC_CollideShapeAllHitCollisionCollector_Reset(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  
-  selfCpp->Reset();
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    
+    selfCpp->Reset();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollideShapeAllHitCollisionCollector_SetContext(
-  JPC_CollideShapeAllHitCollisionCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CollideShapeAllHitCollisionCollector_SetContext(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  
-  selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
-  );
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    
+    selfCpp->SetContext(
+    reinterpret_cast<TransformedShape *>(inContext->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_TransformedShape_t * JPC_CollideShapeAllHitCollisionCollector_GetContext(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CollideShapeAllHitCollisionCollector_GetContext(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JPC_TransformedShape_t *>(result);
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    const TransformedShape * result = selfCpp->GetContext();
+    return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollideShapeAllHitCollisionCollector_UpdateEarlyOutFraction(
-  JPC_CollideShapeAllHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CollideShapeAllHitCollisionCollector_UpdateEarlyOutFraction(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  
-  selfCpp->UpdateEarlyOutFraction(
-  inFraction
-  );
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    
+    selfCpp->UpdateEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollideShapeAllHitCollisionCollector_ResetEarlyOutFraction(
-  JPC_CollideShapeAllHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CollideShapeAllHitCollisionCollector_ResetEarlyOutFraction(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  
-  selfCpp->ResetEarlyOutFraction(
-  inFraction
-  );
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    
+    selfCpp->ResetEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CollideShapeAllHitCollisionCollector_ForceEarlyOut(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+void JoltC_CollideShapeAllHitCollisionCollector_ForceEarlyOut(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  
-  selfCpp->ForceEarlyOut();
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    
+    selfCpp->ForceEarlyOut();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CollideShapeAllHitCollisionCollector_ShouldEarlyOut(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+bool JoltC_CollideShapeAllHitCollisionCollector_ShouldEarlyOut(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    bool result = selfCpp->ShouldEarlyOut();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CollideShapeAllHitCollisionCollector_GetEarlyOutFraction(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+float JoltC_CollideShapeAllHitCollisionCollector_GetEarlyOutFraction(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    float result = selfCpp->GetEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CollideShapeAllHitCollisionCollector_GetPositiveEarlyOutFraction(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+float JoltC_CollideShapeAllHitCollisionCollector_GetPositiveEarlyOutFraction(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
-  CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
+  try {
+    CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
+    float result = selfCpp->GetPositiveEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-JPC_ArrayCollideShapeResult_t * JPC_CollideShapeAllHitCollisionCollector_mHits_Get(
-  JPC_CollideShapeAllHitCollisionCollector_t * self
+JoltC_ArrayCollideShapeResult_t * JoltC_CollideShapeAllHitCollisionCollector_mHits_Get(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 ) {
   CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
   ArrayCollideShapeResult resultValue = selfCpp->mHits;
   ArrayCollideShapeResult* result = new ArrayCollideShapeResult(resultValue);
-  return reinterpret_cast<JPC_ArrayCollideShapeResult_t *>(result);
+  return reinterpret_cast<JoltC_ArrayCollideShapeResult_t *>(result);
 };
 
-void JPC_CollideShapeAllHitCollisionCollector_mHits_Set(
-  JPC_CollideShapeAllHitCollisionCollector_t * self,
-  JPC_ArrayCollideShapeResult_t * mHits
+void JoltC_CollideShapeAllHitCollisionCollector_mHits_Set(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self,
+  JoltC_ArrayCollideShapeResult_t * mHits,
+  char** outErrMsg
 ) {
   CollideShapeAllHitCollisionCollector * selfCpp = static_cast<CollideShapeAllHitCollisionCollector *>(self->obj);
   selfCpp->mHits = *reinterpret_cast<ArrayCollideShapeResult *>(mHits->obj);

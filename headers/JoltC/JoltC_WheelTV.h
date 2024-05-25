@@ -8,135 +8,164 @@ extern "C" {
 
 //region constructors
 
-JPC_WheelTV_t * JPC_WheelTV_new(
-  const JPC_WheelSettingsTV_t * inWheel
+JoltC_WheelTV_t * JoltC_WheelTV_new(
+  const JoltC_WheelSettingsTV_t * inWheel,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-const JPC_WheelSettingsTV_t * JPC_WheelTV_GetSettings_0(
-  JPC_WheelTV_t * self
+const JoltC_WheelSettingsTV_t * JoltC_WheelTV_GetSettings_0(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-const JPC_WheelSettings_t * JPC_WheelTV_GetSettings_1(
-  JPC_WheelTV_t * self
+const JoltC_WheelSettings_t * JoltC_WheelTV_GetSettings_1(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_GetAngularVelocity(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetAngularVelocity(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelTV_SetAngularVelocity(
-  JPC_WheelTV_t * self,
-  float inVel
+void JoltC_WheelTV_SetAngularVelocity(
+  JoltC_WheelTV_t * self,
+  float inVel,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_GetRotationAngle(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetRotationAngle(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelTV_SetRotationAngle(
-  JPC_WheelTV_t * self,
-  float inAngle
+void JoltC_WheelTV_SetRotationAngle(
+  JoltC_WheelTV_t * self,
+  float inAngle,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_GetSteerAngle(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetSteerAngle(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelTV_SetSteerAngle(
-  JPC_WheelTV_t * self,
-  float inAngle
+void JoltC_WheelTV_SetSteerAngle(
+  JoltC_WheelTV_t * self,
+  float inAngle,
+  char** outErrMsg
 );
 
-bool JPC_WheelTV_HasContact(
-  JPC_WheelTV_t * self
+bool JoltC_WheelTV_HasContact(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-JPC_BodyID_t * JPC_WheelTV_GetContactBodyID(
-  JPC_WheelTV_t * self
+JoltC_BodyID_t * JoltC_WheelTV_GetContactBodyID(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_WheelTV_GetContactPosition(
-  JPC_WheelTV_t * self
+JoltC_RVec3_t * JoltC_WheelTV_GetContactPosition(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelTV_GetContactPointVelocity(
-  JPC_WheelTV_t * self
+JoltC_Vec3_t * JoltC_WheelTV_GetContactPointVelocity(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelTV_GetContactNormal(
-  JPC_WheelTV_t * self
+JoltC_Vec3_t * JoltC_WheelTV_GetContactNormal(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelTV_GetContactLongitudinal(
-  JPC_WheelTV_t * self
+JoltC_Vec3_t * JoltC_WheelTV_GetContactLongitudinal(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelTV_GetContactLateral(
-  JPC_WheelTV_t * self
+JoltC_Vec3_t * JoltC_WheelTV_GetContactLateral(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_GetSuspensionLength(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetSuspensionLength(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-bool JPC_WheelTV_HasHitHardPoint(
-  JPC_WheelTV_t * self
+bool JoltC_WheelTV_HasHitHardPoint(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_GetSuspensionLambda(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetSuspensionLambda(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_GetLongitudinalLambda(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetLongitudinalLambda(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_GetLateralLambda(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetLateralLambda(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-long JPC_WheelTV_mTrackIndex_Get(
-  JPC_WheelTV_t * self
+long JoltC_WheelTV_mTrackIndex_Get(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelTV_mTrackIndex_Set(
-  JPC_WheelTV_t * self,
-  long mTrackIndex
+void JoltC_WheelTV_mTrackIndex_Set(
+  JoltC_WheelTV_t * self,
+  long mTrackIndex,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_mCombinedLongitudinalFriction_Get(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_mCombinedLongitudinalFriction_Get(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelTV_mCombinedLongitudinalFriction_Set(
-  JPC_WheelTV_t * self,
-  float mCombinedLongitudinalFriction
+void JoltC_WheelTV_mCombinedLongitudinalFriction_Set(
+  JoltC_WheelTV_t * self,
+  float mCombinedLongitudinalFriction,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_mCombinedLateralFriction_Get(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_mCombinedLateralFriction_Get(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelTV_mCombinedLateralFriction_Set(
-  JPC_WheelTV_t * self,
-  float mCombinedLateralFriction
+void JoltC_WheelTV_mCombinedLateralFriction_Set(
+  JoltC_WheelTV_t * self,
+  float mCombinedLateralFriction,
+  char** outErrMsg
 );
 
-float JPC_WheelTV_mBrakeImpulse_Get(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_mBrakeImpulse_Get(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelTV_mBrakeImpulse_Set(
-  JPC_WheelTV_t * self,
-  float mBrakeImpulse
+void JoltC_WheelTV_mBrakeImpulse_Set(
+  JoltC_WheelTV_t * self,
+  float mBrakeImpulse,
+  char** outErrMsg
 );
 
 //endregion properties

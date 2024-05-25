@@ -8,43 +8,52 @@ extern "C" {
 
 //region functions
 
-void JPC_TransformedShapeCollector_Reset(
-  JPC_TransformedShapeCollector_t * self
+void JoltC_TransformedShapeCollector_Reset(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_TransformedShapeCollector_SetContext(
-  JPC_TransformedShapeCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_TransformedShapeCollector_SetContext(
+  JoltC_TransformedShapeCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_TransformedShapeCollector_GetContext(
-  JPC_TransformedShapeCollector_t * self
+const JoltC_TransformedShape_t * JoltC_TransformedShapeCollector_GetContext(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_TransformedShapeCollector_UpdateEarlyOutFraction(
-  JPC_TransformedShapeCollector_t * self,
-  float inFraction
+void JoltC_TransformedShapeCollector_UpdateEarlyOutFraction(
+  JoltC_TransformedShapeCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_TransformedShapeCollector_ResetEarlyOutFraction(
-  JPC_TransformedShapeCollector_t * self,
-  float inFraction
+void JoltC_TransformedShapeCollector_ResetEarlyOutFraction(
+  JoltC_TransformedShapeCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_TransformedShapeCollector_ForceEarlyOut(
-  JPC_TransformedShapeCollector_t * self
+void JoltC_TransformedShapeCollector_ForceEarlyOut(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_TransformedShapeCollector_ShouldEarlyOut(
-  JPC_TransformedShapeCollector_t * self
+bool JoltC_TransformedShapeCollector_ShouldEarlyOut(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_TransformedShapeCollector_GetEarlyOutFraction(
-  JPC_TransformedShapeCollector_t * self
+float JoltC_TransformedShapeCollector_GetEarlyOutFraction(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_TransformedShapeCollector_GetPositiveEarlyOutFraction(
-  JPC_TransformedShapeCollector_t * self
+float JoltC_TransformedShapeCollector_GetPositiveEarlyOutFraction(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsVolume_empty(
-  JPC_ArraySoftBodySharedSettingsVolume_t * self
+bool JoltC_ArraySoftBodySharedSettingsVolume_empty(
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArraySoftBodySharedSettingsVolume_size(
-  JPC_ArraySoftBodySharedSettingsVolume_t * self
+long JoltC_ArraySoftBodySharedSettingsVolume_size(
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettingsVolume_t * JPC_ArraySoftBodySharedSettingsVolume_at(
-  JPC_ArraySoftBodySharedSettingsVolume_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsVolume_t * JoltC_ArraySoftBodySharedSettingsVolume_at(
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVolume_push_back(
-  JPC_ArraySoftBodySharedSettingsVolume_t * self,
-  const JPC_SoftBodySharedSettingsVolume_t * inValue
+void JoltC_ArraySoftBodySharedSettingsVolume_push_back(
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
+  const JoltC_SoftBodySharedSettingsVolume_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVolume_reserve(
-  JPC_ArraySoftBodySharedSettingsVolume_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsVolume_reserve(
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVolume_resize(
-  JPC_ArraySoftBodySharedSettingsVolume_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsVolume_resize(
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVolume_clear(
-  JPC_ArraySoftBodySharedSettingsVolume_t * self
+void JoltC_ArraySoftBodySharedSettingsVolume_clear(
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

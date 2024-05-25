@@ -8,42 +8,51 @@ extern "C" {
 
 //region constructors
 
-JPC_ArrayRagdollPart_t * JPC_ArrayRagdollPart_new();
+JoltC_ArrayRagdollPart_t * JoltC_ArrayRagdollPart_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_ArrayRagdollPart_empty(
-  JPC_ArrayRagdollPart_t * self
+bool JoltC_ArrayRagdollPart_empty(
+  JoltC_ArrayRagdollPart_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayRagdollPart_size(
-  JPC_ArrayRagdollPart_t * self
+long JoltC_ArrayRagdollPart_size(
+  JoltC_ArrayRagdollPart_t * self,
+  char** outErrMsg
 );
 
-JPC_RagdollPart_t * JPC_ArrayRagdollPart_at(
-  JPC_ArrayRagdollPart_t * self,
-  long inIndex
+JoltC_RagdollPart_t * JoltC_ArrayRagdollPart_at(
+  JoltC_ArrayRagdollPart_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayRagdollPart_push_back(
-  JPC_ArrayRagdollPart_t * self,
-  JPC_RagdollPart_t * inValue
+void JoltC_ArrayRagdollPart_push_back(
+  JoltC_ArrayRagdollPart_t * self,
+  JoltC_RagdollPart_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayRagdollPart_reserve(
-  JPC_ArrayRagdollPart_t * self,
-  unsigned long inSize
+void JoltC_ArrayRagdollPart_reserve(
+  JoltC_ArrayRagdollPart_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayRagdollPart_resize(
-  JPC_ArrayRagdollPart_t * self,
-  unsigned long inSize
+void JoltC_ArrayRagdollPart_resize(
+  JoltC_ArrayRagdollPart_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayRagdollPart_clear(
-  JPC_ArrayRagdollPart_t * self
+void JoltC_ArrayRagdollPart_clear(
+  JoltC_ArrayRagdollPart_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

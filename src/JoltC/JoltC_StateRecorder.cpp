@@ -1,5 +1,6 @@
-#include "JoltC/JPC_StateRecorder.h"
+#include "JoltC/JoltC_StateRecorder.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,23 +8,41 @@ extern "C" {
 
 //region functions
 
-void JPC_StateRecorder_SetValidating(
-  JPC_StateRecorder_t * self,
-  bool inValidating
+void JoltC_StateRecorder_SetValidating(
+  JoltC_StateRecorder_t * self,
+  bool inValidating,
+  char** outErrMsg
 ) {
-  StateRecorder * selfCpp = static_cast<StateRecorder *>(self->obj);
-  
-  selfCpp->SetValidating(
-  inValidating
-  );
+  try {
+    StateRecorder * selfCpp = static_cast<StateRecorder *>(self->obj);
+    
+    selfCpp->SetValidating(
+    inValidating
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_StateRecorder_IsValidating(
-  JPC_StateRecorder_t * self
+bool JoltC_StateRecorder_IsValidating(
+  JoltC_StateRecorder_t * self,
+  char** outErrMsg
 ) {
-  StateRecorder * selfCpp = static_cast<StateRecorder *>(self->obj);
-  bool result = selfCpp->IsValidating();
-  return result;
+  try {
+    StateRecorder * selfCpp = static_cast<StateRecorder *>(self->obj);
+    bool result = selfCpp->IsValidating();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

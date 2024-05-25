@@ -8,97 +8,118 @@ extern "C" {
 
 //region constructors
 
-JPC_ConvexHullShapeSettings_t * JPC_ConvexHullShapeSettings_new();
+JoltC_ConvexHullShapeSettings_t * JoltC_ConvexHullShapeSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_ConvexHullShapeSettings_GetRefCount(
-  JPC_ConvexHullShapeSettings_t * self
+unsigned long JoltC_ConvexHullShapeSettings_GetRefCount(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_AddRef(
-  JPC_ConvexHullShapeSettings_t * self
+void JoltC_ConvexHullShapeSettings_AddRef(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_Release(
-  JPC_ConvexHullShapeSettings_t * self
+void JoltC_ConvexHullShapeSettings_Release(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_ConvexHullShapeSettings_Create(
-  JPC_ConvexHullShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_ConvexHullShapeSettings_Create(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_ClearCachedResult(
-  JPC_ConvexHullShapeSettings_t * self
+void JoltC_ConvexHullShapeSettings_ClearCachedResult(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_ArrayVec3_t * JPC_ConvexHullShapeSettings_mPoints_Get(
-  JPC_ConvexHullShapeSettings_t * self
+JoltC_ArrayVec3_t * JoltC_ConvexHullShapeSettings_mPoints_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_mPoints_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  JPC_ArrayVec3_t * mPoints
+void JoltC_ConvexHullShapeSettings_mPoints_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  JoltC_ArrayVec3_t * mPoints,
+  char** outErrMsg
 );
 
-float JPC_ConvexHullShapeSettings_mMaxConvexRadius_Get(
-  JPC_ConvexHullShapeSettings_t * self
+float JoltC_ConvexHullShapeSettings_mMaxConvexRadius_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_mMaxConvexRadius_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  float mMaxConvexRadius
+void JoltC_ConvexHullShapeSettings_mMaxConvexRadius_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  float mMaxConvexRadius,
+  char** outErrMsg
 );
 
-float JPC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Get(
-  JPC_ConvexHullShapeSettings_t * self
+float JoltC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  float mMaxErrorConvexRadius
+void JoltC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  float mMaxErrorConvexRadius,
+  char** outErrMsg
 );
 
-float JPC_ConvexHullShapeSettings_mHullTolerance_Get(
-  JPC_ConvexHullShapeSettings_t * self
+float JoltC_ConvexHullShapeSettings_mHullTolerance_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_mHullTolerance_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  float mHullTolerance
+void JoltC_ConvexHullShapeSettings_mHullTolerance_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  float mHullTolerance,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_ConvexHullShapeSettings_mMaterial_Get(
-  JPC_ConvexHullShapeSettings_t * self
+const JoltC_PhysicsMaterial_t * JoltC_ConvexHullShapeSettings_mMaterial_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-const void JPC_ConvexHullShapeSettings_mMaterial_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  const JPC_PhysicsMaterial_t * mMaterial
+const void JoltC_ConvexHullShapeSettings_mMaterial_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  const JoltC_PhysicsMaterial_t * mMaterial,
+  char** outErrMsg
 );
 
-float JPC_ConvexHullShapeSettings_mDensity_Get(
-  JPC_ConvexHullShapeSettings_t * self
+float JoltC_ConvexHullShapeSettings_mDensity_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_mDensity_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  float mDensity
+void JoltC_ConvexHullShapeSettings_mDensity_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  float mDensity,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_ConvexHullShapeSettings_mUserData_Get(
-  JPC_ConvexHullShapeSettings_t * self
+unsigned long long int JoltC_ConvexHullShapeSettings_mUserData_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexHullShapeSettings_mUserData_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_ConvexHullShapeSettings_mUserData_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

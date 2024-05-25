@@ -1,5 +1,6 @@
-#include "JoltC/JPC_GroupFilter.h"
+#include "JoltC/JoltC_GroupFilter.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,28 +8,55 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_GroupFilter_GetRefCount(
-  JPC_GroupFilter_t * self
+unsigned long JoltC_GroupFilter_GetRefCount(
+  JoltC_GroupFilter_t * self,
+  char** outErrMsg
 ) {
-  GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_GroupFilter_AddRef(
-  JPC_GroupFilter_t * self
+void JoltC_GroupFilter_AddRef(
+  JoltC_GroupFilter_t * self,
+  char** outErrMsg
 ) {
-  GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_GroupFilter_Release(
-  JPC_GroupFilter_t * self
+void JoltC_GroupFilter_Release(
+  JoltC_GroupFilter_t * self,
+  char** outErrMsg
 ) {
-  GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

@@ -1,5 +1,6 @@
-#include "JoltC/JPC_DecoratedShapeSettings.h"
+#include "JoltC/JoltC_DecoratedShapeSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,62 +8,109 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_DecoratedShapeSettings_GetRefCount(
-  JPC_DecoratedShapeSettings_t * self
+unsigned long JoltC_DecoratedShapeSettings_GetRefCount(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DecoratedShapeSettings_AddRef(
-  JPC_DecoratedShapeSettings_t * self
+void JoltC_DecoratedShapeSettings_AddRef(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DecoratedShapeSettings_Release(
-  JPC_DecoratedShapeSettings_t * self
+void JoltC_DecoratedShapeSettings_Release(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_ShapeResult_t * JPC_DecoratedShapeSettings_Create(
-  JPC_DecoratedShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_DecoratedShapeSettings_Create(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JPC_Shape_ShapeResult_t *>(result);
+  try {
+    DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
+    Shape::ShapeResult resultValue = selfCpp->Create();
+    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DecoratedShapeSettings_ClearCachedResult(
-  JPC_DecoratedShapeSettings_t * self
+void JoltC_DecoratedShapeSettings_ClearCachedResult(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
-  
-  selfCpp->ClearCachedResult();
+  try {
+    DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
+    
+    selfCpp->ClearCachedResult();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-unsigned long long int JPC_DecoratedShapeSettings_mUserData_Get(
-  JPC_DecoratedShapeSettings_t * self
+unsigned long long int JoltC_DecoratedShapeSettings_mUserData_Get(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
   unsigned long long int result = selfCpp->mUserData;
   return result;
 };
 
-void JPC_DecoratedShapeSettings_mUserData_Set(
-  JPC_DecoratedShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_DecoratedShapeSettings_mUserData_Set(
+  JoltC_DecoratedShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;

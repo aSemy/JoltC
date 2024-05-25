@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SoftBodySharedSettingsVertex.h"
+#include "JoltC/JoltC_SoftBodySharedSettingsVertex.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,62 +8,78 @@ extern "C" {
 
 //region constructors
 
-JPC_SoftBodySharedSettingsVertex_t * JPC_SoftBodySharedSettingsVertex_new() {
-  JPC_SoftBodySharedSettingsVertex_t * cInstance = new JPC_SoftBodySharedSettingsVertex_t();
-  SoftBodySharedSettingsVertex * cppInstance = new SoftBodySharedSettingsVertex();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_SoftBodySharedSettingsVertex_t * JoltC_SoftBodySharedSettingsVertex_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_SoftBodySharedSettingsVertex_t * cInstance = new JoltC_SoftBodySharedSettingsVertex_t();
+    SoftBodySharedSettingsVertex * cppInstance = new SoftBodySharedSettingsVertex();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region properties
 
-JPC_Float3_t * JPC_SoftBodySharedSettingsVertex_mPosition_Get(
-  JPC_SoftBodySharedSettingsVertex_t * self
+JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mPosition_Get(
+  JoltC_SoftBodySharedSettingsVertex_t * self,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   Float3 resultValue = selfCpp->mPosition;
   Float3* result = new Float3(resultValue);
-  return reinterpret_cast<JPC_Float3_t *>(result);
+  return reinterpret_cast<JoltC_Float3_t *>(result);
 };
 
-void JPC_SoftBodySharedSettingsVertex_mPosition_Set(
-  JPC_SoftBodySharedSettingsVertex_t * self,
-  JPC_Float3_t * mPosition
+void JoltC_SoftBodySharedSettingsVertex_mPosition_Set(
+  JoltC_SoftBodySharedSettingsVertex_t * self,
+  JoltC_Float3_t * mPosition,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   selfCpp->mPosition = *reinterpret_cast<Float3 *>(mPosition->obj);
 };
 
-JPC_Float3_t * JPC_SoftBodySharedSettingsVertex_mVelocity_Get(
-  JPC_SoftBodySharedSettingsVertex_t * self
+JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mVelocity_Get(
+  JoltC_SoftBodySharedSettingsVertex_t * self,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   Float3 resultValue = selfCpp->mVelocity;
   Float3* result = new Float3(resultValue);
-  return reinterpret_cast<JPC_Float3_t *>(result);
+  return reinterpret_cast<JoltC_Float3_t *>(result);
 };
 
-void JPC_SoftBodySharedSettingsVertex_mVelocity_Set(
-  JPC_SoftBodySharedSettingsVertex_t * self,
-  JPC_Float3_t * mVelocity
+void JoltC_SoftBodySharedSettingsVertex_mVelocity_Set(
+  JoltC_SoftBodySharedSettingsVertex_t * self,
+  JoltC_Float3_t * mVelocity,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   selfCpp->mVelocity = *reinterpret_cast<Float3 *>(mVelocity->obj);
 };
 
-float JPC_SoftBodySharedSettingsVertex_mInvMass_Get(
-  JPC_SoftBodySharedSettingsVertex_t * self
+float JoltC_SoftBodySharedSettingsVertex_mInvMass_Get(
+  JoltC_SoftBodySharedSettingsVertex_t * self,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   float result = selfCpp->mInvMass;
   return result;
 };
 
-void JPC_SoftBodySharedSettingsVertex_mInvMass_Set(
-  JPC_SoftBodySharedSettingsVertex_t * self,
-  float mInvMass
+void JoltC_SoftBodySharedSettingsVertex_mInvMass_Set(
+  JoltC_SoftBodySharedSettingsVertex_t * self,
+  float mInvMass,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   selfCpp->mInvMass = mInvMass;

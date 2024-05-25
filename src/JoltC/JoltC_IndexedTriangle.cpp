@@ -1,5 +1,6 @@
-#include "JoltC/JPC_IndexedTriangle.h"
+#include "JoltC/JoltC_IndexedTriangle.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,37 +8,57 @@ extern "C" {
 
 //region constructors
 
-JPC_IndexedTriangle_t * JPC_IndexedTriangle_new_0() {
-  JPC_IndexedTriangle_t * cInstance = new JPC_IndexedTriangle_t();
-  IndexedTriangle * cppInstance = new IndexedTriangle();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_IndexedTriangle_t * JoltC_IndexedTriangle_new_0(
+  char** outErrMsg
+) {
+  try {
+    JoltC_IndexedTriangle_t * cInstance = new JoltC_IndexedTriangle_t();
+    IndexedTriangle * cppInstance = new IndexedTriangle();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_IndexedTriangle_t * JPC_IndexedTriangle_new_1(
+JoltC_IndexedTriangle_t * JoltC_IndexedTriangle_new_1(
   unsigned long inI1,
   unsigned long inI2,
   unsigned long inI3,
-  unsigned long inMaterialIndex
+  unsigned long inMaterialIndex,
+  char** outErrMsg
 ) {
-  JPC_IndexedTriangle_t * cInstance = new JPC_IndexedTriangle_t();
-  IndexedTriangle * cppInstance = new IndexedTriangle(
-    inI1,
-    inI2,
-    inI3,
-    inMaterialIndex
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_IndexedTriangle_t * cInstance = new JoltC_IndexedTriangle_t();
+    IndexedTriangle * cppInstance = new IndexedTriangle(
+      inI1,
+      inI2,
+      inI3,
+      inMaterialIndex
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region properties
 
-size_t JPC_IndexedTriangle_mIdx_Get(
-  JPC_IndexedTriangle_t * self,
-  unsigned long * outValue
+size_t JoltC_IndexedTriangle_mIdx_Get(
+  JoltC_IndexedTriangle_t * self,
+  unsigned long * outValue,
+  char** outErrMsg
 ) {
   IndexedTriangle * selfCpp = static_cast<IndexedTriangle *>(self->obj);
   size_t resultSize = std::size(selfCpp->mIdx);
@@ -45,10 +66,11 @@ size_t JPC_IndexedTriangle_mIdx_Get(
   return resultSize;
 };
 
-void JPC_IndexedTriangle_mIdx_Set(
-  JPC_IndexedTriangle_t * self,
+void JoltC_IndexedTriangle_mIdx_Set(
+  JoltC_IndexedTriangle_t * self,
   unsigned long * mIdx,
-  size_t mIdxSize
+  size_t mIdxSize,
+  char** outErrMsg
 ) {
   IndexedTriangle * selfCpp = static_cast<IndexedTriangle *>(self->obj);
   for (size_t i = 0; i < mIdxSize; i++) {
@@ -56,17 +78,19 @@ void JPC_IndexedTriangle_mIdx_Set(
   };
 };
 
-unsigned long JPC_IndexedTriangle_mMaterialIndex_Get(
-  JPC_IndexedTriangle_t * self
+unsigned long JoltC_IndexedTriangle_mMaterialIndex_Get(
+  JoltC_IndexedTriangle_t * self,
+  char** outErrMsg
 ) {
   IndexedTriangle * selfCpp = static_cast<IndexedTriangle *>(self->obj);
   unsigned long result = selfCpp->mMaterialIndex;
   return result;
 };
 
-void JPC_IndexedTriangle_mMaterialIndex_Set(
-  JPC_IndexedTriangle_t * self,
-  unsigned long mMaterialIndex
+void JoltC_IndexedTriangle_mMaterialIndex_Set(
+  JoltC_IndexedTriangle_t * self,
+  unsigned long mMaterialIndex,
+  char** outErrMsg
 ) {
   IndexedTriangle * selfCpp = static_cast<IndexedTriangle *>(self->obj);
   selfCpp->mMaterialIndex = mMaterialIndex;

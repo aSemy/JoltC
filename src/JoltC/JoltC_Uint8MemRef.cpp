@@ -1,5 +1,6 @@
-#include "JoltC/JPC_Uint8MemRef.h"
+#include "JoltC/JoltC_Uint8MemRef.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {

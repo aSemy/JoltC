@@ -1,5 +1,6 @@
-#include "JoltC/JPC_TwoBodyConstraintSettings.h"
+#include "JoltC/JoltC_TwoBodyConstraintSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,90 +8,132 @@ extern "C" {
 
 //region functions
 
-JPC_Constraint_t * JPC_TwoBodyConstraintSettings_Create(
-  JPC_TwoBodyConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_TwoBodyConstraintSettings_Create(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 ) {
-  TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
-  );
-  return reinterpret_cast<JPC_Constraint_t *>(result);
+  try {
+    TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
+    Constraint * result = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
+    );
+    return reinterpret_cast<JoltC_Constraint_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_TwoBodyConstraintSettings_GetRefCount(
-  JPC_TwoBodyConstraintSettings_t * self
+unsigned long JoltC_TwoBodyConstraintSettings_GetRefCount(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TwoBodyConstraintSettings_AddRef(
-  JPC_TwoBodyConstraintSettings_t * self
+void JoltC_TwoBodyConstraintSettings_AddRef(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TwoBodyConstraintSettings_Release(
-  JPC_TwoBodyConstraintSettings_t * self
+void JoltC_TwoBodyConstraintSettings_Release(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-bool JPC_TwoBodyConstraintSettings_mEnabled_Get(
-  JPC_TwoBodyConstraintSettings_t * self
+bool JoltC_TwoBodyConstraintSettings_mEnabled_Get(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   bool result = selfCpp->mEnabled;
   return result;
 };
 
-void JPC_TwoBodyConstraintSettings_mEnabled_Set(
-  JPC_TwoBodyConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_TwoBodyConstraintSettings_mEnabled_Set(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
 };
 
-long JPC_TwoBodyConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_TwoBodyConstraintSettings_t * self
+long JoltC_TwoBodyConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   long result = selfCpp->mNumVelocityStepsOverride;
   return result;
 };
 
-void JPC_TwoBodyConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_TwoBodyConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_TwoBodyConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
 };
 
-long JPC_TwoBodyConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_TwoBodyConstraintSettings_t * self
+long JoltC_TwoBodyConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   long result = selfCpp->mNumPositionStepsOverride;
   return result;
 };
 
-void JPC_TwoBodyConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_TwoBodyConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_TwoBodyConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_TwoBodyConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;

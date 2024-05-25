@@ -1,5 +1,6 @@
-#include "JoltC/JPC_MotorcycleControllerSettings.h"
+#include "JoltC/JoltC_MotorcycleControllerSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,175 +8,205 @@ extern "C" {
 
 //region constructors
 
-JPC_MotorcycleControllerSettings_t * JPC_MotorcycleControllerSettings_new() {
-  JPC_MotorcycleControllerSettings_t * cInstance = new JPC_MotorcycleControllerSettings_t();
-  MotorcycleControllerSettings * cppInstance = new MotorcycleControllerSettings();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_MotorcycleControllerSettings_t * JoltC_MotorcycleControllerSettings_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_MotorcycleControllerSettings_t * cInstance = new JoltC_MotorcycleControllerSettings_t();
+    MotorcycleControllerSettings * cppInstance = new MotorcycleControllerSettings();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region properties
 
-float JPC_MotorcycleControllerSettings_mMaxLeanAngle_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mMaxLeanAngle_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   float result = selfCpp->mMaxLeanAngle;
   return result;
 };
 
-void JPC_MotorcycleControllerSettings_mMaxLeanAngle_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mMaxLeanAngle
+void JoltC_MotorcycleControllerSettings_mMaxLeanAngle_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mMaxLeanAngle,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mMaxLeanAngle = mMaxLeanAngle;
 };
 
-float JPC_MotorcycleControllerSettings_mLeanSpringConstant_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSpringConstant_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   float result = selfCpp->mLeanSpringConstant;
   return result;
 };
 
-void JPC_MotorcycleControllerSettings_mLeanSpringConstant_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSpringConstant
+void JoltC_MotorcycleControllerSettings_mLeanSpringConstant_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSpringConstant,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mLeanSpringConstant = mLeanSpringConstant;
 };
 
-float JPC_MotorcycleControllerSettings_mLeanSpringDamping_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSpringDamping_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   float result = selfCpp->mLeanSpringDamping;
   return result;
 };
 
-void JPC_MotorcycleControllerSettings_mLeanSpringDamping_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSpringDamping
+void JoltC_MotorcycleControllerSettings_mLeanSpringDamping_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSpringDamping,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mLeanSpringDamping = mLeanSpringDamping;
 };
 
-float JPC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficient_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficient_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   float result = selfCpp->mLeanSpringIntegrationCoefficient;
   return result;
 };
 
-void JPC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficient_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSpringIntegrationCoefficient
+void JoltC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficient_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSpringIntegrationCoefficient,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mLeanSpringIntegrationCoefficient = mLeanSpringIntegrationCoefficient;
 };
 
-float JPC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficientDecay_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficientDecay_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   float result = selfCpp->mLeanSpringIntegrationCoefficientDecay;
   return result;
 };
 
-void JPC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficientDecay_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSpringIntegrationCoefficientDecay
+void JoltC_MotorcycleControllerSettings_mLeanSpringIntegrationCoefficientDecay_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSpringIntegrationCoefficientDecay,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mLeanSpringIntegrationCoefficientDecay = mLeanSpringIntegrationCoefficientDecay;
 };
 
-float JPC_MotorcycleControllerSettings_mLeanSmoothingFactor_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mLeanSmoothingFactor_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   float result = selfCpp->mLeanSmoothingFactor;
   return result;
 };
 
-void JPC_MotorcycleControllerSettings_mLeanSmoothingFactor_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mLeanSmoothingFactor
+void JoltC_MotorcycleControllerSettings_mLeanSmoothingFactor_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mLeanSmoothingFactor,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mLeanSmoothingFactor = mLeanSmoothingFactor;
 };
 
-JPC_VehicleEngineSettings_t * JPC_MotorcycleControllerSettings_mEngine_Get(
-  JPC_MotorcycleControllerSettings_t * self
+JoltC_VehicleEngineSettings_t * JoltC_MotorcycleControllerSettings_mEngine_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   VehicleEngineSettings resultValue = selfCpp->mEngine;
   VehicleEngineSettings* result = new VehicleEngineSettings(resultValue);
-  return reinterpret_cast<JPC_VehicleEngineSettings_t *>(result);
+  return reinterpret_cast<JoltC_VehicleEngineSettings_t *>(result);
 };
 
-void JPC_MotorcycleControllerSettings_mEngine_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  JPC_VehicleEngineSettings_t * mEngine
+void JoltC_MotorcycleControllerSettings_mEngine_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  JoltC_VehicleEngineSettings_t * mEngine,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mEngine = *reinterpret_cast<VehicleEngineSettings *>(mEngine->obj);
 };
 
-JPC_VehicleTransmissionSettings_t * JPC_MotorcycleControllerSettings_mTransmission_Get(
-  JPC_MotorcycleControllerSettings_t * self
+JoltC_VehicleTransmissionSettings_t * JoltC_MotorcycleControllerSettings_mTransmission_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   VehicleTransmissionSettings resultValue = selfCpp->mTransmission;
   VehicleTransmissionSettings* result = new VehicleTransmissionSettings(resultValue);
-  return reinterpret_cast<JPC_VehicleTransmissionSettings_t *>(result);
+  return reinterpret_cast<JoltC_VehicleTransmissionSettings_t *>(result);
 };
 
-void JPC_MotorcycleControllerSettings_mTransmission_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  JPC_VehicleTransmissionSettings_t * mTransmission
+void JoltC_MotorcycleControllerSettings_mTransmission_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  JoltC_VehicleTransmissionSettings_t * mTransmission,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mTransmission = *reinterpret_cast<VehicleTransmissionSettings *>(mTransmission->obj);
 };
 
-JPC_ArrayVehicleDifferentialSettings_t * JPC_MotorcycleControllerSettings_mDifferentials_Get(
-  JPC_MotorcycleControllerSettings_t * self
+JoltC_ArrayVehicleDifferentialSettings_t * JoltC_MotorcycleControllerSettings_mDifferentials_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   ArrayVehicleDifferentialSettings resultValue = selfCpp->mDifferentials;
   ArrayVehicleDifferentialSettings* result = new ArrayVehicleDifferentialSettings(resultValue);
-  return reinterpret_cast<JPC_ArrayVehicleDifferentialSettings_t *>(result);
+  return reinterpret_cast<JoltC_ArrayVehicleDifferentialSettings_t *>(result);
 };
 
-void JPC_MotorcycleControllerSettings_mDifferentials_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  JPC_ArrayVehicleDifferentialSettings_t * mDifferentials
+void JoltC_MotorcycleControllerSettings_mDifferentials_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  JoltC_ArrayVehicleDifferentialSettings_t * mDifferentials,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mDifferentials = *reinterpret_cast<ArrayVehicleDifferentialSettings *>(mDifferentials->obj);
 };
 
-float JPC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Get(
-  JPC_MotorcycleControllerSettings_t * self
+float JoltC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Get(
+  JoltC_MotorcycleControllerSettings_t * self,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   float result = selfCpp->mDifferentialLimitedSlipRatio;
   return result;
 };
 
-void JPC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Set(
-  JPC_MotorcycleControllerSettings_t * self,
-  float mDifferentialLimitedSlipRatio
+void JoltC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Set(
+  JoltC_MotorcycleControllerSettings_t * self,
+  float mDifferentialLimitedSlipRatio,
+  char** outErrMsg
 ) {
   MotorcycleControllerSettings * selfCpp = static_cast<MotorcycleControllerSettings *>(self->obj);
   selfCpp->mDifferentialLimitedSlipRatio = mDifferentialLimitedSlipRatio;

@@ -8,144 +8,175 @@ extern "C" {
 
 //region constructors
 
-JPC_WheelWV_t * JPC_WheelWV_new(
-  const JPC_WheelSettingsWV_t * inWheel
+JoltC_WheelWV_t * JoltC_WheelWV_new(
+  const JoltC_WheelSettingsWV_t * inWheel,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-const JPC_WheelSettingsWV_t * JPC_WheelWV_GetSettings_0(
-  JPC_WheelWV_t * self
+const JoltC_WheelSettingsWV_t * JoltC_WheelWV_GetSettings_0(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-const JPC_WheelSettings_t * JPC_WheelWV_GetSettings_1(
-  JPC_WheelWV_t * self
+const JoltC_WheelSettings_t * JoltC_WheelWV_GetSettings_1(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_GetAngularVelocity(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_GetAngularVelocity(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelWV_SetAngularVelocity(
-  JPC_WheelWV_t * self,
-  float inVel
+void JoltC_WheelWV_SetAngularVelocity(
+  JoltC_WheelWV_t * self,
+  float inVel,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_GetRotationAngle(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_GetRotationAngle(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelWV_SetRotationAngle(
-  JPC_WheelWV_t * self,
-  float inAngle
+void JoltC_WheelWV_SetRotationAngle(
+  JoltC_WheelWV_t * self,
+  float inAngle,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_GetSteerAngle(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_GetSteerAngle(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelWV_SetSteerAngle(
-  JPC_WheelWV_t * self,
-  float inAngle
+void JoltC_WheelWV_SetSteerAngle(
+  JoltC_WheelWV_t * self,
+  float inAngle,
+  char** outErrMsg
 );
 
-bool JPC_WheelWV_HasContact(
-  JPC_WheelWV_t * self
+bool JoltC_WheelWV_HasContact(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-JPC_BodyID_t * JPC_WheelWV_GetContactBodyID(
-  JPC_WheelWV_t * self
+JoltC_BodyID_t * JoltC_WheelWV_GetContactBodyID(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_WheelWV_GetContactPosition(
-  JPC_WheelWV_t * self
+JoltC_RVec3_t * JoltC_WheelWV_GetContactPosition(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelWV_GetContactPointVelocity(
-  JPC_WheelWV_t * self
+JoltC_Vec3_t * JoltC_WheelWV_GetContactPointVelocity(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelWV_GetContactNormal(
-  JPC_WheelWV_t * self
+JoltC_Vec3_t * JoltC_WheelWV_GetContactNormal(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelWV_GetContactLongitudinal(
-  JPC_WheelWV_t * self
+JoltC_Vec3_t * JoltC_WheelWV_GetContactLongitudinal(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelWV_GetContactLateral(
-  JPC_WheelWV_t * self
+JoltC_Vec3_t * JoltC_WheelWV_GetContactLateral(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_GetSuspensionLength(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_GetSuspensionLength(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-bool JPC_WheelWV_HasHitHardPoint(
-  JPC_WheelWV_t * self
+bool JoltC_WheelWV_HasHitHardPoint(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_GetSuspensionLambda(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_GetSuspensionLambda(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_GetLongitudinalLambda(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_GetLongitudinalLambda(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_GetLateralLambda(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_GetLateralLambda(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_WheelWV_mLongitudinalSlip_Get(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_mLongitudinalSlip_Get(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelWV_mLongitudinalSlip_Set(
-  JPC_WheelWV_t * self,
-  float mLongitudinalSlip
+void JoltC_WheelWV_mLongitudinalSlip_Set(
+  JoltC_WheelWV_t * self,
+  float mLongitudinalSlip,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_mLateralSlip_Get(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_mLateralSlip_Get(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelWV_mLateralSlip_Set(
-  JPC_WheelWV_t * self,
-  float mLateralSlip
+void JoltC_WheelWV_mLateralSlip_Set(
+  JoltC_WheelWV_t * self,
+  float mLateralSlip,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_mCombinedLongitudinalFriction_Get(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_mCombinedLongitudinalFriction_Get(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelWV_mCombinedLongitudinalFriction_Set(
-  JPC_WheelWV_t * self,
-  float mCombinedLongitudinalFriction
+void JoltC_WheelWV_mCombinedLongitudinalFriction_Set(
+  JoltC_WheelWV_t * self,
+  float mCombinedLongitudinalFriction,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_mCombinedLateralFriction_Get(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_mCombinedLateralFriction_Get(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelWV_mCombinedLateralFriction_Set(
-  JPC_WheelWV_t * self,
-  float mCombinedLateralFriction
+void JoltC_WheelWV_mCombinedLateralFriction_Set(
+  JoltC_WheelWV_t * self,
+  float mCombinedLateralFriction,
+  char** outErrMsg
 );
 
-float JPC_WheelWV_mBrakeImpulse_Get(
-  JPC_WheelWV_t * self
+float JoltC_WheelWV_mBrakeImpulse_Get(
+  JoltC_WheelWV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelWV_mBrakeImpulse_Set(
-  JPC_WheelWV_t * self,
-  float mBrakeImpulse
+void JoltC_WheelWV_mBrakeImpulse_Set(
+  JoltC_WheelWV_t * self,
+  float mBrakeImpulse,
+  char** outErrMsg
 );
 
 //endregion properties

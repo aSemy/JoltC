@@ -1,5 +1,6 @@
-#include "JoltC/JPC_DistanceConstraint.h"
+#include "JoltC/JoltC_DistanceConstraint.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,246 +8,489 @@ extern "C" {
 
 //region functions
 
-void JPC_DistanceConstraint_SetDistance(
-  JPC_DistanceConstraint_t * self,
+void JoltC_DistanceConstraint_SetDistance(
+  JoltC_DistanceConstraint_t * self,
   float inMinDistance,
-  float inMaxDistance
+  float inMaxDistance,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->SetDistance(
-  inMinDistance,
-  inMaxDistance
-  );
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->SetDistance(
+    inMinDistance,
+    inMaxDistance
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_DistanceConstraint_GetMinDistance(
-  JPC_DistanceConstraint_t * self
+float JoltC_DistanceConstraint_GetMinDistance(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  float result = selfCpp->GetMinDistance();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    float result = selfCpp->GetMinDistance();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_DistanceConstraint_GetMaxDistance(
-  JPC_DistanceConstraint_t * self
+float JoltC_DistanceConstraint_GetMaxDistance(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  float result = selfCpp->GetMaxDistance();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    float result = selfCpp->GetMaxDistance();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_SpringSettings_t * JPC_DistanceConstraint_GetLimitsSpringSettings(
-  JPC_DistanceConstraint_t * self
+JoltC_SpringSettings_t * JoltC_DistanceConstraint_GetLimitsSpringSettings(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  SpringSettings& resultRef = selfCpp->GetLimitsSpringSettings();
-  SpringSettings * result = &resultRef;
-  return reinterpret_cast<JPC_SpringSettings_t *>(result);
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    SpringSettings& resultRef = selfCpp->GetLimitsSpringSettings();
+    SpringSettings * result = &resultRef;
+    return reinterpret_cast<JoltC_SpringSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_SetLimitsSpringSettings(
-  JPC_DistanceConstraint_t * self,
-  const JPC_SpringSettings_t * inSettings
+void JoltC_DistanceConstraint_SetLimitsSpringSettings(
+  JoltC_DistanceConstraint_t * self,
+  const JoltC_SpringSettings_t * inSettings,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->SetLimitsSpringSettings(
-  *reinterpret_cast<SpringSettings *>(inSettings->obj)
-  );
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->SetLimitsSpringSettings(
+    *reinterpret_cast<SpringSettings *>(inSettings->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_DistanceConstraint_GetTotalLambdaPosition(
-  JPC_DistanceConstraint_t * self
+float JoltC_DistanceConstraint_GetTotalLambdaPosition(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaPosition();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    float result = selfCpp->GetTotalLambdaPosition();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_DistanceConstraint_GetBody1(
-  JPC_DistanceConstraint_t * self
+JoltC_Body_t * JoltC_DistanceConstraint_GetBody1(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody1();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_DistanceConstraint_GetBody2(
-  JPC_DistanceConstraint_t * self
+JoltC_Body_t * JoltC_DistanceConstraint_GetBody2(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody2();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_DistanceConstraint_GetConstraintToBody1Matrix(
-  JPC_DistanceConstraint_t * self
+JoltC_Mat44_t * JoltC_DistanceConstraint_GetConstraintToBody1Matrix(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_DistanceConstraint_GetConstraintToBody2Matrix(
-  JPC_DistanceConstraint_t * self
+JoltC_Mat44_t * JoltC_DistanceConstraint_GetConstraintToBody2Matrix(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_DistanceConstraint_GetRefCount(
-  JPC_DistanceConstraint_t * self
+unsigned long JoltC_DistanceConstraint_GetRefCount(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_AddRef(
-  JPC_DistanceConstraint_t * self
+void JoltC_DistanceConstraint_AddRef(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_Release(
-  JPC_DistanceConstraint_t * self
+void JoltC_DistanceConstraint_Release(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintType JPC_DistanceConstraint_GetType(
-  JPC_DistanceConstraint_t * self
+JoltC_EConstraintType JoltC_DistanceConstraint_GetType(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  EConstraintType result = selfCpp->GetType();
-  return static_cast<JPC_EConstraintType>(static_cast<int>(result));
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    EConstraintType result = selfCpp->GetType();
+    return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintSubType JPC_DistanceConstraint_GetSubType(
-  JPC_DistanceConstraint_t * self
+JoltC_EConstraintSubType JoltC_DistanceConstraint_GetSubType(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  EConstraintSubType result = selfCpp->GetSubType();
-  return static_cast<JPC_EConstraintSubType>(static_cast<int>(result));
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    EConstraintSubType result = selfCpp->GetSubType();
+    return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_DistanceConstraint_GetConstraintPriority(
-  JPC_DistanceConstraint_t * self
+unsigned long JoltC_DistanceConstraint_GetConstraintPriority(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetConstraintPriority();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_SetConstraintPriority(
-  JPC_DistanceConstraint_t * self,
-  unsigned long inPriority
+void JoltC_DistanceConstraint_SetConstraintPriority(
+  JoltC_DistanceConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->SetConstraintPriority(
-  inPriority
-  );
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->SetConstraintPriority(
+    inPriority
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_SetNumVelocityStepsOverride(
-  JPC_DistanceConstraint_t * self,
-  long inN
+void JoltC_DistanceConstraint_SetNumVelocityStepsOverride(
+  JoltC_DistanceConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->SetNumVelocityStepsOverride(
-  inN
-  );
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->SetNumVelocityStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_DistanceConstraint_GetNumVelocityStepsOverride(
-  JPC_DistanceConstraint_t * self
+long JoltC_DistanceConstraint_GetNumVelocityStepsOverride(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    long result = selfCpp->GetNumVelocityStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_SetNumPositionStepsOverride(
-  JPC_DistanceConstraint_t * self,
-  long inN
+void JoltC_DistanceConstraint_SetNumPositionStepsOverride(
+  JoltC_DistanceConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->SetNumPositionStepsOverride(
-  inN
-  );
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->SetNumPositionStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_DistanceConstraint_GetNumPositionStepsOverride(
-  JPC_DistanceConstraint_t * self
+long JoltC_DistanceConstraint_GetNumPositionStepsOverride(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    long result = selfCpp->GetNumPositionStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_SetEnabled(
-  JPC_DistanceConstraint_t * self,
-  bool inEnabled
+void JoltC_DistanceConstraint_SetEnabled(
+  JoltC_DistanceConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->SetEnabled(
-  inEnabled
-  );
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->SetEnabled(
+    inEnabled
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_DistanceConstraint_GetEnabled(
-  JPC_DistanceConstraint_t * self
+bool JoltC_DistanceConstraint_GetEnabled(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    bool result = selfCpp->GetEnabled();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_DistanceConstraint_IsActive(
-  JPC_DistanceConstraint_t * self
+bool JoltC_DistanceConstraint_IsActive(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    bool result = selfCpp->IsActive();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_DistanceConstraint_GetUserData(
-  JPC_DistanceConstraint_t * self
+unsigned long long int JoltC_DistanceConstraint_GetUserData(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_SetUserData(
-  JPC_DistanceConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_DistanceConstraint_SetUserData(
+  JoltC_DistanceConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DistanceConstraint_ResetWarmStart(
-  JPC_DistanceConstraint_t * self
+void JoltC_DistanceConstraint_ResetWarmStart(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 ) {
-  DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  
-  selfCpp->ResetWarmStart();
+  try {
+    DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
+    
+    selfCpp->ResetWarmStart();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

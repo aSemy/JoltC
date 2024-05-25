@@ -8,21 +8,24 @@ extern "C" {
 
 //region constructors
 
-JPC_JPHString_t * JPC_JPHString_new(
+JoltC_JPHString_t * JoltC_JPHString_new(
   char* str,
-  long length
+  long length,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-const char* JPC_JPHString_c_str(
-  JPC_JPHString_t * self
+const char* JoltC_JPHString_c_str(
+  JoltC_JPHString_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_JPHString_size(
-  JPC_JPHString_t * self
+unsigned long JoltC_JPHString_size(
+  JoltC_JPHString_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

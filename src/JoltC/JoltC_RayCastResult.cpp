@@ -1,5 +1,6 @@
-#include "JoltC/JPC_RayCastResult.h"
+#include "JoltC/JoltC_RayCastResult.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,74 +8,99 @@ extern "C" {
 
 //region constructors
 
-JPC_RayCastResult_t * JPC_RayCastResult_new() {
-  JPC_RayCastResult_t * cInstance = new JPC_RayCastResult_t();
-  RayCastResult * cppInstance = new RayCastResult();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_RayCastResult_t * JoltC_RayCastResult_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_RayCastResult_t * cInstance = new JoltC_RayCastResult_t();
+    RayCastResult * cppInstance = new RayCastResult();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_RayCastResult_Reset(
-  JPC_RayCastResult_t * self
+void JoltC_RayCastResult_Reset(
+  JoltC_RayCastResult_t * self,
+  char** outErrMsg
 ) {
-  RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
-  
-  selfCpp->Reset();
+  try {
+    RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
+    
+    selfCpp->Reset();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-JPC_SubShapeID_t * JPC_RayCastResult_mSubShapeID2_Get(
-  JPC_RayCastResult_t * self
+JoltC_SubShapeID_t * JoltC_RayCastResult_mSubShapeID2_Get(
+  JoltC_RayCastResult_t * self,
+  char** outErrMsg
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   SubShapeID resultValue = selfCpp->mSubShapeID2;
   SubShapeID* result = new SubShapeID(resultValue);
-  return reinterpret_cast<JPC_SubShapeID_t *>(result);
+  return reinterpret_cast<JoltC_SubShapeID_t *>(result);
 };
 
-void JPC_RayCastResult_mSubShapeID2_Set(
-  JPC_RayCastResult_t * self,
-  JPC_SubShapeID_t * mSubShapeID2
+void JoltC_RayCastResult_mSubShapeID2_Set(
+  JoltC_RayCastResult_t * self,
+  JoltC_SubShapeID_t * mSubShapeID2,
+  char** outErrMsg
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   selfCpp->mSubShapeID2 = *reinterpret_cast<SubShapeID *>(mSubShapeID2->obj);
 };
 
-JPC_BodyID_t * JPC_RayCastResult_mBodyID_Get(
-  JPC_RayCastResult_t * self
+JoltC_BodyID_t * JoltC_RayCastResult_mBodyID_Get(
+  JoltC_RayCastResult_t * self,
+  char** outErrMsg
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   BodyID resultValue = selfCpp->mBodyID;
   BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JPC_BodyID_t *>(result);
+  return reinterpret_cast<JoltC_BodyID_t *>(result);
 };
 
-void JPC_RayCastResult_mBodyID_Set(
-  JPC_RayCastResult_t * self,
-  JPC_BodyID_t * mBodyID
+void JoltC_RayCastResult_mBodyID_Set(
+  JoltC_RayCastResult_t * self,
+  JoltC_BodyID_t * mBodyID,
+  char** outErrMsg
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   selfCpp->mBodyID = *reinterpret_cast<BodyID *>(mBodyID->obj);
 };
 
-float JPC_RayCastResult_mFraction_Get(
-  JPC_RayCastResult_t * self
+float JoltC_RayCastResult_mFraction_Get(
+  JoltC_RayCastResult_t * self,
+  char** outErrMsg
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   float result = selfCpp->mFraction;
   return result;
 };
 
-void JPC_RayCastResult_mFraction_Set(
-  JPC_RayCastResult_t * self,
-  float mFraction
+void JoltC_RayCastResult_mFraction_Set(
+  JoltC_RayCastResult_t * self,
+  float mFraction,
+  char** outErrMsg
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   selfCpp->mFraction = mFraction;

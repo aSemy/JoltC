@@ -8,35 +8,40 @@ extern "C" {
 
 //region constructors
 
-JPC_SoftBodySharedSettingsFace_t * JPC_SoftBodySharedSettingsFace_new(
+JoltC_SoftBodySharedSettingsFace_t * JoltC_SoftBodySharedSettingsFace_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
   unsigned long inVertex3,
-  unsigned long inMaterialIndex
+  unsigned long inMaterialIndex,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region properties
 
-size_t JPC_SoftBodySharedSettingsFace_mVertex_Get(
-  JPC_SoftBodySharedSettingsFace_t * self,
-  unsigned long * outValue
+size_t JoltC_SoftBodySharedSettingsFace_mVertex_Get(
+  JoltC_SoftBodySharedSettingsFace_t * self,
+  unsigned long * outValue,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsFace_mVertex_Set(
-  JPC_SoftBodySharedSettingsFace_t * self,
+void JoltC_SoftBodySharedSettingsFace_mVertex_Set(
+  JoltC_SoftBodySharedSettingsFace_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize
+  size_t mVertexSize,
+  char** outErrMsg
 );
 
-unsigned long JPC_SoftBodySharedSettingsFace_mMaterialIndex_Get(
-  JPC_SoftBodySharedSettingsFace_t * self
+unsigned long JoltC_SoftBodySharedSettingsFace_mMaterialIndex_Get(
+  JoltC_SoftBodySharedSettingsFace_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsFace_mMaterialIndex_Set(
-  JPC_SoftBodySharedSettingsFace_t * self,
-  unsigned long mMaterialIndex
+void JoltC_SoftBodySharedSettingsFace_mMaterialIndex_Set(
+  JoltC_SoftBodySharedSettingsFace_t * self,
+  unsigned long mMaterialIndex,
+  char** outErrMsg
 );
 
 //endregion properties

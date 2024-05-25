@@ -8,35 +8,41 @@ extern "C" {
 
 //region functions
 
-void JPC_SkeletalAnimationJointState_FromMatrix(
-  JPC_SkeletalAnimationJointState_t * self,
-  const JPC_Mat44_t * inMatrix
+void JoltC_SkeletalAnimationJointState_FromMatrix(
+  JoltC_SkeletalAnimationJointState_t * self,
+  const JoltC_Mat44_t * inMatrix,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_SkeletalAnimationJointState_ToMatrix(
-  JPC_SkeletalAnimationJointState_t * self
+JoltC_Mat44_t * JoltC_SkeletalAnimationJointState_ToMatrix(
+  JoltC_SkeletalAnimationJointState_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_SkeletalAnimationJointState_mTranslation_Get(
-  JPC_SkeletalAnimationJointState_t * self
+JoltC_Vec3_t * JoltC_SkeletalAnimationJointState_mTranslation_Get(
+  JoltC_SkeletalAnimationJointState_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimationJointState_mTranslation_Set(
-  JPC_SkeletalAnimationJointState_t * self,
-  JPC_Vec3_t * mTranslation
+void JoltC_SkeletalAnimationJointState_mTranslation_Set(
+  JoltC_SkeletalAnimationJointState_t * self,
+  JoltC_Vec3_t * mTranslation,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_SkeletalAnimationJointState_mRotation_Get(
-  JPC_SkeletalAnimationJointState_t * self
+JoltC_Quat_t * JoltC_SkeletalAnimationJointState_mRotation_Get(
+  JoltC_SkeletalAnimationJointState_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimationJointState_mRotation_Set(
-  JPC_SkeletalAnimationJointState_t * self,
-  JPC_Quat_t * mRotation
+void JoltC_SkeletalAnimationJointState_mRotation_Set(
+  JoltC_SkeletalAnimationJointState_t * self,
+  JoltC_Quat_t * mRotation,
+  char** outErrMsg
 );
 
 //endregion properties

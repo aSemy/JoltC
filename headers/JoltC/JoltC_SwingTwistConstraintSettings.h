@@ -8,194 +8,236 @@ extern "C" {
 
 //region constructors
 
-JPC_SwingTwistConstraintSettings_t * JPC_SwingTwistConstraintSettings_new();
+JoltC_SwingTwistConstraintSettings_t * JoltC_SwingTwistConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_Constraint_t * JPC_SwingTwistConstraintSettings_Create(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_SwingTwistConstraintSettings_Create(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_SwingTwistConstraintSettings_GetRefCount(
-  JPC_SwingTwistConstraintSettings_t * self
+unsigned long JoltC_SwingTwistConstraintSettings_GetRefCount(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_AddRef(
-  JPC_SwingTwistConstraintSettings_t * self
+void JoltC_SwingTwistConstraintSettings_AddRef(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_Release(
-  JPC_SwingTwistConstraintSettings_t * self
+void JoltC_SwingTwistConstraintSettings_Release(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_SwingTwistConstraintSettings_mSpace_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_SwingTwistConstraintSettings_mSpace_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mSpace_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_SwingTwistConstraintSettings_mSpace_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_SwingTwistConstraintSettings_mPosition1_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_SwingTwistConstraintSettings_mPosition1_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mPosition1_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_RVec3_t * mPosition1
+void JoltC_SwingTwistConstraintSettings_mPosition1_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_RVec3_t * mPosition1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SwingTwistConstraintSettings_mTwistAxis1_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraintSettings_mTwistAxis1_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mTwistAxis1_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_Vec3_t * mTwistAxis1
+void JoltC_SwingTwistConstraintSettings_mTwistAxis1_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_Vec3_t * mTwistAxis1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SwingTwistConstraintSettings_mPlaneAxis1_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraintSettings_mPlaneAxis1_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mPlaneAxis1_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_Vec3_t * mPlaneAxis1
+void JoltC_SwingTwistConstraintSettings_mPlaneAxis1_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_Vec3_t * mPlaneAxis1,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_SwingTwistConstraintSettings_mPosition2_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_SwingTwistConstraintSettings_mPosition2_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mPosition2_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_RVec3_t * mPosition2
+void JoltC_SwingTwistConstraintSettings_mPosition2_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_RVec3_t * mPosition2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SwingTwistConstraintSettings_mTwistAxis2_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraintSettings_mTwistAxis2_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mTwistAxis2_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_Vec3_t * mTwistAxis2
+void JoltC_SwingTwistConstraintSettings_mTwistAxis2_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_Vec3_t * mTwistAxis2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SwingTwistConstraintSettings_mPlaneAxis2_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_SwingTwistConstraintSettings_mPlaneAxis2_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mPlaneAxis2_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_Vec3_t * mPlaneAxis2
+void JoltC_SwingTwistConstraintSettings_mPlaneAxis2_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_Vec3_t * mPlaneAxis2,
+  char** outErrMsg
 );
 
-JPC_ESwingType JPC_SwingTwistConstraintSettings_mSwingType_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_ESwingType JoltC_SwingTwistConstraintSettings_mSwingType_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mSwingType_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_ESwingType mSwingType
+void JoltC_SwingTwistConstraintSettings_mSwingType_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_ESwingType mSwingType,
+  char** outErrMsg
 );
 
-float JPC_SwingTwistConstraintSettings_mNormalHalfConeAngle_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+float JoltC_SwingTwistConstraintSettings_mNormalHalfConeAngle_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mNormalHalfConeAngle_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  float mNormalHalfConeAngle
+void JoltC_SwingTwistConstraintSettings_mNormalHalfConeAngle_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  float mNormalHalfConeAngle,
+  char** outErrMsg
 );
 
-float JPC_SwingTwistConstraintSettings_mPlaneHalfConeAngle_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+float JoltC_SwingTwistConstraintSettings_mPlaneHalfConeAngle_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mPlaneHalfConeAngle_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  float mPlaneHalfConeAngle
+void JoltC_SwingTwistConstraintSettings_mPlaneHalfConeAngle_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  float mPlaneHalfConeAngle,
+  char** outErrMsg
 );
 
-float JPC_SwingTwistConstraintSettings_mTwistMinAngle_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+float JoltC_SwingTwistConstraintSettings_mTwistMinAngle_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mTwistMinAngle_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  float mTwistMinAngle
+void JoltC_SwingTwistConstraintSettings_mTwistMinAngle_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  float mTwistMinAngle,
+  char** outErrMsg
 );
 
-float JPC_SwingTwistConstraintSettings_mTwistMaxAngle_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+float JoltC_SwingTwistConstraintSettings_mTwistMaxAngle_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mTwistMaxAngle_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  float mTwistMaxAngle
+void JoltC_SwingTwistConstraintSettings_mTwistMaxAngle_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  float mTwistMaxAngle,
+  char** outErrMsg
 );
 
-float JPC_SwingTwistConstraintSettings_mMaxFrictionTorque_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+float JoltC_SwingTwistConstraintSettings_mMaxFrictionTorque_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mMaxFrictionTorque_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  float mMaxFrictionTorque
+void JoltC_SwingTwistConstraintSettings_mMaxFrictionTorque_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  float mMaxFrictionTorque,
+  char** outErrMsg
 );
 
-JPC_MotorSettings_t * JPC_SwingTwistConstraintSettings_mSwingMotorSettings_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_MotorSettings_t * JoltC_SwingTwistConstraintSettings_mSwingMotorSettings_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mSwingMotorSettings_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_MotorSettings_t * mSwingMotorSettings
+void JoltC_SwingTwistConstraintSettings_mSwingMotorSettings_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_MotorSettings_t * mSwingMotorSettings,
+  char** outErrMsg
 );
 
-JPC_MotorSettings_t * JPC_SwingTwistConstraintSettings_mTwistMotorSettings_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+JoltC_MotorSettings_t * JoltC_SwingTwistConstraintSettings_mTwistMotorSettings_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mTwistMotorSettings_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  JPC_MotorSettings_t * mTwistMotorSettings
+void JoltC_SwingTwistConstraintSettings_mTwistMotorSettings_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  JoltC_MotorSettings_t * mTwistMotorSettings,
+  char** outErrMsg
 );
 
-bool JPC_SwingTwistConstraintSettings_mEnabled_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+bool JoltC_SwingTwistConstraintSettings_mEnabled_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mEnabled_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_SwingTwistConstraintSettings_mEnabled_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_SwingTwistConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+long JoltC_SwingTwistConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_SwingTwistConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_SwingTwistConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_SwingTwistConstraintSettings_t * self
+long JoltC_SwingTwistConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SwingTwistConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_SwingTwistConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_SwingTwistConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_SwingTwistConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

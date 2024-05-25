@@ -8,83 +8,99 @@ extern "C" {
 
 //region constructors
 
-JPC_BoxShapeSettings_t * JPC_BoxShapeSettings_new(
-  JPC_Vec3_t * inHalfExtent,
+JoltC_BoxShapeSettings_t * JoltC_BoxShapeSettings_new(
+  JoltC_Vec3_t * inHalfExtent,
   float inConvexRadius,
-  const JPC_PhysicsMaterial_t * inMaterial
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_BoxShapeSettings_GetRefCount(
-  JPC_BoxShapeSettings_t * self
+unsigned long JoltC_BoxShapeSettings_GetRefCount(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_BoxShapeSettings_AddRef(
-  JPC_BoxShapeSettings_t * self
+void JoltC_BoxShapeSettings_AddRef(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_BoxShapeSettings_Release(
-  JPC_BoxShapeSettings_t * self
+void JoltC_BoxShapeSettings_Release(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_BoxShapeSettings_Create(
-  JPC_BoxShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_BoxShapeSettings_Create(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_BoxShapeSettings_ClearCachedResult(
-  JPC_BoxShapeSettings_t * self
+void JoltC_BoxShapeSettings_ClearCachedResult(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_BoxShapeSettings_mHalfExtent_Get(
-  JPC_BoxShapeSettings_t * self
+JoltC_Vec3_t * JoltC_BoxShapeSettings_mHalfExtent_Get(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_BoxShapeSettings_mHalfExtent_Set(
-  JPC_BoxShapeSettings_t * self,
-  JPC_Vec3_t * mHalfExtent
+void JoltC_BoxShapeSettings_mHalfExtent_Set(
+  JoltC_BoxShapeSettings_t * self,
+  JoltC_Vec3_t * mHalfExtent,
+  char** outErrMsg
 );
 
-float JPC_BoxShapeSettings_mConvexRadius_Get(
-  JPC_BoxShapeSettings_t * self
+float JoltC_BoxShapeSettings_mConvexRadius_Get(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_BoxShapeSettings_mConvexRadius_Set(
-  JPC_BoxShapeSettings_t * self,
-  float mConvexRadius
+void JoltC_BoxShapeSettings_mConvexRadius_Set(
+  JoltC_BoxShapeSettings_t * self,
+  float mConvexRadius,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_BoxShapeSettings_mMaterial_Get(
-  JPC_BoxShapeSettings_t * self
+const JoltC_PhysicsMaterial_t * JoltC_BoxShapeSettings_mMaterial_Get(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-const void JPC_BoxShapeSettings_mMaterial_Set(
-  JPC_BoxShapeSettings_t * self,
-  const JPC_PhysicsMaterial_t * mMaterial
+const void JoltC_BoxShapeSettings_mMaterial_Set(
+  JoltC_BoxShapeSettings_t * self,
+  const JoltC_PhysicsMaterial_t * mMaterial,
+  char** outErrMsg
 );
 
-float JPC_BoxShapeSettings_mDensity_Get(
-  JPC_BoxShapeSettings_t * self
+float JoltC_BoxShapeSettings_mDensity_Get(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_BoxShapeSettings_mDensity_Set(
-  JPC_BoxShapeSettings_t * self,
-  float mDensity
+void JoltC_BoxShapeSettings_mDensity_Set(
+  JoltC_BoxShapeSettings_t * self,
+  float mDensity,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_BoxShapeSettings_mUserData_Get(
-  JPC_BoxShapeSettings_t * self
+unsigned long long int JoltC_BoxShapeSettings_mUserData_Get(
+  JoltC_BoxShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_BoxShapeSettings_mUserData_Set(
-  JPC_BoxShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_BoxShapeSettings_mUserData_Set(
+  JoltC_BoxShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

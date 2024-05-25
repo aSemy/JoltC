@@ -8,52 +8,62 @@ extern "C" {
 
 //region constructors
 
-JPC_RayCast_t * JPC_RayCast_new_0();
+JoltC_RayCast_t * JoltC_RayCast_new_0(
+  char** outErrMsg
+);
 
-JPC_RayCast_t * JPC_RayCast_new_1(
-  const JPC_Vec3_t * inOrigin,
-  const JPC_Vec3_t * inDirection
+JoltC_RayCast_t * JoltC_RayCast_new_1(
+  const JoltC_Vec3_t * inOrigin,
+  const JoltC_Vec3_t * inDirection,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-const JPC_RayCast_t * JPC_RayCast_Transformed(
-  JPC_RayCast_t * self,
-  const JPC_Mat44_t * inTransform
+const JoltC_RayCast_t * JoltC_RayCast_Transformed(
+  JoltC_RayCast_t * self,
+  const JoltC_Mat44_t * inTransform,
+  char** outErrMsg
 );
 
-const JPC_RayCast_t * JPC_RayCast_Translated(
-  JPC_RayCast_t * self,
-  const JPC_Vec3_t * inTranslation
+const JoltC_RayCast_t * JoltC_RayCast_Translated(
+  JoltC_RayCast_t * self,
+  const JoltC_Vec3_t * inTranslation,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_RayCast_GetPointOnRay(
-  JPC_RayCast_t * self,
-  float inFraction
+const JoltC_Vec3_t * JoltC_RayCast_GetPointOnRay(
+  JoltC_RayCast_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_RayCast_mOrigin_Get(
-  JPC_RayCast_t * self
+JoltC_Vec3_t * JoltC_RayCast_mOrigin_Get(
+  JoltC_RayCast_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCast_mOrigin_Set(
-  JPC_RayCast_t * self,
-  JPC_Vec3_t * mOrigin
+void JoltC_RayCast_mOrigin_Set(
+  JoltC_RayCast_t * self,
+  JoltC_Vec3_t * mOrigin,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_RayCast_mDirection_Get(
-  JPC_RayCast_t * self
+JoltC_Vec3_t * JoltC_RayCast_mDirection_Get(
+  JoltC_RayCast_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCast_mDirection_Set(
-  JPC_RayCast_t * self,
-  JPC_Vec3_t * mDirection
+void JoltC_RayCast_mDirection_Set(
+  JoltC_RayCast_t * self,
+  JoltC_Vec3_t * mDirection,
+  char** outErrMsg
 );
 
 //endregion properties

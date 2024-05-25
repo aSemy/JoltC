@@ -8,23 +8,26 @@ extern "C" {
 
 //region constructors
 
-JPC_BroadPhaseLayerInterfaceTable_t * JPC_BroadPhaseLayerInterfaceTable_new(
+JoltC_BroadPhaseLayerInterfaceTable_t * JoltC_BroadPhaseLayerInterfaceTable_new(
   unsigned long inNumObjectLayers,
-  unsigned long inNumBroadPhaseLayers
+  unsigned long inNumBroadPhaseLayers,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-void JPC_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
-  JPC_BroadPhaseLayerInterfaceTable_t * self,
+void JoltC_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
+  JoltC_BroadPhaseLayerInterfaceTable_t * self,
   unsigned long inObjectLayer,
-  const JPC_BroadPhaseLayer_t * inBroadPhaseLayer
+  const JoltC_BroadPhaseLayer_t * inBroadPhaseLayer,
+  char** outErrMsg
 );
 
-unsigned long JPC_BroadPhaseLayerInterfaceTable_GetNumBroadPhaseLayers(
-  JPC_BroadPhaseLayerInterfaceTable_t * self
+unsigned long JoltC_BroadPhaseLayerInterfaceTable_GetNumBroadPhaseLayers(
+  JoltC_BroadPhaseLayerInterfaceTable_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

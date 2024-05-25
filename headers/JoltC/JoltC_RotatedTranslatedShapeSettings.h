@@ -8,65 +8,77 @@ extern "C" {
 
 //region constructors
 
-JPC_RotatedTranslatedShapeSettings_t * JPC_RotatedTranslatedShapeSettings_new(
-  const JPC_Vec3_t * inPosition,
-  const JPC_Quat_t * inRotation,
-  JPC_ShapeSettings_t * inShape
+JoltC_RotatedTranslatedShapeSettings_t * JoltC_RotatedTranslatedShapeSettings_new(
+  const JoltC_Vec3_t * inPosition,
+  const JoltC_Quat_t * inRotation,
+  JoltC_ShapeSettings_t * inShape,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_RotatedTranslatedShapeSettings_GetRefCount(
-  JPC_RotatedTranslatedShapeSettings_t * self
+unsigned long JoltC_RotatedTranslatedShapeSettings_GetRefCount(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RotatedTranslatedShapeSettings_AddRef(
-  JPC_RotatedTranslatedShapeSettings_t * self
+void JoltC_RotatedTranslatedShapeSettings_AddRef(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RotatedTranslatedShapeSettings_Release(
-  JPC_RotatedTranslatedShapeSettings_t * self
+void JoltC_RotatedTranslatedShapeSettings_Release(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_RotatedTranslatedShapeSettings_Create(
-  JPC_RotatedTranslatedShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_RotatedTranslatedShapeSettings_Create(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RotatedTranslatedShapeSettings_ClearCachedResult(
-  JPC_RotatedTranslatedShapeSettings_t * self
+void JoltC_RotatedTranslatedShapeSettings_ClearCachedResult(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_RotatedTranslatedShapeSettings_mPosition_Get(
-  JPC_RotatedTranslatedShapeSettings_t * self
+JoltC_Vec3_t * JoltC_RotatedTranslatedShapeSettings_mPosition_Get(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RotatedTranslatedShapeSettings_mPosition_Set(
-  JPC_RotatedTranslatedShapeSettings_t * self,
-  JPC_Vec3_t * mPosition
+void JoltC_RotatedTranslatedShapeSettings_mPosition_Set(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  JoltC_Vec3_t * mPosition,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_RotatedTranslatedShapeSettings_mRotation_Get(
-  JPC_RotatedTranslatedShapeSettings_t * self
+JoltC_Quat_t * JoltC_RotatedTranslatedShapeSettings_mRotation_Get(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RotatedTranslatedShapeSettings_mRotation_Set(
-  JPC_RotatedTranslatedShapeSettings_t * self,
-  JPC_Quat_t * mRotation
+void JoltC_RotatedTranslatedShapeSettings_mRotation_Set(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  JoltC_Quat_t * mRotation,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_RotatedTranslatedShapeSettings_mUserData_Get(
-  JPC_RotatedTranslatedShapeSettings_t * self
+unsigned long long int JoltC_RotatedTranslatedShapeSettings_mUserData_Get(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RotatedTranslatedShapeSettings_mUserData_Set(
-  JPC_RotatedTranslatedShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_RotatedTranslatedShapeSettings_mUserData_Set(
+  JoltC_RotatedTranslatedShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

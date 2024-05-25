@@ -8,40 +8,48 @@ extern "C" {
 
 //region properties
 
-float JPC_SoftBodyContactSettings_mInvMassScale1_Get(
-  JPC_SoftBodyContactSettings_t * self
+float JoltC_SoftBodyContactSettings_mInvMassScale1_Get(
+  JoltC_SoftBodyContactSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyContactSettings_mInvMassScale1_Set(
-  JPC_SoftBodyContactSettings_t * self,
-  float mInvMassScale1
+void JoltC_SoftBodyContactSettings_mInvMassScale1_Set(
+  JoltC_SoftBodyContactSettings_t * self,
+  float mInvMassScale1,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyContactSettings_mInvMassScale2_Get(
-  JPC_SoftBodyContactSettings_t * self
+float JoltC_SoftBodyContactSettings_mInvMassScale2_Get(
+  JoltC_SoftBodyContactSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyContactSettings_mInvMassScale2_Set(
-  JPC_SoftBodyContactSettings_t * self,
-  float mInvMassScale2
+void JoltC_SoftBodyContactSettings_mInvMassScale2_Set(
+  JoltC_SoftBodyContactSettings_t * self,
+  float mInvMassScale2,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyContactSettings_mInvInertiaScale2_Get(
-  JPC_SoftBodyContactSettings_t * self
+float JoltC_SoftBodyContactSettings_mInvInertiaScale2_Get(
+  JoltC_SoftBodyContactSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyContactSettings_mInvInertiaScale2_Set(
-  JPC_SoftBodyContactSettings_t * self,
-  float mInvInertiaScale2
+void JoltC_SoftBodyContactSettings_mInvInertiaScale2_Set(
+  JoltC_SoftBodyContactSettings_t * self,
+  float mInvInertiaScale2,
+  char** outErrMsg
 );
 
-bool JPC_SoftBodyContactSettings_mIsSensor_Get(
-  JPC_SoftBodyContactSettings_t * self
+bool JoltC_SoftBodyContactSettings_mIsSensor_Get(
+  JoltC_SoftBodyContactSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyContactSettings_mIsSensor_Set(
-  JPC_SoftBodyContactSettings_t * self,
-  bool mIsSensor
+void JoltC_SoftBodyContactSettings_mIsSensor_Set(
+  JoltC_SoftBodyContactSettings_t * self,
+  bool mIsSensor,
+  char** outErrMsg
 );
 
 //endregion properties

@@ -8,50 +8,60 @@ extern "C" {
 
 //region constructors
 
-JPC_SkeletalAnimationKeyframe_t * JPC_SkeletalAnimationKeyframe_new();
+JoltC_SkeletalAnimationKeyframe_t * JoltC_SkeletalAnimationKeyframe_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_SkeletalAnimationKeyframe_FromMatrix(
-  JPC_SkeletalAnimationKeyframe_t * self,
-  const JPC_Mat44_t * inMatrix
+void JoltC_SkeletalAnimationKeyframe_FromMatrix(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  const JoltC_Mat44_t * inMatrix,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_SkeletalAnimationKeyframe_ToMatrix(
-  JPC_SkeletalAnimationKeyframe_t * self
+JoltC_Mat44_t * JoltC_SkeletalAnimationKeyframe_ToMatrix(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_SkeletalAnimationKeyframe_mTime_Get(
-  JPC_SkeletalAnimationKeyframe_t * self
+float JoltC_SkeletalAnimationKeyframe_mTime_Get(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimationKeyframe_mTime_Set(
-  JPC_SkeletalAnimationKeyframe_t * self,
-  float mTime
+void JoltC_SkeletalAnimationKeyframe_mTime_Set(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  float mTime,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SkeletalAnimationKeyframe_mTranslation_Get(
-  JPC_SkeletalAnimationKeyframe_t * self
+JoltC_Vec3_t * JoltC_SkeletalAnimationKeyframe_mTranslation_Get(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimationKeyframe_mTranslation_Set(
-  JPC_SkeletalAnimationKeyframe_t * self,
-  JPC_Vec3_t * mTranslation
+void JoltC_SkeletalAnimationKeyframe_mTranslation_Set(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  JoltC_Vec3_t * mTranslation,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_SkeletalAnimationKeyframe_mRotation_Get(
-  JPC_SkeletalAnimationKeyframe_t * self
+JoltC_Quat_t * JoltC_SkeletalAnimationKeyframe_mRotation_Get(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimationKeyframe_mRotation_Set(
-  JPC_SkeletalAnimationKeyframe_t * self,
-  JPC_Quat_t * mRotation
+void JoltC_SkeletalAnimationKeyframe_mRotation_Set(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  JoltC_Quat_t * mRotation,
+  char** outErrMsg
 );
 
 //endregion properties

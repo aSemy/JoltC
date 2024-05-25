@@ -8,130 +8,153 @@ extern "C" {
 
 //region constructors
 
-JPC_Ragdoll_t * JPC_Ragdoll_new(
-  JPC_PhysicsSystem_t * inSystem
+JoltC_Ragdoll_t * JoltC_Ragdoll_new(
+  JoltC_PhysicsSystem_t * inSystem,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-void JPC_Ragdoll_AddToPhysicsSystem(
-  JPC_Ragdoll_t * self,
-  JPC_EActivation inActivationMode,
-  bool inLockBodies
+void JoltC_Ragdoll_AddToPhysicsSystem(
+  JoltC_Ragdoll_t * self,
+  JoltC_EActivation inActivationMode,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_RemoveFromPhysicsSystem(
-  JPC_Ragdoll_t * self,
-  bool inLockBodies
+void JoltC_Ragdoll_RemoveFromPhysicsSystem(
+  JoltC_Ragdoll_t * self,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_Activate(
-  JPC_Ragdoll_t * self,
-  bool inLockBodies
+void JoltC_Ragdoll_Activate(
+  JoltC_Ragdoll_t * self,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-bool JPC_Ragdoll_IsActive(
-  JPC_Ragdoll_t * self,
-  bool inLockBodies
+bool JoltC_Ragdoll_IsActive(
+  JoltC_Ragdoll_t * self,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_SetGroupID(
-  JPC_Ragdoll_t * self,
+void JoltC_Ragdoll_SetGroupID(
+  JoltC_Ragdoll_t * self,
   long inGroupID,
-  bool inLockBodies
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_SetPose(
-  JPC_Ragdoll_t * self,
-  const JPC_SkeletonPose_t * inPose,
-  bool inLockBodies
+void JoltC_Ragdoll_SetPose(
+  JoltC_Ragdoll_t * self,
+  const JoltC_SkeletonPose_t * inPose,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_GetPose(
-  JPC_Ragdoll_t * self,
-  JPC_SkeletonPose_t * outPose,
-  bool inLockBodies
+void JoltC_Ragdoll_GetPose(
+  JoltC_Ragdoll_t * self,
+  JoltC_SkeletonPose_t * outPose,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_ResetWarmStart(
-  JPC_Ragdoll_t * self
+void JoltC_Ragdoll_ResetWarmStart(
+  JoltC_Ragdoll_t * self,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_DriveToPoseUsingKinematics(
-  JPC_Ragdoll_t * self,
-  const JPC_SkeletonPose_t * inPose,
+void JoltC_Ragdoll_DriveToPoseUsingKinematics(
+  JoltC_Ragdoll_t * self,
+  const JoltC_SkeletonPose_t * inPose,
   float inDeltaTime,
-  bool inLockBodies
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_DriveToPoseUsingMotors(
-  JPC_Ragdoll_t * self,
-  const JPC_SkeletonPose_t * inPose
+void JoltC_Ragdoll_DriveToPoseUsingMotors(
+  JoltC_Ragdoll_t * self,
+  const JoltC_SkeletonPose_t * inPose,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_SetLinearAndAngularVelocity(
-  JPC_Ragdoll_t * self,
-  const JPC_Vec3_t * inLinearVelocity,
-  const JPC_Vec3_t * inAngularVelocity,
-  bool inLockBodies
+void JoltC_Ragdoll_SetLinearAndAngularVelocity(
+  JoltC_Ragdoll_t * self,
+  const JoltC_Vec3_t * inLinearVelocity,
+  const JoltC_Vec3_t * inAngularVelocity,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_SetLinearVelocity(
-  JPC_Ragdoll_t * self,
-  const JPC_Vec3_t * inLinearVelocity,
-  bool inLockBodies
+void JoltC_Ragdoll_SetLinearVelocity(
+  JoltC_Ragdoll_t * self,
+  const JoltC_Vec3_t * inLinearVelocity,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_AddLinearVelocity(
-  JPC_Ragdoll_t * self,
-  const JPC_Vec3_t * inLinearVelocity,
-  bool inLockBodies
+void JoltC_Ragdoll_AddLinearVelocity(
+  JoltC_Ragdoll_t * self,
+  const JoltC_Vec3_t * inLinearVelocity,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_AddImpulse(
-  JPC_Ragdoll_t * self,
-  const JPC_Vec3_t * inImpulse,
-  bool inLockBodies
+void JoltC_Ragdoll_AddImpulse(
+  JoltC_Ragdoll_t * self,
+  const JoltC_Vec3_t * inImpulse,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-void JPC_Ragdoll_GetRootTransform(
-  JPC_Ragdoll_t * self,
-  JPC_RVec3_t * outPosition,
-  JPC_Quat_t * outRotation,
-  bool inLockBodies
+void JoltC_Ragdoll_GetRootTransform(
+  JoltC_Ragdoll_t * self,
+  JoltC_RVec3_t * outPosition,
+  JoltC_Quat_t * outRotation,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-long JPC_Ragdoll_GetBodyCount(
-  JPC_Ragdoll_t * self
+long JoltC_Ragdoll_GetBodyCount(
+  JoltC_Ragdoll_t * self,
+  char** outErrMsg
 );
 
-JPC_BodyID_t * JPC_Ragdoll_GetBodyID(
-  JPC_Ragdoll_t * self,
-  long inBodyIndex
+JoltC_BodyID_t * JoltC_Ragdoll_GetBodyID(
+  JoltC_Ragdoll_t * self,
+  long inBodyIndex,
+  char** outErrMsg
 );
 
-const JPC_BodyIDVector_t * JPC_Ragdoll_GetBodyIDs(
-  JPC_Ragdoll_t * self
+const JoltC_BodyIDVector_t * JoltC_Ragdoll_GetBodyIDs(
+  JoltC_Ragdoll_t * self,
+  char** outErrMsg
 );
 
-long JPC_Ragdoll_GetConstraintCount(
-  JPC_Ragdoll_t * self
+long JoltC_Ragdoll_GetConstraintCount(
+  JoltC_Ragdoll_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_Ragdoll_GetWorldSpaceBounds(
-  JPC_Ragdoll_t * self,
-  bool inLockBodies
+JoltC_AABox_t * JoltC_Ragdoll_GetWorldSpaceBounds(
+  JoltC_Ragdoll_t * self,
+  bool inLockBodies,
+  char** outErrMsg
 );
 
-const JPC_TwoBodyConstraint_t * JPC_Ragdoll_GetConstraint(
-  JPC_Ragdoll_t * self,
-  long inConstraintIndex
+const JoltC_TwoBodyConstraint_t * JoltC_Ragdoll_GetConstraint(
+  JoltC_Ragdoll_t * self,
+  long inConstraintIndex,
+  char** outErrMsg
 );
 
-const JPC_RagdollSettings_t * JPC_Ragdoll_GetRagdollSettings(
-  JPC_Ragdoll_t * self
+const JoltC_RagdollSettings_t * JoltC_Ragdoll_GetRagdollSettings(
+  JoltC_Ragdoll_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

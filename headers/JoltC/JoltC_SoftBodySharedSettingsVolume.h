@@ -8,45 +8,52 @@ extern "C" {
 
 //region constructors
 
-JPC_SoftBodySharedSettingsVolume_t * JPC_SoftBodySharedSettingsVolume_new(
+JoltC_SoftBodySharedSettingsVolume_t * JoltC_SoftBodySharedSettingsVolume_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
   unsigned long inVertex3,
   unsigned long inVertex4,
-  float inCompliance
+  float inCompliance,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region properties
 
-size_t JPC_SoftBodySharedSettingsVolume_mVertex_Get(
-  JPC_SoftBodySharedSettingsVolume_t * self,
-  unsigned long * outValue
+size_t JoltC_SoftBodySharedSettingsVolume_mVertex_Get(
+  JoltC_SoftBodySharedSettingsVolume_t * self,
+  unsigned long * outValue,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsVolume_mVertex_Set(
-  JPC_SoftBodySharedSettingsVolume_t * self,
+void JoltC_SoftBodySharedSettingsVolume_mVertex_Set(
+  JoltC_SoftBodySharedSettingsVolume_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize
+  size_t mVertexSize,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsVolume_mSixRestVolume_Get(
-  JPC_SoftBodySharedSettingsVolume_t * self
+float JoltC_SoftBodySharedSettingsVolume_mSixRestVolume_Get(
+  JoltC_SoftBodySharedSettingsVolume_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsVolume_mSixRestVolume_Set(
-  JPC_SoftBodySharedSettingsVolume_t * self,
-  float mSixRestVolume
+void JoltC_SoftBodySharedSettingsVolume_mSixRestVolume_Set(
+  JoltC_SoftBodySharedSettingsVolume_t * self,
+  float mSixRestVolume,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsVolume_mCompliance_Get(
-  JPC_SoftBodySharedSettingsVolume_t * self
+float JoltC_SoftBodySharedSettingsVolume_mCompliance_Get(
+  JoltC_SoftBodySharedSettingsVolume_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsVolume_mCompliance_Set(
-  JPC_SoftBodySharedSettingsVolume_t * self,
-  float mCompliance
+void JoltC_SoftBodySharedSettingsVolume_mCompliance_Set(
+  JoltC_SoftBodySharedSettingsVolume_t * self,
+  float mCompliance,
+  char** outErrMsg
 );
 
 //endregion properties

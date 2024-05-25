@@ -8,111 +8,134 @@ extern "C" {
 
 //region functions
 
-const unsigned long JPC_SoftBodyShape_GetSubShapeIDBits(
-  JPC_SoftBodyShape_t * self
+const unsigned long JoltC_SoftBodyShape_GetSubShapeIDBits(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-const unsigned long JPC_SoftBodyShape_GetFaceIndex(
-  JPC_SoftBodyShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const unsigned long JoltC_SoftBodyShape_GetFaceIndex(
+  JoltC_SoftBodyShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-unsigned long JPC_SoftBodyShape_GetRefCount(
-  JPC_SoftBodyShape_t * self
+unsigned long JoltC_SoftBodyShape_GetRefCount(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyShape_AddRef(
-  JPC_SoftBodyShape_t * self
+void JoltC_SoftBodyShape_AddRef(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyShape_Release(
-  JPC_SoftBodyShape_t * self
+void JoltC_SoftBodyShape_Release(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_SoftBodyShape_GetType(
-  JPC_SoftBodyShape_t * self
+JoltC_EShapeType JoltC_SoftBodyShape_GetType(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_SoftBodyShape_GetSubType(
-  JPC_SoftBodyShape_t * self
+JoltC_EShapeSubType JoltC_SoftBodyShape_GetSubType(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_SoftBodyShape_MustBeStatic(
-  JPC_SoftBodyShape_t * self
+bool JoltC_SoftBodyShape_MustBeStatic(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_SoftBodyShape_GetLocalBounds(
-  JPC_SoftBodyShape_t * self
+JoltC_AABox_t * JoltC_SoftBodyShape_GetLocalBounds(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_SoftBodyShape_GetWorldSpaceBounds(
-  JPC_SoftBodyShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_SoftBodyShape_GetWorldSpaceBounds(
+  JoltC_SoftBodyShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyShape_GetCenterOfMass(
-  JPC_SoftBodyShape_t * self
+JoltC_Vec3_t * JoltC_SoftBodyShape_GetCenterOfMass(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_SoftBodyShape_GetUserData(
-  JPC_SoftBodyShape_t * self
+unsigned long long int JoltC_SoftBodyShape_GetUserData(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyShape_SetUserData(
-  JPC_SoftBodyShape_t * self,
-  unsigned long long int inUserData
+void JoltC_SoftBodyShape_SetUserData(
+  JoltC_SoftBodyShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_SoftBodyShape_GetSubShapeIDBitsRecursive(
-  JPC_SoftBodyShape_t * self
+unsigned long JoltC_SoftBodyShape_GetSubShapeIDBitsRecursive(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyShape_GetInnerRadius(
-  JPC_SoftBodyShape_t * self
+float JoltC_SoftBodyShape_GetInnerRadius(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_SoftBodyShape_GetMassProperties(
-  JPC_SoftBodyShape_t * self
+JoltC_MassProperties_t * JoltC_SoftBodyShape_GetMassProperties(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_SoftBodyShape_GetMaterial(
-  JPC_SoftBodyShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_SoftBodyShape_GetMaterial(
+  JoltC_SoftBodyShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyShape_GetSurfaceNormal(
-  JPC_SoftBodyShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_SoftBodyShape_GetSurfaceNormal(
+  JoltC_SoftBodyShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_SoftBodyShape_GetSubShapeUserData(
-  JPC_SoftBodyShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_SoftBodyShape_GetSubShapeUserData(
+  JoltC_SoftBodyShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_SoftBodyShape_GetSubShapeTransformedShape(
-  JPC_SoftBodyShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_SoftBodyShape_GetSubShapeTransformedShape(
+  JoltC_SoftBodyShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyShape_GetVolume(
-  JPC_SoftBodyShape_t * self
+float JoltC_SoftBodyShape_GetVolume(
+  JoltC_SoftBodyShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_SoftBodyShape_IsValidScale(
-  JPC_SoftBodyShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_SoftBodyShape_IsValidScale(
+  JoltC_SoftBodyShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_SoftBodyShape_ScaleShape(
-  JPC_SoftBodyShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_SoftBodyShape_ScaleShape(
+  JoltC_SoftBodyShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,7 +8,9 @@ extern "C" {
 
 //region constructors
 
-JPC_ShapeFilter_t * JPC_ShapeFilter_new();
+JoltC_ShapeFilter_t * JoltC_ShapeFilter_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 

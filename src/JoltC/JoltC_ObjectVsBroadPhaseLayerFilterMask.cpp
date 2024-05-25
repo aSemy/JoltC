@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ObjectVsBroadPhaseLayerFilterMask.h"
+#include "JoltC/JoltC_ObjectVsBroadPhaseLayerFilterMask.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,15 +8,24 @@ extern "C" {
 
 //region constructors
 
-JPC_ObjectVsBroadPhaseLayerFilterMask_t * JPC_ObjectVsBroadPhaseLayerFilterMask_new(
-  const JPC_BroadPhaseLayerInterfaceMask_t * inBroadPhaseLayerInterface
+JoltC_ObjectVsBroadPhaseLayerFilterMask_t * JoltC_ObjectVsBroadPhaseLayerFilterMask_new(
+  const JoltC_BroadPhaseLayerInterfaceMask_t * inBroadPhaseLayerInterface,
+  char** outErrMsg
 ) {
-  JPC_ObjectVsBroadPhaseLayerFilterMask_t * cInstance = new JPC_ObjectVsBroadPhaseLayerFilterMask_t();
-  ObjectVsBroadPhaseLayerFilterMask * cppInstance = new ObjectVsBroadPhaseLayerFilterMask(
-    *reinterpret_cast<BroadPhaseLayerInterfaceMask *>(inBroadPhaseLayerInterface->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_ObjectVsBroadPhaseLayerFilterMask_t * cInstance = new JoltC_ObjectVsBroadPhaseLayerFilterMask_t();
+    ObjectVsBroadPhaseLayerFilterMask * cppInstance = new ObjectVsBroadPhaseLayerFilterMask(
+      *reinterpret_cast<BroadPhaseLayerInterfaceMask *>(inBroadPhaseLayerInterface->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors

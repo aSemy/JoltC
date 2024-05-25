@@ -8,9 +8,10 @@ extern "C" {
 
 //region functions
 
-JPC_Body_t * JPC_BodyLockInterface_TryGetBody(
-  JPC_BodyLockInterface_t * self,
-  const JPC_BodyID_t * inBodyID
+JoltC_Body_t * JoltC_BodyLockInterface_TryGetBody(
+  JoltC_BodyLockInterface_t * self,
+  const JoltC_BodyID_t * inBodyID,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,43 +8,52 @@ extern "C" {
 
 //region functions
 
-void JPC_RayCastBodyCollector_Reset(
-  JPC_RayCastBodyCollector_t * self
+void JoltC_RayCastBodyCollector_Reset(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCastBodyCollector_SetContext(
-  JPC_RayCastBodyCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_RayCastBodyCollector_SetContext(
+  JoltC_RayCastBodyCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_RayCastBodyCollector_GetContext(
-  JPC_RayCastBodyCollector_t * self
+const JoltC_TransformedShape_t * JoltC_RayCastBodyCollector_GetContext(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCastBodyCollector_UpdateEarlyOutFraction(
-  JPC_RayCastBodyCollector_t * self,
-  float inFraction
+void JoltC_RayCastBodyCollector_UpdateEarlyOutFraction(
+  JoltC_RayCastBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_RayCastBodyCollector_ResetEarlyOutFraction(
-  JPC_RayCastBodyCollector_t * self,
-  float inFraction
+void JoltC_RayCastBodyCollector_ResetEarlyOutFraction(
+  JoltC_RayCastBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_RayCastBodyCollector_ForceEarlyOut(
-  JPC_RayCastBodyCollector_t * self
+void JoltC_RayCastBodyCollector_ForceEarlyOut(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_RayCastBodyCollector_ShouldEarlyOut(
-  JPC_RayCastBodyCollector_t * self
+bool JoltC_RayCastBodyCollector_ShouldEarlyOut(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_RayCastBodyCollector_GetEarlyOutFraction(
-  JPC_RayCastBodyCollector_t * self
+float JoltC_RayCastBodyCollector_GetEarlyOutFraction(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_RayCastBodyCollector_GetPositiveEarlyOutFraction(
-  JPC_RayCastBodyCollector_t * self
+float JoltC_RayCastBodyCollector_GetPositiveEarlyOutFraction(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

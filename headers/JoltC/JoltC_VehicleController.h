@@ -8,16 +8,19 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_VehicleController_GetRefCount(
-  JPC_VehicleController_t * self
+unsigned long JoltC_VehicleController_GetRefCount(
+  JoltC_VehicleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleController_AddRef(
-  JPC_VehicleController_t * self
+void JoltC_VehicleController_AddRef(
+  JoltC_VehicleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleController_Release(
-  JPC_VehicleController_t * self
+void JoltC_VehicleController_Release(
+  JoltC_VehicleController_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

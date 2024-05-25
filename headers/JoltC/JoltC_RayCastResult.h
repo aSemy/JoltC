@@ -8,45 +8,54 @@ extern "C" {
 
 //region constructors
 
-JPC_RayCastResult_t * JPC_RayCastResult_new();
+JoltC_RayCastResult_t * JoltC_RayCastResult_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_RayCastResult_Reset(
-  JPC_RayCastResult_t * self
+void JoltC_RayCastResult_Reset(
+  JoltC_RayCastResult_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_SubShapeID_t * JPC_RayCastResult_mSubShapeID2_Get(
-  JPC_RayCastResult_t * self
+JoltC_SubShapeID_t * JoltC_RayCastResult_mSubShapeID2_Get(
+  JoltC_RayCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCastResult_mSubShapeID2_Set(
-  JPC_RayCastResult_t * self,
-  JPC_SubShapeID_t * mSubShapeID2
+void JoltC_RayCastResult_mSubShapeID2_Set(
+  JoltC_RayCastResult_t * self,
+  JoltC_SubShapeID_t * mSubShapeID2,
+  char** outErrMsg
 );
 
-JPC_BodyID_t * JPC_RayCastResult_mBodyID_Get(
-  JPC_RayCastResult_t * self
+JoltC_BodyID_t * JoltC_RayCastResult_mBodyID_Get(
+  JoltC_RayCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCastResult_mBodyID_Set(
-  JPC_RayCastResult_t * self,
-  JPC_BodyID_t * mBodyID
+void JoltC_RayCastResult_mBodyID_Set(
+  JoltC_RayCastResult_t * self,
+  JoltC_BodyID_t * mBodyID,
+  char** outErrMsg
 );
 
-float JPC_RayCastResult_mFraction_Get(
-  JPC_RayCastResult_t * self
+float JoltC_RayCastResult_mFraction_Get(
+  JoltC_RayCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCastResult_mFraction_Set(
-  JPC_RayCastResult_t * self,
-  float mFraction
+void JoltC_RayCastResult_mFraction_Set(
+  JoltC_RayCastResult_t * self,
+  float mFraction,
+  char** outErrMsg
 );
 
 //endregion properties

@@ -8,102 +8,123 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_MeshShape_GetRefCount(
-  JPC_MeshShape_t * self
+unsigned long JoltC_MeshShape_GetRefCount(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_MeshShape_AddRef(
-  JPC_MeshShape_t * self
+void JoltC_MeshShape_AddRef(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_MeshShape_Release(
-  JPC_MeshShape_t * self
+void JoltC_MeshShape_Release(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_MeshShape_GetType(
-  JPC_MeshShape_t * self
+JoltC_EShapeType JoltC_MeshShape_GetType(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_MeshShape_GetSubType(
-  JPC_MeshShape_t * self
+JoltC_EShapeSubType JoltC_MeshShape_GetSubType(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_MeshShape_MustBeStatic(
-  JPC_MeshShape_t * self
+bool JoltC_MeshShape_MustBeStatic(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_MeshShape_GetLocalBounds(
-  JPC_MeshShape_t * self
+JoltC_AABox_t * JoltC_MeshShape_GetLocalBounds(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_MeshShape_GetWorldSpaceBounds(
-  JPC_MeshShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_MeshShape_GetWorldSpaceBounds(
+  JoltC_MeshShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MeshShape_GetCenterOfMass(
-  JPC_MeshShape_t * self
+JoltC_Vec3_t * JoltC_MeshShape_GetCenterOfMass(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_MeshShape_GetUserData(
-  JPC_MeshShape_t * self
+unsigned long long int JoltC_MeshShape_GetUserData(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_MeshShape_SetUserData(
-  JPC_MeshShape_t * self,
-  unsigned long long int inUserData
+void JoltC_MeshShape_SetUserData(
+  JoltC_MeshShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_MeshShape_GetSubShapeIDBitsRecursive(
-  JPC_MeshShape_t * self
+unsigned long JoltC_MeshShape_GetSubShapeIDBitsRecursive(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_MeshShape_GetInnerRadius(
-  JPC_MeshShape_t * self
+float JoltC_MeshShape_GetInnerRadius(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_MeshShape_GetMassProperties(
-  JPC_MeshShape_t * self
+JoltC_MassProperties_t * JoltC_MeshShape_GetMassProperties(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_MeshShape_GetMaterial(
-  JPC_MeshShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_MeshShape_GetMaterial(
+  JoltC_MeshShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MeshShape_GetSurfaceNormal(
-  JPC_MeshShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_MeshShape_GetSurfaceNormal(
+  JoltC_MeshShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_MeshShape_GetSubShapeUserData(
-  JPC_MeshShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_MeshShape_GetSubShapeUserData(
+  JoltC_MeshShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_MeshShape_GetSubShapeTransformedShape(
-  JPC_MeshShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_MeshShape_GetSubShapeTransformedShape(
+  JoltC_MeshShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_MeshShape_GetVolume(
-  JPC_MeshShape_t * self
+float JoltC_MeshShape_GetVolume(
+  JoltC_MeshShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_MeshShape_IsValidScale(
-  JPC_MeshShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_MeshShape_IsValidScale(
+  JoltC_MeshShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_MeshShape_ScaleShape(
-  JPC_MeshShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_MeshShape_ScaleShape(
+  JoltC_MeshShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

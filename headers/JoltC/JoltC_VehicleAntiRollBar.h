@@ -8,37 +8,45 @@ extern "C" {
 
 //region constructors
 
-JPC_VehicleAntiRollBar_t * JPC_VehicleAntiRollBar_new();
+JoltC_VehicleAntiRollBar_t * JoltC_VehicleAntiRollBar_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-long JPC_VehicleAntiRollBar_mLeftWheel_Get(
-  JPC_VehicleAntiRollBar_t * self
+long JoltC_VehicleAntiRollBar_mLeftWheel_Get(
+  JoltC_VehicleAntiRollBar_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleAntiRollBar_mLeftWheel_Set(
-  JPC_VehicleAntiRollBar_t * self,
-  long mLeftWheel
+void JoltC_VehicleAntiRollBar_mLeftWheel_Set(
+  JoltC_VehicleAntiRollBar_t * self,
+  long mLeftWheel,
+  char** outErrMsg
 );
 
-long JPC_VehicleAntiRollBar_mRightWheel_Get(
-  JPC_VehicleAntiRollBar_t * self
+long JoltC_VehicleAntiRollBar_mRightWheel_Get(
+  JoltC_VehicleAntiRollBar_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleAntiRollBar_mRightWheel_Set(
-  JPC_VehicleAntiRollBar_t * self,
-  long mRightWheel
+void JoltC_VehicleAntiRollBar_mRightWheel_Set(
+  JoltC_VehicleAntiRollBar_t * self,
+  long mRightWheel,
+  char** outErrMsg
 );
 
-float JPC_VehicleAntiRollBar_mStiffness_Get(
-  JPC_VehicleAntiRollBar_t * self
+float JoltC_VehicleAntiRollBar_mStiffness_Get(
+  JoltC_VehicleAntiRollBar_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleAntiRollBar_mStiffness_Set(
-  JPC_VehicleAntiRollBar_t * self,
-  float mStiffness
+void JoltC_VehicleAntiRollBar_mStiffness_Set(
+  JoltC_VehicleAntiRollBar_t * self,
+  float mStiffness,
+  char** outErrMsg
 );
 
 //endregion properties

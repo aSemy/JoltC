@@ -8,63 +8,75 @@ extern "C" {
 
 //region constructors
 
-JPC_MassProperties_t * JPC_MassProperties_new();
+JoltC_MassProperties_t * JoltC_MassProperties_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_MassProperties_SetMassAndInertiaOfSolidBox(
-  JPC_MassProperties_t * self,
-  const JPC_Vec3_t * inBoxSize,
-  float inDensity
+void JoltC_MassProperties_SetMassAndInertiaOfSolidBox(
+  JoltC_MassProperties_t * self,
+  const JoltC_Vec3_t * inBoxSize,
+  float inDensity,
+  char** outErrMsg
 );
 
-void JPC_MassProperties_ScaleToMass(
-  JPC_MassProperties_t * self,
-  float inMass
-);
-
-JPC_Vec3_t * JPC_MassProperties_sGetEquivalentSolidBoxSize(
+void JoltC_MassProperties_ScaleToMass(
+  JoltC_MassProperties_t * self,
   float inMass,
-  const JPC_Vec3_t * inInertiaDiagonal
+  char** outErrMsg
 );
 
-void JPC_MassProperties_Rotate(
-  JPC_MassProperties_t * self,
-  const JPC_Mat44_t * inRotation
+JoltC_Vec3_t * JoltC_MassProperties_sGetEquivalentSolidBoxSize(
+  float inMass,
+  const JoltC_Vec3_t * inInertiaDiagonal,
+  char** outErrMsg
 );
 
-void JPC_MassProperties_Translate(
-  JPC_MassProperties_t * self,
-  const JPC_Vec3_t * inTranslation
+void JoltC_MassProperties_Rotate(
+  JoltC_MassProperties_t * self,
+  const JoltC_Mat44_t * inRotation,
+  char** outErrMsg
 );
 
-void JPC_MassProperties_Scale(
-  JPC_MassProperties_t * self,
-  const JPC_Vec3_t * inScale
+void JoltC_MassProperties_Translate(
+  JoltC_MassProperties_t * self,
+  const JoltC_Vec3_t * inTranslation,
+  char** outErrMsg
+);
+
+void JoltC_MassProperties_Scale(
+  JoltC_MassProperties_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_MassProperties_mMass_Get(
-  JPC_MassProperties_t * self
+float JoltC_MassProperties_mMass_Get(
+  JoltC_MassProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MassProperties_mMass_Set(
-  JPC_MassProperties_t * self,
-  float mMass
+void JoltC_MassProperties_mMass_Set(
+  JoltC_MassProperties_t * self,
+  float mMass,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_MassProperties_mInertia_Get(
-  JPC_MassProperties_t * self
+JoltC_Mat44_t * JoltC_MassProperties_mInertia_Get(
+  JoltC_MassProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MassProperties_mInertia_Set(
-  JPC_MassProperties_t * self,
-  JPC_Mat44_t * mInertia
+void JoltC_MassProperties_mInertia_Set(
+  JoltC_MassProperties_t * self,
+  JoltC_Mat44_t * mInertia,
+  char** outErrMsg
 );
 
 //endregion properties

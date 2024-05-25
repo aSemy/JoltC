@@ -8,7 +8,9 @@ extern "C" {
 
 //region constructors
 
-JPC_BroadPhaseLayerFilter_t * JPC_BroadPhaseLayerFilter_new();
+JoltC_BroadPhaseLayerFilter_t * JoltC_BroadPhaseLayerFilter_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 

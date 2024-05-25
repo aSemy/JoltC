@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ShapeSettings.h"
+#include "JoltC/JoltC_ShapeSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,62 +8,109 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_ShapeSettings_GetRefCount(
-  JPC_ShapeSettings_t * self
+unsigned long JoltC_ShapeSettings_GetRefCount(
+  JoltC_ShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ShapeSettings_AddRef(
-  JPC_ShapeSettings_t * self
+void JoltC_ShapeSettings_AddRef(
+  JoltC_ShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ShapeSettings_Release(
-  JPC_ShapeSettings_t * self
+void JoltC_ShapeSettings_Release(
+  JoltC_ShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_ShapeResult_t * JPC_ShapeSettings_Create(
-  JPC_ShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_ShapeSettings_Create(
+  JoltC_ShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JPC_Shape_ShapeResult_t *>(result);
+  try {
+    ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
+    Shape::ShapeResult resultValue = selfCpp->Create();
+    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ShapeSettings_ClearCachedResult(
-  JPC_ShapeSettings_t * self
+void JoltC_ShapeSettings_ClearCachedResult(
+  JoltC_ShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  
-  selfCpp->ClearCachedResult();
+  try {
+    ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
+    
+    selfCpp->ClearCachedResult();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-unsigned long long int JPC_ShapeSettings_mUserData_Get(
-  JPC_ShapeSettings_t * self
+unsigned long long int JoltC_ShapeSettings_mUserData_Get(
+  JoltC_ShapeSettings_t * self,
+  char** outErrMsg
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
   unsigned long long int result = selfCpp->mUserData;
   return result;
 };
 
-void JPC_ShapeSettings_mUserData_Set(
-  JPC_ShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_ShapeSettings_mUserData_Set(
+  JoltC_ShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;

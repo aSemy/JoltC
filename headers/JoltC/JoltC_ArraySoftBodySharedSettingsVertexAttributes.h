@@ -8,40 +8,48 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsVertexAttributes_empty(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+bool JoltC_ArraySoftBodySharedSettingsVertexAttributes_empty(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArraySoftBodySharedSettingsVertexAttributes_size(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+long JoltC_ArraySoftBodySharedSettingsVertexAttributes_size(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettingsVertexAttributes_t * JPC_ArraySoftBodySharedSettingsVertexAttributes_at(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_ArraySoftBodySharedSettingsVertexAttributes_at(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVertexAttributes_push_back(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  const JPC_SoftBodySharedSettingsVertexAttributes_t * inValue
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_push_back(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  const JoltC_SoftBodySharedSettingsVertexAttributes_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVertexAttributes_reserve(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_reserve(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVertexAttributes_resize(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_resize(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsVertexAttributes_clear(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_clear(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettingsVertexAttributes_t * JPC_ArraySoftBodySharedSettingsVertexAttributes_data(
-  JPC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_ArraySoftBodySharedSettingsVertexAttributes_data(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

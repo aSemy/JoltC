@@ -1,5 +1,6 @@
-#include "JoltC/JPC_TransformedShape.h"
+#include "JoltC/JoltC_TransformedShape.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,309 +8,473 @@ extern "C" {
 
 //region constructors
 
-JPC_TransformedShape_t * JPC_TransformedShape_new() {
-  JPC_TransformedShape_t * cInstance = new JPC_TransformedShape_t();
-  TransformedShape * cppInstance = new TransformedShape();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_TransformedShape_t * JoltC_TransformedShape_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_TransformedShape_t * cInstance = new JoltC_TransformedShape_t();
+    TransformedShape * cppInstance = new TransformedShape();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_TransformedShape_CastRay_0(
-  JPC_TransformedShape_t * self,
-  const JPC_RRayCast_t * inRay,
-  JPC_RayCastResult_t * ioHit
+void JoltC_TransformedShape_CastRay_0(
+  JoltC_TransformedShape_t * self,
+  const JoltC_RRayCast_t * inRay,
+  JoltC_RayCastResult_t * ioHit,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->CastRay(
-  *reinterpret_cast<RRayCast *>(inRay->obj),
-  *reinterpret_cast<RayCastResult *>(ioHit->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->CastRay(
+    *reinterpret_cast<RRayCast *>(inRay->obj),
+    *reinterpret_cast<RayCastResult *>(ioHit->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShape_CastRay_1(
-  JPC_TransformedShape_t * self,
-  const JPC_RRayCast_t * inRay,
-  const JPC_RayCastSettings_t * inRayCastSettings,
-  JPC_CastRayCollector_t * ioCollector,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_TransformedShape_CastRay_1(
+  JoltC_TransformedShape_t * self,
+  const JoltC_RRayCast_t * inRay,
+  const JoltC_RayCastSettings_t * inRayCastSettings,
+  JoltC_CastRayCollector_t * ioCollector,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->CastRay(
-  *reinterpret_cast<RRayCast *>(inRay->obj),
-  *reinterpret_cast<RayCastSettings *>(inRayCastSettings->obj),
-  *reinterpret_cast<CastRayCollector *>(ioCollector->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->CastRay(
+    *reinterpret_cast<RRayCast *>(inRay->obj),
+    *reinterpret_cast<RayCastSettings *>(inRayCastSettings->obj),
+    *reinterpret_cast<CastRayCollector *>(ioCollector->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShape_CollidePoint(
-  JPC_TransformedShape_t * self,
-  const JPC_RVec3_t * inPoint,
-  JPC_CollidePointCollector_t * ioCollector,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_TransformedShape_CollidePoint(
+  JoltC_TransformedShape_t * self,
+  const JoltC_RVec3_t * inPoint,
+  JoltC_CollidePointCollector_t * ioCollector,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->CollidePoint(
-  *reinterpret_cast<RVec3 *>(inPoint->obj),
-  *reinterpret_cast<CollidePointCollector *>(ioCollector->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->CollidePoint(
+    *reinterpret_cast<RVec3 *>(inPoint->obj),
+    *reinterpret_cast<CollidePointCollector *>(ioCollector->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShape_CollideShape(
-  JPC_TransformedShape_t * self,
-  const JPC_Shape_t * inShape,
-  const JPC_Vec3_t * inShapeScale,
-  const JPC_RMat44_t * inCenterOfMassTransform,
-  const JPC_CollideShapeSettings_t * inCollideShapeSettings,
-  const JPC_RVec3_t * inBaseOffset,
-  JPC_CollideShapeCollector_t * ioCollector,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_TransformedShape_CollideShape(
+  JoltC_TransformedShape_t * self,
+  const JoltC_Shape_t * inShape,
+  const JoltC_Vec3_t * inShapeScale,
+  const JoltC_RMat44_t * inCenterOfMassTransform,
+  const JoltC_CollideShapeSettings_t * inCollideShapeSettings,
+  const JoltC_RVec3_t * inBaseOffset,
+  JoltC_CollideShapeCollector_t * ioCollector,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->CollideShape(
-  reinterpret_cast<Shape *>(inShape->obj),
-  *reinterpret_cast<Vec3 *>(inShapeScale->obj),
-  *reinterpret_cast<RMat44 *>(inCenterOfMassTransform->obj),
-  *reinterpret_cast<CollideShapeSettings *>(inCollideShapeSettings->obj),
-  *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
-  *reinterpret_cast<CollideShapeCollector *>(ioCollector->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->CollideShape(
+    reinterpret_cast<Shape *>(inShape->obj),
+    *reinterpret_cast<Vec3 *>(inShapeScale->obj),
+    *reinterpret_cast<RMat44 *>(inCenterOfMassTransform->obj),
+    *reinterpret_cast<CollideShapeSettings *>(inCollideShapeSettings->obj),
+    *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
+    *reinterpret_cast<CollideShapeCollector *>(ioCollector->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShape_CastShape(
-  JPC_TransformedShape_t * self,
-  const JPC_RShapeCast_t * inShapeCast,
-  const JPC_ShapeCastSettings_t * inShapeCastSettings,
-  const JPC_RVec3_t * inBaseOffset,
-  JPC_CastShapeCollector_t * ioCollector,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_TransformedShape_CastShape(
+  JoltC_TransformedShape_t * self,
+  const JoltC_RShapeCast_t * inShapeCast,
+  const JoltC_ShapeCastSettings_t * inShapeCastSettings,
+  const JoltC_RVec3_t * inBaseOffset,
+  JoltC_CastShapeCollector_t * ioCollector,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->CastShape(
-  *reinterpret_cast<RShapeCast *>(inShapeCast->obj),
-  *reinterpret_cast<ShapeCastSettings *>(inShapeCastSettings->obj),
-  *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
-  *reinterpret_cast<CastShapeCollector *>(ioCollector->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->CastShape(
+    *reinterpret_cast<RShapeCast *>(inShapeCast->obj),
+    *reinterpret_cast<ShapeCastSettings *>(inShapeCastSettings->obj),
+    *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
+    *reinterpret_cast<CastShapeCollector *>(ioCollector->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShape_CollectTransformedShapes(
-  JPC_TransformedShape_t * self,
-  const JPC_AABox_t * inBox,
-  JPC_TransformedShapeCollector_t * ioCollector,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_TransformedShape_CollectTransformedShapes(
+  JoltC_TransformedShape_t * self,
+  const JoltC_AABox_t * inBox,
+  JoltC_TransformedShapeCollector_t * ioCollector,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->CollectTransformedShapes(
-  *reinterpret_cast<AABox *>(inBox->obj),
-  *reinterpret_cast<TransformedShapeCollector *>(ioCollector->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->CollectTransformedShapes(
+    *reinterpret_cast<AABox *>(inBox->obj),
+    *reinterpret_cast<TransformedShapeCollector *>(ioCollector->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_TransformedShape_GetShapeScale(
-  JPC_TransformedShape_t * self
+JoltC_Vec3_t * JoltC_TransformedShape_GetShapeScale(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetShapeScale();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    Vec3 resultValue = selfCpp->GetShapeScale();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShape_SetShapeScale(
-  JPC_TransformedShape_t * self,
-  const JPC_Vec3_t * inScale
+void JoltC_TransformedShape_SetShapeScale(
+  JoltC_TransformedShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->SetShapeScale(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->SetShapeScale(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RMat44_t * JPC_TransformedShape_GetCenterOfMassTransform(
-  JPC_TransformedShape_t * self
+JoltC_RMat44_t * JoltC_TransformedShape_GetCenterOfMassTransform(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  RMat44 resultValue = selfCpp->GetCenterOfMassTransform();
-  RMat44* result = new RMat44(resultValue);
-  return reinterpret_cast<JPC_RMat44_t *>(result);
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    RMat44 resultValue = selfCpp->GetCenterOfMassTransform();
+    RMat44* result = new RMat44(resultValue);
+    return reinterpret_cast<JoltC_RMat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RMat44_t * JPC_TransformedShape_GetInverseCenterOfMassTransform(
-  JPC_TransformedShape_t * self
+JoltC_RMat44_t * JoltC_TransformedShape_GetInverseCenterOfMassTransform(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  RMat44 resultValue = selfCpp->GetInverseCenterOfMassTransform();
-  RMat44* result = new RMat44(resultValue);
-  return reinterpret_cast<JPC_RMat44_t *>(result);
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    RMat44 resultValue = selfCpp->GetInverseCenterOfMassTransform();
+    RMat44* result = new RMat44(resultValue);
+    return reinterpret_cast<JoltC_RMat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShape_SetWorldTransform_0(
-  JPC_TransformedShape_t * self,
-  const JPC_RVec3_t * inPosition,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale
+void JoltC_TransformedShape_SetWorldTransform_0(
+  JoltC_TransformedShape_t * self,
+  const JoltC_RVec3_t * inPosition,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->SetWorldTransform(
-  *reinterpret_cast<RVec3 *>(inPosition->obj),
-  *reinterpret_cast<Quat *>(inRotation->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->SetWorldTransform(
+    *reinterpret_cast<RVec3 *>(inPosition->obj),
+    *reinterpret_cast<Quat *>(inRotation->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShape_SetWorldTransform_1(
-  JPC_TransformedShape_t * self,
-  const JPC_RMat44_t * inTransform
+void JoltC_TransformedShape_SetWorldTransform_1(
+  JoltC_TransformedShape_t * self,
+  const JoltC_RMat44_t * inTransform,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
-  selfCpp->SetWorldTransform(
-  *reinterpret_cast<RMat44 *>(inTransform->obj)
-  );
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    
+    selfCpp->SetWorldTransform(
+    *reinterpret_cast<RMat44 *>(inTransform->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RMat44_t * JPC_TransformedShape_GetWorldTransform(
-  JPC_TransformedShape_t * self
+JoltC_RMat44_t * JoltC_TransformedShape_GetWorldTransform(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  RMat44 resultValue = selfCpp->GetWorldTransform();
-  RMat44* result = new RMat44(resultValue);
-  return reinterpret_cast<JPC_RMat44_t *>(result);
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    RMat44 resultValue = selfCpp->GetWorldTransform();
+    RMat44* result = new RMat44(resultValue);
+    return reinterpret_cast<JoltC_RMat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_AABox_t * JPC_TransformedShape_GetWorldSpaceBounds(
-  JPC_TransformedShape_t * self
+JoltC_AABox_t * JoltC_TransformedShape_GetWorldSpaceBounds(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  AABox resultValue = selfCpp->GetWorldSpaceBounds();
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JPC_AABox_t *>(result);
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    AABox resultValue = selfCpp->GetWorldSpaceBounds();
+    AABox* result = new AABox(resultValue);
+    return reinterpret_cast<JoltC_AABox_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_TransformedShape_GetWorldSpaceSurfaceNormal(
-  JPC_TransformedShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_RVec3_t * inPosition
+JoltC_Vec3_t * JoltC_TransformedShape_GetWorldSpaceSurfaceNormal(
+  JoltC_TransformedShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_RVec3_t * inPosition,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetWorldSpaceSurfaceNormal(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<RVec3 *>(inPosition->obj)
-  );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    Vec3 resultValue = selfCpp->GetWorldSpaceSurfaceNormal(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<RVec3 *>(inPosition->obj)
+    );
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_PhysicsMaterial_t * JPC_TransformedShape_GetMaterial(
-  JPC_TransformedShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_TransformedShape_GetMaterial(
+  JoltC_TransformedShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 ) {
-  TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetMaterial(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-  );
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  try {
+    TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
+    const PhysicsMaterial * result = selfCpp->GetMaterial(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    );
+    return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-JPC_RVec3_t * JPC_TransformedShape_mShapePositionCOM_Get(
-  JPC_TransformedShape_t * self
+JoltC_RVec3_t * JoltC_TransformedShape_mShapePositionCOM_Get(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   RVec3 resultValue = selfCpp->mShapePositionCOM;
   RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JPC_RVec3_t *>(result);
+  return reinterpret_cast<JoltC_RVec3_t *>(result);
 };
 
-void JPC_TransformedShape_mShapePositionCOM_Set(
-  JPC_TransformedShape_t * self,
-  JPC_RVec3_t * mShapePositionCOM
+void JoltC_TransformedShape_mShapePositionCOM_Set(
+  JoltC_TransformedShape_t * self,
+  JoltC_RVec3_t * mShapePositionCOM,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mShapePositionCOM = *reinterpret_cast<RVec3 *>(mShapePositionCOM->obj);
 };
 
-JPC_Quat_t * JPC_TransformedShape_mShapeRotation_Get(
-  JPC_TransformedShape_t * self
+JoltC_Quat_t * JoltC_TransformedShape_mShapeRotation_Get(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   Quat resultValue = selfCpp->mShapeRotation;
   Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JPC_Quat_t *>(result);
+  return reinterpret_cast<JoltC_Quat_t *>(result);
 };
 
-void JPC_TransformedShape_mShapeRotation_Set(
-  JPC_TransformedShape_t * self,
-  JPC_Quat_t * mShapeRotation
+void JoltC_TransformedShape_mShapeRotation_Set(
+  JoltC_TransformedShape_t * self,
+  JoltC_Quat_t * mShapeRotation,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mShapeRotation = *reinterpret_cast<Quat *>(mShapeRotation->obj);
 };
 
-const JPC_Shape_t * JPC_TransformedShape_mShape_Get(
-  JPC_TransformedShape_t * self
+const JoltC_Shape_t * JoltC_TransformedShape_mShape_Get(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   const Shape * result = selfCpp->mShape;
-  return reinterpret_cast<const JPC_Shape_t *>(result);
+  return reinterpret_cast<const JoltC_Shape_t *>(result);
 };
 
-const void JPC_TransformedShape_mShape_Set(
-  JPC_TransformedShape_t * self,
-  const JPC_Shape_t * mShape
+const void JoltC_TransformedShape_mShape_Set(
+  JoltC_TransformedShape_t * self,
+  const JoltC_Shape_t * mShape,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mShape = reinterpret_cast<Shape *>(mShape->obj);
 };
 
-JPC_Float3_t * JPC_TransformedShape_mShapeScale_Get(
-  JPC_TransformedShape_t * self
+JoltC_Float3_t * JoltC_TransformedShape_mShapeScale_Get(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   Float3 resultValue = selfCpp->mShapeScale;
   Float3* result = new Float3(resultValue);
-  return reinterpret_cast<JPC_Float3_t *>(result);
+  return reinterpret_cast<JoltC_Float3_t *>(result);
 };
 
-void JPC_TransformedShape_mShapeScale_Set(
-  JPC_TransformedShape_t * self,
-  JPC_Float3_t * mShapeScale
+void JoltC_TransformedShape_mShapeScale_Set(
+  JoltC_TransformedShape_t * self,
+  JoltC_Float3_t * mShapeScale,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mShapeScale = *reinterpret_cast<Float3 *>(mShapeScale->obj);
 };
 
-JPC_BodyID_t * JPC_TransformedShape_mBodyID_Get(
-  JPC_TransformedShape_t * self
+JoltC_BodyID_t * JoltC_TransformedShape_mBodyID_Get(
+  JoltC_TransformedShape_t * self,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   BodyID resultValue = selfCpp->mBodyID;
   BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JPC_BodyID_t *>(result);
+  return reinterpret_cast<JoltC_BodyID_t *>(result);
 };
 
-void JPC_TransformedShape_mBodyID_Set(
-  JPC_TransformedShape_t * self,
-  JPC_BodyID_t * mBodyID
+void JoltC_TransformedShape_mBodyID_Set(
+  JoltC_TransformedShape_t * self,
+  JoltC_BodyID_t * mBodyID,
+  char** outErrMsg
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mBodyID = *reinterpret_cast<BodyID *>(mBodyID->obj);

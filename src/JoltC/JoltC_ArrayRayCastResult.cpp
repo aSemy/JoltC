@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayRayCastResult.h"
+#include "JoltC/JoltC_ArrayRayCastResult.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,73 +8,136 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayRayCastResult_empty(
-  JPC_ArrayRayCastResult_t * self
+bool JoltC_ArrayRayCastResult_empty(
+  JoltC_ArrayRayCastResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayRayCastResult_size(
-  JPC_ArrayRayCastResult_t * self
+long JoltC_ArrayRayCastResult_size(
+  JoltC_ArrayRayCastResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RayCastResult_t * JPC_ArrayRayCastResult_at(
-  JPC_ArrayRayCastResult_t * self,
-  long inIndex
+JoltC_RayCastResult_t * JoltC_ArrayRayCastResult_at(
+  JoltC_ArrayRayCastResult_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  RayCastResult& resultRef = selfCpp->at(
-  inIndex
-  );
-  RayCastResult * result = &resultRef;
-  return reinterpret_cast<JPC_RayCastResult_t *>(result);
+  try {
+    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+    RayCastResult& resultRef = selfCpp->at(
+    inIndex
+    );
+    RayCastResult * result = &resultRef;
+    return reinterpret_cast<JoltC_RayCastResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayRayCastResult_push_back(
-  JPC_ArrayRayCastResult_t * self,
-  const JPC_RayCastResult_t * inValue
+void JoltC_ArrayRayCastResult_push_back(
+  JoltC_ArrayRayCastResult_t * self,
+  const JoltC_RayCastResult_t * inValue,
+  char** outErrMsg
 ) {
-  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<RayCastResult *>(inValue->obj)
-  );
+  try {
+    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<RayCastResult *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayRayCastResult_reserve(
-  JPC_ArrayRayCastResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayRayCastResult_reserve(
+  JoltC_ArrayRayCastResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayRayCastResult_resize(
-  JPC_ArrayRayCastResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayRayCastResult_resize(
+  JoltC_ArrayRayCastResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayRayCastResult_clear(
-  JPC_ArrayRayCastResult_t * self
+void JoltC_ArrayRayCastResult_clear(
+  JoltC_ArrayRayCastResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

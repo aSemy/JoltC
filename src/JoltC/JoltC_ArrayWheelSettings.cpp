@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayWheelSettings.h"
+#include "JoltC/JoltC_ArrayWheelSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,61 +8,115 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayWheelSettings_empty(
-  JPC_ArrayWheelSettings_t * self
+bool JoltC_ArrayWheelSettings_empty(
+  JoltC_ArrayWheelSettings_t * self,
+  char** outErrMsg
 ) {
-  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayWheelSettings_size(
-  JPC_ArrayWheelSettings_t * self
+long JoltC_ArrayWheelSettings_size(
+  JoltC_ArrayWheelSettings_t * self,
+  char** outErrMsg
 ) {
-  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_WheelSettings_t * JPC_ArrayWheelSettings_at(
-  JPC_ArrayWheelSettings_t * self,
-  long inIndex
+JoltC_WheelSettings_t * JoltC_ArrayWheelSettings_at(
+  JoltC_ArrayWheelSettings_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  WheelSettings * result = selfCpp->at(
-  inIndex
-  );
-  return reinterpret_cast<JPC_WheelSettings_t *>(result);
+  try {
+    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+    WheelSettings * result = selfCpp->at(
+    inIndex
+    );
+    return reinterpret_cast<JoltC_WheelSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayWheelSettings_push_back(
-  JPC_ArrayWheelSettings_t * self,
-  JPC_WheelSettings_t * inValue
+void JoltC_ArrayWheelSettings_push_back(
+  JoltC_ArrayWheelSettings_t * self,
+  JoltC_WheelSettings_t * inValue,
+  char** outErrMsg
 ) {
-  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  
-  selfCpp->push_back(
-  Ref<WheelSettings>(reinterpret_cast<WheelSettings *>(inValue->obj))
-  );
+  try {
+    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+    
+    selfCpp->push_back(
+    Ref<WheelSettings>(reinterpret_cast<WheelSettings *>(inValue->obj))
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayWheelSettings_resize(
-  JPC_ArrayWheelSettings_t * self,
-  unsigned long inSize
+void JoltC_ArrayWheelSettings_resize(
+  JoltC_ArrayWheelSettings_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayWheelSettings_clear(
-  JPC_ArrayWheelSettings_t * self
+void JoltC_ArrayWheelSettings_clear(
+  JoltC_ArrayWheelSettings_t * self,
+  char** outErrMsg
 ) {
-  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

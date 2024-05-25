@@ -8,54 +8,66 @@ extern "C" {
 
 //region constructors
 
-JPC_SkeletonPose_t * JPC_SkeletonPose_new();
+JoltC_SkeletonPose_t * JoltC_SkeletonPose_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_SkeletonPose_SetSkeleton(
-  JPC_SkeletonPose_t * self,
-  const JPC_Skeleton_t * inSkeleton
+void JoltC_SkeletonPose_SetSkeleton(
+  JoltC_SkeletonPose_t * self,
+  const JoltC_Skeleton_t * inSkeleton,
+  char** outErrMsg
 );
 
-const JPC_Skeleton_t * JPC_SkeletonPose_GetSkeleton(
-  JPC_SkeletonPose_t * self
+const JoltC_Skeleton_t * JoltC_SkeletonPose_GetSkeleton(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletonPose_SetRootOffset(
-  JPC_SkeletonPose_t * self,
-  JPC_RVec3_t * inOffset
+void JoltC_SkeletonPose_SetRootOffset(
+  JoltC_SkeletonPose_t * self,
+  JoltC_RVec3_t * inOffset,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_SkeletonPose_GetRootOffset(
-  JPC_SkeletonPose_t * self
+JoltC_RVec3_t * JoltC_SkeletonPose_GetRootOffset(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 );
 
-long JPC_SkeletonPose_GetJointCount(
-  JPC_SkeletonPose_t * self
+long JoltC_SkeletonPose_GetJointCount(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 );
 
-JPC_SkeletalAnimationJointState_t * JPC_SkeletonPose_GetJoint(
-  JPC_SkeletonPose_t * self,
-  long inJoint
+JoltC_SkeletalAnimationJointState_t * JoltC_SkeletonPose_GetJoint(
+  JoltC_SkeletonPose_t * self,
+  long inJoint,
+  char** outErrMsg
 );
 
-JPC_ArrayMat44_t * JPC_SkeletonPose_GetJointMatrices(
-  JPC_SkeletonPose_t * self
+JoltC_ArrayMat44_t * JoltC_SkeletonPose_GetJointMatrices(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_SkeletonPose_GetJointMatrix(
-  JPC_SkeletonPose_t * self,
-  long inJoint
+JoltC_Mat44_t * JoltC_SkeletonPose_GetJointMatrix(
+  JoltC_SkeletonPose_t * self,
+  long inJoint,
+  char** outErrMsg
 );
 
-void JPC_SkeletonPose_CalculateJointMatrices(
-  JPC_SkeletonPose_t * self
+void JoltC_SkeletonPose_CalculateJointMatrices(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletonPose_CalculateJointStates(
-  JPC_SkeletonPose_t * self
+void JoltC_SkeletonPose_CalculateJointStates(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

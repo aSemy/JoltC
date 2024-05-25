@@ -8,205 +8,249 @@ extern "C" {
 
 //region functions
 
-JPC_EMotionQuality JPC_MotionProperties_GetMotionQuality(
-  JPC_MotionProperties_t * self
+JoltC_EMotionQuality JoltC_MotionProperties_GetMotionQuality(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_EAllowedDOFs JPC_MotionProperties_GetAllowedDOFs(
-  JPC_MotionProperties_t * self
+JoltC_EAllowedDOFs JoltC_MotionProperties_GetAllowedDOFs(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-bool JPC_MotionProperties_GetAllowSleeping(
-  JPC_MotionProperties_t * self
+bool JoltC_MotionProperties_GetAllowSleeping(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MotionProperties_GetLinearVelocity(
-  JPC_MotionProperties_t * self
+JoltC_Vec3_t * JoltC_MotionProperties_GetLinearVelocity(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetLinearVelocity(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inVelocity
+void JoltC_MotionProperties_SetLinearVelocity(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inVelocity,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetLinearVelocityClamped(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inVelocity
+void JoltC_MotionProperties_SetLinearVelocityClamped(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inVelocity,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MotionProperties_GetAngularVelocity(
-  JPC_MotionProperties_t * self
+JoltC_Vec3_t * JoltC_MotionProperties_GetAngularVelocity(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetAngularVelocity(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inVelocity
+void JoltC_MotionProperties_SetAngularVelocity(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inVelocity,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetAngularVelocityClamped(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inVelocity
+void JoltC_MotionProperties_SetAngularVelocityClamped(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inVelocity,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_MoveKinematic(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inPosition,
-  const JPC_Quat_t * inRotation,
-  float inDeltaTime
+void JoltC_MotionProperties_MoveKinematic(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inPosition,
+  const JoltC_Quat_t * inRotation,
+  float inDeltaTime,
+  char** outErrMsg
 );
 
-float JPC_MotionProperties_GetMaxLinearVelocity(
-  JPC_MotionProperties_t * self
+float JoltC_MotionProperties_GetMaxLinearVelocity(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetMaxLinearVelocity(
-  JPC_MotionProperties_t * self,
-  float inVelocity
+void JoltC_MotionProperties_SetMaxLinearVelocity(
+  JoltC_MotionProperties_t * self,
+  float inVelocity,
+  char** outErrMsg
 );
 
-float JPC_MotionProperties_GetMaxAngularVelocity(
-  JPC_MotionProperties_t * self
+float JoltC_MotionProperties_GetMaxAngularVelocity(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetMaxAngularVelocity(
-  JPC_MotionProperties_t * self,
-  float inVelocity
+void JoltC_MotionProperties_SetMaxAngularVelocity(
+  JoltC_MotionProperties_t * self,
+  float inVelocity,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_ClampLinearVelocity(
-  JPC_MotionProperties_t * self
+void JoltC_MotionProperties_ClampLinearVelocity(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_ClampAngularVelocity(
-  JPC_MotionProperties_t * self
+void JoltC_MotionProperties_ClampAngularVelocity(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-float JPC_MotionProperties_GetLinearDamping(
-  JPC_MotionProperties_t * self
+float JoltC_MotionProperties_GetLinearDamping(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetLinearDamping(
-  JPC_MotionProperties_t * self,
-  float inDamping
+void JoltC_MotionProperties_SetLinearDamping(
+  JoltC_MotionProperties_t * self,
+  float inDamping,
+  char** outErrMsg
 );
 
-float JPC_MotionProperties_GetAngularDamping(
-  JPC_MotionProperties_t * self
+float JoltC_MotionProperties_GetAngularDamping(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetAngularDamping(
-  JPC_MotionProperties_t * self,
-  float inDamping
+void JoltC_MotionProperties_SetAngularDamping(
+  JoltC_MotionProperties_t * self,
+  float inDamping,
+  char** outErrMsg
 );
 
-float JPC_MotionProperties_GetGravityFactor(
-  JPC_MotionProperties_t * self
+float JoltC_MotionProperties_GetGravityFactor(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetGravityFactor(
-  JPC_MotionProperties_t * self,
-  float inFactor
+void JoltC_MotionProperties_SetGravityFactor(
+  JoltC_MotionProperties_t * self,
+  float inFactor,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetMassProperties(
-  JPC_MotionProperties_t * self,
-  JPC_EAllowedDOFs inAllowedDOFs,
-  const JPC_MassProperties_t * inMassProperties
+void JoltC_MotionProperties_SetMassProperties(
+  JoltC_MotionProperties_t * self,
+  JoltC_EAllowedDOFs inAllowedDOFs,
+  const JoltC_MassProperties_t * inMassProperties,
+  char** outErrMsg
 );
 
-float JPC_MotionProperties_GetInverseMass(
-  JPC_MotionProperties_t * self
+float JoltC_MotionProperties_GetInverseMass(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-float JPC_MotionProperties_GetInverseMassUnchecked(
-  JPC_MotionProperties_t * self
+float JoltC_MotionProperties_GetInverseMassUnchecked(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetInverseMass(
-  JPC_MotionProperties_t * self,
-  float inInvM
+void JoltC_MotionProperties_SetInverseMass(
+  JoltC_MotionProperties_t * self,
+  float inInvM,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MotionProperties_GetInverseInertiaDiagonal(
-  JPC_MotionProperties_t * self
+JoltC_Vec3_t * JoltC_MotionProperties_GetInverseInertiaDiagonal(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_MotionProperties_GetInertiaRotation(
-  JPC_MotionProperties_t * self
+JoltC_Quat_t * JoltC_MotionProperties_GetInertiaRotation(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetInverseInertia(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inInvI,
-  const JPC_Quat_t * inRotation
+void JoltC_MotionProperties_SetInverseInertia(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inInvI,
+  const JoltC_Quat_t * inRotation,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_MotionProperties_GetLocalSpaceInverseInertia(
-  JPC_MotionProperties_t * self
+JoltC_Mat44_t * JoltC_MotionProperties_GetLocalSpaceInverseInertia(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_MotionProperties_GetInverseInertiaForRotation(
-  JPC_MotionProperties_t * self,
-  const JPC_Mat44_t * inRotation
+JoltC_Mat44_t * JoltC_MotionProperties_GetInverseInertiaForRotation(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Mat44_t * inRotation,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MotionProperties_MultiplyWorldSpaceInverseInertiaByVector(
-  JPC_MotionProperties_t * self,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inV
+JoltC_Vec3_t * JoltC_MotionProperties_MultiplyWorldSpaceInverseInertiaByVector(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MotionProperties_GetPointVelocityCOM(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inPointRelativeToCOM
+JoltC_Vec3_t * JoltC_MotionProperties_GetPointVelocityCOM(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inPointRelativeToCOM,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MotionProperties_GetAccumulatedForce(
-  JPC_MotionProperties_t * self
+JoltC_Vec3_t * JoltC_MotionProperties_GetAccumulatedForce(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_MotionProperties_GetAccumulatedTorque(
-  JPC_MotionProperties_t * self
+JoltC_Vec3_t * JoltC_MotionProperties_GetAccumulatedTorque(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_ResetForce(
-  JPC_MotionProperties_t * self
+void JoltC_MotionProperties_ResetForce(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_ResetTorque(
-  JPC_MotionProperties_t * self
+void JoltC_MotionProperties_ResetTorque(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_ResetMotion(
-  JPC_MotionProperties_t * self
+void JoltC_MotionProperties_ResetMotion(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_MotionProperties_LockTranslation(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inV
+const JoltC_Vec3_t * JoltC_MotionProperties_LockTranslation(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_MotionProperties_LockAngular(
-  JPC_MotionProperties_t * self,
-  const JPC_Vec3_t * inV
+const JoltC_Vec3_t * JoltC_MotionProperties_LockAngular(
+  JoltC_MotionProperties_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetNumVelocityStepsOverride(
-  JPC_MotionProperties_t * self,
-  unsigned long inN
+void JoltC_MotionProperties_SetNumVelocityStepsOverride(
+  JoltC_MotionProperties_t * self,
+  unsigned long inN,
+  char** outErrMsg
 );
 
-unsigned long JPC_MotionProperties_GetNumVelocityStepsOverride(
-  JPC_MotionProperties_t * self
+unsigned long JoltC_MotionProperties_GetNumVelocityStepsOverride(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_MotionProperties_SetNumPositionStepsOverride(
-  JPC_MotionProperties_t * self,
-  unsigned long inN
+void JoltC_MotionProperties_SetNumPositionStepsOverride(
+  JoltC_MotionProperties_t * self,
+  unsigned long inN,
+  char** outErrMsg
 );
 
-unsigned long JPC_MotionProperties_GetNumPositionStepsOverride(
-  JPC_MotionProperties_t * self
+unsigned long JoltC_MotionProperties_GetNumPositionStepsOverride(
+  JoltC_MotionProperties_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

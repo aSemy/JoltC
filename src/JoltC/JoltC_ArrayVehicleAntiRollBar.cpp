@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayVehicleAntiRollBar.h"
+#include "JoltC/JoltC_ArrayVehicleAntiRollBar.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,62 +8,116 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayVehicleAntiRollBar_empty(
-  JPC_ArrayVehicleAntiRollBar_t * self
+bool JoltC_ArrayVehicleAntiRollBar_empty(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  char** outErrMsg
 ) {
-  ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayVehicleAntiRollBar_size(
-  JPC_ArrayVehicleAntiRollBar_t * self
+long JoltC_ArrayVehicleAntiRollBar_size(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  char** outErrMsg
 ) {
-  ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_VehicleAntiRollBar_t * JPC_ArrayVehicleAntiRollBar_at(
-  JPC_ArrayVehicleAntiRollBar_t * self,
-  long inIndex
+JoltC_VehicleAntiRollBar_t * JoltC_ArrayVehicleAntiRollBar_at(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  VehicleAntiRollBar& resultRef = selfCpp->at(
-  inIndex
-  );
-  VehicleAntiRollBar * result = &resultRef;
-  return reinterpret_cast<JPC_VehicleAntiRollBar_t *>(result);
+  try {
+    ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
+    VehicleAntiRollBar& resultRef = selfCpp->at(
+    inIndex
+    );
+    VehicleAntiRollBar * result = &resultRef;
+    return reinterpret_cast<JoltC_VehicleAntiRollBar_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVehicleAntiRollBar_push_back(
-  JPC_ArrayVehicleAntiRollBar_t * self,
-  JPC_VehicleAntiRollBar_t * inValue
+void JoltC_ArrayVehicleAntiRollBar_push_back(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  JoltC_VehicleAntiRollBar_t * inValue,
+  char** outErrMsg
 ) {
-  ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<VehicleAntiRollBar *>(inValue->obj)
-  );
+  try {
+    ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<VehicleAntiRollBar *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVehicleAntiRollBar_resize(
-  JPC_ArrayVehicleAntiRollBar_t * self,
-  unsigned long inSize
+void JoltC_ArrayVehicleAntiRollBar_resize(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVehicleAntiRollBar_clear(
-  JPC_ArrayVehicleAntiRollBar_t * self
+void JoltC_ArrayVehicleAntiRollBar_clear(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  char** outErrMsg
 ) {
-  ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

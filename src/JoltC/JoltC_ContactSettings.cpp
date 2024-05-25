@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ContactSettings.h"
+#include "JoltC/JoltC_ContactSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,158 +8,186 @@ extern "C" {
 
 //region constructors
 
-JPC_ContactSettings_t * JPC_ContactSettings_new() {
-  JPC_ContactSettings_t * cInstance = new JPC_ContactSettings_t();
-  ContactSettings * cppInstance = new ContactSettings();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_ContactSettings_t * JoltC_ContactSettings_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_ContactSettings_t * cInstance = new JoltC_ContactSettings_t();
+    ContactSettings * cppInstance = new ContactSettings();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region properties
 
-float JPC_ContactSettings_mCombinedFriction_Get(
-  JPC_ContactSettings_t * self
+float JoltC_ContactSettings_mCombinedFriction_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   float result = selfCpp->mCombinedFriction;
   return result;
 };
 
-void JPC_ContactSettings_mCombinedFriction_Set(
-  JPC_ContactSettings_t * self,
-  float mCombinedFriction
+void JoltC_ContactSettings_mCombinedFriction_Set(
+  JoltC_ContactSettings_t * self,
+  float mCombinedFriction,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mCombinedFriction = mCombinedFriction;
 };
 
-float JPC_ContactSettings_mCombinedRestitution_Get(
-  JPC_ContactSettings_t * self
+float JoltC_ContactSettings_mCombinedRestitution_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   float result = selfCpp->mCombinedRestitution;
   return result;
 };
 
-void JPC_ContactSettings_mCombinedRestitution_Set(
-  JPC_ContactSettings_t * self,
-  float mCombinedRestitution
+void JoltC_ContactSettings_mCombinedRestitution_Set(
+  JoltC_ContactSettings_t * self,
+  float mCombinedRestitution,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mCombinedRestitution = mCombinedRestitution;
 };
 
-float JPC_ContactSettings_mInvMassScale1_Get(
-  JPC_ContactSettings_t * self
+float JoltC_ContactSettings_mInvMassScale1_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   float result = selfCpp->mInvMassScale1;
   return result;
 };
 
-void JPC_ContactSettings_mInvMassScale1_Set(
-  JPC_ContactSettings_t * self,
-  float mInvMassScale1
+void JoltC_ContactSettings_mInvMassScale1_Set(
+  JoltC_ContactSettings_t * self,
+  float mInvMassScale1,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mInvMassScale1 = mInvMassScale1;
 };
 
-float JPC_ContactSettings_mInvInertiaScale1_Get(
-  JPC_ContactSettings_t * self
+float JoltC_ContactSettings_mInvInertiaScale1_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   float result = selfCpp->mInvInertiaScale1;
   return result;
 };
 
-void JPC_ContactSettings_mInvInertiaScale1_Set(
-  JPC_ContactSettings_t * self,
-  float mInvInertiaScale1
+void JoltC_ContactSettings_mInvInertiaScale1_Set(
+  JoltC_ContactSettings_t * self,
+  float mInvInertiaScale1,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mInvInertiaScale1 = mInvInertiaScale1;
 };
 
-float JPC_ContactSettings_mInvMassScale2_Get(
-  JPC_ContactSettings_t * self
+float JoltC_ContactSettings_mInvMassScale2_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   float result = selfCpp->mInvMassScale2;
   return result;
 };
 
-void JPC_ContactSettings_mInvMassScale2_Set(
-  JPC_ContactSettings_t * self,
-  float mInvMassScale2
+void JoltC_ContactSettings_mInvMassScale2_Set(
+  JoltC_ContactSettings_t * self,
+  float mInvMassScale2,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mInvMassScale2 = mInvMassScale2;
 };
 
-float JPC_ContactSettings_mInvInertiaScale2_Get(
-  JPC_ContactSettings_t * self
+float JoltC_ContactSettings_mInvInertiaScale2_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   float result = selfCpp->mInvInertiaScale2;
   return result;
 };
 
-void JPC_ContactSettings_mInvInertiaScale2_Set(
-  JPC_ContactSettings_t * self,
-  float mInvInertiaScale2
+void JoltC_ContactSettings_mInvInertiaScale2_Set(
+  JoltC_ContactSettings_t * self,
+  float mInvInertiaScale2,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mInvInertiaScale2 = mInvInertiaScale2;
 };
 
-bool JPC_ContactSettings_mIsSensor_Get(
-  JPC_ContactSettings_t * self
+bool JoltC_ContactSettings_mIsSensor_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   bool result = selfCpp->mIsSensor;
   return result;
 };
 
-void JPC_ContactSettings_mIsSensor_Set(
-  JPC_ContactSettings_t * self,
-  bool mIsSensor
+void JoltC_ContactSettings_mIsSensor_Set(
+  JoltC_ContactSettings_t * self,
+  bool mIsSensor,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mIsSensor = mIsSensor;
 };
 
-JPC_Vec3_t * JPC_ContactSettings_mRelativeLinearSurfaceVelocity_Get(
-  JPC_ContactSettings_t * self
+JoltC_Vec3_t * JoltC_ContactSettings_mRelativeLinearSurfaceVelocity_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   Vec3 resultValue = selfCpp->mRelativeLinearSurfaceVelocity;
   Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
-void JPC_ContactSettings_mRelativeLinearSurfaceVelocity_Set(
-  JPC_ContactSettings_t * self,
-  JPC_Vec3_t * mRelativeLinearSurfaceVelocity
+void JoltC_ContactSettings_mRelativeLinearSurfaceVelocity_Set(
+  JoltC_ContactSettings_t * self,
+  JoltC_Vec3_t * mRelativeLinearSurfaceVelocity,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mRelativeLinearSurfaceVelocity = *reinterpret_cast<Vec3 *>(mRelativeLinearSurfaceVelocity->obj);
 };
 
-JPC_Vec3_t * JPC_ContactSettings_mRelativeAngularSurfaceVelocity_Get(
-  JPC_ContactSettings_t * self
+JoltC_Vec3_t * JoltC_ContactSettings_mRelativeAngularSurfaceVelocity_Get(
+  JoltC_ContactSettings_t * self,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   Vec3 resultValue = selfCpp->mRelativeAngularSurfaceVelocity;
   Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
-void JPC_ContactSettings_mRelativeAngularSurfaceVelocity_Set(
-  JPC_ContactSettings_t * self,
-  JPC_Vec3_t * mRelativeAngularSurfaceVelocity
+void JoltC_ContactSettings_mRelativeAngularSurfaceVelocity_Set(
+  JoltC_ContactSettings_t * self,
+  JoltC_Vec3_t * mRelativeAngularSurfaceVelocity,
+  char** outErrMsg
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
   selfCpp->mRelativeAngularSurfaceVelocity = *reinterpret_cast<Vec3 *>(mRelativeAngularSurfaceVelocity->obj);

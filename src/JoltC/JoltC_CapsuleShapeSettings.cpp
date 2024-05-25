@@ -1,5 +1,6 @@
-#include "JoltC/JPC_CapsuleShapeSettings.h"
+#include "JoltC/JoltC_CapsuleShapeSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,145 +8,209 @@ extern "C" {
 
 //region constructors
 
-JPC_CapsuleShapeSettings_t * JPC_CapsuleShapeSettings_new(
+JoltC_CapsuleShapeSettings_t * JoltC_CapsuleShapeSettings_new(
   float inHalfHeight,
   float inRadius,
-  const JPC_PhysicsMaterial_t * inMaterial
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 ) {
-  JPC_CapsuleShapeSettings_t * cInstance = new JPC_CapsuleShapeSettings_t();
-  CapsuleShapeSettings * cppInstance = new CapsuleShapeSettings(
-    inHalfHeight,
-    inRadius,
-    reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_CapsuleShapeSettings_t * cInstance = new JoltC_CapsuleShapeSettings_t();
+    CapsuleShapeSettings * cppInstance = new CapsuleShapeSettings(
+      inHalfHeight,
+      inRadius,
+      reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_CapsuleShapeSettings_GetRefCount(
-  JPC_CapsuleShapeSettings_t * self
+unsigned long JoltC_CapsuleShapeSettings_GetRefCount(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CapsuleShapeSettings_AddRef(
-  JPC_CapsuleShapeSettings_t * self
+void JoltC_CapsuleShapeSettings_AddRef(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CapsuleShapeSettings_Release(
-  JPC_CapsuleShapeSettings_t * self
+void JoltC_CapsuleShapeSettings_Release(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_ShapeResult_t * JPC_CapsuleShapeSettings_Create(
-  JPC_CapsuleShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_CapsuleShapeSettings_Create(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JPC_Shape_ShapeResult_t *>(result);
+  try {
+    CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
+    Shape::ShapeResult resultValue = selfCpp->Create();
+    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CapsuleShapeSettings_ClearCachedResult(
-  JPC_CapsuleShapeSettings_t * self
+void JoltC_CapsuleShapeSettings_ClearCachedResult(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  
-  selfCpp->ClearCachedResult();
+  try {
+    CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
+    
+    selfCpp->ClearCachedResult();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-float JPC_CapsuleShapeSettings_mRadius_Get(
-  JPC_CapsuleShapeSettings_t * self
+float JoltC_CapsuleShapeSettings_mRadius_Get(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   float result = selfCpp->mRadius;
   return result;
 };
 
-void JPC_CapsuleShapeSettings_mRadius_Set(
-  JPC_CapsuleShapeSettings_t * self,
-  float mRadius
+void JoltC_CapsuleShapeSettings_mRadius_Set(
+  JoltC_CapsuleShapeSettings_t * self,
+  float mRadius,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mRadius = mRadius;
 };
 
-float JPC_CapsuleShapeSettings_mHalfHeightOfCylinder_Get(
-  JPC_CapsuleShapeSettings_t * self
+float JoltC_CapsuleShapeSettings_mHalfHeightOfCylinder_Get(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   float result = selfCpp->mHalfHeightOfCylinder;
   return result;
 };
 
-void JPC_CapsuleShapeSettings_mHalfHeightOfCylinder_Set(
-  JPC_CapsuleShapeSettings_t * self,
-  float mHalfHeightOfCylinder
+void JoltC_CapsuleShapeSettings_mHalfHeightOfCylinder_Set(
+  JoltC_CapsuleShapeSettings_t * self,
+  float mHalfHeightOfCylinder,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mHalfHeightOfCylinder = mHalfHeightOfCylinder;
 };
 
-const JPC_PhysicsMaterial_t * JPC_CapsuleShapeSettings_mMaterial_Get(
-  JPC_CapsuleShapeSettings_t * self
+const JoltC_PhysicsMaterial_t * JoltC_CapsuleShapeSettings_mMaterial_Get(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   const PhysicsMaterial * result = selfCpp->mMaterial;
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
 };
 
-const void JPC_CapsuleShapeSettings_mMaterial_Set(
-  JPC_CapsuleShapeSettings_t * self,
-  const JPC_PhysicsMaterial_t * mMaterial
+const void JoltC_CapsuleShapeSettings_mMaterial_Set(
+  JoltC_CapsuleShapeSettings_t * self,
+  const JoltC_PhysicsMaterial_t * mMaterial,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);
 };
 
-float JPC_CapsuleShapeSettings_mDensity_Get(
-  JPC_CapsuleShapeSettings_t * self
+float JoltC_CapsuleShapeSettings_mDensity_Get(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   float result = selfCpp->mDensity;
   return result;
 };
 
-void JPC_CapsuleShapeSettings_mDensity_Set(
-  JPC_CapsuleShapeSettings_t * self,
-  float mDensity
+void JoltC_CapsuleShapeSettings_mDensity_Set(
+  JoltC_CapsuleShapeSettings_t * self,
+  float mDensity,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mDensity = mDensity;
 };
 
-unsigned long long int JPC_CapsuleShapeSettings_mUserData_Get(
-  JPC_CapsuleShapeSettings_t * self
+unsigned long long int JoltC_CapsuleShapeSettings_mUserData_Get(
+  JoltC_CapsuleShapeSettings_t * self,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   unsigned long long int result = selfCpp->mUserData;
   return result;
 };
 
-void JPC_CapsuleShapeSettings_mUserData_Set(
-  JPC_CapsuleShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_CapsuleShapeSettings_mUserData_Set(
+  JoltC_CapsuleShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;

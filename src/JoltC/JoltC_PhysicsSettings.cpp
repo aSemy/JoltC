@@ -1,5 +1,6 @@
-#include "JoltC/JPC_PhysicsSettings.h"
+#include "JoltC/JoltC_PhysicsSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,428 +8,490 @@ extern "C" {
 
 //region constructors
 
-JPC_PhysicsSettings_t * JPC_PhysicsSettings_new() {
-  JPC_PhysicsSettings_t * cInstance = new JPC_PhysicsSettings_t();
-  PhysicsSettings * cppInstance = new PhysicsSettings();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_PhysicsSettings_t * JoltC_PhysicsSettings_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_PhysicsSettings_t * cInstance = new JoltC_PhysicsSettings_t();
+    PhysicsSettings * cppInstance = new PhysicsSettings();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region properties
 
-long JPC_PhysicsSettings_mMaxInFlightBodyPairs_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mMaxInFlightBodyPairs_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   long result = selfCpp->mMaxInFlightBodyPairs;
   return result;
 };
 
-void JPC_PhysicsSettings_mMaxInFlightBodyPairs_Set(
-  JPC_PhysicsSettings_t * self,
-  long mMaxInFlightBodyPairs
+void JoltC_PhysicsSettings_mMaxInFlightBodyPairs_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mMaxInFlightBodyPairs,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mMaxInFlightBodyPairs = mMaxInFlightBodyPairs;
 };
 
-long JPC_PhysicsSettings_mStepListenersBatchSize_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mStepListenersBatchSize_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   long result = selfCpp->mStepListenersBatchSize;
   return result;
 };
 
-void JPC_PhysicsSettings_mStepListenersBatchSize_Set(
-  JPC_PhysicsSettings_t * self,
-  long mStepListenersBatchSize
+void JoltC_PhysicsSettings_mStepListenersBatchSize_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mStepListenersBatchSize,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mStepListenersBatchSize = mStepListenersBatchSize;
 };
 
-long JPC_PhysicsSettings_mStepListenerBatchesPerJob_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mStepListenerBatchesPerJob_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   long result = selfCpp->mStepListenerBatchesPerJob;
   return result;
 };
 
-void JPC_PhysicsSettings_mStepListenerBatchesPerJob_Set(
-  JPC_PhysicsSettings_t * self,
-  long mStepListenerBatchesPerJob
+void JoltC_PhysicsSettings_mStepListenerBatchesPerJob_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mStepListenerBatchesPerJob,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mStepListenerBatchesPerJob = mStepListenerBatchesPerJob;
 };
 
-float JPC_PhysicsSettings_mBaumgarte_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mBaumgarte_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mBaumgarte;
   return result;
 };
 
-void JPC_PhysicsSettings_mBaumgarte_Set(
-  JPC_PhysicsSettings_t * self,
-  float mBaumgarte
+void JoltC_PhysicsSettings_mBaumgarte_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mBaumgarte,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mBaumgarte = mBaumgarte;
 };
 
-float JPC_PhysicsSettings_mSpeculativeContactDistance_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mSpeculativeContactDistance_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mSpeculativeContactDistance;
   return result;
 };
 
-void JPC_PhysicsSettings_mSpeculativeContactDistance_Set(
-  JPC_PhysicsSettings_t * self,
-  float mSpeculativeContactDistance
+void JoltC_PhysicsSettings_mSpeculativeContactDistance_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mSpeculativeContactDistance,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mSpeculativeContactDistance = mSpeculativeContactDistance;
 };
 
-float JPC_PhysicsSettings_mPenetrationSlop_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mPenetrationSlop_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mPenetrationSlop;
   return result;
 };
 
-void JPC_PhysicsSettings_mPenetrationSlop_Set(
-  JPC_PhysicsSettings_t * self,
-  float mPenetrationSlop
+void JoltC_PhysicsSettings_mPenetrationSlop_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mPenetrationSlop,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mPenetrationSlop = mPenetrationSlop;
 };
 
-float JPC_PhysicsSettings_mLinearCastThreshold_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mLinearCastThreshold_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mLinearCastThreshold;
   return result;
 };
 
-void JPC_PhysicsSettings_mLinearCastThreshold_Set(
-  JPC_PhysicsSettings_t * self,
-  float mLinearCastThreshold
+void JoltC_PhysicsSettings_mLinearCastThreshold_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mLinearCastThreshold,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mLinearCastThreshold = mLinearCastThreshold;
 };
 
-float JPC_PhysicsSettings_mLinearCastMaxPenetration_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mLinearCastMaxPenetration_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mLinearCastMaxPenetration;
   return result;
 };
 
-void JPC_PhysicsSettings_mLinearCastMaxPenetration_Set(
-  JPC_PhysicsSettings_t * self,
-  float mLinearCastMaxPenetration
+void JoltC_PhysicsSettings_mLinearCastMaxPenetration_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mLinearCastMaxPenetration,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mLinearCastMaxPenetration = mLinearCastMaxPenetration;
 };
 
-float JPC_PhysicsSettings_mManifoldToleranceSq_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mManifoldToleranceSq_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mManifoldToleranceSq;
   return result;
 };
 
-void JPC_PhysicsSettings_mManifoldToleranceSq_Set(
-  JPC_PhysicsSettings_t * self,
-  float mManifoldToleranceSq
+void JoltC_PhysicsSettings_mManifoldToleranceSq_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mManifoldToleranceSq,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mManifoldToleranceSq = mManifoldToleranceSq;
 };
 
-float JPC_PhysicsSettings_mMaxPenetrationDistance_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mMaxPenetrationDistance_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mMaxPenetrationDistance;
   return result;
 };
 
-void JPC_PhysicsSettings_mMaxPenetrationDistance_Set(
-  JPC_PhysicsSettings_t * self,
-  float mMaxPenetrationDistance
+void JoltC_PhysicsSettings_mMaxPenetrationDistance_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mMaxPenetrationDistance,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mMaxPenetrationDistance = mMaxPenetrationDistance;
 };
 
-float JPC_PhysicsSettings_mBodyPairCacheMaxDeltaPositionSq_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mBodyPairCacheMaxDeltaPositionSq_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mBodyPairCacheMaxDeltaPositionSq;
   return result;
 };
 
-void JPC_PhysicsSettings_mBodyPairCacheMaxDeltaPositionSq_Set(
-  JPC_PhysicsSettings_t * self,
-  float mBodyPairCacheMaxDeltaPositionSq
+void JoltC_PhysicsSettings_mBodyPairCacheMaxDeltaPositionSq_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mBodyPairCacheMaxDeltaPositionSq,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mBodyPairCacheMaxDeltaPositionSq = mBodyPairCacheMaxDeltaPositionSq;
 };
 
-float JPC_PhysicsSettings_mBodyPairCacheCosMaxDeltaRotationDiv2_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mBodyPairCacheCosMaxDeltaRotationDiv2_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mBodyPairCacheCosMaxDeltaRotationDiv2;
   return result;
 };
 
-void JPC_PhysicsSettings_mBodyPairCacheCosMaxDeltaRotationDiv2_Set(
-  JPC_PhysicsSettings_t * self,
-  float mBodyPairCacheCosMaxDeltaRotationDiv2
+void JoltC_PhysicsSettings_mBodyPairCacheCosMaxDeltaRotationDiv2_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mBodyPairCacheCosMaxDeltaRotationDiv2,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mBodyPairCacheCosMaxDeltaRotationDiv2 = mBodyPairCacheCosMaxDeltaRotationDiv2;
 };
 
-float JPC_PhysicsSettings_mContactNormalCosMaxDeltaRotation_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mContactNormalCosMaxDeltaRotation_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mContactNormalCosMaxDeltaRotation;
   return result;
 };
 
-void JPC_PhysicsSettings_mContactNormalCosMaxDeltaRotation_Set(
-  JPC_PhysicsSettings_t * self,
-  float mContactNormalCosMaxDeltaRotation
+void JoltC_PhysicsSettings_mContactNormalCosMaxDeltaRotation_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mContactNormalCosMaxDeltaRotation,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mContactNormalCosMaxDeltaRotation = mContactNormalCosMaxDeltaRotation;
 };
 
-float JPC_PhysicsSettings_mContactPointPreserveLambdaMaxDistSq_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mContactPointPreserveLambdaMaxDistSq_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mContactPointPreserveLambdaMaxDistSq;
   return result;
 };
 
-void JPC_PhysicsSettings_mContactPointPreserveLambdaMaxDistSq_Set(
-  JPC_PhysicsSettings_t * self,
-  float mContactPointPreserveLambdaMaxDistSq
+void JoltC_PhysicsSettings_mContactPointPreserveLambdaMaxDistSq_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mContactPointPreserveLambdaMaxDistSq,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mContactPointPreserveLambdaMaxDistSq = mContactPointPreserveLambdaMaxDistSq;
 };
 
-long JPC_PhysicsSettings_mNumVelocitySteps_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mNumVelocitySteps_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   long result = selfCpp->mNumVelocitySteps;
   return result;
 };
 
-void JPC_PhysicsSettings_mNumVelocitySteps_Set(
-  JPC_PhysicsSettings_t * self,
-  long mNumVelocitySteps
+void JoltC_PhysicsSettings_mNumVelocitySteps_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mNumVelocitySteps,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mNumVelocitySteps = mNumVelocitySteps;
 };
 
-long JPC_PhysicsSettings_mNumPositionSteps_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mNumPositionSteps_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   long result = selfCpp->mNumPositionSteps;
   return result;
 };
 
-void JPC_PhysicsSettings_mNumPositionSteps_Set(
-  JPC_PhysicsSettings_t * self,
-  long mNumPositionSteps
+void JoltC_PhysicsSettings_mNumPositionSteps_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mNumPositionSteps,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mNumPositionSteps = mNumPositionSteps;
 };
 
-float JPC_PhysicsSettings_mMinVelocityForRestitution_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mMinVelocityForRestitution_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mMinVelocityForRestitution;
   return result;
 };
 
-void JPC_PhysicsSettings_mMinVelocityForRestitution_Set(
-  JPC_PhysicsSettings_t * self,
-  float mMinVelocityForRestitution
+void JoltC_PhysicsSettings_mMinVelocityForRestitution_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mMinVelocityForRestitution,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mMinVelocityForRestitution = mMinVelocityForRestitution;
 };
 
-float JPC_PhysicsSettings_mTimeBeforeSleep_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mTimeBeforeSleep_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mTimeBeforeSleep;
   return result;
 };
 
-void JPC_PhysicsSettings_mTimeBeforeSleep_Set(
-  JPC_PhysicsSettings_t * self,
-  float mTimeBeforeSleep
+void JoltC_PhysicsSettings_mTimeBeforeSleep_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mTimeBeforeSleep,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mTimeBeforeSleep = mTimeBeforeSleep;
 };
 
-float JPC_PhysicsSettings_mPointVelocitySleepThreshold_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mPointVelocitySleepThreshold_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   float result = selfCpp->mPointVelocitySleepThreshold;
   return result;
 };
 
-void JPC_PhysicsSettings_mPointVelocitySleepThreshold_Set(
-  JPC_PhysicsSettings_t * self,
-  float mPointVelocitySleepThreshold
+void JoltC_PhysicsSettings_mPointVelocitySleepThreshold_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mPointVelocitySleepThreshold,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mPointVelocitySleepThreshold = mPointVelocitySleepThreshold;
 };
 
-bool JPC_PhysicsSettings_mDeterministicSimulation_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mDeterministicSimulation_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   bool result = selfCpp->mDeterministicSimulation;
   return result;
 };
 
-void JPC_PhysicsSettings_mDeterministicSimulation_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mDeterministicSimulation
+void JoltC_PhysicsSettings_mDeterministicSimulation_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mDeterministicSimulation,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mDeterministicSimulation = mDeterministicSimulation;
 };
 
-bool JPC_PhysicsSettings_mConstraintWarmStart_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mConstraintWarmStart_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   bool result = selfCpp->mConstraintWarmStart;
   return result;
 };
 
-void JPC_PhysicsSettings_mConstraintWarmStart_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mConstraintWarmStart
+void JoltC_PhysicsSettings_mConstraintWarmStart_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mConstraintWarmStart,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mConstraintWarmStart = mConstraintWarmStart;
 };
 
-bool JPC_PhysicsSettings_mUseBodyPairContactCache_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mUseBodyPairContactCache_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   bool result = selfCpp->mUseBodyPairContactCache;
   return result;
 };
 
-void JPC_PhysicsSettings_mUseBodyPairContactCache_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mUseBodyPairContactCache
+void JoltC_PhysicsSettings_mUseBodyPairContactCache_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mUseBodyPairContactCache,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mUseBodyPairContactCache = mUseBodyPairContactCache;
 };
 
-bool JPC_PhysicsSettings_mUseManifoldReduction_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mUseManifoldReduction_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   bool result = selfCpp->mUseManifoldReduction;
   return result;
 };
 
-void JPC_PhysicsSettings_mUseManifoldReduction_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mUseManifoldReduction
+void JoltC_PhysicsSettings_mUseManifoldReduction_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mUseManifoldReduction,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mUseManifoldReduction = mUseManifoldReduction;
 };
 
-bool JPC_PhysicsSettings_mUseLargeIslandSplitter_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mUseLargeIslandSplitter_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   bool result = selfCpp->mUseLargeIslandSplitter;
   return result;
 };
 
-void JPC_PhysicsSettings_mUseLargeIslandSplitter_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mUseLargeIslandSplitter
+void JoltC_PhysicsSettings_mUseLargeIslandSplitter_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mUseLargeIslandSplitter,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mUseLargeIslandSplitter = mUseLargeIslandSplitter;
 };
 
-bool JPC_PhysicsSettings_mAllowSleeping_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mAllowSleeping_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   bool result = selfCpp->mAllowSleeping;
   return result;
 };
 
-void JPC_PhysicsSettings_mAllowSleeping_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mAllowSleeping
+void JoltC_PhysicsSettings_mAllowSleeping_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mAllowSleeping,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mAllowSleeping = mAllowSleeping;
 };
 
-bool JPC_PhysicsSettings_mCheckActiveEdges_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mCheckActiveEdges_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   bool result = selfCpp->mCheckActiveEdges;
   return result;
 };
 
-void JPC_PhysicsSettings_mCheckActiveEdges_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mCheckActiveEdges
+void JoltC_PhysicsSettings_mCheckActiveEdges_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mCheckActiveEdges,
+  char** outErrMsg
 ) {
   PhysicsSettings * selfCpp = static_cast<PhysicsSettings *>(self->obj);
   selfCpp->mCheckActiveEdges = mCheckActiveEdges;

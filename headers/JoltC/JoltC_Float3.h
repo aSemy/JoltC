@@ -8,55 +8,64 @@ extern "C" {
 
 //region constructors
 
-JPC_Float3_t * JPC_Float3_new(
+JoltC_Float3_t * JoltC_Float3_new(
   float inX,
   float inY,
-  float inZ
+  float inZ,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-bool JPC_Float3_Equals(
-  JPC_Float3_t * self,
-  const JPC_Float3_t * inV
+bool JoltC_Float3_Equals(
+  JoltC_Float3_t * self,
+  const JoltC_Float3_t * inV,
+  char** outErrMsg
 );
 
-bool JPC_Float3_NotEquals(
-  JPC_Float3_t * self,
-  const JPC_Float3_t * inV
+bool JoltC_Float3_NotEquals(
+  JoltC_Float3_t * self,
+  const JoltC_Float3_t * inV,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_Float3_x_Get(
-  JPC_Float3_t * self
+float JoltC_Float3_x_Get(
+  JoltC_Float3_t * self,
+  char** outErrMsg
 );
 
-void JPC_Float3_x_Set(
-  JPC_Float3_t * self,
-  float x
+void JoltC_Float3_x_Set(
+  JoltC_Float3_t * self,
+  float x,
+  char** outErrMsg
 );
 
-float JPC_Float3_y_Get(
-  JPC_Float3_t * self
+float JoltC_Float3_y_Get(
+  JoltC_Float3_t * self,
+  char** outErrMsg
 );
 
-void JPC_Float3_y_Set(
-  JPC_Float3_t * self,
-  float y
+void JoltC_Float3_y_Set(
+  JoltC_Float3_t * self,
+  float y,
+  char** outErrMsg
 );
 
-float JPC_Float3_z_Get(
-  JPC_Float3_t * self
+float JoltC_Float3_z_Get(
+  JoltC_Float3_t * self,
+  char** outErrMsg
 );
 
-void JPC_Float3_z_Set(
-  JPC_Float3_t * self,
-  float z
+void JoltC_Float3_z_Set(
+  JoltC_Float3_t * self,
+  float z,
+  char** outErrMsg
 );
 
 //endregion properties

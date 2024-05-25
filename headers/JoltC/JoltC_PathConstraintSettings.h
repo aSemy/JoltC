@@ -8,122 +8,148 @@ extern "C" {
 
 //region constructors
 
-JPC_PathConstraintSettings_t * JPC_PathConstraintSettings_new();
+JoltC_PathConstraintSettings_t * JoltC_PathConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_Constraint_t * JPC_PathConstraintSettings_Create(
-  JPC_PathConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_PathConstraintSettings_Create(
+  JoltC_PathConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_PathConstraintSettings_GetRefCount(
-  JPC_PathConstraintSettings_t * self
+unsigned long JoltC_PathConstraintSettings_GetRefCount(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_AddRef(
-  JPC_PathConstraintSettings_t * self
+void JoltC_PathConstraintSettings_AddRef(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_Release(
-  JPC_PathConstraintSettings_t * self
+void JoltC_PathConstraintSettings_Release(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-const JPC_PathConstraintPath_t * JPC_PathConstraintSettings_mPath_Get(
-  JPC_PathConstraintSettings_t * self
+const JoltC_PathConstraintPath_t * JoltC_PathConstraintSettings_mPath_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-const void JPC_PathConstraintSettings_mPath_Set(
-  JPC_PathConstraintSettings_t * self,
-  const JPC_PathConstraintPath_t * mPath
+const void JoltC_PathConstraintSettings_mPath_Set(
+  JoltC_PathConstraintSettings_t * self,
+  const JoltC_PathConstraintPath_t * mPath,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_PathConstraintSettings_mPathPosition_Get(
-  JPC_PathConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_PathConstraintSettings_mPathPosition_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mPathPosition_Set(
-  JPC_PathConstraintSettings_t * self,
-  JPC_Vec3_t * mPathPosition
+void JoltC_PathConstraintSettings_mPathPosition_Set(
+  JoltC_PathConstraintSettings_t * self,
+  JoltC_Vec3_t * mPathPosition,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_PathConstraintSettings_mPathRotation_Get(
-  JPC_PathConstraintSettings_t * self
+JoltC_Quat_t * JoltC_PathConstraintSettings_mPathRotation_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mPathRotation_Set(
-  JPC_PathConstraintSettings_t * self,
-  JPC_Quat_t * mPathRotation
+void JoltC_PathConstraintSettings_mPathRotation_Set(
+  JoltC_PathConstraintSettings_t * self,
+  JoltC_Quat_t * mPathRotation,
+  char** outErrMsg
 );
 
-float JPC_PathConstraintSettings_mPathFraction_Get(
-  JPC_PathConstraintSettings_t * self
+float JoltC_PathConstraintSettings_mPathFraction_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mPathFraction_Set(
-  JPC_PathConstraintSettings_t * self,
-  float mPathFraction
+void JoltC_PathConstraintSettings_mPathFraction_Set(
+  JoltC_PathConstraintSettings_t * self,
+  float mPathFraction,
+  char** outErrMsg
 );
 
-float JPC_PathConstraintSettings_mMaxFrictionForce_Get(
-  JPC_PathConstraintSettings_t * self
+float JoltC_PathConstraintSettings_mMaxFrictionForce_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mMaxFrictionForce_Set(
-  JPC_PathConstraintSettings_t * self,
-  float mMaxFrictionForce
+void JoltC_PathConstraintSettings_mMaxFrictionForce_Set(
+  JoltC_PathConstraintSettings_t * self,
+  float mMaxFrictionForce,
+  char** outErrMsg
 );
 
-JPC_EPathRotationConstraintType JPC_PathConstraintSettings_mRotationConstraintType_Get(
-  JPC_PathConstraintSettings_t * self
+JoltC_EPathRotationConstraintType JoltC_PathConstraintSettings_mRotationConstraintType_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mRotationConstraintType_Set(
-  JPC_PathConstraintSettings_t * self,
-  JPC_EPathRotationConstraintType mRotationConstraintType
+void JoltC_PathConstraintSettings_mRotationConstraintType_Set(
+  JoltC_PathConstraintSettings_t * self,
+  JoltC_EPathRotationConstraintType mRotationConstraintType,
+  char** outErrMsg
 );
 
-JPC_MotorSettings_t * JPC_PathConstraintSettings_mPositionMotorSettings_Get(
-  JPC_PathConstraintSettings_t * self
+JoltC_MotorSettings_t * JoltC_PathConstraintSettings_mPositionMotorSettings_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mPositionMotorSettings_Set(
-  JPC_PathConstraintSettings_t * self,
-  JPC_MotorSettings_t * mPositionMotorSettings
+void JoltC_PathConstraintSettings_mPositionMotorSettings_Set(
+  JoltC_PathConstraintSettings_t * self,
+  JoltC_MotorSettings_t * mPositionMotorSettings,
+  char** outErrMsg
 );
 
-bool JPC_PathConstraintSettings_mEnabled_Get(
-  JPC_PathConstraintSettings_t * self
+bool JoltC_PathConstraintSettings_mEnabled_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mEnabled_Set(
-  JPC_PathConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_PathConstraintSettings_mEnabled_Set(
+  JoltC_PathConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_PathConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_PathConstraintSettings_t * self
+long JoltC_PathConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_PathConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_PathConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_PathConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_PathConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_PathConstraintSettings_t * self
+long JoltC_PathConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_PathConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_PathConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_PathConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_PathConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

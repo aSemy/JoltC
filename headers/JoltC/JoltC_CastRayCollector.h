@@ -8,43 +8,52 @@ extern "C" {
 
 //region functions
 
-void JPC_CastRayCollector_Reset(
-  JPC_CastRayCollector_t * self
+void JoltC_CastRayCollector_Reset(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastRayCollector_SetContext(
-  JPC_CastRayCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CastRayCollector_SetContext(
+  JoltC_CastRayCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_CastRayCollector_GetContext(
-  JPC_CastRayCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CastRayCollector_GetContext(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastRayCollector_UpdateEarlyOutFraction(
-  JPC_CastRayCollector_t * self,
-  float inFraction
+void JoltC_CastRayCollector_UpdateEarlyOutFraction(
+  JoltC_CastRayCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CastRayCollector_ResetEarlyOutFraction(
-  JPC_CastRayCollector_t * self,
-  float inFraction
+void JoltC_CastRayCollector_ResetEarlyOutFraction(
+  JoltC_CastRayCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CastRayCollector_ForceEarlyOut(
-  JPC_CastRayCollector_t * self
+void JoltC_CastRayCollector_ForceEarlyOut(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CastRayCollector_ShouldEarlyOut(
-  JPC_CastRayCollector_t * self
+bool JoltC_CastRayCollector_ShouldEarlyOut(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CastRayCollector_GetEarlyOutFraction(
-  JPC_CastRayCollector_t * self
+float JoltC_CastRayCollector_GetEarlyOutFraction(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CastRayCollector_GetPositiveEarlyOutFraction(
-  JPC_CastRayCollector_t * self
+float JoltC_CastRayCollector_GetPositiveEarlyOutFraction(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

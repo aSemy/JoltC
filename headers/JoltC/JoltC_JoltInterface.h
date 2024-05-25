@@ -8,39 +8,49 @@ extern "C" {
 
 //region constructors
 
-JPC_JoltInterface_t * JPC_JoltInterface_new(
-  const JPC_JoltSettings_t * inSettings
+JoltC_JoltInterface_t * JoltC_JoltInterface_new(
+  const JoltC_JoltSettings_t * inSettings,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-void JPC_JoltInterface_Step(
-  JPC_JoltInterface_t * self,
+void JoltC_JoltInterface_Step(
+  JoltC_JoltInterface_t * self,
   float inDeltaTime,
-  long inCollisionSteps
+  long inCollisionSteps,
+  char** outErrMsg
 );
 
-JPC_PhysicsSystem_t * JPC_JoltInterface_GetPhysicsSystem(
-  JPC_JoltInterface_t * self
+JoltC_PhysicsSystem_t * JoltC_JoltInterface_GetPhysicsSystem(
+  JoltC_JoltInterface_t * self,
+  char** outErrMsg
 );
 
-JPC_TempAllocator_t * JPC_JoltInterface_GetTempAllocator(
-  JPC_JoltInterface_t * self
+JoltC_TempAllocator_t * JoltC_JoltInterface_GetTempAllocator(
+  JoltC_JoltInterface_t * self,
+  char** outErrMsg
 );
 
-JPC_ObjectLayerPairFilter_t * JPC_JoltInterface_GetObjectLayerPairFilter(
-  JPC_JoltInterface_t * self
+JoltC_ObjectLayerPairFilter_t * JoltC_JoltInterface_GetObjectLayerPairFilter(
+  JoltC_JoltInterface_t * self,
+  char** outErrMsg
 );
 
-JPC_ObjectVsBroadPhaseLayerFilter_t * JPC_JoltInterface_GetObjectVsBroadPhaseLayerFilter(
-  JPC_JoltInterface_t * self
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_JoltInterface_GetObjectVsBroadPhaseLayerFilter(
+  JoltC_JoltInterface_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_JoltInterface_sGetTotalMemory();
+unsigned long long int JoltC_JoltInterface_sGetTotalMemory(
+  char** outErrMsg
+);
 
-unsigned long long int JPC_JoltInterface_sGetFreeMemory();
+unsigned long long int JoltC_JoltInterface_sGetFreeMemory(
+  char** outErrMsg
+);
 
 //endregion functions
 

@@ -8,11 +8,12 @@ extern "C" {
 
 //region constructors
 
-JPC_ObjectVsBroadPhaseLayerFilterTable_t * JPC_ObjectVsBroadPhaseLayerFilterTable_new(
-  const JPC_BroadPhaseLayerInterface_t * inBroadPhaseLayerInterface,
+JoltC_ObjectVsBroadPhaseLayerFilterTable_t * JoltC_ObjectVsBroadPhaseLayerFilterTable_new(
+  const JoltC_BroadPhaseLayerInterface_t * inBroadPhaseLayerInterface,
   unsigned long inNumBroadPhaseLayers,
-  const JPC_ObjectLayerPairFilter_t * inObjectLayerPairFilter,
-  unsigned long inNumObjectLayers
+  const JoltC_ObjectLayerPairFilter_t * inObjectLayerPairFilter,
+  unsigned long inNumObjectLayers,
+  char** outErrMsg
 );
 
 //endregion constructors

@@ -1,5 +1,6 @@
-#include "JoltC/JPC_BodyIDVector.h"
+#include "JoltC/JoltC_BodyIDVector.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,84 +8,157 @@ extern "C" {
 
 //region constructors
 
-JPC_BodyIDVector_t * JPC_BodyIDVector_new() {
-  JPC_BodyIDVector_t * cInstance = new JPC_BodyIDVector_t();
-  BodyIDVector * cppInstance = new BodyIDVector();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_BodyIDVector_t * JoltC_BodyIDVector_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_BodyIDVector_t * cInstance = new JoltC_BodyIDVector_t();
+    BodyIDVector * cppInstance = new BodyIDVector();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-bool JPC_BodyIDVector_empty(
-  JPC_BodyIDVector_t * self
+bool JoltC_BodyIDVector_empty(
+  JoltC_BodyIDVector_t * self,
+  char** outErrMsg
 ) {
-  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_BodyIDVector_size(
-  JPC_BodyIDVector_t * self
+long JoltC_BodyIDVector_size(
+  JoltC_BodyIDVector_t * self,
+  char** outErrMsg
 ) {
-  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_BodyID_t * JPC_BodyIDVector_at(
-  JPC_BodyIDVector_t * self,
-  long inIndex
+JoltC_BodyID_t * JoltC_BodyIDVector_at(
+  JoltC_BodyIDVector_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  BodyID& resultRef = selfCpp->at(
-  inIndex
-  );
-  BodyID * result = &resultRef;
-  return reinterpret_cast<JPC_BodyID_t *>(result);
+  try {
+    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+    BodyID& resultRef = selfCpp->at(
+    inIndex
+    );
+    BodyID * result = &resultRef;
+    return reinterpret_cast<JoltC_BodyID_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_BodyIDVector_push_back(
-  JPC_BodyIDVector_t * self,
-  const JPC_BodyID_t * inBodyID
+void JoltC_BodyIDVector_push_back(
+  JoltC_BodyIDVector_t * self,
+  const JoltC_BodyID_t * inBodyID,
+  char** outErrMsg
 ) {
-  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<BodyID *>(inBodyID->obj)
-  );
+  try {
+    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_BodyIDVector_reserve(
-  JPC_BodyIDVector_t * self,
-  unsigned long inSize
+void JoltC_BodyIDVector_reserve(
+  JoltC_BodyIDVector_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_BodyIDVector_resize(
-  JPC_BodyIDVector_t * self,
-  unsigned long inSize
+void JoltC_BodyIDVector_resize(
+  JoltC_BodyIDVector_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_BodyIDVector_clear(
-  JPC_BodyIDVector_t * self
+void JoltC_BodyIDVector_clear(
+  JoltC_BodyIDVector_t * self,
+  char** outErrMsg
 ) {
-  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

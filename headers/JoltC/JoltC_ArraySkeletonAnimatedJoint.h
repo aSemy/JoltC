@@ -8,42 +8,51 @@ extern "C" {
 
 //region constructors
 
-JPC_ArraySkeletonAnimatedJoint_t * JPC_ArraySkeletonAnimatedJoint_new();
+JoltC_ArraySkeletonAnimatedJoint_t * JoltC_ArraySkeletonAnimatedJoint_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_ArraySkeletonAnimatedJoint_empty(
-  JPC_ArraySkeletonAnimatedJoint_t * self
+bool JoltC_ArraySkeletonAnimatedJoint_empty(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArraySkeletonAnimatedJoint_size(
-  JPC_ArraySkeletonAnimatedJoint_t * self
+long JoltC_ArraySkeletonAnimatedJoint_size(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  char** outErrMsg
 );
 
-JPC_SkeletalAnimationAnimatedJoint_t * JPC_ArraySkeletonAnimatedJoint_at(
-  JPC_ArraySkeletonAnimatedJoint_t * self,
-  long inIndex
+JoltC_SkeletalAnimationAnimatedJoint_t * JoltC_ArraySkeletonAnimatedJoint_at(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArraySkeletonAnimatedJoint_push_back(
-  JPC_ArraySkeletonAnimatedJoint_t * self,
-  JPC_SkeletalAnimationAnimatedJoint_t * inValue
+void JoltC_ArraySkeletonAnimatedJoint_push_back(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  JoltC_SkeletalAnimationAnimatedJoint_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArraySkeletonAnimatedJoint_reserve(
-  JPC_ArraySkeletonAnimatedJoint_t * self,
-  unsigned long inSize
+void JoltC_ArraySkeletonAnimatedJoint_reserve(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySkeletonAnimatedJoint_resize(
-  JPC_ArraySkeletonAnimatedJoint_t * self,
-  unsigned long inSize
+void JoltC_ArraySkeletonAnimatedJoint_resize(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySkeletonAnimatedJoint_clear(
-  JPC_ArraySkeletonAnimatedJoint_t * self
+void JoltC_ArraySkeletonAnimatedJoint_clear(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

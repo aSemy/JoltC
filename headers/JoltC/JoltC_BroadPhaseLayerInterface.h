@@ -8,8 +8,9 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_BroadPhaseLayerInterface_GetNumBroadPhaseLayers(
-  JPC_BroadPhaseLayerInterface_t * self
+unsigned long JoltC_BroadPhaseLayerInterface_GetNumBroadPhaseLayers(
+  JoltC_BroadPhaseLayerInterface_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

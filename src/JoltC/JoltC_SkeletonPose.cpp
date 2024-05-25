@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SkeletonPose.h"
+#include "JoltC/JoltC_SkeletonPose.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,111 +8,211 @@ extern "C" {
 
 //region constructors
 
-JPC_SkeletonPose_t * JPC_SkeletonPose_new() {
-  JPC_SkeletonPose_t * cInstance = new JPC_SkeletonPose_t();
-  SkeletonPose * cppInstance = new SkeletonPose();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_SkeletonPose_t * JoltC_SkeletonPose_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_SkeletonPose_t * cInstance = new JoltC_SkeletonPose_t();
+    SkeletonPose * cppInstance = new SkeletonPose();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_SkeletonPose_SetSkeleton(
-  JPC_SkeletonPose_t * self,
-  const JPC_Skeleton_t * inSkeleton
+void JoltC_SkeletonPose_SetSkeleton(
+  JoltC_SkeletonPose_t * self,
+  const JoltC_Skeleton_t * inSkeleton,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  
-  selfCpp->SetSkeleton(
-  reinterpret_cast<Skeleton *>(inSkeleton->obj)
-  );
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    
+    selfCpp->SetSkeleton(
+    reinterpret_cast<Skeleton *>(inSkeleton->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_Skeleton_t * JPC_SkeletonPose_GetSkeleton(
-  JPC_SkeletonPose_t * self
+const JoltC_Skeleton_t * JoltC_SkeletonPose_GetSkeleton(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  const Skeleton * result = selfCpp->GetSkeleton();
-  return reinterpret_cast<const JPC_Skeleton_t *>(result);
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    const Skeleton * result = selfCpp->GetSkeleton();
+    return reinterpret_cast<const JoltC_Skeleton_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SkeletonPose_SetRootOffset(
-  JPC_SkeletonPose_t * self,
-  JPC_RVec3_t * inOffset
+void JoltC_SkeletonPose_SetRootOffset(
+  JoltC_SkeletonPose_t * self,
+  JoltC_RVec3_t * inOffset,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  
-  selfCpp->SetRootOffset(
-  *reinterpret_cast<RVec3 *>(inOffset->obj)
-  );
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    
+    selfCpp->SetRootOffset(
+    *reinterpret_cast<RVec3 *>(inOffset->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RVec3_t * JPC_SkeletonPose_GetRootOffset(
-  JPC_SkeletonPose_t * self
+JoltC_RVec3_t * JoltC_SkeletonPose_GetRootOffset(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  RVec3 resultValue = selfCpp->GetRootOffset();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JPC_RVec3_t *>(result);
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    RVec3 resultValue = selfCpp->GetRootOffset();
+    RVec3* result = new RVec3(resultValue);
+    return reinterpret_cast<JoltC_RVec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_SkeletonPose_GetJointCount(
-  JPC_SkeletonPose_t * self
+long JoltC_SkeletonPose_GetJointCount(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  long result = selfCpp->GetJointCount();
-  return result;
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    long result = selfCpp->GetJointCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_SkeletalAnimationJointState_t * JPC_SkeletonPose_GetJoint(
-  JPC_SkeletonPose_t * self,
-  long inJoint
+JoltC_SkeletalAnimationJointState_t * JoltC_SkeletonPose_GetJoint(
+  JoltC_SkeletonPose_t * self,
+  long inJoint,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  SkeletalAnimationJointState& resultRef = selfCpp->GetJoint(
-  inJoint
-  );
-  SkeletalAnimationJointState * result = &resultRef;
-  return reinterpret_cast<JPC_SkeletalAnimationJointState_t *>(result);
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    SkeletalAnimationJointState& resultRef = selfCpp->GetJoint(
+    inJoint
+    );
+    SkeletalAnimationJointState * result = &resultRef;
+    return reinterpret_cast<JoltC_SkeletalAnimationJointState_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_ArrayMat44_t * JPC_SkeletonPose_GetJointMatrices(
-  JPC_SkeletonPose_t * self
+JoltC_ArrayMat44_t * JoltC_SkeletonPose_GetJointMatrices(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  ArrayMat44& resultRef = selfCpp->GetJointMatrices();
-  ArrayMat44 * result = &resultRef;
-  return reinterpret_cast<JPC_ArrayMat44_t *>(result);
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    ArrayMat44& resultRef = selfCpp->GetJointMatrices();
+    ArrayMat44 * result = &resultRef;
+    return reinterpret_cast<JoltC_ArrayMat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_SkeletonPose_GetJointMatrix(
-  JPC_SkeletonPose_t * self,
-  long inJoint
+JoltC_Mat44_t * JoltC_SkeletonPose_GetJointMatrix(
+  JoltC_SkeletonPose_t * self,
+  long inJoint,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  Mat44& resultRef = selfCpp->GetJointMatrix(
-  inJoint
-  );
-  Mat44 * result = &resultRef;
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    Mat44& resultRef = selfCpp->GetJointMatrix(
+    inJoint
+    );
+    Mat44 * result = &resultRef;
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SkeletonPose_CalculateJointMatrices(
-  JPC_SkeletonPose_t * self
+void JoltC_SkeletonPose_CalculateJointMatrices(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  
-  selfCpp->CalculateJointMatrices();
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    
+    selfCpp->CalculateJointMatrices();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SkeletonPose_CalculateJointStates(
-  JPC_SkeletonPose_t * self
+void JoltC_SkeletonPose_CalculateJointStates(
+  JoltC_SkeletonPose_t * self,
+  char** outErrMsg
 ) {
-  SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  
-  selfCpp->CalculateJointStates();
+  try {
+    SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
+    
+    selfCpp->CalculateJointStates();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

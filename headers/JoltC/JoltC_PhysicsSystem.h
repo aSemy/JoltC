@@ -8,146 +8,177 @@ extern "C" {
 
 //region functions
 
-void JPC_PhysicsSystem_SetGravity(
-  JPC_PhysicsSystem_t * self,
-  const JPC_Vec3_t * inGravity
+void JoltC_PhysicsSystem_SetGravity(
+  JoltC_PhysicsSystem_t * self,
+  const JoltC_Vec3_t * inGravity,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_PhysicsSystem_GetGravity(
-  JPC_PhysicsSystem_t * self
+JoltC_Vec3_t * JoltC_PhysicsSystem_GetGravity(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsSettings_t * JPC_PhysicsSystem_GetPhysicsSettings(
-  JPC_PhysicsSystem_t * self
+const JoltC_PhysicsSettings_t * JoltC_PhysicsSystem_GetPhysicsSettings(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_SetPhysicsSettings(
-  JPC_PhysicsSystem_t * self,
-  const JPC_PhysicsSettings_t * inPhysicsSettings
+void JoltC_PhysicsSystem_SetPhysicsSettings(
+  JoltC_PhysicsSystem_t * self,
+  const JoltC_PhysicsSettings_t * inPhysicsSettings,
+  char** outErrMsg
 );
 
-unsigned long JPC_PhysicsSystem_GetNumBodies(
-  JPC_PhysicsSystem_t * self
+unsigned long JoltC_PhysicsSystem_GetNumBodies(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_PhysicsSystem_GetNumActiveBodies(
-  JPC_PhysicsSystem_t * self,
-  JPC_EBodyType inBodyType
+unsigned long JoltC_PhysicsSystem_GetNumActiveBodies(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_EBodyType inBodyType,
+  char** outErrMsg
 );
 
-unsigned long JPC_PhysicsSystem_GetMaxBodies(
-  JPC_PhysicsSystem_t * self
+unsigned long JoltC_PhysicsSystem_GetMaxBodies(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_GetBodies(
-  JPC_PhysicsSystem_t * self,
-  JPC_BodyIDVector_t * outBodies
+void JoltC_PhysicsSystem_GetBodies(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_BodyIDVector_t * outBodies,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_GetActiveBodies(
-  JPC_PhysicsSystem_t * self,
-  JPC_EBodyType inBodyType,
-  JPC_BodyIDVector_t * outBodies
+void JoltC_PhysicsSystem_GetActiveBodies(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_EBodyType inBodyType,
+  JoltC_BodyIDVector_t * outBodies,
+  char** outErrMsg
 );
 
-const JPC_AABox_t * JPC_PhysicsSystem_GetBounds(
-  JPC_PhysicsSystem_t * self
+const JoltC_AABox_t * JoltC_PhysicsSystem_GetBounds(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_AddConstraint(
-  JPC_PhysicsSystem_t * self,
-  JPC_Constraint_t * inConstraint
+void JoltC_PhysicsSystem_AddConstraint(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_Constraint_t * inConstraint,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_RemoveConstraint(
-  JPC_PhysicsSystem_t * self,
-  JPC_Constraint_t * inConstraint
+void JoltC_PhysicsSystem_RemoveConstraint(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_Constraint_t * inConstraint,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_SetContactListener(
-  JPC_PhysicsSystem_t * self,
-  JPC_ContactListener_t * inListener
+void JoltC_PhysicsSystem_SetContactListener(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_ContactListener_t * inListener,
+  char** outErrMsg
 );
 
-JPC_ContactListener_t * JPC_PhysicsSystem_GetContactListener(
-  JPC_PhysicsSystem_t * self
+JoltC_ContactListener_t * JoltC_PhysicsSystem_GetContactListener(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_SetSoftBodyContactListener(
-  JPC_PhysicsSystem_t * self,
-  JPC_SoftBodyContactListener_t * inListener
+void JoltC_PhysicsSystem_SetSoftBodyContactListener(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_SoftBodyContactListener_t * inListener,
+  char** outErrMsg
 );
 
-JPC_SoftBodyContactListener_t * JPC_PhysicsSystem_GetSoftBodyContactListener(
-  JPC_PhysicsSystem_t * self
+JoltC_SoftBodyContactListener_t * JoltC_PhysicsSystem_GetSoftBodyContactListener(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_OptimizeBroadPhase(
-  JPC_PhysicsSystem_t * self
+void JoltC_PhysicsSystem_OptimizeBroadPhase(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-JPC_BodyInterface_t * JPC_PhysicsSystem_GetBodyInterface(
-  JPC_PhysicsSystem_t * self
+JoltC_BodyInterface_t * JoltC_PhysicsSystem_GetBodyInterface(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-JPC_BodyInterface_t * JPC_PhysicsSystem_GetBodyInterfaceNoLock(
-  JPC_PhysicsSystem_t * self
+JoltC_BodyInterface_t * JoltC_PhysicsSystem_GetBodyInterfaceNoLock(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-const JPC_BodyLockInterfaceNoLock_t * JPC_PhysicsSystem_GetBodyLockInterfaceNoLock(
-  JPC_PhysicsSystem_t * self
+const JoltC_BodyLockInterfaceNoLock_t * JoltC_PhysicsSystem_GetBodyLockInterfaceNoLock(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-const JPC_BodyLockInterfaceLocking_t * JPC_PhysicsSystem_GetBodyLockInterface(
-  JPC_PhysicsSystem_t * self
+const JoltC_BodyLockInterfaceLocking_t * JoltC_PhysicsSystem_GetBodyLockInterface(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-const JPC_BroadPhaseQuery_t * JPC_PhysicsSystem_GetBroadPhaseQuery(
-  JPC_PhysicsSystem_t * self
+const JoltC_BroadPhaseQuery_t * JoltC_PhysicsSystem_GetBroadPhaseQuery(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-const JPC_NarrowPhaseQuery_t * JPC_PhysicsSystem_GetNarrowPhaseQuery(
-  JPC_PhysicsSystem_t * self
+const JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQuery(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-const JPC_NarrowPhaseQuery_t * JPC_PhysicsSystem_GetNarrowPhaseQueryNoLock(
-  JPC_PhysicsSystem_t * self
+const JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQueryNoLock(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_SaveState(
-  JPC_PhysicsSystem_t * self,
-  JPC_StateRecorder_t * inStream,
-  JPC_EStateRecorderState inState
+void JoltC_PhysicsSystem_SaveState(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_StateRecorder_t * inStream,
+  JoltC_EStateRecorderState inState,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSystem_RestoreState(
-  JPC_PhysicsSystem_t * self,
-  JPC_StateRecorder_t * inStream
+bool JoltC_PhysicsSystem_RestoreState(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_StateRecorder_t * inStream,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_AddStepListener(
-  JPC_PhysicsSystem_t * self,
-  JPC_PhysicsStepListener_t * inListener
+void JoltC_PhysicsSystem_AddStepListener(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_PhysicsStepListener_t * inListener,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_RemoveStepListener(
-  JPC_PhysicsSystem_t * self,
-  JPC_PhysicsStepListener_t * inListener
+void JoltC_PhysicsSystem_RemoveStepListener(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_PhysicsStepListener_t * inListener,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSystem_SetBodyActivationListener(
-  JPC_PhysicsSystem_t * self,
-  JPC_BodyActivationListener_t * inListener
+void JoltC_PhysicsSystem_SetBodyActivationListener(
+  JoltC_PhysicsSystem_t * self,
+  JoltC_BodyActivationListener_t * inListener,
+  char** outErrMsg
 );
 
-const JPC_BodyActivationListener_t * JPC_PhysicsSystem_GetBodyActivationListener(
-  JPC_PhysicsSystem_t * self
+const JoltC_BodyActivationListener_t * JoltC_PhysicsSystem_GetBodyActivationListener(
+  JoltC_PhysicsSystem_t * self,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSystem_WereBodiesInContact(
-  JPC_PhysicsSystem_t * self,
-  const JPC_BodyID_t * inBodyID1,
-  const JPC_BodyID_t * inBodyID2
+bool JoltC_PhysicsSystem_WereBodiesInContact(
+  JoltC_PhysicsSystem_t * self,
+  const JoltC_BodyID_t * inBodyID1,
+  const JoltC_BodyID_t * inBodyID2,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,111 +8,134 @@ extern "C" {
 
 //region functions
 
-long JPC_StaticCompoundShape_GetNumSubShapes(
-  JPC_StaticCompoundShape_t * self
+long JoltC_StaticCompoundShape_GetNumSubShapes(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_CompoundShapeSubShape_t * JPC_StaticCompoundShape_GetSubShape(
-  JPC_StaticCompoundShape_t * self,
-  long inIdx
+const JoltC_CompoundShapeSubShape_t * JoltC_StaticCompoundShape_GetSubShape(
+  JoltC_StaticCompoundShape_t * self,
+  long inIdx,
+  char** outErrMsg
 );
 
-unsigned long JPC_StaticCompoundShape_GetRefCount(
-  JPC_StaticCompoundShape_t * self
+unsigned long JoltC_StaticCompoundShape_GetRefCount(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_StaticCompoundShape_AddRef(
-  JPC_StaticCompoundShape_t * self
+void JoltC_StaticCompoundShape_AddRef(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_StaticCompoundShape_Release(
-  JPC_StaticCompoundShape_t * self
+void JoltC_StaticCompoundShape_Release(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_StaticCompoundShape_GetType(
-  JPC_StaticCompoundShape_t * self
+JoltC_EShapeType JoltC_StaticCompoundShape_GetType(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_StaticCompoundShape_GetSubType(
-  JPC_StaticCompoundShape_t * self
+JoltC_EShapeSubType JoltC_StaticCompoundShape_GetSubType(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_StaticCompoundShape_MustBeStatic(
-  JPC_StaticCompoundShape_t * self
+bool JoltC_StaticCompoundShape_MustBeStatic(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_StaticCompoundShape_GetLocalBounds(
-  JPC_StaticCompoundShape_t * self
+JoltC_AABox_t * JoltC_StaticCompoundShape_GetLocalBounds(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_StaticCompoundShape_GetWorldSpaceBounds(
-  JPC_StaticCompoundShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_StaticCompoundShape_GetWorldSpaceBounds(
+  JoltC_StaticCompoundShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_StaticCompoundShape_GetCenterOfMass(
-  JPC_StaticCompoundShape_t * self
+JoltC_Vec3_t * JoltC_StaticCompoundShape_GetCenterOfMass(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_StaticCompoundShape_GetUserData(
-  JPC_StaticCompoundShape_t * self
+unsigned long long int JoltC_StaticCompoundShape_GetUserData(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_StaticCompoundShape_SetUserData(
-  JPC_StaticCompoundShape_t * self,
-  unsigned long long int inUserData
+void JoltC_StaticCompoundShape_SetUserData(
+  JoltC_StaticCompoundShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_StaticCompoundShape_GetSubShapeIDBitsRecursive(
-  JPC_StaticCompoundShape_t * self
+unsigned long JoltC_StaticCompoundShape_GetSubShapeIDBitsRecursive(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_StaticCompoundShape_GetInnerRadius(
-  JPC_StaticCompoundShape_t * self
+float JoltC_StaticCompoundShape_GetInnerRadius(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_StaticCompoundShape_GetMassProperties(
-  JPC_StaticCompoundShape_t * self
+JoltC_MassProperties_t * JoltC_StaticCompoundShape_GetMassProperties(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_StaticCompoundShape_GetMaterial(
-  JPC_StaticCompoundShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_StaticCompoundShape_GetMaterial(
+  JoltC_StaticCompoundShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_StaticCompoundShape_GetSurfaceNormal(
-  JPC_StaticCompoundShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_StaticCompoundShape_GetSurfaceNormal(
+  JoltC_StaticCompoundShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_StaticCompoundShape_GetSubShapeUserData(
-  JPC_StaticCompoundShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_StaticCompoundShape_GetSubShapeUserData(
+  JoltC_StaticCompoundShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_StaticCompoundShape_GetSubShapeTransformedShape(
-  JPC_StaticCompoundShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_StaticCompoundShape_GetSubShapeTransformedShape(
+  JoltC_StaticCompoundShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_StaticCompoundShape_GetVolume(
-  JPC_StaticCompoundShape_t * self
+float JoltC_StaticCompoundShape_GetVolume(
+  JoltC_StaticCompoundShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_StaticCompoundShape_IsValidScale(
-  JPC_StaticCompoundShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_StaticCompoundShape_IsValidScale(
+  JoltC_StaticCompoundShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_StaticCompoundShape_ScaleShape(
-  JPC_StaticCompoundShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_StaticCompoundShape_ScaleShape(
+  JoltC_StaticCompoundShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,28 +8,34 @@ extern "C" {
 
 //region constructors
 
-JPC_SkeletalAnimationAnimatedJoint_t * JPC_SkeletalAnimationAnimatedJoint_new();
+JoltC_SkeletalAnimationAnimatedJoint_t * JoltC_SkeletalAnimationAnimatedJoint_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-JPC_JPHString_t * JPC_SkeletalAnimationAnimatedJoint_mJointName_Get(
-  JPC_SkeletalAnimationAnimatedJoint_t * self
+JoltC_JPHString_t * JoltC_SkeletalAnimationAnimatedJoint_mJointName_Get(
+  JoltC_SkeletalAnimationAnimatedJoint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimationAnimatedJoint_mJointName_Set(
-  JPC_SkeletalAnimationAnimatedJoint_t * self,
-  JPC_JPHString_t * mJointName
+void JoltC_SkeletalAnimationAnimatedJoint_mJointName_Set(
+  JoltC_SkeletalAnimationAnimatedJoint_t * self,
+  JoltC_JPHString_t * mJointName,
+  char** outErrMsg
 );
 
-JPC_ArraySkeletonKeyframe_t * JPC_SkeletalAnimationAnimatedJoint_mKeyframes_Get(
-  JPC_SkeletalAnimationAnimatedJoint_t * self
+JoltC_ArraySkeletonKeyframe_t * JoltC_SkeletalAnimationAnimatedJoint_mKeyframes_Get(
+  JoltC_SkeletalAnimationAnimatedJoint_t * self,
+  char** outErrMsg
 );
 
-void JPC_SkeletalAnimationAnimatedJoint_mKeyframes_Set(
-  JPC_SkeletalAnimationAnimatedJoint_t * self,
-  JPC_ArraySkeletonKeyframe_t * mKeyframes
+void JoltC_SkeletalAnimationAnimatedJoint_mKeyframes_Set(
+  JoltC_SkeletalAnimationAnimatedJoint_t * self,
+  JoltC_ArraySkeletonKeyframe_t * mKeyframes,
+  char** outErrMsg
 );
 
 //endregion properties

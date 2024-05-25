@@ -8,16 +8,19 @@ extern "C" {
 
 //region properties
 
-unsigned long JPC_SoftBodyVertexTraits_mPreviousPositionOffset_Get(
-  JPC_SoftBodyVertexTraits_t * self
+unsigned long JoltC_SoftBodyVertexTraits_mPreviousPositionOffset_Get(
+  JoltC_SoftBodyVertexTraits_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_SoftBodyVertexTraits_mPositionOffset_Get(
-  JPC_SoftBodyVertexTraits_t * self
+unsigned long JoltC_SoftBodyVertexTraits_mPositionOffset_Get(
+  JoltC_SoftBodyVertexTraits_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_SoftBodyVertexTraits_mVelocityOffset_Get(
-  JPC_SoftBodyVertexTraits_t * self
+unsigned long JoltC_SoftBodyVertexTraits_mVelocityOffset_Get(
+  JoltC_SoftBodyVertexTraits_t * self,
+  char** outErrMsg
 );
 
 //endregion properties

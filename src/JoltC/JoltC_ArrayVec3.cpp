@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayVec3.h"
+#include "JoltC/JoltC_ArrayVec3.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,81 +8,153 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayVec3_empty(
-  JPC_ArrayVec3_t * self
+bool JoltC_ArrayVec3_empty(
+  JoltC_ArrayVec3_t * self,
+  char** outErrMsg
 ) {
-  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayVec3_size(
-  JPC_ArrayVec3_t * self
+long JoltC_ArrayVec3_size(
+  JoltC_ArrayVec3_t * self,
+  char** outErrMsg
 ) {
-  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_ArrayVec3_at(
-  JPC_ArrayVec3_t * self,
-  long inIndex
+JoltC_Vec3_t * JoltC_ArrayVec3_at(
+  JoltC_ArrayVec3_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  Vec3& resultRef = selfCpp->at(
-  inIndex
-  );
-  Vec3 * result = &resultRef;
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+    Vec3& resultRef = selfCpp->at(
+    inIndex
+    );
+    Vec3 * result = &resultRef;
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVec3_push_back(
-  JPC_ArrayVec3_t * self,
-  const JPC_Vec3_t * inValue
+void JoltC_ArrayVec3_push_back(
+  JoltC_ArrayVec3_t * self,
+  const JoltC_Vec3_t * inValue,
+  char** outErrMsg
 ) {
-  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<Vec3 *>(inValue->obj)
-  );
+  try {
+    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<Vec3 *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVec3_reserve(
-  JPC_ArrayVec3_t * self,
-  unsigned long inSize
+void JoltC_ArrayVec3_reserve(
+  JoltC_ArrayVec3_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVec3_resize(
-  JPC_ArrayVec3_t * self,
-  unsigned long inSize
+void JoltC_ArrayVec3_resize(
+  JoltC_ArrayVec3_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVec3_clear(
-  JPC_ArrayVec3_t * self
+void JoltC_ArrayVec3_clear(
+  JoltC_ArrayVec3_t * self,
+  char** outErrMsg
 ) {
-  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3MemRef_t * JPC_ArrayVec3_data(
-  JPC_ArrayVec3_t * self
+JoltC_Vec3MemRef_t * JoltC_ArrayVec3_data(
+  JoltC_ArrayVec3_t * self,
+  char** outErrMsg
 ) {
-  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  Vec3MemRef * result = selfCpp->data();
-  return reinterpret_cast<JPC_Vec3MemRef_t *>(result);
+  try {
+    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+    Vec3MemRef * result = selfCpp->data();
+    return reinterpret_cast<JoltC_Vec3MemRef_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

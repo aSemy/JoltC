@@ -8,49 +8,59 @@ extern "C" {
 
 //region properties
 
-JPC_EActiveEdgeMode JPC_CollideSettingsBase_mActiveEdgeMode_Get(
-  JPC_CollideSettingsBase_t * self
+JoltC_EActiveEdgeMode JoltC_CollideSettingsBase_mActiveEdgeMode_Get(
+  JoltC_CollideSettingsBase_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideSettingsBase_mActiveEdgeMode_Set(
-  JPC_CollideSettingsBase_t * self,
-  JPC_EActiveEdgeMode mActiveEdgeMode
+void JoltC_CollideSettingsBase_mActiveEdgeMode_Set(
+  JoltC_CollideSettingsBase_t * self,
+  JoltC_EActiveEdgeMode mActiveEdgeMode,
+  char** outErrMsg
 );
 
-JPC_ECollectFacesMode JPC_CollideSettingsBase_mCollectFacesMode_Get(
-  JPC_CollideSettingsBase_t * self
+JoltC_ECollectFacesMode JoltC_CollideSettingsBase_mCollectFacesMode_Get(
+  JoltC_CollideSettingsBase_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideSettingsBase_mCollectFacesMode_Set(
-  JPC_CollideSettingsBase_t * self,
-  JPC_ECollectFacesMode mCollectFacesMode
+void JoltC_CollideSettingsBase_mCollectFacesMode_Set(
+  JoltC_CollideSettingsBase_t * self,
+  JoltC_ECollectFacesMode mCollectFacesMode,
+  char** outErrMsg
 );
 
-float JPC_CollideSettingsBase_mCollisionTolerance_Get(
-  JPC_CollideSettingsBase_t * self
+float JoltC_CollideSettingsBase_mCollisionTolerance_Get(
+  JoltC_CollideSettingsBase_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideSettingsBase_mCollisionTolerance_Set(
-  JPC_CollideSettingsBase_t * self,
-  float mCollisionTolerance
+void JoltC_CollideSettingsBase_mCollisionTolerance_Set(
+  JoltC_CollideSettingsBase_t * self,
+  float mCollisionTolerance,
+  char** outErrMsg
 );
 
-float JPC_CollideSettingsBase_mPenetrationTolerance_Get(
-  JPC_CollideSettingsBase_t * self
+float JoltC_CollideSettingsBase_mPenetrationTolerance_Get(
+  JoltC_CollideSettingsBase_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideSettingsBase_mPenetrationTolerance_Set(
-  JPC_CollideSettingsBase_t * self,
-  float mPenetrationTolerance
+void JoltC_CollideSettingsBase_mPenetrationTolerance_Set(
+  JoltC_CollideSettingsBase_t * self,
+  float mPenetrationTolerance,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CollideSettingsBase_mActiveEdgeMovementDirection_Get(
-  JPC_CollideSettingsBase_t * self
+JoltC_Vec3_t * JoltC_CollideSettingsBase_mActiveEdgeMovementDirection_Get(
+  JoltC_CollideSettingsBase_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideSettingsBase_mActiveEdgeMovementDirection_Set(
-  JPC_CollideSettingsBase_t * self,
-  JPC_Vec3_t * mActiveEdgeMovementDirection
+void JoltC_CollideSettingsBase_mActiveEdgeMovementDirection_Set(
+  JoltC_CollideSettingsBase_t * self,
+  JoltC_Vec3_t * mActiveEdgeMovementDirection,
+  char** outErrMsg
 );
 
 //endregion properties

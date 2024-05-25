@@ -1,5 +1,6 @@
-#include "JoltC/JPC_RayCastBodyCollector.h"
+#include "JoltC/JoltC_RayCastBodyCollector.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,85 +8,166 @@ extern "C" {
 
 //region functions
 
-void JPC_RayCastBodyCollector_Reset(
-  JPC_RayCastBodyCollector_t * self
+void JoltC_RayCastBodyCollector_Reset(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  
-  selfCpp->Reset();
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    
+    selfCpp->Reset();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_RayCastBodyCollector_SetContext(
-  JPC_RayCastBodyCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_RayCastBodyCollector_SetContext(
+  JoltC_RayCastBodyCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  
-  selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
-  );
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    
+    selfCpp->SetContext(
+    reinterpret_cast<TransformedShape *>(inContext->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_TransformedShape_t * JPC_RayCastBodyCollector_GetContext(
-  JPC_RayCastBodyCollector_t * self
+const JoltC_TransformedShape_t * JoltC_RayCastBodyCollector_GetContext(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JPC_TransformedShape_t *>(result);
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    const TransformedShape * result = selfCpp->GetContext();
+    return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_RayCastBodyCollector_UpdateEarlyOutFraction(
-  JPC_RayCastBodyCollector_t * self,
-  float inFraction
+void JoltC_RayCastBodyCollector_UpdateEarlyOutFraction(
+  JoltC_RayCastBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  
-  selfCpp->UpdateEarlyOutFraction(
-  inFraction
-  );
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    
+    selfCpp->UpdateEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_RayCastBodyCollector_ResetEarlyOutFraction(
-  JPC_RayCastBodyCollector_t * self,
-  float inFraction
+void JoltC_RayCastBodyCollector_ResetEarlyOutFraction(
+  JoltC_RayCastBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  
-  selfCpp->ResetEarlyOutFraction(
-  inFraction
-  );
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    
+    selfCpp->ResetEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_RayCastBodyCollector_ForceEarlyOut(
-  JPC_RayCastBodyCollector_t * self
+void JoltC_RayCastBodyCollector_ForceEarlyOut(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  
-  selfCpp->ForceEarlyOut();
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    
+    selfCpp->ForceEarlyOut();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_RayCastBodyCollector_ShouldEarlyOut(
-  JPC_RayCastBodyCollector_t * self
+bool JoltC_RayCastBodyCollector_ShouldEarlyOut(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    bool result = selfCpp->ShouldEarlyOut();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_RayCastBodyCollector_GetEarlyOutFraction(
-  JPC_RayCastBodyCollector_t * self
+float JoltC_RayCastBodyCollector_GetEarlyOutFraction(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    float result = selfCpp->GetEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_RayCastBodyCollector_GetPositiveEarlyOutFraction(
-  JPC_RayCastBodyCollector_t * self
+float JoltC_RayCastBodyCollector_GetPositiveEarlyOutFraction(
+  JoltC_RayCastBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
+  try {
+    RayCastBodyCollector * selfCpp = static_cast<RayCastBodyCollector *>(self->obj);
+    float result = selfCpp->GetPositiveEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

@@ -8,55 +8,65 @@ extern "C" {
 
 //region constructors
 
-JPC_OffsetCenterOfMassShapeSettings_t * JPC_OffsetCenterOfMassShapeSettings_new(
-  const JPC_Vec3_t * inOffset,
-  JPC_ShapeSettings_t * inShape
+JoltC_OffsetCenterOfMassShapeSettings_t * JoltC_OffsetCenterOfMassShapeSettings_new(
+  const JoltC_Vec3_t * inOffset,
+  JoltC_ShapeSettings_t * inShape,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_OffsetCenterOfMassShapeSettings_GetRefCount(
-  JPC_OffsetCenterOfMassShapeSettings_t * self
+unsigned long JoltC_OffsetCenterOfMassShapeSettings_GetRefCount(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_OffsetCenterOfMassShapeSettings_AddRef(
-  JPC_OffsetCenterOfMassShapeSettings_t * self
+void JoltC_OffsetCenterOfMassShapeSettings_AddRef(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_OffsetCenterOfMassShapeSettings_Release(
-  JPC_OffsetCenterOfMassShapeSettings_t * self
+void JoltC_OffsetCenterOfMassShapeSettings_Release(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_OffsetCenterOfMassShapeSettings_Create(
-  JPC_OffsetCenterOfMassShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_OffsetCenterOfMassShapeSettings_Create(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_OffsetCenterOfMassShapeSettings_ClearCachedResult(
-  JPC_OffsetCenterOfMassShapeSettings_t * self
+void JoltC_OffsetCenterOfMassShapeSettings_ClearCachedResult(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_OffsetCenterOfMassShapeSettings_mOffset_Get(
-  JPC_OffsetCenterOfMassShapeSettings_t * self
+JoltC_Vec3_t * JoltC_OffsetCenterOfMassShapeSettings_mOffset_Get(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_OffsetCenterOfMassShapeSettings_mOffset_Set(
-  JPC_OffsetCenterOfMassShapeSettings_t * self,
-  JPC_Vec3_t * mOffset
+void JoltC_OffsetCenterOfMassShapeSettings_mOffset_Set(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  JoltC_Vec3_t * mOffset,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_OffsetCenterOfMassShapeSettings_mUserData_Get(
-  JPC_OffsetCenterOfMassShapeSettings_t * self
+unsigned long long int JoltC_OffsetCenterOfMassShapeSettings_mUserData_Get(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_OffsetCenterOfMassShapeSettings_mUserData_Set(
-  JPC_OffsetCenterOfMassShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_OffsetCenterOfMassShapeSettings_mUserData_Set(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

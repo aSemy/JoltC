@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ConstraintSettings.h"
+#include "JoltC/JoltC_ConstraintSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,77 +8,110 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_ConstraintSettings_GetRefCount(
-  JPC_ConstraintSettings_t * self
+unsigned long JoltC_ConstraintSettings_GetRefCount(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ConstraintSettings_AddRef(
-  JPC_ConstraintSettings_t * self
+void JoltC_ConstraintSettings_AddRef(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ConstraintSettings_Release(
-  JPC_ConstraintSettings_t * self
+void JoltC_ConstraintSettings_Release(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 ) {
-  ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-bool JPC_ConstraintSettings_mEnabled_Get(
-  JPC_ConstraintSettings_t * self
+bool JoltC_ConstraintSettings_mEnabled_Get(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   bool result = selfCpp->mEnabled;
   return result;
 };
 
-void JPC_ConstraintSettings_mEnabled_Set(
-  JPC_ConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_ConstraintSettings_mEnabled_Set(
+  JoltC_ConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
 };
 
-long JPC_ConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_ConstraintSettings_t * self
+long JoltC_ConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   long result = selfCpp->mNumVelocityStepsOverride;
   return result;
 };
 
-void JPC_ConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_ConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_ConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_ConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
 };
 
-long JPC_ConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_ConstraintSettings_t * self
+long JoltC_ConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_ConstraintSettings_t * self,
+  char** outErrMsg
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   long result = selfCpp->mNumPositionStepsOverride;
   return result;
 };
 
-void JPC_ConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_ConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_ConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_ConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;

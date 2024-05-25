@@ -8,26 +8,32 @@ extern "C" {
 
 //region constructors
 
-JPC_SubShapeIDPair_t * JPC_SubShapeIDPair_new();
+JoltC_SubShapeIDPair_t * JoltC_SubShapeIDPair_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-const JPC_BodyID_t * JPC_SubShapeIDPair_GetBody1ID(
-  JPC_SubShapeIDPair_t * self
+const JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody1ID(
+  JoltC_SubShapeIDPair_t * self,
+  char** outErrMsg
 );
 
-const JPC_SubShapeID_t * JPC_SubShapeIDPair_GetSubShapeID1(
-  JPC_SubShapeIDPair_t * self
+const JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID1(
+  JoltC_SubShapeIDPair_t * self,
+  char** outErrMsg
 );
 
-const JPC_BodyID_t * JPC_SubShapeIDPair_GetBody2ID(
-  JPC_SubShapeIDPair_t * self
+const JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody2ID(
+  JoltC_SubShapeIDPair_t * self,
+  char** outErrMsg
 );
 
-const JPC_SubShapeID_t * JPC_SubShapeIDPair_GetSubShapeID2(
-  JPC_SubShapeIDPair_t * self
+const JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID2(
+  JoltC_SubShapeIDPair_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

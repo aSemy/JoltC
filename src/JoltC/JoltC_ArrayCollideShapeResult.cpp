@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayCollideShapeResult.h"
+#include "JoltC/JoltC_ArrayCollideShapeResult.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,73 +8,136 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayCollideShapeResult_empty(
-  JPC_ArrayCollideShapeResult_t * self
+bool JoltC_ArrayCollideShapeResult_empty(
+  JoltC_ArrayCollideShapeResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayCollideShapeResult_size(
-  JPC_ArrayCollideShapeResult_t * self
+long JoltC_ArrayCollideShapeResult_size(
+  JoltC_ArrayCollideShapeResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_CollideShapeResult_t * JPC_ArrayCollideShapeResult_at(
-  JPC_ArrayCollideShapeResult_t * self,
-  long inIndex
+JoltC_CollideShapeResult_t * JoltC_ArrayCollideShapeResult_at(
+  JoltC_ArrayCollideShapeResult_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  CollideShapeResult& resultRef = selfCpp->at(
-  inIndex
-  );
-  CollideShapeResult * result = &resultRef;
-  return reinterpret_cast<JPC_CollideShapeResult_t *>(result);
+  try {
+    ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
+    CollideShapeResult& resultRef = selfCpp->at(
+    inIndex
+    );
+    CollideShapeResult * result = &resultRef;
+    return reinterpret_cast<JoltC_CollideShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayCollideShapeResult_push_back(
-  JPC_ArrayCollideShapeResult_t * self,
-  const JPC_CollideShapeResult_t * inValue
+void JoltC_ArrayCollideShapeResult_push_back(
+  JoltC_ArrayCollideShapeResult_t * self,
+  const JoltC_CollideShapeResult_t * inValue,
+  char** outErrMsg
 ) {
-  ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<CollideShapeResult *>(inValue->obj)
-  );
+  try {
+    ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<CollideShapeResult *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayCollideShapeResult_reserve(
-  JPC_ArrayCollideShapeResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayCollideShapeResult_reserve(
+  JoltC_ArrayCollideShapeResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayCollideShapeResult_resize(
-  JPC_ArrayCollideShapeResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayCollideShapeResult_resize(
+  JoltC_ArrayCollideShapeResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayCollideShapeResult_clear(
-  JPC_ArrayCollideShapeResult_t * self
+void JoltC_ArrayCollideShapeResult_clear(
+  JoltC_ArrayCollideShapeResult_t * self,
+  char** outErrMsg
 ) {
-  ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

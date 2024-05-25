@@ -8,59 +8,69 @@ extern "C" {
 
 //region constructors
 
-JPC_Plane_t * JPC_Plane_new(
-  const JPC_Vec3_t * inNormal,
-  float inConstant
+JoltC_Plane_t * JoltC_Plane_new(
+  const JoltC_Vec3_t * inNormal,
+  float inConstant,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-JPC_Vec3_t * JPC_Plane_GetNormal(
-  JPC_Plane_t * self
+JoltC_Vec3_t * JoltC_Plane_GetNormal(
+  JoltC_Plane_t * self,
+  char** outErrMsg
 );
 
-void JPC_Plane_SetNormal(
-  JPC_Plane_t * self,
-  const JPC_Vec3_t * inNormal
+void JoltC_Plane_SetNormal(
+  JoltC_Plane_t * self,
+  const JoltC_Vec3_t * inNormal,
+  char** outErrMsg
 );
 
-float JPC_Plane_GetConstant(
-  JPC_Plane_t * self
+float JoltC_Plane_GetConstant(
+  JoltC_Plane_t * self,
+  char** outErrMsg
 );
 
-void JPC_Plane_SetConstant(
-  JPC_Plane_t * self,
-  float inConstant
+void JoltC_Plane_SetConstant(
+  JoltC_Plane_t * self,
+  float inConstant,
+  char** outErrMsg
 );
 
-const JPC_Plane_t * JPC_Plane_sFromPointAndNormal(
-  JPC_Plane_t * self,
-  const JPC_Vec3_t * inPoint,
-  const JPC_Vec3_t * inNormal
+const JoltC_Plane_t * JoltC_Plane_sFromPointAndNormal(
+  JoltC_Plane_t * self,
+  const JoltC_Vec3_t * inPoint,
+  const JoltC_Vec3_t * inNormal,
+  char** outErrMsg
 );
 
-const JPC_Plane_t * JPC_Plane_sFromPointsCCW(
-  JPC_Plane_t * self,
-  const JPC_Vec3_t * inPoint1,
-  const JPC_Vec3_t * inPoint2,
-  const JPC_Vec3_t * inPoint3
+const JoltC_Plane_t * JoltC_Plane_sFromPointsCCW(
+  JoltC_Plane_t * self,
+  const JoltC_Vec3_t * inPoint1,
+  const JoltC_Vec3_t * inPoint2,
+  const JoltC_Vec3_t * inPoint3,
+  char** outErrMsg
 );
 
-const JPC_Plane_t * JPC_Plane_Offset(
-  JPC_Plane_t * self,
-  float inDistance
+const JoltC_Plane_t * JoltC_Plane_Offset(
+  JoltC_Plane_t * self,
+  float inDistance,
+  char** outErrMsg
 );
 
-const JPC_Plane_t * JPC_Plane_GetTransformed(
-  JPC_Plane_t * self,
-  const JPC_Mat44_t * inTransform
+const JoltC_Plane_t * JoltC_Plane_GetTransformed(
+  JoltC_Plane_t * self,
+  const JoltC_Mat44_t * inTransform,
+  char** outErrMsg
 );
 
-float JPC_Plane_SignedDistance(
-  JPC_Plane_t * self,
-  const JPC_Vec3_t * inPoint
+float JoltC_Plane_SignedDistance(
+  JoltC_Plane_t * self,
+  const JoltC_Vec3_t * inPoint,
+  char** outErrMsg
 );
 
 //endregion functions

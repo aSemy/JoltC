@@ -8,24 +8,28 @@ extern "C" {
 
 //region properties
 
-size_t JPC_RagdollAdditionalConstraint_mBodyIdx_Get(
-  JPC_RagdollAdditionalConstraint_t * self,
-  long * outValue
+size_t JoltC_RagdollAdditionalConstraint_mBodyIdx_Get(
+  JoltC_RagdollAdditionalConstraint_t * self,
+  long * outValue,
+  char** outErrMsg
 );
 
-void JPC_RagdollAdditionalConstraint_mBodyIdx_Set(
-  JPC_RagdollAdditionalConstraint_t * self,
+void JoltC_RagdollAdditionalConstraint_mBodyIdx_Set(
+  JoltC_RagdollAdditionalConstraint_t * self,
   long * mBodyIdx,
-  size_t mBodyIdxSize
+  size_t mBodyIdxSize,
+  char** outErrMsg
 );
 
-JPC_TwoBodyConstraintSettings_t * JPC_RagdollAdditionalConstraint_mConstraint_Get(
-  JPC_RagdollAdditionalConstraint_t * self
+JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollAdditionalConstraint_mConstraint_Get(
+  JoltC_RagdollAdditionalConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_RagdollAdditionalConstraint_mConstraint_Set(
-  JPC_RagdollAdditionalConstraint_t * self,
-  JPC_TwoBodyConstraintSettings_t * mConstraint
+void JoltC_RagdollAdditionalConstraint_mConstraint_Set(
+  JoltC_RagdollAdditionalConstraint_t * self,
+  JoltC_TwoBodyConstraintSettings_t * mConstraint,
+  char** outErrMsg
 );
 
 //endregion properties

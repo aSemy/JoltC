@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayCollideShapeResult_empty(
-  JPC_ArrayCollideShapeResult_t * self
+bool JoltC_ArrayCollideShapeResult_empty(
+  JoltC_ArrayCollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayCollideShapeResult_size(
-  JPC_ArrayCollideShapeResult_t * self
+long JoltC_ArrayCollideShapeResult_size(
+  JoltC_ArrayCollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-JPC_CollideShapeResult_t * JPC_ArrayCollideShapeResult_at(
-  JPC_ArrayCollideShapeResult_t * self,
-  long inIndex
+JoltC_CollideShapeResult_t * JoltC_ArrayCollideShapeResult_at(
+  JoltC_ArrayCollideShapeResult_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayCollideShapeResult_push_back(
-  JPC_ArrayCollideShapeResult_t * self,
-  const JPC_CollideShapeResult_t * inValue
+void JoltC_ArrayCollideShapeResult_push_back(
+  JoltC_ArrayCollideShapeResult_t * self,
+  const JoltC_CollideShapeResult_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayCollideShapeResult_reserve(
-  JPC_ArrayCollideShapeResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayCollideShapeResult_reserve(
+  JoltC_ArrayCollideShapeResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayCollideShapeResult_resize(
-  JPC_ArrayCollideShapeResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayCollideShapeResult_resize(
+  JoltC_ArrayCollideShapeResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayCollideShapeResult_clear(
-  JPC_ArrayCollideShapeResult_t * self
+void JoltC_ArrayCollideShapeResult_clear(
+  JoltC_ArrayCollideShapeResult_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

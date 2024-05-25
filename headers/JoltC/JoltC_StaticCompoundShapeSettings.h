@@ -8,51 +8,61 @@ extern "C" {
 
 //region constructors
 
-JPC_StaticCompoundShapeSettings_t * JPC_StaticCompoundShapeSettings_new();
+JoltC_StaticCompoundShapeSettings_t * JoltC_StaticCompoundShapeSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_StaticCompoundShapeSettings_AddShape(
-  JPC_StaticCompoundShapeSettings_t * self,
-  const JPC_Vec3_t * inPosition,
-  const JPC_Quat_t * inRotation,
-  const JPC_ShapeSettings_t * inShape,
-  unsigned long inUserData
+void JoltC_StaticCompoundShapeSettings_AddShape(
+  JoltC_StaticCompoundShapeSettings_t * self,
+  const JoltC_Vec3_t * inPosition,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_ShapeSettings_t * inShape,
+  unsigned long inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_StaticCompoundShapeSettings_GetRefCount(
-  JPC_StaticCompoundShapeSettings_t * self
+unsigned long JoltC_StaticCompoundShapeSettings_GetRefCount(
+  JoltC_StaticCompoundShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_StaticCompoundShapeSettings_AddRef(
-  JPC_StaticCompoundShapeSettings_t * self
+void JoltC_StaticCompoundShapeSettings_AddRef(
+  JoltC_StaticCompoundShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_StaticCompoundShapeSettings_Release(
-  JPC_StaticCompoundShapeSettings_t * self
+void JoltC_StaticCompoundShapeSettings_Release(
+  JoltC_StaticCompoundShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_StaticCompoundShapeSettings_Create(
-  JPC_StaticCompoundShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_StaticCompoundShapeSettings_Create(
+  JoltC_StaticCompoundShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_StaticCompoundShapeSettings_ClearCachedResult(
-  JPC_StaticCompoundShapeSettings_t * self
+void JoltC_StaticCompoundShapeSettings_ClearCachedResult(
+  JoltC_StaticCompoundShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-unsigned long long int JPC_StaticCompoundShapeSettings_mUserData_Get(
-  JPC_StaticCompoundShapeSettings_t * self
+unsigned long long int JoltC_StaticCompoundShapeSettings_mUserData_Get(
+  JoltC_StaticCompoundShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_StaticCompoundShapeSettings_mUserData_Set(
-  JPC_StaticCompoundShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_StaticCompoundShapeSettings_mUserData_Set(
+  JoltC_StaticCompoundShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

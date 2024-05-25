@@ -1,5 +1,6 @@
-#include "JoltC/JPC_VehicleCollisionTesterCastCylinder.h"
+#include "JoltC/JoltC_VehicleCollisionTesterCastCylinder.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,45 +8,81 @@ extern "C" {
 
 //region constructors
 
-JPC_VehicleCollisionTesterCastCylinder_t * JPC_VehicleCollisionTesterCastCylinder_new(
+JoltC_VehicleCollisionTesterCastCylinder_t * JoltC_VehicleCollisionTesterCastCylinder_new(
   unsigned long inObjectLayer,
-  float inConvexRadiusFraction
+  float inConvexRadiusFraction,
+  char** outErrMsg
 ) {
-  JPC_VehicleCollisionTesterCastCylinder_t * cInstance = new JPC_VehicleCollisionTesterCastCylinder_t();
-  VehicleCollisionTesterCastCylinder * cppInstance = new VehicleCollisionTesterCastCylinder(
-    inObjectLayer,
-    inConvexRadiusFraction
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_VehicleCollisionTesterCastCylinder_t * cInstance = new JoltC_VehicleCollisionTesterCastCylinder_t();
+    VehicleCollisionTesterCastCylinder * cppInstance = new VehicleCollisionTesterCastCylinder(
+      inObjectLayer,
+      inConvexRadiusFraction
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_VehicleCollisionTesterCastCylinder_GetRefCount(
-  JPC_VehicleCollisionTesterCastCylinder_t * self
+unsigned long JoltC_VehicleCollisionTesterCastCylinder_GetRefCount(
+  JoltC_VehicleCollisionTesterCastCylinder_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_VehicleCollisionTesterCastCylinder_AddRef(
-  JPC_VehicleCollisionTesterCastCylinder_t * self
+void JoltC_VehicleCollisionTesterCastCylinder_AddRef(
+  JoltC_VehicleCollisionTesterCastCylinder_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_VehicleCollisionTesterCastCylinder_Release(
-  JPC_VehicleCollisionTesterCastCylinder_t * self
+void JoltC_VehicleCollisionTesterCastCylinder_Release(
+  JoltC_VehicleCollisionTesterCastCylinder_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

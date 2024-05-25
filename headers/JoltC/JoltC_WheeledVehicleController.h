@@ -8,94 +8,113 @@ extern "C" {
 
 //region constructors
 
-JPC_WheeledVehicleController_t * JPC_WheeledVehicleController_new(
-  const JPC_WheeledVehicleControllerSettings_t * inSettings,
-  JPC_VehicleConstraint_t * inConstraint
+JoltC_WheeledVehicleController_t * JoltC_WheeledVehicleController_new(
+  const JoltC_WheeledVehicleControllerSettings_t * inSettings,
+  JoltC_VehicleConstraint_t * inConstraint,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-void JPC_WheeledVehicleController_SetDriverInput(
-  JPC_WheeledVehicleController_t * self,
+void JoltC_WheeledVehicleController_SetDriverInput(
+  JoltC_WheeledVehicleController_t * self,
   float inForward,
   float inRight,
   float inBrake,
-  float inHandBrake
+  float inHandBrake,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleController_SetForwardInput(
-  JPC_WheeledVehicleController_t * self,
-  float inForward
+void JoltC_WheeledVehicleController_SetForwardInput(
+  JoltC_WheeledVehicleController_t * self,
+  float inForward,
+  char** outErrMsg
 );
 
-float JPC_WheeledVehicleController_GetForwardInput(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetForwardInput(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleController_SetRightInput(
-  JPC_WheeledVehicleController_t * self,
-  float inRight
+void JoltC_WheeledVehicleController_SetRightInput(
+  JoltC_WheeledVehicleController_t * self,
+  float inRight,
+  char** outErrMsg
 );
 
-float JPC_WheeledVehicleController_GetRightInput(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetRightInput(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleController_SetBrakeInput(
-  JPC_WheeledVehicleController_t * self,
-  float inBrake
+void JoltC_WheeledVehicleController_SetBrakeInput(
+  JoltC_WheeledVehicleController_t * self,
+  float inBrake,
+  char** outErrMsg
 );
 
-float JPC_WheeledVehicleController_GetBrakeInput(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetBrakeInput(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleController_SetHandBrakeInput(
-  JPC_WheeledVehicleController_t * self,
-  float inHandBrake
+void JoltC_WheeledVehicleController_SetHandBrakeInput(
+  JoltC_WheeledVehicleController_t * self,
+  float inHandBrake,
+  char** outErrMsg
 );
 
-float JPC_WheeledVehicleController_GetHandBrakeInput(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetHandBrakeInput(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-JPC_VehicleEngine_t * JPC_WheeledVehicleController_GetEngine(
-  JPC_WheeledVehicleController_t * self
+JoltC_VehicleEngine_t * JoltC_WheeledVehicleController_GetEngine(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-JPC_VehicleTransmission_t * JPC_WheeledVehicleController_GetTransmission(
-  JPC_WheeledVehicleController_t * self
+JoltC_VehicleTransmission_t * JoltC_WheeledVehicleController_GetTransmission(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-JPC_ArrayVehicleDifferentialSettings_t * JPC_WheeledVehicleController_GetDifferentials(
-  JPC_WheeledVehicleController_t * self
+JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleController_GetDifferentials(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-float JPC_WheeledVehicleController_GetDifferentialLimitedSlipRatio(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetDifferentialLimitedSlipRatio(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleController_SetDifferentialLimitedSlipRatio(
-  JPC_WheeledVehicleController_t * self,
-  float inV
+void JoltC_WheeledVehicleController_SetDifferentialLimitedSlipRatio(
+  JoltC_WheeledVehicleController_t * self,
+  float inV,
+  char** outErrMsg
 );
 
-float JPC_WheeledVehicleController_GetWheelSpeedAtClutch(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetWheelSpeedAtClutch(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_WheeledVehicleController_GetRefCount(
-  JPC_WheeledVehicleController_t * self
+unsigned long JoltC_WheeledVehicleController_GetRefCount(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleController_AddRef(
-  JPC_WheeledVehicleController_t * self
+void JoltC_WheeledVehicleController_AddRef(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleController_Release(
-  JPC_WheeledVehicleController_t * self
+void JoltC_WheeledVehicleController_Release(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

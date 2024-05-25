@@ -1,5 +1,6 @@
-#include "JoltC/JPC_PhysicsMaterial.h"
+#include "JoltC/JoltC_PhysicsMaterial.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,39 +8,76 @@ extern "C" {
 
 //region constructors
 
-JPC_PhysicsMaterial_t * JPC_PhysicsMaterial_new() {
-  JPC_PhysicsMaterial_t * cInstance = new JPC_PhysicsMaterial_t();
-  PhysicsMaterial * cppInstance = new PhysicsMaterial();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterial_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_PhysicsMaterial_t * cInstance = new JoltC_PhysicsMaterial_t();
+    PhysicsMaterial * cppInstance = new PhysicsMaterial();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_PhysicsMaterial_GetRefCount(
-  JPC_PhysicsMaterial_t * self
+unsigned long JoltC_PhysicsMaterial_GetRefCount(
+  JoltC_PhysicsMaterial_t * self,
+  char** outErrMsg
 ) {
-  PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PhysicsMaterial_AddRef(
-  JPC_PhysicsMaterial_t * self
+void JoltC_PhysicsMaterial_AddRef(
+  JoltC_PhysicsMaterial_t * self,
+  char** outErrMsg
 ) {
-  PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PhysicsMaterial_Release(
-  JPC_PhysicsMaterial_t * self
+void JoltC_PhysicsMaterial_Release(
+  JoltC_PhysicsMaterial_t * self,
+  char** outErrMsg
 ) {
-  PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

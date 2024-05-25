@@ -1,5 +1,6 @@
-#include "JoltC/JPC_JPHString.h"
+#include "JoltC/JoltC_JPHString.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,37 +8,64 @@ extern "C" {
 
 //region constructors
 
-JPC_JPHString_t * JPC_JPHString_new(
+JoltC_JPHString_t * JoltC_JPHString_new(
   char* str,
-  long length
+  long length,
+  char** outErrMsg
 ) {
-  JPC_JPHString_t * cInstance = new JPC_JPHString_t();
-  JPHString * cppInstance = new JPHString(
-    str,
-    length
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_JPHString_t * cInstance = new JoltC_JPHString_t();
+    JPHString * cppInstance = new JPHString(
+      str,
+      length
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-const char* JPC_JPHString_c_str(
-  JPC_JPHString_t * self
+const char* JoltC_JPHString_c_str(
+  JoltC_JPHString_t * self,
+  char** outErrMsg
 ) {
-  JPHString * selfCpp = static_cast<JPHString *>(self->obj);
-  const char* result = selfCpp->c_str();
-  return result;
+  try {
+    JPHString * selfCpp = static_cast<JPHString *>(self->obj);
+    const char* result = selfCpp->c_str();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_JPHString_size(
-  JPC_JPHString_t * self
+unsigned long JoltC_JPHString_size(
+  JoltC_JPHString_t * self,
+  char** outErrMsg
 ) {
-  JPHString * selfCpp = static_cast<JPHString *>(self->obj);
-  unsigned long result = selfCpp->size();
-  return result;
+  try {
+    JPHString * selfCpp = static_cast<JPHString *>(self->obj);
+    unsigned long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

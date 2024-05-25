@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayRagdollPart.h"
+#include "JoltC/JoltC_ArrayRagdollPart.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,84 +8,157 @@ extern "C" {
 
 //region constructors
 
-JPC_ArrayRagdollPart_t * JPC_ArrayRagdollPart_new() {
-  JPC_ArrayRagdollPart_t * cInstance = new JPC_ArrayRagdollPart_t();
-  ArrayRagdollPart * cppInstance = new ArrayRagdollPart();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_ArrayRagdollPart_t * JoltC_ArrayRagdollPart_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_ArrayRagdollPart_t * cInstance = new JoltC_ArrayRagdollPart_t();
+    ArrayRagdollPart * cppInstance = new ArrayRagdollPart();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-bool JPC_ArrayRagdollPart_empty(
-  JPC_ArrayRagdollPart_t * self
+bool JoltC_ArrayRagdollPart_empty(
+  JoltC_ArrayRagdollPart_t * self,
+  char** outErrMsg
 ) {
-  ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayRagdollPart_size(
-  JPC_ArrayRagdollPart_t * self
+long JoltC_ArrayRagdollPart_size(
+  JoltC_ArrayRagdollPart_t * self,
+  char** outErrMsg
 ) {
-  ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RagdollPart_t * JPC_ArrayRagdollPart_at(
-  JPC_ArrayRagdollPart_t * self,
-  long inIndex
+JoltC_RagdollPart_t * JoltC_ArrayRagdollPart_at(
+  JoltC_ArrayRagdollPart_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  RagdollPart& resultRef = selfCpp->at(
-  inIndex
-  );
-  RagdollPart * result = &resultRef;
-  return reinterpret_cast<JPC_RagdollPart_t *>(result);
+  try {
+    ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
+    RagdollPart& resultRef = selfCpp->at(
+    inIndex
+    );
+    RagdollPart * result = &resultRef;
+    return reinterpret_cast<JoltC_RagdollPart_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayRagdollPart_push_back(
-  JPC_ArrayRagdollPart_t * self,
-  JPC_RagdollPart_t * inValue
+void JoltC_ArrayRagdollPart_push_back(
+  JoltC_ArrayRagdollPart_t * self,
+  JoltC_RagdollPart_t * inValue,
+  char** outErrMsg
 ) {
-  ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<RagdollPart *>(inValue->obj)
-  );
+  try {
+    ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<RagdollPart *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayRagdollPart_reserve(
-  JPC_ArrayRagdollPart_t * self,
-  unsigned long inSize
+void JoltC_ArrayRagdollPart_reserve(
+  JoltC_ArrayRagdollPart_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayRagdollPart_resize(
-  JPC_ArrayRagdollPart_t * self,
-  unsigned long inSize
+void JoltC_ArrayRagdollPart_resize(
+  JoltC_ArrayRagdollPart_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayRagdollPart_clear(
-  JPC_ArrayRagdollPart_t * self
+void JoltC_ArrayRagdollPart_clear(
+  JoltC_ArrayRagdollPart_t * self,
+  char** outErrMsg
 ) {
-  ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

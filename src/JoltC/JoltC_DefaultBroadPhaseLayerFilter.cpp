@@ -1,5 +1,6 @@
-#include "JoltC/JPC_DefaultBroadPhaseLayerFilter.h"
+#include "JoltC/JoltC_DefaultBroadPhaseLayerFilter.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,17 +8,26 @@ extern "C" {
 
 //region constructors
 
-JPC_DefaultBroadPhaseLayerFilter_t * JPC_DefaultBroadPhaseLayerFilter_new(
-  const JPC_ObjectVsBroadPhaseLayerFilter_t * inFilter,
-  unsigned long inObjectLayer
+JoltC_DefaultBroadPhaseLayerFilter_t * JoltC_DefaultBroadPhaseLayerFilter_new(
+  const JoltC_ObjectVsBroadPhaseLayerFilter_t * inFilter,
+  unsigned long inObjectLayer,
+  char** outErrMsg
 ) {
-  JPC_DefaultBroadPhaseLayerFilter_t * cInstance = new JPC_DefaultBroadPhaseLayerFilter_t();
-  DefaultBroadPhaseLayerFilter * cppInstance = new DefaultBroadPhaseLayerFilter(
-    *reinterpret_cast<ObjectVsBroadPhaseLayerFilter *>(inFilter->obj),
-    inObjectLayer
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_DefaultBroadPhaseLayerFilter_t * cInstance = new JoltC_DefaultBroadPhaseLayerFilter_t();
+    DefaultBroadPhaseLayerFilter * cppInstance = new DefaultBroadPhaseLayerFilter(
+      *reinterpret_cast<ObjectVsBroadPhaseLayerFilter *>(inFilter->obj),
+      inObjectLayer
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors

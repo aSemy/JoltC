@@ -1,5 +1,6 @@
-#include "JoltC/JPC_CharacterVirtual.h"
+#include "JoltC/JoltC_CharacterVirtual.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,585 +8,1053 @@ extern "C" {
 
 //region constructors
 
-JPC_CharacterVirtual_t * JPC_CharacterVirtual_new(
-  const JPC_CharacterVirtualSettings_t * inSettings,
-  JPC_RVec3_t * inPosition,
-  JPC_Quat_t * inRotation,
-  JPC_PhysicsSystem_t * inSystem
+JoltC_CharacterVirtual_t * JoltC_CharacterVirtual_new(
+  const JoltC_CharacterVirtualSettings_t * inSettings,
+  JoltC_RVec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
+  JoltC_PhysicsSystem_t * inSystem,
+  char** outErrMsg
 ) {
-  JPC_CharacterVirtual_t * cInstance = new JPC_CharacterVirtual_t();
-  CharacterVirtual * cppInstance = new CharacterVirtual(
-    reinterpret_cast<CharacterVirtualSettings *>(inSettings->obj),
-    *reinterpret_cast<RVec3 *>(inPosition->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
-    reinterpret_cast<PhysicsSystem *>(inSystem->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_CharacterVirtual_t * cInstance = new JoltC_CharacterVirtual_t();
+    CharacterVirtual * cppInstance = new CharacterVirtual(
+      reinterpret_cast<CharacterVirtualSettings *>(inSettings->obj),
+      *reinterpret_cast<RVec3 *>(inPosition->obj),
+      *reinterpret_cast<Quat *>(inRotation->obj),
+      reinterpret_cast<PhysicsSystem *>(inSystem->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_CharacterVirtual_SetListener(
-  JPC_CharacterVirtual_t * self,
-  JPC_CharacterContactListener_t * inListener
+void JoltC_CharacterVirtual_SetListener(
+  JoltC_CharacterVirtual_t * self,
+  JoltC_CharacterContactListener_t * inListener,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetListener(
-  reinterpret_cast<CharacterContactListener *>(inListener->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetListener(
+    reinterpret_cast<CharacterContactListener *>(inListener->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_CharacterContactListener_t * JPC_CharacterVirtual_GetListener(
-  JPC_CharacterVirtual_t * self
+JoltC_CharacterContactListener_t * JoltC_CharacterVirtual_GetListener(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  CharacterContactListener * result = selfCpp->GetListener();
-  return reinterpret_cast<JPC_CharacterContactListener_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    CharacterContactListener * result = selfCpp->GetListener();
+    return reinterpret_cast<JoltC_CharacterContactListener_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetLinearVelocity(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetLinearVelocity(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  Vec3 resultValue = selfCpp->GetLinearVelocity();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    Vec3 resultValue = selfCpp->GetLinearVelocity();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetLinearVelocity(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inLinearVelocity
+void JoltC_CharacterVirtual_SetLinearVelocity(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inLinearVelocity,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetLinearVelocity(
-  *reinterpret_cast<Vec3 *>(inLinearVelocity->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetLinearVelocity(
+    *reinterpret_cast<Vec3 *>(inLinearVelocity->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RVec3_t * JPC_CharacterVirtual_GetPosition(
-  JPC_CharacterVirtual_t * self
+JoltC_RVec3_t * JoltC_CharacterVirtual_GetPosition(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  RVec3 resultValue = selfCpp->GetPosition();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JPC_RVec3_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    RVec3 resultValue = selfCpp->GetPosition();
+    RVec3* result = new RVec3(resultValue);
+    return reinterpret_cast<JoltC_RVec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetPosition(
-  JPC_CharacterVirtual_t * self,
-  const JPC_RVec3_t * inPosition
+void JoltC_CharacterVirtual_SetPosition(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_RVec3_t * inPosition,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetPosition(
-  *reinterpret_cast<RVec3 *>(inPosition->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetPosition(
+    *reinterpret_cast<RVec3 *>(inPosition->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Quat_t * JPC_CharacterVirtual_GetRotation(
-  JPC_CharacterVirtual_t * self
+JoltC_Quat_t * JoltC_CharacterVirtual_GetRotation(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  Quat resultValue = selfCpp->GetRotation();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JPC_Quat_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    Quat resultValue = selfCpp->GetRotation();
+    Quat* result = new Quat(resultValue);
+    return reinterpret_cast<JoltC_Quat_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetRotation(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Quat_t * inRotation
+void JoltC_CharacterVirtual_SetRotation(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Quat_t * inRotation,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetRotation(
-  *reinterpret_cast<Quat *>(inRotation->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetRotation(
+    *reinterpret_cast<Quat *>(inRotation->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RMat44_t * JPC_CharacterVirtual_GetWorldTransform(
-  JPC_CharacterVirtual_t * self
+JoltC_RMat44_t * JoltC_CharacterVirtual_GetWorldTransform(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  RMat44 resultValue = selfCpp->GetWorldTransform();
-  RMat44* result = new RMat44(resultValue);
-  return reinterpret_cast<JPC_RMat44_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    RMat44 resultValue = selfCpp->GetWorldTransform();
+    RMat44* result = new RMat44(resultValue);
+    return reinterpret_cast<JoltC_RMat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RMat44_t * JPC_CharacterVirtual_GetCenterOfMassTransform(
-  JPC_CharacterVirtual_t * self
+JoltC_RMat44_t * JoltC_CharacterVirtual_GetCenterOfMassTransform(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  RMat44 resultValue = selfCpp->GetCenterOfMassTransform();
-  RMat44* result = new RMat44(resultValue);
-  return reinterpret_cast<JPC_RMat44_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    RMat44 resultValue = selfCpp->GetCenterOfMassTransform();
+    RMat44* result = new RMat44(resultValue);
+    return reinterpret_cast<JoltC_RMat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CharacterVirtual_GetMass(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetMass(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  float result = selfCpp->GetMass();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    float result = selfCpp->GetMass();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetMass(
-  JPC_CharacterVirtual_t * self,
-  float inMass
+void JoltC_CharacterVirtual_SetMass(
+  JoltC_CharacterVirtual_t * self,
+  float inMass,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetMass(
-  inMass
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetMass(
+    inMass
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CharacterVirtual_GetMaxStrength(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetMaxStrength(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  float result = selfCpp->GetMaxStrength();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    float result = selfCpp->GetMaxStrength();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetMaxStrength(
-  JPC_CharacterVirtual_t * self,
-  float inMaxStrength
+void JoltC_CharacterVirtual_SetMaxStrength(
+  JoltC_CharacterVirtual_t * self,
+  float inMaxStrength,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetMaxStrength(
-  inMaxStrength
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetMaxStrength(
+    inMaxStrength
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CharacterVirtual_GetPenetrationRecoverySpeed(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetPenetrationRecoverySpeed(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  float result = selfCpp->GetPenetrationRecoverySpeed();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    float result = selfCpp->GetPenetrationRecoverySpeed();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetPenetrationRecoverySpeed(
-  JPC_CharacterVirtual_t * self,
-  float inSpeed
+void JoltC_CharacterVirtual_SetPenetrationRecoverySpeed(
+  JoltC_CharacterVirtual_t * self,
+  float inSpeed,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetPenetrationRecoverySpeed(
-  inSpeed
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetPenetrationRecoverySpeed(
+    inSpeed
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CharacterVirtual_GetCharacterPadding(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetCharacterPadding(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  float result = selfCpp->GetCharacterPadding();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    float result = selfCpp->GetCharacterPadding();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_CharacterVirtual_GetMaxNumHits(
-  JPC_CharacterVirtual_t * self
+unsigned long JoltC_CharacterVirtual_GetMaxNumHits(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  unsigned long result = selfCpp->GetMaxNumHits();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    unsigned long result = selfCpp->GetMaxNumHits();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetMaxNumHits(
-  JPC_CharacterVirtual_t * self,
-  unsigned long inMaxHits
+void JoltC_CharacterVirtual_SetMaxNumHits(
+  JoltC_CharacterVirtual_t * self,
+  unsigned long inMaxHits,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetMaxNumHits(
-  inMaxHits
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetMaxNumHits(
+    inMaxHits
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CharacterVirtual_GetHitReductionCosMaxAngle(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetHitReductionCosMaxAngle(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  float result = selfCpp->GetHitReductionCosMaxAngle();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    float result = selfCpp->GetHitReductionCosMaxAngle();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetHitReductionCosMaxAngle(
-  JPC_CharacterVirtual_t * self,
-  float inCosMaxAngle
+void JoltC_CharacterVirtual_SetHitReductionCosMaxAngle(
+  JoltC_CharacterVirtual_t * self,
+  float inCosMaxAngle,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetHitReductionCosMaxAngle(
-  inCosMaxAngle
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetHitReductionCosMaxAngle(
+    inCosMaxAngle
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CharacterVirtual_GetMaxHitsExceeded(
-  JPC_CharacterVirtual_t * self
+bool JoltC_CharacterVirtual_GetMaxHitsExceeded(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  bool result = selfCpp->GetMaxHitsExceeded();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    bool result = selfCpp->GetMaxHitsExceeded();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetShapeOffset(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetShapeOffset(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  Vec3 resultValue = selfCpp->GetShapeOffset();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    Vec3 resultValue = selfCpp->GetShapeOffset();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetShapeOffset(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inShapeOffset
+void JoltC_CharacterVirtual_SetShapeOffset(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inShapeOffset,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetShapeOffset(
-  *reinterpret_cast<Vec3 *>(inShapeOffset->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetShapeOffset(
+    *reinterpret_cast<Vec3 *>(inShapeOffset->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_CharacterVirtual_GetUserData(
-  JPC_CharacterVirtual_t * self
+unsigned long long int JoltC_CharacterVirtual_GetUserData(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetUserData(
-  JPC_CharacterVirtual_t * self,
-  unsigned long long int inUserData
+void JoltC_CharacterVirtual_SetUserData(
+  JoltC_CharacterVirtual_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_CharacterVirtual_CancelVelocityTowardsSteepSlopes(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inDesiredVelocity
+JoltC_Vec3_t * JoltC_CharacterVirtual_CancelVelocityTowardsSteepSlopes(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inDesiredVelocity,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  Vec3 resultValue = selfCpp->CancelVelocityTowardsSteepSlopes(
-  *reinterpret_cast<Vec3 *>(inDesiredVelocity->obj)
-  );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    Vec3 resultValue = selfCpp->CancelVelocityTowardsSteepSlopes(
+    *reinterpret_cast<Vec3 *>(inDesiredVelocity->obj)
+    );
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_Update(
-  JPC_CharacterVirtual_t * self,
+void JoltC_CharacterVirtual_Update(
+  JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JPC_Vec3_t * inGravity,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+  const JoltC_Vec3_t * inGravity,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->Update(
-  inDeltaTime,
-  *reinterpret_cast<Vec3 *>(inGravity->obj),
-  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
-  *reinterpret_cast<TempAllocator *>(inAllocator->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->Update(
+    inDeltaTime,
+    *reinterpret_cast<Vec3 *>(inGravity->obj),
+    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
+    *reinterpret_cast<TempAllocator *>(inAllocator->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CharacterVirtual_CanWalkStairs(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inLinearVelocity
+bool JoltC_CharacterVirtual_CanWalkStairs(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inLinearVelocity,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  bool result = selfCpp->CanWalkStairs(
-  *reinterpret_cast<Vec3 *>(inLinearVelocity->obj)
-  );
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    bool result = selfCpp->CanWalkStairs(
+    *reinterpret_cast<Vec3 *>(inLinearVelocity->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CharacterVirtual_WalkStairs(
-  JPC_CharacterVirtual_t * self,
+bool JoltC_CharacterVirtual_WalkStairs(
+  JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JPC_Vec3_t * inStepUp,
-  const JPC_Vec3_t * inStepForward,
-  const JPC_Vec3_t * inStepForwardTest,
-  const JPC_Vec3_t * inStepDownExtra,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+  const JoltC_Vec3_t * inStepUp,
+  const JoltC_Vec3_t * inStepForward,
+  const JoltC_Vec3_t * inStepForwardTest,
+  const JoltC_Vec3_t * inStepDownExtra,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  bool result = selfCpp->WalkStairs(
-  inDeltaTime,
-  *reinterpret_cast<Vec3 *>(inStepUp->obj),
-  *reinterpret_cast<Vec3 *>(inStepForward->obj),
-  *reinterpret_cast<Vec3 *>(inStepForwardTest->obj),
-  *reinterpret_cast<Vec3 *>(inStepDownExtra->obj),
-  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
-  *reinterpret_cast<TempAllocator *>(inAllocator->obj)
-  );
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    bool result = selfCpp->WalkStairs(
+    inDeltaTime,
+    *reinterpret_cast<Vec3 *>(inStepUp->obj),
+    *reinterpret_cast<Vec3 *>(inStepForward->obj),
+    *reinterpret_cast<Vec3 *>(inStepForwardTest->obj),
+    *reinterpret_cast<Vec3 *>(inStepDownExtra->obj),
+    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
+    *reinterpret_cast<TempAllocator *>(inAllocator->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CharacterVirtual_StickToFloor(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inStepDown,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+bool JoltC_CharacterVirtual_StickToFloor(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inStepDown,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  bool result = selfCpp->StickToFloor(
-  *reinterpret_cast<Vec3 *>(inStepDown->obj),
-  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
-  *reinterpret_cast<TempAllocator *>(inAllocator->obj)
-  );
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    bool result = selfCpp->StickToFloor(
+    *reinterpret_cast<Vec3 *>(inStepDown->obj),
+    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
+    *reinterpret_cast<TempAllocator *>(inAllocator->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_ExtendedUpdate(
-  JPC_CharacterVirtual_t * self,
+void JoltC_CharacterVirtual_ExtendedUpdate(
+  JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JPC_Vec3_t * inGravity,
-  const JPC_CharacterVirtual_ExtendedUpdateSettings_t * inSettings,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+  const JoltC_Vec3_t * inGravity,
+  const JoltC_CharacterVirtual_ExtendedUpdateSettings_t * inSettings,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->ExtendedUpdate(
-  inDeltaTime,
-  *reinterpret_cast<Vec3 *>(inGravity->obj),
-  *reinterpret_cast<CharacterVirtual::ExtendedUpdateSettings *>(inSettings->obj),
-  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
-  *reinterpret_cast<TempAllocator *>(inAllocator->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->ExtendedUpdate(
+    inDeltaTime,
+    *reinterpret_cast<Vec3 *>(inGravity->obj),
+    *reinterpret_cast<CharacterVirtual::ExtendedUpdateSettings *>(inSettings->obj),
+    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
+    *reinterpret_cast<TempAllocator *>(inAllocator->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_RefreshContacts(
-  JPC_CharacterVirtual_t * self,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+void JoltC_CharacterVirtual_RefreshContacts(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->RefreshContacts(
-  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
-  *reinterpret_cast<TempAllocator *>(inAllocator->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->RefreshContacts(
+    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
+    *reinterpret_cast<TempAllocator *>(inAllocator->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_UpdateGroundVelocity(
-  JPC_CharacterVirtual_t * self
+void JoltC_CharacterVirtual_UpdateGroundVelocity(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->UpdateGroundVelocity();
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->UpdateGroundVelocity();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CharacterVirtual_SetShape(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Shape_t * inShape,
+bool JoltC_CharacterVirtual_SetShape(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Shape_t * inShape,
   float inMaxPenetrationDepth,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  bool result = selfCpp->SetShape(
-  reinterpret_cast<Shape *>(inShape->obj),
-  inMaxPenetrationDepth,
-  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
-  *reinterpret_cast<TempAllocator *>(inAllocator->obj)
-  );
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    bool result = selfCpp->SetShape(
+    reinterpret_cast<Shape *>(inShape->obj),
+    inMaxPenetrationDepth,
+    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj),
+    *reinterpret_cast<TempAllocator *>(inAllocator->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_CharacterVirtual_GetRefCount(
-  JPC_CharacterVirtual_t * self
+unsigned long JoltC_CharacterVirtual_GetRefCount(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_AddRef(
-  JPC_CharacterVirtual_t * self
+void JoltC_CharacterVirtual_AddRef(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_Release(
-  JPC_CharacterVirtual_t * self
+void JoltC_CharacterVirtual_Release(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetMaxSlopeAngle(
-  JPC_CharacterVirtual_t * self,
-  float inMaxSlopeAngle
+void JoltC_CharacterVirtual_SetMaxSlopeAngle(
+  JoltC_CharacterVirtual_t * self,
+  float inMaxSlopeAngle,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetMaxSlopeAngle(
-  inMaxSlopeAngle
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetMaxSlopeAngle(
+    inMaxSlopeAngle
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CharacterVirtual_GetCosMaxSlopeAngle(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetCosMaxSlopeAngle(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  float result = selfCpp->GetCosMaxSlopeAngle();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    float result = selfCpp->GetCosMaxSlopeAngle();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CharacterVirtual_SetUp(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inUp
+void JoltC_CharacterVirtual_SetUp(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inUp,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
-  selfCpp->SetUp(
-  *reinterpret_cast<Vec3 *>(inUp->obj)
-  );
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    
+    selfCpp->SetUp(
+    *reinterpret_cast<Vec3 *>(inUp->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetUp(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetUp(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  Vec3 resultValue = selfCpp->GetUp();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    Vec3 resultValue = selfCpp->GetUp();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_Shape_t * JPC_CharacterVirtual_GetShape(
-  JPC_CharacterVirtual_t * self
+const JoltC_Shape_t * JoltC_CharacterVirtual_GetShape(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  const Shape * result = selfCpp->GetShape();
-  return reinterpret_cast<const JPC_Shape_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    const Shape * result = selfCpp->GetShape();
+    return reinterpret_cast<const JoltC_Shape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EGroundState JPC_CharacterVirtual_GetGroundState(
-  JPC_CharacterVirtual_t * self
+JoltC_EGroundState JoltC_CharacterVirtual_GetGroundState(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  EGroundState result = selfCpp->GetGroundState();
-  return static_cast<JPC_EGroundState>(static_cast<int>(result));
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    EGroundState result = selfCpp->GetGroundState();
+    return static_cast<JoltC_EGroundState>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CharacterVirtual_IsSlopeTooSteep(
-  JPC_CharacterVirtual_t * self,
-  JPC_Vec3_t * inNormal
+bool JoltC_CharacterVirtual_IsSlopeTooSteep(
+  JoltC_CharacterVirtual_t * self,
+  JoltC_Vec3_t * inNormal,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  bool result = selfCpp->IsSlopeTooSteep(
-  *reinterpret_cast<Vec3 *>(inNormal->obj)
-  );
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    bool result = selfCpp->IsSlopeTooSteep(
+    *reinterpret_cast<Vec3 *>(inNormal->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CharacterVirtual_IsSupported(
-  JPC_CharacterVirtual_t * self
+bool JoltC_CharacterVirtual_IsSupported(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  bool result = selfCpp->IsSupported();
-  return result;
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    bool result = selfCpp->IsSupported();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RVec3_t * JPC_CharacterVirtual_GetGroundPosition(
-  JPC_CharacterVirtual_t * self
+JoltC_RVec3_t * JoltC_CharacterVirtual_GetGroundPosition(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  RVec3 resultValue = selfCpp->GetGroundPosition();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JPC_RVec3_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    RVec3 resultValue = selfCpp->GetGroundPosition();
+    RVec3* result = new RVec3(resultValue);
+    return reinterpret_cast<JoltC_RVec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetGroundNormal(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetGroundNormal(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  Vec3 resultValue = selfCpp->GetGroundNormal();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    Vec3 resultValue = selfCpp->GetGroundNormal();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetGroundVelocity(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetGroundVelocity(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  Vec3 resultValue = selfCpp->GetGroundVelocity();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    Vec3 resultValue = selfCpp->GetGroundVelocity();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_PhysicsMaterial_t * JPC_CharacterVirtual_GetGroundMaterial(
-  JPC_CharacterVirtual_t * self
+const JoltC_PhysicsMaterial_t * JoltC_CharacterVirtual_GetGroundMaterial(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetGroundMaterial();
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    const PhysicsMaterial * result = selfCpp->GetGroundMaterial();
+    return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_BodyID_t * JPC_CharacterVirtual_GetGroundBodyID(
-  JPC_CharacterVirtual_t * self
+JoltC_BodyID_t * JoltC_CharacterVirtual_GetGroundBodyID(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 ) {
-  CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  BodyID resultValue = selfCpp->GetGroundBodyID();
-  BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JPC_BodyID_t *>(result);
+  try {
+    CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
+    BodyID resultValue = selfCpp->GetGroundBodyID();
+    BodyID* result = new BodyID(resultValue);
+    return reinterpret_cast<JoltC_BodyID_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

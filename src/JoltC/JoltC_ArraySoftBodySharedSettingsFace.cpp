@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArraySoftBodySharedSettingsFace.h"
+#include "JoltC/JoltC_ArraySoftBodySharedSettingsFace.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,73 +8,136 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsFace_empty(
-  JPC_ArraySoftBodySharedSettingsFace_t * self
+bool JoltC_ArraySoftBodySharedSettingsFace_empty(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArraySoftBodySharedSettingsFace_size(
-  JPC_ArraySoftBodySharedSettingsFace_t * self
+long JoltC_ArraySoftBodySharedSettingsFace_size(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_SoftBodySharedSettingsFace_t * JPC_ArraySoftBodySharedSettingsFace_at(
-  JPC_ArraySoftBodySharedSettingsFace_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsFace_t * JoltC_ArraySoftBodySharedSettingsFace_at(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  SoftBodySharedSettingsFace& resultRef = selfCpp->at(
-  inIndex
-  );
-  SoftBodySharedSettingsFace * result = &resultRef;
-  return reinterpret_cast<JPC_SoftBodySharedSettingsFace_t *>(result);
+  try {
+    ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
+    SoftBodySharedSettingsFace& resultRef = selfCpp->at(
+    inIndex
+    );
+    SoftBodySharedSettingsFace * result = &resultRef;
+    return reinterpret_cast<JoltC_SoftBodySharedSettingsFace_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySoftBodySharedSettingsFace_push_back(
-  JPC_ArraySoftBodySharedSettingsFace_t * self,
-  const JPC_SoftBodySharedSettingsFace_t * inValue
+void JoltC_ArraySoftBodySharedSettingsFace_push_back(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  const JoltC_SoftBodySharedSettingsFace_t * inValue,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<SoftBodySharedSettingsFace *>(inValue->obj)
-  );
+  try {
+    ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<SoftBodySharedSettingsFace *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySoftBodySharedSettingsFace_reserve(
-  JPC_ArraySoftBodySharedSettingsFace_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsFace_reserve(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySoftBodySharedSettingsFace_resize(
-  JPC_ArraySoftBodySharedSettingsFace_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsFace_resize(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySoftBodySharedSettingsFace_clear(
-  JPC_ArraySoftBodySharedSettingsFace_t * self
+void JoltC_ArraySoftBodySharedSettingsFace_clear(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  char** outErrMsg
 ) {
-  ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

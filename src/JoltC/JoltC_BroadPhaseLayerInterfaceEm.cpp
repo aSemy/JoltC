@@ -1,5 +1,6 @@
-#include "JoltC/JPC_BroadPhaseLayerInterfaceEm.h"
+#include "JoltC/JoltC_BroadPhaseLayerInterfaceEm.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,12 +8,21 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_BroadPhaseLayerInterfaceEm_GetNumBroadPhaseLayers(
-  JPC_BroadPhaseLayerInterfaceEm_t * self
+unsigned long JoltC_BroadPhaseLayerInterfaceEm_GetNumBroadPhaseLayers(
+  JoltC_BroadPhaseLayerInterfaceEm_t * self,
+  char** outErrMsg
 ) {
-  BroadPhaseLayerInterfaceEm * selfCpp = static_cast<BroadPhaseLayerInterfaceEm *>(self->obj);
-  unsigned long result = selfCpp->GetNumBroadPhaseLayers();
-  return result;
+  try {
+    BroadPhaseLayerInterfaceEm * selfCpp = static_cast<BroadPhaseLayerInterfaceEm *>(self->obj);
+    unsigned long result = selfCpp->GetNumBroadPhaseLayers();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

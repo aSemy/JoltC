@@ -8,37 +8,44 @@ extern "C" {
 
 //region constructors
 
-JPC_IndexedTriangle_t * JPC_IndexedTriangle_new_0();
+JoltC_IndexedTriangle_t * JoltC_IndexedTriangle_new_0(
+  char** outErrMsg
+);
 
-JPC_IndexedTriangle_t * JPC_IndexedTriangle_new_1(
+JoltC_IndexedTriangle_t * JoltC_IndexedTriangle_new_1(
   unsigned long inI1,
   unsigned long inI2,
   unsigned long inI3,
-  unsigned long inMaterialIndex
+  unsigned long inMaterialIndex,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region properties
 
-size_t JPC_IndexedTriangle_mIdx_Get(
-  JPC_IndexedTriangle_t * self,
-  unsigned long * outValue
+size_t JoltC_IndexedTriangle_mIdx_Get(
+  JoltC_IndexedTriangle_t * self,
+  unsigned long * outValue,
+  char** outErrMsg
 );
 
-void JPC_IndexedTriangle_mIdx_Set(
-  JPC_IndexedTriangle_t * self,
+void JoltC_IndexedTriangle_mIdx_Set(
+  JoltC_IndexedTriangle_t * self,
   unsigned long * mIdx,
-  size_t mIdxSize
+  size_t mIdxSize,
+  char** outErrMsg
 );
 
-unsigned long JPC_IndexedTriangle_mMaterialIndex_Get(
-  JPC_IndexedTriangle_t * self
+unsigned long JoltC_IndexedTriangle_mMaterialIndex_Get(
+  JoltC_IndexedTriangle_t * self,
+  char** outErrMsg
 );
 
-void JPC_IndexedTriangle_mMaterialIndex_Set(
-  JPC_IndexedTriangle_t * self,
-  unsigned long mMaterialIndex
+void JoltC_IndexedTriangle_mMaterialIndex_Set(
+  JoltC_IndexedTriangle_t * self,
+  unsigned long mMaterialIndex,
+  char** outErrMsg
 );
 
 //endregion properties

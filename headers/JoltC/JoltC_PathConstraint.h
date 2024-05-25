@@ -8,147 +8,180 @@ extern "C" {
 
 //region functions
 
-void JPC_PathConstraint_SetPath(
-  JPC_PathConstraint_t * self,
-  const JPC_PathConstraintPath_t * inPath,
-  float inPathFraction
+void JoltC_PathConstraint_SetPath(
+  JoltC_PathConstraint_t * self,
+  const JoltC_PathConstraintPath_t * inPath,
+  float inPathFraction,
+  char** outErrMsg
 );
 
-const JPC_PathConstraintPath_t * JPC_PathConstraint_GetPath(
-  JPC_PathConstraint_t * self
+const JoltC_PathConstraintPath_t * JoltC_PathConstraint_GetPath(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-float JPC_PathConstraint_GetPathFraction(
-  JPC_PathConstraint_t * self
+float JoltC_PathConstraint_GetPathFraction(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetMaxFrictionForce(
-  JPC_PathConstraint_t * self,
-  float inFrictionForce
+void JoltC_PathConstraint_SetMaxFrictionForce(
+  JoltC_PathConstraint_t * self,
+  float inFrictionForce,
+  char** outErrMsg
 );
 
-float JPC_PathConstraint_GetMaxFrictionForce(
-  JPC_PathConstraint_t * self
+float JoltC_PathConstraint_GetMaxFrictionForce(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_MotorSettings_t * JPC_PathConstraint_GetPositionMotorSettings(
-  JPC_PathConstraint_t * self
+JoltC_MotorSettings_t * JoltC_PathConstraint_GetPositionMotorSettings(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetPositionMotorState(
-  JPC_PathConstraint_t * self,
-  JPC_EMotorState inState
+void JoltC_PathConstraint_SetPositionMotorState(
+  JoltC_PathConstraint_t * self,
+  JoltC_EMotorState inState,
+  char** outErrMsg
 );
 
-JPC_EMotorState JPC_PathConstraint_GetPositionMotorState(
-  JPC_PathConstraint_t * self
+JoltC_EMotorState JoltC_PathConstraint_GetPositionMotorState(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetTargetVelocity(
-  JPC_PathConstraint_t * self,
-  float inVelocity
+void JoltC_PathConstraint_SetTargetVelocity(
+  JoltC_PathConstraint_t * self,
+  float inVelocity,
+  char** outErrMsg
 );
 
-float JPC_PathConstraint_GetTargetVelocity(
-  JPC_PathConstraint_t * self
+float JoltC_PathConstraint_GetTargetVelocity(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetTargetPathFraction(
-  JPC_PathConstraint_t * self,
-  float inFraction
+void JoltC_PathConstraint_SetTargetPathFraction(
+  JoltC_PathConstraint_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-float JPC_PathConstraint_GetTargetPathFraction(
-  JPC_PathConstraint_t * self
+float JoltC_PathConstraint_GetTargetPathFraction(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_PathConstraint_GetBody1(
-  JPC_PathConstraint_t * self
+JoltC_Body_t * JoltC_PathConstraint_GetBody1(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_PathConstraint_GetBody2(
-  JPC_PathConstraint_t * self
+JoltC_Body_t * JoltC_PathConstraint_GetBody2(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_PathConstraint_GetConstraintToBody1Matrix(
-  JPC_PathConstraint_t * self
+JoltC_Mat44_t * JoltC_PathConstraint_GetConstraintToBody1Matrix(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_PathConstraint_GetConstraintToBody2Matrix(
-  JPC_PathConstraint_t * self
+JoltC_Mat44_t * JoltC_PathConstraint_GetConstraintToBody2Matrix(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_PathConstraint_GetRefCount(
-  JPC_PathConstraint_t * self
+unsigned long JoltC_PathConstraint_GetRefCount(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_AddRef(
-  JPC_PathConstraint_t * self
+void JoltC_PathConstraint_AddRef(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_Release(
-  JPC_PathConstraint_t * self
+void JoltC_PathConstraint_Release(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintType JPC_PathConstraint_GetType(
-  JPC_PathConstraint_t * self
+JoltC_EConstraintType JoltC_PathConstraint_GetType(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintSubType JPC_PathConstraint_GetSubType(
-  JPC_PathConstraint_t * self
+JoltC_EConstraintSubType JoltC_PathConstraint_GetSubType(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_PathConstraint_GetConstraintPriority(
-  JPC_PathConstraint_t * self
+unsigned long JoltC_PathConstraint_GetConstraintPriority(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetConstraintPriority(
-  JPC_PathConstraint_t * self,
-  unsigned long inPriority
+void JoltC_PathConstraint_SetConstraintPriority(
+  JoltC_PathConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetNumVelocityStepsOverride(
-  JPC_PathConstraint_t * self,
-  long inN
+void JoltC_PathConstraint_SetNumVelocityStepsOverride(
+  JoltC_PathConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_PathConstraint_GetNumVelocityStepsOverride(
-  JPC_PathConstraint_t * self
+long JoltC_PathConstraint_GetNumVelocityStepsOverride(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetNumPositionStepsOverride(
-  JPC_PathConstraint_t * self,
-  long inN
+void JoltC_PathConstraint_SetNumPositionStepsOverride(
+  JoltC_PathConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_PathConstraint_GetNumPositionStepsOverride(
-  JPC_PathConstraint_t * self
+long JoltC_PathConstraint_GetNumPositionStepsOverride(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetEnabled(
-  JPC_PathConstraint_t * self,
-  bool inEnabled
+void JoltC_PathConstraint_SetEnabled(
+  JoltC_PathConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 );
 
-bool JPC_PathConstraint_GetEnabled(
-  JPC_PathConstraint_t * self
+bool JoltC_PathConstraint_GetEnabled(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_PathConstraint_IsActive(
-  JPC_PathConstraint_t * self
+bool JoltC_PathConstraint_IsActive(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_PathConstraint_GetUserData(
-  JPC_PathConstraint_t * self
+unsigned long long int JoltC_PathConstraint_GetUserData(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_SetUserData(
-  JPC_PathConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_PathConstraint_SetUserData(
+  JoltC_PathConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-void JPC_PathConstraint_ResetWarmStart(
-  JPC_PathConstraint_t * self
+void JoltC_PathConstraint_ResetWarmStart(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

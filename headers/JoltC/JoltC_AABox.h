@@ -8,44 +8,54 @@ extern "C" {
 
 //region constructors
 
-JPC_AABox_t * JPC_AABox_new_0();
+JoltC_AABox_t * JoltC_AABox_new_0(
+  char** outErrMsg
+);
 
-JPC_AABox_t * JPC_AABox_new_1(
-  const JPC_Vec3_t * inMin,
-  const JPC_Vec3_t * inMax
+JoltC_AABox_t * JoltC_AABox_new_1(
+  const JoltC_Vec3_t * inMin,
+  const JoltC_Vec3_t * inMax,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-JPC_AABox_t * JPC_AABox_sBiggest();
+JoltC_AABox_t * JoltC_AABox_sBiggest(
+  char** outErrMsg
+);
 
-bool JPC_AABox_Overlaps(
-  JPC_AABox_t * self,
-  const JPC_AABox_t * inOther
+bool JoltC_AABox_Overlaps(
+  JoltC_AABox_t * self,
+  const JoltC_AABox_t * inOther,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_AABox_mMin_Get(
-  JPC_AABox_t * self
+JoltC_Vec3_t * JoltC_AABox_mMin_Get(
+  JoltC_AABox_t * self,
+  char** outErrMsg
 );
 
-void JPC_AABox_mMin_Set(
-  JPC_AABox_t * self,
-  JPC_Vec3_t * mMin
+void JoltC_AABox_mMin_Set(
+  JoltC_AABox_t * self,
+  JoltC_Vec3_t * mMin,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_AABox_mMax_Get(
-  JPC_AABox_t * self
+JoltC_Vec3_t * JoltC_AABox_mMax_Get(
+  JoltC_AABox_t * self,
+  char** outErrMsg
 );
 
-void JPC_AABox_mMax_Set(
-  JPC_AABox_t * self,
-  JPC_Vec3_t * mMax
+void JoltC_AABox_mMax_Set(
+  JoltC_AABox_t * self,
+  JoltC_Vec3_t * mMax,
+  char** outErrMsg
 );
 
 //endregion properties

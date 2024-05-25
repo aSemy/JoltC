@@ -8,124 +8,149 @@ extern "C" {
 
 //region constructors
 
-JPC_SphereShape_t * JPC_SphereShape_new(
+JoltC_SphereShape_t * JoltC_SphereShape_new(
   float inRadius,
-  const JPC_PhysicsMaterial_t * inMaterial
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-float JPC_SphereShape_GetRadius(
-  JPC_SphereShape_t * self
+float JoltC_SphereShape_GetRadius(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_SphereShape_GetDensity(
-  JPC_SphereShape_t * self
+float JoltC_SphereShape_GetDensity(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShape_SetDensity(
-  JPC_SphereShape_t * self,
-  float inDensity
+void JoltC_SphereShape_SetDensity(
+  JoltC_SphereShape_t * self,
+  float inDensity,
+  char** outErrMsg
 );
 
-unsigned long JPC_SphereShape_GetRefCount(
-  JPC_SphereShape_t * self
+unsigned long JoltC_SphereShape_GetRefCount(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShape_AddRef(
-  JPC_SphereShape_t * self
+void JoltC_SphereShape_AddRef(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShape_Release(
-  JPC_SphereShape_t * self
+void JoltC_SphereShape_Release(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_SphereShape_GetType(
-  JPC_SphereShape_t * self
+JoltC_EShapeType JoltC_SphereShape_GetType(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_SphereShape_GetSubType(
-  JPC_SphereShape_t * self
+JoltC_EShapeSubType JoltC_SphereShape_GetSubType(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_SphereShape_MustBeStatic(
-  JPC_SphereShape_t * self
+bool JoltC_SphereShape_MustBeStatic(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_SphereShape_GetLocalBounds(
-  JPC_SphereShape_t * self
+JoltC_AABox_t * JoltC_SphereShape_GetLocalBounds(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_SphereShape_GetWorldSpaceBounds(
-  JPC_SphereShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_SphereShape_GetWorldSpaceBounds(
+  JoltC_SphereShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SphereShape_GetCenterOfMass(
-  JPC_SphereShape_t * self
+JoltC_Vec3_t * JoltC_SphereShape_GetCenterOfMass(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_SphereShape_GetUserData(
-  JPC_SphereShape_t * self
+unsigned long long int JoltC_SphereShape_GetUserData(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShape_SetUserData(
-  JPC_SphereShape_t * self,
-  unsigned long long int inUserData
+void JoltC_SphereShape_SetUserData(
+  JoltC_SphereShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_SphereShape_GetSubShapeIDBitsRecursive(
-  JPC_SphereShape_t * self
+unsigned long JoltC_SphereShape_GetSubShapeIDBitsRecursive(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_SphereShape_GetInnerRadius(
-  JPC_SphereShape_t * self
+float JoltC_SphereShape_GetInnerRadius(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_SphereShape_GetMassProperties(
-  JPC_SphereShape_t * self
+JoltC_MassProperties_t * JoltC_SphereShape_GetMassProperties(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_SphereShape_GetMaterial(
-  JPC_SphereShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_SphereShape_GetMaterial(
+  JoltC_SphereShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SphereShape_GetSurfaceNormal(
-  JPC_SphereShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_SphereShape_GetSurfaceNormal(
+  JoltC_SphereShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_SphereShape_GetSubShapeUserData(
-  JPC_SphereShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_SphereShape_GetSubShapeUserData(
+  JoltC_SphereShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_SphereShape_GetSubShapeTransformedShape(
-  JPC_SphereShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_SphereShape_GetSubShapeTransformedShape(
+  JoltC_SphereShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_SphereShape_GetVolume(
-  JPC_SphereShape_t * self
+float JoltC_SphereShape_GetVolume(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_SphereShape_IsValidScale(
-  JPC_SphereShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_SphereShape_IsValidScale(
+  JoltC_SphereShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_SphereShape_ScaleShape(
-  JPC_SphereShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_SphereShape_ScaleShape(
+  JoltC_SphereShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

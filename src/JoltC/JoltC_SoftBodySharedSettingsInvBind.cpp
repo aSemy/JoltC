@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SoftBodySharedSettingsInvBind.h"
+#include "JoltC/JoltC_SoftBodySharedSettingsInvBind.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,34 +8,38 @@ extern "C" {
 
 //region properties
 
-unsigned long JPC_SoftBodySharedSettingsInvBind_mJointIndex_Get(
-  JPC_SoftBodySharedSettingsInvBind_t * self
+unsigned long JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Get(
+  JoltC_SoftBodySharedSettingsInvBind_t * self,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   unsigned long result = selfCpp->mJointIndex;
   return result;
 };
 
-void JPC_SoftBodySharedSettingsInvBind_mJointIndex_Set(
-  JPC_SoftBodySharedSettingsInvBind_t * self,
-  unsigned long mJointIndex
+void JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Set(
+  JoltC_SoftBodySharedSettingsInvBind_t * self,
+  unsigned long mJointIndex,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   selfCpp->mJointIndex = mJointIndex;
 };
 
-JPC_Mat44_t * JPC_SoftBodySharedSettingsInvBind_mInvBind_Get(
-  JPC_SoftBodySharedSettingsInvBind_t * self
+JoltC_Mat44_t * JoltC_SoftBodySharedSettingsInvBind_mInvBind_Get(
+  JoltC_SoftBodySharedSettingsInvBind_t * self,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   Mat44 resultValue = selfCpp->mInvBind;
   Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  return reinterpret_cast<JoltC_Mat44_t *>(result);
 };
 
-void JPC_SoftBodySharedSettingsInvBind_mInvBind_Set(
-  JPC_SoftBodySharedSettingsInvBind_t * self,
-  JPC_Mat44_t * mInvBind
+void JoltC_SoftBodySharedSettingsInvBind_mInvBind_Set(
+  JoltC_SoftBodySharedSettingsInvBind_t * self,
+  JoltC_Mat44_t * mInvBind,
+  char** outErrMsg
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   selfCpp->mInvBind = *reinterpret_cast<Mat44 *>(mInvBind->obj);

@@ -8,111 +8,134 @@ extern "C" {
 
 //region functions
 
-float JPC_TaperedCapsuleShape_GetDensity(
-  JPC_TaperedCapsuleShape_t * self
+float JoltC_TaperedCapsuleShape_GetDensity(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_TaperedCapsuleShape_SetDensity(
-  JPC_TaperedCapsuleShape_t * self,
-  float inDensity
+void JoltC_TaperedCapsuleShape_SetDensity(
+  JoltC_TaperedCapsuleShape_t * self,
+  float inDensity,
+  char** outErrMsg
 );
 
-unsigned long JPC_TaperedCapsuleShape_GetRefCount(
-  JPC_TaperedCapsuleShape_t * self
+unsigned long JoltC_TaperedCapsuleShape_GetRefCount(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_TaperedCapsuleShape_AddRef(
-  JPC_TaperedCapsuleShape_t * self
+void JoltC_TaperedCapsuleShape_AddRef(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_TaperedCapsuleShape_Release(
-  JPC_TaperedCapsuleShape_t * self
+void JoltC_TaperedCapsuleShape_Release(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_TaperedCapsuleShape_GetType(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_EShapeType JoltC_TaperedCapsuleShape_GetType(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_TaperedCapsuleShape_GetSubType(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_EShapeSubType JoltC_TaperedCapsuleShape_GetSubType(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_TaperedCapsuleShape_MustBeStatic(
-  JPC_TaperedCapsuleShape_t * self
+bool JoltC_TaperedCapsuleShape_MustBeStatic(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_TaperedCapsuleShape_GetLocalBounds(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_AABox_t * JoltC_TaperedCapsuleShape_GetLocalBounds(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_TaperedCapsuleShape_GetWorldSpaceBounds(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_TaperedCapsuleShape_GetWorldSpaceBounds(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_TaperedCapsuleShape_GetCenterOfMass(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_Vec3_t * JoltC_TaperedCapsuleShape_GetCenterOfMass(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_TaperedCapsuleShape_GetUserData(
-  JPC_TaperedCapsuleShape_t * self
+unsigned long long int JoltC_TaperedCapsuleShape_GetUserData(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_TaperedCapsuleShape_SetUserData(
-  JPC_TaperedCapsuleShape_t * self,
-  unsigned long long int inUserData
+void JoltC_TaperedCapsuleShape_SetUserData(
+  JoltC_TaperedCapsuleShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_TaperedCapsuleShape_GetSubShapeIDBitsRecursive(
-  JPC_TaperedCapsuleShape_t * self
+unsigned long JoltC_TaperedCapsuleShape_GetSubShapeIDBitsRecursive(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_TaperedCapsuleShape_GetInnerRadius(
-  JPC_TaperedCapsuleShape_t * self
+float JoltC_TaperedCapsuleShape_GetInnerRadius(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_TaperedCapsuleShape_GetMassProperties(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_MassProperties_t * JoltC_TaperedCapsuleShape_GetMassProperties(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_TaperedCapsuleShape_GetMaterial(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_TaperedCapsuleShape_GetMaterial(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_TaperedCapsuleShape_GetSurfaceNormal(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_TaperedCapsuleShape_GetSurfaceNormal(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_TaperedCapsuleShape_GetSubShapeUserData(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_TaperedCapsuleShape_GetSubShapeUserData(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_TaperedCapsuleShape_GetSubShapeTransformedShape(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_TaperedCapsuleShape_GetSubShapeTransformedShape(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_TaperedCapsuleShape_GetVolume(
-  JPC_TaperedCapsuleShape_t * self
+float JoltC_TaperedCapsuleShape_GetVolume(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_TaperedCapsuleShape_IsValidScale(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_TaperedCapsuleShape_IsValidScale(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_TaperedCapsuleShape_ScaleShape(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_TaperedCapsuleShape_ScaleShape(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,34 +8,39 @@ extern "C" {
 
 //region constructors
 
-JPC_ObjectLayerPairFilterTable_t * JPC_ObjectLayerPairFilterTable_new(
-  unsigned long inNumObjectLayers
+JoltC_ObjectLayerPairFilterTable_t * JoltC_ObjectLayerPairFilterTable_new(
+  unsigned long inNumObjectLayers,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_ObjectLayerPairFilterTable_GetNumObjectLayers(
-  JPC_ObjectLayerPairFilterTable_t * self
+unsigned long JoltC_ObjectLayerPairFilterTable_GetNumObjectLayers(
+  JoltC_ObjectLayerPairFilterTable_t * self,
+  char** outErrMsg
 );
 
-void JPC_ObjectLayerPairFilterTable_DisableCollision(
-  JPC_ObjectLayerPairFilterTable_t * self,
+void JoltC_ObjectLayerPairFilterTable_DisableCollision(
+  JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2
+  unsigned long inLayer2,
+  char** outErrMsg
 );
 
-void JPC_ObjectLayerPairFilterTable_EnableCollision(
-  JPC_ObjectLayerPairFilterTable_t * self,
+void JoltC_ObjectLayerPairFilterTable_EnableCollision(
+  JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2
+  unsigned long inLayer2,
+  char** outErrMsg
 );
 
-bool JPC_ObjectLayerPairFilterTable_ShouldCollide(
-  JPC_ObjectLayerPairFilterTable_t * self,
+bool JoltC_ObjectLayerPairFilterTable_ShouldCollide(
+  JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2
+  unsigned long inLayer2,
+  char** outErrMsg
 );
 
 //endregion functions

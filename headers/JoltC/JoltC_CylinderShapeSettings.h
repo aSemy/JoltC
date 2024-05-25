@@ -8,93 +8,111 @@ extern "C" {
 
 //region constructors
 
-JPC_CylinderShapeSettings_t * JPC_CylinderShapeSettings_new(
+JoltC_CylinderShapeSettings_t * JoltC_CylinderShapeSettings_new(
   float inHalfHeight,
   float inRadius,
   float inConvexRadius,
-  const JPC_PhysicsMaterial_t * inMaterial
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_CylinderShapeSettings_GetRefCount(
-  JPC_CylinderShapeSettings_t * self
+unsigned long JoltC_CylinderShapeSettings_GetRefCount(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CylinderShapeSettings_AddRef(
-  JPC_CylinderShapeSettings_t * self
+void JoltC_CylinderShapeSettings_AddRef(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CylinderShapeSettings_Release(
-  JPC_CylinderShapeSettings_t * self
+void JoltC_CylinderShapeSettings_Release(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_CylinderShapeSettings_Create(
-  JPC_CylinderShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_CylinderShapeSettings_Create(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CylinderShapeSettings_ClearCachedResult(
-  JPC_CylinderShapeSettings_t * self
+void JoltC_CylinderShapeSettings_ClearCachedResult(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_CylinderShapeSettings_mHalfHeight_Get(
-  JPC_CylinderShapeSettings_t * self
+float JoltC_CylinderShapeSettings_mHalfHeight_Get(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CylinderShapeSettings_mHalfHeight_Set(
-  JPC_CylinderShapeSettings_t * self,
-  float mHalfHeight
+void JoltC_CylinderShapeSettings_mHalfHeight_Set(
+  JoltC_CylinderShapeSettings_t * self,
+  float mHalfHeight,
+  char** outErrMsg
 );
 
-float JPC_CylinderShapeSettings_mRadius_Get(
-  JPC_CylinderShapeSettings_t * self
+float JoltC_CylinderShapeSettings_mRadius_Get(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CylinderShapeSettings_mRadius_Set(
-  JPC_CylinderShapeSettings_t * self,
-  float mRadius
+void JoltC_CylinderShapeSettings_mRadius_Set(
+  JoltC_CylinderShapeSettings_t * self,
+  float mRadius,
+  char** outErrMsg
 );
 
-float JPC_CylinderShapeSettings_mConvexRadius_Get(
-  JPC_CylinderShapeSettings_t * self
+float JoltC_CylinderShapeSettings_mConvexRadius_Get(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CylinderShapeSettings_mConvexRadius_Set(
-  JPC_CylinderShapeSettings_t * self,
-  float mConvexRadius
+void JoltC_CylinderShapeSettings_mConvexRadius_Set(
+  JoltC_CylinderShapeSettings_t * self,
+  float mConvexRadius,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_CylinderShapeSettings_mMaterial_Get(
-  JPC_CylinderShapeSettings_t * self
+const JoltC_PhysicsMaterial_t * JoltC_CylinderShapeSettings_mMaterial_Get(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-const void JPC_CylinderShapeSettings_mMaterial_Set(
-  JPC_CylinderShapeSettings_t * self,
-  const JPC_PhysicsMaterial_t * mMaterial
+const void JoltC_CylinderShapeSettings_mMaterial_Set(
+  JoltC_CylinderShapeSettings_t * self,
+  const JoltC_PhysicsMaterial_t * mMaterial,
+  char** outErrMsg
 );
 
-float JPC_CylinderShapeSettings_mDensity_Get(
-  JPC_CylinderShapeSettings_t * self
+float JoltC_CylinderShapeSettings_mDensity_Get(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CylinderShapeSettings_mDensity_Set(
-  JPC_CylinderShapeSettings_t * self,
-  float mDensity
+void JoltC_CylinderShapeSettings_mDensity_Set(
+  JoltC_CylinderShapeSettings_t * self,
+  float mDensity,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_CylinderShapeSettings_mUserData_Get(
-  JPC_CylinderShapeSettings_t * self
+unsigned long long int JoltC_CylinderShapeSettings_mUserData_Get(
+  JoltC_CylinderShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CylinderShapeSettings_mUserData_Set(
-  JPC_CylinderShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_CylinderShapeSettings_mUserData_Set(
+  JoltC_CylinderShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

@@ -8,107 +8,130 @@ extern "C" {
 
 //region constructors
 
-JPC_VehicleConstraintSettings_t * JPC_VehicleConstraintSettings_new();
+JoltC_VehicleConstraintSettings_t * JoltC_VehicleConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_VehicleConstraintSettings_GetRefCount(
-  JPC_VehicleConstraintSettings_t * self
+unsigned long JoltC_VehicleConstraintSettings_GetRefCount(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_AddRef(
-  JPC_VehicleConstraintSettings_t * self
+void JoltC_VehicleConstraintSettings_AddRef(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_Release(
-  JPC_VehicleConstraintSettings_t * self
+void JoltC_VehicleConstraintSettings_Release(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_VehicleConstraintSettings_mUp_Get(
-  JPC_VehicleConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_VehicleConstraintSettings_mUp_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mUp_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  JPC_Vec3_t * mUp
+void JoltC_VehicleConstraintSettings_mUp_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  JoltC_Vec3_t * mUp,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_VehicleConstraintSettings_mForward_Get(
-  JPC_VehicleConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_VehicleConstraintSettings_mForward_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mForward_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  JPC_Vec3_t * mForward
+void JoltC_VehicleConstraintSettings_mForward_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  JoltC_Vec3_t * mForward,
+  char** outErrMsg
 );
 
-float JPC_VehicleConstraintSettings_mMaxPitchRollAngle_Get(
-  JPC_VehicleConstraintSettings_t * self
+float JoltC_VehicleConstraintSettings_mMaxPitchRollAngle_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mMaxPitchRollAngle_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  float mMaxPitchRollAngle
+void JoltC_VehicleConstraintSettings_mMaxPitchRollAngle_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  float mMaxPitchRollAngle,
+  char** outErrMsg
 );
 
-JPC_ArrayWheelSettings_t * JPC_VehicleConstraintSettings_mWheels_Get(
-  JPC_VehicleConstraintSettings_t * self
+JoltC_ArrayWheelSettings_t * JoltC_VehicleConstraintSettings_mWheels_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mWheels_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  JPC_ArrayWheelSettings_t * mWheels
+void JoltC_VehicleConstraintSettings_mWheels_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  JoltC_ArrayWheelSettings_t * mWheels,
+  char** outErrMsg
 );
 
-JPC_ArrayVehicleAntiRollBar_t * JPC_VehicleConstraintSettings_mAntiRollBars_Get(
-  JPC_VehicleConstraintSettings_t * self
+JoltC_ArrayVehicleAntiRollBar_t * JoltC_VehicleConstraintSettings_mAntiRollBars_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mAntiRollBars_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  JPC_ArrayVehicleAntiRollBar_t * mAntiRollBars
+void JoltC_VehicleConstraintSettings_mAntiRollBars_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  JoltC_ArrayVehicleAntiRollBar_t * mAntiRollBars,
+  char** outErrMsg
 );
 
-JPC_VehicleControllerSettings_t * JPC_VehicleConstraintSettings_mController_Get(
-  JPC_VehicleConstraintSettings_t * self
+JoltC_VehicleControllerSettings_t * JoltC_VehicleConstraintSettings_mController_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mController_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  JPC_VehicleControllerSettings_t * mController
+void JoltC_VehicleConstraintSettings_mController_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  JoltC_VehicleControllerSettings_t * mController,
+  char** outErrMsg
 );
 
-bool JPC_VehicleConstraintSettings_mEnabled_Get(
-  JPC_VehicleConstraintSettings_t * self
+bool JoltC_VehicleConstraintSettings_mEnabled_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mEnabled_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_VehicleConstraintSettings_mEnabled_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_VehicleConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_VehicleConstraintSettings_t * self
+long JoltC_VehicleConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_VehicleConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_VehicleConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_VehicleConstraintSettings_t * self
+long JoltC_VehicleConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_VehicleConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_VehicleConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_VehicleConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_VehicleConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

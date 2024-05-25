@@ -8,40 +8,48 @@ extern "C" {
 
 //region properties
 
-JPC_Vec3_t * JPC_SoftBodyVertex_mPreviousPosition_Get(
-  JPC_SoftBodyVertex_t * self
+JoltC_Vec3_t * JoltC_SoftBodyVertex_mPreviousPosition_Get(
+  JoltC_SoftBodyVertex_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyVertex_mPreviousPosition_Set(
-  JPC_SoftBodyVertex_t * self,
-  JPC_Vec3_t * mPreviousPosition
+void JoltC_SoftBodyVertex_mPreviousPosition_Set(
+  JoltC_SoftBodyVertex_t * self,
+  JoltC_Vec3_t * mPreviousPosition,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyVertex_mPosition_Get(
-  JPC_SoftBodyVertex_t * self
+JoltC_Vec3_t * JoltC_SoftBodyVertex_mPosition_Get(
+  JoltC_SoftBodyVertex_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyVertex_mPosition_Set(
-  JPC_SoftBodyVertex_t * self,
-  JPC_Vec3_t * mPosition
+void JoltC_SoftBodyVertex_mPosition_Set(
+  JoltC_SoftBodyVertex_t * self,
+  JoltC_Vec3_t * mPosition,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyVertex_mVelocity_Get(
-  JPC_SoftBodyVertex_t * self
+JoltC_Vec3_t * JoltC_SoftBodyVertex_mVelocity_Get(
+  JoltC_SoftBodyVertex_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyVertex_mVelocity_Set(
-  JPC_SoftBodyVertex_t * self,
-  JPC_Vec3_t * mVelocity
+void JoltC_SoftBodyVertex_mVelocity_Set(
+  JoltC_SoftBodyVertex_t * self,
+  JoltC_Vec3_t * mVelocity,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyVertex_mInvMass_Get(
-  JPC_SoftBodyVertex_t * self
+float JoltC_SoftBodyVertex_mInvMass_Get(
+  JoltC_SoftBodyVertex_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyVertex_mInvMass_Set(
-  JPC_SoftBodyVertex_t * self,
-  float mInvMass
+void JoltC_SoftBodyVertex_mInvMass_Set(
+  JoltC_SoftBodyVertex_t * self,
+  float mInvMass,
+  char** outErrMsg
 );
 
 //endregion properties

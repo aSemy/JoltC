@@ -1,5 +1,6 @@
-#include "JoltC/JPC_VehicleCollisionTester.h"
+#include "JoltC/JoltC_VehicleCollisionTester.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,28 +8,55 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_VehicleCollisionTester_GetRefCount(
-  JPC_VehicleCollisionTester_t * self
+unsigned long JoltC_VehicleCollisionTester_GetRefCount(
+  JoltC_VehicleCollisionTester_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_VehicleCollisionTester_AddRef(
-  JPC_VehicleCollisionTester_t * self
+void JoltC_VehicleCollisionTester_AddRef(
+  JoltC_VehicleCollisionTester_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_VehicleCollisionTester_Release(
-  JPC_VehicleCollisionTester_t * self
+void JoltC_VehicleCollisionTester_Release(
+  JoltC_VehicleCollisionTester_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

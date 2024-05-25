@@ -8,16 +8,18 @@ extern "C" {
 
 //region constructors
 
-JPC_BroadPhaseLayer_t * JPC_BroadPhaseLayer_new(
-  unsigned short inLayer
+JoltC_BroadPhaseLayer_t * JoltC_BroadPhaseLayer_new(
+  unsigned short inLayer,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned short JPC_BroadPhaseLayer_GetValue(
-  JPC_BroadPhaseLayer_t * self
+unsigned short JoltC_BroadPhaseLayer_GetValue(
+  JoltC_BroadPhaseLayer_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

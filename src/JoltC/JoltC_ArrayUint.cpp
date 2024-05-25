@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayUint.h"
+#include "JoltC/JoltC_ArrayUint.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,80 +8,152 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayUint_empty(
-  JPC_ArrayUint_t * self
+bool JoltC_ArrayUint_empty(
+  JoltC_ArrayUint_t * self,
+  char** outErrMsg
 ) {
-  ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayUint_size(
-  JPC_ArrayUint_t * self
+long JoltC_ArrayUint_size(
+  JoltC_ArrayUint_t * self,
+  char** outErrMsg
 ) {
-  ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_ArrayUint_at(
-  JPC_ArrayUint_t * self,
-  long inIndex
+unsigned long JoltC_ArrayUint_at(
+  JoltC_ArrayUint_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  unsigned long result = selfCpp->at(
-  inIndex
-  );
-  return result;
+  try {
+    ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
+    unsigned long result = selfCpp->at(
+    inIndex
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayUint_push_back(
-  JPC_ArrayUint_t * self,
-  unsigned long inValue
+void JoltC_ArrayUint_push_back(
+  JoltC_ArrayUint_t * self,
+  unsigned long inValue,
+  char** outErrMsg
 ) {
-  ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  
-  selfCpp->push_back(
-  inValue
-  );
+  try {
+    ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
+    
+    selfCpp->push_back(
+    inValue
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayUint_reserve(
-  JPC_ArrayUint_t * self,
-  unsigned long inSize
+void JoltC_ArrayUint_reserve(
+  JoltC_ArrayUint_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayUint_resize(
-  JPC_ArrayUint_t * self,
-  unsigned long inSize
+void JoltC_ArrayUint_resize(
+  JoltC_ArrayUint_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayUint_clear(
-  JPC_ArrayUint_t * self
+void JoltC_ArrayUint_clear(
+  JoltC_ArrayUint_t * self,
+  char** outErrMsg
 ) {
-  ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_UintMemRef_t * JPC_ArrayUint_data(
-  JPC_ArrayUint_t * self
+JoltC_UintMemRef_t * JoltC_ArrayUint_data(
+  JoltC_ArrayUint_t * self,
+  char** outErrMsg
 ) {
-  ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  UintMemRef * result = selfCpp->data();
-  return reinterpret_cast<JPC_UintMemRef_t *>(result);
+  try {
+    ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
+    UintMemRef * result = selfCpp->data();
+    return reinterpret_cast<JoltC_UintMemRef_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

@@ -1,5 +1,6 @@
-#include "JoltC/JPC_PathConstraint.h"
+#include "JoltC/JoltC_PathConstraint.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,303 +8,600 @@ extern "C" {
 
 //region functions
 
-void JPC_PathConstraint_SetPath(
-  JPC_PathConstraint_t * self,
-  const JPC_PathConstraintPath_t * inPath,
-  float inPathFraction
+void JoltC_PathConstraint_SetPath(
+  JoltC_PathConstraint_t * self,
+  const JoltC_PathConstraintPath_t * inPath,
+  float inPathFraction,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetPath(
-  reinterpret_cast<PathConstraintPath *>(inPath->obj),
-  inPathFraction
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetPath(
+    reinterpret_cast<PathConstraintPath *>(inPath->obj),
+    inPathFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_PathConstraintPath_t * JPC_PathConstraint_GetPath(
-  JPC_PathConstraint_t * self
+const JoltC_PathConstraintPath_t * JoltC_PathConstraint_GetPath(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  const PathConstraintPath * result = selfCpp->GetPath();
-  return reinterpret_cast<const JPC_PathConstraintPath_t *>(result);
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    const PathConstraintPath * result = selfCpp->GetPath();
+    return reinterpret_cast<const JoltC_PathConstraintPath_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_PathConstraint_GetPathFraction(
-  JPC_PathConstraint_t * self
+float JoltC_PathConstraint_GetPathFraction(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  float result = selfCpp->GetPathFraction();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    float result = selfCpp->GetPathFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetMaxFrictionForce(
-  JPC_PathConstraint_t * self,
-  float inFrictionForce
+void JoltC_PathConstraint_SetMaxFrictionForce(
+  JoltC_PathConstraint_t * self,
+  float inFrictionForce,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetMaxFrictionForce(
-  inFrictionForce
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetMaxFrictionForce(
+    inFrictionForce
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_PathConstraint_GetMaxFrictionForce(
-  JPC_PathConstraint_t * self
+float JoltC_PathConstraint_GetMaxFrictionForce(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  float result = selfCpp->GetMaxFrictionForce();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    float result = selfCpp->GetMaxFrictionForce();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_MotorSettings_t * JPC_PathConstraint_GetPositionMotorSettings(
-  JPC_PathConstraint_t * self
+JoltC_MotorSettings_t * JoltC_PathConstraint_GetPositionMotorSettings(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  MotorSettings& resultRef = selfCpp->GetPositionMotorSettings();
-  MotorSettings * result = &resultRef;
-  return reinterpret_cast<JPC_MotorSettings_t *>(result);
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    MotorSettings& resultRef = selfCpp->GetPositionMotorSettings();
+    MotorSettings * result = &resultRef;
+    return reinterpret_cast<JoltC_MotorSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetPositionMotorState(
-  JPC_PathConstraint_t * self,
-  JPC_EMotorState inState
+void JoltC_PathConstraint_SetPositionMotorState(
+  JoltC_PathConstraint_t * self,
+  JoltC_EMotorState inState,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetPositionMotorState(
-  static_cast<EMotorState>(static_cast<int>(inState))
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetPositionMotorState(
+    static_cast<EMotorState>(static_cast<int>(inState))
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EMotorState JPC_PathConstraint_GetPositionMotorState(
-  JPC_PathConstraint_t * self
+JoltC_EMotorState JoltC_PathConstraint_GetPositionMotorState(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  EMotorState result = selfCpp->GetPositionMotorState();
-  return static_cast<JPC_EMotorState>(static_cast<int>(result));
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    EMotorState result = selfCpp->GetPositionMotorState();
+    return static_cast<JoltC_EMotorState>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetTargetVelocity(
-  JPC_PathConstraint_t * self,
-  float inVelocity
+void JoltC_PathConstraint_SetTargetVelocity(
+  JoltC_PathConstraint_t * self,
+  float inVelocity,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetTargetVelocity(
-  inVelocity
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetTargetVelocity(
+    inVelocity
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_PathConstraint_GetTargetVelocity(
-  JPC_PathConstraint_t * self
+float JoltC_PathConstraint_GetTargetVelocity(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  float result = selfCpp->GetTargetVelocity();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    float result = selfCpp->GetTargetVelocity();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetTargetPathFraction(
-  JPC_PathConstraint_t * self,
-  float inFraction
+void JoltC_PathConstraint_SetTargetPathFraction(
+  JoltC_PathConstraint_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetTargetPathFraction(
-  inFraction
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetTargetPathFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_PathConstraint_GetTargetPathFraction(
-  JPC_PathConstraint_t * self
+float JoltC_PathConstraint_GetTargetPathFraction(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  float result = selfCpp->GetTargetPathFraction();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    float result = selfCpp->GetTargetPathFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_PathConstraint_GetBody1(
-  JPC_PathConstraint_t * self
+JoltC_Body_t * JoltC_PathConstraint_GetBody1(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody1();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_PathConstraint_GetBody2(
-  JPC_PathConstraint_t * self
+JoltC_Body_t * JoltC_PathConstraint_GetBody2(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody2();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_PathConstraint_GetConstraintToBody1Matrix(
-  JPC_PathConstraint_t * self
+JoltC_Mat44_t * JoltC_PathConstraint_GetConstraintToBody1Matrix(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_PathConstraint_GetConstraintToBody2Matrix(
-  JPC_PathConstraint_t * self
+JoltC_Mat44_t * JoltC_PathConstraint_GetConstraintToBody2Matrix(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_PathConstraint_GetRefCount(
-  JPC_PathConstraint_t * self
+unsigned long JoltC_PathConstraint_GetRefCount(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_AddRef(
-  JPC_PathConstraint_t * self
+void JoltC_PathConstraint_AddRef(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_Release(
-  JPC_PathConstraint_t * self
+void JoltC_PathConstraint_Release(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintType JPC_PathConstraint_GetType(
-  JPC_PathConstraint_t * self
+JoltC_EConstraintType JoltC_PathConstraint_GetType(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  EConstraintType result = selfCpp->GetType();
-  return static_cast<JPC_EConstraintType>(static_cast<int>(result));
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    EConstraintType result = selfCpp->GetType();
+    return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintSubType JPC_PathConstraint_GetSubType(
-  JPC_PathConstraint_t * self
+JoltC_EConstraintSubType JoltC_PathConstraint_GetSubType(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  EConstraintSubType result = selfCpp->GetSubType();
-  return static_cast<JPC_EConstraintSubType>(static_cast<int>(result));
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    EConstraintSubType result = selfCpp->GetSubType();
+    return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_PathConstraint_GetConstraintPriority(
-  JPC_PathConstraint_t * self
+unsigned long JoltC_PathConstraint_GetConstraintPriority(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetConstraintPriority();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetConstraintPriority(
-  JPC_PathConstraint_t * self,
-  unsigned long inPriority
+void JoltC_PathConstraint_SetConstraintPriority(
+  JoltC_PathConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetConstraintPriority(
-  inPriority
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetConstraintPriority(
+    inPriority
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetNumVelocityStepsOverride(
-  JPC_PathConstraint_t * self,
-  long inN
+void JoltC_PathConstraint_SetNumVelocityStepsOverride(
+  JoltC_PathConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetNumVelocityStepsOverride(
-  inN
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetNumVelocityStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_PathConstraint_GetNumVelocityStepsOverride(
-  JPC_PathConstraint_t * self
+long JoltC_PathConstraint_GetNumVelocityStepsOverride(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    long result = selfCpp->GetNumVelocityStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetNumPositionStepsOverride(
-  JPC_PathConstraint_t * self,
-  long inN
+void JoltC_PathConstraint_SetNumPositionStepsOverride(
+  JoltC_PathConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetNumPositionStepsOverride(
-  inN
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetNumPositionStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_PathConstraint_GetNumPositionStepsOverride(
-  JPC_PathConstraint_t * self
+long JoltC_PathConstraint_GetNumPositionStepsOverride(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    long result = selfCpp->GetNumPositionStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetEnabled(
-  JPC_PathConstraint_t * self,
-  bool inEnabled
+void JoltC_PathConstraint_SetEnabled(
+  JoltC_PathConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetEnabled(
-  inEnabled
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetEnabled(
+    inEnabled
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_PathConstraint_GetEnabled(
-  JPC_PathConstraint_t * self
+bool JoltC_PathConstraint_GetEnabled(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    bool result = selfCpp->GetEnabled();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_PathConstraint_IsActive(
-  JPC_PathConstraint_t * self
+bool JoltC_PathConstraint_IsActive(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    bool result = selfCpp->IsActive();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_PathConstraint_GetUserData(
-  JPC_PathConstraint_t * self
+unsigned long long int JoltC_PathConstraint_GetUserData(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_SetUserData(
-  JPC_PathConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_PathConstraint_SetUserData(
+  JoltC_PathConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraint_ResetWarmStart(
-  JPC_PathConstraint_t * self
+void JoltC_PathConstraint_ResetWarmStart(
+  JoltC_PathConstraint_t * self,
+  char** outErrMsg
 ) {
-  PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
-  selfCpp->ResetWarmStart();
+  try {
+    PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
+    
+    selfCpp->ResetWarmStart();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

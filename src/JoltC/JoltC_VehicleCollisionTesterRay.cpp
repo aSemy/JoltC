@@ -1,5 +1,6 @@
-#include "JoltC/JPC_VehicleCollisionTesterRay.h"
+#include "JoltC/JoltC_VehicleCollisionTesterRay.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,47 +8,83 @@ extern "C" {
 
 //region constructors
 
-JPC_VehicleCollisionTesterRay_t * JPC_VehicleCollisionTesterRay_new(
+JoltC_VehicleCollisionTesterRay_t * JoltC_VehicleCollisionTesterRay_new(
   unsigned long inObjectLayer,
-  JPC_Vec3_t * inUp,
-  float inMaxSlopeAngle
+  JoltC_Vec3_t * inUp,
+  float inMaxSlopeAngle,
+  char** outErrMsg
 ) {
-  JPC_VehicleCollisionTesterRay_t * cInstance = new JPC_VehicleCollisionTesterRay_t();
-  VehicleCollisionTesterRay * cppInstance = new VehicleCollisionTesterRay(
-    inObjectLayer,
-    *reinterpret_cast<Vec3 *>(inUp->obj),
-    inMaxSlopeAngle
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_VehicleCollisionTesterRay_t * cInstance = new JoltC_VehicleCollisionTesterRay_t();
+    VehicleCollisionTesterRay * cppInstance = new VehicleCollisionTesterRay(
+      inObjectLayer,
+      *reinterpret_cast<Vec3 *>(inUp->obj),
+      inMaxSlopeAngle
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_VehicleCollisionTesterRay_GetRefCount(
-  JPC_VehicleCollisionTesterRay_t * self
+unsigned long JoltC_VehicleCollisionTesterRay_GetRefCount(
+  JoltC_VehicleCollisionTesterRay_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_VehicleCollisionTesterRay_AddRef(
-  JPC_VehicleCollisionTesterRay_t * self
+void JoltC_VehicleCollisionTesterRay_AddRef(
+  JoltC_VehicleCollisionTesterRay_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_VehicleCollisionTesterRay_Release(
-  JPC_VehicleCollisionTesterRay_t * self
+void JoltC_VehicleCollisionTesterRay_Release(
+  JoltC_VehicleCollisionTesterRay_t * self,
+  char** outErrMsg
 ) {
-  VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

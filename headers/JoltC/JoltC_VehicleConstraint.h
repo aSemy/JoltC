@@ -8,153 +8,185 @@ extern "C" {
 
 //region constructors
 
-JPC_VehicleConstraint_t * JPC_VehicleConstraint_new(
-  JPC_Body_t * inVehicleBody,
-  const JPC_VehicleConstraintSettings_t * inSettings
+JoltC_VehicleConstraint_t * JoltC_VehicleConstraint_new(
+  JoltC_Body_t * inVehicleBody,
+  const JoltC_VehicleConstraintSettings_t * inSettings,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-void JPC_VehicleConstraint_SetMaxPitchRollAngle(
-  JPC_VehicleConstraint_t * self,
-  float inMaxPitchRollAngle
+void JoltC_VehicleConstraint_SetMaxPitchRollAngle(
+  JoltC_VehicleConstraint_t * self,
+  float inMaxPitchRollAngle,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_SetVehicleCollisionTester(
-  JPC_VehicleConstraint_t * self,
-  const JPC_VehicleCollisionTester_t * inTester
+void JoltC_VehicleConstraint_SetVehicleCollisionTester(
+  JoltC_VehicleConstraint_t * self,
+  const JoltC_VehicleCollisionTester_t * inTester,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_VehicleConstraint_GetLocalUp(
-  JPC_VehicleConstraint_t * self
+JoltC_Vec3_t * JoltC_VehicleConstraint_GetLocalUp(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_VehicleConstraint_GetLocalForward(
-  JPC_VehicleConstraint_t * self
+JoltC_Vec3_t * JoltC_VehicleConstraint_GetLocalForward(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_VehicleConstraint_GetWorldUp(
-  JPC_VehicleConstraint_t * self
+JoltC_Vec3_t * JoltC_VehicleConstraint_GetWorldUp(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_VehicleConstraint_GetVehicleBody(
-  JPC_VehicleConstraint_t * self
+JoltC_Body_t * JoltC_VehicleConstraint_GetVehicleBody(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_VehicleController_t * JPC_VehicleConstraint_GetController(
-  JPC_VehicleConstraint_t * self
+JoltC_VehicleController_t * JoltC_VehicleConstraint_GetController(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-const JPC_Wheel_t * JPC_VehicleConstraint_GetWheel(
-  JPC_VehicleConstraint_t * self,
-  unsigned long inIdx
+const JoltC_Wheel_t * JoltC_VehicleConstraint_GetWheel(
+  JoltC_VehicleConstraint_t * self,
+  unsigned long inIdx,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_VehicleConstraint_GetWheelLocalTransform(
-  JPC_VehicleConstraint_t * self,
+JoltC_Mat44_t * JoltC_VehicleConstraint_GetWheelLocalTransform(
+  JoltC_VehicleConstraint_t * self,
   unsigned long inWheelIndex,
-  JPC_Vec3_t * inWheelRight,
-  JPC_Vec3_t * inWheelUp
+  JoltC_Vec3_t * inWheelRight,
+  JoltC_Vec3_t * inWheelUp,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_VehicleConstraint_GetWheelWorldTransform(
-  JPC_VehicleConstraint_t * self,
+JoltC_RMat44_t * JoltC_VehicleConstraint_GetWheelWorldTransform(
+  JoltC_VehicleConstraint_t * self,
   unsigned long inWheelIndex,
-  JPC_Vec3_t * inWheelRight,
-  JPC_Vec3_t * inWheelUp
+  JoltC_Vec3_t * inWheelRight,
+  JoltC_Vec3_t * inWheelUp,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_SetNumStepsBetweenCollisionTestActive(
-  JPC_VehicleConstraint_t * self,
-  unsigned long inSteps
+void JoltC_VehicleConstraint_SetNumStepsBetweenCollisionTestActive(
+  JoltC_VehicleConstraint_t * self,
+  unsigned long inSteps,
+  char** outErrMsg
 );
 
-const unsigned long JPC_VehicleConstraint_GetNumStepsBetweenCollisionTestActive(
-  JPC_VehicleConstraint_t * self
+const unsigned long JoltC_VehicleConstraint_GetNumStepsBetweenCollisionTestActive(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_SetNumStepsBetweenCollisionTestInactive(
-  JPC_VehicleConstraint_t * self,
-  unsigned long inSteps
+void JoltC_VehicleConstraint_SetNumStepsBetweenCollisionTestInactive(
+  JoltC_VehicleConstraint_t * self,
+  unsigned long inSteps,
+  char** outErrMsg
 );
 
-const unsigned long JPC_VehicleConstraint_GetNumStepsBetweenCollisionTestInactive(
-  JPC_VehicleConstraint_t * self
+const unsigned long JoltC_VehicleConstraint_GetNumStepsBetweenCollisionTestInactive(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_VehicleConstraint_GetRefCount(
-  JPC_VehicleConstraint_t * self
+unsigned long JoltC_VehicleConstraint_GetRefCount(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_AddRef(
-  JPC_VehicleConstraint_t * self
+void JoltC_VehicleConstraint_AddRef(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_Release(
-  JPC_VehicleConstraint_t * self
+void JoltC_VehicleConstraint_Release(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintType JPC_VehicleConstraint_GetType(
-  JPC_VehicleConstraint_t * self
+JoltC_EConstraintType JoltC_VehicleConstraint_GetType(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintSubType JPC_VehicleConstraint_GetSubType(
-  JPC_VehicleConstraint_t * self
+JoltC_EConstraintSubType JoltC_VehicleConstraint_GetSubType(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_VehicleConstraint_GetConstraintPriority(
-  JPC_VehicleConstraint_t * self
+unsigned long JoltC_VehicleConstraint_GetConstraintPriority(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_SetConstraintPriority(
-  JPC_VehicleConstraint_t * self,
-  unsigned long inPriority
+void JoltC_VehicleConstraint_SetConstraintPriority(
+  JoltC_VehicleConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_SetNumVelocityStepsOverride(
-  JPC_VehicleConstraint_t * self,
-  long inN
+void JoltC_VehicleConstraint_SetNumVelocityStepsOverride(
+  JoltC_VehicleConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_VehicleConstraint_GetNumVelocityStepsOverride(
-  JPC_VehicleConstraint_t * self
+long JoltC_VehicleConstraint_GetNumVelocityStepsOverride(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_SetNumPositionStepsOverride(
-  JPC_VehicleConstraint_t * self,
-  long inN
+void JoltC_VehicleConstraint_SetNumPositionStepsOverride(
+  JoltC_VehicleConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_VehicleConstraint_GetNumPositionStepsOverride(
-  JPC_VehicleConstraint_t * self
+long JoltC_VehicleConstraint_GetNumPositionStepsOverride(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_SetEnabled(
-  JPC_VehicleConstraint_t * self,
-  bool inEnabled
+void JoltC_VehicleConstraint_SetEnabled(
+  JoltC_VehicleConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 );
 
-bool JPC_VehicleConstraint_GetEnabled(
-  JPC_VehicleConstraint_t * self
+bool JoltC_VehicleConstraint_GetEnabled(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_VehicleConstraint_IsActive(
-  JPC_VehicleConstraint_t * self
+bool JoltC_VehicleConstraint_IsActive(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_VehicleConstraint_GetUserData(
-  JPC_VehicleConstraint_t * self
+unsigned long long int JoltC_VehicleConstraint_GetUserData(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_SetUserData(
-  JPC_VehicleConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_VehicleConstraint_SetUserData(
+  JoltC_VehicleConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-void JPC_VehicleConstraint_ResetWarmStart(
-  JPC_VehicleConstraint_t * self
+void JoltC_VehicleConstraint_ResetWarmStart(
+  JoltC_VehicleConstraint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

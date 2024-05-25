@@ -8,113 +8,137 @@ extern "C" {
 
 //region constructors
 
-JPC_ConeConstraintSettings_t * JPC_ConeConstraintSettings_new();
+JoltC_ConeConstraintSettings_t * JoltC_ConeConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_Constraint_t * JPC_ConeConstraintSettings_Create(
-  JPC_ConeConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_ConeConstraintSettings_Create(
+  JoltC_ConeConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_ConeConstraintSettings_GetRefCount(
-  JPC_ConeConstraintSettings_t * self
+unsigned long JoltC_ConeConstraintSettings_GetRefCount(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_AddRef(
-  JPC_ConeConstraintSettings_t * self
+void JoltC_ConeConstraintSettings_AddRef(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_Release(
-  JPC_ConeConstraintSettings_t * self
+void JoltC_ConeConstraintSettings_Release(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_ConeConstraintSettings_mSpace_Get(
-  JPC_ConeConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_ConeConstraintSettings_mSpace_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mSpace_Set(
-  JPC_ConeConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_ConeConstraintSettings_mSpace_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_ConeConstraintSettings_mPoint1_Get(
-  JPC_ConeConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_ConeConstraintSettings_mPoint1_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mPoint1_Set(
-  JPC_ConeConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint1
+void JoltC_ConeConstraintSettings_mPoint1_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ConeConstraintSettings_mTwistAxis1_Get(
-  JPC_ConeConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_ConeConstraintSettings_mTwistAxis1_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mTwistAxis1_Set(
-  JPC_ConeConstraintSettings_t * self,
-  JPC_Vec3_t * mTwistAxis1
+void JoltC_ConeConstraintSettings_mTwistAxis1_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  JoltC_Vec3_t * mTwistAxis1,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_ConeConstraintSettings_mPoint2_Get(
-  JPC_ConeConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_ConeConstraintSettings_mPoint2_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mPoint2_Set(
-  JPC_ConeConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint2
+void JoltC_ConeConstraintSettings_mPoint2_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ConeConstraintSettings_mTwistAxis2_Get(
-  JPC_ConeConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_ConeConstraintSettings_mTwistAxis2_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mTwistAxis2_Set(
-  JPC_ConeConstraintSettings_t * self,
-  JPC_Vec3_t * mTwistAxis2
+void JoltC_ConeConstraintSettings_mTwistAxis2_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  JoltC_Vec3_t * mTwistAxis2,
+  char** outErrMsg
 );
 
-float JPC_ConeConstraintSettings_mHalfConeAngle_Get(
-  JPC_ConeConstraintSettings_t * self
+float JoltC_ConeConstraintSettings_mHalfConeAngle_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mHalfConeAngle_Set(
-  JPC_ConeConstraintSettings_t * self,
-  float mHalfConeAngle
+void JoltC_ConeConstraintSettings_mHalfConeAngle_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  float mHalfConeAngle,
+  char** outErrMsg
 );
 
-bool JPC_ConeConstraintSettings_mEnabled_Get(
-  JPC_ConeConstraintSettings_t * self
+bool JoltC_ConeConstraintSettings_mEnabled_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mEnabled_Set(
-  JPC_ConeConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_ConeConstraintSettings_mEnabled_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_ConeConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_ConeConstraintSettings_t * self
+long JoltC_ConeConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_ConeConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_ConeConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_ConeConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_ConeConstraintSettings_t * self
+long JoltC_ConeConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_ConeConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConeConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_ConeConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_ConeConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_ConeConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

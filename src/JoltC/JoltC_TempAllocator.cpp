@@ -1,5 +1,6 @@
-#include "JoltC/JPC_TempAllocator.h"
+#include "JoltC/JoltC_TempAllocator.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {

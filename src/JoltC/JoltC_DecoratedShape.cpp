@@ -1,5 +1,6 @@
-#include "JoltC/JPC_DecoratedShape.h"
+#include "JoltC/JoltC_DecoratedShape.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,223 +8,421 @@ extern "C" {
 
 //region functions
 
-const JPC_Shape_t * JPC_DecoratedShape_GetInnerShape(
-  JPC_DecoratedShape_t * self
+const JoltC_Shape_t * JoltC_DecoratedShape_GetInnerShape(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  const Shape * result = selfCpp->GetInnerShape();
-  return reinterpret_cast<const JPC_Shape_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    const Shape * result = selfCpp->GetInnerShape();
+    return reinterpret_cast<const JoltC_Shape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_DecoratedShape_GetRefCount(
-  JPC_DecoratedShape_t * self
+unsigned long JoltC_DecoratedShape_GetRefCount(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DecoratedShape_AddRef(
-  JPC_DecoratedShape_t * self
+void JoltC_DecoratedShape_AddRef(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DecoratedShape_Release(
-  JPC_DecoratedShape_t * self
+void JoltC_DecoratedShape_Release(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EShapeType JPC_DecoratedShape_GetType(
-  JPC_DecoratedShape_t * self
+JoltC_EShapeType JoltC_DecoratedShape_GetType(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  EShapeType result = selfCpp->GetType();
-  return static_cast<JPC_EShapeType>(static_cast<int>(result));
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    EShapeType result = selfCpp->GetType();
+    return static_cast<JoltC_EShapeType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EShapeSubType JPC_DecoratedShape_GetSubType(
-  JPC_DecoratedShape_t * self
+JoltC_EShapeSubType JoltC_DecoratedShape_GetSubType(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  EShapeSubType result = selfCpp->GetSubType();
-  return static_cast<JPC_EShapeSubType>(static_cast<int>(result));
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    EShapeSubType result = selfCpp->GetSubType();
+    return static_cast<JoltC_EShapeSubType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_DecoratedShape_MustBeStatic(
-  JPC_DecoratedShape_t * self
+bool JoltC_DecoratedShape_MustBeStatic(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  bool result = selfCpp->MustBeStatic();
-  return result;
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    bool result = selfCpp->MustBeStatic();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_AABox_t * JPC_DecoratedShape_GetLocalBounds(
-  JPC_DecoratedShape_t * self
+JoltC_AABox_t * JoltC_DecoratedShape_GetLocalBounds(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  AABox resultValue = selfCpp->GetLocalBounds();
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JPC_AABox_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    AABox resultValue = selfCpp->GetLocalBounds();
+    AABox* result = new AABox(resultValue);
+    return reinterpret_cast<JoltC_AABox_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_AABox_t * JPC_DecoratedShape_GetWorldSpaceBounds(
-  JPC_DecoratedShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_DecoratedShape_GetWorldSpaceBounds(
+  JoltC_DecoratedShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  AABox resultValue = selfCpp->GetWorldSpaceBounds(
-  *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JPC_AABox_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    AABox resultValue = selfCpp->GetWorldSpaceBounds(
+    *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    AABox* result = new AABox(resultValue);
+    return reinterpret_cast<JoltC_AABox_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_DecoratedShape_GetCenterOfMass(
-  JPC_DecoratedShape_t * self
+JoltC_Vec3_t * JoltC_DecoratedShape_GetCenterOfMass(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetCenterOfMass();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    Vec3 resultValue = selfCpp->GetCenterOfMass();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_DecoratedShape_GetUserData(
-  JPC_DecoratedShape_t * self
+unsigned long long int JoltC_DecoratedShape_GetUserData(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_DecoratedShape_SetUserData(
-  JPC_DecoratedShape_t * self,
-  unsigned long long int inUserData
+void JoltC_DecoratedShape_SetUserData(
+  JoltC_DecoratedShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_DecoratedShape_GetSubShapeIDBitsRecursive(
-  JPC_DecoratedShape_t * self
+unsigned long JoltC_DecoratedShape_GetSubShapeIDBitsRecursive(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  unsigned long result = selfCpp->GetSubShapeIDBitsRecursive();
-  return result;
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    unsigned long result = selfCpp->GetSubShapeIDBitsRecursive();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_DecoratedShape_GetInnerRadius(
-  JPC_DecoratedShape_t * self
+float JoltC_DecoratedShape_GetInnerRadius(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  float result = selfCpp->GetInnerRadius();
-  return result;
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    float result = selfCpp->GetInnerRadius();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_MassProperties_t * JPC_DecoratedShape_GetMassProperties(
-  JPC_DecoratedShape_t * self
+JoltC_MassProperties_t * JoltC_DecoratedShape_GetMassProperties(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  MassProperties resultValue = selfCpp->GetMassProperties();
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JPC_MassProperties_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    MassProperties resultValue = selfCpp->GetMassProperties();
+    MassProperties* result = new MassProperties(resultValue);
+    return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_PhysicsMaterial_t * JPC_DecoratedShape_GetMaterial(
-  JPC_DecoratedShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_DecoratedShape_GetMaterial(
+  JoltC_DecoratedShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetMaterial(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-  );
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    const PhysicsMaterial * result = selfCpp->GetMaterial(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    );
+    return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_DecoratedShape_GetSurfaceNormal(
-  JPC_DecoratedShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_DecoratedShape_GetSurfaceNormal(
+  JoltC_DecoratedShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetSurfaceNormal(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
-  );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    Vec3 resultValue = selfCpp->GetSurfaceNormal(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
+    );
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_DecoratedShape_GetSubShapeUserData(
-  JPC_DecoratedShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_DecoratedShape_GetSubShapeUserData(
+  JoltC_DecoratedShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  unsigned long long int result = selfCpp->GetSubShapeUserData(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-  );
-  return result;
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    unsigned long long int result = selfCpp->GetSubShapeUserData(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_TransformedShape_t * JPC_DecoratedShape_GetSubShapeTransformedShape(
-  JPC_DecoratedShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_DecoratedShape_GetSubShapeTransformedShape(
+  JoltC_DecoratedShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
-  *reinterpret_cast<Quat *>(inRotation->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj),
-  *reinterpret_cast<SubShapeID *>(outRemainder->obj)
-  );
-  TransformedShape* result = new TransformedShape(resultValue);
-  return reinterpret_cast<JPC_TransformedShape_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
+    *reinterpret_cast<Quat *>(inRotation->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj),
+    *reinterpret_cast<SubShapeID *>(outRemainder->obj)
+    );
+    TransformedShape* result = new TransformedShape(resultValue);
+    return reinterpret_cast<JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_DecoratedShape_GetVolume(
-  JPC_DecoratedShape_t * self
+float JoltC_DecoratedShape_GetVolume(
+  JoltC_DecoratedShape_t * self,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  float result = selfCpp->GetVolume();
-  return result;
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    float result = selfCpp->GetVolume();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_DecoratedShape_IsValidScale(
-  JPC_DecoratedShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_DecoratedShape_IsValidScale(
+  JoltC_DecoratedShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  bool result = selfCpp->IsValidScale(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  return result;
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    bool result = selfCpp->IsValidScale(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_ShapeResult_t * JPC_DecoratedShape_ScaleShape(
-  JPC_DecoratedShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_DecoratedShape_ScaleShape(
+  JoltC_DecoratedShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->ScaleShape(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JPC_Shape_ShapeResult_t *>(result);
+  try {
+    DecoratedShape * selfCpp = static_cast<DecoratedShape *>(self->obj);
+    Shape::ShapeResult resultValue = selfCpp->ScaleShape(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

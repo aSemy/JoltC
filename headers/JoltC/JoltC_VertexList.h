@@ -8,42 +8,51 @@ extern "C" {
 
 //region constructors
 
-JPC_VertexList_t * JPC_VertexList_new();
+JoltC_VertexList_t * JoltC_VertexList_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_VertexList_empty(
-  JPC_VertexList_t * self
+bool JoltC_VertexList_empty(
+  JoltC_VertexList_t * self,
+  char** outErrMsg
 );
 
-long JPC_VertexList_size(
-  JPC_VertexList_t * self
+long JoltC_VertexList_size(
+  JoltC_VertexList_t * self,
+  char** outErrMsg
 );
 
-JPC_Float3_t * JPC_VertexList_at(
-  JPC_VertexList_t * self,
-  long inIndex
+JoltC_Float3_t * JoltC_VertexList_at(
+  JoltC_VertexList_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_VertexList_push_back(
-  JPC_VertexList_t * self,
-  const JPC_Float3_t * inVertex
+void JoltC_VertexList_push_back(
+  JoltC_VertexList_t * self,
+  const JoltC_Float3_t * inVertex,
+  char** outErrMsg
 );
 
-void JPC_VertexList_reserve(
-  JPC_VertexList_t * self,
-  unsigned long inSize
+void JoltC_VertexList_reserve(
+  JoltC_VertexList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_VertexList_resize(
-  JPC_VertexList_t * self,
-  unsigned long inSize
+void JoltC_VertexList_resize(
+  JoltC_VertexList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_VertexList_clear(
-  JPC_VertexList_t * self
+void JoltC_VertexList_clear(
+  JoltC_VertexList_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

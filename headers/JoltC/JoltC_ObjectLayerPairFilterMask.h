@@ -8,29 +8,35 @@ extern "C" {
 
 //region constructors
 
-JPC_ObjectLayerPairFilterMask_t * JPC_ObjectLayerPairFilterMask_new();
+JoltC_ObjectLayerPairFilterMask_t * JoltC_ObjectLayerPairFilterMask_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_ObjectLayerPairFilterMask_sGetObjectLayer(
+unsigned long JoltC_ObjectLayerPairFilterMask_sGetObjectLayer(
   unsigned long inGroup,
-  unsigned long inMask
+  unsigned long inMask,
+  char** outErrMsg
 );
 
-unsigned long JPC_ObjectLayerPairFilterMask_sGetGroup(
-  unsigned long inObjectLayer
+unsigned long JoltC_ObjectLayerPairFilterMask_sGetGroup(
+  unsigned long inObjectLayer,
+  char** outErrMsg
 );
 
-unsigned long JPC_ObjectLayerPairFilterMask_sGetMask(
-  unsigned long inObjectLayer
+unsigned long JoltC_ObjectLayerPairFilterMask_sGetMask(
+  unsigned long inObjectLayer,
+  char** outErrMsg
 );
 
-bool JPC_ObjectLayerPairFilterMask_ShouldCollide(
-  JPC_ObjectLayerPairFilterMask_t * self,
+bool JoltC_ObjectLayerPairFilterMask_ShouldCollide(
+  JoltC_ObjectLayerPairFilterMask_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2
+  unsigned long inLayer2,
+  char** outErrMsg
 );
 
 //endregion functions

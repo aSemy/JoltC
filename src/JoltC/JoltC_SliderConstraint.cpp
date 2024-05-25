@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SliderConstraint.h"
+#include "JoltC/JoltC_SliderConstraint.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,373 +8,742 @@ extern "C" {
 
 //region functions
 
-float JPC_SliderConstraint_GetCurrentPosition(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetCurrentPosition(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  float result = selfCpp->GetCurrentPosition();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    float result = selfCpp->GetCurrentPosition();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetMaxFrictionForce(
-  JPC_SliderConstraint_t * self,
-  float inFrictionForce
+void JoltC_SliderConstraint_SetMaxFrictionForce(
+  JoltC_SliderConstraint_t * self,
+  float inFrictionForce,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetMaxFrictionForce(
-  inFrictionForce
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetMaxFrictionForce(
+    inFrictionForce
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SliderConstraint_GetMaxFrictionForce(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetMaxFrictionForce(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  float result = selfCpp->GetMaxFrictionForce();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    float result = selfCpp->GetMaxFrictionForce();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_MotorSettings_t * JPC_SliderConstraint_GetMotorSettings(
-  JPC_SliderConstraint_t * self
+JoltC_MotorSettings_t * JoltC_SliderConstraint_GetMotorSettings(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  MotorSettings& resultRef = selfCpp->GetMotorSettings();
-  MotorSettings * result = &resultRef;
-  return reinterpret_cast<JPC_MotorSettings_t *>(result);
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    MotorSettings& resultRef = selfCpp->GetMotorSettings();
+    MotorSettings * result = &resultRef;
+    return reinterpret_cast<JoltC_MotorSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetMotorState(
-  JPC_SliderConstraint_t * self,
-  JPC_EMotorState inState
+void JoltC_SliderConstraint_SetMotorState(
+  JoltC_SliderConstraint_t * self,
+  JoltC_EMotorState inState,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetMotorState(
-  static_cast<EMotorState>(static_cast<int>(inState))
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetMotorState(
+    static_cast<EMotorState>(static_cast<int>(inState))
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EMotorState JPC_SliderConstraint_GetMotorState(
-  JPC_SliderConstraint_t * self
+JoltC_EMotorState JoltC_SliderConstraint_GetMotorState(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  EMotorState result = selfCpp->GetMotorState();
-  return static_cast<JPC_EMotorState>(static_cast<int>(result));
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    EMotorState result = selfCpp->GetMotorState();
+    return static_cast<JoltC_EMotorState>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetTargetVelocity(
-  JPC_SliderConstraint_t * self,
-  float inVelocity
+void JoltC_SliderConstraint_SetTargetVelocity(
+  JoltC_SliderConstraint_t * self,
+  float inVelocity,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetTargetVelocity(
-  inVelocity
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetTargetVelocity(
+    inVelocity
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SliderConstraint_GetTargetVelocity(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetTargetVelocity(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  float result = selfCpp->GetTargetVelocity();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    float result = selfCpp->GetTargetVelocity();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetTargetPosition(
-  JPC_SliderConstraint_t * self,
-  float inPosition
+void JoltC_SliderConstraint_SetTargetPosition(
+  JoltC_SliderConstraint_t * self,
+  float inPosition,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetTargetPosition(
-  inPosition
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetTargetPosition(
+    inPosition
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SliderConstraint_GetTargetPosition(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetTargetPosition(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  float result = selfCpp->GetTargetPosition();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    float result = selfCpp->GetTargetPosition();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetLimits(
-  JPC_SliderConstraint_t * self,
+void JoltC_SliderConstraint_SetLimits(
+  JoltC_SliderConstraint_t * self,
   float inLimitsMin,
-  float inLimitsMax
+  float inLimitsMax,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetLimits(
-  inLimitsMin,
-  inLimitsMax
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetLimits(
+    inLimitsMin,
+    inLimitsMax
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SliderConstraint_GetLimitsMin(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetLimitsMin(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  float result = selfCpp->GetLimitsMin();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    float result = selfCpp->GetLimitsMin();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SliderConstraint_GetLimitsMax(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetLimitsMax(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  float result = selfCpp->GetLimitsMax();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    float result = selfCpp->GetLimitsMax();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_SliderConstraint_HasLimits(
-  JPC_SliderConstraint_t * self
+bool JoltC_SliderConstraint_HasLimits(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  bool result = selfCpp->HasLimits();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    bool result = selfCpp->HasLimits();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_SpringSettings_t * JPC_SliderConstraint_GetLimitsSpringSettings(
-  JPC_SliderConstraint_t * self
+JoltC_SpringSettings_t * JoltC_SliderConstraint_GetLimitsSpringSettings(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  SpringSettings& resultRef = selfCpp->GetLimitsSpringSettings();
-  SpringSettings * result = &resultRef;
-  return reinterpret_cast<JPC_SpringSettings_t *>(result);
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    SpringSettings& resultRef = selfCpp->GetLimitsSpringSettings();
+    SpringSettings * result = &resultRef;
+    return reinterpret_cast<JoltC_SpringSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetLimitsSpringSettings(
-  JPC_SliderConstraint_t * self,
-  const JPC_SpringSettings_t * inLimitsSpringSettings
+void JoltC_SliderConstraint_SetLimitsSpringSettings(
+  JoltC_SliderConstraint_t * self,
+  const JoltC_SpringSettings_t * inLimitsSpringSettings,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetLimitsSpringSettings(
-  *reinterpret_cast<SpringSettings *>(inLimitsSpringSettings->obj)
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetLimitsSpringSettings(
+    *reinterpret_cast<SpringSettings *>(inLimitsSpringSettings->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vector2_t * JPC_SliderConstraint_GetTotalLambdaPosition(
-  JPC_SliderConstraint_t * self
+JoltC_Vector2_t * JoltC_SliderConstraint_GetTotalLambdaPosition(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Vector2 resultValue = selfCpp->GetTotalLambdaPosition();
-  Vector2* result = new Vector2(resultValue);
-  return reinterpret_cast<JPC_Vector2_t *>(result);
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    Vector2 resultValue = selfCpp->GetTotalLambdaPosition();
+    Vector2* result = new Vector2(resultValue);
+    return reinterpret_cast<JoltC_Vector2_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SliderConstraint_GetTotalLambdaPositionLimits(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetTotalLambdaPositionLimits(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaPositionLimits();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    float result = selfCpp->GetTotalLambdaPositionLimits();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_SliderConstraint_GetTotalLambdaRotation(
-  JPC_SliderConstraint_t * self
+JoltC_Vec3_t * JoltC_SliderConstraint_GetTotalLambdaRotation(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTotalLambdaRotation();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    Vec3 resultValue = selfCpp->GetTotalLambdaRotation();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SliderConstraint_GetTotalLambdaMotor(
-  JPC_SliderConstraint_t * self
+float JoltC_SliderConstraint_GetTotalLambdaMotor(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaMotor();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    float result = selfCpp->GetTotalLambdaMotor();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_SliderConstraint_GetBody1(
-  JPC_SliderConstraint_t * self
+JoltC_Body_t * JoltC_SliderConstraint_GetBody1(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody1();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_SliderConstraint_GetBody2(
-  JPC_SliderConstraint_t * self
+JoltC_Body_t * JoltC_SliderConstraint_GetBody2(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody2();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_SliderConstraint_GetConstraintToBody1Matrix(
-  JPC_SliderConstraint_t * self
+JoltC_Mat44_t * JoltC_SliderConstraint_GetConstraintToBody1Matrix(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_SliderConstraint_GetConstraintToBody2Matrix(
-  JPC_SliderConstraint_t * self
+JoltC_Mat44_t * JoltC_SliderConstraint_GetConstraintToBody2Matrix(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_SliderConstraint_GetRefCount(
-  JPC_SliderConstraint_t * self
+unsigned long JoltC_SliderConstraint_GetRefCount(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_AddRef(
-  JPC_SliderConstraint_t * self
+void JoltC_SliderConstraint_AddRef(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_Release(
-  JPC_SliderConstraint_t * self
+void JoltC_SliderConstraint_Release(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintType JPC_SliderConstraint_GetType(
-  JPC_SliderConstraint_t * self
+JoltC_EConstraintType JoltC_SliderConstraint_GetType(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  EConstraintType result = selfCpp->GetType();
-  return static_cast<JPC_EConstraintType>(static_cast<int>(result));
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    EConstraintType result = selfCpp->GetType();
+    return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintSubType JPC_SliderConstraint_GetSubType(
-  JPC_SliderConstraint_t * self
+JoltC_EConstraintSubType JoltC_SliderConstraint_GetSubType(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  EConstraintSubType result = selfCpp->GetSubType();
-  return static_cast<JPC_EConstraintSubType>(static_cast<int>(result));
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    EConstraintSubType result = selfCpp->GetSubType();
+    return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_SliderConstraint_GetConstraintPriority(
-  JPC_SliderConstraint_t * self
+unsigned long JoltC_SliderConstraint_GetConstraintPriority(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetConstraintPriority();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetConstraintPriority(
-  JPC_SliderConstraint_t * self,
-  unsigned long inPriority
+void JoltC_SliderConstraint_SetConstraintPriority(
+  JoltC_SliderConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetConstraintPriority(
-  inPriority
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetConstraintPriority(
+    inPriority
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetNumVelocityStepsOverride(
-  JPC_SliderConstraint_t * self,
-  long inN
+void JoltC_SliderConstraint_SetNumVelocityStepsOverride(
+  JoltC_SliderConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetNumVelocityStepsOverride(
-  inN
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetNumVelocityStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_SliderConstraint_GetNumVelocityStepsOverride(
-  JPC_SliderConstraint_t * self
+long JoltC_SliderConstraint_GetNumVelocityStepsOverride(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    long result = selfCpp->GetNumVelocityStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetNumPositionStepsOverride(
-  JPC_SliderConstraint_t * self,
-  long inN
+void JoltC_SliderConstraint_SetNumPositionStepsOverride(
+  JoltC_SliderConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetNumPositionStepsOverride(
-  inN
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetNumPositionStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_SliderConstraint_GetNumPositionStepsOverride(
-  JPC_SliderConstraint_t * self
+long JoltC_SliderConstraint_GetNumPositionStepsOverride(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    long result = selfCpp->GetNumPositionStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetEnabled(
-  JPC_SliderConstraint_t * self,
-  bool inEnabled
+void JoltC_SliderConstraint_SetEnabled(
+  JoltC_SliderConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetEnabled(
-  inEnabled
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetEnabled(
+    inEnabled
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_SliderConstraint_GetEnabled(
-  JPC_SliderConstraint_t * self
+bool JoltC_SliderConstraint_GetEnabled(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    bool result = selfCpp->GetEnabled();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_SliderConstraint_IsActive(
-  JPC_SliderConstraint_t * self
+bool JoltC_SliderConstraint_IsActive(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    bool result = selfCpp->IsActive();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_SliderConstraint_GetUserData(
-  JPC_SliderConstraint_t * self
+unsigned long long int JoltC_SliderConstraint_GetUserData(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_SetUserData(
-  JPC_SliderConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_SliderConstraint_SetUserData(
+  JoltC_SliderConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SliderConstraint_ResetWarmStart(
-  JPC_SliderConstraint_t * self
+void JoltC_SliderConstraint_ResetWarmStart(
+  JoltC_SliderConstraint_t * self,
+  char** outErrMsg
 ) {
-  SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  
-  selfCpp->ResetWarmStart();
+  try {
+    SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
+    
+    selfCpp->ResetWarmStart();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

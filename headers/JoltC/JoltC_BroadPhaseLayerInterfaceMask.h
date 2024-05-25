@@ -8,23 +8,26 @@ extern "C" {
 
 //region constructors
 
-JPC_BroadPhaseLayerInterfaceMask_t * JPC_BroadPhaseLayerInterfaceMask_new(
-  unsigned long inNumBroadPhaseLayers
+JoltC_BroadPhaseLayerInterfaceMask_t * JoltC_BroadPhaseLayerInterfaceMask_new(
+  unsigned long inNumBroadPhaseLayers,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-void JPC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
-  JPC_BroadPhaseLayerInterfaceMask_t * self,
-  const JPC_BroadPhaseLayer_t * inBroadPhaseLayer,
+void JoltC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
+  JoltC_BroadPhaseLayerInterfaceMask_t * self,
+  const JoltC_BroadPhaseLayer_t * inBroadPhaseLayer,
   unsigned long inGroupsToInclude,
-  unsigned long inGroupsToExclude
+  unsigned long inGroupsToExclude,
+  char** outErrMsg
 );
 
-unsigned long JPC_BroadPhaseLayerInterfaceMask_GetNumBroadPhaseLayers(
-  JPC_BroadPhaseLayerInterfaceMask_t * self
+unsigned long JoltC_BroadPhaseLayerInterfaceMask_GetNumBroadPhaseLayers(
+  JoltC_BroadPhaseLayerInterfaceMask_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

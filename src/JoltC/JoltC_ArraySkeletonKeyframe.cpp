@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArraySkeletonKeyframe.h"
+#include "JoltC/JoltC_ArraySkeletonKeyframe.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,84 +8,157 @@ extern "C" {
 
 //region constructors
 
-JPC_ArraySkeletonKeyframe_t * JPC_ArraySkeletonKeyframe_new() {
-  JPC_ArraySkeletonKeyframe_t * cInstance = new JPC_ArraySkeletonKeyframe_t();
-  ArraySkeletonKeyframe * cppInstance = new ArraySkeletonKeyframe();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_ArraySkeletonKeyframe_t * JoltC_ArraySkeletonKeyframe_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_ArraySkeletonKeyframe_t * cInstance = new JoltC_ArraySkeletonKeyframe_t();
+    ArraySkeletonKeyframe * cppInstance = new ArraySkeletonKeyframe();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-bool JPC_ArraySkeletonKeyframe_empty(
-  JPC_ArraySkeletonKeyframe_t * self
+bool JoltC_ArraySkeletonKeyframe_empty(
+  JoltC_ArraySkeletonKeyframe_t * self,
+  char** outErrMsg
 ) {
-  ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArraySkeletonKeyframe_size(
-  JPC_ArraySkeletonKeyframe_t * self
+long JoltC_ArraySkeletonKeyframe_size(
+  JoltC_ArraySkeletonKeyframe_t * self,
+  char** outErrMsg
 ) {
-  ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_SkeletalAnimationKeyframe_t * JPC_ArraySkeletonKeyframe_at(
-  JPC_ArraySkeletonKeyframe_t * self,
-  long inIndex
+JoltC_SkeletalAnimationKeyframe_t * JoltC_ArraySkeletonKeyframe_at(
+  JoltC_ArraySkeletonKeyframe_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  SkeletalAnimationKeyframe& resultRef = selfCpp->at(
-  inIndex
-  );
-  SkeletalAnimationKeyframe * result = &resultRef;
-  return reinterpret_cast<JPC_SkeletalAnimationKeyframe_t *>(result);
+  try {
+    ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
+    SkeletalAnimationKeyframe& resultRef = selfCpp->at(
+    inIndex
+    );
+    SkeletalAnimationKeyframe * result = &resultRef;
+    return reinterpret_cast<JoltC_SkeletalAnimationKeyframe_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySkeletonKeyframe_push_back(
-  JPC_ArraySkeletonKeyframe_t * self,
-  JPC_SkeletalAnimationKeyframe_t * inValue
+void JoltC_ArraySkeletonKeyframe_push_back(
+  JoltC_ArraySkeletonKeyframe_t * self,
+  JoltC_SkeletalAnimationKeyframe_t * inValue,
+  char** outErrMsg
 ) {
-  ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<SkeletalAnimationKeyframe *>(inValue->obj)
-  );
+  try {
+    ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<SkeletalAnimationKeyframe *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySkeletonKeyframe_reserve(
-  JPC_ArraySkeletonKeyframe_t * self,
-  unsigned long inSize
+void JoltC_ArraySkeletonKeyframe_reserve(
+  JoltC_ArraySkeletonKeyframe_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySkeletonKeyframe_resize(
-  JPC_ArraySkeletonKeyframe_t * self,
-  unsigned long inSize
+void JoltC_ArraySkeletonKeyframe_resize(
+  JoltC_ArraySkeletonKeyframe_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySkeletonKeyframe_clear(
-  JPC_ArraySkeletonKeyframe_t * self
+void JoltC_ArraySkeletonKeyframe_clear(
+  JoltC_ArraySkeletonKeyframe_t * self,
+  char** outErrMsg
 ) {
-  ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

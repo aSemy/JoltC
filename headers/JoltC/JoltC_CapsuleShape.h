@@ -8,129 +8,155 @@ extern "C" {
 
 //region constructors
 
-JPC_CapsuleShape_t * JPC_CapsuleShape_new(
+JoltC_CapsuleShape_t * JoltC_CapsuleShape_new(
   float inHalfHeight,
   float inRadius,
-  const JPC_PhysicsMaterial_t * inMaterial
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-float JPC_CapsuleShape_GetRadius(
-  JPC_CapsuleShape_t * self
+float JoltC_CapsuleShape_GetRadius(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_CapsuleShape_GetHalfHeightOfCylinder(
-  JPC_CapsuleShape_t * self
+float JoltC_CapsuleShape_GetHalfHeightOfCylinder(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_CapsuleShape_GetDensity(
-  JPC_CapsuleShape_t * self
+float JoltC_CapsuleShape_GetDensity(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_CapsuleShape_SetDensity(
-  JPC_CapsuleShape_t * self,
-  float inDensity
+void JoltC_CapsuleShape_SetDensity(
+  JoltC_CapsuleShape_t * self,
+  float inDensity,
+  char** outErrMsg
 );
 
-unsigned long JPC_CapsuleShape_GetRefCount(
-  JPC_CapsuleShape_t * self
+unsigned long JoltC_CapsuleShape_GetRefCount(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_CapsuleShape_AddRef(
-  JPC_CapsuleShape_t * self
+void JoltC_CapsuleShape_AddRef(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_CapsuleShape_Release(
-  JPC_CapsuleShape_t * self
+void JoltC_CapsuleShape_Release(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_CapsuleShape_GetType(
-  JPC_CapsuleShape_t * self
+JoltC_EShapeType JoltC_CapsuleShape_GetType(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_CapsuleShape_GetSubType(
-  JPC_CapsuleShape_t * self
+JoltC_EShapeSubType JoltC_CapsuleShape_GetSubType(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CapsuleShape_MustBeStatic(
-  JPC_CapsuleShape_t * self
+bool JoltC_CapsuleShape_MustBeStatic(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_CapsuleShape_GetLocalBounds(
-  JPC_CapsuleShape_t * self
+JoltC_AABox_t * JoltC_CapsuleShape_GetLocalBounds(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_CapsuleShape_GetWorldSpaceBounds(
-  JPC_CapsuleShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_CapsuleShape_GetWorldSpaceBounds(
+  JoltC_CapsuleShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CapsuleShape_GetCenterOfMass(
-  JPC_CapsuleShape_t * self
+JoltC_Vec3_t * JoltC_CapsuleShape_GetCenterOfMass(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_CapsuleShape_GetUserData(
-  JPC_CapsuleShape_t * self
+unsigned long long int JoltC_CapsuleShape_GetUserData(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_CapsuleShape_SetUserData(
-  JPC_CapsuleShape_t * self,
-  unsigned long long int inUserData
+void JoltC_CapsuleShape_SetUserData(
+  JoltC_CapsuleShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_CapsuleShape_GetSubShapeIDBitsRecursive(
-  JPC_CapsuleShape_t * self
+unsigned long JoltC_CapsuleShape_GetSubShapeIDBitsRecursive(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_CapsuleShape_GetInnerRadius(
-  JPC_CapsuleShape_t * self
+float JoltC_CapsuleShape_GetInnerRadius(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_CapsuleShape_GetMassProperties(
-  JPC_CapsuleShape_t * self
+JoltC_MassProperties_t * JoltC_CapsuleShape_GetMassProperties(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_CapsuleShape_GetMaterial(
-  JPC_CapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_CapsuleShape_GetMaterial(
+  JoltC_CapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CapsuleShape_GetSurfaceNormal(
-  JPC_CapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_CapsuleShape_GetSurfaceNormal(
+  JoltC_CapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_CapsuleShape_GetSubShapeUserData(
-  JPC_CapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_CapsuleShape_GetSubShapeUserData(
+  JoltC_CapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_CapsuleShape_GetSubShapeTransformedShape(
-  JPC_CapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_CapsuleShape_GetSubShapeTransformedShape(
+  JoltC_CapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_CapsuleShape_GetVolume(
-  JPC_CapsuleShape_t * self
+float JoltC_CapsuleShape_GetVolume(
+  JoltC_CapsuleShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CapsuleShape_IsValidScale(
-  JPC_CapsuleShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_CapsuleShape_IsValidScale(
+  JoltC_CapsuleShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_CapsuleShape_ScaleShape(
-  JPC_CapsuleShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_CapsuleShape_ScaleShape(
+  JoltC_CapsuleShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

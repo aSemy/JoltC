@@ -8,61 +8,66 @@ extern "C" {
 
 //region functions
 
-void JPC_NarrowPhaseQuery_CastRay(
-  JPC_NarrowPhaseQuery_t * self,
-  const JPC_RRayCast_t * inRay,
-  const JPC_RayCastSettings_t * inRayCastSettings,
-  JPC_CastRayCollector_t * ioCollector,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_NarrowPhaseQuery_CastRay(
+  JoltC_NarrowPhaseQuery_t * self,
+  const JoltC_RRayCast_t * inRay,
+  const JoltC_RayCastSettings_t * inRayCastSettings,
+  JoltC_CastRayCollector_t * ioCollector,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 );
 
-void JPC_NarrowPhaseQuery_CollidePoint(
-  JPC_NarrowPhaseQuery_t * self,
-  const JPC_RVec3_t * inPoint,
-  JPC_CollidePointCollector_t * ioCollector,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_NarrowPhaseQuery_CollidePoint(
+  JoltC_NarrowPhaseQuery_t * self,
+  const JoltC_RVec3_t * inPoint,
+  JoltC_CollidePointCollector_t * ioCollector,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 );
 
-void JPC_NarrowPhaseQuery_CollideShape(
-  JPC_NarrowPhaseQuery_t * self,
-  const JPC_Shape_t * inShape,
-  const JPC_Vec3_t * inShapeScale,
-  const JPC_RMat44_t * inCenterOfMassTransform,
-  const JPC_CollideShapeSettings_t * inCollideShapeSettings,
-  const JPC_RVec3_t * inBaseOffset,
-  JPC_CollideShapeCollector_t * ioCollector,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_NarrowPhaseQuery_CollideShape(
+  JoltC_NarrowPhaseQuery_t * self,
+  const JoltC_Shape_t * inShape,
+  const JoltC_Vec3_t * inShapeScale,
+  const JoltC_RMat44_t * inCenterOfMassTransform,
+  const JoltC_CollideShapeSettings_t * inCollideShapeSettings,
+  const JoltC_RVec3_t * inBaseOffset,
+  JoltC_CollideShapeCollector_t * ioCollector,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 );
 
-void JPC_NarrowPhaseQuery_CastShape(
-  JPC_NarrowPhaseQuery_t * self,
-  const JPC_RShapeCast_t * inShapeCast,
-  const JPC_ShapeCastSettings_t * inShapeCastSettings,
-  const JPC_RVec3_t * inBaseOffset,
-  JPC_CastShapeCollector_t * ioCollector,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_NarrowPhaseQuery_CastShape(
+  JoltC_NarrowPhaseQuery_t * self,
+  const JoltC_RShapeCast_t * inShapeCast,
+  const JoltC_ShapeCastSettings_t * inShapeCastSettings,
+  const JoltC_RVec3_t * inBaseOffset,
+  JoltC_CastShapeCollector_t * ioCollector,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 );
 
-void JPC_NarrowPhaseQuery_CollectTransformedShapes(
-  JPC_NarrowPhaseQuery_t * self,
-  const JPC_AABox_t * inBox,
-  JPC_TransformedShapeCollector_t * ioCollector,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter
+void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
+  JoltC_NarrowPhaseQuery_t * self,
+  const JoltC_AABox_t * inBox,
+  JoltC_TransformedShapeCollector_t * ioCollector,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  char** outErrMsg
 );
 
 //endregion functions

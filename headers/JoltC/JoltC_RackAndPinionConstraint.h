@@ -8,103 +8,126 @@ extern "C" {
 
 //region functions
 
-void JPC_RackAndPinionConstraint_SetConstraints(
-  JPC_RackAndPinionConstraint_t * self,
-  const JPC_Constraint_t * inPinion,
-  const JPC_Constraint_t * inRack
+void JoltC_RackAndPinionConstraint_SetConstraints(
+  JoltC_RackAndPinionConstraint_t * self,
+  const JoltC_Constraint_t * inPinion,
+  const JoltC_Constraint_t * inRack,
+  char** outErrMsg
 );
 
-float JPC_RackAndPinionConstraint_GetTotalLambda(
-  JPC_RackAndPinionConstraint_t * self
+float JoltC_RackAndPinionConstraint_GetTotalLambda(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_RackAndPinionConstraint_GetBody1(
-  JPC_RackAndPinionConstraint_t * self
+JoltC_Body_t * JoltC_RackAndPinionConstraint_GetBody1(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_RackAndPinionConstraint_GetBody2(
-  JPC_RackAndPinionConstraint_t * self
+JoltC_Body_t * JoltC_RackAndPinionConstraint_GetBody2(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_RackAndPinionConstraint_GetConstraintToBody1Matrix(
-  JPC_RackAndPinionConstraint_t * self
+JoltC_Mat44_t * JoltC_RackAndPinionConstraint_GetConstraintToBody1Matrix(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_RackAndPinionConstraint_GetConstraintToBody2Matrix(
-  JPC_RackAndPinionConstraint_t * self
+JoltC_Mat44_t * JoltC_RackAndPinionConstraint_GetConstraintToBody2Matrix(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_RackAndPinionConstraint_GetRefCount(
-  JPC_RackAndPinionConstraint_t * self
+unsigned long JoltC_RackAndPinionConstraint_GetRefCount(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraint_AddRef(
-  JPC_RackAndPinionConstraint_t * self
+void JoltC_RackAndPinionConstraint_AddRef(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraint_Release(
-  JPC_RackAndPinionConstraint_t * self
+void JoltC_RackAndPinionConstraint_Release(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintType JPC_RackAndPinionConstraint_GetType(
-  JPC_RackAndPinionConstraint_t * self
+JoltC_EConstraintType JoltC_RackAndPinionConstraint_GetType(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintSubType JPC_RackAndPinionConstraint_GetSubType(
-  JPC_RackAndPinionConstraint_t * self
+JoltC_EConstraintSubType JoltC_RackAndPinionConstraint_GetSubType(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_RackAndPinionConstraint_GetConstraintPriority(
-  JPC_RackAndPinionConstraint_t * self
+unsigned long JoltC_RackAndPinionConstraint_GetConstraintPriority(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraint_SetConstraintPriority(
-  JPC_RackAndPinionConstraint_t * self,
-  unsigned long inPriority
+void JoltC_RackAndPinionConstraint_SetConstraintPriority(
+  JoltC_RackAndPinionConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraint_SetNumVelocityStepsOverride(
-  JPC_RackAndPinionConstraint_t * self,
-  long inN
+void JoltC_RackAndPinionConstraint_SetNumVelocityStepsOverride(
+  JoltC_RackAndPinionConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_RackAndPinionConstraint_GetNumVelocityStepsOverride(
-  JPC_RackAndPinionConstraint_t * self
+long JoltC_RackAndPinionConstraint_GetNumVelocityStepsOverride(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraint_SetNumPositionStepsOverride(
-  JPC_RackAndPinionConstraint_t * self,
-  long inN
+void JoltC_RackAndPinionConstraint_SetNumPositionStepsOverride(
+  JoltC_RackAndPinionConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_RackAndPinionConstraint_GetNumPositionStepsOverride(
-  JPC_RackAndPinionConstraint_t * self
+long JoltC_RackAndPinionConstraint_GetNumPositionStepsOverride(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraint_SetEnabled(
-  JPC_RackAndPinionConstraint_t * self,
-  bool inEnabled
+void JoltC_RackAndPinionConstraint_SetEnabled(
+  JoltC_RackAndPinionConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 );
 
-bool JPC_RackAndPinionConstraint_GetEnabled(
-  JPC_RackAndPinionConstraint_t * self
+bool JoltC_RackAndPinionConstraint_GetEnabled(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_RackAndPinionConstraint_IsActive(
-  JPC_RackAndPinionConstraint_t * self
+bool JoltC_RackAndPinionConstraint_IsActive(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_RackAndPinionConstraint_GetUserData(
-  JPC_RackAndPinionConstraint_t * self
+unsigned long long int JoltC_RackAndPinionConstraint_GetUserData(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraint_SetUserData(
-  JPC_RackAndPinionConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_RackAndPinionConstraint_SetUserData(
+  JoltC_RackAndPinionConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraint_ResetWarmStart(
-  JPC_RackAndPinionConstraint_t * self
+void JoltC_RackAndPinionConstraint_ResetWarmStart(
+  JoltC_RackAndPinionConstraint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

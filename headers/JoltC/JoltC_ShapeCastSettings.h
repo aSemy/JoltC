@@ -8,91 +8,111 @@ extern "C" {
 
 //region constructors
 
-JPC_ShapeCastSettings_t * JPC_ShapeCastSettings_new();
+JoltC_ShapeCastSettings_t * JoltC_ShapeCastSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-JPC_EBackFaceMode JPC_ShapeCastSettings_mBackFaceModeTriangles_Get(
-  JPC_ShapeCastSettings_t * self
+JoltC_EBackFaceMode JoltC_ShapeCastSettings_mBackFaceModeTriangles_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mBackFaceModeTriangles_Set(
-  JPC_ShapeCastSettings_t * self,
-  JPC_EBackFaceMode mBackFaceModeTriangles
+void JoltC_ShapeCastSettings_mBackFaceModeTriangles_Set(
+  JoltC_ShapeCastSettings_t * self,
+  JoltC_EBackFaceMode mBackFaceModeTriangles,
+  char** outErrMsg
 );
 
-JPC_EBackFaceMode JPC_ShapeCastSettings_mBackFaceModeConvex_Get(
-  JPC_ShapeCastSettings_t * self
+JoltC_EBackFaceMode JoltC_ShapeCastSettings_mBackFaceModeConvex_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mBackFaceModeConvex_Set(
-  JPC_ShapeCastSettings_t * self,
-  JPC_EBackFaceMode mBackFaceModeConvex
+void JoltC_ShapeCastSettings_mBackFaceModeConvex_Set(
+  JoltC_ShapeCastSettings_t * self,
+  JoltC_EBackFaceMode mBackFaceModeConvex,
+  char** outErrMsg
 );
 
-bool JPC_ShapeCastSettings_mUseShrunkenShapeAndConvexRadius_Get(
-  JPC_ShapeCastSettings_t * self
+bool JoltC_ShapeCastSettings_mUseShrunkenShapeAndConvexRadius_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mUseShrunkenShapeAndConvexRadius_Set(
-  JPC_ShapeCastSettings_t * self,
-  bool mUseShrunkenShapeAndConvexRadius
+void JoltC_ShapeCastSettings_mUseShrunkenShapeAndConvexRadius_Set(
+  JoltC_ShapeCastSettings_t * self,
+  bool mUseShrunkenShapeAndConvexRadius,
+  char** outErrMsg
 );
 
-bool JPC_ShapeCastSettings_mReturnDeepestPoint_Get(
-  JPC_ShapeCastSettings_t * self
+bool JoltC_ShapeCastSettings_mReturnDeepestPoint_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mReturnDeepestPoint_Set(
-  JPC_ShapeCastSettings_t * self,
-  bool mReturnDeepestPoint
+void JoltC_ShapeCastSettings_mReturnDeepestPoint_Set(
+  JoltC_ShapeCastSettings_t * self,
+  bool mReturnDeepestPoint,
+  char** outErrMsg
 );
 
-JPC_EActiveEdgeMode JPC_ShapeCastSettings_mActiveEdgeMode_Get(
-  JPC_ShapeCastSettings_t * self
+JoltC_EActiveEdgeMode JoltC_ShapeCastSettings_mActiveEdgeMode_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mActiveEdgeMode_Set(
-  JPC_ShapeCastSettings_t * self,
-  JPC_EActiveEdgeMode mActiveEdgeMode
+void JoltC_ShapeCastSettings_mActiveEdgeMode_Set(
+  JoltC_ShapeCastSettings_t * self,
+  JoltC_EActiveEdgeMode mActiveEdgeMode,
+  char** outErrMsg
 );
 
-JPC_ECollectFacesMode JPC_ShapeCastSettings_mCollectFacesMode_Get(
-  JPC_ShapeCastSettings_t * self
+JoltC_ECollectFacesMode JoltC_ShapeCastSettings_mCollectFacesMode_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mCollectFacesMode_Set(
-  JPC_ShapeCastSettings_t * self,
-  JPC_ECollectFacesMode mCollectFacesMode
+void JoltC_ShapeCastSettings_mCollectFacesMode_Set(
+  JoltC_ShapeCastSettings_t * self,
+  JoltC_ECollectFacesMode mCollectFacesMode,
+  char** outErrMsg
 );
 
-float JPC_ShapeCastSettings_mCollisionTolerance_Get(
-  JPC_ShapeCastSettings_t * self
+float JoltC_ShapeCastSettings_mCollisionTolerance_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mCollisionTolerance_Set(
-  JPC_ShapeCastSettings_t * self,
-  float mCollisionTolerance
+void JoltC_ShapeCastSettings_mCollisionTolerance_Set(
+  JoltC_ShapeCastSettings_t * self,
+  float mCollisionTolerance,
+  char** outErrMsg
 );
 
-float JPC_ShapeCastSettings_mPenetrationTolerance_Get(
-  JPC_ShapeCastSettings_t * self
+float JoltC_ShapeCastSettings_mPenetrationTolerance_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mPenetrationTolerance_Set(
-  JPC_ShapeCastSettings_t * self,
-  float mPenetrationTolerance
+void JoltC_ShapeCastSettings_mPenetrationTolerance_Set(
+  JoltC_ShapeCastSettings_t * self,
+  float mPenetrationTolerance,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ShapeCastSettings_mActiveEdgeMovementDirection_Get(
-  JPC_ShapeCastSettings_t * self
+JoltC_Vec3_t * JoltC_ShapeCastSettings_mActiveEdgeMovementDirection_Get(
+  JoltC_ShapeCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastSettings_mActiveEdgeMovementDirection_Set(
-  JPC_ShapeCastSettings_t * self,
-  JPC_Vec3_t * mActiveEdgeMovementDirection
+void JoltC_ShapeCastSettings_mActiveEdgeMovementDirection_Set(
+  JoltC_ShapeCastSettings_t * self,
+  JoltC_Vec3_t * mActiveEdgeMovementDirection,
+  char** outErrMsg
 );
 
 //endregion properties

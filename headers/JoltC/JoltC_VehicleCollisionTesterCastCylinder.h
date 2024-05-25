@@ -8,25 +8,29 @@ extern "C" {
 
 //region constructors
 
-JPC_VehicleCollisionTesterCastCylinder_t * JPC_VehicleCollisionTesterCastCylinder_new(
+JoltC_VehicleCollisionTesterCastCylinder_t * JoltC_VehicleCollisionTesterCastCylinder_new(
   unsigned long inObjectLayer,
-  float inConvexRadiusFraction
+  float inConvexRadiusFraction,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_VehicleCollisionTesterCastCylinder_GetRefCount(
-  JPC_VehicleCollisionTesterCastCylinder_t * self
+unsigned long JoltC_VehicleCollisionTesterCastCylinder_GetRefCount(
+  JoltC_VehicleCollisionTesterCastCylinder_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleCollisionTesterCastCylinder_AddRef(
-  JPC_VehicleCollisionTesterCastCylinder_t * self
+void JoltC_VehicleCollisionTesterCastCylinder_AddRef(
+  JoltC_VehicleCollisionTesterCastCylinder_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleCollisionTesterCastCylinder_Release(
-  JPC_VehicleCollisionTesterCastCylinder_t * self
+void JoltC_VehicleCollisionTesterCastCylinder_Release(
+  JoltC_VehicleCollisionTesterCastCylinder_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

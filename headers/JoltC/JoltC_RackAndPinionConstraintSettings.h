@@ -8,102 +8,123 @@ extern "C" {
 
 //region constructors
 
-JPC_RackAndPinionConstraintSettings_t * JPC_RackAndPinionConstraintSettings_new();
+JoltC_RackAndPinionConstraintSettings_t * JoltC_RackAndPinionConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_RackAndPinionConstraintSettings_SetRatio(
-  JPC_RackAndPinionConstraintSettings_t * self,
+void JoltC_RackAndPinionConstraintSettings_SetRatio(
+  JoltC_RackAndPinionConstraintSettings_t * self,
   long inNumTeethRack,
   float inRackLength,
-  long inNumTeethPinion
+  long inNumTeethPinion,
+  char** outErrMsg
 );
 
-JPC_Constraint_t * JPC_RackAndPinionConstraintSettings_Create(
-  JPC_RackAndPinionConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_RackAndPinionConstraintSettings_Create(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_RackAndPinionConstraintSettings_GetRefCount(
-  JPC_RackAndPinionConstraintSettings_t * self
+unsigned long JoltC_RackAndPinionConstraintSettings_GetRefCount(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_AddRef(
-  JPC_RackAndPinionConstraintSettings_t * self
+void JoltC_RackAndPinionConstraintSettings_AddRef(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_Release(
-  JPC_RackAndPinionConstraintSettings_t * self
+void JoltC_RackAndPinionConstraintSettings_Release(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_RackAndPinionConstraintSettings_mSpace_Get(
-  JPC_RackAndPinionConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_RackAndPinionConstraintSettings_mSpace_Get(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_mSpace_Set(
-  JPC_RackAndPinionConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_RackAndPinionConstraintSettings_mSpace_Set(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_RackAndPinionConstraintSettings_mHingeAxis_Get(
-  JPC_RackAndPinionConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_RackAndPinionConstraintSettings_mHingeAxis_Get(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_mHingeAxis_Set(
-  JPC_RackAndPinionConstraintSettings_t * self,
-  JPC_Vec3_t * mHingeAxis
+void JoltC_RackAndPinionConstraintSettings_mHingeAxis_Set(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  JoltC_Vec3_t * mHingeAxis,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_RackAndPinionConstraintSettings_mSliderAxis_Get(
-  JPC_RackAndPinionConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_RackAndPinionConstraintSettings_mSliderAxis_Get(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_mSliderAxis_Set(
-  JPC_RackAndPinionConstraintSettings_t * self,
-  JPC_Vec3_t * mSliderAxis
+void JoltC_RackAndPinionConstraintSettings_mSliderAxis_Set(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  JoltC_Vec3_t * mSliderAxis,
+  char** outErrMsg
 );
 
-float JPC_RackAndPinionConstraintSettings_mRatio_Get(
-  JPC_RackAndPinionConstraintSettings_t * self
+float JoltC_RackAndPinionConstraintSettings_mRatio_Get(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_mRatio_Set(
-  JPC_RackAndPinionConstraintSettings_t * self,
-  float mRatio
+void JoltC_RackAndPinionConstraintSettings_mRatio_Set(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  float mRatio,
+  char** outErrMsg
 );
 
-bool JPC_RackAndPinionConstraintSettings_mEnabled_Get(
-  JPC_RackAndPinionConstraintSettings_t * self
+bool JoltC_RackAndPinionConstraintSettings_mEnabled_Get(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_mEnabled_Set(
-  JPC_RackAndPinionConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_RackAndPinionConstraintSettings_mEnabled_Set(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_RackAndPinionConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_RackAndPinionConstraintSettings_t * self
+long JoltC_RackAndPinionConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_RackAndPinionConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_RackAndPinionConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_RackAndPinionConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_RackAndPinionConstraintSettings_t * self
+long JoltC_RackAndPinionConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RackAndPinionConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_RackAndPinionConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_RackAndPinionConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_RackAndPinionConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

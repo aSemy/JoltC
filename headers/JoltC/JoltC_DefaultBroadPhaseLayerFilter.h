@@ -8,9 +8,10 @@ extern "C" {
 
 //region constructors
 
-JPC_DefaultBroadPhaseLayerFilter_t * JPC_DefaultBroadPhaseLayerFilter_new(
-  const JPC_ObjectVsBroadPhaseLayerFilter_t * inFilter,
-  unsigned long inObjectLayer
+JoltC_DefaultBroadPhaseLayerFilter_t * JoltC_DefaultBroadPhaseLayerFilter_new(
+  const JoltC_ObjectVsBroadPhaseLayerFilter_t * inFilter,
+  unsigned long inObjectLayer,
+  char** outErrMsg
 );
 
 //endregion constructors

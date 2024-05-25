@@ -8,75 +8,90 @@ extern "C" {
 
 //region constructors
 
-JPC_Vec4_t * JPC_Vec4_new_0();
-
-JPC_Vec4_t * JPC_Vec4_new_1(
-  const JPC_Vec4_t * inV
+JoltC_Vec4_t * JoltC_Vec4_new_0(
+  char** outErrMsg
 );
 
-JPC_Vec4_t * JPC_Vec4_new_2(
-  JPC_Vec3_t * inV,
-  float inW
+JoltC_Vec4_t * JoltC_Vec4_new_1(
+  const JoltC_Vec4_t * inV,
+  char** outErrMsg
 );
 
-JPC_Vec4_t * JPC_Vec4_new_3(
+JoltC_Vec4_t * JoltC_Vec4_new_2(
+  JoltC_Vec3_t * inV,
+  float inW,
+  char** outErrMsg
+);
+
+JoltC_Vec4_t * JoltC_Vec4_new_3(
   float inX,
   float inY,
   float inZ,
-  float inW
+  float inW,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-float JPC_Vec4_GetX(
-  JPC_Vec4_t * self
+float JoltC_Vec4_GetX(
+  JoltC_Vec4_t * self,
+  char** outErrMsg
 );
 
-float JPC_Vec4_GetY(
-  JPC_Vec4_t * self
+float JoltC_Vec4_GetY(
+  JoltC_Vec4_t * self,
+  char** outErrMsg
 );
 
-float JPC_Vec4_GetZ(
-  JPC_Vec4_t * self
+float JoltC_Vec4_GetZ(
+  JoltC_Vec4_t * self,
+  char** outErrMsg
 );
 
-float JPC_Vec4_GetW(
-  JPC_Vec4_t * self
+float JoltC_Vec4_GetW(
+  JoltC_Vec4_t * self,
+  char** outErrMsg
 );
 
-void JPC_Vec4_SetX(
-  JPC_Vec4_t * self,
-  float inX
+void JoltC_Vec4_SetX(
+  JoltC_Vec4_t * self,
+  float inX,
+  char** outErrMsg
 );
 
-void JPC_Vec4_SetY(
-  JPC_Vec4_t * self,
-  float inY
+void JoltC_Vec4_SetY(
+  JoltC_Vec4_t * self,
+  float inY,
+  char** outErrMsg
 );
 
-void JPC_Vec4_SetZ(
-  JPC_Vec4_t * self,
-  float inZ
+void JoltC_Vec4_SetZ(
+  JoltC_Vec4_t * self,
+  float inZ,
+  char** outErrMsg
 );
 
-void JPC_Vec4_SetW(
-  JPC_Vec4_t * self,
-  float inW
+void JoltC_Vec4_SetW(
+  JoltC_Vec4_t * self,
+  float inW,
+  char** outErrMsg
 );
 
-void JPC_Vec4_Set(
-  JPC_Vec4_t * self,
+void JoltC_Vec4_Set(
+  JoltC_Vec4_t * self,
   float inX,
   float inY,
   float inZ,
-  float inW
+  float inW,
+  char** outErrMsg
 );
 
-float JPC_Vec4_GetComponent(
-  JPC_Vec4_t * self,
-  unsigned long inCoordinate
+float JoltC_Vec4_GetComponent(
+  JoltC_Vec4_t * self,
+  unsigned long inCoordinate,
+  char** outErrMsg
 );
 
 //endregion functions

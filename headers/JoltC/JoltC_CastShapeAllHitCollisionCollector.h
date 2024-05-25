@@ -8,70 +8,85 @@ extern "C" {
 
 //region constructors
 
-JPC_CastShapeAllHitCollisionCollector_t * JPC_CastShapeAllHitCollisionCollector_new();
+JoltC_CastShapeAllHitCollisionCollector_t * JoltC_CastShapeAllHitCollisionCollector_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_CastShapeAllHitCollisionCollector_Sort(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+void JoltC_CastShapeAllHitCollisionCollector_Sort(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CastShapeAllHitCollisionCollector_HadHit(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+bool JoltC_CastShapeAllHitCollisionCollector_HadHit(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastShapeAllHitCollisionCollector_Reset(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+void JoltC_CastShapeAllHitCollisionCollector_Reset(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastShapeAllHitCollisionCollector_SetContext(
-  JPC_CastShapeAllHitCollisionCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CastShapeAllHitCollisionCollector_SetContext(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_CastShapeAllHitCollisionCollector_GetContext(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CastShapeAllHitCollisionCollector_GetContext(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastShapeAllHitCollisionCollector_UpdateEarlyOutFraction(
-  JPC_CastShapeAllHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CastShapeAllHitCollisionCollector_UpdateEarlyOutFraction(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CastShapeAllHitCollisionCollector_ResetEarlyOutFraction(
-  JPC_CastShapeAllHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CastShapeAllHitCollisionCollector_ResetEarlyOutFraction(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CastShapeAllHitCollisionCollector_ForceEarlyOut(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+void JoltC_CastShapeAllHitCollisionCollector_ForceEarlyOut(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CastShapeAllHitCollisionCollector_ShouldEarlyOut(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+bool JoltC_CastShapeAllHitCollisionCollector_ShouldEarlyOut(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CastShapeAllHitCollisionCollector_GetEarlyOutFraction(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+float JoltC_CastShapeAllHitCollisionCollector_GetEarlyOutFraction(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CastShapeAllHitCollisionCollector_GetPositiveEarlyOutFraction(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+float JoltC_CastShapeAllHitCollisionCollector_GetPositiveEarlyOutFraction(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_ArrayShapeCastResult_t * JPC_CastShapeAllHitCollisionCollector_mHits_Get(
-  JPC_CastShapeAllHitCollisionCollector_t * self
+JoltC_ArrayShapeCastResult_t * JoltC_CastShapeAllHitCollisionCollector_mHits_Get(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastShapeAllHitCollisionCollector_mHits_Set(
-  JPC_CastShapeAllHitCollisionCollector_t * self,
-  JPC_ArrayShapeCastResult_t * mHits
+void JoltC_CastShapeAllHitCollisionCollector_mHits_Set(
+  JoltC_CastShapeAllHitCollisionCollector_t * self,
+  JoltC_ArrayShapeCastResult_t * mHits,
+  char** outErrMsg
 );
 
 //endregion properties

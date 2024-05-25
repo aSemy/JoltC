@@ -8,42 +8,51 @@ extern "C" {
 
 //region constructors
 
-JPC_BodyIDVector_t * JPC_BodyIDVector_new();
+JoltC_BodyIDVector_t * JoltC_BodyIDVector_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_BodyIDVector_empty(
-  JPC_BodyIDVector_t * self
+bool JoltC_BodyIDVector_empty(
+  JoltC_BodyIDVector_t * self,
+  char** outErrMsg
 );
 
-long JPC_BodyIDVector_size(
-  JPC_BodyIDVector_t * self
+long JoltC_BodyIDVector_size(
+  JoltC_BodyIDVector_t * self,
+  char** outErrMsg
 );
 
-JPC_BodyID_t * JPC_BodyIDVector_at(
-  JPC_BodyIDVector_t * self,
-  long inIndex
+JoltC_BodyID_t * JoltC_BodyIDVector_at(
+  JoltC_BodyIDVector_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_BodyIDVector_push_back(
-  JPC_BodyIDVector_t * self,
-  const JPC_BodyID_t * inBodyID
+void JoltC_BodyIDVector_push_back(
+  JoltC_BodyIDVector_t * self,
+  const JoltC_BodyID_t * inBodyID,
+  char** outErrMsg
 );
 
-void JPC_BodyIDVector_reserve(
-  JPC_BodyIDVector_t * self,
-  unsigned long inSize
+void JoltC_BodyIDVector_reserve(
+  JoltC_BodyIDVector_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_BodyIDVector_resize(
-  JPC_BodyIDVector_t * self,
-  unsigned long inSize
+void JoltC_BodyIDVector_resize(
+  JoltC_BodyIDVector_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_BodyIDVector_clear(
-  JPC_BodyIDVector_t * self
+void JoltC_BodyIDVector_clear(
+  JoltC_BodyIDVector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

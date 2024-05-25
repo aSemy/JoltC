@@ -8,91 +8,111 @@ extern "C" {
 
 //region constructors
 
-JPC_CollideShapeResult_t * JPC_CollideShapeResult_new();
+JoltC_CollideShapeResult_t * JoltC_CollideShapeResult_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-JPC_Vec3_t * JPC_CollideShapeResult_mContactPointOn1_Get(
-  JPC_CollideShapeResult_t * self
+JoltC_Vec3_t * JoltC_CollideShapeResult_mContactPointOn1_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mContactPointOn1_Set(
-  JPC_CollideShapeResult_t * self,
-  JPC_Vec3_t * mContactPointOn1
+void JoltC_CollideShapeResult_mContactPointOn1_Set(
+  JoltC_CollideShapeResult_t * self,
+  JoltC_Vec3_t * mContactPointOn1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CollideShapeResult_mContactPointOn2_Get(
-  JPC_CollideShapeResult_t * self
+JoltC_Vec3_t * JoltC_CollideShapeResult_mContactPointOn2_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mContactPointOn2_Set(
-  JPC_CollideShapeResult_t * self,
-  JPC_Vec3_t * mContactPointOn2
+void JoltC_CollideShapeResult_mContactPointOn2_Set(
+  JoltC_CollideShapeResult_t * self,
+  JoltC_Vec3_t * mContactPointOn2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CollideShapeResult_mPenetrationAxis_Get(
-  JPC_CollideShapeResult_t * self
+JoltC_Vec3_t * JoltC_CollideShapeResult_mPenetrationAxis_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mPenetrationAxis_Set(
-  JPC_CollideShapeResult_t * self,
-  JPC_Vec3_t * mPenetrationAxis
+void JoltC_CollideShapeResult_mPenetrationAxis_Set(
+  JoltC_CollideShapeResult_t * self,
+  JoltC_Vec3_t * mPenetrationAxis,
+  char** outErrMsg
 );
 
-float JPC_CollideShapeResult_mPenetrationDepth_Get(
-  JPC_CollideShapeResult_t * self
+float JoltC_CollideShapeResult_mPenetrationDepth_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mPenetrationDepth_Set(
-  JPC_CollideShapeResult_t * self,
-  float mPenetrationDepth
+void JoltC_CollideShapeResult_mPenetrationDepth_Set(
+  JoltC_CollideShapeResult_t * self,
+  float mPenetrationDepth,
+  char** outErrMsg
 );
 
-JPC_SubShapeID_t * JPC_CollideShapeResult_mSubShapeID1_Get(
-  JPC_CollideShapeResult_t * self
+JoltC_SubShapeID_t * JoltC_CollideShapeResult_mSubShapeID1_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mSubShapeID1_Set(
-  JPC_CollideShapeResult_t * self,
-  JPC_SubShapeID_t * mSubShapeID1
+void JoltC_CollideShapeResult_mSubShapeID1_Set(
+  JoltC_CollideShapeResult_t * self,
+  JoltC_SubShapeID_t * mSubShapeID1,
+  char** outErrMsg
 );
 
-JPC_SubShapeID_t * JPC_CollideShapeResult_mSubShapeID2_Get(
-  JPC_CollideShapeResult_t * self
+JoltC_SubShapeID_t * JoltC_CollideShapeResult_mSubShapeID2_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mSubShapeID2_Set(
-  JPC_CollideShapeResult_t * self,
-  JPC_SubShapeID_t * mSubShapeID2
+void JoltC_CollideShapeResult_mSubShapeID2_Set(
+  JoltC_CollideShapeResult_t * self,
+  JoltC_SubShapeID_t * mSubShapeID2,
+  char** outErrMsg
 );
 
-JPC_BodyID_t * JPC_CollideShapeResult_mBodyID2_Get(
-  JPC_CollideShapeResult_t * self
+JoltC_BodyID_t * JoltC_CollideShapeResult_mBodyID2_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mBodyID2_Set(
-  JPC_CollideShapeResult_t * self,
-  JPC_BodyID_t * mBodyID2
+void JoltC_CollideShapeResult_mBodyID2_Set(
+  JoltC_CollideShapeResult_t * self,
+  JoltC_BodyID_t * mBodyID2,
+  char** outErrMsg
 );
 
-JPC_CollideShapeResultFace_t * JPC_CollideShapeResult_mShape1Face_Get(
-  JPC_CollideShapeResult_t * self
+JoltC_CollideShapeResultFace_t * JoltC_CollideShapeResult_mShape1Face_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mShape1Face_Set(
-  JPC_CollideShapeResult_t * self,
-  JPC_CollideShapeResultFace_t * mShape1Face
+void JoltC_CollideShapeResult_mShape1Face_Set(
+  JoltC_CollideShapeResult_t * self,
+  JoltC_CollideShapeResultFace_t * mShape1Face,
+  char** outErrMsg
 );
 
-JPC_CollideShapeResultFace_t * JPC_CollideShapeResult_mShape2Face_Get(
-  JPC_CollideShapeResult_t * self
+JoltC_CollideShapeResultFace_t * JoltC_CollideShapeResult_mShape2Face_Get(
+  JoltC_CollideShapeResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeResult_mShape2Face_Set(
-  JPC_CollideShapeResult_t * self,
-  JPC_CollideShapeResultFace_t * mShape2Face
+void JoltC_CollideShapeResult_mShape2Face_Set(
+  JoltC_CollideShapeResult_t * self,
+  JoltC_CollideShapeResultFace_t * mShape2Face,
+  char** outErrMsg
 );
 
 //endregion properties

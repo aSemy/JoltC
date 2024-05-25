@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SpecifiedObjectLayerFilter.h"
+#include "JoltC/JoltC_SpecifiedObjectLayerFilter.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,15 +8,24 @@ extern "C" {
 
 //region constructors
 
-JPC_SpecifiedObjectLayerFilter_t * JPC_SpecifiedObjectLayerFilter_new(
-  unsigned long inObjectLayer
+JoltC_SpecifiedObjectLayerFilter_t * JoltC_SpecifiedObjectLayerFilter_new(
+  unsigned long inObjectLayer,
+  char** outErrMsg
 ) {
-  JPC_SpecifiedObjectLayerFilter_t * cInstance = new JPC_SpecifiedObjectLayerFilter_t();
-  SpecifiedObjectLayerFilter * cppInstance = new SpecifiedObjectLayerFilter(
-    inObjectLayer
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_SpecifiedObjectLayerFilter_t * cInstance = new JoltC_SpecifiedObjectLayerFilter_t();
+    SpecifiedObjectLayerFilter * cppInstance = new SpecifiedObjectLayerFilter(
+      inObjectLayer
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors

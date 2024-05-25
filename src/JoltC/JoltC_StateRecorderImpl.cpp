@@ -1,5 +1,6 @@
-#include "JoltC/JPC_StateRecorderImpl.h"
+#include "JoltC/JoltC_StateRecorderImpl.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,61 +8,116 @@ extern "C" {
 
 //region constructors
 
-JPC_StateRecorderImpl_t * JPC_StateRecorderImpl_new() {
-  JPC_StateRecorderImpl_t * cInstance = new JPC_StateRecorderImpl_t();
-  StateRecorderImpl * cppInstance = new StateRecorderImpl();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_StateRecorderImpl_t * JoltC_StateRecorderImpl_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_StateRecorderImpl_t * cInstance = new JoltC_StateRecorderImpl_t();
+    StateRecorderImpl * cppInstance = new StateRecorderImpl();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_StateRecorderImpl_Clear(
-  JPC_StateRecorderImpl_t * self
+void JoltC_StateRecorderImpl_Clear(
+  JoltC_StateRecorderImpl_t * self,
+  char** outErrMsg
 ) {
-  StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  
-  selfCpp->Clear();
+  try {
+    StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
+    
+    selfCpp->Clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_StateRecorderImpl_Rewind(
-  JPC_StateRecorderImpl_t * self
+void JoltC_StateRecorderImpl_Rewind(
+  JoltC_StateRecorderImpl_t * self,
+  char** outErrMsg
 ) {
-  StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  
-  selfCpp->Rewind();
+  try {
+    StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
+    
+    selfCpp->Rewind();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_StateRecorderImpl_IsEqual(
-  JPC_StateRecorderImpl_t * self,
-  JPC_StateRecorderImpl_t * inReference
+bool JoltC_StateRecorderImpl_IsEqual(
+  JoltC_StateRecorderImpl_t * self,
+  JoltC_StateRecorderImpl_t * inReference,
+  char** outErrMsg
 ) {
-  StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  bool result = selfCpp->IsEqual(
-  *reinterpret_cast<StateRecorderImpl *>(inReference->obj)
-  );
-  return result;
+  try {
+    StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
+    bool result = selfCpp->IsEqual(
+    *reinterpret_cast<StateRecorderImpl *>(inReference->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_StateRecorderImpl_SetValidating(
-  JPC_StateRecorderImpl_t * self,
-  bool inValidating
+void JoltC_StateRecorderImpl_SetValidating(
+  JoltC_StateRecorderImpl_t * self,
+  bool inValidating,
+  char** outErrMsg
 ) {
-  StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  
-  selfCpp->SetValidating(
-  inValidating
-  );
+  try {
+    StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
+    
+    selfCpp->SetValidating(
+    inValidating
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_StateRecorderImpl_IsValidating(
-  JPC_StateRecorderImpl_t * self
+bool JoltC_StateRecorderImpl_IsValidating(
+  JoltC_StateRecorderImpl_t * self,
+  char** outErrMsg
 ) {
-  StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  bool result = selfCpp->IsValidating();
-  return result;
+  try {
+    StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
+    bool result = selfCpp->IsValidating();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

@@ -8,43 +8,52 @@ extern "C" {
 
 //region functions
 
-void JPC_CastShapeBodyCollector_Reset(
-  JPC_CastShapeBodyCollector_t * self
+void JoltC_CastShapeBodyCollector_Reset(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastShapeBodyCollector_SetContext(
-  JPC_CastShapeBodyCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CastShapeBodyCollector_SetContext(
+  JoltC_CastShapeBodyCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_CastShapeBodyCollector_GetContext(
-  JPC_CastShapeBodyCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CastShapeBodyCollector_GetContext(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CastShapeBodyCollector_UpdateEarlyOutFraction(
-  JPC_CastShapeBodyCollector_t * self,
-  float inFraction
+void JoltC_CastShapeBodyCollector_UpdateEarlyOutFraction(
+  JoltC_CastShapeBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CastShapeBodyCollector_ResetEarlyOutFraction(
-  JPC_CastShapeBodyCollector_t * self,
-  float inFraction
+void JoltC_CastShapeBodyCollector_ResetEarlyOutFraction(
+  JoltC_CastShapeBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CastShapeBodyCollector_ForceEarlyOut(
-  JPC_CastShapeBodyCollector_t * self
+void JoltC_CastShapeBodyCollector_ForceEarlyOut(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CastShapeBodyCollector_ShouldEarlyOut(
-  JPC_CastShapeBodyCollector_t * self
+bool JoltC_CastShapeBodyCollector_ShouldEarlyOut(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CastShapeBodyCollector_GetEarlyOutFraction(
-  JPC_CastShapeBodyCollector_t * self
+float JoltC_CastShapeBodyCollector_GetEarlyOutFraction(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CastShapeBodyCollector_GetPositiveEarlyOutFraction(
-  JPC_CastShapeBodyCollector_t * self
+float JoltC_CastShapeBodyCollector_GetPositiveEarlyOutFraction(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

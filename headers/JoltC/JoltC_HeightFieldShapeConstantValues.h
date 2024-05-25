@@ -8,8 +8,9 @@ extern "C" {
 
 //region properties
 
-const float JPC_HeightFieldShapeConstantValues_cNoCollisionValue_Get(
-  JPC_HeightFieldShapeConstantValues_t * self
+const float JoltC_HeightFieldShapeConstantValues_cNoCollisionValue_Get(
+  JoltC_HeightFieldShapeConstantValues_t * self,
+  char** outErrMsg
 );
 
 //endregion properties

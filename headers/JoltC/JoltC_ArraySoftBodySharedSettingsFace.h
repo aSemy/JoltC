@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsFace_empty(
-  JPC_ArraySoftBodySharedSettingsFace_t * self
+bool JoltC_ArraySoftBodySharedSettingsFace_empty(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArraySoftBodySharedSettingsFace_size(
-  JPC_ArraySoftBodySharedSettingsFace_t * self
+long JoltC_ArraySoftBodySharedSettingsFace_size(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettingsFace_t * JPC_ArraySoftBodySharedSettingsFace_at(
-  JPC_ArraySoftBodySharedSettingsFace_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsFace_t * JoltC_ArraySoftBodySharedSettingsFace_at(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsFace_push_back(
-  JPC_ArraySoftBodySharedSettingsFace_t * self,
-  const JPC_SoftBodySharedSettingsFace_t * inValue
+void JoltC_ArraySoftBodySharedSettingsFace_push_back(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  const JoltC_SoftBodySharedSettingsFace_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsFace_reserve(
-  JPC_ArraySoftBodySharedSettingsFace_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsFace_reserve(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsFace_resize(
-  JPC_ArraySoftBodySharedSettingsFace_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsFace_resize(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsFace_clear(
-  JPC_ArraySoftBodySharedSettingsFace_t * self
+void JoltC_ArraySoftBodySharedSettingsFace_clear(
+  JoltC_ArraySoftBodySharedSettingsFace_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

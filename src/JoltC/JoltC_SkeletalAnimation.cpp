@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SkeletalAnimation.h"
+#include "JoltC/JoltC_SkeletalAnimation.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,56 +8,102 @@ extern "C" {
 
 //region constructors
 
-JPC_SkeletalAnimation_t * JPC_SkeletalAnimation_new() {
-  JPC_SkeletalAnimation_t * cInstance = new JPC_SkeletalAnimation_t();
-  SkeletalAnimation * cppInstance = new SkeletalAnimation();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_SkeletalAnimation_t * JoltC_SkeletalAnimation_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_SkeletalAnimation_t * cInstance = new JoltC_SkeletalAnimation_t();
+    SkeletalAnimation * cppInstance = new SkeletalAnimation();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-float JPC_SkeletalAnimation_GetDuration(
-  JPC_SkeletalAnimation_t * self
+float JoltC_SkeletalAnimation_GetDuration(
+  JoltC_SkeletalAnimation_t * self,
+  char** outErrMsg
 ) {
-  SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
-  float result = selfCpp->GetDuration();
-  return result;
+  try {
+    SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
+    float result = selfCpp->GetDuration();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SkeletalAnimation_ScaleJoints(
-  JPC_SkeletalAnimation_t * self,
-  float inScale
+void JoltC_SkeletalAnimation_ScaleJoints(
+  JoltC_SkeletalAnimation_t * self,
+  float inScale,
+  char** outErrMsg
 ) {
-  SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
-  
-  selfCpp->ScaleJoints(
-  inScale
-  );
+  try {
+    SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
+    
+    selfCpp->ScaleJoints(
+    inScale
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SkeletalAnimation_Sample(
-  JPC_SkeletalAnimation_t * self,
+void JoltC_SkeletalAnimation_Sample(
+  JoltC_SkeletalAnimation_t * self,
   float inTime,
-  JPC_SkeletonPose_t * ioPose
+  JoltC_SkeletonPose_t * ioPose,
+  char** outErrMsg
 ) {
-  SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
-  
-  selfCpp->Sample(
-  inTime,
-  *reinterpret_cast<SkeletonPose *>(ioPose->obj)
-  );
+  try {
+    SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
+    
+    selfCpp->Sample(
+    inTime,
+    *reinterpret_cast<SkeletonPose *>(ioPose->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_ArraySkeletonAnimatedJoint_t * JPC_SkeletalAnimation_GetAnimatedJoints(
-  JPC_SkeletalAnimation_t * self
+JoltC_ArraySkeletonAnimatedJoint_t * JoltC_SkeletalAnimation_GetAnimatedJoints(
+  JoltC_SkeletalAnimation_t * self,
+  char** outErrMsg
 ) {
-  SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
-  ArraySkeletonAnimatedJoint& resultRef = selfCpp->GetAnimatedJoints();
-  ArraySkeletonAnimatedJoint * result = &resultRef;
-  return reinterpret_cast<JPC_ArraySkeletonAnimatedJoint_t *>(result);
+  try {
+    SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
+    ArraySkeletonAnimatedJoint& resultRef = selfCpp->GetAnimatedJoints();
+    ArraySkeletonAnimatedJoint * result = &resultRef;
+    return reinterpret_cast<JoltC_ArraySkeletonAnimatedJoint_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

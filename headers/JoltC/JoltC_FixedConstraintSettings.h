@@ -8,131 +8,159 @@ extern "C" {
 
 //region constructors
 
-JPC_FixedConstraintSettings_t * JPC_FixedConstraintSettings_new();
+JoltC_FixedConstraintSettings_t * JoltC_FixedConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_Constraint_t * JPC_FixedConstraintSettings_Create(
-  JPC_FixedConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_FixedConstraintSettings_Create(
+  JoltC_FixedConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_FixedConstraintSettings_GetRefCount(
-  JPC_FixedConstraintSettings_t * self
+unsigned long JoltC_FixedConstraintSettings_GetRefCount(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_AddRef(
-  JPC_FixedConstraintSettings_t * self
+void JoltC_FixedConstraintSettings_AddRef(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_Release(
-  JPC_FixedConstraintSettings_t * self
+void JoltC_FixedConstraintSettings_Release(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_FixedConstraintSettings_mSpace_Get(
-  JPC_FixedConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_FixedConstraintSettings_mSpace_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mSpace_Set(
-  JPC_FixedConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_FixedConstraintSettings_mSpace_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 );
 
-bool JPC_FixedConstraintSettings_mAutoDetectPoint_Get(
-  JPC_FixedConstraintSettings_t * self
+bool JoltC_FixedConstraintSettings_mAutoDetectPoint_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mAutoDetectPoint_Set(
-  JPC_FixedConstraintSettings_t * self,
-  bool mAutoDetectPoint
+void JoltC_FixedConstraintSettings_mAutoDetectPoint_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  bool mAutoDetectPoint,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_FixedConstraintSettings_mPoint1_Get(
-  JPC_FixedConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_FixedConstraintSettings_mPoint1_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mPoint1_Set(
-  JPC_FixedConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint1
+void JoltC_FixedConstraintSettings_mPoint1_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_FixedConstraintSettings_mAxisX1_Get(
-  JPC_FixedConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisX1_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mAxisX1_Set(
-  JPC_FixedConstraintSettings_t * self,
-  JPC_Vec3_t * mAxisX1
+void JoltC_FixedConstraintSettings_mAxisX1_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  JoltC_Vec3_t * mAxisX1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_FixedConstraintSettings_mAxisY1_Get(
-  JPC_FixedConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisY1_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mAxisY1_Set(
-  JPC_FixedConstraintSettings_t * self,
-  JPC_Vec3_t * mAxisY1
+void JoltC_FixedConstraintSettings_mAxisY1_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  JoltC_Vec3_t * mAxisY1,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_FixedConstraintSettings_mPoint2_Get(
-  JPC_FixedConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_FixedConstraintSettings_mPoint2_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mPoint2_Set(
-  JPC_FixedConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint2
+void JoltC_FixedConstraintSettings_mPoint2_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_FixedConstraintSettings_mAxisX2_Get(
-  JPC_FixedConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisX2_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mAxisX2_Set(
-  JPC_FixedConstraintSettings_t * self,
-  JPC_Vec3_t * mAxisX2
+void JoltC_FixedConstraintSettings_mAxisX2_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  JoltC_Vec3_t * mAxisX2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_FixedConstraintSettings_mAxisY2_Get(
-  JPC_FixedConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisY2_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mAxisY2_Set(
-  JPC_FixedConstraintSettings_t * self,
-  JPC_Vec3_t * mAxisY2
+void JoltC_FixedConstraintSettings_mAxisY2_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  JoltC_Vec3_t * mAxisY2,
+  char** outErrMsg
 );
 
-bool JPC_FixedConstraintSettings_mEnabled_Get(
-  JPC_FixedConstraintSettings_t * self
+bool JoltC_FixedConstraintSettings_mEnabled_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mEnabled_Set(
-  JPC_FixedConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_FixedConstraintSettings_mEnabled_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_FixedConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_FixedConstraintSettings_t * self
+long JoltC_FixedConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_FixedConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_FixedConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_FixedConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_FixedConstraintSettings_t * self
+long JoltC_FixedConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_FixedConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_FixedConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_FixedConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_FixedConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_FixedConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

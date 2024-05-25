@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayFloat.h"
+#include "JoltC/JoltC_ArrayFloat.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,80 +8,152 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayFloat_empty(
-  JPC_ArrayFloat_t * self
+bool JoltC_ArrayFloat_empty(
+  JoltC_ArrayFloat_t * self,
+  char** outErrMsg
 ) {
-  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayFloat_size(
-  JPC_ArrayFloat_t * self
+long JoltC_ArrayFloat_size(
+  JoltC_ArrayFloat_t * self,
+  char** outErrMsg
 ) {
-  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_ArrayFloat_at(
-  JPC_ArrayFloat_t * self,
-  long inIndex
+float JoltC_ArrayFloat_at(
+  JoltC_ArrayFloat_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  float result = selfCpp->at(
-  inIndex
-  );
-  return result;
+  try {
+    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+    float result = selfCpp->at(
+    inIndex
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayFloat_push_back(
-  JPC_ArrayFloat_t * self,
-  float inValue
+void JoltC_ArrayFloat_push_back(
+  JoltC_ArrayFloat_t * self,
+  float inValue,
+  char** outErrMsg
 ) {
-  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  
-  selfCpp->push_back(
-  inValue
-  );
+  try {
+    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+    
+    selfCpp->push_back(
+    inValue
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayFloat_reserve(
-  JPC_ArrayFloat_t * self,
-  unsigned long inSize
+void JoltC_ArrayFloat_reserve(
+  JoltC_ArrayFloat_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayFloat_resize(
-  JPC_ArrayFloat_t * self,
-  unsigned long inSize
+void JoltC_ArrayFloat_resize(
+  JoltC_ArrayFloat_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayFloat_clear(
-  JPC_ArrayFloat_t * self
+void JoltC_ArrayFloat_clear(
+  JoltC_ArrayFloat_t * self,
+  char** outErrMsg
 ) {
-  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_FloatMemRef_t * JPC_ArrayFloat_data(
-  JPC_ArrayFloat_t * self
+JoltC_FloatMemRef_t * JoltC_ArrayFloat_data(
+  JoltC_ArrayFloat_t * self,
+  char** outErrMsg
 ) {
-  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  FloatMemRef * result = selfCpp->data();
-  return reinterpret_cast<JPC_FloatMemRef_t *>(result);
+  try {
+    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+    FloatMemRef * result = selfCpp->data();
+    return reinterpret_cast<JoltC_FloatMemRef_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

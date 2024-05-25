@@ -8,67 +8,81 @@ extern "C" {
 
 //region properties
 
-float JPC_VehicleTrack_mAngularVelocity_Get(
-  JPC_VehicleTrack_t * self
+float JoltC_VehicleTrack_mAngularVelocity_Get(
+  JoltC_VehicleTrack_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTrack_mAngularVelocity_Set(
-  JPC_VehicleTrack_t * self,
-  float mAngularVelocity
+void JoltC_VehicleTrack_mAngularVelocity_Set(
+  JoltC_VehicleTrack_t * self,
+  float mAngularVelocity,
+  char** outErrMsg
 );
 
-long JPC_VehicleTrack_mDrivenWheel_Get(
-  JPC_VehicleTrack_t * self
+long JoltC_VehicleTrack_mDrivenWheel_Get(
+  JoltC_VehicleTrack_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTrack_mDrivenWheel_Set(
-  JPC_VehicleTrack_t * self,
-  long mDrivenWheel
+void JoltC_VehicleTrack_mDrivenWheel_Set(
+  JoltC_VehicleTrack_t * self,
+  long mDrivenWheel,
+  char** outErrMsg
 );
 
-JPC_ArrayUint_t * JPC_VehicleTrack_mWheels_Get(
-  JPC_VehicleTrack_t * self
+JoltC_ArrayUint_t * JoltC_VehicleTrack_mWheels_Get(
+  JoltC_VehicleTrack_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTrack_mWheels_Set(
-  JPC_VehicleTrack_t * self,
-  JPC_ArrayUint_t * mWheels
+void JoltC_VehicleTrack_mWheels_Set(
+  JoltC_VehicleTrack_t * self,
+  JoltC_ArrayUint_t * mWheels,
+  char** outErrMsg
 );
 
-float JPC_VehicleTrack_mInertia_Get(
-  JPC_VehicleTrack_t * self
+float JoltC_VehicleTrack_mInertia_Get(
+  JoltC_VehicleTrack_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTrack_mInertia_Set(
-  JPC_VehicleTrack_t * self,
-  float mInertia
+void JoltC_VehicleTrack_mInertia_Set(
+  JoltC_VehicleTrack_t * self,
+  float mInertia,
+  char** outErrMsg
 );
 
-float JPC_VehicleTrack_mAngularDamping_Get(
-  JPC_VehicleTrack_t * self
+float JoltC_VehicleTrack_mAngularDamping_Get(
+  JoltC_VehicleTrack_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTrack_mAngularDamping_Set(
-  JPC_VehicleTrack_t * self,
-  float mAngularDamping
+void JoltC_VehicleTrack_mAngularDamping_Set(
+  JoltC_VehicleTrack_t * self,
+  float mAngularDamping,
+  char** outErrMsg
 );
 
-float JPC_VehicleTrack_mMaxBrakeTorque_Get(
-  JPC_VehicleTrack_t * self
+float JoltC_VehicleTrack_mMaxBrakeTorque_Get(
+  JoltC_VehicleTrack_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTrack_mMaxBrakeTorque_Set(
-  JPC_VehicleTrack_t * self,
-  float mMaxBrakeTorque
+void JoltC_VehicleTrack_mMaxBrakeTorque_Set(
+  JoltC_VehicleTrack_t * self,
+  float mMaxBrakeTorque,
+  char** outErrMsg
 );
 
-float JPC_VehicleTrack_mDifferentialRatio_Get(
-  JPC_VehicleTrack_t * self
+float JoltC_VehicleTrack_mDifferentialRatio_Get(
+  JoltC_VehicleTrack_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleTrack_mDifferentialRatio_Set(
-  JPC_VehicleTrack_t * self,
-  float mDifferentialRatio
+void JoltC_VehicleTrack_mDifferentialRatio_Set(
+  JoltC_VehicleTrack_t * self,
+  float mDifferentialRatio,
+  char** outErrMsg
 );
 
 //endregion properties

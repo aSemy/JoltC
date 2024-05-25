@@ -8,179 +8,218 @@ extern "C" {
 
 //region constructors
 
-JPC_CharacterVirtualSettings_t * JPC_CharacterVirtualSettings_new();
+JoltC_CharacterVirtualSettings_t * JoltC_CharacterVirtualSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_CharacterVirtualSettings_GetRefCount(
-  JPC_CharacterVirtualSettings_t * self
+unsigned long JoltC_CharacterVirtualSettings_GetRefCount(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_AddRef(
-  JPC_CharacterVirtualSettings_t * self
+void JoltC_CharacterVirtualSettings_AddRef(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_Release(
-  JPC_CharacterVirtualSettings_t * self
+void JoltC_CharacterVirtualSettings_Release(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_CharacterVirtualSettings_mMass_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mMass_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mMass_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mMass
+void JoltC_CharacterVirtualSettings_mMass_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mMass,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtualSettings_mMaxStrength_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mMaxStrength_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mMaxStrength_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mMaxStrength
+void JoltC_CharacterVirtualSettings_mMaxStrength_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mMaxStrength,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CharacterVirtualSettings_mShapeOffset_Get(
-  JPC_CharacterVirtualSettings_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtualSettings_mShapeOffset_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mShapeOffset_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  JPC_Vec3_t * mShapeOffset
+void JoltC_CharacterVirtualSettings_mShapeOffset_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  JoltC_Vec3_t * mShapeOffset,
+  char** outErrMsg
 );
 
-JPC_EBackFaceMode JPC_CharacterVirtualSettings_mBackFaceMode_Get(
-  JPC_CharacterVirtualSettings_t * self
+JoltC_EBackFaceMode JoltC_CharacterVirtualSettings_mBackFaceMode_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mBackFaceMode_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  JPC_EBackFaceMode mBackFaceMode
+void JoltC_CharacterVirtualSettings_mBackFaceMode_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  JoltC_EBackFaceMode mBackFaceMode,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtualSettings_mPredictiveContactDistance_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mPredictiveContactDistance_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mPredictiveContactDistance_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mPredictiveContactDistance
+void JoltC_CharacterVirtualSettings_mPredictiveContactDistance_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mPredictiveContactDistance,
+  char** outErrMsg
 );
 
-unsigned long JPC_CharacterVirtualSettings_mMaxCollisionIterations_Get(
-  JPC_CharacterVirtualSettings_t * self
+unsigned long JoltC_CharacterVirtualSettings_mMaxCollisionIterations_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mMaxCollisionIterations_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  unsigned long mMaxCollisionIterations
+void JoltC_CharacterVirtualSettings_mMaxCollisionIterations_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  unsigned long mMaxCollisionIterations,
+  char** outErrMsg
 );
 
-unsigned long JPC_CharacterVirtualSettings_mMaxConstraintIterations_Get(
-  JPC_CharacterVirtualSettings_t * self
+unsigned long JoltC_CharacterVirtualSettings_mMaxConstraintIterations_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mMaxConstraintIterations_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  unsigned long mMaxConstraintIterations
+void JoltC_CharacterVirtualSettings_mMaxConstraintIterations_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  unsigned long mMaxConstraintIterations,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtualSettings_mMinTimeRemaining_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mMinTimeRemaining_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mMinTimeRemaining_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mMinTimeRemaining
+void JoltC_CharacterVirtualSettings_mMinTimeRemaining_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mMinTimeRemaining,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtualSettings_mCollisionTolerance_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mCollisionTolerance_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mCollisionTolerance_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mCollisionTolerance
+void JoltC_CharacterVirtualSettings_mCollisionTolerance_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mCollisionTolerance,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtualSettings_mCharacterPadding_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mCharacterPadding_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mCharacterPadding_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mCharacterPadding
+void JoltC_CharacterVirtualSettings_mCharacterPadding_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mCharacterPadding,
+  char** outErrMsg
 );
 
-unsigned long JPC_CharacterVirtualSettings_mMaxNumHits_Get(
-  JPC_CharacterVirtualSettings_t * self
+unsigned long JoltC_CharacterVirtualSettings_mMaxNumHits_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mMaxNumHits_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  unsigned long mMaxNumHits
+void JoltC_CharacterVirtualSettings_mMaxNumHits_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  unsigned long mMaxNumHits,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtualSettings_mHitReductionCosMaxAngle_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mHitReductionCosMaxAngle_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mHitReductionCosMaxAngle_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mHitReductionCosMaxAngle
+void JoltC_CharacterVirtualSettings_mHitReductionCosMaxAngle_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mHitReductionCosMaxAngle,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtualSettings_mPenetrationRecoverySpeed_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mPenetrationRecoverySpeed_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mPenetrationRecoverySpeed_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mPenetrationRecoverySpeed
+void JoltC_CharacterVirtualSettings_mPenetrationRecoverySpeed_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mPenetrationRecoverySpeed,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CharacterVirtualSettings_mUp_Get(
-  JPC_CharacterVirtualSettings_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtualSettings_mUp_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mUp_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  JPC_Vec3_t * mUp
+void JoltC_CharacterVirtualSettings_mUp_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  JoltC_Vec3_t * mUp,
+  char** outErrMsg
 );
 
-JPC_Plane_t * JPC_CharacterVirtualSettings_mSupportingVolume_Get(
-  JPC_CharacterVirtualSettings_t * self
+JoltC_Plane_t * JoltC_CharacterVirtualSettings_mSupportingVolume_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mSupportingVolume_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  JPC_Plane_t * mSupportingVolume
+void JoltC_CharacterVirtualSettings_mSupportingVolume_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  JoltC_Plane_t * mSupportingVolume,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtualSettings_mMaxSlopeAngle_Get(
-  JPC_CharacterVirtualSettings_t * self
+float JoltC_CharacterVirtualSettings_mMaxSlopeAngle_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtualSettings_mMaxSlopeAngle_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  float mMaxSlopeAngle
+void JoltC_CharacterVirtualSettings_mMaxSlopeAngle_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  float mMaxSlopeAngle,
+  char** outErrMsg
 );
 
-const JPC_Shape_t * JPC_CharacterVirtualSettings_mShape_Get(
-  JPC_CharacterVirtualSettings_t * self
+const JoltC_Shape_t * JoltC_CharacterVirtualSettings_mShape_Get(
+  JoltC_CharacterVirtualSettings_t * self,
+  char** outErrMsg
 );
 
-const void JPC_CharacterVirtualSettings_mShape_Set(
-  JPC_CharacterVirtualSettings_t * self,
-  const JPC_Shape_t * mShape
+const void JoltC_CharacterVirtualSettings_mShape_Set(
+  JoltC_CharacterVirtualSettings_t * self,
+  const JoltC_Shape_t * mShape,
+  char** outErrMsg
 );
 
 //endregion properties

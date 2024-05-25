@@ -1,5 +1,6 @@
-#include "JoltC/JPC_IgnoreMultipleBodiesFilter.h"
+#include "JoltC/JoltC_IgnoreMultipleBodiesFilter.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,45 +8,82 @@ extern "C" {
 
 //region constructors
 
-JPC_IgnoreMultipleBodiesFilter_t * JPC_IgnoreMultipleBodiesFilter_new() {
-  JPC_IgnoreMultipleBodiesFilter_t * cInstance = new JPC_IgnoreMultipleBodiesFilter_t();
-  IgnoreMultipleBodiesFilter * cppInstance = new IgnoreMultipleBodiesFilter();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_IgnoreMultipleBodiesFilter_t * JoltC_IgnoreMultipleBodiesFilter_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_IgnoreMultipleBodiesFilter_t * cInstance = new JoltC_IgnoreMultipleBodiesFilter_t();
+    IgnoreMultipleBodiesFilter * cppInstance = new IgnoreMultipleBodiesFilter();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_IgnoreMultipleBodiesFilter_Clear(
-  JPC_IgnoreMultipleBodiesFilter_t * self
+void JoltC_IgnoreMultipleBodiesFilter_Clear(
+  JoltC_IgnoreMultipleBodiesFilter_t * self,
+  char** outErrMsg
 ) {
-  IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-  
-  selfCpp->Clear();
+  try {
+    IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
+    
+    selfCpp->Clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_IgnoreMultipleBodiesFilter_Reserve(
-  JPC_IgnoreMultipleBodiesFilter_t * self,
-  unsigned long inSize
+void JoltC_IgnoreMultipleBodiesFilter_Reserve(
+  JoltC_IgnoreMultipleBodiesFilter_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-  
-  selfCpp->Reserve(
-  inSize
-  );
+  try {
+    IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
+    
+    selfCpp->Reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_IgnoreMultipleBodiesFilter_IgnoreBody(
-  JPC_IgnoreMultipleBodiesFilter_t * self,
-  const JPC_BodyID_t * inBodyID
+void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
+  JoltC_IgnoreMultipleBodiesFilter_t * self,
+  const JoltC_BodyID_t * inBodyID,
+  char** outErrMsg
 ) {
-  IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-  
-  selfCpp->IgnoreBody(
-  *reinterpret_cast<BodyID *>(inBodyID->obj)
-  );
+  try {
+    IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
+    
+    selfCpp->IgnoreBody(
+    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

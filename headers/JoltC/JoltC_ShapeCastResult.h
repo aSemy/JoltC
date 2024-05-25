@@ -8,109 +8,133 @@ extern "C" {
 
 //region constructors
 
-JPC_ShapeCastResult_t * JPC_ShapeCastResult_new();
+JoltC_ShapeCastResult_t * JoltC_ShapeCastResult_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-float JPC_ShapeCastResult_mFraction_Get(
-  JPC_ShapeCastResult_t * self
+float JoltC_ShapeCastResult_mFraction_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mFraction_Set(
-  JPC_ShapeCastResult_t * self,
-  float mFraction
+void JoltC_ShapeCastResult_mFraction_Set(
+  JoltC_ShapeCastResult_t * self,
+  float mFraction,
+  char** outErrMsg
 );
 
-bool JPC_ShapeCastResult_mIsBackFaceHit_Get(
-  JPC_ShapeCastResult_t * self
+bool JoltC_ShapeCastResult_mIsBackFaceHit_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mIsBackFaceHit_Set(
-  JPC_ShapeCastResult_t * self,
-  bool mIsBackFaceHit
+void JoltC_ShapeCastResult_mIsBackFaceHit_Set(
+  JoltC_ShapeCastResult_t * self,
+  bool mIsBackFaceHit,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ShapeCastResult_mContactPointOn1_Get(
-  JPC_ShapeCastResult_t * self
+JoltC_Vec3_t * JoltC_ShapeCastResult_mContactPointOn1_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mContactPointOn1_Set(
-  JPC_ShapeCastResult_t * self,
-  JPC_Vec3_t * mContactPointOn1
+void JoltC_ShapeCastResult_mContactPointOn1_Set(
+  JoltC_ShapeCastResult_t * self,
+  JoltC_Vec3_t * mContactPointOn1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ShapeCastResult_mContactPointOn2_Get(
-  JPC_ShapeCastResult_t * self
+JoltC_Vec3_t * JoltC_ShapeCastResult_mContactPointOn2_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mContactPointOn2_Set(
-  JPC_ShapeCastResult_t * self,
-  JPC_Vec3_t * mContactPointOn2
+void JoltC_ShapeCastResult_mContactPointOn2_Set(
+  JoltC_ShapeCastResult_t * self,
+  JoltC_Vec3_t * mContactPointOn2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ShapeCastResult_mPenetrationAxis_Get(
-  JPC_ShapeCastResult_t * self
+JoltC_Vec3_t * JoltC_ShapeCastResult_mPenetrationAxis_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mPenetrationAxis_Set(
-  JPC_ShapeCastResult_t * self,
-  JPC_Vec3_t * mPenetrationAxis
+void JoltC_ShapeCastResult_mPenetrationAxis_Set(
+  JoltC_ShapeCastResult_t * self,
+  JoltC_Vec3_t * mPenetrationAxis,
+  char** outErrMsg
 );
 
-float JPC_ShapeCastResult_mPenetrationDepth_Get(
-  JPC_ShapeCastResult_t * self
+float JoltC_ShapeCastResult_mPenetrationDepth_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mPenetrationDepth_Set(
-  JPC_ShapeCastResult_t * self,
-  float mPenetrationDepth
+void JoltC_ShapeCastResult_mPenetrationDepth_Set(
+  JoltC_ShapeCastResult_t * self,
+  float mPenetrationDepth,
+  char** outErrMsg
 );
 
-JPC_SubShapeID_t * JPC_ShapeCastResult_mSubShapeID1_Get(
-  JPC_ShapeCastResult_t * self
+JoltC_SubShapeID_t * JoltC_ShapeCastResult_mSubShapeID1_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mSubShapeID1_Set(
-  JPC_ShapeCastResult_t * self,
-  JPC_SubShapeID_t * mSubShapeID1
+void JoltC_ShapeCastResult_mSubShapeID1_Set(
+  JoltC_ShapeCastResult_t * self,
+  JoltC_SubShapeID_t * mSubShapeID1,
+  char** outErrMsg
 );
 
-JPC_SubShapeID_t * JPC_ShapeCastResult_mSubShapeID2_Get(
-  JPC_ShapeCastResult_t * self
+JoltC_SubShapeID_t * JoltC_ShapeCastResult_mSubShapeID2_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mSubShapeID2_Set(
-  JPC_ShapeCastResult_t * self,
-  JPC_SubShapeID_t * mSubShapeID2
+void JoltC_ShapeCastResult_mSubShapeID2_Set(
+  JoltC_ShapeCastResult_t * self,
+  JoltC_SubShapeID_t * mSubShapeID2,
+  char** outErrMsg
 );
 
-JPC_BodyID_t * JPC_ShapeCastResult_mBodyID2_Get(
-  JPC_ShapeCastResult_t * self
+JoltC_BodyID_t * JoltC_ShapeCastResult_mBodyID2_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mBodyID2_Set(
-  JPC_ShapeCastResult_t * self,
-  JPC_BodyID_t * mBodyID2
+void JoltC_ShapeCastResult_mBodyID2_Set(
+  JoltC_ShapeCastResult_t * self,
+  JoltC_BodyID_t * mBodyID2,
+  char** outErrMsg
 );
 
-JPC_CollideShapeResultFace_t * JPC_ShapeCastResult_mShape1Face_Get(
-  JPC_ShapeCastResult_t * self
+JoltC_CollideShapeResultFace_t * JoltC_ShapeCastResult_mShape1Face_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mShape1Face_Set(
-  JPC_ShapeCastResult_t * self,
-  JPC_CollideShapeResultFace_t * mShape1Face
+void JoltC_ShapeCastResult_mShape1Face_Set(
+  JoltC_ShapeCastResult_t * self,
+  JoltC_CollideShapeResultFace_t * mShape1Face,
+  char** outErrMsg
 );
 
-JPC_CollideShapeResultFace_t * JPC_ShapeCastResult_mShape2Face_Get(
-  JPC_ShapeCastResult_t * self
+JoltC_CollideShapeResultFace_t * JoltC_ShapeCastResult_mShape2Face_Get(
+  JoltC_ShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-void JPC_ShapeCastResult_mShape2Face_Set(
-  JPC_ShapeCastResult_t * self,
-  JPC_CollideShapeResultFace_t * mShape2Face
+void JoltC_ShapeCastResult_mShape2Face_Set(
+  JoltC_ShapeCastResult_t * self,
+  JoltC_CollideShapeResultFace_t * mShape2Face,
+  char** outErrMsg
 );
 
 //endregion properties

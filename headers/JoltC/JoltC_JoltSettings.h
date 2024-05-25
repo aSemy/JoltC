@@ -8,64 +8,78 @@ extern "C" {
 
 //region constructors
 
-JPC_JoltSettings_t * JPC_JoltSettings_new();
+JoltC_JoltSettings_t * JoltC_JoltSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-unsigned long JPC_JoltSettings_mMaxBodies_Get(
-  JPC_JoltSettings_t * self
+unsigned long JoltC_JoltSettings_mMaxBodies_Get(
+  JoltC_JoltSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_JoltSettings_mMaxBodies_Set(
-  JPC_JoltSettings_t * self,
-  unsigned long mMaxBodies
+void JoltC_JoltSettings_mMaxBodies_Set(
+  JoltC_JoltSettings_t * self,
+  unsigned long mMaxBodies,
+  char** outErrMsg
 );
 
-unsigned long JPC_JoltSettings_mMaxBodyPairs_Get(
-  JPC_JoltSettings_t * self
+unsigned long JoltC_JoltSettings_mMaxBodyPairs_Get(
+  JoltC_JoltSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_JoltSettings_mMaxBodyPairs_Set(
-  JPC_JoltSettings_t * self,
-  unsigned long mMaxBodyPairs
+void JoltC_JoltSettings_mMaxBodyPairs_Set(
+  JoltC_JoltSettings_t * self,
+  unsigned long mMaxBodyPairs,
+  char** outErrMsg
 );
 
-unsigned long JPC_JoltSettings_mMaxContactConstraints_Get(
-  JPC_JoltSettings_t * self
+unsigned long JoltC_JoltSettings_mMaxContactConstraints_Get(
+  JoltC_JoltSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_JoltSettings_mMaxContactConstraints_Set(
-  JPC_JoltSettings_t * self,
-  unsigned long mMaxContactConstraints
+void JoltC_JoltSettings_mMaxContactConstraints_Set(
+  JoltC_JoltSettings_t * self,
+  unsigned long mMaxContactConstraints,
+  char** outErrMsg
 );
 
-JPC_BroadPhaseLayerInterface_t * JPC_JoltSettings_mBroadPhaseLayerInterface_Get(
-  JPC_JoltSettings_t * self
+JoltC_BroadPhaseLayerInterface_t * JoltC_JoltSettings_mBroadPhaseLayerInterface_Get(
+  JoltC_JoltSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_JoltSettings_mBroadPhaseLayerInterface_Set(
-  JPC_JoltSettings_t * self,
-  JPC_BroadPhaseLayerInterface_t * mBroadPhaseLayerInterface
+void JoltC_JoltSettings_mBroadPhaseLayerInterface_Set(
+  JoltC_JoltSettings_t * self,
+  JoltC_BroadPhaseLayerInterface_t * mBroadPhaseLayerInterface,
+  char** outErrMsg
 );
 
-JPC_ObjectVsBroadPhaseLayerFilter_t * JPC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Get(
-  JPC_JoltSettings_t * self
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Get(
+  JoltC_JoltSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Set(
-  JPC_JoltSettings_t * self,
-  JPC_ObjectVsBroadPhaseLayerFilter_t * mObjectVsBroadPhaseLayerFilter
+void JoltC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Set(
+  JoltC_JoltSettings_t * self,
+  JoltC_ObjectVsBroadPhaseLayerFilter_t * mObjectVsBroadPhaseLayerFilter,
+  char** outErrMsg
 );
 
-JPC_ObjectLayerPairFilter_t * JPC_JoltSettings_mObjectLayerPairFilter_Get(
-  JPC_JoltSettings_t * self
+JoltC_ObjectLayerPairFilter_t * JoltC_JoltSettings_mObjectLayerPairFilter_Get(
+  JoltC_JoltSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_JoltSettings_mObjectLayerPairFilter_Set(
-  JPC_JoltSettings_t * self,
-  JPC_ObjectLayerPairFilter_t * mObjectLayerPairFilter
+void JoltC_JoltSettings_mObjectLayerPairFilter_Set(
+  JoltC_JoltSettings_t * self,
+  JoltC_ObjectLayerPairFilter_t * mObjectLayerPairFilter,
+  char** outErrMsg
 );
 
 //endregion properties

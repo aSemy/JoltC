@@ -8,56 +8,67 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_CharacterBaseSettings_GetRefCount(
-  JPC_CharacterBaseSettings_t * self
+unsigned long JoltC_CharacterBaseSettings_GetRefCount(
+  JoltC_CharacterBaseSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterBaseSettings_AddRef(
-  JPC_CharacterBaseSettings_t * self
+void JoltC_CharacterBaseSettings_AddRef(
+  JoltC_CharacterBaseSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterBaseSettings_Release(
-  JPC_CharacterBaseSettings_t * self
+void JoltC_CharacterBaseSettings_Release(
+  JoltC_CharacterBaseSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_CharacterBaseSettings_mUp_Get(
-  JPC_CharacterBaseSettings_t * self
+JoltC_Vec3_t * JoltC_CharacterBaseSettings_mUp_Get(
+  JoltC_CharacterBaseSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterBaseSettings_mUp_Set(
-  JPC_CharacterBaseSettings_t * self,
-  JPC_Vec3_t * mUp
+void JoltC_CharacterBaseSettings_mUp_Set(
+  JoltC_CharacterBaseSettings_t * self,
+  JoltC_Vec3_t * mUp,
+  char** outErrMsg
 );
 
-JPC_Plane_t * JPC_CharacterBaseSettings_mSupportingVolume_Get(
-  JPC_CharacterBaseSettings_t * self
+JoltC_Plane_t * JoltC_CharacterBaseSettings_mSupportingVolume_Get(
+  JoltC_CharacterBaseSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterBaseSettings_mSupportingVolume_Set(
-  JPC_CharacterBaseSettings_t * self,
-  JPC_Plane_t * mSupportingVolume
+void JoltC_CharacterBaseSettings_mSupportingVolume_Set(
+  JoltC_CharacterBaseSettings_t * self,
+  JoltC_Plane_t * mSupportingVolume,
+  char** outErrMsg
 );
 
-float JPC_CharacterBaseSettings_mMaxSlopeAngle_Get(
-  JPC_CharacterBaseSettings_t * self
+float JoltC_CharacterBaseSettings_mMaxSlopeAngle_Get(
+  JoltC_CharacterBaseSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterBaseSettings_mMaxSlopeAngle_Set(
-  JPC_CharacterBaseSettings_t * self,
-  float mMaxSlopeAngle
+void JoltC_CharacterBaseSettings_mMaxSlopeAngle_Set(
+  JoltC_CharacterBaseSettings_t * self,
+  float mMaxSlopeAngle,
+  char** outErrMsg
 );
 
-const JPC_Shape_t * JPC_CharacterBaseSettings_mShape_Get(
-  JPC_CharacterBaseSettings_t * self
+const JoltC_Shape_t * JoltC_CharacterBaseSettings_mShape_Get(
+  JoltC_CharacterBaseSettings_t * self,
+  char** outErrMsg
 );
 
-const void JPC_CharacterBaseSettings_mShape_Set(
-  JPC_CharacterBaseSettings_t * self,
-  const JPC_Shape_t * mShape
+const void JoltC_CharacterBaseSettings_mShape_Set(
+  JoltC_CharacterBaseSettings_t * self,
+  const JoltC_Shape_t * mShape,
+  char** outErrMsg
 );
 
 //endregion properties

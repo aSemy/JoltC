@@ -1,5 +1,6 @@
-#include "JoltC/JPC_TransformedShapeCollector.h"
+#include "JoltC/JoltC_TransformedShapeCollector.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,85 +8,166 @@ extern "C" {
 
 //region functions
 
-void JPC_TransformedShapeCollector_Reset(
-  JPC_TransformedShapeCollector_t * self
+void JoltC_TransformedShapeCollector_Reset(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  
-  selfCpp->Reset();
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    
+    selfCpp->Reset();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShapeCollector_SetContext(
-  JPC_TransformedShapeCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_TransformedShapeCollector_SetContext(
+  JoltC_TransformedShapeCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  
-  selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
-  );
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    
+    selfCpp->SetContext(
+    reinterpret_cast<TransformedShape *>(inContext->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_TransformedShape_t * JPC_TransformedShapeCollector_GetContext(
-  JPC_TransformedShapeCollector_t * self
+const JoltC_TransformedShape_t * JoltC_TransformedShapeCollector_GetContext(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JPC_TransformedShape_t *>(result);
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    const TransformedShape * result = selfCpp->GetContext();
+    return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShapeCollector_UpdateEarlyOutFraction(
-  JPC_TransformedShapeCollector_t * self,
-  float inFraction
+void JoltC_TransformedShapeCollector_UpdateEarlyOutFraction(
+  JoltC_TransformedShapeCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  
-  selfCpp->UpdateEarlyOutFraction(
-  inFraction
-  );
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    
+    selfCpp->UpdateEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShapeCollector_ResetEarlyOutFraction(
-  JPC_TransformedShapeCollector_t * self,
-  float inFraction
+void JoltC_TransformedShapeCollector_ResetEarlyOutFraction(
+  JoltC_TransformedShapeCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  
-  selfCpp->ResetEarlyOutFraction(
-  inFraction
-  );
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    
+    selfCpp->ResetEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TransformedShapeCollector_ForceEarlyOut(
-  JPC_TransformedShapeCollector_t * self
+void JoltC_TransformedShapeCollector_ForceEarlyOut(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  
-  selfCpp->ForceEarlyOut();
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    
+    selfCpp->ForceEarlyOut();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_TransformedShapeCollector_ShouldEarlyOut(
-  JPC_TransformedShapeCollector_t * self
+bool JoltC_TransformedShapeCollector_ShouldEarlyOut(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    bool result = selfCpp->ShouldEarlyOut();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_TransformedShapeCollector_GetEarlyOutFraction(
-  JPC_TransformedShapeCollector_t * self
+float JoltC_TransformedShapeCollector_GetEarlyOutFraction(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    float result = selfCpp->GetEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_TransformedShapeCollector_GetPositiveEarlyOutFraction(
-  JPC_TransformedShapeCollector_t * self
+float JoltC_TransformedShapeCollector_GetPositiveEarlyOutFraction(
+  JoltC_TransformedShapeCollector_t * self,
+  char** outErrMsg
 ) {
-  TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
+  try {
+    TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
+    float result = selfCpp->GetPositiveEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

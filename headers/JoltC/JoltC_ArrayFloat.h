@@ -8,40 +8,48 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayFloat_empty(
-  JPC_ArrayFloat_t * self
+bool JoltC_ArrayFloat_empty(
+  JoltC_ArrayFloat_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayFloat_size(
-  JPC_ArrayFloat_t * self
+long JoltC_ArrayFloat_size(
+  JoltC_ArrayFloat_t * self,
+  char** outErrMsg
 );
 
-float JPC_ArrayFloat_at(
-  JPC_ArrayFloat_t * self,
-  long inIndex
+float JoltC_ArrayFloat_at(
+  JoltC_ArrayFloat_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayFloat_push_back(
-  JPC_ArrayFloat_t * self,
-  float inValue
+void JoltC_ArrayFloat_push_back(
+  JoltC_ArrayFloat_t * self,
+  float inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayFloat_reserve(
-  JPC_ArrayFloat_t * self,
-  unsigned long inSize
+void JoltC_ArrayFloat_reserve(
+  JoltC_ArrayFloat_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayFloat_resize(
-  JPC_ArrayFloat_t * self,
-  unsigned long inSize
+void JoltC_ArrayFloat_resize(
+  JoltC_ArrayFloat_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayFloat_clear(
-  JPC_ArrayFloat_t * self
+void JoltC_ArrayFloat_clear(
+  JoltC_ArrayFloat_t * self,
+  char** outErrMsg
 );
 
-JPC_FloatMemRef_t * JPC_ArrayFloat_data(
-  JPC_ArrayFloat_t * self
+JoltC_FloatMemRef_t * JoltC_ArrayFloat_data(
+  JoltC_ArrayFloat_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

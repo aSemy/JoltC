@@ -8,42 +8,51 @@ extern "C" {
 
 //region constructors
 
-JPC_PhysicsMaterialList_t * JPC_PhysicsMaterialList_new();
+JoltC_PhysicsMaterialList_t * JoltC_PhysicsMaterialList_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_PhysicsMaterialList_empty(
-  JPC_PhysicsMaterialList_t * self
+bool JoltC_PhysicsMaterialList_empty(
+  JoltC_PhysicsMaterialList_t * self,
+  char** outErrMsg
 );
 
-long JPC_PhysicsMaterialList_size(
-  JPC_PhysicsMaterialList_t * self
+long JoltC_PhysicsMaterialList_size(
+  JoltC_PhysicsMaterialList_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_PhysicsMaterialList_at(
-  JPC_PhysicsMaterialList_t * self,
-  long inIndex
+const JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
+  JoltC_PhysicsMaterialList_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_PhysicsMaterialList_push_back(
-  JPC_PhysicsMaterialList_t * self,
-  const JPC_PhysicsMaterial_t * inMaterial
+void JoltC_PhysicsMaterialList_push_back(
+  JoltC_PhysicsMaterialList_t * self,
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 );
 
-void JPC_PhysicsMaterialList_reserve(
-  JPC_PhysicsMaterialList_t * self,
-  unsigned long inSize
+void JoltC_PhysicsMaterialList_reserve(
+  JoltC_PhysicsMaterialList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_PhysicsMaterialList_resize(
-  JPC_PhysicsMaterialList_t * self,
-  unsigned long inSize
+void JoltC_PhysicsMaterialList_resize(
+  JoltC_PhysicsMaterialList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_PhysicsMaterialList_clear(
-  JPC_PhysicsMaterialList_t * self
+void JoltC_PhysicsMaterialList_clear(
+  JoltC_PhysicsMaterialList_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

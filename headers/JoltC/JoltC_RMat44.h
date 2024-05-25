@@ -8,136 +8,168 @@ extern "C" {
 
 //region constructors
 
-JPC_RMat44_t * JPC_RMat44_new();
+JoltC_RMat44_t * JoltC_RMat44_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_RMat44_t * JPC_RMat44_sZero();
-
-JPC_RMat44_t * JPC_RMat44_sIdentity();
-
-JPC_RMat44_t * JPC_RMat44_sRotation(
-  const JPC_Quat_t * inQ
+JoltC_RMat44_t * JoltC_RMat44_sZero(
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_sTranslation(
-  const JPC_RVec3_t * inTranslation
+JoltC_RMat44_t * JoltC_RMat44_sIdentity(
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_sRotationTranslation(
-  const JPC_Quat_t * inRotation,
-  const JPC_RVec3_t * inTranslation
+JoltC_RMat44_t * JoltC_RMat44_sRotation(
+  const JoltC_Quat_t * inQ,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_sInverseRotationTranslation(
-  const JPC_Quat_t * inRotation,
-  const JPC_RVec3_t * inTranslation
+JoltC_RMat44_t * JoltC_RMat44_sTranslation(
+  const JoltC_RVec3_t * inTranslation,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_RMat44_GetAxisX(
-  JPC_RMat44_t * self
+JoltC_RMat44_t * JoltC_RMat44_sRotationTranslation(
+  const JoltC_Quat_t * inRotation,
+  const JoltC_RVec3_t * inTranslation,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_RMat44_GetAxisY(
-  JPC_RMat44_t * self
+JoltC_RMat44_t * JoltC_RMat44_sInverseRotationTranslation(
+  const JoltC_Quat_t * inRotation,
+  const JoltC_RVec3_t * inTranslation,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_RMat44_GetAxisZ(
-  JPC_RMat44_t * self
+JoltC_Vec3_t * JoltC_RMat44_GetAxisX(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_RMat44_GetRotation(
-  JPC_RMat44_t * self
+JoltC_Vec3_t * JoltC_RMat44_GetAxisY(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_RMat44_GetQuaternion(
-  JPC_RMat44_t * self
+JoltC_Vec3_t * JoltC_RMat44_GetAxisZ(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RMat44_GetTranslation(
-  JPC_RMat44_t * self
+JoltC_Mat44_t * JoltC_RMat44_GetRotation(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-bool JPC_RMat44_IsClose(
-  JPC_RMat44_t * self,
-  const JPC_RMat44_t * inM,
-  double inMaxDistSq
+JoltC_Quat_t * JoltC_RMat44_GetQuaternion(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_RMat44_Multiply3x3(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inV
+JoltC_RVec3_t * JoltC_RMat44_GetTranslation(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_RMat44_Multiply3x3Transposed(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inV
+bool JoltC_RMat44_IsClose(
+  JoltC_RMat44_t * self,
+  const JoltC_RMat44_t * inM,
+  double inMaxDistSq,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_RMat44_Transposed3x3(
-  JPC_RMat44_t * self
+JoltC_Vec3_t * JoltC_RMat44_Multiply3x3(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_Inversed(
-  JPC_RMat44_t * self
+JoltC_Vec3_t * JoltC_RMat44_Multiply3x3Transposed(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_InversedRotationTranslation(
-  JPC_RMat44_t * self
+JoltC_Mat44_t * JoltC_RMat44_Transposed3x3(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_PreTranslated(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inTranslation
+JoltC_RMat44_t * JoltC_RMat44_Inversed(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_PostTranslated(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inTranslation
+JoltC_RMat44_t * JoltC_RMat44_InversedRotationTranslation(
+  JoltC_RMat44_t * self,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_PreScaled(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_RMat44_t * JoltC_RMat44_PreTranslated(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inTranslation,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_RMat44_PostScaled(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_RMat44_t * JoltC_RMat44_PostTranslated(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inTranslation,
+  char** outErrMsg
 );
 
-void JPC_RMat44_SetColumn3(
-  JPC_RMat44_t * self,
+JoltC_RMat44_t * JoltC_RMat44_PreScaled(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
+);
+
+JoltC_RMat44_t * JoltC_RMat44_PostScaled(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
+);
+
+void JoltC_RMat44_SetColumn3(
+  JoltC_RMat44_t * self,
   long inCol,
-  const JPC_Vec3_t * inV
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-void JPC_RMat44_SetAxisX(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inV
+void JoltC_RMat44_SetAxisX(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-void JPC_RMat44_SetAxisY(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inV
+void JoltC_RMat44_SetAxisY(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-void JPC_RMat44_SetAxisZ(
-  JPC_RMat44_t * self,
-  const JPC_Vec3_t * inV
+void JoltC_RMat44_SetAxisZ(
+  JoltC_RMat44_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-void JPC_RMat44_SetTranslation(
-  JPC_RMat44_t * self,
-  const JPC_RVec3_t * inV
+void JoltC_RMat44_SetTranslation(
+  JoltC_RMat44_t * self,
+  const JoltC_RVec3_t * inV,
+  char** outErrMsg
 );
 
-void JPC_RMat44_SetColumn4(
-  JPC_RMat44_t * self,
+void JoltC_RMat44_SetColumn4(
+  JoltC_RMat44_t * self,
   long inCol,
-  const JPC_Vec4_t * inV
+  const JoltC_Vec4_t * inV,
+  char** outErrMsg
 );
 
 //endregion functions

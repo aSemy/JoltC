@@ -1,5 +1,6 @@
-#include "JoltC/JPC_HeightFieldShapeSettings.h"
+#include "JoltC/JoltC_HeightFieldShapeSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,254 +8,333 @@ extern "C" {
 
 //region constructors
 
-JPC_HeightFieldShapeSettings_t * JPC_HeightFieldShapeSettings_new() {
-  JPC_HeightFieldShapeSettings_t * cInstance = new JPC_HeightFieldShapeSettings_t();
-  HeightFieldShapeSettings * cppInstance = new HeightFieldShapeSettings();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_HeightFieldShapeSettings_t * JoltC_HeightFieldShapeSettings_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_HeightFieldShapeSettings_t * cInstance = new JoltC_HeightFieldShapeSettings_t();
+    HeightFieldShapeSettings * cppInstance = new HeightFieldShapeSettings();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_HeightFieldShapeSettings_GetRefCount(
-  JPC_HeightFieldShapeSettings_t * self
+unsigned long JoltC_HeightFieldShapeSettings_GetRefCount(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_HeightFieldShapeSettings_AddRef(
-  JPC_HeightFieldShapeSettings_t * self
+void JoltC_HeightFieldShapeSettings_AddRef(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_HeightFieldShapeSettings_Release(
-  JPC_HeightFieldShapeSettings_t * self
+void JoltC_HeightFieldShapeSettings_Release(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_ShapeResult_t * JPC_HeightFieldShapeSettings_Create(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_HeightFieldShapeSettings_Create(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JPC_Shape_ShapeResult_t *>(result);
+  try {
+    HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
+    Shape::ShapeResult resultValue = selfCpp->Create();
+    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_HeightFieldShapeSettings_ClearCachedResult(
-  JPC_HeightFieldShapeSettings_t * self
+void JoltC_HeightFieldShapeSettings_ClearCachedResult(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  
-  selfCpp->ClearCachedResult();
+  try {
+    HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
+    
+    selfCpp->ClearCachedResult();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_HeightFieldShapeSettings_mOffset_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mOffset_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   Vec3 resultValue = selfCpp->mOffset;
   Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
-void JPC_HeightFieldShapeSettings_mOffset_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_Vec3_t * mOffset
+void JoltC_HeightFieldShapeSettings_mOffset_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_Vec3_t * mOffset,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mOffset = *reinterpret_cast<Vec3 *>(mOffset->obj);
 };
 
-JPC_Vec3_t * JPC_HeightFieldShapeSettings_mScale_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mScale_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   Vec3 resultValue = selfCpp->mScale;
   Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
-void JPC_HeightFieldShapeSettings_mScale_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_Vec3_t * mScale
+void JoltC_HeightFieldShapeSettings_mScale_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_Vec3_t * mScale,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mScale = *reinterpret_cast<Vec3 *>(mScale->obj);
 };
 
-long JPC_HeightFieldShapeSettings_mSampleCount_Get(
-  JPC_HeightFieldShapeSettings_t * self
+long JoltC_HeightFieldShapeSettings_mSampleCount_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   long result = selfCpp->mSampleCount;
   return result;
 };
 
-void JPC_HeightFieldShapeSettings_mSampleCount_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  long mSampleCount
+void JoltC_HeightFieldShapeSettings_mSampleCount_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  long mSampleCount,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mSampleCount = mSampleCount;
 };
 
-float JPC_HeightFieldShapeSettings_mMinHeightValue_Get(
-  JPC_HeightFieldShapeSettings_t * self
+float JoltC_HeightFieldShapeSettings_mMinHeightValue_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   float result = selfCpp->mMinHeightValue;
   return result;
 };
 
-void JPC_HeightFieldShapeSettings_mMinHeightValue_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  float mMinHeightValue
+void JoltC_HeightFieldShapeSettings_mMinHeightValue_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  float mMinHeightValue,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mMinHeightValue = mMinHeightValue;
 };
 
-float JPC_HeightFieldShapeSettings_mMaxHeightValue_Get(
-  JPC_HeightFieldShapeSettings_t * self
+float JoltC_HeightFieldShapeSettings_mMaxHeightValue_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   float result = selfCpp->mMaxHeightValue;
   return result;
 };
 
-void JPC_HeightFieldShapeSettings_mMaxHeightValue_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  float mMaxHeightValue
+void JoltC_HeightFieldShapeSettings_mMaxHeightValue_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  float mMaxHeightValue,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mMaxHeightValue = mMaxHeightValue;
 };
 
-long JPC_HeightFieldShapeSettings_mBlockSize_Get(
-  JPC_HeightFieldShapeSettings_t * self
+long JoltC_HeightFieldShapeSettings_mBlockSize_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   long result = selfCpp->mBlockSize;
   return result;
 };
 
-void JPC_HeightFieldShapeSettings_mBlockSize_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  long mBlockSize
+void JoltC_HeightFieldShapeSettings_mBlockSize_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  long mBlockSize,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mBlockSize = mBlockSize;
 };
 
-long JPC_HeightFieldShapeSettings_mBitsPerSample_Get(
-  JPC_HeightFieldShapeSettings_t * self
+long JoltC_HeightFieldShapeSettings_mBitsPerSample_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   long result = selfCpp->mBitsPerSample;
   return result;
 };
 
-void JPC_HeightFieldShapeSettings_mBitsPerSample_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  long mBitsPerSample
+void JoltC_HeightFieldShapeSettings_mBitsPerSample_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  long mBitsPerSample,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mBitsPerSample = mBitsPerSample;
 };
 
-JPC_ArrayFloat_t * JPC_HeightFieldShapeSettings_mHeightSamples_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_ArrayFloat_t * JoltC_HeightFieldShapeSettings_mHeightSamples_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   ArrayFloat resultValue = selfCpp->mHeightSamples;
   ArrayFloat* result = new ArrayFloat(resultValue);
-  return reinterpret_cast<JPC_ArrayFloat_t *>(result);
+  return reinterpret_cast<JoltC_ArrayFloat_t *>(result);
 };
 
-void JPC_HeightFieldShapeSettings_mHeightSamples_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_ArrayFloat_t * mHeightSamples
+void JoltC_HeightFieldShapeSettings_mHeightSamples_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_ArrayFloat_t * mHeightSamples,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mHeightSamples = *reinterpret_cast<ArrayFloat *>(mHeightSamples->obj);
 };
 
-JPC_ArrayUint8_t * JPC_HeightFieldShapeSettings_mMaterialIndices_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_ArrayUint8_t * JoltC_HeightFieldShapeSettings_mMaterialIndices_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   ArrayUint8 resultValue = selfCpp->mMaterialIndices;
   ArrayUint8* result = new ArrayUint8(resultValue);
-  return reinterpret_cast<JPC_ArrayUint8_t *>(result);
+  return reinterpret_cast<JoltC_ArrayUint8_t *>(result);
 };
 
-void JPC_HeightFieldShapeSettings_mMaterialIndices_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_ArrayUint8_t * mMaterialIndices
+void JoltC_HeightFieldShapeSettings_mMaterialIndices_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_ArrayUint8_t * mMaterialIndices,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mMaterialIndices = *reinterpret_cast<ArrayUint8 *>(mMaterialIndices->obj);
 };
 
-JPC_PhysicsMaterialList_t * JPC_HeightFieldShapeSettings_mMaterials_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_PhysicsMaterialList_t * JoltC_HeightFieldShapeSettings_mMaterials_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   PhysicsMaterialList resultValue = selfCpp->mMaterials;
   PhysicsMaterialList* result = new PhysicsMaterialList(resultValue);
-  return reinterpret_cast<JPC_PhysicsMaterialList_t *>(result);
+  return reinterpret_cast<JoltC_PhysicsMaterialList_t *>(result);
 };
 
-void JPC_HeightFieldShapeSettings_mMaterials_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_PhysicsMaterialList_t * mMaterials
+void JoltC_HeightFieldShapeSettings_mMaterials_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_PhysicsMaterialList_t * mMaterials,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mMaterials = *reinterpret_cast<PhysicsMaterialList *>(mMaterials->obj);
 };
 
-float JPC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Get(
-  JPC_HeightFieldShapeSettings_t * self
+float JoltC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   float result = selfCpp->mActiveEdgeCosThresholdAngle;
   return result;
 };
 
-void JPC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  float mActiveEdgeCosThresholdAngle
+void JoltC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  float mActiveEdgeCosThresholdAngle,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mActiveEdgeCosThresholdAngle = mActiveEdgeCosThresholdAngle;
 };
 
-unsigned long long int JPC_HeightFieldShapeSettings_mUserData_Get(
-  JPC_HeightFieldShapeSettings_t * self
+unsigned long long int JoltC_HeightFieldShapeSettings_mUserData_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   unsigned long long int result = selfCpp->mUserData;
   return result;
 };
 
-void JPC_HeightFieldShapeSettings_mUserData_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_HeightFieldShapeSettings_mUserData_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;

@@ -8,142 +8,173 @@ extern "C" {
 
 //region constructors
 
-JPC_HeightFieldShapeSettings_t * JPC_HeightFieldShapeSettings_new();
+JoltC_HeightFieldShapeSettings_t * JoltC_HeightFieldShapeSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_HeightFieldShapeSettings_GetRefCount(
-  JPC_HeightFieldShapeSettings_t * self
+unsigned long JoltC_HeightFieldShapeSettings_GetRefCount(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_AddRef(
-  JPC_HeightFieldShapeSettings_t * self
+void JoltC_HeightFieldShapeSettings_AddRef(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_Release(
-  JPC_HeightFieldShapeSettings_t * self
+void JoltC_HeightFieldShapeSettings_Release(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_HeightFieldShapeSettings_Create(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_HeightFieldShapeSettings_Create(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_ClearCachedResult(
-  JPC_HeightFieldShapeSettings_t * self
+void JoltC_HeightFieldShapeSettings_ClearCachedResult(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_HeightFieldShapeSettings_mOffset_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mOffset_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mOffset_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_Vec3_t * mOffset
+void JoltC_HeightFieldShapeSettings_mOffset_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_Vec3_t * mOffset,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_HeightFieldShapeSettings_mScale_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mScale_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mScale_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_Vec3_t * mScale
+void JoltC_HeightFieldShapeSettings_mScale_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_Vec3_t * mScale,
+  char** outErrMsg
 );
 
-long JPC_HeightFieldShapeSettings_mSampleCount_Get(
-  JPC_HeightFieldShapeSettings_t * self
+long JoltC_HeightFieldShapeSettings_mSampleCount_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mSampleCount_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  long mSampleCount
+void JoltC_HeightFieldShapeSettings_mSampleCount_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  long mSampleCount,
+  char** outErrMsg
 );
 
-float JPC_HeightFieldShapeSettings_mMinHeightValue_Get(
-  JPC_HeightFieldShapeSettings_t * self
+float JoltC_HeightFieldShapeSettings_mMinHeightValue_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mMinHeightValue_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  float mMinHeightValue
+void JoltC_HeightFieldShapeSettings_mMinHeightValue_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  float mMinHeightValue,
+  char** outErrMsg
 );
 
-float JPC_HeightFieldShapeSettings_mMaxHeightValue_Get(
-  JPC_HeightFieldShapeSettings_t * self
+float JoltC_HeightFieldShapeSettings_mMaxHeightValue_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mMaxHeightValue_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  float mMaxHeightValue
+void JoltC_HeightFieldShapeSettings_mMaxHeightValue_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  float mMaxHeightValue,
+  char** outErrMsg
 );
 
-long JPC_HeightFieldShapeSettings_mBlockSize_Get(
-  JPC_HeightFieldShapeSettings_t * self
+long JoltC_HeightFieldShapeSettings_mBlockSize_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mBlockSize_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  long mBlockSize
+void JoltC_HeightFieldShapeSettings_mBlockSize_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  long mBlockSize,
+  char** outErrMsg
 );
 
-long JPC_HeightFieldShapeSettings_mBitsPerSample_Get(
-  JPC_HeightFieldShapeSettings_t * self
+long JoltC_HeightFieldShapeSettings_mBitsPerSample_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mBitsPerSample_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  long mBitsPerSample
+void JoltC_HeightFieldShapeSettings_mBitsPerSample_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  long mBitsPerSample,
+  char** outErrMsg
 );
 
-JPC_ArrayFloat_t * JPC_HeightFieldShapeSettings_mHeightSamples_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_ArrayFloat_t * JoltC_HeightFieldShapeSettings_mHeightSamples_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mHeightSamples_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_ArrayFloat_t * mHeightSamples
+void JoltC_HeightFieldShapeSettings_mHeightSamples_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_ArrayFloat_t * mHeightSamples,
+  char** outErrMsg
 );
 
-JPC_ArrayUint8_t * JPC_HeightFieldShapeSettings_mMaterialIndices_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_ArrayUint8_t * JoltC_HeightFieldShapeSettings_mMaterialIndices_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mMaterialIndices_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_ArrayUint8_t * mMaterialIndices
+void JoltC_HeightFieldShapeSettings_mMaterialIndices_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_ArrayUint8_t * mMaterialIndices,
+  char** outErrMsg
 );
 
-JPC_PhysicsMaterialList_t * JPC_HeightFieldShapeSettings_mMaterials_Get(
-  JPC_HeightFieldShapeSettings_t * self
+JoltC_PhysicsMaterialList_t * JoltC_HeightFieldShapeSettings_mMaterials_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mMaterials_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  JPC_PhysicsMaterialList_t * mMaterials
+void JoltC_HeightFieldShapeSettings_mMaterials_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  JoltC_PhysicsMaterialList_t * mMaterials,
+  char** outErrMsg
 );
 
-float JPC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Get(
-  JPC_HeightFieldShapeSettings_t * self
+float JoltC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  float mActiveEdgeCosThresholdAngle
+void JoltC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  float mActiveEdgeCosThresholdAngle,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_HeightFieldShapeSettings_mUserData_Get(
-  JPC_HeightFieldShapeSettings_t * self
+unsigned long long int JoltC_HeightFieldShapeSettings_mUserData_Get(
+  JoltC_HeightFieldShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_HeightFieldShapeSettings_mUserData_Set(
-  JPC_HeightFieldShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_HeightFieldShapeSettings_mUserData_Set(
+  JoltC_HeightFieldShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

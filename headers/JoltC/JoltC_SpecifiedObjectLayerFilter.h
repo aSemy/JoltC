@@ -8,8 +8,9 @@ extern "C" {
 
 //region constructors
 
-JPC_SpecifiedObjectLayerFilter_t * JPC_SpecifiedObjectLayerFilter_new(
-  unsigned long inObjectLayer
+JoltC_SpecifiedObjectLayerFilter_t * JoltC_SpecifiedObjectLayerFilter_new(
+  unsigned long inObjectLayer,
+  char** outErrMsg
 );
 
 //endregion constructors

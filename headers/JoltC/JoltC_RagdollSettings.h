@@ -8,70 +8,84 @@ extern "C" {
 
 //region constructors
 
-JPC_RagdollSettings_t * JPC_RagdollSettings_new();
+JoltC_RagdollSettings_t * JoltC_RagdollSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_RagdollSettings_Stabilize(
-  JPC_RagdollSettings_t * self
+bool JoltC_RagdollSettings_Stabilize(
+  JoltC_RagdollSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Ragdoll_t * JPC_RagdollSettings_CreateRagdoll(
-  JPC_RagdollSettings_t * self,
+JoltC_Ragdoll_t * JoltC_RagdollSettings_CreateRagdoll(
+  JoltC_RagdollSettings_t * self,
   long inCollisionGroup,
   long inUserData,
-  JPC_PhysicsSystem_t * inSystem
+  JoltC_PhysicsSystem_t * inSystem,
+  char** outErrMsg
 );
 
-JPC_Skeleton_t * JPC_RagdollSettings_GetSkeleton(
-  JPC_RagdollSettings_t * self
+JoltC_Skeleton_t * JoltC_RagdollSettings_GetSkeleton(
+  JoltC_RagdollSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RagdollSettings_DisableParentChildCollisions(
-  JPC_RagdollSettings_t * self,
-  const JPC_Mat44MemRef_t * inJointMatrices,
-  float inMinSeparationDistance
+void JoltC_RagdollSettings_DisableParentChildCollisions(
+  JoltC_RagdollSettings_t * self,
+  const JoltC_Mat44MemRef_t * inJointMatrices,
+  float inMinSeparationDistance,
+  char** outErrMsg
 );
 
-void JPC_RagdollSettings_CalculateBodyIndexToConstraintIndex(
-  JPC_RagdollSettings_t * self
+void JoltC_RagdollSettings_CalculateBodyIndexToConstraintIndex(
+  JoltC_RagdollSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RagdollSettings_CalculateConstraintIndexToBodyIdxPair(
-  JPC_RagdollSettings_t * self
+void JoltC_RagdollSettings_CalculateConstraintIndexToBodyIdxPair(
+  JoltC_RagdollSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Skeleton_t * JPC_RagdollSettings_mSkeleton_Get(
-  JPC_RagdollSettings_t * self
+JoltC_Skeleton_t * JoltC_RagdollSettings_mSkeleton_Get(
+  JoltC_RagdollSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RagdollSettings_mSkeleton_Set(
-  JPC_RagdollSettings_t * self,
-  JPC_Skeleton_t * mSkeleton
+void JoltC_RagdollSettings_mSkeleton_Set(
+  JoltC_RagdollSettings_t * self,
+  JoltC_Skeleton_t * mSkeleton,
+  char** outErrMsg
 );
 
-JPC_ArrayRagdollPart_t * JPC_RagdollSettings_mParts_Get(
-  JPC_RagdollSettings_t * self
+JoltC_ArrayRagdollPart_t * JoltC_RagdollSettings_mParts_Get(
+  JoltC_RagdollSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RagdollSettings_mParts_Set(
-  JPC_RagdollSettings_t * self,
-  JPC_ArrayRagdollPart_t * mParts
+void JoltC_RagdollSettings_mParts_Set(
+  JoltC_RagdollSettings_t * self,
+  JoltC_ArrayRagdollPart_t * mParts,
+  char** outErrMsg
 );
 
-JPC_ArrayRagdollAdditionalConstraint_t * JPC_RagdollSettings_mAdditionalConstraints_Get(
-  JPC_RagdollSettings_t * self
+JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_RagdollSettings_mAdditionalConstraints_Get(
+  JoltC_RagdollSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RagdollSettings_mAdditionalConstraints_Set(
-  JPC_RagdollSettings_t * self,
-  JPC_ArrayRagdollAdditionalConstraint_t * mAdditionalConstraints
+void JoltC_RagdollSettings_mAdditionalConstraints_Set(
+  JoltC_RagdollSettings_t * self,
+  JoltC_ArrayRagdollAdditionalConstraint_t * mAdditionalConstraints,
+  char** outErrMsg
 );
 
 //endregion properties

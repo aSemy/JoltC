@@ -1,5 +1,6 @@
-#include "JoltC/JPC_VehicleController.h"
+#include "JoltC/JoltC_VehicleController.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,28 +8,55 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_VehicleController_GetRefCount(
-  JPC_VehicleController_t * self
+unsigned long JoltC_VehicleController_GetRefCount(
+  JoltC_VehicleController_t * self,
+  char** outErrMsg
 ) {
-  VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_VehicleController_AddRef(
-  JPC_VehicleController_t * self
+void JoltC_VehicleController_AddRef(
+  JoltC_VehicleController_t * self,
+  char** outErrMsg
 ) {
-  VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_VehicleController_Release(
-  JPC_VehicleController_t * self
+void JoltC_VehicleController_Release(
+  JoltC_VehicleController_t * self,
+  char** outErrMsg
 ) {
-  VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

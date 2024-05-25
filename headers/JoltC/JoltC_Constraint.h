@@ -8,77 +8,94 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_Constraint_GetRefCount(
-  JPC_Constraint_t * self
+unsigned long JoltC_Constraint_GetRefCount(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_Constraint_AddRef(
-  JPC_Constraint_t * self
+void JoltC_Constraint_AddRef(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_Constraint_Release(
-  JPC_Constraint_t * self
+void JoltC_Constraint_Release(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintType JPC_Constraint_GetType(
-  JPC_Constraint_t * self
+JoltC_EConstraintType JoltC_Constraint_GetType(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintSubType JPC_Constraint_GetSubType(
-  JPC_Constraint_t * self
+JoltC_EConstraintSubType JoltC_Constraint_GetSubType(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_Constraint_GetConstraintPriority(
-  JPC_Constraint_t * self
+unsigned long JoltC_Constraint_GetConstraintPriority(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_Constraint_SetConstraintPriority(
-  JPC_Constraint_t * self,
-  unsigned long inPriority
+void JoltC_Constraint_SetConstraintPriority(
+  JoltC_Constraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 );
 
-void JPC_Constraint_SetNumVelocityStepsOverride(
-  JPC_Constraint_t * self,
-  long inN
+void JoltC_Constraint_SetNumVelocityStepsOverride(
+  JoltC_Constraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_Constraint_GetNumVelocityStepsOverride(
-  JPC_Constraint_t * self
+long JoltC_Constraint_GetNumVelocityStepsOverride(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_Constraint_SetNumPositionStepsOverride(
-  JPC_Constraint_t * self,
-  long inN
+void JoltC_Constraint_SetNumPositionStepsOverride(
+  JoltC_Constraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_Constraint_GetNumPositionStepsOverride(
-  JPC_Constraint_t * self
+long JoltC_Constraint_GetNumPositionStepsOverride(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_Constraint_SetEnabled(
-  JPC_Constraint_t * self,
-  bool inEnabled
+void JoltC_Constraint_SetEnabled(
+  JoltC_Constraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 );
 
-bool JPC_Constraint_GetEnabled(
-  JPC_Constraint_t * self
+bool JoltC_Constraint_GetEnabled(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_Constraint_IsActive(
-  JPC_Constraint_t * self
+bool JoltC_Constraint_IsActive(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_Constraint_GetUserData(
-  JPC_Constraint_t * self
+unsigned long long int JoltC_Constraint_GetUserData(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_Constraint_SetUserData(
-  JPC_Constraint_t * self,
-  unsigned long long int inUserData
+void JoltC_Constraint_SetUserData(
+  JoltC_Constraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-void JPC_Constraint_ResetWarmStart(
-  JPC_Constraint_t * self
+void JoltC_Constraint_ResetWarmStart(
+  JoltC_Constraint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

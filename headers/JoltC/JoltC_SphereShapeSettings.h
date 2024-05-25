@@ -8,73 +8,87 @@ extern "C" {
 
 //region constructors
 
-JPC_SphereShapeSettings_t * JPC_SphereShapeSettings_new(
+JoltC_SphereShapeSettings_t * JoltC_SphereShapeSettings_new(
   float inRadius,
-  const JPC_PhysicsMaterial_t * inMaterial
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_SphereShapeSettings_GetRefCount(
-  JPC_SphereShapeSettings_t * self
+unsigned long JoltC_SphereShapeSettings_GetRefCount(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShapeSettings_AddRef(
-  JPC_SphereShapeSettings_t * self
+void JoltC_SphereShapeSettings_AddRef(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShapeSettings_Release(
-  JPC_SphereShapeSettings_t * self
+void JoltC_SphereShapeSettings_Release(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_SphereShapeSettings_Create(
-  JPC_SphereShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_SphereShapeSettings_Create(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShapeSettings_ClearCachedResult(
-  JPC_SphereShapeSettings_t * self
+void JoltC_SphereShapeSettings_ClearCachedResult(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_SphereShapeSettings_mRadius_Get(
-  JPC_SphereShapeSettings_t * self
+float JoltC_SphereShapeSettings_mRadius_Get(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShapeSettings_mRadius_Set(
-  JPC_SphereShapeSettings_t * self,
-  float mRadius
+void JoltC_SphereShapeSettings_mRadius_Set(
+  JoltC_SphereShapeSettings_t * self,
+  float mRadius,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_SphereShapeSettings_mMaterial_Get(
-  JPC_SphereShapeSettings_t * self
+const JoltC_PhysicsMaterial_t * JoltC_SphereShapeSettings_mMaterial_Get(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
-const void JPC_SphereShapeSettings_mMaterial_Set(
-  JPC_SphereShapeSettings_t * self,
-  const JPC_PhysicsMaterial_t * mMaterial
+const void JoltC_SphereShapeSettings_mMaterial_Set(
+  JoltC_SphereShapeSettings_t * self,
+  const JoltC_PhysicsMaterial_t * mMaterial,
+  char** outErrMsg
 );
 
-float JPC_SphereShapeSettings_mDensity_Get(
-  JPC_SphereShapeSettings_t * self
+float JoltC_SphereShapeSettings_mDensity_Get(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShapeSettings_mDensity_Set(
-  JPC_SphereShapeSettings_t * self,
-  float mDensity
+void JoltC_SphereShapeSettings_mDensity_Set(
+  JoltC_SphereShapeSettings_t * self,
+  float mDensity,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_SphereShapeSettings_mUserData_Get(
-  JPC_SphereShapeSettings_t * self
+unsigned long long int JoltC_SphereShapeSettings_mUserData_Get(
+  JoltC_SphereShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SphereShapeSettings_mUserData_Set(
-  JPC_SphereShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_SphereShapeSettings_mUserData_Set(
+  JoltC_SphereShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

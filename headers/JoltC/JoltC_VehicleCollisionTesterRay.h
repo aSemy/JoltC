@@ -8,26 +8,30 @@ extern "C" {
 
 //region constructors
 
-JPC_VehicleCollisionTesterRay_t * JPC_VehicleCollisionTesterRay_new(
+JoltC_VehicleCollisionTesterRay_t * JoltC_VehicleCollisionTesterRay_new(
   unsigned long inObjectLayer,
-  JPC_Vec3_t * inUp,
-  float inMaxSlopeAngle
+  JoltC_Vec3_t * inUp,
+  float inMaxSlopeAngle,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_VehicleCollisionTesterRay_GetRefCount(
-  JPC_VehicleCollisionTesterRay_t * self
+unsigned long JoltC_VehicleCollisionTesterRay_GetRefCount(
+  JoltC_VehicleCollisionTesterRay_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleCollisionTesterRay_AddRef(
-  JPC_VehicleCollisionTesterRay_t * self
+void JoltC_VehicleCollisionTesterRay_AddRef(
+  JoltC_VehicleCollisionTesterRay_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleCollisionTesterRay_Release(
-  JPC_VehicleCollisionTesterRay_t * self
+void JoltC_VehicleCollisionTesterRay_Release(
+  JoltC_VehicleCollisionTesterRay_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

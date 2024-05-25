@@ -8,31 +8,37 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayWheelSettings_empty(
-  JPC_ArrayWheelSettings_t * self
+bool JoltC_ArrayWheelSettings_empty(
+  JoltC_ArrayWheelSettings_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayWheelSettings_size(
-  JPC_ArrayWheelSettings_t * self
+long JoltC_ArrayWheelSettings_size(
+  JoltC_ArrayWheelSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_WheelSettings_t * JPC_ArrayWheelSettings_at(
-  JPC_ArrayWheelSettings_t * self,
-  long inIndex
+JoltC_WheelSettings_t * JoltC_ArrayWheelSettings_at(
+  JoltC_ArrayWheelSettings_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayWheelSettings_push_back(
-  JPC_ArrayWheelSettings_t * self,
-  JPC_WheelSettings_t * inValue
+void JoltC_ArrayWheelSettings_push_back(
+  JoltC_ArrayWheelSettings_t * self,
+  JoltC_WheelSettings_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayWheelSettings_resize(
-  JPC_ArrayWheelSettings_t * self,
-  unsigned long inSize
+void JoltC_ArrayWheelSettings_resize(
+  JoltC_ArrayWheelSettings_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayWheelSettings_clear(
-  JPC_ArrayWheelSettings_t * self
+void JoltC_ArrayWheelSettings_clear(
+  JoltC_ArrayWheelSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

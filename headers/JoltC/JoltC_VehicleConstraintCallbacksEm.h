@@ -8,9 +8,10 @@ extern "C" {
 
 //region functions
 
-void JPC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
-  JPC_VehicleConstraintCallbacksEm_t * self,
-  JPC_VehicleConstraint_t * inConstraint
+void JoltC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
+  JoltC_VehicleConstraintCallbacksEm_t * self,
+  JoltC_VehicleConstraint_t * inConstraint,
+  char** outErrMsg
 );
 
 //endregion functions

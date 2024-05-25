@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SphereShape.h"
+#include "JoltC/JoltC_SphereShape.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,259 +8,484 @@ extern "C" {
 
 //region constructors
 
-JPC_SphereShape_t * JPC_SphereShape_new(
+JoltC_SphereShape_t * JoltC_SphereShape_new(
   float inRadius,
-  const JPC_PhysicsMaterial_t * inMaterial
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 ) {
-  JPC_SphereShape_t * cInstance = new JPC_SphereShape_t();
-  SphereShape * cppInstance = new SphereShape(
-    inRadius,
-    reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_SphereShape_t * cInstance = new JoltC_SphereShape_t();
+    SphereShape * cppInstance = new SphereShape(
+      inRadius,
+      reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-float JPC_SphereShape_GetRadius(
-  JPC_SphereShape_t * self
+float JoltC_SphereShape_GetRadius(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  float result = selfCpp->GetRadius();
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    float result = selfCpp->GetRadius();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SphereShape_GetDensity(
-  JPC_SphereShape_t * self
+float JoltC_SphereShape_GetDensity(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  float result = selfCpp->GetDensity();
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    float result = selfCpp->GetDensity();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SphereShape_SetDensity(
-  JPC_SphereShape_t * self,
-  float inDensity
+void JoltC_SphereShape_SetDensity(
+  JoltC_SphereShape_t * self,
+  float inDensity,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  
-  selfCpp->SetDensity(
-  inDensity
-  );
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    
+    selfCpp->SetDensity(
+    inDensity
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_SphereShape_GetRefCount(
-  JPC_SphereShape_t * self
+unsigned long JoltC_SphereShape_GetRefCount(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SphereShape_AddRef(
-  JPC_SphereShape_t * self
+void JoltC_SphereShape_AddRef(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SphereShape_Release(
-  JPC_SphereShape_t * self
+void JoltC_SphereShape_Release(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EShapeType JPC_SphereShape_GetType(
-  JPC_SphereShape_t * self
+JoltC_EShapeType JoltC_SphereShape_GetType(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  EShapeType result = selfCpp->GetType();
-  return static_cast<JPC_EShapeType>(static_cast<int>(result));
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    EShapeType result = selfCpp->GetType();
+    return static_cast<JoltC_EShapeType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EShapeSubType JPC_SphereShape_GetSubType(
-  JPC_SphereShape_t * self
+JoltC_EShapeSubType JoltC_SphereShape_GetSubType(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  EShapeSubType result = selfCpp->GetSubType();
-  return static_cast<JPC_EShapeSubType>(static_cast<int>(result));
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    EShapeSubType result = selfCpp->GetSubType();
+    return static_cast<JoltC_EShapeSubType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_SphereShape_MustBeStatic(
-  JPC_SphereShape_t * self
+bool JoltC_SphereShape_MustBeStatic(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  bool result = selfCpp->MustBeStatic();
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    bool result = selfCpp->MustBeStatic();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_AABox_t * JPC_SphereShape_GetLocalBounds(
-  JPC_SphereShape_t * self
+JoltC_AABox_t * JoltC_SphereShape_GetLocalBounds(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  AABox resultValue = selfCpp->GetLocalBounds();
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JPC_AABox_t *>(result);
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    AABox resultValue = selfCpp->GetLocalBounds();
+    AABox* result = new AABox(resultValue);
+    return reinterpret_cast<JoltC_AABox_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_AABox_t * JPC_SphereShape_GetWorldSpaceBounds(
-  JPC_SphereShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_SphereShape_GetWorldSpaceBounds(
+  JoltC_SphereShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  AABox resultValue = selfCpp->GetWorldSpaceBounds(
-  *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JPC_AABox_t *>(result);
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    AABox resultValue = selfCpp->GetWorldSpaceBounds(
+    *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    AABox* result = new AABox(resultValue);
+    return reinterpret_cast<JoltC_AABox_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_SphereShape_GetCenterOfMass(
-  JPC_SphereShape_t * self
+JoltC_Vec3_t * JoltC_SphereShape_GetCenterOfMass(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetCenterOfMass();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    Vec3 resultValue = selfCpp->GetCenterOfMass();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_SphereShape_GetUserData(
-  JPC_SphereShape_t * self
+unsigned long long int JoltC_SphereShape_GetUserData(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_SphereShape_SetUserData(
-  JPC_SphereShape_t * self,
-  unsigned long long int inUserData
+void JoltC_SphereShape_SetUserData(
+  JoltC_SphereShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_SphereShape_GetSubShapeIDBitsRecursive(
-  JPC_SphereShape_t * self
+unsigned long JoltC_SphereShape_GetSubShapeIDBitsRecursive(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  unsigned long result = selfCpp->GetSubShapeIDBitsRecursive();
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    unsigned long result = selfCpp->GetSubShapeIDBitsRecursive();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SphereShape_GetInnerRadius(
-  JPC_SphereShape_t * self
+float JoltC_SphereShape_GetInnerRadius(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  float result = selfCpp->GetInnerRadius();
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    float result = selfCpp->GetInnerRadius();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_MassProperties_t * JPC_SphereShape_GetMassProperties(
-  JPC_SphereShape_t * self
+JoltC_MassProperties_t * JoltC_SphereShape_GetMassProperties(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  MassProperties resultValue = selfCpp->GetMassProperties();
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JPC_MassProperties_t *>(result);
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    MassProperties resultValue = selfCpp->GetMassProperties();
+    MassProperties* result = new MassProperties(resultValue);
+    return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_PhysicsMaterial_t * JPC_SphereShape_GetMaterial(
-  JPC_SphereShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_SphereShape_GetMaterial(
+  JoltC_SphereShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetMaterial(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-  );
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    const PhysicsMaterial * result = selfCpp->GetMaterial(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    );
+    return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_SphereShape_GetSurfaceNormal(
-  JPC_SphereShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_SphereShape_GetSurfaceNormal(
+  JoltC_SphereShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetSurfaceNormal(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
-  );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    Vec3 resultValue = selfCpp->GetSurfaceNormal(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
+    );
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_SphereShape_GetSubShapeUserData(
-  JPC_SphereShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_SphereShape_GetSubShapeUserData(
+  JoltC_SphereShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  unsigned long long int result = selfCpp->GetSubShapeUserData(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-  );
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    unsigned long long int result = selfCpp->GetSubShapeUserData(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_TransformedShape_t * JPC_SphereShape_GetSubShapeTransformedShape(
-  JPC_SphereShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_SphereShape_GetSubShapeTransformedShape(
+  JoltC_SphereShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
-  *reinterpret_cast<Quat *>(inRotation->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj),
-  *reinterpret_cast<SubShapeID *>(outRemainder->obj)
-  );
-  TransformedShape* result = new TransformedShape(resultValue);
-  return reinterpret_cast<JPC_TransformedShape_t *>(result);
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
+    *reinterpret_cast<Quat *>(inRotation->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj),
+    *reinterpret_cast<SubShapeID *>(outRemainder->obj)
+    );
+    TransformedShape* result = new TransformedShape(resultValue);
+    return reinterpret_cast<JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_SphereShape_GetVolume(
-  JPC_SphereShape_t * self
+float JoltC_SphereShape_GetVolume(
+  JoltC_SphereShape_t * self,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  float result = selfCpp->GetVolume();
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    float result = selfCpp->GetVolume();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_SphereShape_IsValidScale(
-  JPC_SphereShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_SphereShape_IsValidScale(
+  JoltC_SphereShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  bool result = selfCpp->IsValidScale(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  return result;
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    bool result = selfCpp->IsValidScale(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_ShapeResult_t * JPC_SphereShape_ScaleShape(
-  JPC_SphereShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_SphereShape_ScaleShape(
+  JoltC_SphereShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->ScaleShape(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JPC_Shape_ShapeResult_t *>(result);
+  try {
+    SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
+    Shape::ShapeResult resultValue = selfCpp->ScaleShape(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

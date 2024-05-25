@@ -8,7 +8,9 @@ extern "C" {
 
 //region constructors
 
-JPC_BodyFilter_t * JPC_BodyFilter_new();
+JoltC_BodyFilter_t * JoltC_BodyFilter_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 

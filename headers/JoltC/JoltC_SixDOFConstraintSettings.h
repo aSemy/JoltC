@@ -8,213 +8,256 @@ extern "C" {
 
 //region constructors
 
-JPC_SixDOFConstraintSettings_t * JPC_SixDOFConstraintSettings_new();
+JoltC_SixDOFConstraintSettings_t * JoltC_SixDOFConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_SixDOFConstraintSettings_MakeFreeAxis(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_SixDOFConstraintSettings_EAxis inAxis
+void JoltC_SixDOFConstraintSettings_MakeFreeAxis(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_SixDOFConstraintSettings_EAxis inAxis,
+  char** outErrMsg
 );
 
-bool JPC_SixDOFConstraintSettings_IsFreeAxis(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_SixDOFConstraintSettings_EAxis inAxis
+bool JoltC_SixDOFConstraintSettings_IsFreeAxis(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_SixDOFConstraintSettings_EAxis inAxis,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_MakeFixedAxis(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_SixDOFConstraintSettings_EAxis inAxis
+void JoltC_SixDOFConstraintSettings_MakeFixedAxis(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_SixDOFConstraintSettings_EAxis inAxis,
+  char** outErrMsg
 );
 
-bool JPC_SixDOFConstraintSettings_IsFixedAxis(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_SixDOFConstraintSettings_EAxis inAxis
+bool JoltC_SixDOFConstraintSettings_IsFixedAxis(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_SixDOFConstraintSettings_EAxis inAxis,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_SetLimitedAxis(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_SixDOFConstraintSettings_EAxis inAxis,
+void JoltC_SixDOFConstraintSettings_SetLimitedAxis(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_SixDOFConstraintSettings_EAxis inAxis,
   float inMin,
-  float inMax
+  float inMax,
+  char** outErrMsg
 );
 
-JPC_Constraint_t * JPC_SixDOFConstraintSettings_Create(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_SixDOFConstraintSettings_Create(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_SixDOFConstraintSettings_GetRefCount(
-  JPC_SixDOFConstraintSettings_t * self
+unsigned long JoltC_SixDOFConstraintSettings_GetRefCount(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_AddRef(
-  JPC_SixDOFConstraintSettings_t * self
+void JoltC_SixDOFConstraintSettings_AddRef(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_Release(
-  JPC_SixDOFConstraintSettings_t * self
+void JoltC_SixDOFConstraintSettings_Release(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_SixDOFConstraintSettings_mSpace_Get(
-  JPC_SixDOFConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_SixDOFConstraintSettings_mSpace_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mSpace_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_SixDOFConstraintSettings_mSpace_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_SixDOFConstraintSettings_mPosition1_Get(
-  JPC_SixDOFConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_SixDOFConstraintSettings_mPosition1_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mPosition1_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_RVec3_t * mPosition1
+void JoltC_SixDOFConstraintSettings_mPosition1_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_RVec3_t * mPosition1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SixDOFConstraintSettings_mAxisX1_Get(
-  JPC_SixDOFConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisX1_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mAxisX1_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_Vec3_t * mAxisX1
+void JoltC_SixDOFConstraintSettings_mAxisX1_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_Vec3_t * mAxisX1,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SixDOFConstraintSettings_mAxisY1_Get(
-  JPC_SixDOFConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisY1_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mAxisY1_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_Vec3_t * mAxisY1
+void JoltC_SixDOFConstraintSettings_mAxisY1_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_Vec3_t * mAxisY1,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_SixDOFConstraintSettings_mPosition2_Get(
-  JPC_SixDOFConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_SixDOFConstraintSettings_mPosition2_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mPosition2_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_RVec3_t * mPosition2
+void JoltC_SixDOFConstraintSettings_mPosition2_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_RVec3_t * mPosition2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SixDOFConstraintSettings_mAxisX2_Get(
-  JPC_SixDOFConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisX2_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mAxisX2_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_Vec3_t * mAxisX2
+void JoltC_SixDOFConstraintSettings_mAxisX2_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_Vec3_t * mAxisX2,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SixDOFConstraintSettings_mAxisY2_Get(
-  JPC_SixDOFConstraintSettings_t * self
+JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisY2_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mAxisY2_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_Vec3_t * mAxisY2
+void JoltC_SixDOFConstraintSettings_mAxisY2_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_Vec3_t * mAxisY2,
+  char** outErrMsg
 );
 
-size_t JPC_SixDOFConstraintSettings_mMaxFriction_Get(
-  JPC_SixDOFConstraintSettings_t * self,
-  float * outValue
+size_t JoltC_SixDOFConstraintSettings_mMaxFriction_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  float * outValue,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mMaxFriction_Set(
-  JPC_SixDOFConstraintSettings_t * self,
+void JoltC_SixDOFConstraintSettings_mMaxFriction_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
   float * mMaxFriction,
-  size_t mMaxFrictionSize
+  size_t mMaxFrictionSize,
+  char** outErrMsg
 );
 
-JPC_ESwingType JPC_SixDOFConstraintSettings_mSwingType_Get(
-  JPC_SixDOFConstraintSettings_t * self
+JoltC_ESwingType JoltC_SixDOFConstraintSettings_mSwingType_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mSwingType_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_ESwingType mSwingType
+void JoltC_SixDOFConstraintSettings_mSwingType_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_ESwingType mSwingType,
+  char** outErrMsg
 );
 
-size_t JPC_SixDOFConstraintSettings_mLimitMin_Get(
-  JPC_SixDOFConstraintSettings_t * self,
-  float * outValue
+size_t JoltC_SixDOFConstraintSettings_mLimitMin_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  float * outValue,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mLimitMin_Set(
-  JPC_SixDOFConstraintSettings_t * self,
+void JoltC_SixDOFConstraintSettings_mLimitMin_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
   float * mLimitMin,
-  size_t mLimitMinSize
+  size_t mLimitMinSize,
+  char** outErrMsg
 );
 
-size_t JPC_SixDOFConstraintSettings_mLimitMax_Get(
-  JPC_SixDOFConstraintSettings_t * self,
-  float * outValue
+size_t JoltC_SixDOFConstraintSettings_mLimitMax_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  float * outValue,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mLimitMax_Set(
-  JPC_SixDOFConstraintSettings_t * self,
+void JoltC_SixDOFConstraintSettings_mLimitMax_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
   float * mLimitMax,
-  size_t mLimitMaxSize
+  size_t mLimitMaxSize,
+  char** outErrMsg
 );
 
-size_t JPC_SixDOFConstraintSettings_mLimitsSpringSettings_Get(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_SpringSettings_t * * outValue
+size_t JoltC_SixDOFConstraintSettings_mLimitsSpringSettings_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_SpringSettings_t * * outValue,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mLimitsSpringSettings_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_SpringSettings_t * * mLimitsSpringSettings,
-  size_t mLimitsSpringSettingsSize
+void JoltC_SixDOFConstraintSettings_mLimitsSpringSettings_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_SpringSettings_t * * mLimitsSpringSettings,
+  size_t mLimitsSpringSettingsSize,
+  char** outErrMsg
 );
 
-size_t JPC_SixDOFConstraintSettings_mMotorSettings_Get(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_MotorSettings_t * * outValue
+size_t JoltC_SixDOFConstraintSettings_mMotorSettings_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_MotorSettings_t * * outValue,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mMotorSettings_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  JPC_MotorSettings_t * * mMotorSettings,
-  size_t mMotorSettingsSize
+void JoltC_SixDOFConstraintSettings_mMotorSettings_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  JoltC_MotorSettings_t * * mMotorSettings,
+  size_t mMotorSettingsSize,
+  char** outErrMsg
 );
 
-bool JPC_SixDOFConstraintSettings_mEnabled_Get(
-  JPC_SixDOFConstraintSettings_t * self
+bool JoltC_SixDOFConstraintSettings_mEnabled_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mEnabled_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_SixDOFConstraintSettings_mEnabled_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_SixDOFConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_SixDOFConstraintSettings_t * self
+long JoltC_SixDOFConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_SixDOFConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_SixDOFConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_SixDOFConstraintSettings_t * self
+long JoltC_SixDOFConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_SixDOFConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SixDOFConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_SixDOFConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_SixDOFConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_SixDOFConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

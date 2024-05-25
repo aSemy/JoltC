@@ -8,173 +8,215 @@ extern "C" {
 
 //region constructors
 
-JPC_RVec3_t * JPC_RVec3_new_0();
+JoltC_RVec3_t * JoltC_RVec3_new_0(
+  char** outErrMsg
+);
 
-JPC_RVec3_t * JPC_RVec3_new_1(
+JoltC_RVec3_t * JoltC_RVec3_new_1(
   double inX,
   double inY,
-  double inZ
+  double inZ,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-JPC_RVec3_t * JPC_RVec3_sZero();
-
-JPC_RVec3_t * JPC_RVec3_sAxisX();
-
-JPC_RVec3_t * JPC_RVec3_sAxisY();
-
-JPC_RVec3_t * JPC_RVec3_sAxisZ();
-
-JPC_RVec3_t * JPC_RVec3_sReplicate(
-  double inValue
+JoltC_RVec3_t * JoltC_RVec3_sZero(
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RVec3_sMin(
-  const JPC_RVec3_t * inLHS,
-  const JPC_RVec3_t * inRHS
+JoltC_RVec3_t * JoltC_RVec3_sAxisX(
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RVec3_sMax(
-  const JPC_RVec3_t * inLHS,
-  const JPC_RVec3_t * inRHS
+JoltC_RVec3_t * JoltC_RVec3_sAxisY(
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RVec3_sClamp(
-  const JPC_RVec3_t * inValue,
-  const JPC_RVec3_t * inMin,
-  const JPC_RVec3_t * inMax
+JoltC_RVec3_t * JoltC_RVec3_sAxisZ(
+  char** outErrMsg
 );
 
-double JPC_RVec3_GetComponent(
-  JPC_RVec3_t * self,
-  unsigned long inCoordinate
+JoltC_RVec3_t * JoltC_RVec3_sReplicate(
+  double inValue,
+  char** outErrMsg
 );
 
-bool JPC_RVec3_Equals(
-  JPC_RVec3_t * self,
-  const JPC_RVec3_t * inV
+JoltC_RVec3_t * JoltC_RVec3_sMin(
+  const JoltC_RVec3_t * inLHS,
+  const JoltC_RVec3_t * inRHS,
+  char** outErrMsg
 );
 
-bool JPC_RVec3_NotEquals(
-  JPC_RVec3_t * self,
-  const JPC_RVec3_t * inV
+JoltC_RVec3_t * JoltC_RVec3_sMax(
+  const JoltC_RVec3_t * inLHS,
+  const JoltC_RVec3_t * inRHS,
+  char** outErrMsg
 );
 
-double JPC_RVec3_LengthSq(
-  JPC_RVec3_t * self
+JoltC_RVec3_t * JoltC_RVec3_sClamp(
+  const JoltC_RVec3_t * inValue,
+  const JoltC_RVec3_t * inMin,
+  const JoltC_RVec3_t * inMax,
+  char** outErrMsg
 );
 
-double JPC_RVec3_Length(
-  JPC_RVec3_t * self
+double JoltC_RVec3_GetComponent(
+  JoltC_RVec3_t * self,
+  unsigned long inCoordinate,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RVec3_Normalized(
-  JPC_RVec3_t * self
+bool JoltC_RVec3_Equals(
+  JoltC_RVec3_t * self,
+  const JoltC_RVec3_t * inV,
+  char** outErrMsg
 );
 
-double JPC_RVec3_GetX(
-  JPC_RVec3_t * self
+bool JoltC_RVec3_NotEquals(
+  JoltC_RVec3_t * self,
+  const JoltC_RVec3_t * inV,
+  char** outErrMsg
 );
 
-double JPC_RVec3_GetY(
-  JPC_RVec3_t * self
+double JoltC_RVec3_LengthSq(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
-double JPC_RVec3_GetZ(
-  JPC_RVec3_t * self
+double JoltC_RVec3_Length(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
-void JPC_RVec3_SetX(
-  JPC_RVec3_t * self,
-  double inX
+JoltC_RVec3_t * JoltC_RVec3_Normalized(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
-void JPC_RVec3_SetY(
-  JPC_RVec3_t * self,
-  double inY
+double JoltC_RVec3_GetX(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
-void JPC_RVec3_SetZ(
-  JPC_RVec3_t * self,
-  double inZ
+double JoltC_RVec3_GetY(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
-void JPC_RVec3_Set(
-  JPC_RVec3_t * self,
+double JoltC_RVec3_GetZ(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
+);
+
+void JoltC_RVec3_SetX(
+  JoltC_RVec3_t * self,
+  double inX,
+  char** outErrMsg
+);
+
+void JoltC_RVec3_SetY(
+  JoltC_RVec3_t * self,
+  double inY,
+  char** outErrMsg
+);
+
+void JoltC_RVec3_SetZ(
+  JoltC_RVec3_t * self,
+  double inZ,
+  char** outErrMsg
+);
+
+void JoltC_RVec3_Set(
+  JoltC_RVec3_t * self,
   double inX,
   double inY,
-  double inZ
+  double inZ,
+  char** outErrMsg
 );
 
-void JPC_RVec3_SetComponent(
-  JPC_RVec3_t * self,
+void JoltC_RVec3_SetComponent(
+  JoltC_RVec3_t * self,
   unsigned long inCoordinate,
-  double inValue
+  double inValue,
+  char** outErrMsg
 );
 
-bool JPC_RVec3_IsNearZero(
-  JPC_RVec3_t * self,
-  double inMaxDistSq
+bool JoltC_RVec3_IsNearZero(
+  JoltC_RVec3_t * self,
+  double inMaxDistSq,
+  char** outErrMsg
 );
 
-bool JPC_RVec3_IsClose(
-  JPC_RVec3_t * self,
-  const JPC_RVec3_t * inV,
-  double inMaxDistSq
+bool JoltC_RVec3_IsClose(
+  JoltC_RVec3_t * self,
+  const JoltC_RVec3_t * inV,
+  double inMaxDistSq,
+  char** outErrMsg
 );
 
-bool JPC_RVec3_IsNormalized(
-  JPC_RVec3_t * self,
-  double inTolerance
+bool JoltC_RVec3_IsNormalized(
+  JoltC_RVec3_t * self,
+  double inTolerance,
+  char** outErrMsg
 );
 
-const JPC_RVec3_t * JPC_RVec3_Abs(
-  JPC_RVec3_t * self
+const JoltC_RVec3_t * JoltC_RVec3_Abs(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
-const JPC_RVec3_t * JPC_RVec3_Reciprocal(
-  JPC_RVec3_t * self
+const JoltC_RVec3_t * JoltC_RVec3_Reciprocal(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
-const JPC_RVec3_t * JPC_RVec3_Cross(
-  JPC_RVec3_t * self,
-  const JPC_RVec3_t * inRHS
+const JoltC_RVec3_t * JoltC_RVec3_Cross(
+  JoltC_RVec3_t * self,
+  const JoltC_RVec3_t * inRHS,
+  char** outErrMsg
 );
 
-double JPC_RVec3_Dot(
-  JPC_RVec3_t * self,
-  const JPC_RVec3_t * inRHS
+double JoltC_RVec3_Dot(
+  JoltC_RVec3_t * self,
+  const JoltC_RVec3_t * inRHS,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RVec3_Add(
-  JPC_RVec3_t * self,
-  const JPC_Vec3_t * inV
+JoltC_RVec3_t * JoltC_RVec3_Add(
+  JoltC_RVec3_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RVec3_Sub(
-  JPC_RVec3_t * self,
-  const JPC_Vec3_t * inV
+JoltC_RVec3_t * JoltC_RVec3_Sub(
+  JoltC_RVec3_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RVec3_Mul(
-  JPC_RVec3_t * self,
-  double inV
+JoltC_RVec3_t * JoltC_RVec3_Mul(
+  JoltC_RVec3_t * self,
+  double inV,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_RVec3_Div(
-  JPC_RVec3_t * self,
-  double inV
+JoltC_RVec3_t * JoltC_RVec3_Div(
+  JoltC_RVec3_t * self,
+  double inV,
+  char** outErrMsg
 );
 
-const JPC_RVec3_t * JPC_RVec3_Sqrt(
-  JPC_RVec3_t * self
+const JoltC_RVec3_t * JoltC_RVec3_Sqrt(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
-const JPC_RVec3_t * JPC_RVec3_GetSign(
-  JPC_RVec3_t * self
+const JoltC_RVec3_t * JoltC_RVec3_GetSign(
+  JoltC_RVec3_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

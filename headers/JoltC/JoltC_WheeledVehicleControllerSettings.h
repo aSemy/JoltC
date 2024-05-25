@@ -8,46 +8,56 @@ extern "C" {
 
 //region constructors
 
-JPC_WheeledVehicleControllerSettings_t * JPC_WheeledVehicleControllerSettings_new();
+JoltC_WheeledVehicleControllerSettings_t * JoltC_WheeledVehicleControllerSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-JPC_VehicleEngineSettings_t * JPC_WheeledVehicleControllerSettings_mEngine_Get(
-  JPC_WheeledVehicleControllerSettings_t * self
+JoltC_VehicleEngineSettings_t * JoltC_WheeledVehicleControllerSettings_mEngine_Get(
+  JoltC_WheeledVehicleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleControllerSettings_mEngine_Set(
-  JPC_WheeledVehicleControllerSettings_t * self,
-  JPC_VehicleEngineSettings_t * mEngine
+void JoltC_WheeledVehicleControllerSettings_mEngine_Set(
+  JoltC_WheeledVehicleControllerSettings_t * self,
+  JoltC_VehicleEngineSettings_t * mEngine,
+  char** outErrMsg
 );
 
-JPC_VehicleTransmissionSettings_t * JPC_WheeledVehicleControllerSettings_mTransmission_Get(
-  JPC_WheeledVehicleControllerSettings_t * self
+JoltC_VehicleTransmissionSettings_t * JoltC_WheeledVehicleControllerSettings_mTransmission_Get(
+  JoltC_WheeledVehicleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleControllerSettings_mTransmission_Set(
-  JPC_WheeledVehicleControllerSettings_t * self,
-  JPC_VehicleTransmissionSettings_t * mTransmission
+void JoltC_WheeledVehicleControllerSettings_mTransmission_Set(
+  JoltC_WheeledVehicleControllerSettings_t * self,
+  JoltC_VehicleTransmissionSettings_t * mTransmission,
+  char** outErrMsg
 );
 
-JPC_ArrayVehicleDifferentialSettings_t * JPC_WheeledVehicleControllerSettings_mDifferentials_Get(
-  JPC_WheeledVehicleControllerSettings_t * self
+JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleControllerSettings_mDifferentials_Get(
+  JoltC_WheeledVehicleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleControllerSettings_mDifferentials_Set(
-  JPC_WheeledVehicleControllerSettings_t * self,
-  JPC_ArrayVehicleDifferentialSettings_t * mDifferentials
+void JoltC_WheeledVehicleControllerSettings_mDifferentials_Set(
+  JoltC_WheeledVehicleControllerSettings_t * self,
+  JoltC_ArrayVehicleDifferentialSettings_t * mDifferentials,
+  char** outErrMsg
 );
 
-float JPC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Get(
-  JPC_WheeledVehicleControllerSettings_t * self
+float JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Get(
+  JoltC_WheeledVehicleControllerSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Set(
-  JPC_WheeledVehicleControllerSettings_t * self,
-  float mDifferentialLimitedSlipRatio
+void JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Set(
+  JoltC_WheeledVehicleControllerSettings_t * self,
+  float mDifferentialLimitedSlipRatio,
+  char** outErrMsg
 );
 
 //endregion properties

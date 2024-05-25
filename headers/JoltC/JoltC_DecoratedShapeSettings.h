@@ -8,37 +8,44 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_DecoratedShapeSettings_GetRefCount(
-  JPC_DecoratedShapeSettings_t * self
+unsigned long JoltC_DecoratedShapeSettings_GetRefCount(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DecoratedShapeSettings_AddRef(
-  JPC_DecoratedShapeSettings_t * self
+void JoltC_DecoratedShapeSettings_AddRef(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DecoratedShapeSettings_Release(
-  JPC_DecoratedShapeSettings_t * self
+void JoltC_DecoratedShapeSettings_Release(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_DecoratedShapeSettings_Create(
-  JPC_DecoratedShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_DecoratedShapeSettings_Create(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DecoratedShapeSettings_ClearCachedResult(
-  JPC_DecoratedShapeSettings_t * self
+void JoltC_DecoratedShapeSettings_ClearCachedResult(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-unsigned long long int JPC_DecoratedShapeSettings_mUserData_Get(
-  JPC_DecoratedShapeSettings_t * self
+unsigned long long int JoltC_DecoratedShapeSettings_mUserData_Get(
+  JoltC_DecoratedShapeSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_DecoratedShapeSettings_mUserData_Set(
-  JPC_DecoratedShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_DecoratedShapeSettings_mUserData_Set(
+  JoltC_DecoratedShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 );
 
 //endregion properties

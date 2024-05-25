@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayCollidePointResult_empty(
-  JPC_ArrayCollidePointResult_t * self
+bool JoltC_ArrayCollidePointResult_empty(
+  JoltC_ArrayCollidePointResult_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayCollidePointResult_size(
-  JPC_ArrayCollidePointResult_t * self
+long JoltC_ArrayCollidePointResult_size(
+  JoltC_ArrayCollidePointResult_t * self,
+  char** outErrMsg
 );
 
-JPC_CollidePointResult_t * JPC_ArrayCollidePointResult_at(
-  JPC_ArrayCollidePointResult_t * self,
-  long inIndex
+JoltC_CollidePointResult_t * JoltC_ArrayCollidePointResult_at(
+  JoltC_ArrayCollidePointResult_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayCollidePointResult_push_back(
-  JPC_ArrayCollidePointResult_t * self,
-  const JPC_CollidePointResult_t * inValue
+void JoltC_ArrayCollidePointResult_push_back(
+  JoltC_ArrayCollidePointResult_t * self,
+  const JoltC_CollidePointResult_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayCollidePointResult_reserve(
-  JPC_ArrayCollidePointResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayCollidePointResult_reserve(
+  JoltC_ArrayCollidePointResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayCollidePointResult_resize(
-  JPC_ArrayCollidePointResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayCollidePointResult_resize(
+  JoltC_ArrayCollidePointResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayCollidePointResult_clear(
-  JPC_ArrayCollidePointResult_t * self
+void JoltC_ArrayCollidePointResult_clear(
+  JoltC_ArrayCollidePointResult_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,16 +8,19 @@ extern "C" {
 
 //region constructors
 
-JPC_ObjectLayerPairFilter_t * JPC_ObjectLayerPairFilter_new();
+JoltC_ObjectLayerPairFilter_t * JoltC_ObjectLayerPairFilter_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_ObjectLayerPairFilter_ShouldCollide(
-  JPC_ObjectLayerPairFilter_t * self,
+bool JoltC_ObjectLayerPairFilter_ShouldCollide(
+  JoltC_ObjectLayerPairFilter_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2
+  unsigned long inLayer2,
+  char** outErrMsg
 );
 
 //endregion functions

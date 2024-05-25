@@ -8,54 +8,65 @@ extern "C" {
 
 //region constructors
 
-JPC_SpringSettings_t * JPC_SpringSettings_new();
+JoltC_SpringSettings_t * JoltC_SpringSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_SpringSettings_HasStiffness(
-  JPC_SpringSettings_t * self
+bool JoltC_SpringSettings_HasStiffness(
+  JoltC_SpringSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_ESpringMode JPC_SpringSettings_mMode_Get(
-  JPC_SpringSettings_t * self
+JoltC_ESpringMode JoltC_SpringSettings_mMode_Get(
+  JoltC_SpringSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SpringSettings_mMode_Set(
-  JPC_SpringSettings_t * self,
-  JPC_ESpringMode mMode
+void JoltC_SpringSettings_mMode_Set(
+  JoltC_SpringSettings_t * self,
+  JoltC_ESpringMode mMode,
+  char** outErrMsg
 );
 
-float JPC_SpringSettings_mFrequency_Get(
-  JPC_SpringSettings_t * self
+float JoltC_SpringSettings_mFrequency_Get(
+  JoltC_SpringSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SpringSettings_mFrequency_Set(
-  JPC_SpringSettings_t * self,
-  float mFrequency
+void JoltC_SpringSettings_mFrequency_Set(
+  JoltC_SpringSettings_t * self,
+  float mFrequency,
+  char** outErrMsg
 );
 
-float JPC_SpringSettings_mStiffness_Get(
-  JPC_SpringSettings_t * self
+float JoltC_SpringSettings_mStiffness_Get(
+  JoltC_SpringSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SpringSettings_mStiffness_Set(
-  JPC_SpringSettings_t * self,
-  float mStiffness
+void JoltC_SpringSettings_mStiffness_Set(
+  JoltC_SpringSettings_t * self,
+  float mStiffness,
+  char** outErrMsg
 );
 
-float JPC_SpringSettings_mDamping_Get(
-  JPC_SpringSettings_t * self
+float JoltC_SpringSettings_mDamping_Get(
+  JoltC_SpringSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_SpringSettings_mDamping_Set(
-  JPC_SpringSettings_t * self,
-  float mDamping
+void JoltC_SpringSettings_mDamping_Set(
+  JoltC_SpringSettings_t * self,
+  float mDamping,
+  char** outErrMsg
 );
 
 //endregion properties

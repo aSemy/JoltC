@@ -8,143 +8,174 @@ extern "C" {
 
 //region constructors
 
-JPC_WheelSettings_t * JPC_WheelSettings_new();
+JoltC_WheelSettings_t * JoltC_WheelSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_WheelSettings_GetRefCount(
-  JPC_WheelSettings_t * self
+unsigned long JoltC_WheelSettings_GetRefCount(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_AddRef(
-  JPC_WheelSettings_t * self
+void JoltC_WheelSettings_AddRef(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_Release(
-  JPC_WheelSettings_t * self
+void JoltC_WheelSettings_Release(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_WheelSettings_mPosition_Get(
-  JPC_WheelSettings_t * self
+JoltC_Vec3_t * JoltC_WheelSettings_mPosition_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mPosition_Set(
-  JPC_WheelSettings_t * self,
-  JPC_Vec3_t * mPosition
+void JoltC_WheelSettings_mPosition_Set(
+  JoltC_WheelSettings_t * self,
+  JoltC_Vec3_t * mPosition,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettings_mSuspensionForcePoint_Get(
-  JPC_WheelSettings_t * self
+JoltC_Vec3_t * JoltC_WheelSettings_mSuspensionForcePoint_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mSuspensionForcePoint_Set(
-  JPC_WheelSettings_t * self,
-  JPC_Vec3_t * mSuspensionForcePoint
+void JoltC_WheelSettings_mSuspensionForcePoint_Set(
+  JoltC_WheelSettings_t * self,
+  JoltC_Vec3_t * mSuspensionForcePoint,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettings_mSuspensionDirection_Get(
-  JPC_WheelSettings_t * self
+JoltC_Vec3_t * JoltC_WheelSettings_mSuspensionDirection_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mSuspensionDirection_Set(
-  JPC_WheelSettings_t * self,
-  JPC_Vec3_t * mSuspensionDirection
+void JoltC_WheelSettings_mSuspensionDirection_Set(
+  JoltC_WheelSettings_t * self,
+  JoltC_Vec3_t * mSuspensionDirection,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettings_mSteeringAxis_Get(
-  JPC_WheelSettings_t * self
+JoltC_Vec3_t * JoltC_WheelSettings_mSteeringAxis_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mSteeringAxis_Set(
-  JPC_WheelSettings_t * self,
-  JPC_Vec3_t * mSteeringAxis
+void JoltC_WheelSettings_mSteeringAxis_Set(
+  JoltC_WheelSettings_t * self,
+  JoltC_Vec3_t * mSteeringAxis,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettings_mWheelUp_Get(
-  JPC_WheelSettings_t * self
+JoltC_Vec3_t * JoltC_WheelSettings_mWheelUp_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mWheelUp_Set(
-  JPC_WheelSettings_t * self,
-  JPC_Vec3_t * mWheelUp
+void JoltC_WheelSettings_mWheelUp_Set(
+  JoltC_WheelSettings_t * self,
+  JoltC_Vec3_t * mWheelUp,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettings_mWheelForward_Get(
-  JPC_WheelSettings_t * self
+JoltC_Vec3_t * JoltC_WheelSettings_mWheelForward_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mWheelForward_Set(
-  JPC_WheelSettings_t * self,
-  JPC_Vec3_t * mWheelForward
+void JoltC_WheelSettings_mWheelForward_Set(
+  JoltC_WheelSettings_t * self,
+  JoltC_Vec3_t * mWheelForward,
+  char** outErrMsg
 );
 
-JPC_SpringSettings_t * JPC_WheelSettings_mSuspensionSpring_Get(
-  JPC_WheelSettings_t * self
+JoltC_SpringSettings_t * JoltC_WheelSettings_mSuspensionSpring_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mSuspensionSpring_Set(
-  JPC_WheelSettings_t * self,
-  JPC_SpringSettings_t * mSuspensionSpring
+void JoltC_WheelSettings_mSuspensionSpring_Set(
+  JoltC_WheelSettings_t * self,
+  JoltC_SpringSettings_t * mSuspensionSpring,
+  char** outErrMsg
 );
 
-float JPC_WheelSettings_mSuspensionMinLength_Get(
-  JPC_WheelSettings_t * self
+float JoltC_WheelSettings_mSuspensionMinLength_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mSuspensionMinLength_Set(
-  JPC_WheelSettings_t * self,
-  float mSuspensionMinLength
+void JoltC_WheelSettings_mSuspensionMinLength_Set(
+  JoltC_WheelSettings_t * self,
+  float mSuspensionMinLength,
+  char** outErrMsg
 );
 
-float JPC_WheelSettings_mSuspensionMaxLength_Get(
-  JPC_WheelSettings_t * self
+float JoltC_WheelSettings_mSuspensionMaxLength_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mSuspensionMaxLength_Set(
-  JPC_WheelSettings_t * self,
-  float mSuspensionMaxLength
+void JoltC_WheelSettings_mSuspensionMaxLength_Set(
+  JoltC_WheelSettings_t * self,
+  float mSuspensionMaxLength,
+  char** outErrMsg
 );
 
-float JPC_WheelSettings_mSuspensionPreloadLength_Get(
-  JPC_WheelSettings_t * self
+float JoltC_WheelSettings_mSuspensionPreloadLength_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mSuspensionPreloadLength_Set(
-  JPC_WheelSettings_t * self,
-  float mSuspensionPreloadLength
+void JoltC_WheelSettings_mSuspensionPreloadLength_Set(
+  JoltC_WheelSettings_t * self,
+  float mSuspensionPreloadLength,
+  char** outErrMsg
 );
 
-float JPC_WheelSettings_mRadius_Get(
-  JPC_WheelSettings_t * self
+float JoltC_WheelSettings_mRadius_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mRadius_Set(
-  JPC_WheelSettings_t * self,
-  float mRadius
+void JoltC_WheelSettings_mRadius_Set(
+  JoltC_WheelSettings_t * self,
+  float mRadius,
+  char** outErrMsg
 );
 
-float JPC_WheelSettings_mWidth_Get(
-  JPC_WheelSettings_t * self
+float JoltC_WheelSettings_mWidth_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mWidth_Set(
-  JPC_WheelSettings_t * self,
-  float mWidth
+void JoltC_WheelSettings_mWidth_Set(
+  JoltC_WheelSettings_t * self,
+  float mWidth,
+  char** outErrMsg
 );
 
-bool JPC_WheelSettings_mEnableSuspensionForcePoint_Get(
-  JPC_WheelSettings_t * self
+bool JoltC_WheelSettings_mEnableSuspensionForcePoint_Get(
+  JoltC_WheelSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettings_mEnableSuspensionForcePoint_Set(
-  JPC_WheelSettings_t * self,
-  bool mEnableSuspensionForcePoint
+void JoltC_WheelSettings_mEnableSuspensionForcePoint_Set(
+  JoltC_WheelSettings_t * self,
+  bool mEnableSuspensionForcePoint,
+  char** outErrMsg
 );
 
 //endregion properties

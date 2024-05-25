@@ -8,111 +8,134 @@ extern "C" {
 
 //region functions
 
-float JPC_ConvexShape_GetDensity(
-  JPC_ConvexShape_t * self
+float JoltC_ConvexShape_GetDensity(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShape_SetDensity(
-  JPC_ConvexShape_t * self,
-  float inDensity
+void JoltC_ConvexShape_SetDensity(
+  JoltC_ConvexShape_t * self,
+  float inDensity,
+  char** outErrMsg
 );
 
-unsigned long JPC_ConvexShape_GetRefCount(
-  JPC_ConvexShape_t * self
+unsigned long JoltC_ConvexShape_GetRefCount(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShape_AddRef(
-  JPC_ConvexShape_t * self
+void JoltC_ConvexShape_AddRef(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShape_Release(
-  JPC_ConvexShape_t * self
+void JoltC_ConvexShape_Release(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_ConvexShape_GetType(
-  JPC_ConvexShape_t * self
+JoltC_EShapeType JoltC_ConvexShape_GetType(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_ConvexShape_GetSubType(
-  JPC_ConvexShape_t * self
+JoltC_EShapeSubType JoltC_ConvexShape_GetSubType(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_ConvexShape_MustBeStatic(
-  JPC_ConvexShape_t * self
+bool JoltC_ConvexShape_MustBeStatic(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_ConvexShape_GetLocalBounds(
-  JPC_ConvexShape_t * self
+JoltC_AABox_t * JoltC_ConvexShape_GetLocalBounds(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_ConvexShape_GetWorldSpaceBounds(
-  JPC_ConvexShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_ConvexShape_GetWorldSpaceBounds(
+  JoltC_ConvexShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ConvexShape_GetCenterOfMass(
-  JPC_ConvexShape_t * self
+JoltC_Vec3_t * JoltC_ConvexShape_GetCenterOfMass(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_ConvexShape_GetUserData(
-  JPC_ConvexShape_t * self
+unsigned long long int JoltC_ConvexShape_GetUserData(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-void JPC_ConvexShape_SetUserData(
-  JPC_ConvexShape_t * self,
-  unsigned long long int inUserData
+void JoltC_ConvexShape_SetUserData(
+  JoltC_ConvexShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_ConvexShape_GetSubShapeIDBitsRecursive(
-  JPC_ConvexShape_t * self
+unsigned long JoltC_ConvexShape_GetSubShapeIDBitsRecursive(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-float JPC_ConvexShape_GetInnerRadius(
-  JPC_ConvexShape_t * self
+float JoltC_ConvexShape_GetInnerRadius(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_ConvexShape_GetMassProperties(
-  JPC_ConvexShape_t * self
+JoltC_MassProperties_t * JoltC_ConvexShape_GetMassProperties(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_ConvexShape_GetMaterial(
-  JPC_ConvexShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_ConvexShape_GetMaterial(
+  JoltC_ConvexShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_ConvexShape_GetSurfaceNormal(
-  JPC_ConvexShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_ConvexShape_GetSurfaceNormal(
+  JoltC_ConvexShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_ConvexShape_GetSubShapeUserData(
-  JPC_ConvexShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_ConvexShape_GetSubShapeUserData(
+  JoltC_ConvexShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_ConvexShape_GetSubShapeTransformedShape(
-  JPC_ConvexShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_ConvexShape_GetSubShapeTransformedShape(
+  JoltC_ConvexShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_ConvexShape_GetVolume(
-  JPC_ConvexShape_t * self
+float JoltC_ConvexShape_GetVolume(
+  JoltC_ConvexShape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_ConvexShape_IsValidScale(
-  JPC_ConvexShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_ConvexShape_IsValidScale(
+  JoltC_ConvexShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_ConvexShape_ScaleShape(
-  JPC_ConvexShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_ConvexShape_ScaleShape(
+  JoltC_ConvexShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

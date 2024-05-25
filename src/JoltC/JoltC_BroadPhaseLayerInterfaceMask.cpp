@@ -1,5 +1,6 @@
-#include "JoltC/JPC_BroadPhaseLayerInterfaceMask.h"
+#include "JoltC/JoltC_BroadPhaseLayerInterfaceMask.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,42 +8,69 @@ extern "C" {
 
 //region constructors
 
-JPC_BroadPhaseLayerInterfaceMask_t * JPC_BroadPhaseLayerInterfaceMask_new(
-  unsigned long inNumBroadPhaseLayers
+JoltC_BroadPhaseLayerInterfaceMask_t * JoltC_BroadPhaseLayerInterfaceMask_new(
+  unsigned long inNumBroadPhaseLayers,
+  char** outErrMsg
 ) {
-  JPC_BroadPhaseLayerInterfaceMask_t * cInstance = new JPC_BroadPhaseLayerInterfaceMask_t();
-  BroadPhaseLayerInterfaceMask * cppInstance = new BroadPhaseLayerInterfaceMask(
-    inNumBroadPhaseLayers
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_BroadPhaseLayerInterfaceMask_t * cInstance = new JoltC_BroadPhaseLayerInterfaceMask_t();
+    BroadPhaseLayerInterfaceMask * cppInstance = new BroadPhaseLayerInterfaceMask(
+      inNumBroadPhaseLayers
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
-  JPC_BroadPhaseLayerInterfaceMask_t * self,
-  const JPC_BroadPhaseLayer_t * inBroadPhaseLayer,
+void JoltC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
+  JoltC_BroadPhaseLayerInterfaceMask_t * self,
+  const JoltC_BroadPhaseLayer_t * inBroadPhaseLayer,
   unsigned long inGroupsToInclude,
-  unsigned long inGroupsToExclude
+  unsigned long inGroupsToExclude,
+  char** outErrMsg
 ) {
-  BroadPhaseLayerInterfaceMask * selfCpp = static_cast<BroadPhaseLayerInterfaceMask *>(self->obj);
-  
-  selfCpp->ConfigureLayer(
-  *reinterpret_cast<BroadPhaseLayer *>(inBroadPhaseLayer->obj),
-  inGroupsToInclude,
-  inGroupsToExclude
-  );
+  try {
+    BroadPhaseLayerInterfaceMask * selfCpp = static_cast<BroadPhaseLayerInterfaceMask *>(self->obj);
+    
+    selfCpp->ConfigureLayer(
+    *reinterpret_cast<BroadPhaseLayer *>(inBroadPhaseLayer->obj),
+    inGroupsToInclude,
+    inGroupsToExclude
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_BroadPhaseLayerInterfaceMask_GetNumBroadPhaseLayers(
-  JPC_BroadPhaseLayerInterfaceMask_t * self
+unsigned long JoltC_BroadPhaseLayerInterfaceMask_GetNumBroadPhaseLayers(
+  JoltC_BroadPhaseLayerInterfaceMask_t * self,
+  char** outErrMsg
 ) {
-  BroadPhaseLayerInterfaceMask * selfCpp = static_cast<BroadPhaseLayerInterfaceMask *>(self->obj);
-  unsigned long result = selfCpp->GetNumBroadPhaseLayers();
-  return result;
+  try {
+    BroadPhaseLayerInterfaceMask * selfCpp = static_cast<BroadPhaseLayerInterfaceMask *>(self->obj);
+    unsigned long result = selfCpp->GetNumBroadPhaseLayers();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

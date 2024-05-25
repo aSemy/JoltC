@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ContactListenerEm.h"
+#include "JoltC/JoltC_ContactListenerEm.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {

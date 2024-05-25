@@ -8,16 +8,19 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_VehicleCollisionTester_GetRefCount(
-  JPC_VehicleCollisionTester_t * self
+unsigned long JoltC_VehicleCollisionTester_GetRefCount(
+  JoltC_VehicleCollisionTester_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleCollisionTester_AddRef(
-  JPC_VehicleCollisionTester_t * self
+void JoltC_VehicleCollisionTester_AddRef(
+  JoltC_VehicleCollisionTester_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleCollisionTester_Release(
-  JPC_VehicleCollisionTester_t * self
+void JoltC_VehicleCollisionTester_Release(
+  JoltC_VehicleCollisionTester_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

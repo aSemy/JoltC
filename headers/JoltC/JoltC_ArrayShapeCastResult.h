@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayShapeCastResult_empty(
-  JPC_ArrayShapeCastResult_t * self
+bool JoltC_ArrayShapeCastResult_empty(
+  JoltC_ArrayShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayShapeCastResult_size(
-  JPC_ArrayShapeCastResult_t * self
+long JoltC_ArrayShapeCastResult_size(
+  JoltC_ArrayShapeCastResult_t * self,
+  char** outErrMsg
 );
 
-JPC_ShapeCastResult_t * JPC_ArrayShapeCastResult_at(
-  JPC_ArrayShapeCastResult_t * self,
-  long inIndex
+JoltC_ShapeCastResult_t * JoltC_ArrayShapeCastResult_at(
+  JoltC_ArrayShapeCastResult_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayShapeCastResult_push_back(
-  JPC_ArrayShapeCastResult_t * self,
-  const JPC_ShapeCastResult_t * inValue
+void JoltC_ArrayShapeCastResult_push_back(
+  JoltC_ArrayShapeCastResult_t * self,
+  const JoltC_ShapeCastResult_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayShapeCastResult_reserve(
-  JPC_ArrayShapeCastResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayShapeCastResult_reserve(
+  JoltC_ArrayShapeCastResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayShapeCastResult_resize(
-  JPC_ArrayShapeCastResult_t * self,
-  unsigned long inSize
+void JoltC_ArrayShapeCastResult_resize(
+  JoltC_ArrayShapeCastResult_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayShapeCastResult_clear(
-  JPC_ArrayShapeCastResult_t * self
+void JoltC_ArrayShapeCastResult_clear(
+  JoltC_ArrayShapeCastResult_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,34 +8,39 @@ extern "C" {
 
 //region constructors
 
-JPC_SoftBodySharedSettingsLRA_t * JPC_SoftBodySharedSettingsLRA_new(
+JoltC_SoftBodySharedSettingsLRA_t * JoltC_SoftBodySharedSettingsLRA_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
-  float inMaxDistance
+  float inMaxDistance,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region properties
 
-size_t JPC_SoftBodySharedSettingsLRA_mVertex_Get(
-  JPC_SoftBodySharedSettingsLRA_t * self,
-  unsigned long * outValue
+size_t JoltC_SoftBodySharedSettingsLRA_mVertex_Get(
+  JoltC_SoftBodySharedSettingsLRA_t * self,
+  unsigned long * outValue,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsLRA_mVertex_Set(
-  JPC_SoftBodySharedSettingsLRA_t * self,
+void JoltC_SoftBodySharedSettingsLRA_mVertex_Set(
+  JoltC_SoftBodySharedSettingsLRA_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize
+  size_t mVertexSize,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsLRA_mMaxDistance_Get(
-  JPC_SoftBodySharedSettingsLRA_t * self
+float JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Get(
+  JoltC_SoftBodySharedSettingsLRA_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsLRA_mMaxDistance_Set(
-  JPC_SoftBodySharedSettingsLRA_t * self,
-  float mMaxDistance
+void JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Set(
+  JoltC_SoftBodySharedSettingsLRA_t * self,
+  float mMaxDistance,
+  char** outErrMsg
 );
 
 //endregion properties

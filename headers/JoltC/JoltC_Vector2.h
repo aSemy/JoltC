@@ -8,63 +8,76 @@ extern "C" {
 
 //region constructors
 
-JPC_Vector2_t * JPC_Vector2_new();
+JoltC_Vector2_t * JoltC_Vector2_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_Vector2_SetZero(
-  JPC_Vector2_t * self
+void JoltC_Vector2_SetZero(
+  JoltC_Vector2_t * self,
+  char** outErrMsg
 );
 
-void JPC_Vector2_IsZero(
-  JPC_Vector2_t * self
+void JoltC_Vector2_IsZero(
+  JoltC_Vector2_t * self,
+  char** outErrMsg
 );
 
-void JPC_Vector2_IsClose(
-  JPC_Vector2_t * self,
-  const JPC_Vector2_t * inV,
-  float inMaxDistSq
+void JoltC_Vector2_IsClose(
+  JoltC_Vector2_t * self,
+  const JoltC_Vector2_t * inV,
+  float inMaxDistSq,
+  char** outErrMsg
 );
 
-void JPC_Vector2_IsNormalized(
-  JPC_Vector2_t * self,
-  float inTolerance
+void JoltC_Vector2_IsNormalized(
+  JoltC_Vector2_t * self,
+  float inTolerance,
+  char** outErrMsg
 );
 
-const JPC_Vector2_t * JPC_Vector2_Normalized(
-  JPC_Vector2_t * self
+const JoltC_Vector2_t * JoltC_Vector2_Normalized(
+  JoltC_Vector2_t * self,
+  char** outErrMsg
 );
 
-float JPC_Vector2_GetComponent(
-  JPC_Vector2_t * self,
-  unsigned long inCoordinate
+float JoltC_Vector2_GetComponent(
+  JoltC_Vector2_t * self,
+  unsigned long inCoordinate,
+  char** outErrMsg
 );
 
-JPC_Vector2_t * JPC_Vector2_Add(
-  JPC_Vector2_t * self,
-  const JPC_Vector2_t * inV
+JoltC_Vector2_t * JoltC_Vector2_Add(
+  JoltC_Vector2_t * self,
+  const JoltC_Vector2_t * inV,
+  char** outErrMsg
 );
 
-JPC_Vector2_t * JPC_Vector2_Sub(
-  JPC_Vector2_t * self,
-  const JPC_Vector2_t * inV
+JoltC_Vector2_t * JoltC_Vector2_Sub(
+  JoltC_Vector2_t * self,
+  const JoltC_Vector2_t * inV,
+  char** outErrMsg
 );
 
-JPC_Vector2_t * JPC_Vector2_Mul(
-  JPC_Vector2_t * self,
-  float inV
+JoltC_Vector2_t * JoltC_Vector2_Mul(
+  JoltC_Vector2_t * self,
+  float inV,
+  char** outErrMsg
 );
 
-JPC_Vector2_t * JPC_Vector2_Div(
-  JPC_Vector2_t * self,
-  float inV
+JoltC_Vector2_t * JoltC_Vector2_Div(
+  JoltC_Vector2_t * self,
+  float inV,
+  char** outErrMsg
 );
 
-float JPC_Vector2_Dot(
-  JPC_Vector2_t * self,
-  const JPC_Vector2_t * inRHS
+float JoltC_Vector2_Dot(
+  JoltC_Vector2_t * self,
+  const JoltC_Vector2_t * inRHS,
+  char** outErrMsg
 );
 
 //endregion functions

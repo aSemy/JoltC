@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArraySkeletonAnimatedJoint.h"
+#include "JoltC/JoltC_ArraySkeletonAnimatedJoint.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,84 +8,157 @@ extern "C" {
 
 //region constructors
 
-JPC_ArraySkeletonAnimatedJoint_t * JPC_ArraySkeletonAnimatedJoint_new() {
-  JPC_ArraySkeletonAnimatedJoint_t * cInstance = new JPC_ArraySkeletonAnimatedJoint_t();
-  ArraySkeletonAnimatedJoint * cppInstance = new ArraySkeletonAnimatedJoint();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_ArraySkeletonAnimatedJoint_t * JoltC_ArraySkeletonAnimatedJoint_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_ArraySkeletonAnimatedJoint_t * cInstance = new JoltC_ArraySkeletonAnimatedJoint_t();
+    ArraySkeletonAnimatedJoint * cppInstance = new ArraySkeletonAnimatedJoint();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-bool JPC_ArraySkeletonAnimatedJoint_empty(
-  JPC_ArraySkeletonAnimatedJoint_t * self
+bool JoltC_ArraySkeletonAnimatedJoint_empty(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  char** outErrMsg
 ) {
-  ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArraySkeletonAnimatedJoint_size(
-  JPC_ArraySkeletonAnimatedJoint_t * self
+long JoltC_ArraySkeletonAnimatedJoint_size(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  char** outErrMsg
 ) {
-  ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_SkeletalAnimationAnimatedJoint_t * JPC_ArraySkeletonAnimatedJoint_at(
-  JPC_ArraySkeletonAnimatedJoint_t * self,
-  long inIndex
+JoltC_SkeletalAnimationAnimatedJoint_t * JoltC_ArraySkeletonAnimatedJoint_at(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  SkeletalAnimationAnimatedJoint& resultRef = selfCpp->at(
-  inIndex
-  );
-  SkeletalAnimationAnimatedJoint * result = &resultRef;
-  return reinterpret_cast<JPC_SkeletalAnimationAnimatedJoint_t *>(result);
+  try {
+    ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
+    SkeletalAnimationAnimatedJoint& resultRef = selfCpp->at(
+    inIndex
+    );
+    SkeletalAnimationAnimatedJoint * result = &resultRef;
+    return reinterpret_cast<JoltC_SkeletalAnimationAnimatedJoint_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySkeletonAnimatedJoint_push_back(
-  JPC_ArraySkeletonAnimatedJoint_t * self,
-  JPC_SkeletalAnimationAnimatedJoint_t * inValue
+void JoltC_ArraySkeletonAnimatedJoint_push_back(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  JoltC_SkeletalAnimationAnimatedJoint_t * inValue,
+  char** outErrMsg
 ) {
-  ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<SkeletalAnimationAnimatedJoint *>(inValue->obj)
-  );
+  try {
+    ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<SkeletalAnimationAnimatedJoint *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySkeletonAnimatedJoint_reserve(
-  JPC_ArraySkeletonAnimatedJoint_t * self,
-  unsigned long inSize
+void JoltC_ArraySkeletonAnimatedJoint_reserve(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySkeletonAnimatedJoint_resize(
-  JPC_ArraySkeletonAnimatedJoint_t * self,
-  unsigned long inSize
+void JoltC_ArraySkeletonAnimatedJoint_resize(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArraySkeletonAnimatedJoint_clear(
-  JPC_ArraySkeletonAnimatedJoint_t * self
+void JoltC_ArraySkeletonAnimatedJoint_clear(
+  JoltC_ArraySkeletonAnimatedJoint_t * self,
+  char** outErrMsg
 ) {
-  ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

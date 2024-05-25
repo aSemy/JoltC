@@ -1,5 +1,6 @@
-#include "JoltC/JPC_TaperedCapsuleShape.h"
+#include "JoltC/JoltC_TaperedCapsuleShape.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,234 +8,441 @@ extern "C" {
 
 //region functions
 
-float JPC_TaperedCapsuleShape_GetDensity(
-  JPC_TaperedCapsuleShape_t * self
+float JoltC_TaperedCapsuleShape_GetDensity(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  float result = selfCpp->GetDensity();
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    float result = selfCpp->GetDensity();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TaperedCapsuleShape_SetDensity(
-  JPC_TaperedCapsuleShape_t * self,
-  float inDensity
+void JoltC_TaperedCapsuleShape_SetDensity(
+  JoltC_TaperedCapsuleShape_t * self,
+  float inDensity,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  
-  selfCpp->SetDensity(
-  inDensity
-  );
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    
+    selfCpp->SetDensity(
+    inDensity
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_TaperedCapsuleShape_GetRefCount(
-  JPC_TaperedCapsuleShape_t * self
+unsigned long JoltC_TaperedCapsuleShape_GetRefCount(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TaperedCapsuleShape_AddRef(
-  JPC_TaperedCapsuleShape_t * self
+void JoltC_TaperedCapsuleShape_AddRef(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TaperedCapsuleShape_Release(
-  JPC_TaperedCapsuleShape_t * self
+void JoltC_TaperedCapsuleShape_Release(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EShapeType JPC_TaperedCapsuleShape_GetType(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_EShapeType JoltC_TaperedCapsuleShape_GetType(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  EShapeType result = selfCpp->GetType();
-  return static_cast<JPC_EShapeType>(static_cast<int>(result));
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    EShapeType result = selfCpp->GetType();
+    return static_cast<JoltC_EShapeType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EShapeSubType JPC_TaperedCapsuleShape_GetSubType(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_EShapeSubType JoltC_TaperedCapsuleShape_GetSubType(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  EShapeSubType result = selfCpp->GetSubType();
-  return static_cast<JPC_EShapeSubType>(static_cast<int>(result));
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    EShapeSubType result = selfCpp->GetSubType();
+    return static_cast<JoltC_EShapeSubType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_TaperedCapsuleShape_MustBeStatic(
-  JPC_TaperedCapsuleShape_t * self
+bool JoltC_TaperedCapsuleShape_MustBeStatic(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  bool result = selfCpp->MustBeStatic();
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    bool result = selfCpp->MustBeStatic();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_AABox_t * JPC_TaperedCapsuleShape_GetLocalBounds(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_AABox_t * JoltC_TaperedCapsuleShape_GetLocalBounds(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  AABox resultValue = selfCpp->GetLocalBounds();
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JPC_AABox_t *>(result);
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    AABox resultValue = selfCpp->GetLocalBounds();
+    AABox* result = new AABox(resultValue);
+    return reinterpret_cast<JoltC_AABox_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_AABox_t * JPC_TaperedCapsuleShape_GetWorldSpaceBounds(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_TaperedCapsuleShape_GetWorldSpaceBounds(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  AABox resultValue = selfCpp->GetWorldSpaceBounds(
-  *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JPC_AABox_t *>(result);
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    AABox resultValue = selfCpp->GetWorldSpaceBounds(
+    *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    AABox* result = new AABox(resultValue);
+    return reinterpret_cast<JoltC_AABox_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_TaperedCapsuleShape_GetCenterOfMass(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_Vec3_t * JoltC_TaperedCapsuleShape_GetCenterOfMass(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetCenterOfMass();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    Vec3 resultValue = selfCpp->GetCenterOfMass();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_TaperedCapsuleShape_GetUserData(
-  JPC_TaperedCapsuleShape_t * self
+unsigned long long int JoltC_TaperedCapsuleShape_GetUserData(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TaperedCapsuleShape_SetUserData(
-  JPC_TaperedCapsuleShape_t * self,
-  unsigned long long int inUserData
+void JoltC_TaperedCapsuleShape_SetUserData(
+  JoltC_TaperedCapsuleShape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_TaperedCapsuleShape_GetSubShapeIDBitsRecursive(
-  JPC_TaperedCapsuleShape_t * self
+unsigned long JoltC_TaperedCapsuleShape_GetSubShapeIDBitsRecursive(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  unsigned long result = selfCpp->GetSubShapeIDBitsRecursive();
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    unsigned long result = selfCpp->GetSubShapeIDBitsRecursive();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_TaperedCapsuleShape_GetInnerRadius(
-  JPC_TaperedCapsuleShape_t * self
+float JoltC_TaperedCapsuleShape_GetInnerRadius(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  float result = selfCpp->GetInnerRadius();
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    float result = selfCpp->GetInnerRadius();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_MassProperties_t * JPC_TaperedCapsuleShape_GetMassProperties(
-  JPC_TaperedCapsuleShape_t * self
+JoltC_MassProperties_t * JoltC_TaperedCapsuleShape_GetMassProperties(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  MassProperties resultValue = selfCpp->GetMassProperties();
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JPC_MassProperties_t *>(result);
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    MassProperties resultValue = selfCpp->GetMassProperties();
+    MassProperties* result = new MassProperties(resultValue);
+    return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_PhysicsMaterial_t * JPC_TaperedCapsuleShape_GetMaterial(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_TaperedCapsuleShape_GetMaterial(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetMaterial(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-  );
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    const PhysicsMaterial * result = selfCpp->GetMaterial(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    );
+    return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_TaperedCapsuleShape_GetSurfaceNormal(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_TaperedCapsuleShape_GetSurfaceNormal(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetSurfaceNormal(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
-  );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    Vec3 resultValue = selfCpp->GetSurfaceNormal(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
+    );
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_TaperedCapsuleShape_GetSubShapeUserData(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_TaperedCapsuleShape_GetSubShapeUserData(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  unsigned long long int result = selfCpp->GetSubShapeUserData(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-  );
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    unsigned long long int result = selfCpp->GetSubShapeUserData(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_TransformedShape_t * JPC_TaperedCapsuleShape_GetSubShapeTransformedShape(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_TaperedCapsuleShape_GetSubShapeTransformedShape(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
-  *reinterpret_cast<Quat *>(inRotation->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj),
-  *reinterpret_cast<SubShapeID *>(outRemainder->obj)
-  );
-  TransformedShape* result = new TransformedShape(resultValue);
-  return reinterpret_cast<JPC_TransformedShape_t *>(result);
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
+    *reinterpret_cast<Quat *>(inRotation->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj),
+    *reinterpret_cast<SubShapeID *>(outRemainder->obj)
+    );
+    TransformedShape* result = new TransformedShape(resultValue);
+    return reinterpret_cast<JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_TaperedCapsuleShape_GetVolume(
-  JPC_TaperedCapsuleShape_t * self
+float JoltC_TaperedCapsuleShape_GetVolume(
+  JoltC_TaperedCapsuleShape_t * self,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  float result = selfCpp->GetVolume();
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    float result = selfCpp->GetVolume();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_TaperedCapsuleShape_IsValidScale(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_TaperedCapsuleShape_IsValidScale(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  bool result = selfCpp->IsValidScale(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  return result;
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    bool result = selfCpp->IsValidScale(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_ShapeResult_t * JPC_TaperedCapsuleShape_ScaleShape(
-  JPC_TaperedCapsuleShape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_TaperedCapsuleShape_ScaleShape(
+  JoltC_TaperedCapsuleShape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->ScaleShape(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JPC_Shape_ShapeResult_t *>(result);
+  try {
+    TaperedCapsuleShape * selfCpp = static_cast<TaperedCapsuleShape *>(self->obj);
+    Shape::ShapeResult resultValue = selfCpp->ScaleShape(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

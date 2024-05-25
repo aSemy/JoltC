@@ -8,40 +8,48 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayUint_empty(
-  JPC_ArrayUint_t * self
+bool JoltC_ArrayUint_empty(
+  JoltC_ArrayUint_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayUint_size(
-  JPC_ArrayUint_t * self
+long JoltC_ArrayUint_size(
+  JoltC_ArrayUint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_ArrayUint_at(
-  JPC_ArrayUint_t * self,
-  long inIndex
+unsigned long JoltC_ArrayUint_at(
+  JoltC_ArrayUint_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayUint_push_back(
-  JPC_ArrayUint_t * self,
-  unsigned long inValue
+void JoltC_ArrayUint_push_back(
+  JoltC_ArrayUint_t * self,
+  unsigned long inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayUint_reserve(
-  JPC_ArrayUint_t * self,
-  unsigned long inSize
+void JoltC_ArrayUint_reserve(
+  JoltC_ArrayUint_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayUint_resize(
-  JPC_ArrayUint_t * self,
-  unsigned long inSize
+void JoltC_ArrayUint_resize(
+  JoltC_ArrayUint_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayUint_clear(
-  JPC_ArrayUint_t * self
+void JoltC_ArrayUint_clear(
+  JoltC_ArrayUint_t * self,
+  char** outErrMsg
 );
 
-JPC_UintMemRef_t * JPC_ArrayUint_data(
-  JPC_ArrayUint_t * self
+JoltC_UintMemRef_t * JoltC_ArrayUint_data(
+  JoltC_ArrayUint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

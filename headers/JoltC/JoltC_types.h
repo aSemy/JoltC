@@ -7,1673 +7,1673 @@
 extern "C" {
 #endif
 
-struct JPC_AABox {
+struct JoltC_AABox {
   void *obj;
 };
-typedef struct JPC_AABox JPC_AABox_t;
+typedef struct JoltC_AABox JoltC_AABox_t;
 
-struct JPC_AABoxCast {
+struct JoltC_AABoxCast {
   void *obj;
 };
-typedef struct JPC_AABoxCast JPC_AABoxCast_t;
+typedef struct JoltC_AABoxCast JoltC_AABoxCast_t;
 
-struct JPC_ArrayCollidePointResult {
+struct JoltC_ArrayCollidePointResult {
   void *obj;
 };
-typedef struct JPC_ArrayCollidePointResult JPC_ArrayCollidePointResult_t;
+typedef struct JoltC_ArrayCollidePointResult JoltC_ArrayCollidePointResult_t;
 
-struct JPC_ArrayCollideShapeResult {
+struct JoltC_ArrayCollideShapeResult {
   void *obj;
 };
-typedef struct JPC_ArrayCollideShapeResult JPC_ArrayCollideShapeResult_t;
+typedef struct JoltC_ArrayCollideShapeResult JoltC_ArrayCollideShapeResult_t;
 
-struct JPC_ArrayFloat {
+struct JoltC_ArrayFloat {
   void *obj;
 };
-typedef struct JPC_ArrayFloat JPC_ArrayFloat_t;
+typedef struct JoltC_ArrayFloat JoltC_ArrayFloat_t;
 
-struct JPC_ArrayMat44 {
+struct JoltC_ArrayMat44 {
   void *obj;
 };
-typedef struct JPC_ArrayMat44 JPC_ArrayMat44_t;
+typedef struct JoltC_ArrayMat44 JoltC_ArrayMat44_t;
 
-struct JPC_ArrayRagdollAdditionalConstraint {
+struct JoltC_ArrayRagdollAdditionalConstraint {
   void *obj;
 };
-typedef struct JPC_ArrayRagdollAdditionalConstraint JPC_ArrayRagdollAdditionalConstraint_t;
+typedef struct JoltC_ArrayRagdollAdditionalConstraint JoltC_ArrayRagdollAdditionalConstraint_t;
 
-struct JPC_ArrayRagdollPart {
+struct JoltC_ArrayRagdollPart {
   void *obj;
 };
-typedef struct JPC_ArrayRagdollPart JPC_ArrayRagdollPart_t;
+typedef struct JoltC_ArrayRagdollPart JoltC_ArrayRagdollPart_t;
 
-struct JPC_ArrayRayCastResult {
+struct JoltC_ArrayRayCastResult {
   void *obj;
 };
-typedef struct JPC_ArrayRayCastResult JPC_ArrayRayCastResult_t;
+typedef struct JoltC_ArrayRayCastResult JoltC_ArrayRayCastResult_t;
 
-struct JPC_ArrayShapeCastResult {
+struct JoltC_ArrayShapeCastResult {
   void *obj;
 };
-typedef struct JPC_ArrayShapeCastResult JPC_ArrayShapeCastResult_t;
+typedef struct JoltC_ArrayShapeCastResult JoltC_ArrayShapeCastResult_t;
 
-struct JPC_ArraySkeletonAnimatedJoint {
+struct JoltC_ArraySkeletonAnimatedJoint {
   void *obj;
 };
-typedef struct JPC_ArraySkeletonAnimatedJoint JPC_ArraySkeletonAnimatedJoint_t;
+typedef struct JoltC_ArraySkeletonAnimatedJoint JoltC_ArraySkeletonAnimatedJoint_t;
 
-struct JPC_ArraySkeletonKeyframe {
+struct JoltC_ArraySkeletonKeyframe {
   void *obj;
 };
-typedef struct JPC_ArraySkeletonKeyframe JPC_ArraySkeletonKeyframe_t;
+typedef struct JoltC_ArraySkeletonKeyframe JoltC_ArraySkeletonKeyframe_t;
 
-struct JPC_ArraySoftBodySharedSettingsDihedralBend {
+struct JoltC_ArraySoftBodySharedSettingsDihedralBend {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsDihedralBend JPC_ArraySoftBodySharedSettingsDihedralBend_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsDihedralBend JoltC_ArraySoftBodySharedSettingsDihedralBend_t;
 
-struct JPC_ArraySoftBodySharedSettingsEdge {
+struct JoltC_ArraySoftBodySharedSettingsEdge {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsEdge JPC_ArraySoftBodySharedSettingsEdge_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsEdge JoltC_ArraySoftBodySharedSettingsEdge_t;
 
-struct JPC_ArraySoftBodySharedSettingsFace {
+struct JoltC_ArraySoftBodySharedSettingsFace {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsFace JPC_ArraySoftBodySharedSettingsFace_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsFace JoltC_ArraySoftBodySharedSettingsFace_t;
 
-struct JPC_ArraySoftBodySharedSettingsInvBind {
+struct JoltC_ArraySoftBodySharedSettingsInvBind {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsInvBind JPC_ArraySoftBodySharedSettingsInvBind_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsInvBind JoltC_ArraySoftBodySharedSettingsInvBind_t;
 
-struct JPC_ArraySoftBodySharedSettingsLRA {
+struct JoltC_ArraySoftBodySharedSettingsLRA {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsLRA JPC_ArraySoftBodySharedSettingsLRA_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsLRA JoltC_ArraySoftBodySharedSettingsLRA_t;
 
-struct JPC_ArraySoftBodySharedSettingsSkinned {
+struct JoltC_ArraySoftBodySharedSettingsSkinned {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsSkinned JPC_ArraySoftBodySharedSettingsSkinned_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsSkinned JoltC_ArraySoftBodySharedSettingsSkinned_t;
 
-struct JPC_ArraySoftBodySharedSettingsVertex {
+struct JoltC_ArraySoftBodySharedSettingsVertex {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsVertex JPC_ArraySoftBodySharedSettingsVertex_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsVertex JoltC_ArraySoftBodySharedSettingsVertex_t;
 
-struct JPC_ArraySoftBodySharedSettingsVertexAttributes {
+struct JoltC_ArraySoftBodySharedSettingsVertexAttributes {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsVertexAttributes JPC_ArraySoftBodySharedSettingsVertexAttributes_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsVertexAttributes JoltC_ArraySoftBodySharedSettingsVertexAttributes_t;
 
-struct JPC_ArraySoftBodySharedSettingsVolume {
+struct JoltC_ArraySoftBodySharedSettingsVolume {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodySharedSettingsVolume JPC_ArraySoftBodySharedSettingsVolume_t;
+typedef struct JoltC_ArraySoftBodySharedSettingsVolume JoltC_ArraySoftBodySharedSettingsVolume_t;
 
-struct JPC_ArraySoftBodyVertex {
+struct JoltC_ArraySoftBodyVertex {
   void *obj;
 };
-typedef struct JPC_ArraySoftBodyVertex JPC_ArraySoftBodyVertex_t;
+typedef struct JoltC_ArraySoftBodyVertex JoltC_ArraySoftBodyVertex_t;
 
-struct JPC_ArrayUint {
+struct JoltC_ArrayUint {
   void *obj;
 };
-typedef struct JPC_ArrayUint JPC_ArrayUint_t;
+typedef struct JoltC_ArrayUint JoltC_ArrayUint_t;
 
-struct JPC_ArrayUint8 {
+struct JoltC_ArrayUint8 {
   void *obj;
 };
-typedef struct JPC_ArrayUint8 JPC_ArrayUint8_t;
+typedef struct JoltC_ArrayUint8 JoltC_ArrayUint8_t;
 
-struct JPC_ArrayVec3 {
+struct JoltC_ArrayVec3 {
   void *obj;
 };
-typedef struct JPC_ArrayVec3 JPC_ArrayVec3_t;
+typedef struct JoltC_ArrayVec3 JoltC_ArrayVec3_t;
 
-struct JPC_ArrayVehicleAntiRollBar {
+struct JoltC_ArrayVehicleAntiRollBar {
   void *obj;
 };
-typedef struct JPC_ArrayVehicleAntiRollBar JPC_ArrayVehicleAntiRollBar_t;
+typedef struct JoltC_ArrayVehicleAntiRollBar JoltC_ArrayVehicleAntiRollBar_t;
 
-struct JPC_ArrayVehicleDifferentialSettings {
+struct JoltC_ArrayVehicleDifferentialSettings {
   void *obj;
 };
-typedef struct JPC_ArrayVehicleDifferentialSettings JPC_ArrayVehicleDifferentialSettings_t;
+typedef struct JoltC_ArrayVehicleDifferentialSettings JoltC_ArrayVehicleDifferentialSettings_t;
 
-struct JPC_ArrayWheelSettings {
+struct JoltC_ArrayWheelSettings {
   void *obj;
 };
-typedef struct JPC_ArrayWheelSettings JPC_ArrayWheelSettings_t;
+typedef struct JoltC_ArrayWheelSettings JoltC_ArrayWheelSettings_t;
 
-struct JPC_Body {
+struct JoltC_Body {
   void *obj;
 };
-typedef struct JPC_Body JPC_Body_t;
+typedef struct JoltC_Body JoltC_Body_t;
 
-struct JPC_BodyActivationListener {
+struct JoltC_BodyActivationListener {
   void *obj;
 };
-typedef struct JPC_BodyActivationListener JPC_BodyActivationListener_t;
+typedef struct JoltC_BodyActivationListener JoltC_BodyActivationListener_t;
 
-struct JPC_BodyCreationSettings {
+struct JoltC_BodyCreationSettings {
   void *obj;
 };
-typedef struct JPC_BodyCreationSettings JPC_BodyCreationSettings_t;
+typedef struct JoltC_BodyCreationSettings JoltC_BodyCreationSettings_t;
 
-struct JPC_BodyFilter {
+struct JoltC_BodyFilter {
   void *obj;
 };
-typedef struct JPC_BodyFilter JPC_BodyFilter_t;
+typedef struct JoltC_BodyFilter JoltC_BodyFilter_t;
 
-struct JPC_BodyID {
+struct JoltC_BodyID {
   void *obj;
 };
-typedef struct JPC_BodyID JPC_BodyID_t;
+typedef struct JoltC_BodyID JoltC_BodyID_t;
 
-struct JPC_BodyIDVector {
+struct JoltC_BodyIDVector {
   void *obj;
 };
-typedef struct JPC_BodyIDVector JPC_BodyIDVector_t;
+typedef struct JoltC_BodyIDVector JoltC_BodyIDVector_t;
 
-struct JPC_BodyInterface {
+struct JoltC_BodyInterface {
   void *obj;
 };
-typedef struct JPC_BodyInterface JPC_BodyInterface_t;
+typedef struct JoltC_BodyInterface JoltC_BodyInterface_t;
 
-struct JPC_BodyLockInterface {
+struct JoltC_BodyLockInterface {
   void *obj;
 };
-typedef struct JPC_BodyLockInterface JPC_BodyLockInterface_t;
+typedef struct JoltC_BodyLockInterface JoltC_BodyLockInterface_t;
 
-struct JPC_BodyLockInterfaceLocking {
+struct JoltC_BodyLockInterfaceLocking {
   void *obj;
-  struct JPC_BodyLockInterface *superObj;
+  struct JoltC_BodyLockInterface *superObj;
 };
-typedef struct JPC_BodyLockInterfaceLocking JPC_BodyLockInterfaceLocking_t;
+typedef struct JoltC_BodyLockInterfaceLocking JoltC_BodyLockInterfaceLocking_t;
 
-struct JPC_BodyLockInterfaceNoLock {
+struct JoltC_BodyLockInterfaceNoLock {
   void *obj;
-  struct JPC_BodyLockInterface *superObj;
+  struct JoltC_BodyLockInterface *superObj;
 };
-typedef struct JPC_BodyLockInterfaceNoLock JPC_BodyLockInterfaceNoLock_t;
+typedef struct JoltC_BodyLockInterfaceNoLock JoltC_BodyLockInterfaceNoLock_t;
 
-struct JPC_BoxShape {
+struct JoltC_BoxShape {
   void *obj;
-  struct JPC_ConvexShape *superObj;
+  struct JoltC_ConvexShape *superObj;
 };
-typedef struct JPC_BoxShape JPC_BoxShape_t;
+typedef struct JoltC_BoxShape JoltC_BoxShape_t;
 
-struct JPC_BoxShapeSettings {
+struct JoltC_BoxShapeSettings {
   void *obj;
-  struct JPC_ConvexShapeSettings *superObj;
+  struct JoltC_ConvexShapeSettings *superObj;
 };
-typedef struct JPC_BoxShapeSettings JPC_BoxShapeSettings_t;
+typedef struct JoltC_BoxShapeSettings JoltC_BoxShapeSettings_t;
 
-struct JPC_BroadPhaseCastResult {
+struct JoltC_BroadPhaseCastResult {
   void *obj;
 };
-typedef struct JPC_BroadPhaseCastResult JPC_BroadPhaseCastResult_t;
+typedef struct JoltC_BroadPhaseCastResult JoltC_BroadPhaseCastResult_t;
 
-struct JPC_BroadPhaseLayer {
+struct JoltC_BroadPhaseLayer {
   void *obj;
 };
-typedef struct JPC_BroadPhaseLayer JPC_BroadPhaseLayer_t;
+typedef struct JoltC_BroadPhaseLayer JoltC_BroadPhaseLayer_t;
 
-struct JPC_BroadPhaseLayerFilter {
+struct JoltC_BroadPhaseLayerFilter {
   void *obj;
 };
-typedef struct JPC_BroadPhaseLayerFilter JPC_BroadPhaseLayerFilter_t;
+typedef struct JoltC_BroadPhaseLayerFilter JoltC_BroadPhaseLayerFilter_t;
 
-struct JPC_BroadPhaseLayerInterface {
+struct JoltC_BroadPhaseLayerInterface {
   void *obj;
 };
-typedef struct JPC_BroadPhaseLayerInterface JPC_BroadPhaseLayerInterface_t;
+typedef struct JoltC_BroadPhaseLayerInterface JoltC_BroadPhaseLayerInterface_t;
 
-struct JPC_BroadPhaseLayerInterfaceEm {
+struct JoltC_BroadPhaseLayerInterfaceEm {
   void *obj;
-  struct JPC_BroadPhaseLayerInterface *superObj;
+  struct JoltC_BroadPhaseLayerInterface *superObj;
 };
-typedef struct JPC_BroadPhaseLayerInterfaceEm JPC_BroadPhaseLayerInterfaceEm_t;
+typedef struct JoltC_BroadPhaseLayerInterfaceEm JoltC_BroadPhaseLayerInterfaceEm_t;
 
-struct JPC_BroadPhaseLayerInterfaceMask {
+struct JoltC_BroadPhaseLayerInterfaceMask {
   void *obj;
-  struct JPC_BroadPhaseLayerInterface *superObj;
+  struct JoltC_BroadPhaseLayerInterface *superObj;
 };
-typedef struct JPC_BroadPhaseLayerInterfaceMask JPC_BroadPhaseLayerInterfaceMask_t;
+typedef struct JoltC_BroadPhaseLayerInterfaceMask JoltC_BroadPhaseLayerInterfaceMask_t;
 
-struct JPC_BroadPhaseLayerInterfaceTable {
+struct JoltC_BroadPhaseLayerInterfaceTable {
   void *obj;
-  struct JPC_BroadPhaseLayerInterface *superObj;
+  struct JoltC_BroadPhaseLayerInterface *superObj;
 };
-typedef struct JPC_BroadPhaseLayerInterfaceTable JPC_BroadPhaseLayerInterfaceTable_t;
+typedef struct JoltC_BroadPhaseLayerInterfaceTable JoltC_BroadPhaseLayerInterfaceTable_t;
 
-struct JPC_BroadPhaseQuery {
+struct JoltC_BroadPhaseQuery {
   void *obj;
 };
-typedef struct JPC_BroadPhaseQuery JPC_BroadPhaseQuery_t;
+typedef struct JoltC_BroadPhaseQuery JoltC_BroadPhaseQuery_t;
 
-struct JPC_CapsuleShape {
+struct JoltC_CapsuleShape {
   void *obj;
-  struct JPC_ConvexShape *superObj;
+  struct JoltC_ConvexShape *superObj;
 };
-typedef struct JPC_CapsuleShape JPC_CapsuleShape_t;
+typedef struct JoltC_CapsuleShape JoltC_CapsuleShape_t;
 
-struct JPC_CapsuleShapeSettings {
+struct JoltC_CapsuleShapeSettings {
   void *obj;
-  struct JPC_ConvexShapeSettings *superObj;
+  struct JoltC_ConvexShapeSettings *superObj;
 };
-typedef struct JPC_CapsuleShapeSettings JPC_CapsuleShapeSettings_t;
+typedef struct JoltC_CapsuleShapeSettings JoltC_CapsuleShapeSettings_t;
 
-struct JPC_CastRayAllHitCollisionCollector {
+struct JoltC_CastRayAllHitCollisionCollector {
   void *obj;
-  struct JPC_CastRayCollector *superObj;
+  struct JoltC_CastRayCollector *superObj;
 };
-typedef struct JPC_CastRayAllHitCollisionCollector JPC_CastRayAllHitCollisionCollector_t;
+typedef struct JoltC_CastRayAllHitCollisionCollector JoltC_CastRayAllHitCollisionCollector_t;
 
-struct JPC_CastRayAnyHitCollisionCollector {
+struct JoltC_CastRayAnyHitCollisionCollector {
   void *obj;
-  struct JPC_CastRayCollector *superObj;
+  struct JoltC_CastRayCollector *superObj;
 };
-typedef struct JPC_CastRayAnyHitCollisionCollector JPC_CastRayAnyHitCollisionCollector_t;
+typedef struct JoltC_CastRayAnyHitCollisionCollector JoltC_CastRayAnyHitCollisionCollector_t;
 
-struct JPC_CastRayClosestHitCollisionCollector {
+struct JoltC_CastRayClosestHitCollisionCollector {
   void *obj;
-  struct JPC_CastRayCollector *superObj;
+  struct JoltC_CastRayCollector *superObj;
 };
-typedef struct JPC_CastRayClosestHitCollisionCollector JPC_CastRayClosestHitCollisionCollector_t;
+typedef struct JoltC_CastRayClosestHitCollisionCollector JoltC_CastRayClosestHitCollisionCollector_t;
 
-struct JPC_CastRayCollector {
+struct JoltC_CastRayCollector {
   void *obj;
 };
-typedef struct JPC_CastRayCollector JPC_CastRayCollector_t;
+typedef struct JoltC_CastRayCollector JoltC_CastRayCollector_t;
 
-struct JPC_CastShapeAllHitCollisionCollector {
+struct JoltC_CastShapeAllHitCollisionCollector {
   void *obj;
-  struct JPC_CastShapeCollector *superObj;
+  struct JoltC_CastShapeCollector *superObj;
 };
-typedef struct JPC_CastShapeAllHitCollisionCollector JPC_CastShapeAllHitCollisionCollector_t;
+typedef struct JoltC_CastShapeAllHitCollisionCollector JoltC_CastShapeAllHitCollisionCollector_t;
 
-struct JPC_CastShapeAnyHitCollisionCollector {
+struct JoltC_CastShapeAnyHitCollisionCollector {
   void *obj;
-  struct JPC_CastShapeCollector *superObj;
+  struct JoltC_CastShapeCollector *superObj;
 };
-typedef struct JPC_CastShapeAnyHitCollisionCollector JPC_CastShapeAnyHitCollisionCollector_t;
+typedef struct JoltC_CastShapeAnyHitCollisionCollector JoltC_CastShapeAnyHitCollisionCollector_t;
 
-struct JPC_CastShapeBodyCollector {
+struct JoltC_CastShapeBodyCollector {
   void *obj;
 };
-typedef struct JPC_CastShapeBodyCollector JPC_CastShapeBodyCollector_t;
+typedef struct JoltC_CastShapeBodyCollector JoltC_CastShapeBodyCollector_t;
 
-struct JPC_CastShapeClosestHitCollisionCollector {
+struct JoltC_CastShapeClosestHitCollisionCollector {
   void *obj;
-  struct JPC_CastShapeCollector *superObj;
+  struct JoltC_CastShapeCollector *superObj;
 };
-typedef struct JPC_CastShapeClosestHitCollisionCollector JPC_CastShapeClosestHitCollisionCollector_t;
+typedef struct JoltC_CastShapeClosestHitCollisionCollector JoltC_CastShapeClosestHitCollisionCollector_t;
 
-struct JPC_CastShapeCollector {
+struct JoltC_CastShapeCollector {
   void *obj;
 };
-typedef struct JPC_CastShapeCollector JPC_CastShapeCollector_t;
+typedef struct JoltC_CastShapeCollector JoltC_CastShapeCollector_t;
 
-struct JPC_CharacterBase {
+struct JoltC_CharacterBase {
   void *obj;
 };
-typedef struct JPC_CharacterBase JPC_CharacterBase_t;
+typedef struct JoltC_CharacterBase JoltC_CharacterBase_t;
 
-struct JPC_CharacterBaseSettings {
+struct JoltC_CharacterBaseSettings {
   void *obj;
 };
-typedef struct JPC_CharacterBaseSettings JPC_CharacterBaseSettings_t;
+typedef struct JoltC_CharacterBaseSettings JoltC_CharacterBaseSettings_t;
 
-struct JPC_CharacterContactListener {
+struct JoltC_CharacterContactListener {
   void *obj;
 };
-typedef struct JPC_CharacterContactListener JPC_CharacterContactListener_t;
+typedef struct JoltC_CharacterContactListener JoltC_CharacterContactListener_t;
 
-struct JPC_CharacterContactListenerEm {
+struct JoltC_CharacterContactListenerEm {
   void *obj;
-  struct JPC_CharacterContactListener *superObj;
+  struct JoltC_CharacterContactListener *superObj;
 };
-typedef struct JPC_CharacterContactListenerEm JPC_CharacterContactListenerEm_t;
+typedef struct JoltC_CharacterContactListenerEm JoltC_CharacterContactListenerEm_t;
 
-struct JPC_CharacterContactSettings {
+struct JoltC_CharacterContactSettings {
   void *obj;
 };
-typedef struct JPC_CharacterContactSettings JPC_CharacterContactSettings_t;
+typedef struct JoltC_CharacterContactSettings JoltC_CharacterContactSettings_t;
 
-struct JPC_CharacterVirtual {
+struct JoltC_CharacterVirtual {
   void *obj;
-  struct JPC_CharacterBase *superObj;
+  struct JoltC_CharacterBase *superObj;
 };
-typedef struct JPC_CharacterVirtual JPC_CharacterVirtual_t;
+typedef struct JoltC_CharacterVirtual JoltC_CharacterVirtual_t;
 
-struct JPC_CharacterVirtual_ExtendedUpdateSettings {
+struct JoltC_CharacterVirtual_ExtendedUpdateSettings {
   void *obj;
 };
-typedef struct JPC_CharacterVirtual_ExtendedUpdateSettings JPC_CharacterVirtual_ExtendedUpdateSettings_t;
+typedef struct JoltC_CharacterVirtual_ExtendedUpdateSettings JoltC_CharacterVirtual_ExtendedUpdateSettings_t;
 
-struct JPC_CharacterVirtualSettings {
+struct JoltC_CharacterVirtualSettings {
   void *obj;
-  struct JPC_CharacterBaseSettings *superObj;
+  struct JoltC_CharacterBaseSettings *superObj;
 };
-typedef struct JPC_CharacterVirtualSettings JPC_CharacterVirtualSettings_t;
+typedef struct JoltC_CharacterVirtualSettings JoltC_CharacterVirtualSettings_t;
 
-struct JPC_CollidePointAllHitCollisionCollector {
+struct JoltC_CollidePointAllHitCollisionCollector {
   void *obj;
-  struct JPC_CollidePointCollector *superObj;
+  struct JoltC_CollidePointCollector *superObj;
 };
-typedef struct JPC_CollidePointAllHitCollisionCollector JPC_CollidePointAllHitCollisionCollector_t;
+typedef struct JoltC_CollidePointAllHitCollisionCollector JoltC_CollidePointAllHitCollisionCollector_t;
 
-struct JPC_CollidePointAnyHitCollisionCollector {
+struct JoltC_CollidePointAnyHitCollisionCollector {
   void *obj;
-  struct JPC_CollidePointCollector *superObj;
+  struct JoltC_CollidePointCollector *superObj;
 };
-typedef struct JPC_CollidePointAnyHitCollisionCollector JPC_CollidePointAnyHitCollisionCollector_t;
+typedef struct JoltC_CollidePointAnyHitCollisionCollector JoltC_CollidePointAnyHitCollisionCollector_t;
 
-struct JPC_CollidePointClosestHitCollisionCollector {
+struct JoltC_CollidePointClosestHitCollisionCollector {
   void *obj;
-  struct JPC_CollidePointCollector *superObj;
+  struct JoltC_CollidePointCollector *superObj;
 };
-typedef struct JPC_CollidePointClosestHitCollisionCollector JPC_CollidePointClosestHitCollisionCollector_t;
+typedef struct JoltC_CollidePointClosestHitCollisionCollector JoltC_CollidePointClosestHitCollisionCollector_t;
 
-struct JPC_CollidePointCollector {
+struct JoltC_CollidePointCollector {
   void *obj;
 };
-typedef struct JPC_CollidePointCollector JPC_CollidePointCollector_t;
+typedef struct JoltC_CollidePointCollector JoltC_CollidePointCollector_t;
 
-struct JPC_CollidePointResult {
+struct JoltC_CollidePointResult {
   void *obj;
 };
-typedef struct JPC_CollidePointResult JPC_CollidePointResult_t;
+typedef struct JoltC_CollidePointResult JoltC_CollidePointResult_t;
 
-struct JPC_CollideSettingsBase {
+struct JoltC_CollideSettingsBase {
   void *obj;
 };
-typedef struct JPC_CollideSettingsBase JPC_CollideSettingsBase_t;
+typedef struct JoltC_CollideSettingsBase JoltC_CollideSettingsBase_t;
 
-struct JPC_CollideShapeAllHitCollisionCollector {
+struct JoltC_CollideShapeAllHitCollisionCollector {
   void *obj;
-  struct JPC_CollideShapeCollector *superObj;
+  struct JoltC_CollideShapeCollector *superObj;
 };
-typedef struct JPC_CollideShapeAllHitCollisionCollector JPC_CollideShapeAllHitCollisionCollector_t;
+typedef struct JoltC_CollideShapeAllHitCollisionCollector JoltC_CollideShapeAllHitCollisionCollector_t;
 
-struct JPC_CollideShapeAnyHitCollisionCollector {
+struct JoltC_CollideShapeAnyHitCollisionCollector {
   void *obj;
-  struct JPC_CollideShapeCollector *superObj;
+  struct JoltC_CollideShapeCollector *superObj;
 };
-typedef struct JPC_CollideShapeAnyHitCollisionCollector JPC_CollideShapeAnyHitCollisionCollector_t;
+typedef struct JoltC_CollideShapeAnyHitCollisionCollector JoltC_CollideShapeAnyHitCollisionCollector_t;
 
-struct JPC_CollideShapeBodyCollector {
+struct JoltC_CollideShapeBodyCollector {
   void *obj;
 };
-typedef struct JPC_CollideShapeBodyCollector JPC_CollideShapeBodyCollector_t;
+typedef struct JoltC_CollideShapeBodyCollector JoltC_CollideShapeBodyCollector_t;
 
-struct JPC_CollideShapeClosestHitCollisionCollector {
+struct JoltC_CollideShapeClosestHitCollisionCollector {
   void *obj;
-  struct JPC_CollideShapeCollector *superObj;
+  struct JoltC_CollideShapeCollector *superObj;
 };
-typedef struct JPC_CollideShapeClosestHitCollisionCollector JPC_CollideShapeClosestHitCollisionCollector_t;
+typedef struct JoltC_CollideShapeClosestHitCollisionCollector JoltC_CollideShapeClosestHitCollisionCollector_t;
 
-struct JPC_CollideShapeCollector {
+struct JoltC_CollideShapeCollector {
   void *obj;
 };
-typedef struct JPC_CollideShapeCollector JPC_CollideShapeCollector_t;
+typedef struct JoltC_CollideShapeCollector JoltC_CollideShapeCollector_t;
 
-struct JPC_CollideShapeResult {
+struct JoltC_CollideShapeResult {
   void *obj;
 };
-typedef struct JPC_CollideShapeResult JPC_CollideShapeResult_t;
+typedef struct JoltC_CollideShapeResult JoltC_CollideShapeResult_t;
 
-struct JPC_CollideShapeResultFace {
+struct JoltC_CollideShapeResultFace {
   void *obj;
 };
-typedef struct JPC_CollideShapeResultFace JPC_CollideShapeResultFace_t;
+typedef struct JoltC_CollideShapeResultFace JoltC_CollideShapeResultFace_t;
 
-struct JPC_CollideShapeSettings {
+struct JoltC_CollideShapeSettings {
   void *obj;
-  struct JPC_CollideSettingsBase *superObj;
+  struct JoltC_CollideSettingsBase *superObj;
 };
-typedef struct JPC_CollideShapeSettings JPC_CollideShapeSettings_t;
+typedef struct JoltC_CollideShapeSettings JoltC_CollideShapeSettings_t;
 
-struct JPC_CollisionGroup {
+struct JoltC_CollisionGroup {
   void *obj;
 };
-typedef struct JPC_CollisionGroup JPC_CollisionGroup_t;
+typedef struct JoltC_CollisionGroup JoltC_CollisionGroup_t;
 
-struct JPC_CompoundShape {
+struct JoltC_CompoundShape {
   void *obj;
-  struct JPC_Shape *superObj;
+  struct JoltC_Shape *superObj;
 };
-typedef struct JPC_CompoundShape JPC_CompoundShape_t;
+typedef struct JoltC_CompoundShape JoltC_CompoundShape_t;
 
-struct JPC_CompoundShapeSubShape {
+struct JoltC_CompoundShapeSubShape {
   void *obj;
 };
-typedef struct JPC_CompoundShapeSubShape JPC_CompoundShapeSubShape_t;
+typedef struct JoltC_CompoundShapeSubShape JoltC_CompoundShapeSubShape_t;
 
-struct JPC_ConeConstraint {
+struct JoltC_ConeConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_ConeConstraint JPC_ConeConstraint_t;
+typedef struct JoltC_ConeConstraint JoltC_ConeConstraint_t;
 
-struct JPC_ConeConstraintSettings {
+struct JoltC_ConeConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_ConeConstraintSettings JPC_ConeConstraintSettings_t;
+typedef struct JoltC_ConeConstraintSettings JoltC_ConeConstraintSettings_t;
 
-struct JPC_Constraint {
+struct JoltC_Constraint {
   void *obj;
 };
-typedef struct JPC_Constraint JPC_Constraint_t;
+typedef struct JoltC_Constraint JoltC_Constraint_t;
 
-struct JPC_ConstraintSettings {
+struct JoltC_ConstraintSettings {
   void *obj;
 };
-typedef struct JPC_ConstraintSettings JPC_ConstraintSettings_t;
+typedef struct JoltC_ConstraintSettings JoltC_ConstraintSettings_t;
 
-struct JPC_ContactListener {
+struct JoltC_ContactListener {
   void *obj;
 };
-typedef struct JPC_ContactListener JPC_ContactListener_t;
+typedef struct JoltC_ContactListener JoltC_ContactListener_t;
 
-struct JPC_ContactListenerEm {
+struct JoltC_ContactListenerEm {
   void *obj;
-  struct JPC_ContactListener *superObj;
+  struct JoltC_ContactListener *superObj;
 };
-typedef struct JPC_ContactListenerEm JPC_ContactListenerEm_t;
+typedef struct JoltC_ContactListenerEm JoltC_ContactListenerEm_t;
 
-struct JPC_ContactManifold {
+struct JoltC_ContactManifold {
   void *obj;
 };
-typedef struct JPC_ContactManifold JPC_ContactManifold_t;
+typedef struct JoltC_ContactManifold JoltC_ContactManifold_t;
 
-struct JPC_ContactPoints {
+struct JoltC_ContactPoints {
   void *obj;
 };
-typedef struct JPC_ContactPoints JPC_ContactPoints_t;
+typedef struct JoltC_ContactPoints JoltC_ContactPoints_t;
 
-struct JPC_ContactSettings {
+struct JoltC_ContactSettings {
   void *obj;
 };
-typedef struct JPC_ContactSettings JPC_ContactSettings_t;
+typedef struct JoltC_ContactSettings JoltC_ContactSettings_t;
 
-struct JPC_ConvexHullShape {
+struct JoltC_ConvexHullShape {
   void *obj;
-  struct JPC_ConvexShape *superObj;
+  struct JoltC_ConvexShape *superObj;
 };
-typedef struct JPC_ConvexHullShape JPC_ConvexHullShape_t;
+typedef struct JoltC_ConvexHullShape JoltC_ConvexHullShape_t;
 
-struct JPC_ConvexHullShapeSettings {
+struct JoltC_ConvexHullShapeSettings {
   void *obj;
-  struct JPC_ConvexShapeSettings *superObj;
+  struct JoltC_ConvexShapeSettings *superObj;
 };
-typedef struct JPC_ConvexHullShapeSettings JPC_ConvexHullShapeSettings_t;
+typedef struct JoltC_ConvexHullShapeSettings JoltC_ConvexHullShapeSettings_t;
 
-struct JPC_ConvexShape {
+struct JoltC_ConvexShape {
   void *obj;
-  struct JPC_Shape *superObj;
+  struct JoltC_Shape *superObj;
 };
-typedef struct JPC_ConvexShape JPC_ConvexShape_t;
+typedef struct JoltC_ConvexShape JoltC_ConvexShape_t;
 
-struct JPC_ConvexShapeSettings {
+struct JoltC_ConvexShapeSettings {
   void *obj;
-  struct JPC_ShapeSettings *superObj;
+  struct JoltC_ShapeSettings *superObj;
 };
-typedef struct JPC_ConvexShapeSettings JPC_ConvexShapeSettings_t;
+typedef struct JoltC_ConvexShapeSettings JoltC_ConvexShapeSettings_t;
 
-struct JPC_CylinderShape {
+struct JoltC_CylinderShape {
   void *obj;
-  struct JPC_ConvexShape *superObj;
+  struct JoltC_ConvexShape *superObj;
 };
-typedef struct JPC_CylinderShape JPC_CylinderShape_t;
+typedef struct JoltC_CylinderShape JoltC_CylinderShape_t;
 
-struct JPC_CylinderShapeSettings {
+struct JoltC_CylinderShapeSettings {
   void *obj;
-  struct JPC_ConvexShapeSettings *superObj;
+  struct JoltC_ConvexShapeSettings *superObj;
 };
-typedef struct JPC_CylinderShapeSettings JPC_CylinderShapeSettings_t;
+typedef struct JoltC_CylinderShapeSettings JoltC_CylinderShapeSettings_t;
 
-struct JPC_DecoratedShape {
+struct JoltC_DecoratedShape {
   void *obj;
-  struct JPC_Shape *superObj;
+  struct JoltC_Shape *superObj;
 };
-typedef struct JPC_DecoratedShape JPC_DecoratedShape_t;
+typedef struct JoltC_DecoratedShape JoltC_DecoratedShape_t;
 
-struct JPC_DecoratedShapeSettings {
+struct JoltC_DecoratedShapeSettings {
   void *obj;
-  struct JPC_ShapeSettings *superObj;
+  struct JoltC_ShapeSettings *superObj;
 };
-typedef struct JPC_DecoratedShapeSettings JPC_DecoratedShapeSettings_t;
+typedef struct JoltC_DecoratedShapeSettings JoltC_DecoratedShapeSettings_t;
 
-struct JPC_DefaultBroadPhaseLayerFilter {
+struct JoltC_DefaultBroadPhaseLayerFilter {
   void *obj;
-  struct JPC_ObjectLayerFilter *superObj;
+  struct JoltC_ObjectLayerFilter *superObj;
 };
-typedef struct JPC_DefaultBroadPhaseLayerFilter JPC_DefaultBroadPhaseLayerFilter_t;
+typedef struct JoltC_DefaultBroadPhaseLayerFilter JoltC_DefaultBroadPhaseLayerFilter_t;
 
-struct JPC_DefaultObjectLayerFilter {
+struct JoltC_DefaultObjectLayerFilter {
   void *obj;
-  struct JPC_ObjectLayerFilter *superObj;
+  struct JoltC_ObjectLayerFilter *superObj;
 };
-typedef struct JPC_DefaultObjectLayerFilter JPC_DefaultObjectLayerFilter_t;
+typedef struct JoltC_DefaultObjectLayerFilter JoltC_DefaultObjectLayerFilter_t;
 
-struct JPC_DistanceConstraint {
+struct JoltC_DistanceConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_DistanceConstraint JPC_DistanceConstraint_t;
+typedef struct JoltC_DistanceConstraint JoltC_DistanceConstraint_t;
 
-struct JPC_DistanceConstraintSettings {
+struct JoltC_DistanceConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_DistanceConstraintSettings JPC_DistanceConstraintSettings_t;
+typedef struct JoltC_DistanceConstraintSettings JoltC_DistanceConstraintSettings_t;
 
-struct JPC_FixedConstraintSettings {
+struct JoltC_FixedConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_FixedConstraintSettings JPC_FixedConstraintSettings_t;
+typedef struct JoltC_FixedConstraintSettings JoltC_FixedConstraintSettings_t;
 
-struct JPC_Float3 {
+struct JoltC_Float3 {
   void *obj;
 };
-typedef struct JPC_Float3 JPC_Float3_t;
+typedef struct JoltC_Float3 JoltC_Float3_t;
 
-struct JPC_FloatMemRef {
+struct JoltC_FloatMemRef {
   void *obj;
 };
-typedef struct JPC_FloatMemRef JPC_FloatMemRef_t;
+typedef struct JoltC_FloatMemRef JoltC_FloatMemRef_t;
 
-struct JPC_GearConstraint {
+struct JoltC_GearConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_GearConstraint JPC_GearConstraint_t;
+typedef struct JoltC_GearConstraint JoltC_GearConstraint_t;
 
-struct JPC_GearConstraintSettings {
+struct JoltC_GearConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_GearConstraintSettings JPC_GearConstraintSettings_t;
+typedef struct JoltC_GearConstraintSettings JoltC_GearConstraintSettings_t;
 
-struct JPC_GroupFilter {
+struct JoltC_GroupFilter {
   void *obj;
 };
-typedef struct JPC_GroupFilter JPC_GroupFilter_t;
+typedef struct JoltC_GroupFilter JoltC_GroupFilter_t;
 
-struct JPC_GroupFilterTable {
+struct JoltC_GroupFilterTable {
   void *obj;
-  struct JPC_GroupFilter *superObj;
+  struct JoltC_GroupFilter *superObj;
 };
-typedef struct JPC_GroupFilterTable JPC_GroupFilterTable_t;
+typedef struct JoltC_GroupFilterTable JoltC_GroupFilterTable_t;
 
-struct JPC_HeightFieldShape {
+struct JoltC_HeightFieldShape {
   void *obj;
-  struct JPC_Shape *superObj;
+  struct JoltC_Shape *superObj;
 };
-typedef struct JPC_HeightFieldShape JPC_HeightFieldShape_t;
+typedef struct JoltC_HeightFieldShape JoltC_HeightFieldShape_t;
 
-struct JPC_HeightFieldShapeConstantValues {
+struct JoltC_HeightFieldShapeConstantValues {
   void *obj;
 };
-typedef struct JPC_HeightFieldShapeConstantValues JPC_HeightFieldShapeConstantValues_t;
+typedef struct JoltC_HeightFieldShapeConstantValues JoltC_HeightFieldShapeConstantValues_t;
 
-struct JPC_HeightFieldShapeSettings {
+struct JoltC_HeightFieldShapeSettings {
   void *obj;
-  struct JPC_ShapeSettings *superObj;
+  struct JoltC_ShapeSettings *superObj;
 };
-typedef struct JPC_HeightFieldShapeSettings JPC_HeightFieldShapeSettings_t;
+typedef struct JoltC_HeightFieldShapeSettings JoltC_HeightFieldShapeSettings_t;
 
-struct JPC_HingeConstraint {
+struct JoltC_HingeConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_HingeConstraint JPC_HingeConstraint_t;
+typedef struct JoltC_HingeConstraint JoltC_HingeConstraint_t;
 
-struct JPC_HingeConstraintSettings {
+struct JoltC_HingeConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_HingeConstraintSettings JPC_HingeConstraintSettings_t;
+typedef struct JoltC_HingeConstraintSettings JoltC_HingeConstraintSettings_t;
 
-struct JPC_IgnoreMultipleBodiesFilter {
+struct JoltC_IgnoreMultipleBodiesFilter {
   void *obj;
-  struct JPC_BodyFilter *superObj;
+  struct JoltC_BodyFilter *superObj;
 };
-typedef struct JPC_IgnoreMultipleBodiesFilter JPC_IgnoreMultipleBodiesFilter_t;
+typedef struct JoltC_IgnoreMultipleBodiesFilter JoltC_IgnoreMultipleBodiesFilter_t;
 
-struct JPC_IgnoreSingleBodyFilter {
+struct JoltC_IgnoreSingleBodyFilter {
   void *obj;
-  struct JPC_BodyFilter *superObj;
+  struct JoltC_BodyFilter *superObj;
 };
-typedef struct JPC_IgnoreSingleBodyFilter JPC_IgnoreSingleBodyFilter_t;
+typedef struct JoltC_IgnoreSingleBodyFilter JoltC_IgnoreSingleBodyFilter_t;
 
-struct JPC_IndexedTriangle {
+struct JoltC_IndexedTriangle {
   void *obj;
 };
-typedef struct JPC_IndexedTriangle JPC_IndexedTriangle_t;
+typedef struct JoltC_IndexedTriangle JoltC_IndexedTriangle_t;
 
-struct JPC_IndexedTriangleList {
+struct JoltC_IndexedTriangleList {
   void *obj;
 };
-typedef struct JPC_IndexedTriangleList JPC_IndexedTriangleList_t;
+typedef struct JoltC_IndexedTriangleList JoltC_IndexedTriangleList_t;
 
-struct JPC_JPHString {
+struct JoltC_JPHString {
   void *obj;
 };
-typedef struct JPC_JPHString JPC_JPHString_t;
+typedef struct JoltC_JPHString JoltC_JPHString_t;
 
-struct JPC_JoltInterface {
+struct JoltC_JoltInterface {
   void *obj;
 };
-typedef struct JPC_JoltInterface JPC_JoltInterface_t;
+typedef struct JoltC_JoltInterface JoltC_JoltInterface_t;
 
-struct JPC_JoltSettings {
+struct JoltC_JoltSettings {
   void *obj;
 };
-typedef struct JPC_JoltSettings JPC_JoltSettings_t;
+typedef struct JoltC_JoltSettings JoltC_JoltSettings_t;
 
-struct JPC_LinearCurve {
+struct JoltC_LinearCurve {
   void *obj;
 };
-typedef struct JPC_LinearCurve JPC_LinearCurve_t;
+typedef struct JoltC_LinearCurve JoltC_LinearCurve_t;
 
-struct JPC_MassProperties {
+struct JoltC_MassProperties {
   void *obj;
 };
-typedef struct JPC_MassProperties JPC_MassProperties_t;
+typedef struct JoltC_MassProperties JoltC_MassProperties_t;
 
-struct JPC_Mat44 {
+struct JoltC_Mat44 {
   void *obj;
 };
-typedef struct JPC_Mat44 JPC_Mat44_t;
+typedef struct JoltC_Mat44 JoltC_Mat44_t;
 
-struct JPC_Mat44MemRef {
+struct JoltC_Mat44MemRef {
   void *obj;
 };
-typedef struct JPC_Mat44MemRef JPC_Mat44MemRef_t;
+typedef struct JoltC_Mat44MemRef JoltC_Mat44MemRef_t;
 
-struct JPC_MeshShape {
+struct JoltC_MeshShape {
   void *obj;
-  struct JPC_Shape *superObj;
+  struct JoltC_Shape *superObj;
 };
-typedef struct JPC_MeshShape JPC_MeshShape_t;
+typedef struct JoltC_MeshShape JoltC_MeshShape_t;
 
-struct JPC_MeshShapeSettings {
+struct JoltC_MeshShapeSettings {
   void *obj;
-  struct JPC_ShapeSettings *superObj;
+  struct JoltC_ShapeSettings *superObj;
 };
-typedef struct JPC_MeshShapeSettings JPC_MeshShapeSettings_t;
+typedef struct JoltC_MeshShapeSettings JoltC_MeshShapeSettings_t;
 
-struct JPC_MotionProperties {
+struct JoltC_MotionProperties {
   void *obj;
 };
-typedef struct JPC_MotionProperties JPC_MotionProperties_t;
+typedef struct JoltC_MotionProperties JoltC_MotionProperties_t;
 
-struct JPC_MotorSettings {
+struct JoltC_MotorSettings {
   void *obj;
 };
-typedef struct JPC_MotorSettings JPC_MotorSettings_t;
+typedef struct JoltC_MotorSettings JoltC_MotorSettings_t;
 
-struct JPC_MotorcycleController {
+struct JoltC_MotorcycleController {
   void *obj;
-  struct JPC_WheeledVehicleController *superObj;
+  struct JoltC_WheeledVehicleController *superObj;
 };
-typedef struct JPC_MotorcycleController JPC_MotorcycleController_t;
+typedef struct JoltC_MotorcycleController JoltC_MotorcycleController_t;
 
-struct JPC_MotorcycleControllerSettings {
+struct JoltC_MotorcycleControllerSettings {
   void *obj;
-  struct JPC_WheeledVehicleControllerSettings *superObj;
+  struct JoltC_WheeledVehicleControllerSettings *superObj;
 };
-typedef struct JPC_MotorcycleControllerSettings JPC_MotorcycleControllerSettings_t;
+typedef struct JoltC_MotorcycleControllerSettings JoltC_MotorcycleControllerSettings_t;
 
-struct JPC_NarrowPhaseQuery {
+struct JoltC_NarrowPhaseQuery {
   void *obj;
 };
-typedef struct JPC_NarrowPhaseQuery JPC_NarrowPhaseQuery_t;
+typedef struct JoltC_NarrowPhaseQuery JoltC_NarrowPhaseQuery_t;
 
-struct JPC_ObjectLayerFilter {
+struct JoltC_ObjectLayerFilter {
   void *obj;
 };
-typedef struct JPC_ObjectLayerFilter JPC_ObjectLayerFilter_t;
+typedef struct JoltC_ObjectLayerFilter JoltC_ObjectLayerFilter_t;
 
-struct JPC_ObjectLayerPairFilter {
+struct JoltC_ObjectLayerPairFilter {
   void *obj;
 };
-typedef struct JPC_ObjectLayerPairFilter JPC_ObjectLayerPairFilter_t;
+typedef struct JoltC_ObjectLayerPairFilter JoltC_ObjectLayerPairFilter_t;
 
-struct JPC_ObjectLayerPairFilterMask {
+struct JoltC_ObjectLayerPairFilterMask {
   void *obj;
-  struct JPC_ObjectLayerPairFilter *superObj;
+  struct JoltC_ObjectLayerPairFilter *superObj;
 };
-typedef struct JPC_ObjectLayerPairFilterMask JPC_ObjectLayerPairFilterMask_t;
+typedef struct JoltC_ObjectLayerPairFilterMask JoltC_ObjectLayerPairFilterMask_t;
 
-struct JPC_ObjectLayerPairFilterTable {
+struct JoltC_ObjectLayerPairFilterTable {
   void *obj;
-  struct JPC_ObjectLayerPairFilter *superObj;
+  struct JoltC_ObjectLayerPairFilter *superObj;
 };
-typedef struct JPC_ObjectLayerPairFilterTable JPC_ObjectLayerPairFilterTable_t;
+typedef struct JoltC_ObjectLayerPairFilterTable JoltC_ObjectLayerPairFilterTable_t;
 
-struct JPC_ObjectVsBroadPhaseLayerFilter {
+struct JoltC_ObjectVsBroadPhaseLayerFilter {
   void *obj;
 };
-typedef struct JPC_ObjectVsBroadPhaseLayerFilter JPC_ObjectVsBroadPhaseLayerFilter_t;
+typedef struct JoltC_ObjectVsBroadPhaseLayerFilter JoltC_ObjectVsBroadPhaseLayerFilter_t;
 
-struct JPC_ObjectVsBroadPhaseLayerFilterEm {
+struct JoltC_ObjectVsBroadPhaseLayerFilterEm {
   void *obj;
-  struct JPC_ObjectVsBroadPhaseLayerFilter *superObj;
+  struct JoltC_ObjectVsBroadPhaseLayerFilter *superObj;
 };
-typedef struct JPC_ObjectVsBroadPhaseLayerFilterEm JPC_ObjectVsBroadPhaseLayerFilterEm_t;
+typedef struct JoltC_ObjectVsBroadPhaseLayerFilterEm JoltC_ObjectVsBroadPhaseLayerFilterEm_t;
 
-struct JPC_ObjectVsBroadPhaseLayerFilterMask {
+struct JoltC_ObjectVsBroadPhaseLayerFilterMask {
   void *obj;
-  struct JPC_ObjectVsBroadPhaseLayerFilter *superObj;
+  struct JoltC_ObjectVsBroadPhaseLayerFilter *superObj;
 };
-typedef struct JPC_ObjectVsBroadPhaseLayerFilterMask JPC_ObjectVsBroadPhaseLayerFilterMask_t;
+typedef struct JoltC_ObjectVsBroadPhaseLayerFilterMask JoltC_ObjectVsBroadPhaseLayerFilterMask_t;
 
-struct JPC_ObjectVsBroadPhaseLayerFilterTable {
+struct JoltC_ObjectVsBroadPhaseLayerFilterTable {
   void *obj;
-  struct JPC_ObjectVsBroadPhaseLayerFilter *superObj;
+  struct JoltC_ObjectVsBroadPhaseLayerFilter *superObj;
 };
-typedef struct JPC_ObjectVsBroadPhaseLayerFilterTable JPC_ObjectVsBroadPhaseLayerFilterTable_t;
+typedef struct JoltC_ObjectVsBroadPhaseLayerFilterTable JoltC_ObjectVsBroadPhaseLayerFilterTable_t;
 
-struct JPC_OffsetCenterOfMassShape {
+struct JoltC_OffsetCenterOfMassShape {
   void *obj;
-  struct JPC_DecoratedShape *superObj;
+  struct JoltC_DecoratedShape *superObj;
 };
-typedef struct JPC_OffsetCenterOfMassShape JPC_OffsetCenterOfMassShape_t;
+typedef struct JoltC_OffsetCenterOfMassShape JoltC_OffsetCenterOfMassShape_t;
 
-struct JPC_OffsetCenterOfMassShapeSettings {
+struct JoltC_OffsetCenterOfMassShapeSettings {
   void *obj;
-  struct JPC_DecoratedShapeSettings *superObj;
+  struct JoltC_DecoratedShapeSettings *superObj;
 };
-typedef struct JPC_OffsetCenterOfMassShapeSettings JPC_OffsetCenterOfMassShapeSettings_t;
+typedef struct JoltC_OffsetCenterOfMassShapeSettings JoltC_OffsetCenterOfMassShapeSettings_t;
 
-struct JPC_OrientedBox {
+struct JoltC_OrientedBox {
   void *obj;
 };
-typedef struct JPC_OrientedBox JPC_OrientedBox_t;
+typedef struct JoltC_OrientedBox JoltC_OrientedBox_t;
 
-struct JPC_PathConstraint {
+struct JoltC_PathConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_PathConstraint JPC_PathConstraint_t;
+typedef struct JoltC_PathConstraint JoltC_PathConstraint_t;
 
-struct JPC_PathConstraintPath {
+struct JoltC_PathConstraintPath {
   void *obj;
 };
-typedef struct JPC_PathConstraintPath JPC_PathConstraintPath_t;
+typedef struct JoltC_PathConstraintPath JoltC_PathConstraintPath_t;
 
-struct JPC_PathConstraintPathEm {
+struct JoltC_PathConstraintPathEm {
   void *obj;
-  struct JPC_PathConstraintPath *superObj;
+  struct JoltC_PathConstraintPath *superObj;
 };
-typedef struct JPC_PathConstraintPathEm JPC_PathConstraintPathEm_t;
+typedef struct JoltC_PathConstraintPathEm JoltC_PathConstraintPathEm_t;
 
-struct JPC_PathConstraintSettings {
+struct JoltC_PathConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_PathConstraintSettings JPC_PathConstraintSettings_t;
+typedef struct JoltC_PathConstraintSettings JoltC_PathConstraintSettings_t;
 
-struct JPC_PhysicsMaterial {
+struct JoltC_PhysicsMaterial {
   void *obj;
 };
-typedef struct JPC_PhysicsMaterial JPC_PhysicsMaterial_t;
+typedef struct JoltC_PhysicsMaterial JoltC_PhysicsMaterial_t;
 
-struct JPC_PhysicsMaterialList {
+struct JoltC_PhysicsMaterialList {
   void *obj;
 };
-typedef struct JPC_PhysicsMaterialList JPC_PhysicsMaterialList_t;
+typedef struct JoltC_PhysicsMaterialList JoltC_PhysicsMaterialList_t;
 
-struct JPC_PhysicsSettings {
+struct JoltC_PhysicsSettings {
   void *obj;
 };
-typedef struct JPC_PhysicsSettings JPC_PhysicsSettings_t;
+typedef struct JoltC_PhysicsSettings JoltC_PhysicsSettings_t;
 
-struct JPC_PhysicsStepListener {
+struct JoltC_PhysicsStepListener {
   void *obj;
 };
-typedef struct JPC_PhysicsStepListener JPC_PhysicsStepListener_t;
+typedef struct JoltC_PhysicsStepListener JoltC_PhysicsStepListener_t;
 
-struct JPC_PhysicsSystem {
+struct JoltC_PhysicsSystem {
   void *obj;
 };
-typedef struct JPC_PhysicsSystem JPC_PhysicsSystem_t;
+typedef struct JoltC_PhysicsSystem JoltC_PhysicsSystem_t;
 
-struct JPC_Plane {
+struct JoltC_Plane {
   void *obj;
 };
-typedef struct JPC_Plane JPC_Plane_t;
+typedef struct JoltC_Plane JoltC_Plane_t;
 
-struct JPC_PointConstraint {
+struct JoltC_PointConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_PointConstraint JPC_PointConstraint_t;
+typedef struct JoltC_PointConstraint JoltC_PointConstraint_t;
 
-struct JPC_PointConstraintSettings {
+struct JoltC_PointConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_PointConstraintSettings JPC_PointConstraintSettings_t;
+typedef struct JoltC_PointConstraintSettings JoltC_PointConstraintSettings_t;
 
-struct JPC_PulleyConstraint {
+struct JoltC_PulleyConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_PulleyConstraint JPC_PulleyConstraint_t;
+typedef struct JoltC_PulleyConstraint JoltC_PulleyConstraint_t;
 
-struct JPC_PulleyConstraintSettings {
+struct JoltC_PulleyConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_PulleyConstraintSettings JPC_PulleyConstraintSettings_t;
+typedef struct JoltC_PulleyConstraintSettings JoltC_PulleyConstraintSettings_t;
 
-struct JPC_Quat {
+struct JoltC_Quat {
   void *obj;
 };
-typedef struct JPC_Quat JPC_Quat_t;
+typedef struct JoltC_Quat JoltC_Quat_t;
 
-struct JPC_RMat44 {
+struct JoltC_RMat44 {
   void *obj;
 };
-typedef struct JPC_RMat44 JPC_RMat44_t;
+typedef struct JoltC_RMat44 JoltC_RMat44_t;
 
-struct JPC_RRayCast {
+struct JoltC_RRayCast {
   void *obj;
 };
-typedef struct JPC_RRayCast JPC_RRayCast_t;
+typedef struct JoltC_RRayCast JoltC_RRayCast_t;
 
-struct JPC_RShapeCast {
+struct JoltC_RShapeCast {
   void *obj;
 };
-typedef struct JPC_RShapeCast JPC_RShapeCast_t;
+typedef struct JoltC_RShapeCast JoltC_RShapeCast_t;
 
-struct JPC_RVec3 {
+struct JoltC_RVec3 {
   void *obj;
 };
-typedef struct JPC_RVec3 JPC_RVec3_t;
+typedef struct JoltC_RVec3 JoltC_RVec3_t;
 
-struct JPC_RackAndPinionConstraint {
+struct JoltC_RackAndPinionConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_RackAndPinionConstraint JPC_RackAndPinionConstraint_t;
+typedef struct JoltC_RackAndPinionConstraint JoltC_RackAndPinionConstraint_t;
 
-struct JPC_RackAndPinionConstraintSettings {
+struct JoltC_RackAndPinionConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_RackAndPinionConstraintSettings JPC_RackAndPinionConstraintSettings_t;
+typedef struct JoltC_RackAndPinionConstraintSettings JoltC_RackAndPinionConstraintSettings_t;
 
-struct JPC_Ragdoll {
+struct JoltC_Ragdoll {
   void *obj;
 };
-typedef struct JPC_Ragdoll JPC_Ragdoll_t;
+typedef struct JoltC_Ragdoll JoltC_Ragdoll_t;
 
-struct JPC_RagdollAdditionalConstraint {
+struct JoltC_RagdollAdditionalConstraint {
   void *obj;
 };
-typedef struct JPC_RagdollAdditionalConstraint JPC_RagdollAdditionalConstraint_t;
+typedef struct JoltC_RagdollAdditionalConstraint JoltC_RagdollAdditionalConstraint_t;
 
-struct JPC_RagdollPart {
+struct JoltC_RagdollPart {
   void *obj;
-  struct JPC_BodyCreationSettings *superObj;
+  struct JoltC_BodyCreationSettings *superObj;
 };
-typedef struct JPC_RagdollPart JPC_RagdollPart_t;
+typedef struct JoltC_RagdollPart JoltC_RagdollPart_t;
 
-struct JPC_RagdollSettings {
+struct JoltC_RagdollSettings {
   void *obj;
 };
-typedef struct JPC_RagdollSettings JPC_RagdollSettings_t;
+typedef struct JoltC_RagdollSettings JoltC_RagdollSettings_t;
 
-struct JPC_RayCast {
+struct JoltC_RayCast {
   void *obj;
 };
-typedef struct JPC_RayCast JPC_RayCast_t;
+typedef struct JoltC_RayCast JoltC_RayCast_t;
 
-struct JPC_RayCastBodyCollector {
+struct JoltC_RayCastBodyCollector {
   void *obj;
 };
-typedef struct JPC_RayCastBodyCollector JPC_RayCastBodyCollector_t;
+typedef struct JoltC_RayCastBodyCollector JoltC_RayCastBodyCollector_t;
 
-struct JPC_RayCastResult {
+struct JoltC_RayCastResult {
   void *obj;
-  struct JPC_BroadPhaseCastResult *superObj;
+  struct JoltC_BroadPhaseCastResult *superObj;
 };
-typedef struct JPC_RayCastResult JPC_RayCastResult_t;
+typedef struct JoltC_RayCastResult JoltC_RayCastResult_t;
 
-struct JPC_RayCastSettings {
+struct JoltC_RayCastSettings {
   void *obj;
 };
-typedef struct JPC_RayCastSettings JPC_RayCastSettings_t;
+typedef struct JoltC_RayCastSettings JoltC_RayCastSettings_t;
 
-struct JPC_RotatedTranslatedShape {
+struct JoltC_RotatedTranslatedShape {
   void *obj;
-  struct JPC_DecoratedShape *superObj;
+  struct JoltC_DecoratedShape *superObj;
 };
-typedef struct JPC_RotatedTranslatedShape JPC_RotatedTranslatedShape_t;
+typedef struct JoltC_RotatedTranslatedShape JoltC_RotatedTranslatedShape_t;
 
-struct JPC_RotatedTranslatedShapeSettings {
+struct JoltC_RotatedTranslatedShapeSettings {
   void *obj;
-  struct JPC_DecoratedShapeSettings *superObj;
+  struct JoltC_DecoratedShapeSettings *superObj;
 };
-typedef struct JPC_RotatedTranslatedShapeSettings JPC_RotatedTranslatedShapeSettings_t;
+typedef struct JoltC_RotatedTranslatedShapeSettings JoltC_RotatedTranslatedShapeSettings_t;
 
-struct JPC_ScaledShape {
+struct JoltC_ScaledShape {
   void *obj;
-  struct JPC_DecoratedShape *superObj;
+  struct JoltC_DecoratedShape *superObj;
 };
-typedef struct JPC_ScaledShape JPC_ScaledShape_t;
+typedef struct JoltC_ScaledShape JoltC_ScaledShape_t;
 
-struct JPC_ScaledShapeSettings {
+struct JoltC_ScaledShapeSettings {
   void *obj;
-  struct JPC_DecoratedShapeSettings *superObj;
+  struct JoltC_DecoratedShapeSettings *superObj;
 };
-typedef struct JPC_ScaledShapeSettings JPC_ScaledShapeSettings_t;
+typedef struct JoltC_ScaledShapeSettings JoltC_ScaledShapeSettings_t;
 
-struct JPC_Shape {
+struct JoltC_Shape {
   void *obj;
 };
-typedef struct JPC_Shape JPC_Shape_t;
+typedef struct JoltC_Shape JoltC_Shape_t;
 
-struct JPC_Shape_ShapeResult {
+struct JoltC_Shape_ShapeResult {
   void *obj;
 };
-typedef struct JPC_Shape_ShapeResult JPC_Shape_ShapeResult_t;
+typedef struct JoltC_Shape_ShapeResult JoltC_Shape_ShapeResult_t;
 
-struct JPC_ShapeCast {
+struct JoltC_ShapeCast {
   void *obj;
 };
-typedef struct JPC_ShapeCast JPC_ShapeCast_t;
+typedef struct JoltC_ShapeCast JoltC_ShapeCast_t;
 
-struct JPC_ShapeCastResult {
+struct JoltC_ShapeCastResult {
   void *obj;
-  struct JPC_CollideShapeResult *superObj;
+  struct JoltC_CollideShapeResult *superObj;
 };
-typedef struct JPC_ShapeCastResult JPC_ShapeCastResult_t;
+typedef struct JoltC_ShapeCastResult JoltC_ShapeCastResult_t;
 
-struct JPC_ShapeCastSettings {
+struct JoltC_ShapeCastSettings {
   void *obj;
-  struct JPC_CollideSettingsBase *superObj;
+  struct JoltC_CollideSettingsBase *superObj;
 };
-typedef struct JPC_ShapeCastSettings JPC_ShapeCastSettings_t;
+typedef struct JoltC_ShapeCastSettings JoltC_ShapeCastSettings_t;
 
-struct JPC_ShapeFilter {
+struct JoltC_ShapeFilter {
   void *obj;
 };
-typedef struct JPC_ShapeFilter JPC_ShapeFilter_t;
+typedef struct JoltC_ShapeFilter JoltC_ShapeFilter_t;
 
-struct JPC_ShapeGetTriangles {
+struct JoltC_ShapeGetTriangles {
   void *obj;
 };
-typedef struct JPC_ShapeGetTriangles JPC_ShapeGetTriangles_t;
+typedef struct JoltC_ShapeGetTriangles JoltC_ShapeGetTriangles_t;
 
-struct JPC_ShapeSettings {
+struct JoltC_ShapeSettings {
   void *obj;
 };
-typedef struct JPC_ShapeSettings JPC_ShapeSettings_t;
+typedef struct JoltC_ShapeSettings JoltC_ShapeSettings_t;
 
-struct JPC_SixDOFConstraint {
+struct JoltC_SixDOFConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_SixDOFConstraint JPC_SixDOFConstraint_t;
+typedef struct JoltC_SixDOFConstraint JoltC_SixDOFConstraint_t;
 
-struct JPC_SixDOFConstraintSettings {
+struct JoltC_SixDOFConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_SixDOFConstraintSettings JPC_SixDOFConstraintSettings_t;
+typedef struct JoltC_SixDOFConstraintSettings JoltC_SixDOFConstraintSettings_t;
 
-struct JPC_SkeletalAnimation {
+struct JoltC_SkeletalAnimation {
   void *obj;
 };
-typedef struct JPC_SkeletalAnimation JPC_SkeletalAnimation_t;
+typedef struct JoltC_SkeletalAnimation JoltC_SkeletalAnimation_t;
 
-struct JPC_SkeletalAnimationAnimatedJoint {
+struct JoltC_SkeletalAnimationAnimatedJoint {
   void *obj;
 };
-typedef struct JPC_SkeletalAnimationAnimatedJoint JPC_SkeletalAnimationAnimatedJoint_t;
+typedef struct JoltC_SkeletalAnimationAnimatedJoint JoltC_SkeletalAnimationAnimatedJoint_t;
 
-struct JPC_SkeletalAnimationJointState {
+struct JoltC_SkeletalAnimationJointState {
   void *obj;
 };
-typedef struct JPC_SkeletalAnimationJointState JPC_SkeletalAnimationJointState_t;
+typedef struct JoltC_SkeletalAnimationJointState JoltC_SkeletalAnimationJointState_t;
 
-struct JPC_SkeletalAnimationKeyframe {
+struct JoltC_SkeletalAnimationKeyframe {
   void *obj;
-  struct JPC_SkeletalAnimationJointState *superObj;
+  struct JoltC_SkeletalAnimationJointState *superObj;
 };
-typedef struct JPC_SkeletalAnimationKeyframe JPC_SkeletalAnimationKeyframe_t;
+typedef struct JoltC_SkeletalAnimationKeyframe JoltC_SkeletalAnimationKeyframe_t;
 
-struct JPC_Skeleton {
+struct JoltC_Skeleton {
   void *obj;
 };
-typedef struct JPC_Skeleton JPC_Skeleton_t;
+typedef struct JoltC_Skeleton JoltC_Skeleton_t;
 
-struct JPC_SkeletonPose {
+struct JoltC_SkeletonPose {
   void *obj;
 };
-typedef struct JPC_SkeletonPose JPC_SkeletonPose_t;
+typedef struct JoltC_SkeletonPose JoltC_SkeletonPose_t;
 
-struct JPC_SliderConstraint {
+struct JoltC_SliderConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_SliderConstraint JPC_SliderConstraint_t;
+typedef struct JoltC_SliderConstraint JoltC_SliderConstraint_t;
 
-struct JPC_SliderConstraintSettings {
+struct JoltC_SliderConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_SliderConstraintSettings JPC_SliderConstraintSettings_t;
+typedef struct JoltC_SliderConstraintSettings JoltC_SliderConstraintSettings_t;
 
-struct JPC_SoftBodyContactListener {
+struct JoltC_SoftBodyContactListener {
   void *obj;
 };
-typedef struct JPC_SoftBodyContactListener JPC_SoftBodyContactListener_t;
+typedef struct JoltC_SoftBodyContactListener JoltC_SoftBodyContactListener_t;
 
-struct JPC_SoftBodyContactListenerEm {
+struct JoltC_SoftBodyContactListenerEm {
   void *obj;
-  struct JPC_SoftBodyContactListener *superObj;
+  struct JoltC_SoftBodyContactListener *superObj;
 };
-typedef struct JPC_SoftBodyContactListenerEm JPC_SoftBodyContactListenerEm_t;
+typedef struct JoltC_SoftBodyContactListenerEm JoltC_SoftBodyContactListenerEm_t;
 
-struct JPC_SoftBodyContactSettings {
+struct JoltC_SoftBodyContactSettings {
   void *obj;
 };
-typedef struct JPC_SoftBodyContactSettings JPC_SoftBodyContactSettings_t;
+typedef struct JoltC_SoftBodyContactSettings JoltC_SoftBodyContactSettings_t;
 
-struct JPC_SoftBodyCreationSettings {
+struct JoltC_SoftBodyCreationSettings {
   void *obj;
 };
-typedef struct JPC_SoftBodyCreationSettings JPC_SoftBodyCreationSettings_t;
+typedef struct JoltC_SoftBodyCreationSettings JoltC_SoftBodyCreationSettings_t;
 
-struct JPC_SoftBodyManifold {
+struct JoltC_SoftBodyManifold {
   void *obj;
 };
-typedef struct JPC_SoftBodyManifold JPC_SoftBodyManifold_t;
+typedef struct JoltC_SoftBodyManifold JoltC_SoftBodyManifold_t;
 
-struct JPC_SoftBodyMotionProperties {
+struct JoltC_SoftBodyMotionProperties {
   void *obj;
-  struct JPC_MotionProperties *superObj;
+  struct JoltC_MotionProperties *superObj;
 };
-typedef struct JPC_SoftBodyMotionProperties JPC_SoftBodyMotionProperties_t;
+typedef struct JoltC_SoftBodyMotionProperties JoltC_SoftBodyMotionProperties_t;
 
-struct JPC_SoftBodyShape {
+struct JoltC_SoftBodyShape {
   void *obj;
-  struct JPC_Shape *superObj;
+  struct JoltC_Shape *superObj;
 };
-typedef struct JPC_SoftBodyShape JPC_SoftBodyShape_t;
+typedef struct JoltC_SoftBodyShape JoltC_SoftBodyShape_t;
 
-struct JPC_SoftBodySharedSettings {
+struct JoltC_SoftBodySharedSettings {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettings JPC_SoftBodySharedSettings_t;
+typedef struct JoltC_SoftBodySharedSettings JoltC_SoftBodySharedSettings_t;
 
-struct JPC_SoftBodySharedSettingsDihedralBend {
+struct JoltC_SoftBodySharedSettingsDihedralBend {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsDihedralBend JPC_SoftBodySharedSettingsDihedralBend_t;
+typedef struct JoltC_SoftBodySharedSettingsDihedralBend JoltC_SoftBodySharedSettingsDihedralBend_t;
 
-struct JPC_SoftBodySharedSettingsEdge {
+struct JoltC_SoftBodySharedSettingsEdge {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsEdge JPC_SoftBodySharedSettingsEdge_t;
+typedef struct JoltC_SoftBodySharedSettingsEdge JoltC_SoftBodySharedSettingsEdge_t;
 
-struct JPC_SoftBodySharedSettingsFace {
+struct JoltC_SoftBodySharedSettingsFace {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsFace JPC_SoftBodySharedSettingsFace_t;
+typedef struct JoltC_SoftBodySharedSettingsFace JoltC_SoftBodySharedSettingsFace_t;
 
-struct JPC_SoftBodySharedSettingsInvBind {
+struct JoltC_SoftBodySharedSettingsInvBind {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsInvBind JPC_SoftBodySharedSettingsInvBind_t;
+typedef struct JoltC_SoftBodySharedSettingsInvBind JoltC_SoftBodySharedSettingsInvBind_t;
 
-struct JPC_SoftBodySharedSettingsLRA {
+struct JoltC_SoftBodySharedSettingsLRA {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsLRA JPC_SoftBodySharedSettingsLRA_t;
+typedef struct JoltC_SoftBodySharedSettingsLRA JoltC_SoftBodySharedSettingsLRA_t;
 
-struct JPC_SoftBodySharedSettingsSkinWeight {
+struct JoltC_SoftBodySharedSettingsSkinWeight {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsSkinWeight JPC_SoftBodySharedSettingsSkinWeight_t;
+typedef struct JoltC_SoftBodySharedSettingsSkinWeight JoltC_SoftBodySharedSettingsSkinWeight_t;
 
-struct JPC_SoftBodySharedSettingsSkinned {
+struct JoltC_SoftBodySharedSettingsSkinned {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsSkinned JPC_SoftBodySharedSettingsSkinned_t;
+typedef struct JoltC_SoftBodySharedSettingsSkinned JoltC_SoftBodySharedSettingsSkinned_t;
 
-struct JPC_SoftBodySharedSettingsVertex {
+struct JoltC_SoftBodySharedSettingsVertex {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsVertex JPC_SoftBodySharedSettingsVertex_t;
+typedef struct JoltC_SoftBodySharedSettingsVertex JoltC_SoftBodySharedSettingsVertex_t;
 
-struct JPC_SoftBodySharedSettingsVertexAttributes {
+struct JoltC_SoftBodySharedSettingsVertexAttributes {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsVertexAttributes JPC_SoftBodySharedSettingsVertexAttributes_t;
+typedef struct JoltC_SoftBodySharedSettingsVertexAttributes JoltC_SoftBodySharedSettingsVertexAttributes_t;
 
-struct JPC_SoftBodySharedSettingsVolume {
+struct JoltC_SoftBodySharedSettingsVolume {
   void *obj;
 };
-typedef struct JPC_SoftBodySharedSettingsVolume JPC_SoftBodySharedSettingsVolume_t;
+typedef struct JoltC_SoftBodySharedSettingsVolume JoltC_SoftBodySharedSettingsVolume_t;
 
-struct JPC_SoftBodyVertex {
+struct JoltC_SoftBodyVertex {
   void *obj;
 };
-typedef struct JPC_SoftBodyVertex JPC_SoftBodyVertex_t;
+typedef struct JoltC_SoftBodyVertex JoltC_SoftBodyVertex_t;
 
-struct JPC_SoftBodyVertexTraits {
+struct JoltC_SoftBodyVertexTraits {
   void *obj;
 };
-typedef struct JPC_SoftBodyVertexTraits JPC_SoftBodyVertexTraits_t;
+typedef struct JoltC_SoftBodyVertexTraits JoltC_SoftBodyVertexTraits_t;
 
-struct JPC_SpecifiedObjectLayerFilter {
+struct JoltC_SpecifiedObjectLayerFilter {
   void *obj;
-  struct JPC_ObjectLayerFilter *superObj;
+  struct JoltC_ObjectLayerFilter *superObj;
 };
-typedef struct JPC_SpecifiedObjectLayerFilter JPC_SpecifiedObjectLayerFilter_t;
+typedef struct JoltC_SpecifiedObjectLayerFilter JoltC_SpecifiedObjectLayerFilter_t;
 
-struct JPC_SphereShape {
+struct JoltC_SphereShape {
   void *obj;
-  struct JPC_ConvexShape *superObj;
+  struct JoltC_ConvexShape *superObj;
 };
-typedef struct JPC_SphereShape JPC_SphereShape_t;
+typedef struct JoltC_SphereShape JoltC_SphereShape_t;
 
-struct JPC_SphereShapeSettings {
+struct JoltC_SphereShapeSettings {
   void *obj;
-  struct JPC_ConvexShapeSettings *superObj;
+  struct JoltC_ConvexShapeSettings *superObj;
 };
-typedef struct JPC_SphereShapeSettings JPC_SphereShapeSettings_t;
+typedef struct JoltC_SphereShapeSettings JoltC_SphereShapeSettings_t;
 
-struct JPC_SpringSettings {
+struct JoltC_SpringSettings {
   void *obj;
 };
-typedef struct JPC_SpringSettings JPC_SpringSettings_t;
+typedef struct JoltC_SpringSettings JoltC_SpringSettings_t;
 
-struct JPC_StateRecorder {
+struct JoltC_StateRecorder {
   void *obj;
 };
-typedef struct JPC_StateRecorder JPC_StateRecorder_t;
+typedef struct JoltC_StateRecorder JoltC_StateRecorder_t;
 
-struct JPC_StateRecorderImpl {
+struct JoltC_StateRecorderImpl {
   void *obj;
-  struct JPC_StateRecorder *superObj;
+  struct JoltC_StateRecorder *superObj;
 };
-typedef struct JPC_StateRecorderImpl JPC_StateRecorderImpl_t;
+typedef struct JoltC_StateRecorderImpl JoltC_StateRecorderImpl_t;
 
-struct JPC_StaticCompoundShape {
+struct JoltC_StaticCompoundShape {
   void *obj;
-  struct JPC_CompoundShape *superObj;
+  struct JoltC_CompoundShape *superObj;
 };
-typedef struct JPC_StaticCompoundShape JPC_StaticCompoundShape_t;
+typedef struct JoltC_StaticCompoundShape JoltC_StaticCompoundShape_t;
 
-struct JPC_StaticCompoundShapeSettings {
+struct JoltC_StaticCompoundShapeSettings {
   void *obj;
-  struct JPC_ShapeSettings *superObj;
+  struct JoltC_ShapeSettings *superObj;
 };
-typedef struct JPC_StaticCompoundShapeSettings JPC_StaticCompoundShapeSettings_t;
+typedef struct JoltC_StaticCompoundShapeSettings JoltC_StaticCompoundShapeSettings_t;
 
-struct JPC_SubShapeID {
+struct JoltC_SubShapeID {
   void *obj;
 };
-typedef struct JPC_SubShapeID JPC_SubShapeID_t;
+typedef struct JoltC_SubShapeID JoltC_SubShapeID_t;
 
-struct JPC_SubShapeIDPair {
+struct JoltC_SubShapeIDPair {
   void *obj;
 };
-typedef struct JPC_SubShapeIDPair JPC_SubShapeIDPair_t;
+typedef struct JoltC_SubShapeIDPair JoltC_SubShapeIDPair_t;
 
-struct JPC_SwingTwistConstraint {
+struct JoltC_SwingTwistConstraint {
   void *obj;
-  struct JPC_TwoBodyConstraint *superObj;
+  struct JoltC_TwoBodyConstraint *superObj;
 };
-typedef struct JPC_SwingTwistConstraint JPC_SwingTwistConstraint_t;
+typedef struct JoltC_SwingTwistConstraint JoltC_SwingTwistConstraint_t;
 
-struct JPC_SwingTwistConstraintSettings {
+struct JoltC_SwingTwistConstraintSettings {
   void *obj;
-  struct JPC_TwoBodyConstraintSettings *superObj;
+  struct JoltC_TwoBodyConstraintSettings *superObj;
 };
-typedef struct JPC_SwingTwistConstraintSettings JPC_SwingTwistConstraintSettings_t;
+typedef struct JoltC_SwingTwistConstraintSettings JoltC_SwingTwistConstraintSettings_t;
 
-struct JPC_TaperedCapsuleShape {
+struct JoltC_TaperedCapsuleShape {
   void *obj;
-  struct JPC_ConvexShape *superObj;
+  struct JoltC_ConvexShape *superObj;
 };
-typedef struct JPC_TaperedCapsuleShape JPC_TaperedCapsuleShape_t;
+typedef struct JoltC_TaperedCapsuleShape JoltC_TaperedCapsuleShape_t;
 
-struct JPC_TaperedCapsuleShapeSettings {
+struct JoltC_TaperedCapsuleShapeSettings {
   void *obj;
-  struct JPC_ConvexShapeSettings *superObj;
+  struct JoltC_ConvexShapeSettings *superObj;
 };
-typedef struct JPC_TaperedCapsuleShapeSettings JPC_TaperedCapsuleShapeSettings_t;
+typedef struct JoltC_TaperedCapsuleShapeSettings JoltC_TaperedCapsuleShapeSettings_t;
 
-struct JPC_TempAllocator {
+struct JoltC_TempAllocator {
   void *obj;
 };
-typedef struct JPC_TempAllocator JPC_TempAllocator_t;
+typedef struct JoltC_TempAllocator JoltC_TempAllocator_t;
 
-struct JPC_TrackedVehicleController {
+struct JoltC_TrackedVehicleController {
   void *obj;
-  struct JPC_VehicleController *superObj;
+  struct JoltC_VehicleController *superObj;
 };
-typedef struct JPC_TrackedVehicleController JPC_TrackedVehicleController_t;
+typedef struct JoltC_TrackedVehicleController JoltC_TrackedVehicleController_t;
 
-struct JPC_TrackedVehicleControllerSettings {
+struct JoltC_TrackedVehicleControllerSettings {
   void *obj;
-  struct JPC_VehicleControllerSettings *superObj;
+  struct JoltC_VehicleControllerSettings *superObj;
 };
-typedef struct JPC_TrackedVehicleControllerSettings JPC_TrackedVehicleControllerSettings_t;
+typedef struct JoltC_TrackedVehicleControllerSettings JoltC_TrackedVehicleControllerSettings_t;
 
-struct JPC_TransformedShape {
+struct JoltC_TransformedShape {
   void *obj;
 };
-typedef struct JPC_TransformedShape JPC_TransformedShape_t;
+typedef struct JoltC_TransformedShape JoltC_TransformedShape_t;
 
-struct JPC_TransformedShapeCollector {
+struct JoltC_TransformedShapeCollector {
   void *obj;
 };
-typedef struct JPC_TransformedShapeCollector JPC_TransformedShapeCollector_t;
+typedef struct JoltC_TransformedShapeCollector JoltC_TransformedShapeCollector_t;
 
-struct JPC_Triangle {
+struct JoltC_Triangle {
   void *obj;
 };
-typedef struct JPC_Triangle JPC_Triangle_t;
+typedef struct JoltC_Triangle JoltC_Triangle_t;
 
-struct JPC_TriangleList {
+struct JoltC_TriangleList {
   void *obj;
 };
-typedef struct JPC_TriangleList JPC_TriangleList_t;
+typedef struct JoltC_TriangleList JoltC_TriangleList_t;
 
-struct JPC_TwoBodyConstraint {
+struct JoltC_TwoBodyConstraint {
   void *obj;
-  struct JPC_Constraint *superObj;
+  struct JoltC_Constraint *superObj;
 };
-typedef struct JPC_TwoBodyConstraint JPC_TwoBodyConstraint_t;
+typedef struct JoltC_TwoBodyConstraint JoltC_TwoBodyConstraint_t;
 
-struct JPC_TwoBodyConstraintSettings {
+struct JoltC_TwoBodyConstraintSettings {
   void *obj;
-  struct JPC_ConstraintSettings *superObj;
+  struct JoltC_ConstraintSettings *superObj;
 };
-typedef struct JPC_TwoBodyConstraintSettings JPC_TwoBodyConstraintSettings_t;
+typedef struct JoltC_TwoBodyConstraintSettings JoltC_TwoBodyConstraintSettings_t;
 
-struct JPC_Uint8MemRef {
+struct JoltC_Uint8MemRef {
   void *obj;
 };
-typedef struct JPC_Uint8MemRef JPC_Uint8MemRef_t;
+typedef struct JoltC_Uint8MemRef JoltC_Uint8MemRef_t;
 
-struct JPC_UintMemRef {
+struct JoltC_UintMemRef {
   void *obj;
 };
-typedef struct JPC_UintMemRef JPC_UintMemRef_t;
+typedef struct JoltC_UintMemRef JoltC_UintMemRef_t;
 
-struct JPC_Vec3 {
+struct JoltC_Vec3 {
   void *obj;
 };
-typedef struct JPC_Vec3 JPC_Vec3_t;
+typedef struct JoltC_Vec3 JoltC_Vec3_t;
 
-struct JPC_Vec3MemRef {
+struct JoltC_Vec3MemRef {
   void *obj;
 };
-typedef struct JPC_Vec3MemRef JPC_Vec3MemRef_t;
+typedef struct JoltC_Vec3MemRef JoltC_Vec3MemRef_t;
 
-struct JPC_Vec4 {
+struct JoltC_Vec4 {
   void *obj;
 };
-typedef struct JPC_Vec4 JPC_Vec4_t;
+typedef struct JoltC_Vec4 JoltC_Vec4_t;
 
-struct JPC_Vector2 {
+struct JoltC_Vector2 {
   void *obj;
 };
-typedef struct JPC_Vector2 JPC_Vector2_t;
+typedef struct JoltC_Vector2 JoltC_Vector2_t;
 
-struct JPC_VehicleAntiRollBar {
+struct JoltC_VehicleAntiRollBar {
   void *obj;
 };
-typedef struct JPC_VehicleAntiRollBar JPC_VehicleAntiRollBar_t;
+typedef struct JoltC_VehicleAntiRollBar JoltC_VehicleAntiRollBar_t;
 
-struct JPC_VehicleCollisionTester {
+struct JoltC_VehicleCollisionTester {
   void *obj;
 };
-typedef struct JPC_VehicleCollisionTester JPC_VehicleCollisionTester_t;
+typedef struct JoltC_VehicleCollisionTester JoltC_VehicleCollisionTester_t;
 
-struct JPC_VehicleCollisionTesterCastCylinder {
+struct JoltC_VehicleCollisionTesterCastCylinder {
   void *obj;
-  struct JPC_VehicleCollisionTester *superObj;
+  struct JoltC_VehicleCollisionTester *superObj;
 };
-typedef struct JPC_VehicleCollisionTesterCastCylinder JPC_VehicleCollisionTesterCastCylinder_t;
+typedef struct JoltC_VehicleCollisionTesterCastCylinder JoltC_VehicleCollisionTesterCastCylinder_t;
 
-struct JPC_VehicleCollisionTesterCastSphere {
+struct JoltC_VehicleCollisionTesterCastSphere {
   void *obj;
-  struct JPC_VehicleCollisionTester *superObj;
+  struct JoltC_VehicleCollisionTester *superObj;
 };
-typedef struct JPC_VehicleCollisionTesterCastSphere JPC_VehicleCollisionTesterCastSphere_t;
+typedef struct JoltC_VehicleCollisionTesterCastSphere JoltC_VehicleCollisionTesterCastSphere_t;
 
-struct JPC_VehicleCollisionTesterRay {
+struct JoltC_VehicleCollisionTesterRay {
   void *obj;
-  struct JPC_VehicleCollisionTester *superObj;
+  struct JoltC_VehicleCollisionTester *superObj;
 };
-typedef struct JPC_VehicleCollisionTesterRay JPC_VehicleCollisionTesterRay_t;
+typedef struct JoltC_VehicleCollisionTesterRay JoltC_VehicleCollisionTesterRay_t;
 
-struct JPC_VehicleConstraint {
+struct JoltC_VehicleConstraint {
   void *obj;
-  struct JPC_Constraint *superObj;
+  struct JoltC_Constraint *superObj;
 };
-typedef struct JPC_VehicleConstraint JPC_VehicleConstraint_t;
+typedef struct JoltC_VehicleConstraint JoltC_VehicleConstraint_t;
 
-struct JPC_VehicleConstraintCallbacksEm {
+struct JoltC_VehicleConstraintCallbacksEm {
   void *obj;
 };
-typedef struct JPC_VehicleConstraintCallbacksEm JPC_VehicleConstraintCallbacksEm_t;
+typedef struct JoltC_VehicleConstraintCallbacksEm JoltC_VehicleConstraintCallbacksEm_t;
 
-struct JPC_VehicleConstraintSettings {
+struct JoltC_VehicleConstraintSettings {
   void *obj;
-  struct JPC_ConstraintSettings *superObj;
+  struct JoltC_ConstraintSettings *superObj;
 };
-typedef struct JPC_VehicleConstraintSettings JPC_VehicleConstraintSettings_t;
+typedef struct JoltC_VehicleConstraintSettings JoltC_VehicleConstraintSettings_t;
 
-struct JPC_VehicleConstraintStepListener {
+struct JoltC_VehicleConstraintStepListener {
   void *obj;
-  struct JPC_PhysicsStepListener *superObj;
+  struct JoltC_PhysicsStepListener *superObj;
 };
-typedef struct JPC_VehicleConstraintStepListener JPC_VehicleConstraintStepListener_t;
+typedef struct JoltC_VehicleConstraintStepListener JoltC_VehicleConstraintStepListener_t;
 
-struct JPC_VehicleController {
+struct JoltC_VehicleController {
   void *obj;
 };
-typedef struct JPC_VehicleController JPC_VehicleController_t;
+typedef struct JoltC_VehicleController JoltC_VehicleController_t;
 
-struct JPC_VehicleControllerSettings {
+struct JoltC_VehicleControllerSettings {
   void *obj;
 };
-typedef struct JPC_VehicleControllerSettings JPC_VehicleControllerSettings_t;
+typedef struct JoltC_VehicleControllerSettings JoltC_VehicleControllerSettings_t;
 
-struct JPC_VehicleDifferentialSettings {
+struct JoltC_VehicleDifferentialSettings {
   void *obj;
 };
-typedef struct JPC_VehicleDifferentialSettings JPC_VehicleDifferentialSettings_t;
+typedef struct JoltC_VehicleDifferentialSettings JoltC_VehicleDifferentialSettings_t;
 
-struct JPC_VehicleEngine {
+struct JoltC_VehicleEngine {
   void *obj;
-  struct JPC_VehicleEngineSettings *superObj;
+  struct JoltC_VehicleEngineSettings *superObj;
 };
-typedef struct JPC_VehicleEngine JPC_VehicleEngine_t;
+typedef struct JoltC_VehicleEngine JoltC_VehicleEngine_t;
 
-struct JPC_VehicleEngineSettings {
+struct JoltC_VehicleEngineSettings {
   void *obj;
 };
-typedef struct JPC_VehicleEngineSettings JPC_VehicleEngineSettings_t;
+typedef struct JoltC_VehicleEngineSettings JoltC_VehicleEngineSettings_t;
 
-struct JPC_VehicleTrack {
+struct JoltC_VehicleTrack {
   void *obj;
-  struct JPC_VehicleTrackSettings *superObj;
+  struct JoltC_VehicleTrackSettings *superObj;
 };
-typedef struct JPC_VehicleTrack JPC_VehicleTrack_t;
+typedef struct JoltC_VehicleTrack JoltC_VehicleTrack_t;
 
-struct JPC_VehicleTrackSettings {
+struct JoltC_VehicleTrackSettings {
   void *obj;
 };
-typedef struct JPC_VehicleTrackSettings JPC_VehicleTrackSettings_t;
+typedef struct JoltC_VehicleTrackSettings JoltC_VehicleTrackSettings_t;
 
-struct JPC_VehicleTransmission {
+struct JoltC_VehicleTransmission {
   void *obj;
-  struct JPC_VehicleTransmissionSettings *superObj;
+  struct JoltC_VehicleTransmissionSettings *superObj;
 };
-typedef struct JPC_VehicleTransmission JPC_VehicleTransmission_t;
+typedef struct JoltC_VehicleTransmission JoltC_VehicleTransmission_t;
 
-struct JPC_VehicleTransmissionSettings {
+struct JoltC_VehicleTransmissionSettings {
   void *obj;
 };
-typedef struct JPC_VehicleTransmissionSettings JPC_VehicleTransmissionSettings_t;
+typedef struct JoltC_VehicleTransmissionSettings JoltC_VehicleTransmissionSettings_t;
 
-struct JPC_VertexList {
+struct JoltC_VertexList {
   void *obj;
 };
-typedef struct JPC_VertexList JPC_VertexList_t;
+typedef struct JoltC_VertexList JoltC_VertexList_t;
 
-struct JPC_Wheel {
+struct JoltC_Wheel {
   void *obj;
 };
-typedef struct JPC_Wheel JPC_Wheel_t;
+typedef struct JoltC_Wheel JoltC_Wheel_t;
 
-struct JPC_WheelSettings {
+struct JoltC_WheelSettings {
   void *obj;
 };
-typedef struct JPC_WheelSettings JPC_WheelSettings_t;
+typedef struct JoltC_WheelSettings JoltC_WheelSettings_t;
 
-struct JPC_WheelSettingsTV {
+struct JoltC_WheelSettingsTV {
   void *obj;
-  struct JPC_WheelSettings *superObj;
+  struct JoltC_WheelSettings *superObj;
 };
-typedef struct JPC_WheelSettingsTV JPC_WheelSettingsTV_t;
+typedef struct JoltC_WheelSettingsTV JoltC_WheelSettingsTV_t;
 
-struct JPC_WheelSettingsWV {
+struct JoltC_WheelSettingsWV {
   void *obj;
-  struct JPC_WheelSettings *superObj;
+  struct JoltC_WheelSettings *superObj;
 };
-typedef struct JPC_WheelSettingsWV JPC_WheelSettingsWV_t;
+typedef struct JoltC_WheelSettingsWV JoltC_WheelSettingsWV_t;
 
-struct JPC_WheelTV {
+struct JoltC_WheelTV {
   void *obj;
-  struct JPC_Wheel *superObj;
+  struct JoltC_Wheel *superObj;
 };
-typedef struct JPC_WheelTV JPC_WheelTV_t;
+typedef struct JoltC_WheelTV JoltC_WheelTV_t;
 
-struct JPC_WheelWV {
+struct JoltC_WheelWV {
   void *obj;
-  struct JPC_Wheel *superObj;
+  struct JoltC_Wheel *superObj;
 };
-typedef struct JPC_WheelWV JPC_WheelWV_t;
+typedef struct JoltC_WheelWV JoltC_WheelWV_t;
 
-struct JPC_WheeledVehicleController {
+struct JoltC_WheeledVehicleController {
   void *obj;
-  struct JPC_VehicleController *superObj;
+  struct JoltC_VehicleController *superObj;
 };
-typedef struct JPC_WheeledVehicleController JPC_WheeledVehicleController_t;
+typedef struct JoltC_WheeledVehicleController JoltC_WheeledVehicleController_t;
 
-struct JPC_WheeledVehicleControllerSettings {
+struct JoltC_WheeledVehicleControllerSettings {
   void *obj;
-  struct JPC_VehicleControllerSettings *superObj;
+  struct JoltC_VehicleControllerSettings *superObj;
 };
-typedef struct JPC_WheeledVehicleControllerSettings JPC_WheeledVehicleControllerSettings_t;
+typedef struct JoltC_WheeledVehicleControllerSettings JoltC_WheeledVehicleControllerSettings_t;
 
 typedef enum {
-  JPC_EBodyType_RigidBody = 0,
-  JPC_EBodyType_SoftBody = 1,
-} JPC_EBodyType;
+  JoltC_EBodyType_RigidBody = 0,
+  JoltC_EBodyType_SoftBody = 1,
+} JoltC_EBodyType;
 
 typedef enum {
-  JPC_EMotionType_Static = 0,
-  JPC_EMotionType_Kinematic = 1,
-  JPC_EMotionType_Dynamic = 2,
-} JPC_EMotionType;
+  JoltC_EMotionType_Static = 0,
+  JoltC_EMotionType_Kinematic = 1,
+  JoltC_EMotionType_Dynamic = 2,
+} JoltC_EMotionType;
 
 typedef enum {
-  JPC_EMotionQuality_Discrete = 0,
-  JPC_EMotionQuality_LinearCast = 1,
-} JPC_EMotionQuality;
+  JoltC_EMotionQuality_Discrete = 0,
+  JoltC_EMotionQuality_LinearCast = 1,
+} JoltC_EMotionQuality;
 
 typedef enum {
-  JPC_EActivation_Activate = 0,
-  JPC_EActivation_DontActivate = 1,
-} JPC_EActivation;
+  JoltC_EActivation_Activate = 0,
+  JoltC_EActivation_DontActivate = 1,
+} JoltC_EActivation;
 
 typedef enum {
-  JPC_EShapeType_Convex = 0,
-  JPC_EShapeType_Compound = 1,
-  JPC_EShapeType_Decorated = 2,
-  JPC_EShapeType_Mesh = 3,
-  JPC_EShapeType_HeightField = 4,
-} JPC_EShapeType;
+  JoltC_EShapeType_Convex = 0,
+  JoltC_EShapeType_Compound = 1,
+  JoltC_EShapeType_Decorated = 2,
+  JoltC_EShapeType_Mesh = 3,
+  JoltC_EShapeType_HeightField = 4,
+} JoltC_EShapeType;
 
 typedef enum {
-  JPC_EShapeSubType_Sphere = 0,
-  JPC_EShapeSubType_Box = 1,
-  JPC_EShapeSubType_Capsule = 2,
-  JPC_EShapeSubType_TaperedCapsule = 3,
-  JPC_EShapeSubType_Cylinder = 4,
-  JPC_EShapeSubType_ConvexHull = 5,
-  JPC_EShapeSubType_StaticCompound = 6,
-  JPC_EShapeSubType_MutableCompound = 7,
-  JPC_EShapeSubType_RotatedTranslated = 8,
-  JPC_EShapeSubType_Scaled = 9,
-  JPC_EShapeSubType_OffsetCenterOfMass = 10,
-  JPC_EShapeSubType_Mesh = 11,
-  JPC_EShapeSubType_HeightField = 12,
-} JPC_EShapeSubType;
+  JoltC_EShapeSubType_Sphere = 0,
+  JoltC_EShapeSubType_Box = 1,
+  JoltC_EShapeSubType_Capsule = 2,
+  JoltC_EShapeSubType_TaperedCapsule = 3,
+  JoltC_EShapeSubType_Cylinder = 4,
+  JoltC_EShapeSubType_ConvexHull = 5,
+  JoltC_EShapeSubType_StaticCompound = 6,
+  JoltC_EShapeSubType_MutableCompound = 7,
+  JoltC_EShapeSubType_RotatedTranslated = 8,
+  JoltC_EShapeSubType_Scaled = 9,
+  JoltC_EShapeSubType_OffsetCenterOfMass = 10,
+  JoltC_EShapeSubType_Mesh = 11,
+  JoltC_EShapeSubType_HeightField = 12,
+} JoltC_EShapeSubType;
 
 typedef enum {
-  JPC_EConstraintSpace_LocalToBodyCOM = 0,
-  JPC_EConstraintSpace_WorldSpace = 1,
-} JPC_EConstraintSpace;
+  JoltC_EConstraintSpace_LocalToBodyCOM = 0,
+  JoltC_EConstraintSpace_WorldSpace = 1,
+} JoltC_EConstraintSpace;
 
 typedef enum {
-  JPC_ESpringMode_FrequencyAndDamping = 0,
-  JPC_ESpringMode_StiffnessAndDamping = 1,
-} JPC_ESpringMode;
+  JoltC_ESpringMode_FrequencyAndDamping = 0,
+  JoltC_ESpringMode_StiffnessAndDamping = 1,
+} JoltC_ESpringMode;
 
 typedef enum {
-  JPC_EOverrideMassProperties_CalculateMassAndInertia = 0,
-  JPC_EOverrideMassProperties_CalculateInertia = 1,
-  JPC_EOverrideMassProperties_MassAndInertiaProvided = 2,
-} JPC_EOverrideMassProperties;
+  JoltC_EOverrideMassProperties_CalculateMassAndInertia = 0,
+  JoltC_EOverrideMassProperties_CalculateInertia = 1,
+  JoltC_EOverrideMassProperties_MassAndInertiaProvided = 2,
+} JoltC_EOverrideMassProperties;
 
 typedef enum {
-  JPC_EAllowedDOFs_TranslationX = 0,
-  JPC_EAllowedDOFs_TranslationY = 1,
-  JPC_EAllowedDOFs_TranslationZ = 2,
-  JPC_EAllowedDOFs_RotationX = 3,
-  JPC_EAllowedDOFs_RotationY = 4,
-  JPC_EAllowedDOFs_RotationZ = 5,
-  JPC_EAllowedDOFs_Plane2D = 6,
-  JPC_EAllowedDOFs_All = 7,
-} JPC_EAllowedDOFs;
+  JoltC_EAllowedDOFs_TranslationX = 0,
+  JoltC_EAllowedDOFs_TranslationY = 1,
+  JoltC_EAllowedDOFs_TranslationZ = 2,
+  JoltC_EAllowedDOFs_RotationX = 3,
+  JoltC_EAllowedDOFs_RotationY = 4,
+  JoltC_EAllowedDOFs_RotationZ = 5,
+  JoltC_EAllowedDOFs_Plane2D = 6,
+  JoltC_EAllowedDOFs_All = 7,
+} JoltC_EAllowedDOFs;
 
 typedef enum {
-  JPC_EStateRecorderState_None = 0,
-  JPC_EStateRecorderState_Global = 1,
-  JPC_EStateRecorderState_Bodies = 2,
-  JPC_EStateRecorderState_Contacts = 3,
-  JPC_EStateRecorderState_Constraints = 4,
-  JPC_EStateRecorderState_All = 5,
-} JPC_EStateRecorderState;
+  JoltC_EStateRecorderState_None = 0,
+  JoltC_EStateRecorderState_Global = 1,
+  JoltC_EStateRecorderState_Bodies = 2,
+  JoltC_EStateRecorderState_Contacts = 3,
+  JoltC_EStateRecorderState_Constraints = 4,
+  JoltC_EStateRecorderState_All = 5,
+} JoltC_EStateRecorderState;
 
 typedef enum {
-  JPC_EBackFaceMode_IgnoreBackFaces = 0,
-  JPC_EBackFaceMode_CollideWithBackFaces = 1,
-} JPC_EBackFaceMode;
+  JoltC_EBackFaceMode_IgnoreBackFaces = 0,
+  JoltC_EBackFaceMode_CollideWithBackFaces = 1,
+} JoltC_EBackFaceMode;
 
 typedef enum {
-  JPC_EGroundState_OnGround = 0,
-  JPC_EGroundState_OnSteepGround = 1,
-  JPC_EGroundState_NotSupported = 2,
-  JPC_EGroundState_InAir = 3,
-} JPC_EGroundState;
+  JoltC_EGroundState_OnGround = 0,
+  JoltC_EGroundState_OnSteepGround = 1,
+  JoltC_EGroundState_NotSupported = 2,
+  JoltC_EGroundState_InAir = 3,
+} JoltC_EGroundState;
 
 typedef enum {
-  JPC_ValidateResult_AcceptAllContactsForThisBodyPair = 0,
-  JPC_ValidateResult_AcceptContact = 1,
-  JPC_ValidateResult_RejectContact = 2,
-  JPC_ValidateResult_RejectAllContactsForThisBodyPair = 3,
-} JPC_ValidateResult;
+  JoltC_ValidateResult_AcceptAllContactsForThisBodyPair = 0,
+  JoltC_ValidateResult_AcceptContact = 1,
+  JoltC_ValidateResult_RejectContact = 2,
+  JoltC_ValidateResult_RejectAllContactsForThisBodyPair = 3,
+} JoltC_ValidateResult;
 
 typedef enum {
-  JPC_SoftBodyValidateResult_AcceptContact = 0,
-  JPC_SoftBodyValidateResult_RejectContact = 1,
-} JPC_SoftBodyValidateResult;
+  JoltC_SoftBodyValidateResult_AcceptContact = 0,
+  JoltC_SoftBodyValidateResult_RejectContact = 1,
+} JoltC_SoftBodyValidateResult;
 
 typedef enum {
-  JPC_EActiveEdgeMode_CollideOnlyWithActive = 0,
-  JPC_EActiveEdgeMode_CollideWithAll = 1,
-} JPC_EActiveEdgeMode;
+  JoltC_EActiveEdgeMode_CollideOnlyWithActive = 0,
+  JoltC_EActiveEdgeMode_CollideWithAll = 1,
+} JoltC_EActiveEdgeMode;
 
 typedef enum {
-  JPC_ECollectFacesMode_CollectFaces = 0,
-  JPC_ECollectFacesMode_NoFaces = 1,
-} JPC_ECollectFacesMode;
+  JoltC_ECollectFacesMode_CollectFaces = 0,
+  JoltC_ECollectFacesMode_NoFaces = 1,
+} JoltC_ECollectFacesMode;
 
 typedef enum {
-  JPC_SixDOFConstraintSettings_EAxis_TranslationX = 0,
-  JPC_SixDOFConstraintSettings_EAxis_TranslationY = 1,
-  JPC_SixDOFConstraintSettings_EAxis_TranslationZ = 2,
-  JPC_SixDOFConstraintSettings_EAxis_RotationX = 3,
-  JPC_SixDOFConstraintSettings_EAxis_RotationY = 4,
-  JPC_SixDOFConstraintSettings_EAxis_RotationZ = 5,
-} JPC_SixDOFConstraintSettings_EAxis;
+  JoltC_SixDOFConstraintSettings_EAxis_TranslationX = 0,
+  JoltC_SixDOFConstraintSettings_EAxis_TranslationY = 1,
+  JoltC_SixDOFConstraintSettings_EAxis_TranslationZ = 2,
+  JoltC_SixDOFConstraintSettings_EAxis_RotationX = 3,
+  JoltC_SixDOFConstraintSettings_EAxis_RotationY = 4,
+  JoltC_SixDOFConstraintSettings_EAxis_RotationZ = 5,
+} JoltC_SixDOFConstraintSettings_EAxis;
 
 typedef enum {
-  JPC_EConstraintType_Constraint = 0,
-  JPC_EConstraintType_TwoBodyConstraint = 1,
-} JPC_EConstraintType;
+  JoltC_EConstraintType_Constraint = 0,
+  JoltC_EConstraintType_TwoBodyConstraint = 1,
+} JoltC_EConstraintType;
 
 typedef enum {
-  JPC_EConstraintSubType_Fixed = 0,
-  JPC_EConstraintSubType_Point = 1,
-  JPC_EConstraintSubType_Hinge = 2,
-  JPC_EConstraintSubType_Slider = 3,
-  JPC_EConstraintSubType_Distance = 4,
-  JPC_EConstraintSubType_Cone = 5,
-  JPC_EConstraintSubType_SwingTwist = 6,
-  JPC_EConstraintSubType_SixDOF = 7,
-  JPC_EConstraintSubType_Path = 8,
-  JPC_EConstraintSubType_Vehicle = 9,
-  JPC_EConstraintSubType_RackAndPinion = 10,
-  JPC_EConstraintSubType_Gear = 11,
-  JPC_EConstraintSubType_Pulley = 12,
-} JPC_EConstraintSubType;
+  JoltC_EConstraintSubType_Fixed = 0,
+  JoltC_EConstraintSubType_Point = 1,
+  JoltC_EConstraintSubType_Hinge = 2,
+  JoltC_EConstraintSubType_Slider = 3,
+  JoltC_EConstraintSubType_Distance = 4,
+  JoltC_EConstraintSubType_Cone = 5,
+  JoltC_EConstraintSubType_SwingTwist = 6,
+  JoltC_EConstraintSubType_SixDOF = 7,
+  JoltC_EConstraintSubType_Path = 8,
+  JoltC_EConstraintSubType_Vehicle = 9,
+  JoltC_EConstraintSubType_RackAndPinion = 10,
+  JoltC_EConstraintSubType_Gear = 11,
+  JoltC_EConstraintSubType_Pulley = 12,
+} JoltC_EConstraintSubType;
 
 typedef enum {
-  JPC_EMotorState_Off = 0,
-  JPC_EMotorState_Velocity = 1,
-  JPC_EMotorState_Position = 2,
-} JPC_EMotorState;
+  JoltC_EMotorState_Off = 0,
+  JoltC_EMotorState_Velocity = 1,
+  JoltC_EMotorState_Position = 2,
+} JoltC_EMotorState;
 
 typedef enum {
-  JPC_ETransmissionMode_Auto = 0,
-  JPC_ETransmissionMode_Manual = 1,
-} JPC_ETransmissionMode;
+  JoltC_ETransmissionMode_Auto = 0,
+  JoltC_ETransmissionMode_Manual = 1,
+} JoltC_ETransmissionMode;
 
 typedef enum {
-  JPC_ETireFrictionDirection_Longitudinal = 0,
-  JPC_ETireFrictionDirection_Lateral = 1,
-} JPC_ETireFrictionDirection;
+  JoltC_ETireFrictionDirection_Longitudinal = 0,
+  JoltC_ETireFrictionDirection_Lateral = 1,
+} JoltC_ETireFrictionDirection;
 
 typedef enum {
-  JPC_ESwingType_Cone = 0,
-  JPC_ESwingType_Pyramid = 1,
-} JPC_ESwingType;
+  JoltC_ESwingType_Cone = 0,
+  JoltC_ESwingType_Pyramid = 1,
+} JoltC_ESwingType;
 
 typedef enum {
-  JPC_EPathRotationConstraintType_Free = 0,
-  JPC_EPathRotationConstraintType_ConstrainAroundTangent = 1,
-  JPC_EPathRotationConstraintType_ConstrainAroundNormal = 2,
-  JPC_EPathRotationConstraintType_ConstrainAroundBinormal = 3,
-  JPC_EPathRotationConstraintType_ConstrainToPath = 4,
-  JPC_EPathRotationConstraintType_FullyConstrained = 5,
-} JPC_EPathRotationConstraintType;
+  JoltC_EPathRotationConstraintType_Free = 0,
+  JoltC_EPathRotationConstraintType_ConstrainAroundTangent = 1,
+  JoltC_EPathRotationConstraintType_ConstrainAroundNormal = 2,
+  JoltC_EPathRotationConstraintType_ConstrainAroundBinormal = 3,
+  JoltC_EPathRotationConstraintType_ConstrainToPath = 4,
+  JoltC_EPathRotationConstraintType_FullyConstrained = 5,
+} JoltC_EPathRotationConstraintType;
 
 typedef enum {
-  JPC_SoftBodySharedSettings_EBendType_None = 0,
-  JPC_SoftBodySharedSettings_EBendType_Distance = 1,
-  JPC_SoftBodySharedSettings_EBendType_Dihedral = 2,
-} JPC_SoftBodySharedSettings_EBendType;
+  JoltC_SoftBodySharedSettings_EBendType_None = 0,
+  JoltC_SoftBodySharedSettings_EBendType_Distance = 1,
+  JoltC_SoftBodySharedSettings_EBendType_Dihedral = 2,
+} JoltC_SoftBodySharedSettings_EBendType;
 
 typedef enum {
-  JPC_SoftBodySharedSettings_ELRAType_None = 0,
-  JPC_SoftBodySharedSettings_ELRAType_EuclideanDistance = 1,
-  JPC_SoftBodySharedSettings_ELRAType_GeodesicDistance = 2,
-} JPC_SoftBodySharedSettings_ELRAType;
+  JoltC_SoftBodySharedSettings_ELRAType_None = 0,
+  JoltC_SoftBodySharedSettings_ELRAType_EuclideanDistance = 1,
+  JoltC_SoftBodySharedSettings_ELRAType_GeodesicDistance = 2,
+} JoltC_SoftBodySharedSettings_ELRAType;
 
 
 #ifdef __cplusplus

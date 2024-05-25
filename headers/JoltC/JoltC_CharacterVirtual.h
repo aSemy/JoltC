@@ -8,278 +8,330 @@ extern "C" {
 
 //region constructors
 
-JPC_CharacterVirtual_t * JPC_CharacterVirtual_new(
-  const JPC_CharacterVirtualSettings_t * inSettings,
-  JPC_RVec3_t * inPosition,
-  JPC_Quat_t * inRotation,
-  JPC_PhysicsSystem_t * inSystem
+JoltC_CharacterVirtual_t * JoltC_CharacterVirtual_new(
+  const JoltC_CharacterVirtualSettings_t * inSettings,
+  JoltC_RVec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
+  JoltC_PhysicsSystem_t * inSystem,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-void JPC_CharacterVirtual_SetListener(
-  JPC_CharacterVirtual_t * self,
-  JPC_CharacterContactListener_t * inListener
+void JoltC_CharacterVirtual_SetListener(
+  JoltC_CharacterVirtual_t * self,
+  JoltC_CharacterContactListener_t * inListener,
+  char** outErrMsg
 );
 
-JPC_CharacterContactListener_t * JPC_CharacterVirtual_GetListener(
-  JPC_CharacterVirtual_t * self
+JoltC_CharacterContactListener_t * JoltC_CharacterVirtual_GetListener(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetLinearVelocity(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetLinearVelocity(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetLinearVelocity(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inLinearVelocity
+void JoltC_CharacterVirtual_SetLinearVelocity(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inLinearVelocity,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_CharacterVirtual_GetPosition(
-  JPC_CharacterVirtual_t * self
+JoltC_RVec3_t * JoltC_CharacterVirtual_GetPosition(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetPosition(
-  JPC_CharacterVirtual_t * self,
-  const JPC_RVec3_t * inPosition
+void JoltC_CharacterVirtual_SetPosition(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_RVec3_t * inPosition,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_CharacterVirtual_GetRotation(
-  JPC_CharacterVirtual_t * self
+JoltC_Quat_t * JoltC_CharacterVirtual_GetRotation(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetRotation(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Quat_t * inRotation
+void JoltC_CharacterVirtual_SetRotation(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Quat_t * inRotation,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_CharacterVirtual_GetWorldTransform(
-  JPC_CharacterVirtual_t * self
+JoltC_RMat44_t * JoltC_CharacterVirtual_GetWorldTransform(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-JPC_RMat44_t * JPC_CharacterVirtual_GetCenterOfMassTransform(
-  JPC_CharacterVirtual_t * self
+JoltC_RMat44_t * JoltC_CharacterVirtual_GetCenterOfMassTransform(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtual_GetMass(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetMass(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetMass(
-  JPC_CharacterVirtual_t * self,
-  float inMass
+void JoltC_CharacterVirtual_SetMass(
+  JoltC_CharacterVirtual_t * self,
+  float inMass,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtual_GetMaxStrength(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetMaxStrength(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetMaxStrength(
-  JPC_CharacterVirtual_t * self,
-  float inMaxStrength
+void JoltC_CharacterVirtual_SetMaxStrength(
+  JoltC_CharacterVirtual_t * self,
+  float inMaxStrength,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtual_GetPenetrationRecoverySpeed(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetPenetrationRecoverySpeed(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetPenetrationRecoverySpeed(
-  JPC_CharacterVirtual_t * self,
-  float inSpeed
+void JoltC_CharacterVirtual_SetPenetrationRecoverySpeed(
+  JoltC_CharacterVirtual_t * self,
+  float inSpeed,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtual_GetCharacterPadding(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetCharacterPadding(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_CharacterVirtual_GetMaxNumHits(
-  JPC_CharacterVirtual_t * self
+unsigned long JoltC_CharacterVirtual_GetMaxNumHits(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetMaxNumHits(
-  JPC_CharacterVirtual_t * self,
-  unsigned long inMaxHits
+void JoltC_CharacterVirtual_SetMaxNumHits(
+  JoltC_CharacterVirtual_t * self,
+  unsigned long inMaxHits,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtual_GetHitReductionCosMaxAngle(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetHitReductionCosMaxAngle(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetHitReductionCosMaxAngle(
-  JPC_CharacterVirtual_t * self,
-  float inCosMaxAngle
+void JoltC_CharacterVirtual_SetHitReductionCosMaxAngle(
+  JoltC_CharacterVirtual_t * self,
+  float inCosMaxAngle,
+  char** outErrMsg
 );
 
-bool JPC_CharacterVirtual_GetMaxHitsExceeded(
-  JPC_CharacterVirtual_t * self
+bool JoltC_CharacterVirtual_GetMaxHitsExceeded(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetShapeOffset(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetShapeOffset(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetShapeOffset(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inShapeOffset
+void JoltC_CharacterVirtual_SetShapeOffset(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inShapeOffset,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_CharacterVirtual_GetUserData(
-  JPC_CharacterVirtual_t * self
+unsigned long long int JoltC_CharacterVirtual_GetUserData(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetUserData(
-  JPC_CharacterVirtual_t * self,
-  unsigned long long int inUserData
+void JoltC_CharacterVirtual_SetUserData(
+  JoltC_CharacterVirtual_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CharacterVirtual_CancelVelocityTowardsSteepSlopes(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inDesiredVelocity
+JoltC_Vec3_t * JoltC_CharacterVirtual_CancelVelocityTowardsSteepSlopes(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inDesiredVelocity,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_Update(
-  JPC_CharacterVirtual_t * self,
+void JoltC_CharacterVirtual_Update(
+  JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JPC_Vec3_t * inGravity,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+  const JoltC_Vec3_t * inGravity,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 );
 
-bool JPC_CharacterVirtual_CanWalkStairs(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inLinearVelocity
+bool JoltC_CharacterVirtual_CanWalkStairs(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inLinearVelocity,
+  char** outErrMsg
 );
 
-bool JPC_CharacterVirtual_WalkStairs(
-  JPC_CharacterVirtual_t * self,
+bool JoltC_CharacterVirtual_WalkStairs(
+  JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JPC_Vec3_t * inStepUp,
-  const JPC_Vec3_t * inStepForward,
-  const JPC_Vec3_t * inStepForwardTest,
-  const JPC_Vec3_t * inStepDownExtra,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+  const JoltC_Vec3_t * inStepUp,
+  const JoltC_Vec3_t * inStepForward,
+  const JoltC_Vec3_t * inStepForwardTest,
+  const JoltC_Vec3_t * inStepDownExtra,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 );
 
-bool JPC_CharacterVirtual_StickToFloor(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inStepDown,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+bool JoltC_CharacterVirtual_StickToFloor(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inStepDown,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_ExtendedUpdate(
-  JPC_CharacterVirtual_t * self,
+void JoltC_CharacterVirtual_ExtendedUpdate(
+  JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JPC_Vec3_t * inGravity,
-  const JPC_CharacterVirtual_ExtendedUpdateSettings_t * inSettings,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+  const JoltC_Vec3_t * inGravity,
+  const JoltC_CharacterVirtual_ExtendedUpdateSettings_t * inSettings,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_RefreshContacts(
-  JPC_CharacterVirtual_t * self,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+void JoltC_CharacterVirtual_RefreshContacts(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_UpdateGroundVelocity(
-  JPC_CharacterVirtual_t * self
+void JoltC_CharacterVirtual_UpdateGroundVelocity(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CharacterVirtual_SetShape(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Shape_t * inShape,
+bool JoltC_CharacterVirtual_SetShape(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Shape_t * inShape,
   float inMaxPenetrationDepth,
-  const JPC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JPC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JPC_BodyFilter_t * inBodyFilter,
-  const JPC_ShapeFilter_t * inShapeFilter,
-  JPC_TempAllocator_t * inAllocator
+  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  const JoltC_BodyFilter_t * inBodyFilter,
+  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_TempAllocator_t * inAllocator,
+  char** outErrMsg
 );
 
-unsigned long JPC_CharacterVirtual_GetRefCount(
-  JPC_CharacterVirtual_t * self
+unsigned long JoltC_CharacterVirtual_GetRefCount(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_AddRef(
-  JPC_CharacterVirtual_t * self
+void JoltC_CharacterVirtual_AddRef(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_Release(
-  JPC_CharacterVirtual_t * self
+void JoltC_CharacterVirtual_Release(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetMaxSlopeAngle(
-  JPC_CharacterVirtual_t * self,
-  float inMaxSlopeAngle
+void JoltC_CharacterVirtual_SetMaxSlopeAngle(
+  JoltC_CharacterVirtual_t * self,
+  float inMaxSlopeAngle,
+  char** outErrMsg
 );
 
-float JPC_CharacterVirtual_GetCosMaxSlopeAngle(
-  JPC_CharacterVirtual_t * self
+float JoltC_CharacterVirtual_GetCosMaxSlopeAngle(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-void JPC_CharacterVirtual_SetUp(
-  JPC_CharacterVirtual_t * self,
-  const JPC_Vec3_t * inUp
+void JoltC_CharacterVirtual_SetUp(
+  JoltC_CharacterVirtual_t * self,
+  const JoltC_Vec3_t * inUp,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetUp(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetUp(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-const JPC_Shape_t * JPC_CharacterVirtual_GetShape(
-  JPC_CharacterVirtual_t * self
+const JoltC_Shape_t * JoltC_CharacterVirtual_GetShape(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-JPC_EGroundState JPC_CharacterVirtual_GetGroundState(
-  JPC_CharacterVirtual_t * self
+JoltC_EGroundState JoltC_CharacterVirtual_GetGroundState(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CharacterVirtual_IsSlopeTooSteep(
-  JPC_CharacterVirtual_t * self,
-  JPC_Vec3_t * inNormal
+bool JoltC_CharacterVirtual_IsSlopeTooSteep(
+  JoltC_CharacterVirtual_t * self,
+  JoltC_Vec3_t * inNormal,
+  char** outErrMsg
 );
 
-bool JPC_CharacterVirtual_IsSupported(
-  JPC_CharacterVirtual_t * self
+bool JoltC_CharacterVirtual_IsSupported(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_CharacterVirtual_GetGroundPosition(
-  JPC_CharacterVirtual_t * self
+JoltC_RVec3_t * JoltC_CharacterVirtual_GetGroundPosition(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetGroundNormal(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetGroundNormal(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_CharacterVirtual_GetGroundVelocity(
-  JPC_CharacterVirtual_t * self
+JoltC_Vec3_t * JoltC_CharacterVirtual_GetGroundVelocity(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_CharacterVirtual_GetGroundMaterial(
-  JPC_CharacterVirtual_t * self
+const JoltC_PhysicsMaterial_t * JoltC_CharacterVirtual_GetGroundMaterial(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
-JPC_BodyID_t * JPC_CharacterVirtual_GetGroundBodyID(
-  JPC_CharacterVirtual_t * self
+JoltC_BodyID_t * JoltC_CharacterVirtual_GetGroundBodyID(
+  JoltC_CharacterVirtual_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

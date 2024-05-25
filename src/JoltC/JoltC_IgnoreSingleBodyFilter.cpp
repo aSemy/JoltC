@@ -1,5 +1,6 @@
-#include "JoltC/JPC_IgnoreSingleBodyFilter.h"
+#include "JoltC/JoltC_IgnoreSingleBodyFilter.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,15 +8,24 @@ extern "C" {
 
 //region constructors
 
-JPC_IgnoreSingleBodyFilter_t * JPC_IgnoreSingleBodyFilter_new(
-  const JPC_BodyID_t * inBodyID
+JoltC_IgnoreSingleBodyFilter_t * JoltC_IgnoreSingleBodyFilter_new(
+  const JoltC_BodyID_t * inBodyID,
+  char** outErrMsg
 ) {
-  JPC_IgnoreSingleBodyFilter_t * cInstance = new JPC_IgnoreSingleBodyFilter_t();
-  IgnoreSingleBodyFilter * cppInstance = new IgnoreSingleBodyFilter(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_IgnoreSingleBodyFilter_t * cInstance = new JoltC_IgnoreSingleBodyFilter_t();
+    IgnoreSingleBodyFilter * cppInstance = new IgnoreSingleBodyFilter(
+      *reinterpret_cast<BodyID *>(inBodyID->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors

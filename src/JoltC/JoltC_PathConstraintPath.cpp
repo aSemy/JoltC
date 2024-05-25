@@ -1,5 +1,6 @@
-#include "JoltC/JPC_PathConstraintPath.h"
+#include "JoltC/JoltC_PathConstraintPath.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,47 +8,92 @@ extern "C" {
 
 //region functions
 
-bool JPC_PathConstraintPath_IsLooping(
-  JPC_PathConstraintPath_t * self
+bool JoltC_PathConstraintPath_IsLooping(
+  JoltC_PathConstraintPath_t * self,
+  char** outErrMsg
 ) {
-  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  bool result = selfCpp->IsLooping();
-  return result;
+  try {
+    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+    bool result = selfCpp->IsLooping();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraintPath_SetIsLooping(
-  JPC_PathConstraintPath_t * self,
-  bool inIsLooping
+void JoltC_PathConstraintPath_SetIsLooping(
+  JoltC_PathConstraintPath_t * self,
+  bool inIsLooping,
+  char** outErrMsg
 ) {
-  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  
-  selfCpp->SetIsLooping(
-  inIsLooping
-  );
+  try {
+    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+    
+    selfCpp->SetIsLooping(
+    inIsLooping
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_PathConstraintPath_GetRefCount(
-  JPC_PathConstraintPath_t * self
+unsigned long JoltC_PathConstraintPath_GetRefCount(
+  JoltC_PathConstraintPath_t * self,
+  char** outErrMsg
 ) {
-  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraintPath_AddRef(
-  JPC_PathConstraintPath_t * self
+void JoltC_PathConstraintPath_AddRef(
+  JoltC_PathConstraintPath_t * self,
+  char** outErrMsg
 ) {
-  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PathConstraintPath_Release(
-  JPC_PathConstraintPath_t * self
+void JoltC_PathConstraintPath_Release(
+  JoltC_PathConstraintPath_t * self,
+  char** outErrMsg
 ) {
-  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

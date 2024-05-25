@@ -1,5 +1,6 @@
-#include "JoltC/JPC_VehicleConstraintCallbacksEm.h"
+#include "JoltC/JoltC_VehicleConstraintCallbacksEm.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,15 +8,24 @@ extern "C" {
 
 //region functions
 
-void JPC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
-  JPC_VehicleConstraintCallbacksEm_t * self,
-  JPC_VehicleConstraint_t * inConstraint
+void JoltC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
+  JoltC_VehicleConstraintCallbacksEm_t * self,
+  JoltC_VehicleConstraint_t * inConstraint,
+  char** outErrMsg
 ) {
-  VehicleConstraintCallbacksEm * selfCpp = static_cast<VehicleConstraintCallbacksEm *>(self->obj);
-  
-  selfCpp->SetVehicleConstraint(
-  *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
-  );
+  try {
+    VehicleConstraintCallbacksEm * selfCpp = static_cast<VehicleConstraintCallbacksEm *>(self->obj);
+    
+    selfCpp->SetVehicleConstraint(
+    *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

@@ -1,5 +1,6 @@
-#include "JoltC/JPC_HeightFieldShapeConstantValues.h"
+#include "JoltC/JoltC_HeightFieldShapeConstantValues.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,8 +8,9 @@ extern "C" {
 
 //region properties
 
-const float JPC_HeightFieldShapeConstantValues_cNoCollisionValue_Get(
-  JPC_HeightFieldShapeConstantValues_t * self
+const float JoltC_HeightFieldShapeConstantValues_cNoCollisionValue_Get(
+  JoltC_HeightFieldShapeConstantValues_t * self,
+  char** outErrMsg
 ) {
   const float result = HeightFieldShapeConstantValues::cNoCollisionValue;
   return result;

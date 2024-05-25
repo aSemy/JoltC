@@ -8,131 +8,159 @@ extern "C" {
 
 //region constructors
 
-JPC_PulleyConstraintSettings_t * JPC_PulleyConstraintSettings_new();
+JoltC_PulleyConstraintSettings_t * JoltC_PulleyConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_Constraint_t * JPC_PulleyConstraintSettings_Create(
-  JPC_PulleyConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_PulleyConstraintSettings_Create(
+  JoltC_PulleyConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_PulleyConstraintSettings_GetRefCount(
-  JPC_PulleyConstraintSettings_t * self
+unsigned long JoltC_PulleyConstraintSettings_GetRefCount(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_AddRef(
-  JPC_PulleyConstraintSettings_t * self
+void JoltC_PulleyConstraintSettings_AddRef(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_Release(
-  JPC_PulleyConstraintSettings_t * self
+void JoltC_PulleyConstraintSettings_Release(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_PulleyConstraintSettings_mSpace_Get(
-  JPC_PulleyConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_PulleyConstraintSettings_mSpace_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mSpace_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_PulleyConstraintSettings_mSpace_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_PulleyConstraintSettings_mBodyPoint1_Get(
-  JPC_PulleyConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mBodyPoint1_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mBodyPoint1_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  JPC_RVec3_t * mBodyPoint1
+void JoltC_PulleyConstraintSettings_mBodyPoint1_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  JoltC_RVec3_t * mBodyPoint1,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_PulleyConstraintSettings_mFixedPoint1_Get(
-  JPC_PulleyConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mFixedPoint1_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mFixedPoint1_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  JPC_RVec3_t * mFixedPoint1
+void JoltC_PulleyConstraintSettings_mFixedPoint1_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  JoltC_RVec3_t * mFixedPoint1,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_PulleyConstraintSettings_mBodyPoint2_Get(
-  JPC_PulleyConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mBodyPoint2_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mBodyPoint2_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  JPC_RVec3_t * mBodyPoint2
+void JoltC_PulleyConstraintSettings_mBodyPoint2_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  JoltC_RVec3_t * mBodyPoint2,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_PulleyConstraintSettings_mFixedPoint2_Get(
-  JPC_PulleyConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mFixedPoint2_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mFixedPoint2_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  JPC_RVec3_t * mFixedPoint2
+void JoltC_PulleyConstraintSettings_mFixedPoint2_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  JoltC_RVec3_t * mFixedPoint2,
+  char** outErrMsg
 );
 
-float JPC_PulleyConstraintSettings_mRatio_Get(
-  JPC_PulleyConstraintSettings_t * self
+float JoltC_PulleyConstraintSettings_mRatio_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mRatio_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  float mRatio
+void JoltC_PulleyConstraintSettings_mRatio_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  float mRatio,
+  char** outErrMsg
 );
 
-float JPC_PulleyConstraintSettings_mMinLength_Get(
-  JPC_PulleyConstraintSettings_t * self
+float JoltC_PulleyConstraintSettings_mMinLength_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mMinLength_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  float mMinLength
+void JoltC_PulleyConstraintSettings_mMinLength_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  float mMinLength,
+  char** outErrMsg
 );
 
-float JPC_PulleyConstraintSettings_mMaxLength_Get(
-  JPC_PulleyConstraintSettings_t * self
+float JoltC_PulleyConstraintSettings_mMaxLength_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mMaxLength_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  float mMaxLength
+void JoltC_PulleyConstraintSettings_mMaxLength_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  float mMaxLength,
+  char** outErrMsg
 );
 
-bool JPC_PulleyConstraintSettings_mEnabled_Get(
-  JPC_PulleyConstraintSettings_t * self
+bool JoltC_PulleyConstraintSettings_mEnabled_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mEnabled_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_PulleyConstraintSettings_mEnabled_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_PulleyConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_PulleyConstraintSettings_t * self
+long JoltC_PulleyConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_PulleyConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_PulleyConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_PulleyConstraintSettings_t * self
+long JoltC_PulleyConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_PulleyConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PulleyConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_PulleyConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_PulleyConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_PulleyConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

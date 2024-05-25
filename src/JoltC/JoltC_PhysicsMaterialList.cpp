@@ -1,5 +1,6 @@
-#include "JoltC/JPC_PhysicsMaterialList.h"
+#include "JoltC/JoltC_PhysicsMaterialList.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,83 +8,156 @@ extern "C" {
 
 //region constructors
 
-JPC_PhysicsMaterialList_t * JPC_PhysicsMaterialList_new() {
-  JPC_PhysicsMaterialList_t * cInstance = new JPC_PhysicsMaterialList_t();
-  PhysicsMaterialList * cppInstance = new PhysicsMaterialList();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_PhysicsMaterialList_t * JoltC_PhysicsMaterialList_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_PhysicsMaterialList_t * cInstance = new JoltC_PhysicsMaterialList_t();
+    PhysicsMaterialList * cppInstance = new PhysicsMaterialList();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-bool JPC_PhysicsMaterialList_empty(
-  JPC_PhysicsMaterialList_t * self
+bool JoltC_PhysicsMaterialList_empty(
+  JoltC_PhysicsMaterialList_t * self,
+  char** outErrMsg
 ) {
-  PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_PhysicsMaterialList_size(
-  JPC_PhysicsMaterialList_t * self
+long JoltC_PhysicsMaterialList_size(
+  JoltC_PhysicsMaterialList_t * self,
+  char** outErrMsg
 ) {
-  PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_PhysicsMaterial_t * JPC_PhysicsMaterialList_at(
-  JPC_PhysicsMaterialList_t * self,
-  long inIndex
+const JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
+  JoltC_PhysicsMaterialList_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->at(
-  inIndex
-  );
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  try {
+    PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
+    const PhysicsMaterial * result = selfCpp->at(
+    inIndex
+    );
+    return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PhysicsMaterialList_push_back(
-  JPC_PhysicsMaterialList_t * self,
-  const JPC_PhysicsMaterial_t * inMaterial
+void JoltC_PhysicsMaterialList_push_back(
+  JoltC_PhysicsMaterialList_t * self,
+  const JoltC_PhysicsMaterial_t * inMaterial,
+  char** outErrMsg
 ) {
-  PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  
-  selfCpp->push_back(
-  reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
-  );
+  try {
+    PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
+    
+    selfCpp->push_back(
+    reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PhysicsMaterialList_reserve(
-  JPC_PhysicsMaterialList_t * self,
-  unsigned long inSize
+void JoltC_PhysicsMaterialList_reserve(
+  JoltC_PhysicsMaterialList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PhysicsMaterialList_resize(
-  JPC_PhysicsMaterialList_t * self,
-  unsigned long inSize
+void JoltC_PhysicsMaterialList_resize(
+  JoltC_PhysicsMaterialList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PhysicsMaterialList_clear(
-  JPC_PhysicsMaterialList_t * self
+void JoltC_PhysicsMaterialList_clear(
+  JoltC_PhysicsMaterialList_t * self,
+  char** outErrMsg
 ) {
-  PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

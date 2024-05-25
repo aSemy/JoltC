@@ -8,28 +8,34 @@ extern "C" {
 
 //region constructors
 
-JPC_RayCastSettings_t * JPC_RayCastSettings_new();
+JoltC_RayCastSettings_t * JoltC_RayCastSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-JPC_EBackFaceMode JPC_RayCastSettings_mBackFaceMode_Get(
-  JPC_RayCastSettings_t * self
+JoltC_EBackFaceMode JoltC_RayCastSettings_mBackFaceMode_Get(
+  JoltC_RayCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCastSettings_mBackFaceMode_Set(
-  JPC_RayCastSettings_t * self,
-  JPC_EBackFaceMode mBackFaceMode
+void JoltC_RayCastSettings_mBackFaceMode_Set(
+  JoltC_RayCastSettings_t * self,
+  JoltC_EBackFaceMode mBackFaceMode,
+  char** outErrMsg
 );
 
-bool JPC_RayCastSettings_mTreatConvexAsSolid_Get(
-  JPC_RayCastSettings_t * self
+bool JoltC_RayCastSettings_mTreatConvexAsSolid_Get(
+  JoltC_RayCastSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_RayCastSettings_mTreatConvexAsSolid_Set(
-  JPC_RayCastSettings_t * self,
-  bool mTreatConvexAsSolid
+void JoltC_RayCastSettings_mTreatConvexAsSolid_Set(
+  JoltC_RayCastSettings_t * self,
+  bool mTreatConvexAsSolid,
+  char** outErrMsg
 );
 
 //endregion properties

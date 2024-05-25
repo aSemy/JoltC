@@ -8,42 +8,51 @@ extern "C" {
 
 //region constructors
 
-JPC_TriangleList_t * JPC_TriangleList_new();
+JoltC_TriangleList_t * JoltC_TriangleList_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_TriangleList_empty(
-  JPC_TriangleList_t * self
+bool JoltC_TriangleList_empty(
+  JoltC_TriangleList_t * self,
+  char** outErrMsg
 );
 
-long JPC_TriangleList_size(
-  JPC_TriangleList_t * self
+long JoltC_TriangleList_size(
+  JoltC_TriangleList_t * self,
+  char** outErrMsg
 );
 
-JPC_Triangle_t * JPC_TriangleList_at(
-  JPC_TriangleList_t * self,
-  long inIndex
+JoltC_Triangle_t * JoltC_TriangleList_at(
+  JoltC_TriangleList_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_TriangleList_push_back(
-  JPC_TriangleList_t * self,
-  const JPC_Triangle_t * inTriangle
+void JoltC_TriangleList_push_back(
+  JoltC_TriangleList_t * self,
+  const JoltC_Triangle_t * inTriangle,
+  char** outErrMsg
 );
 
-void JPC_TriangleList_reserve(
-  JPC_TriangleList_t * self,
-  unsigned long inSize
+void JoltC_TriangleList_reserve(
+  JoltC_TriangleList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_TriangleList_resize(
-  JPC_TriangleList_t * self,
-  unsigned long inSize
+void JoltC_TriangleList_resize(
+  JoltC_TriangleList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_TriangleList_clear(
-  JPC_TriangleList_t * self
+void JoltC_TriangleList_clear(
+  JoltC_TriangleList_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

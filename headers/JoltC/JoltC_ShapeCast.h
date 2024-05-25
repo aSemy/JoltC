@@ -8,40 +8,46 @@ extern "C" {
 
 //region constructors
 
-JPC_ShapeCast_t * JPC_ShapeCast_new(
-  const JPC_Shape_t * inShape,
-  const JPC_Vec3_t * inScale,
-  const JPC_Mat44_t * inCenterOfMassStart,
-  const JPC_Vec3_t * inDirection
+JoltC_ShapeCast_t * JoltC_ShapeCast_new(
+  const JoltC_Shape_t * inShape,
+  const JoltC_Vec3_t * inScale,
+  const JoltC_Mat44_t * inCenterOfMassStart,
+  const JoltC_Vec3_t * inDirection,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region functions
 
-const JPC_Vec3_t * JPC_ShapeCast_GetPointOnRay(
-  JPC_ShapeCast_t * self,
-  float inFraction
+const JoltC_Vec3_t * JoltC_ShapeCast_GetPointOnRay(
+  JoltC_ShapeCast_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-const JPC_Shape_t * JPC_ShapeCast_mShape_Get(
-  JPC_ShapeCast_t * self
+const JoltC_Shape_t * JoltC_ShapeCast_mShape_Get(
+  JoltC_ShapeCast_t * self,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_ShapeCast_mScale_Get(
-  JPC_ShapeCast_t * self
+const JoltC_Vec3_t * JoltC_ShapeCast_mScale_Get(
+  JoltC_ShapeCast_t * self,
+  char** outErrMsg
 );
 
-const JPC_Mat44_t * JPC_ShapeCast_mCenterOfMassStart_Get(
-  JPC_ShapeCast_t * self
+const JoltC_Mat44_t * JoltC_ShapeCast_mCenterOfMassStart_Get(
+  JoltC_ShapeCast_t * self,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_ShapeCast_mDirection_Get(
-  JPC_ShapeCast_t * self
+const JoltC_Vec3_t * JoltC_ShapeCast_mDirection_Get(
+  JoltC_ShapeCast_t * self,
+  char** outErrMsg
 );
 
 //endregion properties

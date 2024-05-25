@@ -8,120 +8,147 @@ extern "C" {
 
 //region functions
 
-void JPC_DistanceConstraint_SetDistance(
-  JPC_DistanceConstraint_t * self,
+void JoltC_DistanceConstraint_SetDistance(
+  JoltC_DistanceConstraint_t * self,
   float inMinDistance,
-  float inMaxDistance
+  float inMaxDistance,
+  char** outErrMsg
 );
 
-float JPC_DistanceConstraint_GetMinDistance(
-  JPC_DistanceConstraint_t * self
+float JoltC_DistanceConstraint_GetMinDistance(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-float JPC_DistanceConstraint_GetMaxDistance(
-  JPC_DistanceConstraint_t * self
+float JoltC_DistanceConstraint_GetMaxDistance(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_SpringSettings_t * JPC_DistanceConstraint_GetLimitsSpringSettings(
-  JPC_DistanceConstraint_t * self
+JoltC_SpringSettings_t * JoltC_DistanceConstraint_GetLimitsSpringSettings(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_SetLimitsSpringSettings(
-  JPC_DistanceConstraint_t * self,
-  const JPC_SpringSettings_t * inSettings
+void JoltC_DistanceConstraint_SetLimitsSpringSettings(
+  JoltC_DistanceConstraint_t * self,
+  const JoltC_SpringSettings_t * inSettings,
+  char** outErrMsg
 );
 
-float JPC_DistanceConstraint_GetTotalLambdaPosition(
-  JPC_DistanceConstraint_t * self
+float JoltC_DistanceConstraint_GetTotalLambdaPosition(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_DistanceConstraint_GetBody1(
-  JPC_DistanceConstraint_t * self
+JoltC_Body_t * JoltC_DistanceConstraint_GetBody1(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_DistanceConstraint_GetBody2(
-  JPC_DistanceConstraint_t * self
+JoltC_Body_t * JoltC_DistanceConstraint_GetBody2(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_DistanceConstraint_GetConstraintToBody1Matrix(
-  JPC_DistanceConstraint_t * self
+JoltC_Mat44_t * JoltC_DistanceConstraint_GetConstraintToBody1Matrix(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_DistanceConstraint_GetConstraintToBody2Matrix(
-  JPC_DistanceConstraint_t * self
+JoltC_Mat44_t * JoltC_DistanceConstraint_GetConstraintToBody2Matrix(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_DistanceConstraint_GetRefCount(
-  JPC_DistanceConstraint_t * self
+unsigned long JoltC_DistanceConstraint_GetRefCount(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_AddRef(
-  JPC_DistanceConstraint_t * self
+void JoltC_DistanceConstraint_AddRef(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_Release(
-  JPC_DistanceConstraint_t * self
+void JoltC_DistanceConstraint_Release(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintType JPC_DistanceConstraint_GetType(
-  JPC_DistanceConstraint_t * self
+JoltC_EConstraintType JoltC_DistanceConstraint_GetType(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintSubType JPC_DistanceConstraint_GetSubType(
-  JPC_DistanceConstraint_t * self
+JoltC_EConstraintSubType JoltC_DistanceConstraint_GetSubType(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_DistanceConstraint_GetConstraintPriority(
-  JPC_DistanceConstraint_t * self
+unsigned long JoltC_DistanceConstraint_GetConstraintPriority(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_SetConstraintPriority(
-  JPC_DistanceConstraint_t * self,
-  unsigned long inPriority
+void JoltC_DistanceConstraint_SetConstraintPriority(
+  JoltC_DistanceConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_SetNumVelocityStepsOverride(
-  JPC_DistanceConstraint_t * self,
-  long inN
+void JoltC_DistanceConstraint_SetNumVelocityStepsOverride(
+  JoltC_DistanceConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_DistanceConstraint_GetNumVelocityStepsOverride(
-  JPC_DistanceConstraint_t * self
+long JoltC_DistanceConstraint_GetNumVelocityStepsOverride(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_SetNumPositionStepsOverride(
-  JPC_DistanceConstraint_t * self,
-  long inN
+void JoltC_DistanceConstraint_SetNumPositionStepsOverride(
+  JoltC_DistanceConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_DistanceConstraint_GetNumPositionStepsOverride(
-  JPC_DistanceConstraint_t * self
+long JoltC_DistanceConstraint_GetNumPositionStepsOverride(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_SetEnabled(
-  JPC_DistanceConstraint_t * self,
-  bool inEnabled
+void JoltC_DistanceConstraint_SetEnabled(
+  JoltC_DistanceConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 );
 
-bool JPC_DistanceConstraint_GetEnabled(
-  JPC_DistanceConstraint_t * self
+bool JoltC_DistanceConstraint_GetEnabled(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_DistanceConstraint_IsActive(
-  JPC_DistanceConstraint_t * self
+bool JoltC_DistanceConstraint_IsActive(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_DistanceConstraint_GetUserData(
-  JPC_DistanceConstraint_t * self
+unsigned long long int JoltC_DistanceConstraint_GetUserData(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_SetUserData(
-  JPC_DistanceConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_DistanceConstraint_SetUserData(
+  JoltC_DistanceConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-void JPC_DistanceConstraint_ResetWarmStart(
-  JPC_DistanceConstraint_t * self
+void JoltC_DistanceConstraint_ResetWarmStart(
+  JoltC_DistanceConstraint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

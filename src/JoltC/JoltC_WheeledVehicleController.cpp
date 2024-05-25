@@ -1,5 +1,6 @@
-#include "JoltC/JPC_WheeledVehicleController.h"
+#include "JoltC/JoltC_WheeledVehicleController.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,192 +8,363 @@ extern "C" {
 
 //region constructors
 
-JPC_WheeledVehicleController_t * JPC_WheeledVehicleController_new(
-  const JPC_WheeledVehicleControllerSettings_t * inSettings,
-  JPC_VehicleConstraint_t * inConstraint
+JoltC_WheeledVehicleController_t * JoltC_WheeledVehicleController_new(
+  const JoltC_WheeledVehicleControllerSettings_t * inSettings,
+  JoltC_VehicleConstraint_t * inConstraint,
+  char** outErrMsg
 ) {
-  JPC_WheeledVehicleController_t * cInstance = new JPC_WheeledVehicleController_t();
-  WheeledVehicleController * cppInstance = new WheeledVehicleController(
-    *reinterpret_cast<WheeledVehicleControllerSettings *>(inSettings->obj),
-    *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_WheeledVehicleController_t * cInstance = new JoltC_WheeledVehicleController_t();
+    WheeledVehicleController * cppInstance = new WheeledVehicleController(
+      *reinterpret_cast<WheeledVehicleControllerSettings *>(inSettings->obj),
+      *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_WheeledVehicleController_SetDriverInput(
-  JPC_WheeledVehicleController_t * self,
+void JoltC_WheeledVehicleController_SetDriverInput(
+  JoltC_WheeledVehicleController_t * self,
   float inForward,
   float inRight,
   float inBrake,
-  float inHandBrake
+  float inHandBrake,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
-  selfCpp->SetDriverInput(
-  inForward,
-  inRight,
-  inBrake,
-  inHandBrake
-  );
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    
+    selfCpp->SetDriverInput(
+    inForward,
+    inRight,
+    inBrake,
+    inHandBrake
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheeledVehicleController_SetForwardInput(
-  JPC_WheeledVehicleController_t * self,
-  float inForward
+void JoltC_WheeledVehicleController_SetForwardInput(
+  JoltC_WheeledVehicleController_t * self,
+  float inForward,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
-  selfCpp->SetForwardInput(
-  inForward
-  );
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    
+    selfCpp->SetForwardInput(
+    inForward
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheeledVehicleController_GetForwardInput(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetForwardInput(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetForwardInput();
-  return result;
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    float result = selfCpp->GetForwardInput();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheeledVehicleController_SetRightInput(
-  JPC_WheeledVehicleController_t * self,
-  float inRight
+void JoltC_WheeledVehicleController_SetRightInput(
+  JoltC_WheeledVehicleController_t * self,
+  float inRight,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
-  selfCpp->SetRightInput(
-  inRight
-  );
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    
+    selfCpp->SetRightInput(
+    inRight
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheeledVehicleController_GetRightInput(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetRightInput(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetRightInput();
-  return result;
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    float result = selfCpp->GetRightInput();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheeledVehicleController_SetBrakeInput(
-  JPC_WheeledVehicleController_t * self,
-  float inBrake
+void JoltC_WheeledVehicleController_SetBrakeInput(
+  JoltC_WheeledVehicleController_t * self,
+  float inBrake,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
-  selfCpp->SetBrakeInput(
-  inBrake
-  );
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    
+    selfCpp->SetBrakeInput(
+    inBrake
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheeledVehicleController_GetBrakeInput(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetBrakeInput(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetBrakeInput();
-  return result;
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    float result = selfCpp->GetBrakeInput();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheeledVehicleController_SetHandBrakeInput(
-  JPC_WheeledVehicleController_t * self,
-  float inHandBrake
+void JoltC_WheeledVehicleController_SetHandBrakeInput(
+  JoltC_WheeledVehicleController_t * self,
+  float inHandBrake,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
-  selfCpp->SetHandBrakeInput(
-  inHandBrake
-  );
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    
+    selfCpp->SetHandBrakeInput(
+    inHandBrake
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheeledVehicleController_GetHandBrakeInput(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetHandBrakeInput(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetHandBrakeInput();
-  return result;
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    float result = selfCpp->GetHandBrakeInput();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_VehicleEngine_t * JPC_WheeledVehicleController_GetEngine(
-  JPC_WheeledVehicleController_t * self
+JoltC_VehicleEngine_t * JoltC_WheeledVehicleController_GetEngine(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  VehicleEngine& resultRef = selfCpp->GetEngine();
-  VehicleEngine * result = &resultRef;
-  return reinterpret_cast<JPC_VehicleEngine_t *>(result);
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    VehicleEngine& resultRef = selfCpp->GetEngine();
+    VehicleEngine * result = &resultRef;
+    return reinterpret_cast<JoltC_VehicleEngine_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_VehicleTransmission_t * JPC_WheeledVehicleController_GetTransmission(
-  JPC_WheeledVehicleController_t * self
+JoltC_VehicleTransmission_t * JoltC_WheeledVehicleController_GetTransmission(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  VehicleTransmission& resultRef = selfCpp->GetTransmission();
-  VehicleTransmission * result = &resultRef;
-  return reinterpret_cast<JPC_VehicleTransmission_t *>(result);
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    VehicleTransmission& resultRef = selfCpp->GetTransmission();
+    VehicleTransmission * result = &resultRef;
+    return reinterpret_cast<JoltC_VehicleTransmission_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_ArrayVehicleDifferentialSettings_t * JPC_WheeledVehicleController_GetDifferentials(
-  JPC_WheeledVehicleController_t * self
+JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleController_GetDifferentials(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  ArrayVehicleDifferentialSettings& resultRef = selfCpp->GetDifferentials();
-  ArrayVehicleDifferentialSettings * result = &resultRef;
-  return reinterpret_cast<JPC_ArrayVehicleDifferentialSettings_t *>(result);
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    ArrayVehicleDifferentialSettings& resultRef = selfCpp->GetDifferentials();
+    ArrayVehicleDifferentialSettings * result = &resultRef;
+    return reinterpret_cast<JoltC_ArrayVehicleDifferentialSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheeledVehicleController_GetDifferentialLimitedSlipRatio(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetDifferentialLimitedSlipRatio(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetDifferentialLimitedSlipRatio();
-  return result;
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    float result = selfCpp->GetDifferentialLimitedSlipRatio();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheeledVehicleController_SetDifferentialLimitedSlipRatio(
-  JPC_WheeledVehicleController_t * self,
-  float inV
+void JoltC_WheeledVehicleController_SetDifferentialLimitedSlipRatio(
+  JoltC_WheeledVehicleController_t * self,
+  float inV,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
-  selfCpp->SetDifferentialLimitedSlipRatio(
-  inV
-  );
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    
+    selfCpp->SetDifferentialLimitedSlipRatio(
+    inV
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheeledVehicleController_GetWheelSpeedAtClutch(
-  JPC_WheeledVehicleController_t * self
+float JoltC_WheeledVehicleController_GetWheelSpeedAtClutch(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetWheelSpeedAtClutch();
-  return result;
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    float result = selfCpp->GetWheelSpeedAtClutch();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_WheeledVehicleController_GetRefCount(
-  JPC_WheeledVehicleController_t * self
+unsigned long JoltC_WheeledVehicleController_GetRefCount(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheeledVehicleController_AddRef(
-  JPC_WheeledVehicleController_t * self
+void JoltC_WheeledVehicleController_AddRef(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheeledVehicleController_Release(
-  JPC_WheeledVehicleController_t * self
+void JoltC_WheeledVehicleController_Release(
+  JoltC_WheeledVehicleController_t * self,
+  char** outErrMsg
 ) {
-  WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

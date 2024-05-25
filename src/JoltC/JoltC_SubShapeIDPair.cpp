@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SubShapeIDPair.h"
+#include "JoltC/JoltC_SubShapeIDPair.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,51 +8,97 @@ extern "C" {
 
 //region constructors
 
-JPC_SubShapeIDPair_t * JPC_SubShapeIDPair_new() {
-  JPC_SubShapeIDPair_t * cInstance = new JPC_SubShapeIDPair_t();
-  SubShapeIDPair * cppInstance = new SubShapeIDPair();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_SubShapeIDPair_t * JoltC_SubShapeIDPair_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_SubShapeIDPair_t * cInstance = new JoltC_SubShapeIDPair_t();
+    SubShapeIDPair * cppInstance = new SubShapeIDPair();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-const JPC_BodyID_t * JPC_SubShapeIDPair_GetBody1ID(
-  JPC_SubShapeIDPair_t * self
+const JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody1ID(
+  JoltC_SubShapeIDPair_t * self,
+  char** outErrMsg
 ) {
-  SubShapeIDPair * selfCpp = static_cast<SubShapeIDPair *>(self->obj);
-  const BodyID& resultRef = selfCpp->GetBody1ID();
-  const BodyID * result = &resultRef;
-  return reinterpret_cast<const JPC_BodyID_t *>(result);
+  try {
+    SubShapeIDPair * selfCpp = static_cast<SubShapeIDPair *>(self->obj);
+    const BodyID& resultRef = selfCpp->GetBody1ID();
+    const BodyID * result = &resultRef;
+    return reinterpret_cast<const JoltC_BodyID_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_SubShapeID_t * JPC_SubShapeIDPair_GetSubShapeID1(
-  JPC_SubShapeIDPair_t * self
+const JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID1(
+  JoltC_SubShapeIDPair_t * self,
+  char** outErrMsg
 ) {
-  SubShapeIDPair * selfCpp = static_cast<SubShapeIDPair *>(self->obj);
-  const SubShapeID& resultRef = selfCpp->GetSubShapeID1();
-  const SubShapeID * result = &resultRef;
-  return reinterpret_cast<const JPC_SubShapeID_t *>(result);
+  try {
+    SubShapeIDPair * selfCpp = static_cast<SubShapeIDPair *>(self->obj);
+    const SubShapeID& resultRef = selfCpp->GetSubShapeID1();
+    const SubShapeID * result = &resultRef;
+    return reinterpret_cast<const JoltC_SubShapeID_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_BodyID_t * JPC_SubShapeIDPair_GetBody2ID(
-  JPC_SubShapeIDPair_t * self
+const JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody2ID(
+  JoltC_SubShapeIDPair_t * self,
+  char** outErrMsg
 ) {
-  SubShapeIDPair * selfCpp = static_cast<SubShapeIDPair *>(self->obj);
-  const BodyID& resultRef = selfCpp->GetBody2ID();
-  const BodyID * result = &resultRef;
-  return reinterpret_cast<const JPC_BodyID_t *>(result);
+  try {
+    SubShapeIDPair * selfCpp = static_cast<SubShapeIDPair *>(self->obj);
+    const BodyID& resultRef = selfCpp->GetBody2ID();
+    const BodyID * result = &resultRef;
+    return reinterpret_cast<const JoltC_BodyID_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_SubShapeID_t * JPC_SubShapeIDPair_GetSubShapeID2(
-  JPC_SubShapeIDPair_t * self
+const JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID2(
+  JoltC_SubShapeIDPair_t * self,
+  char** outErrMsg
 ) {
-  SubShapeIDPair * selfCpp = static_cast<SubShapeIDPair *>(self->obj);
-  const SubShapeID& resultRef = selfCpp->GetSubShapeID2();
-  const SubShapeID * result = &resultRef;
-  return reinterpret_cast<const JPC_SubShapeID_t *>(result);
+  try {
+    SubShapeIDPair * selfCpp = static_cast<SubShapeIDPair *>(self->obj);
+    const SubShapeID& resultRef = selfCpp->GetSubShapeID2();
+    const SubShapeID * result = &resultRef;
+    return reinterpret_cast<const JoltC_SubShapeID_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

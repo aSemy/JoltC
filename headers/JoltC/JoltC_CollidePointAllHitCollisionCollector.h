@@ -8,70 +8,85 @@ extern "C" {
 
 //region constructors
 
-JPC_CollidePointAllHitCollisionCollector_t * JPC_CollidePointAllHitCollisionCollector_new();
+JoltC_CollidePointAllHitCollisionCollector_t * JoltC_CollidePointAllHitCollisionCollector_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_CollidePointAllHitCollisionCollector_Sort(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+void JoltC_CollidePointAllHitCollisionCollector_Sort(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CollidePointAllHitCollisionCollector_HadHit(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+bool JoltC_CollidePointAllHitCollisionCollector_HadHit(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAllHitCollisionCollector_Reset(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+void JoltC_CollidePointAllHitCollisionCollector_Reset(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAllHitCollisionCollector_SetContext(
-  JPC_CollidePointAllHitCollisionCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CollidePointAllHitCollisionCollector_SetContext(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_CollidePointAllHitCollisionCollector_GetContext(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CollidePointAllHitCollisionCollector_GetContext(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAllHitCollisionCollector_UpdateEarlyOutFraction(
-  JPC_CollidePointAllHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CollidePointAllHitCollisionCollector_UpdateEarlyOutFraction(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAllHitCollisionCollector_ResetEarlyOutFraction(
-  JPC_CollidePointAllHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CollidePointAllHitCollisionCollector_ResetEarlyOutFraction(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAllHitCollisionCollector_ForceEarlyOut(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+void JoltC_CollidePointAllHitCollisionCollector_ForceEarlyOut(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CollidePointAllHitCollisionCollector_ShouldEarlyOut(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+bool JoltC_CollidePointAllHitCollisionCollector_ShouldEarlyOut(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CollidePointAllHitCollisionCollector_GetEarlyOutFraction(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+float JoltC_CollidePointAllHitCollisionCollector_GetEarlyOutFraction(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CollidePointAllHitCollisionCollector_GetPositiveEarlyOutFraction(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+float JoltC_CollidePointAllHitCollisionCollector_GetPositiveEarlyOutFraction(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_ArrayCollidePointResult_t * JPC_CollidePointAllHitCollisionCollector_mHits_Get(
-  JPC_CollidePointAllHitCollisionCollector_t * self
+JoltC_ArrayCollidePointResult_t * JoltC_CollidePointAllHitCollisionCollector_mHits_Get(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAllHitCollisionCollector_mHits_Set(
-  JPC_CollidePointAllHitCollisionCollector_t * self,
-  JPC_ArrayCollidePointResult_t * mHits
+void JoltC_CollidePointAllHitCollisionCollector_mHits_Set(
+  JoltC_CollidePointAllHitCollisionCollector_t * self,
+  JoltC_ArrayCollidePointResult_t * mHits,
+  char** outErrMsg
 );
 
 //endregion properties

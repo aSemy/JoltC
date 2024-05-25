@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ShapeGetTriangles.h"
+#include "JoltC/JoltC_ShapeGetTriangles.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,62 +8,107 @@ extern "C" {
 
 //region constructors
 
-JPC_ShapeGetTriangles_t * JPC_ShapeGetTriangles_new(
-  JPC_Shape_t * inShape,
-  const JPC_AABox_t * inBox,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale
+JoltC_ShapeGetTriangles_t * JoltC_ShapeGetTriangles_new(
+  JoltC_Shape_t * inShape,
+  const JoltC_AABox_t * inBox,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 ) {
-  JPC_ShapeGetTriangles_t * cInstance = new JPC_ShapeGetTriangles_t();
-  ShapeGetTriangles * cppInstance = new ShapeGetTriangles(
-    reinterpret_cast<Shape *>(inShape->obj),
-    *reinterpret_cast<AABox *>(inBox->obj),
-    *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
-    *reinterpret_cast<Vec3 *>(inScale->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_ShapeGetTriangles_t * cInstance = new JoltC_ShapeGetTriangles_t();
+    ShapeGetTriangles * cppInstance = new ShapeGetTriangles(
+      reinterpret_cast<Shape *>(inShape->obj),
+      *reinterpret_cast<AABox *>(inBox->obj),
+      *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
+      *reinterpret_cast<Quat *>(inRotation->obj),
+      *reinterpret_cast<Vec3 *>(inScale->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-long JPC_ShapeGetTriangles_GetNumTriangles(
-  JPC_ShapeGetTriangles_t * self
+long JoltC_ShapeGetTriangles_GetNumTriangles(
+  JoltC_ShapeGetTriangles_t * self,
+  char** outErrMsg
 ) {
-  ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
-  long result = selfCpp->GetNumTriangles();
-  return result;
+  try {
+    ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
+    long result = selfCpp->GetNumTriangles();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ShapeGetTriangles_GetVerticesSize(
-  JPC_ShapeGetTriangles_t * self
+long JoltC_ShapeGetTriangles_GetVerticesSize(
+  JoltC_ShapeGetTriangles_t * self,
+  char** outErrMsg
 ) {
-  ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
-  long result = selfCpp->GetVerticesSize();
-  return result;
+  try {
+    ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
+    long result = selfCpp->GetVerticesSize();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const void* JPC_ShapeGetTriangles_GetVerticesData(
-  JPC_ShapeGetTriangles_t * self
+const void* JoltC_ShapeGetTriangles_GetVerticesData(
+  JoltC_ShapeGetTriangles_t * self,
+  char** outErrMsg
 ) {
-  ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
-  const void* result = selfCpp->GetVerticesData();
-  return result;
+  try {
+    ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
+    const void* result = selfCpp->GetVerticesData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_PhysicsMaterial_t * JPC_ShapeGetTriangles_GetMaterial(
-  JPC_ShapeGetTriangles_t * self,
-  long inTriangle
+const JoltC_PhysicsMaterial_t * JoltC_ShapeGetTriangles_GetMaterial(
+  JoltC_ShapeGetTriangles_t * self,
+  long inTriangle,
+  char** outErrMsg
 ) {
-  ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetMaterial(
-  inTriangle
-  );
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  try {
+    ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
+    const PhysicsMaterial * result = selfCpp->GetMaterial(
+    inTriangle
+    );
+    return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

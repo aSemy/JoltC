@@ -8,102 +8,123 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_Shape_GetRefCount(
-  JPC_Shape_t * self
+unsigned long JoltC_Shape_GetRefCount(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-void JPC_Shape_AddRef(
-  JPC_Shape_t * self
+void JoltC_Shape_AddRef(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-void JPC_Shape_Release(
-  JPC_Shape_t * self
+void JoltC_Shape_Release(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeType JPC_Shape_GetType(
-  JPC_Shape_t * self
+JoltC_EShapeType JoltC_Shape_GetType(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-JPC_EShapeSubType JPC_Shape_GetSubType(
-  JPC_Shape_t * self
+JoltC_EShapeSubType JoltC_Shape_GetSubType(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_Shape_MustBeStatic(
-  JPC_Shape_t * self
+bool JoltC_Shape_MustBeStatic(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_Shape_GetLocalBounds(
-  JPC_Shape_t * self
+JoltC_AABox_t * JoltC_Shape_GetLocalBounds(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-JPC_AABox_t * JPC_Shape_GetWorldSpaceBounds(
-  JPC_Shape_t * self,
-  const JPC_Mat44_t * inCenterOfMassTransform,
-  const JPC_Vec3_t * inScale
+JoltC_AABox_t * JoltC_Shape_GetWorldSpaceBounds(
+  JoltC_Shape_t * self,
+  const JoltC_Mat44_t * inCenterOfMassTransform,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_Shape_GetCenterOfMass(
-  JPC_Shape_t * self
+JoltC_Vec3_t * JoltC_Shape_GetCenterOfMass(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_Shape_GetUserData(
-  JPC_Shape_t * self
+unsigned long long int JoltC_Shape_GetUserData(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-void JPC_Shape_SetUserData(
-  JPC_Shape_t * self,
-  unsigned long long int inUserData
+void JoltC_Shape_SetUserData(
+  JoltC_Shape_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-unsigned long JPC_Shape_GetSubShapeIDBitsRecursive(
-  JPC_Shape_t * self
+unsigned long JoltC_Shape_GetSubShapeIDBitsRecursive(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-float JPC_Shape_GetInnerRadius(
-  JPC_Shape_t * self
+float JoltC_Shape_GetInnerRadius(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-JPC_MassProperties_t * JPC_Shape_GetMassProperties(
-  JPC_Shape_t * self
+JoltC_MassProperties_t * JoltC_Shape_GetMassProperties(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterial_t * JPC_Shape_GetMaterial(
-  JPC_Shape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+const JoltC_PhysicsMaterial_t * JoltC_Shape_GetMaterial(
+  JoltC_Shape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_Shape_GetSurfaceNormal(
-  JPC_Shape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inLocalSurfacePosition
+JoltC_Vec3_t * JoltC_Shape_GetSurfaceNormal(
+  JoltC_Shape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inLocalSurfacePosition,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_Shape_GetSubShapeUserData(
-  JPC_Shape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID
+unsigned long long int JoltC_Shape_GetSubShapeUserData(
+  JoltC_Shape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  char** outErrMsg
 );
 
-JPC_TransformedShape_t * JPC_Shape_GetSubShapeTransformedShape(
-  JPC_Shape_t * self,
-  const JPC_SubShapeID_t * inSubShapeID,
-  const JPC_Vec3_t * inPositionCOM,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inScale,
-  JPC_SubShapeID_t * outRemainder
+JoltC_TransformedShape_t * JoltC_Shape_GetSubShapeTransformedShape(
+  JoltC_Shape_t * self,
+  const JoltC_SubShapeID_t * inSubShapeID,
+  const JoltC_Vec3_t * inPositionCOM,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * outRemainder,
+  char** outErrMsg
 );
 
-float JPC_Shape_GetVolume(
-  JPC_Shape_t * self
+float JoltC_Shape_GetVolume(
+  JoltC_Shape_t * self,
+  char** outErrMsg
 );
 
-bool JPC_Shape_IsValidScale(
-  JPC_Shape_t * self,
-  const JPC_Vec3_t * inScale
+bool JoltC_Shape_IsValidScale(
+  JoltC_Shape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
-JPC_Shape_ShapeResult_t * JPC_Shape_ScaleShape(
-  JPC_Shape_t * self,
-  const JPC_Vec3_t * inScale
+JoltC_Shape_ShapeResult_t * JoltC_Shape_ScaleShape(
+  JoltC_Shape_t * self,
+  const JoltC_Vec3_t * inScale,
+  char** outErrMsg
 );
 
 //endregion functions

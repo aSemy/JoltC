@@ -8,161 +8,196 @@ extern "C" {
 
 //region constructors
 
-JPC_WheelSettingsTV_t * JPC_WheelSettingsTV_new();
+JoltC_WheelSettingsTV_t * JoltC_WheelSettingsTV_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_WheelSettingsTV_GetRefCount(
-  JPC_WheelSettingsTV_t * self
+unsigned long JoltC_WheelSettingsTV_GetRefCount(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_AddRef(
-  JPC_WheelSettingsTV_t * self
+void JoltC_WheelSettingsTV_AddRef(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_Release(
-  JPC_WheelSettingsTV_t * self
+void JoltC_WheelSettingsTV_Release(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_WheelSettingsTV_mLongitudinalFriction_Get(
-  JPC_WheelSettingsTV_t * self
+float JoltC_WheelSettingsTV_mLongitudinalFriction_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mLongitudinalFriction_Set(
-  JPC_WheelSettingsTV_t * self,
-  float mLongitudinalFriction
+void JoltC_WheelSettingsTV_mLongitudinalFriction_Set(
+  JoltC_WheelSettingsTV_t * self,
+  float mLongitudinalFriction,
+  char** outErrMsg
 );
 
-float JPC_WheelSettingsTV_mLateralFriction_Get(
-  JPC_WheelSettingsTV_t * self
+float JoltC_WheelSettingsTV_mLateralFriction_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mLateralFriction_Set(
-  JPC_WheelSettingsTV_t * self,
-  float mLateralFriction
+void JoltC_WheelSettingsTV_mLateralFriction_Set(
+  JoltC_WheelSettingsTV_t * self,
+  float mLateralFriction,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettingsTV_mPosition_Get(
-  JPC_WheelSettingsTV_t * self
+JoltC_Vec3_t * JoltC_WheelSettingsTV_mPosition_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mPosition_Set(
-  JPC_WheelSettingsTV_t * self,
-  JPC_Vec3_t * mPosition
+void JoltC_WheelSettingsTV_mPosition_Set(
+  JoltC_WheelSettingsTV_t * self,
+  JoltC_Vec3_t * mPosition,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettingsTV_mSuspensionForcePoint_Get(
-  JPC_WheelSettingsTV_t * self
+JoltC_Vec3_t * JoltC_WheelSettingsTV_mSuspensionForcePoint_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mSuspensionForcePoint_Set(
-  JPC_WheelSettingsTV_t * self,
-  JPC_Vec3_t * mSuspensionForcePoint
+void JoltC_WheelSettingsTV_mSuspensionForcePoint_Set(
+  JoltC_WheelSettingsTV_t * self,
+  JoltC_Vec3_t * mSuspensionForcePoint,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettingsTV_mSuspensionDirection_Get(
-  JPC_WheelSettingsTV_t * self
+JoltC_Vec3_t * JoltC_WheelSettingsTV_mSuspensionDirection_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mSuspensionDirection_Set(
-  JPC_WheelSettingsTV_t * self,
-  JPC_Vec3_t * mSuspensionDirection
+void JoltC_WheelSettingsTV_mSuspensionDirection_Set(
+  JoltC_WheelSettingsTV_t * self,
+  JoltC_Vec3_t * mSuspensionDirection,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettingsTV_mSteeringAxis_Get(
-  JPC_WheelSettingsTV_t * self
+JoltC_Vec3_t * JoltC_WheelSettingsTV_mSteeringAxis_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mSteeringAxis_Set(
-  JPC_WheelSettingsTV_t * self,
-  JPC_Vec3_t * mSteeringAxis
+void JoltC_WheelSettingsTV_mSteeringAxis_Set(
+  JoltC_WheelSettingsTV_t * self,
+  JoltC_Vec3_t * mSteeringAxis,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettingsTV_mWheelUp_Get(
-  JPC_WheelSettingsTV_t * self
+JoltC_Vec3_t * JoltC_WheelSettingsTV_mWheelUp_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mWheelUp_Set(
-  JPC_WheelSettingsTV_t * self,
-  JPC_Vec3_t * mWheelUp
+void JoltC_WheelSettingsTV_mWheelUp_Set(
+  JoltC_WheelSettingsTV_t * self,
+  JoltC_Vec3_t * mWheelUp,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_WheelSettingsTV_mWheelForward_Get(
-  JPC_WheelSettingsTV_t * self
+JoltC_Vec3_t * JoltC_WheelSettingsTV_mWheelForward_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mWheelForward_Set(
-  JPC_WheelSettingsTV_t * self,
-  JPC_Vec3_t * mWheelForward
+void JoltC_WheelSettingsTV_mWheelForward_Set(
+  JoltC_WheelSettingsTV_t * self,
+  JoltC_Vec3_t * mWheelForward,
+  char** outErrMsg
 );
 
-JPC_SpringSettings_t * JPC_WheelSettingsTV_mSuspensionSpring_Get(
-  JPC_WheelSettingsTV_t * self
+JoltC_SpringSettings_t * JoltC_WheelSettingsTV_mSuspensionSpring_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mSuspensionSpring_Set(
-  JPC_WheelSettingsTV_t * self,
-  JPC_SpringSettings_t * mSuspensionSpring
+void JoltC_WheelSettingsTV_mSuspensionSpring_Set(
+  JoltC_WheelSettingsTV_t * self,
+  JoltC_SpringSettings_t * mSuspensionSpring,
+  char** outErrMsg
 );
 
-float JPC_WheelSettingsTV_mSuspensionMinLength_Get(
-  JPC_WheelSettingsTV_t * self
+float JoltC_WheelSettingsTV_mSuspensionMinLength_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mSuspensionMinLength_Set(
-  JPC_WheelSettingsTV_t * self,
-  float mSuspensionMinLength
+void JoltC_WheelSettingsTV_mSuspensionMinLength_Set(
+  JoltC_WheelSettingsTV_t * self,
+  float mSuspensionMinLength,
+  char** outErrMsg
 );
 
-float JPC_WheelSettingsTV_mSuspensionMaxLength_Get(
-  JPC_WheelSettingsTV_t * self
+float JoltC_WheelSettingsTV_mSuspensionMaxLength_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mSuspensionMaxLength_Set(
-  JPC_WheelSettingsTV_t * self,
-  float mSuspensionMaxLength
+void JoltC_WheelSettingsTV_mSuspensionMaxLength_Set(
+  JoltC_WheelSettingsTV_t * self,
+  float mSuspensionMaxLength,
+  char** outErrMsg
 );
 
-float JPC_WheelSettingsTV_mSuspensionPreloadLength_Get(
-  JPC_WheelSettingsTV_t * self
+float JoltC_WheelSettingsTV_mSuspensionPreloadLength_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mSuspensionPreloadLength_Set(
-  JPC_WheelSettingsTV_t * self,
-  float mSuspensionPreloadLength
+void JoltC_WheelSettingsTV_mSuspensionPreloadLength_Set(
+  JoltC_WheelSettingsTV_t * self,
+  float mSuspensionPreloadLength,
+  char** outErrMsg
 );
 
-float JPC_WheelSettingsTV_mRadius_Get(
-  JPC_WheelSettingsTV_t * self
+float JoltC_WheelSettingsTV_mRadius_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mRadius_Set(
-  JPC_WheelSettingsTV_t * self,
-  float mRadius
+void JoltC_WheelSettingsTV_mRadius_Set(
+  JoltC_WheelSettingsTV_t * self,
+  float mRadius,
+  char** outErrMsg
 );
 
-float JPC_WheelSettingsTV_mWidth_Get(
-  JPC_WheelSettingsTV_t * self
+float JoltC_WheelSettingsTV_mWidth_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mWidth_Set(
-  JPC_WheelSettingsTV_t * self,
-  float mWidth
+void JoltC_WheelSettingsTV_mWidth_Set(
+  JoltC_WheelSettingsTV_t * self,
+  float mWidth,
+  char** outErrMsg
 );
 
-bool JPC_WheelSettingsTV_mEnableSuspensionForcePoint_Get(
-  JPC_WheelSettingsTV_t * self
+bool JoltC_WheelSettingsTV_mEnableSuspensionForcePoint_Get(
+  JoltC_WheelSettingsTV_t * self,
+  char** outErrMsg
 );
 
-void JPC_WheelSettingsTV_mEnableSuspensionForcePoint_Set(
-  JPC_WheelSettingsTV_t * self,
-  bool mEnableSuspensionForcePoint
+void JoltC_WheelSettingsTV_mEnableSuspensionForcePoint_Set(
+  JoltC_WheelSettingsTV_t * self,
+  bool mEnableSuspensionForcePoint,
+  char** outErrMsg
 );
 
 //endregion properties

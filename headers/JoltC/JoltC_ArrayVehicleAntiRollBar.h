@@ -8,31 +8,37 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayVehicleAntiRollBar_empty(
-  JPC_ArrayVehicleAntiRollBar_t * self
+bool JoltC_ArrayVehicleAntiRollBar_empty(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArrayVehicleAntiRollBar_size(
-  JPC_ArrayVehicleAntiRollBar_t * self
+long JoltC_ArrayVehicleAntiRollBar_size(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  char** outErrMsg
 );
 
-JPC_VehicleAntiRollBar_t * JPC_ArrayVehicleAntiRollBar_at(
-  JPC_ArrayVehicleAntiRollBar_t * self,
-  long inIndex
+JoltC_VehicleAntiRollBar_t * JoltC_ArrayVehicleAntiRollBar_at(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArrayVehicleAntiRollBar_push_back(
-  JPC_ArrayVehicleAntiRollBar_t * self,
-  JPC_VehicleAntiRollBar_t * inValue
+void JoltC_ArrayVehicleAntiRollBar_push_back(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  JoltC_VehicleAntiRollBar_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArrayVehicleAntiRollBar_resize(
-  JPC_ArrayVehicleAntiRollBar_t * self,
-  unsigned long inSize
+void JoltC_ArrayVehicleAntiRollBar_resize(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArrayVehicleAntiRollBar_clear(
-  JPC_ArrayVehicleAntiRollBar_t * self
+void JoltC_ArrayVehicleAntiRollBar_clear(
+  JoltC_ArrayVehicleAntiRollBar_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

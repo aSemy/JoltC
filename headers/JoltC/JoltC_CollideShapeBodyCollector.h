@@ -8,43 +8,52 @@ extern "C" {
 
 //region functions
 
-void JPC_CollideShapeBodyCollector_Reset(
-  JPC_CollideShapeBodyCollector_t * self
+void JoltC_CollideShapeBodyCollector_Reset(
+  JoltC_CollideShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeBodyCollector_SetContext(
-  JPC_CollideShapeBodyCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CollideShapeBodyCollector_SetContext(
+  JoltC_CollideShapeBodyCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_CollideShapeBodyCollector_GetContext(
-  JPC_CollideShapeBodyCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CollideShapeBodyCollector_GetContext(
+  JoltC_CollideShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeBodyCollector_UpdateEarlyOutFraction(
-  JPC_CollideShapeBodyCollector_t * self,
-  float inFraction
+void JoltC_CollideShapeBodyCollector_UpdateEarlyOutFraction(
+  JoltC_CollideShapeBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeBodyCollector_ResetEarlyOutFraction(
-  JPC_CollideShapeBodyCollector_t * self,
-  float inFraction
+void JoltC_CollideShapeBodyCollector_ResetEarlyOutFraction(
+  JoltC_CollideShapeBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CollideShapeBodyCollector_ForceEarlyOut(
-  JPC_CollideShapeBodyCollector_t * self
+void JoltC_CollideShapeBodyCollector_ForceEarlyOut(
+  JoltC_CollideShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CollideShapeBodyCollector_ShouldEarlyOut(
-  JPC_CollideShapeBodyCollector_t * self
+bool JoltC_CollideShapeBodyCollector_ShouldEarlyOut(
+  JoltC_CollideShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CollideShapeBodyCollector_GetEarlyOutFraction(
-  JPC_CollideShapeBodyCollector_t * self
+float JoltC_CollideShapeBodyCollector_GetEarlyOutFraction(
+  JoltC_CollideShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CollideShapeBodyCollector_GetPositiveEarlyOutFraction(
-  JPC_CollideShapeBodyCollector_t * self
+float JoltC_CollideShapeBodyCollector_GetPositiveEarlyOutFraction(
+  JoltC_CollideShapeBodyCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

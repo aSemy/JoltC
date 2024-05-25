@@ -1,5 +1,6 @@
-#include "JoltC/JPC_AABoxCast.h"
+#include "JoltC/JoltC_AABoxCast.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,46 +8,60 @@ extern "C" {
 
 //region constructors
 
-JPC_AABoxCast_t * JPC_AABoxCast_new() {
-  JPC_AABoxCast_t * cInstance = new JPC_AABoxCast_t();
-  AABoxCast * cppInstance = new AABoxCast();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_AABoxCast_t * JoltC_AABoxCast_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_AABoxCast_t * cInstance = new JoltC_AABoxCast_t();
+    AABoxCast * cppInstance = new AABoxCast();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region properties
 
-JPC_AABox_t * JPC_AABoxCast_mBox_Get(
-  JPC_AABoxCast_t * self
+JoltC_AABox_t * JoltC_AABoxCast_mBox_Get(
+  JoltC_AABoxCast_t * self,
+  char** outErrMsg
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
   AABox resultValue = selfCpp->mBox;
   AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JPC_AABox_t *>(result);
+  return reinterpret_cast<JoltC_AABox_t *>(result);
 };
 
-void JPC_AABoxCast_mBox_Set(
-  JPC_AABoxCast_t * self,
-  JPC_AABox_t * mBox
+void JoltC_AABoxCast_mBox_Set(
+  JoltC_AABoxCast_t * self,
+  JoltC_AABox_t * mBox,
+  char** outErrMsg
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
   selfCpp->mBox = *reinterpret_cast<AABox *>(mBox->obj);
 };
 
-JPC_Vec3_t * JPC_AABoxCast_mDirection_Get(
-  JPC_AABoxCast_t * self
+JoltC_Vec3_t * JoltC_AABoxCast_mDirection_Get(
+  JoltC_AABoxCast_t * self,
+  char** outErrMsg
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
   Vec3 resultValue = selfCpp->mDirection;
   Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
-void JPC_AABoxCast_mDirection_Set(
-  JPC_AABoxCast_t * self,
-  JPC_Vec3_t * mDirection
+void JoltC_AABoxCast_mDirection_Set(
+  JoltC_AABoxCast_t * self,
+  JoltC_Vec3_t * mDirection,
+  char** outErrMsg
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
   selfCpp->mDirection = *reinterpret_cast<Vec3 *>(mDirection->obj);

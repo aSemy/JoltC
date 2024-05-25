@@ -8,55 +8,67 @@ extern "C" {
 
 //region constructors
 
-JPC_SoftBodySharedSettingsVertexAttributes_t * JPC_SoftBodySharedSettingsVertexAttributes_new();
+JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_SoftBodySharedSettingsVertexAttributes_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-float JPC_SoftBodySharedSettingsVertexAttributes_mCompliance_Get(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self
+float JoltC_SoftBodySharedSettingsVertexAttributes_mCompliance_Get(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsVertexAttributes_mCompliance_Set(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self,
-  float mCompliance
+void JoltC_SoftBodySharedSettingsVertexAttributes_mCompliance_Set(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  float mCompliance,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsVertexAttributes_mShearCompliance_Get(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self
+float JoltC_SoftBodySharedSettingsVertexAttributes_mShearCompliance_Get(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsVertexAttributes_mShearCompliance_Set(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self,
-  float mShearCompliance
+void JoltC_SoftBodySharedSettingsVertexAttributes_mShearCompliance_Set(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  float mShearCompliance,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsVertexAttributes_mBendCompliance_Get(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self
+float JoltC_SoftBodySharedSettingsVertexAttributes_mBendCompliance_Get(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsVertexAttributes_mBendCompliance_Set(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self,
-  float mBendCompliance
+void JoltC_SoftBodySharedSettingsVertexAttributes_mBendCompliance_Set(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  float mBendCompliance,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettings_ELRAType JPC_SoftBodySharedSettingsVertexAttributes_mLRAType_Get(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self
+JoltC_SoftBodySharedSettings_ELRAType JoltC_SoftBodySharedSettingsVertexAttributes_mLRAType_Get(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsVertexAttributes_mLRAType_Set(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self,
-  JPC_SoftBodySharedSettings_ELRAType mLRAType
+void JoltC_SoftBodySharedSettingsVertexAttributes_mLRAType_Set(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  JoltC_SoftBodySharedSettings_ELRAType mLRAType,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Get(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self
+float JoltC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Get(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Set(
-  JPC_SoftBodySharedSettingsVertexAttributes_t * self,
-  float mLRAMaxDistanceMultiplier
+void JoltC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Set(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
+  float mLRAMaxDistanceMultiplier,
+  char** outErrMsg
 );
 
 //endregion properties

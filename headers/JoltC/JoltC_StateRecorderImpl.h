@@ -8,32 +8,39 @@ extern "C" {
 
 //region constructors
 
-JPC_StateRecorderImpl_t * JPC_StateRecorderImpl_new();
+JoltC_StateRecorderImpl_t * JoltC_StateRecorderImpl_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_StateRecorderImpl_Clear(
-  JPC_StateRecorderImpl_t * self
+void JoltC_StateRecorderImpl_Clear(
+  JoltC_StateRecorderImpl_t * self,
+  char** outErrMsg
 );
 
-void JPC_StateRecorderImpl_Rewind(
-  JPC_StateRecorderImpl_t * self
+void JoltC_StateRecorderImpl_Rewind(
+  JoltC_StateRecorderImpl_t * self,
+  char** outErrMsg
 );
 
-bool JPC_StateRecorderImpl_IsEqual(
-  JPC_StateRecorderImpl_t * self,
-  JPC_StateRecorderImpl_t * inReference
+bool JoltC_StateRecorderImpl_IsEqual(
+  JoltC_StateRecorderImpl_t * self,
+  JoltC_StateRecorderImpl_t * inReference,
+  char** outErrMsg
 );
 
-void JPC_StateRecorderImpl_SetValidating(
-  JPC_StateRecorderImpl_t * self,
-  bool inValidating
+void JoltC_StateRecorderImpl_SetValidating(
+  JoltC_StateRecorderImpl_t * self,
+  bool inValidating,
+  char** outErrMsg
 );
 
-bool JPC_StateRecorderImpl_IsValidating(
-  JPC_StateRecorderImpl_t * self
+bool JoltC_StateRecorderImpl_IsValidating(
+  JoltC_StateRecorderImpl_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

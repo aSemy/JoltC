@@ -1,5 +1,6 @@
-#include "JoltC/JPC_CastRayCollector.h"
+#include "JoltC/JoltC_CastRayCollector.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,85 +8,166 @@ extern "C" {
 
 //region functions
 
-void JPC_CastRayCollector_Reset(
-  JPC_CastRayCollector_t * self
+void JoltC_CastRayCollector_Reset(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
-  selfCpp->Reset();
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    
+    selfCpp->Reset();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CastRayCollector_SetContext(
-  JPC_CastRayCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CastRayCollector_SetContext(
+  JoltC_CastRayCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
-  selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
-  );
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    
+    selfCpp->SetContext(
+    reinterpret_cast<TransformedShape *>(inContext->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_TransformedShape_t * JPC_CastRayCollector_GetContext(
-  JPC_CastRayCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CastRayCollector_GetContext(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JPC_TransformedShape_t *>(result);
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    const TransformedShape * result = selfCpp->GetContext();
+    return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CastRayCollector_UpdateEarlyOutFraction(
-  JPC_CastRayCollector_t * self,
-  float inFraction
+void JoltC_CastRayCollector_UpdateEarlyOutFraction(
+  JoltC_CastRayCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
-  selfCpp->UpdateEarlyOutFraction(
-  inFraction
-  );
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    
+    selfCpp->UpdateEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CastRayCollector_ResetEarlyOutFraction(
-  JPC_CastRayCollector_t * self,
-  float inFraction
+void JoltC_CastRayCollector_ResetEarlyOutFraction(
+  JoltC_CastRayCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
-  selfCpp->ResetEarlyOutFraction(
-  inFraction
-  );
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    
+    selfCpp->ResetEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CastRayCollector_ForceEarlyOut(
-  JPC_CastRayCollector_t * self
+void JoltC_CastRayCollector_ForceEarlyOut(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
-  selfCpp->ForceEarlyOut();
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    
+    selfCpp->ForceEarlyOut();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CastRayCollector_ShouldEarlyOut(
-  JPC_CastRayCollector_t * self
+bool JoltC_CastRayCollector_ShouldEarlyOut(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    bool result = selfCpp->ShouldEarlyOut();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CastRayCollector_GetEarlyOutFraction(
-  JPC_CastRayCollector_t * self
+float JoltC_CastRayCollector_GetEarlyOutFraction(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    float result = selfCpp->GetEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CastRayCollector_GetPositiveEarlyOutFraction(
-  JPC_CastRayCollector_t * self
+float JoltC_CastRayCollector_GetPositiveEarlyOutFraction(
+  JoltC_CastRayCollector_t * self,
+  char** outErrMsg
 ) {
-  CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
+  try {
+    CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+    float result = selfCpp->GetPositiveEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

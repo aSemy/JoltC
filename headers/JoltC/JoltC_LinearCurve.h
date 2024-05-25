@@ -8,42 +8,51 @@ extern "C" {
 
 //region constructors
 
-JPC_LinearCurve_t * JPC_LinearCurve_new();
+JoltC_LinearCurve_t * JoltC_LinearCurve_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-void JPC_LinearCurve_Clear(
-  JPC_LinearCurve_t * self
+void JoltC_LinearCurve_Clear(
+  JoltC_LinearCurve_t * self,
+  char** outErrMsg
 );
 
-void JPC_LinearCurve_Reserve(
-  JPC_LinearCurve_t * self,
-  unsigned long inSize
+void JoltC_LinearCurve_Reserve(
+  JoltC_LinearCurve_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_LinearCurve_AddPoint(
-  JPC_LinearCurve_t * self,
+void JoltC_LinearCurve_AddPoint(
+  JoltC_LinearCurve_t * self,
   float inX,
-  float inY
+  float inY,
+  char** outErrMsg
 );
 
-void JPC_LinearCurve_Sort(
-  JPC_LinearCurve_t * self
+void JoltC_LinearCurve_Sort(
+  JoltC_LinearCurve_t * self,
+  char** outErrMsg
 );
 
-float JPC_LinearCurve_GetMinX(
-  JPC_LinearCurve_t * self
+float JoltC_LinearCurve_GetMinX(
+  JoltC_LinearCurve_t * self,
+  char** outErrMsg
 );
 
-float JPC_LinearCurve_GetMaxX(
-  JPC_LinearCurve_t * self
+float JoltC_LinearCurve_GetMaxX(
+  JoltC_LinearCurve_t * self,
+  char** outErrMsg
 );
 
-float JPC_LinearCurve_GetValue(
-  JPC_LinearCurve_t * self,
-  float inX
+float JoltC_LinearCurve_GetValue(
+  JoltC_LinearCurve_t * self,
+  float inX,
+  char** outErrMsg
 );
 
 //endregion functions

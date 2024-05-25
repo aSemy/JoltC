@@ -8,28 +8,34 @@ extern "C" {
 
 //region constructors
 
-JPC_AABoxCast_t * JPC_AABoxCast_new();
+JoltC_AABoxCast_t * JoltC_AABoxCast_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-JPC_AABox_t * JPC_AABoxCast_mBox_Get(
-  JPC_AABoxCast_t * self
+JoltC_AABox_t * JoltC_AABoxCast_mBox_Get(
+  JoltC_AABoxCast_t * self,
+  char** outErrMsg
 );
 
-void JPC_AABoxCast_mBox_Set(
-  JPC_AABoxCast_t * self,
-  JPC_AABox_t * mBox
+void JoltC_AABoxCast_mBox_Set(
+  JoltC_AABoxCast_t * self,
+  JoltC_AABox_t * mBox,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_AABoxCast_mDirection_Get(
-  JPC_AABoxCast_t * self
+JoltC_Vec3_t * JoltC_AABoxCast_mDirection_Get(
+  JoltC_AABoxCast_t * self,
+  char** outErrMsg
 );
 
-void JPC_AABoxCast_mDirection_Set(
-  JPC_AABoxCast_t * self,
-  JPC_Vec3_t * mDirection
+void JoltC_AABoxCast_mDirection_Set(
+  JoltC_AABoxCast_t * self,
+  JoltC_Vec3_t * mDirection,
+  char** outErrMsg
 );
 
 //endregion properties

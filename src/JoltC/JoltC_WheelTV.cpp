@@ -1,5 +1,6 @@
-#include "JoltC/JPC_WheelTV.h"
+#include "JoltC/JoltC_WheelTV.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,259 +8,456 @@ extern "C" {
 
 //region constructors
 
-JPC_WheelTV_t * JPC_WheelTV_new(
-  const JPC_WheelSettingsTV_t * inWheel
+JoltC_WheelTV_t * JoltC_WheelTV_new(
+  const JoltC_WheelSettingsTV_t * inWheel,
+  char** outErrMsg
 ) {
-  JPC_WheelTV_t * cInstance = new JPC_WheelTV_t();
-  WheelTV * cppInstance = new WheelTV(
-    *reinterpret_cast<WheelSettingsTV *>(inWheel->obj)
-  );
-  cInstance->obj = cppInstance;
-  return cInstance;
+  try {
+    JoltC_WheelTV_t * cInstance = new JoltC_WheelTV_t();
+    WheelTV * cppInstance = new WheelTV(
+      *reinterpret_cast<WheelSettingsTV *>(inWheel->obj)
+    );
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-const JPC_WheelSettingsTV_t * JPC_WheelTV_GetSettings_0(
-  JPC_WheelTV_t * self
+const JoltC_WheelSettingsTV_t * JoltC_WheelTV_GetSettings_0(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  const WheelSettingsTV * result = selfCpp->GetSettings();
-  return reinterpret_cast<const JPC_WheelSettingsTV_t *>(result);
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    const WheelSettingsTV * result = selfCpp->GetSettings();
+    return reinterpret_cast<const JoltC_WheelSettingsTV_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_WheelSettings_t * JPC_WheelTV_GetSettings_1(
-  JPC_WheelTV_t * self
+const JoltC_WheelSettings_t * JoltC_WheelTV_GetSettings_1(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  const WheelSettings * result = selfCpp->GetSettings();
-  return reinterpret_cast<const JPC_WheelSettings_t *>(result);
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    const WheelSettings * result = selfCpp->GetSettings();
+    return reinterpret_cast<const JoltC_WheelSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheelTV_GetAngularVelocity(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetAngularVelocity(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  float result = selfCpp->GetAngularVelocity();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    float result = selfCpp->GetAngularVelocity();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheelTV_SetAngularVelocity(
-  JPC_WheelTV_t * self,
-  float inVel
+void JoltC_WheelTV_SetAngularVelocity(
+  JoltC_WheelTV_t * self,
+  float inVel,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  
-  selfCpp->SetAngularVelocity(
-  inVel
-  );
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    
+    selfCpp->SetAngularVelocity(
+    inVel
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheelTV_GetRotationAngle(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetRotationAngle(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  float result = selfCpp->GetRotationAngle();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    float result = selfCpp->GetRotationAngle();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheelTV_SetRotationAngle(
-  JPC_WheelTV_t * self,
-  float inAngle
+void JoltC_WheelTV_SetRotationAngle(
+  JoltC_WheelTV_t * self,
+  float inAngle,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  
-  selfCpp->SetRotationAngle(
-  inAngle
-  );
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    
+    selfCpp->SetRotationAngle(
+    inAngle
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheelTV_GetSteerAngle(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetSteerAngle(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  float result = selfCpp->GetSteerAngle();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    float result = selfCpp->GetSteerAngle();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_WheelTV_SetSteerAngle(
-  JPC_WheelTV_t * self,
-  float inAngle
+void JoltC_WheelTV_SetSteerAngle(
+  JoltC_WheelTV_t * self,
+  float inAngle,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  
-  selfCpp->SetSteerAngle(
-  inAngle
-  );
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    
+    selfCpp->SetSteerAngle(
+    inAngle
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_WheelTV_HasContact(
-  JPC_WheelTV_t * self
+bool JoltC_WheelTV_HasContact(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  bool result = selfCpp->HasContact();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    bool result = selfCpp->HasContact();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_BodyID_t * JPC_WheelTV_GetContactBodyID(
-  JPC_WheelTV_t * self
+JoltC_BodyID_t * JoltC_WheelTV_GetContactBodyID(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  BodyID resultValue = selfCpp->GetContactBodyID();
-  BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JPC_BodyID_t *>(result);
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    BodyID resultValue = selfCpp->GetContactBodyID();
+    BodyID* result = new BodyID(resultValue);
+    return reinterpret_cast<JoltC_BodyID_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_RVec3_t * JPC_WheelTV_GetContactPosition(
-  JPC_WheelTV_t * self
+JoltC_RVec3_t * JoltC_WheelTV_GetContactPosition(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  RVec3 resultValue = selfCpp->GetContactPosition();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JPC_RVec3_t *>(result);
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    RVec3 resultValue = selfCpp->GetContactPosition();
+    RVec3* result = new RVec3(resultValue);
+    return reinterpret_cast<JoltC_RVec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_WheelTV_GetContactPointVelocity(
-  JPC_WheelTV_t * self
+JoltC_Vec3_t * JoltC_WheelTV_GetContactPointVelocity(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  Vec3 resultValue = selfCpp->GetContactPointVelocity();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    Vec3 resultValue = selfCpp->GetContactPointVelocity();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_WheelTV_GetContactNormal(
-  JPC_WheelTV_t * self
+JoltC_Vec3_t * JoltC_WheelTV_GetContactNormal(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  Vec3 resultValue = selfCpp->GetContactNormal();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    Vec3 resultValue = selfCpp->GetContactNormal();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_WheelTV_GetContactLongitudinal(
-  JPC_WheelTV_t * self
+JoltC_Vec3_t * JoltC_WheelTV_GetContactLongitudinal(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  Vec3 resultValue = selfCpp->GetContactLongitudinal();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    Vec3 resultValue = selfCpp->GetContactLongitudinal();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Vec3_t * JPC_WheelTV_GetContactLateral(
-  JPC_WheelTV_t * self
+JoltC_Vec3_t * JoltC_WheelTV_GetContactLateral(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  Vec3 resultValue = selfCpp->GetContactLateral();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    Vec3 resultValue = selfCpp->GetContactLateral();
+    Vec3* result = new Vec3(resultValue);
+    return reinterpret_cast<JoltC_Vec3_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheelTV_GetSuspensionLength(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetSuspensionLength(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  float result = selfCpp->GetSuspensionLength();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    float result = selfCpp->GetSuspensionLength();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_WheelTV_HasHitHardPoint(
-  JPC_WheelTV_t * self
+bool JoltC_WheelTV_HasHitHardPoint(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  bool result = selfCpp->HasHitHardPoint();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    bool result = selfCpp->HasHitHardPoint();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheelTV_GetSuspensionLambda(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetSuspensionLambda(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  float result = selfCpp->GetSuspensionLambda();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    float result = selfCpp->GetSuspensionLambda();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheelTV_GetLongitudinalLambda(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetLongitudinalLambda(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  float result = selfCpp->GetLongitudinalLambda();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    float result = selfCpp->GetLongitudinalLambda();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_WheelTV_GetLateralLambda(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_GetLateralLambda(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
-  WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
-  float result = selfCpp->GetLateralLambda();
-  return result;
+  try {
+    WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
+    float result = selfCpp->GetLateralLambda();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-long JPC_WheelTV_mTrackIndex_Get(
-  JPC_WheelTV_t * self
+long JoltC_WheelTV_mTrackIndex_Get(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   long result = selfCpp->mTrackIndex;
   return result;
 };
 
-void JPC_WheelTV_mTrackIndex_Set(
-  JPC_WheelTV_t * self,
-  long mTrackIndex
+void JoltC_WheelTV_mTrackIndex_Set(
+  JoltC_WheelTV_t * self,
+  long mTrackIndex,
+  char** outErrMsg
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   selfCpp->mTrackIndex = mTrackIndex;
 };
 
-float JPC_WheelTV_mCombinedLongitudinalFriction_Get(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_mCombinedLongitudinalFriction_Get(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   float result = selfCpp->mCombinedLongitudinalFriction;
   return result;
 };
 
-void JPC_WheelTV_mCombinedLongitudinalFriction_Set(
-  JPC_WheelTV_t * self,
-  float mCombinedLongitudinalFriction
+void JoltC_WheelTV_mCombinedLongitudinalFriction_Set(
+  JoltC_WheelTV_t * self,
+  float mCombinedLongitudinalFriction,
+  char** outErrMsg
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   selfCpp->mCombinedLongitudinalFriction = mCombinedLongitudinalFriction;
 };
 
-float JPC_WheelTV_mCombinedLateralFriction_Get(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_mCombinedLateralFriction_Get(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   float result = selfCpp->mCombinedLateralFriction;
   return result;
 };
 
-void JPC_WheelTV_mCombinedLateralFriction_Set(
-  JPC_WheelTV_t * self,
-  float mCombinedLateralFriction
+void JoltC_WheelTV_mCombinedLateralFriction_Set(
+  JoltC_WheelTV_t * self,
+  float mCombinedLateralFriction,
+  char** outErrMsg
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   selfCpp->mCombinedLateralFriction = mCombinedLateralFriction;
 };
 
-float JPC_WheelTV_mBrakeImpulse_Get(
-  JPC_WheelTV_t * self
+float JoltC_WheelTV_mBrakeImpulse_Get(
+  JoltC_WheelTV_t * self,
+  char** outErrMsg
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   float result = selfCpp->mBrakeImpulse;
   return result;
 };
 
-void JPC_WheelTV_mBrakeImpulse_Set(
-  JPC_WheelTV_t * self,
-  float mBrakeImpulse
+void JoltC_WheelTV_mBrakeImpulse_Set(
+  JoltC_WheelTV_t * self,
+  float mBrakeImpulse,
+  char** outErrMsg
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   selfCpp->mBrakeImpulse = mBrakeImpulse;

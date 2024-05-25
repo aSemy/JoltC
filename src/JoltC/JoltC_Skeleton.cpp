@@ -1,5 +1,6 @@
-#include "JoltC/JPC_Skeleton.h"
+#include "JoltC/JoltC_Skeleton.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,52 +8,98 @@ extern "C" {
 
 //region constructors
 
-JPC_Skeleton_t * JPC_Skeleton_new() {
-  JPC_Skeleton_t * cInstance = new JPC_Skeleton_t();
-  Skeleton * cppInstance = new Skeleton();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_Skeleton_t * JoltC_Skeleton_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_Skeleton_t * cInstance = new JoltC_Skeleton_t();
+    Skeleton * cppInstance = new Skeleton();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-long JPC_Skeleton_AddJoint(
-  JPC_Skeleton_t * self,
-  const JPC_JPHString_t * inName,
-  long inParentIndex
+long JoltC_Skeleton_AddJoint(
+  JoltC_Skeleton_t * self,
+  const JoltC_JPHString_t * inName,
+  long inParentIndex,
+  char** outErrMsg
 ) {
-  Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
-  long result = selfCpp->AddJoint(
-  *reinterpret_cast<JPHString *>(inName->obj),
-  inParentIndex
-  );
-  return result;
+  try {
+    Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
+    long result = selfCpp->AddJoint(
+    *reinterpret_cast<JPHString *>(inName->obj),
+    inParentIndex
+    );
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_Skeleton_GetJointCount(
-  JPC_Skeleton_t * self
+long JoltC_Skeleton_GetJointCount(
+  JoltC_Skeleton_t * self,
+  char** outErrMsg
 ) {
-  Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
-  long result = selfCpp->GetJointCount();
-  return result;
+  try {
+    Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
+    long result = selfCpp->GetJointCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_Skeleton_AreJointsCorrectlyOrdered(
-  JPC_Skeleton_t * self
+bool JoltC_Skeleton_AreJointsCorrectlyOrdered(
+  JoltC_Skeleton_t * self,
+  char** outErrMsg
 ) {
-  Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
-  bool result = selfCpp->AreJointsCorrectlyOrdered();
-  return result;
+  try {
+    Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
+    bool result = selfCpp->AreJointsCorrectlyOrdered();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_Skeleton_CalculateParentJointIndices(
-  JPC_Skeleton_t * self
+void JoltC_Skeleton_CalculateParentJointIndices(
+  JoltC_Skeleton_t * self,
+  char** outErrMsg
 ) {
-  Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
-  
-  selfCpp->CalculateParentJointIndices();
+  try {
+    Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
+    
+    selfCpp->CalculateParentJointIndices();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

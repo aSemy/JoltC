@@ -1,5 +1,6 @@
-#include "JoltC/JPC_PulleyConstraint.h"
+#include "JoltC/JoltC_PulleyConstraint.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,226 +8,451 @@ extern "C" {
 
 //region functions
 
-void JPC_PulleyConstraint_SetLength(
-  JPC_PulleyConstraint_t * self,
+void JoltC_PulleyConstraint_SetLength(
+  JoltC_PulleyConstraint_t * self,
   float inMinLength,
-  float inMaxLength
+  float inMaxLength,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->SetLength(
-  inMinLength,
-  inMaxLength
-  );
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->SetLength(
+    inMinLength,
+    inMaxLength
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_PulleyConstraint_GetMinLength(
-  JPC_PulleyConstraint_t * self
+float JoltC_PulleyConstraint_GetMinLength(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  float result = selfCpp->GetMinLength();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    float result = selfCpp->GetMinLength();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_PulleyConstraint_GetMaxLength(
-  JPC_PulleyConstraint_t * self
+float JoltC_PulleyConstraint_GetMaxLength(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  float result = selfCpp->GetMaxLength();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    float result = selfCpp->GetMaxLength();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_PulleyConstraint_GetCurrentLength(
-  JPC_PulleyConstraint_t * self
+float JoltC_PulleyConstraint_GetCurrentLength(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  float result = selfCpp->GetCurrentLength();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    float result = selfCpp->GetCurrentLength();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_PulleyConstraint_GetBody1(
-  JPC_PulleyConstraint_t * self
+JoltC_Body_t * JoltC_PulleyConstraint_GetBody1(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody1();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Body_t * JPC_PulleyConstraint_GetBody2(
-  JPC_PulleyConstraint_t * self
+JoltC_Body_t * JoltC_PulleyConstraint_GetBody2(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JPC_Body_t *>(result);
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    Body * result = selfCpp->GetBody2();
+    return reinterpret_cast<JoltC_Body_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_PulleyConstraint_GetConstraintToBody1Matrix(
-  JPC_PulleyConstraint_t * self
+JoltC_Mat44_t * JoltC_PulleyConstraint_GetConstraintToBody1Matrix(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_PulleyConstraint_GetConstraintToBody2Matrix(
-  JPC_PulleyConstraint_t * self
+JoltC_Mat44_t * JoltC_PulleyConstraint_GetConstraintToBody2Matrix(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_PulleyConstraint_GetRefCount(
-  JPC_PulleyConstraint_t * self
+unsigned long JoltC_PulleyConstraint_GetRefCount(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PulleyConstraint_AddRef(
-  JPC_PulleyConstraint_t * self
+void JoltC_PulleyConstraint_AddRef(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PulleyConstraint_Release(
-  JPC_PulleyConstraint_t * self
+void JoltC_PulleyConstraint_Release(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintType JPC_PulleyConstraint_GetType(
-  JPC_PulleyConstraint_t * self
+JoltC_EConstraintType JoltC_PulleyConstraint_GetType(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  EConstraintType result = selfCpp->GetType();
-  return static_cast<JPC_EConstraintType>(static_cast<int>(result));
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    EConstraintType result = selfCpp->GetType();
+    return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_EConstraintSubType JPC_PulleyConstraint_GetSubType(
-  JPC_PulleyConstraint_t * self
+JoltC_EConstraintSubType JoltC_PulleyConstraint_GetSubType(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  EConstraintSubType result = selfCpp->GetSubType();
-  return static_cast<JPC_EConstraintSubType>(static_cast<int>(result));
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    EConstraintSubType result = selfCpp->GetSubType();
+    return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long JPC_PulleyConstraint_GetConstraintPriority(
-  JPC_PulleyConstraint_t * self
+unsigned long JoltC_PulleyConstraint_GetConstraintPriority(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    unsigned long result = selfCpp->GetConstraintPriority();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PulleyConstraint_SetConstraintPriority(
-  JPC_PulleyConstraint_t * self,
-  unsigned long inPriority
+void JoltC_PulleyConstraint_SetConstraintPriority(
+  JoltC_PulleyConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->SetConstraintPriority(
-  inPriority
-  );
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->SetConstraintPriority(
+    inPriority
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PulleyConstraint_SetNumVelocityStepsOverride(
-  JPC_PulleyConstraint_t * self,
-  long inN
+void JoltC_PulleyConstraint_SetNumVelocityStepsOverride(
+  JoltC_PulleyConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->SetNumVelocityStepsOverride(
-  inN
-  );
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->SetNumVelocityStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_PulleyConstraint_GetNumVelocityStepsOverride(
-  JPC_PulleyConstraint_t * self
+long JoltC_PulleyConstraint_GetNumVelocityStepsOverride(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    long result = selfCpp->GetNumVelocityStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PulleyConstraint_SetNumPositionStepsOverride(
-  JPC_PulleyConstraint_t * self,
-  long inN
+void JoltC_PulleyConstraint_SetNumPositionStepsOverride(
+  JoltC_PulleyConstraint_t * self,
+  long inN,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->SetNumPositionStepsOverride(
-  inN
-  );
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->SetNumPositionStepsOverride(
+    inN
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_PulleyConstraint_GetNumPositionStepsOverride(
-  JPC_PulleyConstraint_t * self
+long JoltC_PulleyConstraint_GetNumPositionStepsOverride(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    long result = selfCpp->GetNumPositionStepsOverride();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PulleyConstraint_SetEnabled(
-  JPC_PulleyConstraint_t * self,
-  bool inEnabled
+void JoltC_PulleyConstraint_SetEnabled(
+  JoltC_PulleyConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->SetEnabled(
-  inEnabled
-  );
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->SetEnabled(
+    inEnabled
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_PulleyConstraint_GetEnabled(
-  JPC_PulleyConstraint_t * self
+bool JoltC_PulleyConstraint_GetEnabled(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    bool result = selfCpp->GetEnabled();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_PulleyConstraint_IsActive(
-  JPC_PulleyConstraint_t * self
+bool JoltC_PulleyConstraint_IsActive(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    bool result = selfCpp->IsActive();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-unsigned long long int JPC_PulleyConstraint_GetUserData(
-  JPC_PulleyConstraint_t * self
+unsigned long long int JoltC_PulleyConstraint_GetUserData(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    unsigned long long int result = selfCpp->GetUserData();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PulleyConstraint_SetUserData(
-  JPC_PulleyConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_PulleyConstraint_SetUserData(
+  JoltC_PulleyConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->SetUserData(
-  inUserData
-  );
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->SetUserData(
+    inUserData
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_PulleyConstraint_ResetWarmStart(
-  JPC_PulleyConstraint_t * self
+void JoltC_PulleyConstraint_ResetWarmStart(
+  JoltC_PulleyConstraint_t * self,
+  char** outErrMsg
 ) {
-  PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
-  selfCpp->ResetWarmStart();
+  try {
+    PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
+    
+    selfCpp->ResetWarmStart();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

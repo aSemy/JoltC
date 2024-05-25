@@ -8,86 +8,104 @@ extern "C" {
 
 //region constructors
 
-JPC_PointConstraintSettings_t * JPC_PointConstraintSettings_new();
+JoltC_PointConstraintSettings_t * JoltC_PointConstraintSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-JPC_Constraint_t * JPC_PointConstraintSettings_Create(
-  JPC_PointConstraintSettings_t * self,
-  JPC_Body_t * inBody1,
-  JPC_Body_t * inBody2
+JoltC_Constraint_t * JoltC_PointConstraintSettings_Create(
+  JoltC_PointConstraintSettings_t * self,
+  JoltC_Body_t * inBody1,
+  JoltC_Body_t * inBody2,
+  char** outErrMsg
 );
 
-unsigned long JPC_PointConstraintSettings_GetRefCount(
-  JPC_PointConstraintSettings_t * self
+unsigned long JoltC_PointConstraintSettings_GetRefCount(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraintSettings_AddRef(
-  JPC_PointConstraintSettings_t * self
+void JoltC_PointConstraintSettings_AddRef(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraintSettings_Release(
-  JPC_PointConstraintSettings_t * self
+void JoltC_PointConstraintSettings_Release(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_EConstraintSpace JPC_PointConstraintSettings_mSpace_Get(
-  JPC_PointConstraintSettings_t * self
+JoltC_EConstraintSpace JoltC_PointConstraintSettings_mSpace_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraintSettings_mSpace_Set(
-  JPC_PointConstraintSettings_t * self,
-  JPC_EConstraintSpace mSpace
+void JoltC_PointConstraintSettings_mSpace_Set(
+  JoltC_PointConstraintSettings_t * self,
+  JoltC_EConstraintSpace mSpace,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_PointConstraintSettings_mPoint1_Get(
-  JPC_PointConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_PointConstraintSettings_mPoint1_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraintSettings_mPoint1_Set(
-  JPC_PointConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint1
+void JoltC_PointConstraintSettings_mPoint1_Set(
+  JoltC_PointConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint1,
+  char** outErrMsg
 );
 
-JPC_RVec3_t * JPC_PointConstraintSettings_mPoint2_Get(
-  JPC_PointConstraintSettings_t * self
+JoltC_RVec3_t * JoltC_PointConstraintSettings_mPoint2_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraintSettings_mPoint2_Set(
-  JPC_PointConstraintSettings_t * self,
-  JPC_RVec3_t * mPoint2
+void JoltC_PointConstraintSettings_mPoint2_Set(
+  JoltC_PointConstraintSettings_t * self,
+  JoltC_RVec3_t * mPoint2,
+  char** outErrMsg
 );
 
-bool JPC_PointConstraintSettings_mEnabled_Get(
-  JPC_PointConstraintSettings_t * self
+bool JoltC_PointConstraintSettings_mEnabled_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraintSettings_mEnabled_Set(
-  JPC_PointConstraintSettings_t * self,
-  bool mEnabled
+void JoltC_PointConstraintSettings_mEnabled_Set(
+  JoltC_PointConstraintSettings_t * self,
+  bool mEnabled,
+  char** outErrMsg
 );
 
-long JPC_PointConstraintSettings_mNumVelocityStepsOverride_Get(
-  JPC_PointConstraintSettings_t * self
+long JoltC_PointConstraintSettings_mNumVelocityStepsOverride_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraintSettings_mNumVelocityStepsOverride_Set(
-  JPC_PointConstraintSettings_t * self,
-  long mNumVelocityStepsOverride
+void JoltC_PointConstraintSettings_mNumVelocityStepsOverride_Set(
+  JoltC_PointConstraintSettings_t * self,
+  long mNumVelocityStepsOverride,
+  char** outErrMsg
 );
 
-long JPC_PointConstraintSettings_mNumPositionStepsOverride_Get(
-  JPC_PointConstraintSettings_t * self
+long JoltC_PointConstraintSettings_mNumPositionStepsOverride_Get(
+  JoltC_PointConstraintSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PointConstraintSettings_mNumPositionStepsOverride_Set(
-  JPC_PointConstraintSettings_t * self,
-  long mNumPositionStepsOverride
+void JoltC_PointConstraintSettings_mNumPositionStepsOverride_Set(
+  JoltC_PointConstraintSettings_t * self,
+  long mNumPositionStepsOverride,
+  char** outErrMsg
 );
 
 //endregion properties

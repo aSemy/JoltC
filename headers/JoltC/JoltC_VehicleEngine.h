@@ -8,84 +8,101 @@ extern "C" {
 
 //region functions
 
-void JPC_VehicleEngine_ClampRPM(
-  JPC_VehicleEngine_t * self
+void JoltC_VehicleEngine_ClampRPM(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-float JPC_VehicleEngine_GetCurrentRPM(
-  JPC_VehicleEngine_t * self
+float JoltC_VehicleEngine_GetCurrentRPM(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleEngine_SetCurrentRPM(
-  JPC_VehicleEngine_t * self,
-  float inRPM
+void JoltC_VehicleEngine_SetCurrentRPM(
+  JoltC_VehicleEngine_t * self,
+  float inRPM,
+  char** outErrMsg
 );
 
-float JPC_VehicleEngine_GetAngularVelocity(
-  JPC_VehicleEngine_t * self
+float JoltC_VehicleEngine_GetAngularVelocity(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-float JPC_VehicleEngine_GetTorque(
-  JPC_VehicleEngine_t * self,
-  float inAcceleration
+float JoltC_VehicleEngine_GetTorque(
+  JoltC_VehicleEngine_t * self,
+  float inAcceleration,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-float JPC_VehicleEngine_mMaxTorque_Get(
-  JPC_VehicleEngine_t * self
+float JoltC_VehicleEngine_mMaxTorque_Get(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleEngine_mMaxTorque_Set(
-  JPC_VehicleEngine_t * self,
-  float mMaxTorque
+void JoltC_VehicleEngine_mMaxTorque_Set(
+  JoltC_VehicleEngine_t * self,
+  float mMaxTorque,
+  char** outErrMsg
 );
 
-float JPC_VehicleEngine_mMinRPM_Get(
-  JPC_VehicleEngine_t * self
+float JoltC_VehicleEngine_mMinRPM_Get(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleEngine_mMinRPM_Set(
-  JPC_VehicleEngine_t * self,
-  float mMinRPM
+void JoltC_VehicleEngine_mMinRPM_Set(
+  JoltC_VehicleEngine_t * self,
+  float mMinRPM,
+  char** outErrMsg
 );
 
-float JPC_VehicleEngine_mMaxRPM_Get(
-  JPC_VehicleEngine_t * self
+float JoltC_VehicleEngine_mMaxRPM_Get(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleEngine_mMaxRPM_Set(
-  JPC_VehicleEngine_t * self,
-  float mMaxRPM
+void JoltC_VehicleEngine_mMaxRPM_Set(
+  JoltC_VehicleEngine_t * self,
+  float mMaxRPM,
+  char** outErrMsg
 );
 
-JPC_LinearCurve_t * JPC_VehicleEngine_mNormalizedTorque_Get(
-  JPC_VehicleEngine_t * self
+JoltC_LinearCurve_t * JoltC_VehicleEngine_mNormalizedTorque_Get(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleEngine_mNormalizedTorque_Set(
-  JPC_VehicleEngine_t * self,
-  JPC_LinearCurve_t * mNormalizedTorque
+void JoltC_VehicleEngine_mNormalizedTorque_Set(
+  JoltC_VehicleEngine_t * self,
+  JoltC_LinearCurve_t * mNormalizedTorque,
+  char** outErrMsg
 );
 
-float JPC_VehicleEngine_mInertia_Get(
-  JPC_VehicleEngine_t * self
+float JoltC_VehicleEngine_mInertia_Get(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleEngine_mInertia_Set(
-  JPC_VehicleEngine_t * self,
-  float mInertia
+void JoltC_VehicleEngine_mInertia_Set(
+  JoltC_VehicleEngine_t * self,
+  float mInertia,
+  char** outErrMsg
 );
 
-float JPC_VehicleEngine_mAngularDamping_Get(
-  JPC_VehicleEngine_t * self
+float JoltC_VehicleEngine_mAngularDamping_Get(
+  JoltC_VehicleEngine_t * self,
+  char** outErrMsg
 );
 
-void JPC_VehicleEngine_mAngularDamping_Set(
-  JPC_VehicleEngine_t * self,
-  float mAngularDamping
+void JoltC_VehicleEngine_mAngularDamping_Set(
+  JoltC_VehicleEngine_t * self,
+  float mAngularDamping,
+  char** outErrMsg
 );
 
 //endregion properties

@@ -1,5 +1,6 @@
-#include "JoltC/JPC_TriangleList.h"
+#include "JoltC/JoltC_TriangleList.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,84 +8,157 @@ extern "C" {
 
 //region constructors
 
-JPC_TriangleList_t * JPC_TriangleList_new() {
-  JPC_TriangleList_t * cInstance = new JPC_TriangleList_t();
-  TriangleList * cppInstance = new TriangleList();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_TriangleList_t * JoltC_TriangleList_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_TriangleList_t * cInstance = new JoltC_TriangleList_t();
+    TriangleList * cppInstance = new TriangleList();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-bool JPC_TriangleList_empty(
-  JPC_TriangleList_t * self
+bool JoltC_TriangleList_empty(
+  JoltC_TriangleList_t * self,
+  char** outErrMsg
 ) {
-  TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_TriangleList_size(
-  JPC_TriangleList_t * self
+long JoltC_TriangleList_size(
+  JoltC_TriangleList_t * self,
+  char** outErrMsg
 ) {
-  TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Triangle_t * JPC_TriangleList_at(
-  JPC_TriangleList_t * self,
-  long inIndex
+JoltC_Triangle_t * JoltC_TriangleList_at(
+  JoltC_TriangleList_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  Triangle& resultRef = selfCpp->at(
-  inIndex
-  );
-  Triangle * result = &resultRef;
-  return reinterpret_cast<JPC_Triangle_t *>(result);
+  try {
+    TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
+    Triangle& resultRef = selfCpp->at(
+    inIndex
+    );
+    Triangle * result = &resultRef;
+    return reinterpret_cast<JoltC_Triangle_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TriangleList_push_back(
-  JPC_TriangleList_t * self,
-  const JPC_Triangle_t * inTriangle
+void JoltC_TriangleList_push_back(
+  JoltC_TriangleList_t * self,
+  const JoltC_Triangle_t * inTriangle,
+  char** outErrMsg
 ) {
-  TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<Triangle *>(inTriangle->obj)
-  );
+  try {
+    TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<Triangle *>(inTriangle->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TriangleList_reserve(
-  JPC_TriangleList_t * self,
-  unsigned long inSize
+void JoltC_TriangleList_reserve(
+  JoltC_TriangleList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  
-  selfCpp->reserve(
-  inSize
-  );
+  try {
+    TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
+    
+    selfCpp->reserve(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TriangleList_resize(
-  JPC_TriangleList_t * self,
-  unsigned long inSize
+void JoltC_TriangleList_resize(
+  JoltC_TriangleList_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_TriangleList_clear(
-  JPC_TriangleList_t * self
+void JoltC_TriangleList_clear(
+  JoltC_TriangleList_t * self,
+  char** outErrMsg
 ) {
-  TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

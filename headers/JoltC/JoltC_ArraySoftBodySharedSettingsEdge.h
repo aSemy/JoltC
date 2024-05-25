@@ -8,36 +8,43 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArraySoftBodySharedSettingsEdge_empty(
-  JPC_ArraySoftBodySharedSettingsEdge_t * self
+bool JoltC_ArraySoftBodySharedSettingsEdge_empty(
+  JoltC_ArraySoftBodySharedSettingsEdge_t * self,
+  char** outErrMsg
 );
 
-long JPC_ArraySoftBodySharedSettingsEdge_size(
-  JPC_ArraySoftBodySharedSettingsEdge_t * self
+long JoltC_ArraySoftBodySharedSettingsEdge_size(
+  JoltC_ArraySoftBodySharedSettingsEdge_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodySharedSettingsEdge_t * JPC_ArraySoftBodySharedSettingsEdge_at(
-  JPC_ArraySoftBodySharedSettingsEdge_t * self,
-  long inIndex
+JoltC_SoftBodySharedSettingsEdge_t * JoltC_ArraySoftBodySharedSettingsEdge_at(
+  JoltC_ArraySoftBodySharedSettingsEdge_t * self,
+  long inIndex,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsEdge_push_back(
-  JPC_ArraySoftBodySharedSettingsEdge_t * self,
-  const JPC_SoftBodySharedSettingsEdge_t * inValue
+void JoltC_ArraySoftBodySharedSettingsEdge_push_back(
+  JoltC_ArraySoftBodySharedSettingsEdge_t * self,
+  const JoltC_SoftBodySharedSettingsEdge_t * inValue,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsEdge_reserve(
-  JPC_ArraySoftBodySharedSettingsEdge_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsEdge_reserve(
+  JoltC_ArraySoftBodySharedSettingsEdge_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsEdge_resize(
-  JPC_ArraySoftBodySharedSettingsEdge_t * self,
-  unsigned long inSize
+void JoltC_ArraySoftBodySharedSettingsEdge_resize(
+  JoltC_ArraySoftBodySharedSettingsEdge_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 );
 
-void JPC_ArraySoftBodySharedSettingsEdge_clear(
-  JPC_ArraySoftBodySharedSettingsEdge_t * self
+void JoltC_ArraySoftBodySharedSettingsEdge_clear(
+  JoltC_ArraySoftBodySharedSettingsEdge_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

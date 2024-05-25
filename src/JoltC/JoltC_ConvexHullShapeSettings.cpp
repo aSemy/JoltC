@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ConvexHullShapeSettings.h"
+#include "JoltC/JoltC_ConvexHullShapeSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,170 +8,239 @@ extern "C" {
 
 //region constructors
 
-JPC_ConvexHullShapeSettings_t * JPC_ConvexHullShapeSettings_new() {
-  JPC_ConvexHullShapeSettings_t * cInstance = new JPC_ConvexHullShapeSettings_t();
-  ConvexHullShapeSettings * cppInstance = new ConvexHullShapeSettings();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_ConvexHullShapeSettings_t * JoltC_ConvexHullShapeSettings_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_ConvexHullShapeSettings_t * cInstance = new JoltC_ConvexHullShapeSettings_t();
+    ConvexHullShapeSettings * cppInstance = new ConvexHullShapeSettings();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_ConvexHullShapeSettings_GetRefCount(
-  JPC_ConvexHullShapeSettings_t * self
+unsigned long JoltC_ConvexHullShapeSettings_GetRefCount(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
+  try {
+    ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
+    unsigned long result = selfCpp->GetRefCount();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ConvexHullShapeSettings_AddRef(
-  JPC_ConvexHullShapeSettings_t * self
+void JoltC_ConvexHullShapeSettings_AddRef(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  
-  selfCpp->AddRef();
+  try {
+    ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
+    
+    selfCpp->AddRef();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ConvexHullShapeSettings_Release(
-  JPC_ConvexHullShapeSettings_t * self
+void JoltC_ConvexHullShapeSettings_Release(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  
-  selfCpp->Release();
+  try {
+    ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
+    
+    selfCpp->Release();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Shape_ShapeResult_t * JPC_ConvexHullShapeSettings_Create(
-  JPC_ConvexHullShapeSettings_t * self
+JoltC_Shape_ShapeResult_t * JoltC_ConvexHullShapeSettings_Create(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JPC_Shape_ShapeResult_t *>(result);
+  try {
+    ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
+    Shape::ShapeResult resultValue = selfCpp->Create();
+    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ConvexHullShapeSettings_ClearCachedResult(
-  JPC_ConvexHullShapeSettings_t * self
+void JoltC_ConvexHullShapeSettings_ClearCachedResult(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
-  ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  
-  selfCpp->ClearCachedResult();
+  try {
+    ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
+    
+    selfCpp->ClearCachedResult();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-JPC_ArrayVec3_t * JPC_ConvexHullShapeSettings_mPoints_Get(
-  JPC_ConvexHullShapeSettings_t * self
+JoltC_ArrayVec3_t * JoltC_ConvexHullShapeSettings_mPoints_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   ArrayVec3 resultValue = selfCpp->mPoints;
   ArrayVec3* result = new ArrayVec3(resultValue);
-  return reinterpret_cast<JPC_ArrayVec3_t *>(result);
+  return reinterpret_cast<JoltC_ArrayVec3_t *>(result);
 };
 
-void JPC_ConvexHullShapeSettings_mPoints_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  JPC_ArrayVec3_t * mPoints
+void JoltC_ConvexHullShapeSettings_mPoints_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  JoltC_ArrayVec3_t * mPoints,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->mPoints = *reinterpret_cast<ArrayVec3 *>(mPoints->obj);
 };
 
-float JPC_ConvexHullShapeSettings_mMaxConvexRadius_Get(
-  JPC_ConvexHullShapeSettings_t * self
+float JoltC_ConvexHullShapeSettings_mMaxConvexRadius_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   float result = selfCpp->mMaxConvexRadius;
   return result;
 };
 
-void JPC_ConvexHullShapeSettings_mMaxConvexRadius_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  float mMaxConvexRadius
+void JoltC_ConvexHullShapeSettings_mMaxConvexRadius_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  float mMaxConvexRadius,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->mMaxConvexRadius = mMaxConvexRadius;
 };
 
-float JPC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Get(
-  JPC_ConvexHullShapeSettings_t * self
+float JoltC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   float result = selfCpp->mMaxErrorConvexRadius;
   return result;
 };
 
-void JPC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  float mMaxErrorConvexRadius
+void JoltC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  float mMaxErrorConvexRadius,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->mMaxErrorConvexRadius = mMaxErrorConvexRadius;
 };
 
-float JPC_ConvexHullShapeSettings_mHullTolerance_Get(
-  JPC_ConvexHullShapeSettings_t * self
+float JoltC_ConvexHullShapeSettings_mHullTolerance_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   float result = selfCpp->mHullTolerance;
   return result;
 };
 
-void JPC_ConvexHullShapeSettings_mHullTolerance_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  float mHullTolerance
+void JoltC_ConvexHullShapeSettings_mHullTolerance_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  float mHullTolerance,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->mHullTolerance = mHullTolerance;
 };
 
-const JPC_PhysicsMaterial_t * JPC_ConvexHullShapeSettings_mMaterial_Get(
-  JPC_ConvexHullShapeSettings_t * self
+const JoltC_PhysicsMaterial_t * JoltC_ConvexHullShapeSettings_mMaterial_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   const PhysicsMaterial * result = selfCpp->mMaterial;
-  return reinterpret_cast<const JPC_PhysicsMaterial_t *>(result);
+  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
 };
 
-const void JPC_ConvexHullShapeSettings_mMaterial_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  const JPC_PhysicsMaterial_t * mMaterial
+const void JoltC_ConvexHullShapeSettings_mMaterial_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  const JoltC_PhysicsMaterial_t * mMaterial,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);
 };
 
-float JPC_ConvexHullShapeSettings_mDensity_Get(
-  JPC_ConvexHullShapeSettings_t * self
+float JoltC_ConvexHullShapeSettings_mDensity_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   float result = selfCpp->mDensity;
   return result;
 };
 
-void JPC_ConvexHullShapeSettings_mDensity_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  float mDensity
+void JoltC_ConvexHullShapeSettings_mDensity_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  float mDensity,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->mDensity = mDensity;
 };
 
-unsigned long long int JPC_ConvexHullShapeSettings_mUserData_Get(
-  JPC_ConvexHullShapeSettings_t * self
+unsigned long long int JoltC_ConvexHullShapeSettings_mUserData_Get(
+  JoltC_ConvexHullShapeSettings_t * self,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   unsigned long long int result = selfCpp->mUserData;
   return result;
 };
 
-void JPC_ConvexHullShapeSettings_mUserData_Set(
-  JPC_ConvexHullShapeSettings_t * self,
-  unsigned long long int mUserData
+void JoltC_ConvexHullShapeSettings_mUserData_Set(
+  JoltC_ConvexHullShapeSettings_t * self,
+  unsigned long long int mUserData,
+  char** outErrMsg
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;

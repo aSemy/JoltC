@@ -1,5 +1,6 @@
-#include "JoltC/JPC_ArrayVehicleDifferentialSettings.h"
+#include "JoltC/JoltC_ArrayVehicleDifferentialSettings.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,62 +8,116 @@ extern "C" {
 
 //region functions
 
-bool JPC_ArrayVehicleDifferentialSettings_empty(
-  JPC_ArrayVehicleDifferentialSettings_t * self
+bool JoltC_ArrayVehicleDifferentialSettings_empty(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  char** outErrMsg
 ) {
-  ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
+  try {
+    ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
+    bool result = selfCpp->empty();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-long JPC_ArrayVehicleDifferentialSettings_size(
-  JPC_ArrayVehicleDifferentialSettings_t * self
+long JoltC_ArrayVehicleDifferentialSettings_size(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  char** outErrMsg
 ) {
-  ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  long result = selfCpp->size();
-  return result;
+  try {
+    ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
+    long result = selfCpp->size();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_VehicleDifferentialSettings_t * JPC_ArrayVehicleDifferentialSettings_at(
-  JPC_ArrayVehicleDifferentialSettings_t * self,
-  long inIndex
+JoltC_VehicleDifferentialSettings_t * JoltC_ArrayVehicleDifferentialSettings_at(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  long inIndex,
+  char** outErrMsg
 ) {
-  ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  VehicleDifferentialSettings& resultRef = selfCpp->at(
-  inIndex
-  );
-  VehicleDifferentialSettings * result = &resultRef;
-  return reinterpret_cast<JPC_VehicleDifferentialSettings_t *>(result);
+  try {
+    ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
+    VehicleDifferentialSettings& resultRef = selfCpp->at(
+    inIndex
+    );
+    VehicleDifferentialSettings * result = &resultRef;
+    return reinterpret_cast<JoltC_VehicleDifferentialSettings_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVehicleDifferentialSettings_push_back(
-  JPC_ArrayVehicleDifferentialSettings_t * self,
-  JPC_VehicleDifferentialSettings_t * inValue
+void JoltC_ArrayVehicleDifferentialSettings_push_back(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  JoltC_VehicleDifferentialSettings_t * inValue,
+  char** outErrMsg
 ) {
-  ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  
-  selfCpp->push_back(
-  *reinterpret_cast<VehicleDifferentialSettings *>(inValue->obj)
-  );
+  try {
+    ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
+    
+    selfCpp->push_back(
+    *reinterpret_cast<VehicleDifferentialSettings *>(inValue->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVehicleDifferentialSettings_resize(
-  JPC_ArrayVehicleDifferentialSettings_t * self,
-  unsigned long inSize
+void JoltC_ArrayVehicleDifferentialSettings_resize(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  unsigned long inSize,
+  char** outErrMsg
 ) {
-  ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  
-  selfCpp->resize(
-  inSize
-  );
+  try {
+    ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
+    
+    selfCpp->resize(
+    inSize
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_ArrayVehicleDifferentialSettings_clear(
-  JPC_ArrayVehicleDifferentialSettings_t * self
+void JoltC_ArrayVehicleDifferentialSettings_clear(
+  JoltC_ArrayVehicleDifferentialSettings_t * self,
+  char** outErrMsg
 ) {
-  ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  
-  selfCpp->clear();
+  try {
+    ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
+    
+    selfCpp->clear();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

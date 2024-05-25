@@ -8,22 +8,27 @@ extern "C" {
 
 //region constructors
 
-JPC_PhysicsMaterial_t * JPC_PhysicsMaterial_new();
+JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterial_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-unsigned long JPC_PhysicsMaterial_GetRefCount(
-  JPC_PhysicsMaterial_t * self
+unsigned long JoltC_PhysicsMaterial_GetRefCount(
+  JoltC_PhysicsMaterial_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsMaterial_AddRef(
-  JPC_PhysicsMaterial_t * self
+void JoltC_PhysicsMaterial_AddRef(
+  JoltC_PhysicsMaterial_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsMaterial_Release(
-  JPC_PhysicsMaterial_t * self
+void JoltC_PhysicsMaterial_Release(
+  JoltC_PhysicsMaterial_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

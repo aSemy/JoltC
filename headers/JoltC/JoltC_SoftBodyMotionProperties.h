@@ -8,296 +8,359 @@ extern "C" {
 
 //region functions
 
-const JPC_SoftBodySharedSettings_t * JPC_SoftBodyMotionProperties_GetSettings(
-  JPC_SoftBodyMotionProperties_t * self
+const JoltC_SoftBodySharedSettings_t * JoltC_SoftBodyMotionProperties_GetSettings(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_ArraySoftBodyVertex_t * JPC_SoftBodyMotionProperties_GetVertices(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_ArraySoftBodyVertex_t * JoltC_SoftBodyMotionProperties_GetVertices(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_SoftBodyVertex_t * JPC_SoftBodyMotionProperties_GetVertex(
-  JPC_SoftBodyMotionProperties_t * self,
-  unsigned long inIndex
+JoltC_SoftBodyVertex_t * JoltC_SoftBodyMotionProperties_GetVertex(
+  JoltC_SoftBodyMotionProperties_t * self,
+  unsigned long inIndex,
+  char** outErrMsg
 );
 
-const JPC_PhysicsMaterialList_t * JPC_SoftBodyMotionProperties_GetMaterials(
-  JPC_SoftBodyMotionProperties_t * self
+const JoltC_PhysicsMaterialList_t * JoltC_SoftBodyMotionProperties_GetMaterials(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-const JPC_ArraySoftBodySharedSettingsFace_t * JPC_SoftBodyMotionProperties_GetFaces(
-  JPC_SoftBodyMotionProperties_t * self
+const JoltC_ArraySoftBodySharedSettingsFace_t * JoltC_SoftBodyMotionProperties_GetFaces(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-const JPC_SoftBodySharedSettingsFace_t * JPC_SoftBodyMotionProperties_GetFace(
-  JPC_SoftBodyMotionProperties_t * self,
-  unsigned long inIndex
+const JoltC_SoftBodySharedSettingsFace_t * JoltC_SoftBodyMotionProperties_GetFace(
+  JoltC_SoftBodyMotionProperties_t * self,
+  unsigned long inIndex,
+  char** outErrMsg
 );
 
-unsigned long JPC_SoftBodyMotionProperties_GetNumIterations(
-  JPC_SoftBodyMotionProperties_t * self
+unsigned long JoltC_SoftBodyMotionProperties_GetNumIterations(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetNumIterations(
-  JPC_SoftBodyMotionProperties_t * self,
-  unsigned long inNumIterations
+void JoltC_SoftBodyMotionProperties_SetNumIterations(
+  JoltC_SoftBodyMotionProperties_t * self,
+  unsigned long inNumIterations,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetPressure(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetPressure(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetPressure(
-  JPC_SoftBodyMotionProperties_t * self,
-  float inPressure
+void JoltC_SoftBodyMotionProperties_SetPressure(
+  JoltC_SoftBodyMotionProperties_t * self,
+  float inPressure,
+  char** outErrMsg
 );
 
-bool JPC_SoftBodyMotionProperties_GetUpdatePosition(
-  JPC_SoftBodyMotionProperties_t * self
+bool JoltC_SoftBodyMotionProperties_GetUpdatePosition(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetUpdatePosition(
-  JPC_SoftBodyMotionProperties_t * self,
-  bool inUpdatePosition
+void JoltC_SoftBodyMotionProperties_SetUpdatePosition(
+  JoltC_SoftBodyMotionProperties_t * self,
+  bool inUpdatePosition,
+  char** outErrMsg
 );
 
-bool JPC_SoftBodyMotionProperties_GetEnableSkinConstraints(
-  JPC_SoftBodyMotionProperties_t * self
+bool JoltC_SoftBodyMotionProperties_GetEnableSkinConstraints(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetEnableSkinConstraints(
-  JPC_SoftBodyMotionProperties_t * self,
-  bool inEnableSkinConstraints
+void JoltC_SoftBodyMotionProperties_SetEnableSkinConstraints(
+  JoltC_SoftBodyMotionProperties_t * self,
+  bool inEnableSkinConstraints,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetSkinnedMaxDistanceMultiplier(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetSkinnedMaxDistanceMultiplier(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetSkinnedMaxDistanceMultiplier(
-  JPC_SoftBodyMotionProperties_t * self,
-  float inSkinnedMaxDistanceMultiplier
+void JoltC_SoftBodyMotionProperties_SetSkinnedMaxDistanceMultiplier(
+  JoltC_SoftBodyMotionProperties_t * self,
+  float inSkinnedMaxDistanceMultiplier,
+  char** outErrMsg
 );
 
-const JPC_AABox_t * JPC_SoftBodyMotionProperties_GetLocalBounds(
-  JPC_SoftBodyMotionProperties_t * self
+const JoltC_AABox_t * JoltC_SoftBodyMotionProperties_GetLocalBounds(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_CustomUpdate(
-  JPC_SoftBodyMotionProperties_t * self,
+void JoltC_SoftBodyMotionProperties_CustomUpdate(
+  JoltC_SoftBodyMotionProperties_t * self,
   float inDeltaTime,
-  JPC_Body_t * ioSoftBody,
-  JPC_PhysicsSystem_t * inSystem
+  JoltC_Body_t * ioSoftBody,
+  JoltC_PhysicsSystem_t * inSystem,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SkinVertices(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_RMat44_t * inRootTransform,
-  JPC_Mat44MemRef_t * inJointMatrices,
+void JoltC_SoftBodyMotionProperties_SkinVertices(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_RMat44_t * inRootTransform,
+  JoltC_Mat44MemRef_t * inJointMatrices,
   unsigned long inNumJoints,
   bool inHardSkinAll,
-  JPC_TempAllocator_t * ioTempAllocator
+  JoltC_TempAllocator_t * ioTempAllocator,
+  char** outErrMsg
 );
 
-JPC_EMotionQuality JPC_SoftBodyMotionProperties_GetMotionQuality(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_EMotionQuality JoltC_SoftBodyMotionProperties_GetMotionQuality(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_EAllowedDOFs JPC_SoftBodyMotionProperties_GetAllowedDOFs(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_EAllowedDOFs JoltC_SoftBodyMotionProperties_GetAllowedDOFs(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-bool JPC_SoftBodyMotionProperties_GetAllowSleeping(
-  JPC_SoftBodyMotionProperties_t * self
+bool JoltC_SoftBodyMotionProperties_GetAllowSleeping(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyMotionProperties_GetLinearVelocity(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetLinearVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetLinearVelocity(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inVelocity
+void JoltC_SoftBodyMotionProperties_SetLinearVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inVelocity,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetLinearVelocityClamped(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inVelocity
+void JoltC_SoftBodyMotionProperties_SetLinearVelocityClamped(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inVelocity,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyMotionProperties_GetAngularVelocity(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAngularVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetAngularVelocity(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inVelocity
+void JoltC_SoftBodyMotionProperties_SetAngularVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inVelocity,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetAngularVelocityClamped(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inVelocity
+void JoltC_SoftBodyMotionProperties_SetAngularVelocityClamped(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inVelocity,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_MoveKinematic(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inPosition,
-  const JPC_Quat_t * inRotation,
-  float inDeltaTime
+void JoltC_SoftBodyMotionProperties_MoveKinematic(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inPosition,
+  const JoltC_Quat_t * inRotation,
+  float inDeltaTime,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetMaxLinearVelocity(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetMaxLinearVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetMaxLinearVelocity(
-  JPC_SoftBodyMotionProperties_t * self,
-  float inVelocity
+void JoltC_SoftBodyMotionProperties_SetMaxLinearVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  float inVelocity,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetMaxAngularVelocity(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetMaxAngularVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetMaxAngularVelocity(
-  JPC_SoftBodyMotionProperties_t * self,
-  float inVelocity
+void JoltC_SoftBodyMotionProperties_SetMaxAngularVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  float inVelocity,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_ClampLinearVelocity(
-  JPC_SoftBodyMotionProperties_t * self
+void JoltC_SoftBodyMotionProperties_ClampLinearVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_ClampAngularVelocity(
-  JPC_SoftBodyMotionProperties_t * self
+void JoltC_SoftBodyMotionProperties_ClampAngularVelocity(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetLinearDamping(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetLinearDamping(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetLinearDamping(
-  JPC_SoftBodyMotionProperties_t * self,
-  float inDamping
+void JoltC_SoftBodyMotionProperties_SetLinearDamping(
+  JoltC_SoftBodyMotionProperties_t * self,
+  float inDamping,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetAngularDamping(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetAngularDamping(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetAngularDamping(
-  JPC_SoftBodyMotionProperties_t * self,
-  float inDamping
+void JoltC_SoftBodyMotionProperties_SetAngularDamping(
+  JoltC_SoftBodyMotionProperties_t * self,
+  float inDamping,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetGravityFactor(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetGravityFactor(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetGravityFactor(
-  JPC_SoftBodyMotionProperties_t * self,
-  float inFactor
+void JoltC_SoftBodyMotionProperties_SetGravityFactor(
+  JoltC_SoftBodyMotionProperties_t * self,
+  float inFactor,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetMassProperties(
-  JPC_SoftBodyMotionProperties_t * self,
-  JPC_EAllowedDOFs inAllowedDOFs,
-  const JPC_MassProperties_t * inMassProperties
+void JoltC_SoftBodyMotionProperties_SetMassProperties(
+  JoltC_SoftBodyMotionProperties_t * self,
+  JoltC_EAllowedDOFs inAllowedDOFs,
+  const JoltC_MassProperties_t * inMassProperties,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetInverseMass(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetInverseMass(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-float JPC_SoftBodyMotionProperties_GetInverseMassUnchecked(
-  JPC_SoftBodyMotionProperties_t * self
+float JoltC_SoftBodyMotionProperties_GetInverseMassUnchecked(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetInverseMass(
-  JPC_SoftBodyMotionProperties_t * self,
-  float inInvM
+void JoltC_SoftBodyMotionProperties_SetInverseMass(
+  JoltC_SoftBodyMotionProperties_t * self,
+  float inInvM,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyMotionProperties_GetInverseInertiaDiagonal(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetInverseInertiaDiagonal(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_Quat_t * JPC_SoftBodyMotionProperties_GetInertiaRotation(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_Quat_t * JoltC_SoftBodyMotionProperties_GetInertiaRotation(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetInverseInertia(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inInvI,
-  const JPC_Quat_t * inRotation
+void JoltC_SoftBodyMotionProperties_SetInverseInertia(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inInvI,
+  const JoltC_Quat_t * inRotation,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_SoftBodyMotionProperties_GetLocalSpaceInverseInertia(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_Mat44_t * JoltC_SoftBodyMotionProperties_GetLocalSpaceInverseInertia(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_SoftBodyMotionProperties_GetInverseInertiaForRotation(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Mat44_t * inRotation
+JoltC_Mat44_t * JoltC_SoftBodyMotionProperties_GetInverseInertiaForRotation(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Mat44_t * inRotation,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyMotionProperties_MultiplyWorldSpaceInverseInertiaByVector(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Quat_t * inRotation,
-  const JPC_Vec3_t * inV
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_MultiplyWorldSpaceInverseInertiaByVector(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Quat_t * inRotation,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyMotionProperties_GetPointVelocityCOM(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inPointRelativeToCOM
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetPointVelocityCOM(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inPointRelativeToCOM,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyMotionProperties_GetAccumulatedForce(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAccumulatedForce(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-JPC_Vec3_t * JPC_SoftBodyMotionProperties_GetAccumulatedTorque(
-  JPC_SoftBodyMotionProperties_t * self
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAccumulatedTorque(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_ResetForce(
-  JPC_SoftBodyMotionProperties_t * self
+void JoltC_SoftBodyMotionProperties_ResetForce(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_ResetTorque(
-  JPC_SoftBodyMotionProperties_t * self
+void JoltC_SoftBodyMotionProperties_ResetTorque(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_ResetMotion(
-  JPC_SoftBodyMotionProperties_t * self
+void JoltC_SoftBodyMotionProperties_ResetMotion(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_SoftBodyMotionProperties_LockTranslation(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inV
+const JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_LockTranslation(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-const JPC_Vec3_t * JPC_SoftBodyMotionProperties_LockAngular(
-  JPC_SoftBodyMotionProperties_t * self,
-  const JPC_Vec3_t * inV
+const JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_LockAngular(
+  JoltC_SoftBodyMotionProperties_t * self,
+  const JoltC_Vec3_t * inV,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetNumVelocityStepsOverride(
-  JPC_SoftBodyMotionProperties_t * self,
-  unsigned long inN
+void JoltC_SoftBodyMotionProperties_SetNumVelocityStepsOverride(
+  JoltC_SoftBodyMotionProperties_t * self,
+  unsigned long inN,
+  char** outErrMsg
 );
 
-unsigned long JPC_SoftBodyMotionProperties_GetNumVelocityStepsOverride(
-  JPC_SoftBodyMotionProperties_t * self
+unsigned long JoltC_SoftBodyMotionProperties_GetNumVelocityStepsOverride(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodyMotionProperties_SetNumPositionStepsOverride(
-  JPC_SoftBodyMotionProperties_t * self,
-  unsigned long inN
+void JoltC_SoftBodyMotionProperties_SetNumPositionStepsOverride(
+  JoltC_SoftBodyMotionProperties_t * self,
+  unsigned long inN,
+  char** outErrMsg
 );
 
-unsigned long JPC_SoftBodyMotionProperties_GetNumPositionStepsOverride(
-  JPC_SoftBodyMotionProperties_t * self
+unsigned long JoltC_SoftBodyMotionProperties_GetNumPositionStepsOverride(
+  JoltC_SoftBodyMotionProperties_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

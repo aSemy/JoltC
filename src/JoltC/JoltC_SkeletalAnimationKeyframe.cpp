@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SkeletalAnimationKeyframe.h"
+#include "JoltC/JoltC_SkeletalAnimationKeyframe.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,86 +8,120 @@ extern "C" {
 
 //region constructors
 
-JPC_SkeletalAnimationKeyframe_t * JPC_SkeletalAnimationKeyframe_new() {
-  JPC_SkeletalAnimationKeyframe_t * cInstance = new JPC_SkeletalAnimationKeyframe_t();
-  SkeletalAnimationKeyframe * cppInstance = new SkeletalAnimationKeyframe();
-  cInstance->obj = cppInstance;
-  return cInstance;
+JoltC_SkeletalAnimationKeyframe_t * JoltC_SkeletalAnimationKeyframe_new(
+  char** outErrMsg
+) {
+  try {
+    JoltC_SkeletalAnimationKeyframe_t * cInstance = new JoltC_SkeletalAnimationKeyframe_t();
+    SkeletalAnimationKeyframe * cppInstance = new SkeletalAnimationKeyframe();
+    cInstance->obj = cppInstance;
+    return cInstance;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion constructors
 
 //region functions
 
-void JPC_SkeletalAnimationKeyframe_FromMatrix(
-  JPC_SkeletalAnimationKeyframe_t * self,
-  const JPC_Mat44_t * inMatrix
+void JoltC_SkeletalAnimationKeyframe_FromMatrix(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  const JoltC_Mat44_t * inMatrix,
+  char** outErrMsg
 ) {
-  SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  
-  selfCpp->FromMatrix(
-  *reinterpret_cast<Mat44 *>(inMatrix->obj)
-  );
+  try {
+    SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
+    
+    selfCpp->FromMatrix(
+    *reinterpret_cast<Mat44 *>(inMatrix->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_SkeletalAnimationKeyframe_ToMatrix(
-  JPC_SkeletalAnimationKeyframe_t * self
+JoltC_Mat44_t * JoltC_SkeletalAnimationKeyframe_ToMatrix(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  char** outErrMsg
 ) {
-  SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  Mat44 resultValue = selfCpp->ToMatrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
+    Mat44 resultValue = selfCpp->ToMatrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-float JPC_SkeletalAnimationKeyframe_mTime_Get(
-  JPC_SkeletalAnimationKeyframe_t * self
+float JoltC_SkeletalAnimationKeyframe_mTime_Get(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  char** outErrMsg
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   float result = selfCpp->mTime;
   return result;
 };
 
-void JPC_SkeletalAnimationKeyframe_mTime_Set(
-  JPC_SkeletalAnimationKeyframe_t * self,
-  float mTime
+void JoltC_SkeletalAnimationKeyframe_mTime_Set(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  float mTime,
+  char** outErrMsg
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   selfCpp->mTime = mTime;
 };
 
-JPC_Vec3_t * JPC_SkeletalAnimationKeyframe_mTranslation_Get(
-  JPC_SkeletalAnimationKeyframe_t * self
+JoltC_Vec3_t * JoltC_SkeletalAnimationKeyframe_mTranslation_Get(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  char** outErrMsg
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   Vec3 resultValue = selfCpp->mTranslation;
   Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
-void JPC_SkeletalAnimationKeyframe_mTranslation_Set(
-  JPC_SkeletalAnimationKeyframe_t * self,
-  JPC_Vec3_t * mTranslation
+void JoltC_SkeletalAnimationKeyframe_mTranslation_Set(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  JoltC_Vec3_t * mTranslation,
+  char** outErrMsg
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   selfCpp->mTranslation = *reinterpret_cast<Vec3 *>(mTranslation->obj);
 };
 
-JPC_Quat_t * JPC_SkeletalAnimationKeyframe_mRotation_Get(
-  JPC_SkeletalAnimationKeyframe_t * self
+JoltC_Quat_t * JoltC_SkeletalAnimationKeyframe_mRotation_Get(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  char** outErrMsg
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   Quat resultValue = selfCpp->mRotation;
   Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JPC_Quat_t *>(result);
+  return reinterpret_cast<JoltC_Quat_t *>(result);
 };
 
-void JPC_SkeletalAnimationKeyframe_mRotation_Set(
-  JPC_SkeletalAnimationKeyframe_t * self,
-  JPC_Quat_t * mRotation
+void JoltC_SkeletalAnimationKeyframe_mRotation_Set(
+  JoltC_SkeletalAnimationKeyframe_t * self,
+  JoltC_Quat_t * mRotation,
+  char** outErrMsg
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   selfCpp->mRotation = *reinterpret_cast<Quat *>(mRotation->obj);

@@ -8,103 +8,126 @@ extern "C" {
 
 //region functions
 
-void JPC_GearConstraint_SetConstraints(
-  JPC_GearConstraint_t * self,
-  const JPC_Constraint_t * inGear1,
-  const JPC_Constraint_t * inGear2
+void JoltC_GearConstraint_SetConstraints(
+  JoltC_GearConstraint_t * self,
+  const JoltC_Constraint_t * inGear1,
+  const JoltC_Constraint_t * inGear2,
+  char** outErrMsg
 );
 
-float JPC_GearConstraint_GetTotalLambda(
-  JPC_GearConstraint_t * self
+float JoltC_GearConstraint_GetTotalLambda(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_GearConstraint_GetBody1(
-  JPC_GearConstraint_t * self
+JoltC_Body_t * JoltC_GearConstraint_GetBody1(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Body_t * JPC_GearConstraint_GetBody2(
-  JPC_GearConstraint_t * self
+JoltC_Body_t * JoltC_GearConstraint_GetBody2(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_GearConstraint_GetConstraintToBody1Matrix(
-  JPC_GearConstraint_t * self
+JoltC_Mat44_t * JoltC_GearConstraint_GetConstraintToBody1Matrix(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_Mat44_t * JPC_GearConstraint_GetConstraintToBody2Matrix(
-  JPC_GearConstraint_t * self
+JoltC_Mat44_t * JoltC_GearConstraint_GetConstraintToBody2Matrix(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_GearConstraint_GetRefCount(
-  JPC_GearConstraint_t * self
+unsigned long JoltC_GearConstraint_GetRefCount(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_GearConstraint_AddRef(
-  JPC_GearConstraint_t * self
+void JoltC_GearConstraint_AddRef(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_GearConstraint_Release(
-  JPC_GearConstraint_t * self
+void JoltC_GearConstraint_Release(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintType JPC_GearConstraint_GetType(
-  JPC_GearConstraint_t * self
+JoltC_EConstraintType JoltC_GearConstraint_GetType(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-JPC_EConstraintSubType JPC_GearConstraint_GetSubType(
-  JPC_GearConstraint_t * self
+JoltC_EConstraintSubType JoltC_GearConstraint_GetSubType(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long JPC_GearConstraint_GetConstraintPriority(
-  JPC_GearConstraint_t * self
+unsigned long JoltC_GearConstraint_GetConstraintPriority(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_GearConstraint_SetConstraintPriority(
-  JPC_GearConstraint_t * self,
-  unsigned long inPriority
+void JoltC_GearConstraint_SetConstraintPriority(
+  JoltC_GearConstraint_t * self,
+  unsigned long inPriority,
+  char** outErrMsg
 );
 
-void JPC_GearConstraint_SetNumVelocityStepsOverride(
-  JPC_GearConstraint_t * self,
-  long inN
+void JoltC_GearConstraint_SetNumVelocityStepsOverride(
+  JoltC_GearConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_GearConstraint_GetNumVelocityStepsOverride(
-  JPC_GearConstraint_t * self
+long JoltC_GearConstraint_GetNumVelocityStepsOverride(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_GearConstraint_SetNumPositionStepsOverride(
-  JPC_GearConstraint_t * self,
-  long inN
+void JoltC_GearConstraint_SetNumPositionStepsOverride(
+  JoltC_GearConstraint_t * self,
+  long inN,
+  char** outErrMsg
 );
 
-long JPC_GearConstraint_GetNumPositionStepsOverride(
-  JPC_GearConstraint_t * self
+long JoltC_GearConstraint_GetNumPositionStepsOverride(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_GearConstraint_SetEnabled(
-  JPC_GearConstraint_t * self,
-  bool inEnabled
+void JoltC_GearConstraint_SetEnabled(
+  JoltC_GearConstraint_t * self,
+  bool inEnabled,
+  char** outErrMsg
 );
 
-bool JPC_GearConstraint_GetEnabled(
-  JPC_GearConstraint_t * self
+bool JoltC_GearConstraint_GetEnabled(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-bool JPC_GearConstraint_IsActive(
-  JPC_GearConstraint_t * self
+bool JoltC_GearConstraint_IsActive(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-unsigned long long int JPC_GearConstraint_GetUserData(
-  JPC_GearConstraint_t * self
+unsigned long long int JoltC_GearConstraint_GetUserData(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
-void JPC_GearConstraint_SetUserData(
-  JPC_GearConstraint_t * self,
-  unsigned long long int inUserData
+void JoltC_GearConstraint_SetUserData(
+  JoltC_GearConstraint_t * self,
+  unsigned long long int inUserData,
+  char** outErrMsg
 );
 
-void JPC_GearConstraint_ResetWarmStart(
-  JPC_GearConstraint_t * self
+void JoltC_GearConstraint_ResetWarmStart(
+  JoltC_GearConstraint_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

@@ -8,66 +8,80 @@ extern "C" {
 
 //region constructors
 
-JPC_CollidePointAnyHitCollisionCollector_t * JPC_CollidePointAnyHitCollisionCollector_new();
+JoltC_CollidePointAnyHitCollisionCollector_t * JoltC_CollidePointAnyHitCollisionCollector_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region functions
 
-bool JPC_CollidePointAnyHitCollisionCollector_HadHit(
-  JPC_CollidePointAnyHitCollisionCollector_t * self
+bool JoltC_CollidePointAnyHitCollisionCollector_HadHit(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAnyHitCollisionCollector_Reset(
-  JPC_CollidePointAnyHitCollisionCollector_t * self
+void JoltC_CollidePointAnyHitCollisionCollector_Reset(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAnyHitCollisionCollector_SetContext(
-  JPC_CollidePointAnyHitCollisionCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CollidePointAnyHitCollisionCollector_SetContext(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 );
 
-const JPC_TransformedShape_t * JPC_CollidePointAnyHitCollisionCollector_GetContext(
-  JPC_CollidePointAnyHitCollisionCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CollidePointAnyHitCollisionCollector_GetContext(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAnyHitCollisionCollector_UpdateEarlyOutFraction(
-  JPC_CollidePointAnyHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CollidePointAnyHitCollisionCollector_UpdateEarlyOutFraction(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAnyHitCollisionCollector_ResetEarlyOutFraction(
-  JPC_CollidePointAnyHitCollisionCollector_t * self,
-  float inFraction
+void JoltC_CollidePointAnyHitCollisionCollector_ResetEarlyOutFraction(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAnyHitCollisionCollector_ForceEarlyOut(
-  JPC_CollidePointAnyHitCollisionCollector_t * self
+void JoltC_CollidePointAnyHitCollisionCollector_ForceEarlyOut(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-bool JPC_CollidePointAnyHitCollisionCollector_ShouldEarlyOut(
-  JPC_CollidePointAnyHitCollisionCollector_t * self
+bool JoltC_CollidePointAnyHitCollisionCollector_ShouldEarlyOut(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CollidePointAnyHitCollisionCollector_GetEarlyOutFraction(
-  JPC_CollidePointAnyHitCollisionCollector_t * self
+float JoltC_CollidePointAnyHitCollisionCollector_GetEarlyOutFraction(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-float JPC_CollidePointAnyHitCollisionCollector_GetPositiveEarlyOutFraction(
-  JPC_CollidePointAnyHitCollisionCollector_t * self
+float JoltC_CollidePointAnyHitCollisionCollector_GetPositiveEarlyOutFraction(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
 //endregion functions
 
 //region properties
 
-JPC_CollidePointResult_t * JPC_CollidePointAnyHitCollisionCollector_mHit_Get(
-  JPC_CollidePointAnyHitCollisionCollector_t * self
+JoltC_CollidePointResult_t * JoltC_CollidePointAnyHitCollisionCollector_mHit_Get(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  char** outErrMsg
 );
 
-void JPC_CollidePointAnyHitCollisionCollector_mHit_Set(
-  JPC_CollidePointAnyHitCollisionCollector_t * self,
-  JPC_CollidePointResult_t * mHit
+void JoltC_CollidePointAnyHitCollisionCollector_mHit_Set(
+  JoltC_CollidePointAnyHitCollisionCollector_t * self,
+  JoltC_CollidePointResult_t * mHit,
+  char** outErrMsg
 );
 
 //endregion properties

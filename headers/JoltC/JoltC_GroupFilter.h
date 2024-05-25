@@ -8,16 +8,19 @@ extern "C" {
 
 //region functions
 
-unsigned long JPC_GroupFilter_GetRefCount(
-  JPC_GroupFilter_t * self
+unsigned long JoltC_GroupFilter_GetRefCount(
+  JoltC_GroupFilter_t * self,
+  char** outErrMsg
 );
 
-void JPC_GroupFilter_AddRef(
-  JPC_GroupFilter_t * self
+void JoltC_GroupFilter_AddRef(
+  JoltC_GroupFilter_t * self,
+  char** outErrMsg
 );
 
-void JPC_GroupFilter_Release(
-  JPC_GroupFilter_t * self
+void JoltC_GroupFilter_Release(
+  JoltC_GroupFilter_t * self,
+  char** outErrMsg
 );
 
 //endregion functions

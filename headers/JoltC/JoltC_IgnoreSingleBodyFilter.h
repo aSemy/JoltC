@@ -8,8 +8,9 @@ extern "C" {
 
 //region constructors
 
-JPC_IgnoreSingleBodyFilter_t * JPC_IgnoreSingleBodyFilter_new(
-  const JPC_BodyID_t * inBodyID
+JoltC_IgnoreSingleBodyFilter_t * JoltC_IgnoreSingleBodyFilter_new(
+  const JoltC_BodyID_t * inBodyID,
+  char** outErrMsg
 );
 
 //endregion constructors

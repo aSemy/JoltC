@@ -8,244 +8,298 @@ extern "C" {
 
 //region constructors
 
-JPC_PhysicsSettings_t * JPC_PhysicsSettings_new();
+JoltC_PhysicsSettings_t * JoltC_PhysicsSettings_new(
+  char** outErrMsg
+);
 
 //endregion constructors
 
 //region properties
 
-long JPC_PhysicsSettings_mMaxInFlightBodyPairs_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mMaxInFlightBodyPairs_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mMaxInFlightBodyPairs_Set(
-  JPC_PhysicsSettings_t * self,
-  long mMaxInFlightBodyPairs
+void JoltC_PhysicsSettings_mMaxInFlightBodyPairs_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mMaxInFlightBodyPairs,
+  char** outErrMsg
 );
 
-long JPC_PhysicsSettings_mStepListenersBatchSize_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mStepListenersBatchSize_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mStepListenersBatchSize_Set(
-  JPC_PhysicsSettings_t * self,
-  long mStepListenersBatchSize
+void JoltC_PhysicsSettings_mStepListenersBatchSize_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mStepListenersBatchSize,
+  char** outErrMsg
 );
 
-long JPC_PhysicsSettings_mStepListenerBatchesPerJob_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mStepListenerBatchesPerJob_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mStepListenerBatchesPerJob_Set(
-  JPC_PhysicsSettings_t * self,
-  long mStepListenerBatchesPerJob
+void JoltC_PhysicsSettings_mStepListenerBatchesPerJob_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mStepListenerBatchesPerJob,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mBaumgarte_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mBaumgarte_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mBaumgarte_Set(
-  JPC_PhysicsSettings_t * self,
-  float mBaumgarte
+void JoltC_PhysicsSettings_mBaumgarte_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mBaumgarte,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mSpeculativeContactDistance_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mSpeculativeContactDistance_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mSpeculativeContactDistance_Set(
-  JPC_PhysicsSettings_t * self,
-  float mSpeculativeContactDistance
+void JoltC_PhysicsSettings_mSpeculativeContactDistance_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mSpeculativeContactDistance,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mPenetrationSlop_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mPenetrationSlop_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mPenetrationSlop_Set(
-  JPC_PhysicsSettings_t * self,
-  float mPenetrationSlop
+void JoltC_PhysicsSettings_mPenetrationSlop_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mPenetrationSlop,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mLinearCastThreshold_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mLinearCastThreshold_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mLinearCastThreshold_Set(
-  JPC_PhysicsSettings_t * self,
-  float mLinearCastThreshold
+void JoltC_PhysicsSettings_mLinearCastThreshold_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mLinearCastThreshold,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mLinearCastMaxPenetration_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mLinearCastMaxPenetration_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mLinearCastMaxPenetration_Set(
-  JPC_PhysicsSettings_t * self,
-  float mLinearCastMaxPenetration
+void JoltC_PhysicsSettings_mLinearCastMaxPenetration_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mLinearCastMaxPenetration,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mManifoldToleranceSq_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mManifoldToleranceSq_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mManifoldToleranceSq_Set(
-  JPC_PhysicsSettings_t * self,
-  float mManifoldToleranceSq
+void JoltC_PhysicsSettings_mManifoldToleranceSq_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mManifoldToleranceSq,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mMaxPenetrationDistance_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mMaxPenetrationDistance_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mMaxPenetrationDistance_Set(
-  JPC_PhysicsSettings_t * self,
-  float mMaxPenetrationDistance
+void JoltC_PhysicsSettings_mMaxPenetrationDistance_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mMaxPenetrationDistance,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mBodyPairCacheMaxDeltaPositionSq_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mBodyPairCacheMaxDeltaPositionSq_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mBodyPairCacheMaxDeltaPositionSq_Set(
-  JPC_PhysicsSettings_t * self,
-  float mBodyPairCacheMaxDeltaPositionSq
+void JoltC_PhysicsSettings_mBodyPairCacheMaxDeltaPositionSq_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mBodyPairCacheMaxDeltaPositionSq,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mBodyPairCacheCosMaxDeltaRotationDiv2_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mBodyPairCacheCosMaxDeltaRotationDiv2_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mBodyPairCacheCosMaxDeltaRotationDiv2_Set(
-  JPC_PhysicsSettings_t * self,
-  float mBodyPairCacheCosMaxDeltaRotationDiv2
+void JoltC_PhysicsSettings_mBodyPairCacheCosMaxDeltaRotationDiv2_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mBodyPairCacheCosMaxDeltaRotationDiv2,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mContactNormalCosMaxDeltaRotation_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mContactNormalCosMaxDeltaRotation_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mContactNormalCosMaxDeltaRotation_Set(
-  JPC_PhysicsSettings_t * self,
-  float mContactNormalCosMaxDeltaRotation
+void JoltC_PhysicsSettings_mContactNormalCosMaxDeltaRotation_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mContactNormalCosMaxDeltaRotation,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mContactPointPreserveLambdaMaxDistSq_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mContactPointPreserveLambdaMaxDistSq_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mContactPointPreserveLambdaMaxDistSq_Set(
-  JPC_PhysicsSettings_t * self,
-  float mContactPointPreserveLambdaMaxDistSq
+void JoltC_PhysicsSettings_mContactPointPreserveLambdaMaxDistSq_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mContactPointPreserveLambdaMaxDistSq,
+  char** outErrMsg
 );
 
-long JPC_PhysicsSettings_mNumVelocitySteps_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mNumVelocitySteps_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mNumVelocitySteps_Set(
-  JPC_PhysicsSettings_t * self,
-  long mNumVelocitySteps
+void JoltC_PhysicsSettings_mNumVelocitySteps_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mNumVelocitySteps,
+  char** outErrMsg
 );
 
-long JPC_PhysicsSettings_mNumPositionSteps_Get(
-  JPC_PhysicsSettings_t * self
+long JoltC_PhysicsSettings_mNumPositionSteps_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mNumPositionSteps_Set(
-  JPC_PhysicsSettings_t * self,
-  long mNumPositionSteps
+void JoltC_PhysicsSettings_mNumPositionSteps_Set(
+  JoltC_PhysicsSettings_t * self,
+  long mNumPositionSteps,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mMinVelocityForRestitution_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mMinVelocityForRestitution_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mMinVelocityForRestitution_Set(
-  JPC_PhysicsSettings_t * self,
-  float mMinVelocityForRestitution
+void JoltC_PhysicsSettings_mMinVelocityForRestitution_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mMinVelocityForRestitution,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mTimeBeforeSleep_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mTimeBeforeSleep_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mTimeBeforeSleep_Set(
-  JPC_PhysicsSettings_t * self,
-  float mTimeBeforeSleep
+void JoltC_PhysicsSettings_mTimeBeforeSleep_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mTimeBeforeSleep,
+  char** outErrMsg
 );
 
-float JPC_PhysicsSettings_mPointVelocitySleepThreshold_Get(
-  JPC_PhysicsSettings_t * self
+float JoltC_PhysicsSettings_mPointVelocitySleepThreshold_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mPointVelocitySleepThreshold_Set(
-  JPC_PhysicsSettings_t * self,
-  float mPointVelocitySleepThreshold
+void JoltC_PhysicsSettings_mPointVelocitySleepThreshold_Set(
+  JoltC_PhysicsSettings_t * self,
+  float mPointVelocitySleepThreshold,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSettings_mDeterministicSimulation_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mDeterministicSimulation_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mDeterministicSimulation_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mDeterministicSimulation
+void JoltC_PhysicsSettings_mDeterministicSimulation_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mDeterministicSimulation,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSettings_mConstraintWarmStart_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mConstraintWarmStart_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mConstraintWarmStart_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mConstraintWarmStart
+void JoltC_PhysicsSettings_mConstraintWarmStart_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mConstraintWarmStart,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSettings_mUseBodyPairContactCache_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mUseBodyPairContactCache_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mUseBodyPairContactCache_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mUseBodyPairContactCache
+void JoltC_PhysicsSettings_mUseBodyPairContactCache_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mUseBodyPairContactCache,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSettings_mUseManifoldReduction_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mUseManifoldReduction_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mUseManifoldReduction_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mUseManifoldReduction
+void JoltC_PhysicsSettings_mUseManifoldReduction_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mUseManifoldReduction,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSettings_mUseLargeIslandSplitter_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mUseLargeIslandSplitter_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mUseLargeIslandSplitter_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mUseLargeIslandSplitter
+void JoltC_PhysicsSettings_mUseLargeIslandSplitter_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mUseLargeIslandSplitter,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSettings_mAllowSleeping_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mAllowSleeping_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mAllowSleeping_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mAllowSleeping
+void JoltC_PhysicsSettings_mAllowSleeping_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mAllowSleeping,
+  char** outErrMsg
 );
 
-bool JPC_PhysicsSettings_mCheckActiveEdges_Get(
-  JPC_PhysicsSettings_t * self
+bool JoltC_PhysicsSettings_mCheckActiveEdges_Get(
+  JoltC_PhysicsSettings_t * self,
+  char** outErrMsg
 );
 
-void JPC_PhysicsSettings_mCheckActiveEdges_Set(
-  JPC_PhysicsSettings_t * self,
-  bool mCheckActiveEdges
+void JoltC_PhysicsSettings_mCheckActiveEdges_Set(
+  JoltC_PhysicsSettings_t * self,
+  bool mCheckActiveEdges,
+  char** outErrMsg
 );
 
 //endregion properties

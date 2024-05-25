@@ -1,5 +1,6 @@
-#include "JoltC/JPC_CastShapeBodyCollector.h"
+#include "JoltC/JoltC_CastShapeBodyCollector.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,85 +8,166 @@ extern "C" {
 
 //region functions
 
-void JPC_CastShapeBodyCollector_Reset(
-  JPC_CastShapeBodyCollector_t * self
+void JoltC_CastShapeBodyCollector_Reset(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  
-  selfCpp->Reset();
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    
+    selfCpp->Reset();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CastShapeBodyCollector_SetContext(
-  JPC_CastShapeBodyCollector_t * self,
-  const JPC_TransformedShape_t * inContext
+void JoltC_CastShapeBodyCollector_SetContext(
+  JoltC_CastShapeBodyCollector_t * self,
+  const JoltC_TransformedShape_t * inContext,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  
-  selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
-  );
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    
+    selfCpp->SetContext(
+    reinterpret_cast<TransformedShape *>(inContext->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-const JPC_TransformedShape_t * JPC_CastShapeBodyCollector_GetContext(
-  JPC_CastShapeBodyCollector_t * self
+const JoltC_TransformedShape_t * JoltC_CastShapeBodyCollector_GetContext(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JPC_TransformedShape_t *>(result);
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    const TransformedShape * result = selfCpp->GetContext();
+    return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CastShapeBodyCollector_UpdateEarlyOutFraction(
-  JPC_CastShapeBodyCollector_t * self,
-  float inFraction
+void JoltC_CastShapeBodyCollector_UpdateEarlyOutFraction(
+  JoltC_CastShapeBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  
-  selfCpp->UpdateEarlyOutFraction(
-  inFraction
-  );
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    
+    selfCpp->UpdateEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CastShapeBodyCollector_ResetEarlyOutFraction(
-  JPC_CastShapeBodyCollector_t * self,
-  float inFraction
+void JoltC_CastShapeBodyCollector_ResetEarlyOutFraction(
+  JoltC_CastShapeBodyCollector_t * self,
+  float inFraction,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  
-  selfCpp->ResetEarlyOutFraction(
-  inFraction
-  );
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    
+    selfCpp->ResetEarlyOutFraction(
+    inFraction
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-void JPC_CastShapeBodyCollector_ForceEarlyOut(
-  JPC_CastShapeBodyCollector_t * self
+void JoltC_CastShapeBodyCollector_ForceEarlyOut(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  
-  selfCpp->ForceEarlyOut();
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    
+    selfCpp->ForceEarlyOut();
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-bool JPC_CastShapeBodyCollector_ShouldEarlyOut(
-  JPC_CastShapeBodyCollector_t * self
+bool JoltC_CastShapeBodyCollector_ShouldEarlyOut(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    bool result = selfCpp->ShouldEarlyOut();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CastShapeBodyCollector_GetEarlyOutFraction(
-  JPC_CastShapeBodyCollector_t * self
+float JoltC_CastShapeBodyCollector_GetEarlyOutFraction(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    float result = selfCpp->GetEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-float JPC_CastShapeBodyCollector_GetPositiveEarlyOutFraction(
-  JPC_CastShapeBodyCollector_t * self
+float JoltC_CastShapeBodyCollector_GetPositiveEarlyOutFraction(
+  JoltC_CastShapeBodyCollector_t * self,
+  char** outErrMsg
 ) {
-  CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
+  try {
+    CastShapeBodyCollector * selfCpp = static_cast<CastShapeBodyCollector *>(self->obj);
+    float result = selfCpp->GetPositiveEarlyOutFraction();
+    return result;
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions

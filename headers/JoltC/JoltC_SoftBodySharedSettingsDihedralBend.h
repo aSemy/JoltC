@@ -8,45 +8,52 @@ extern "C" {
 
 //region constructors
 
-JPC_SoftBodySharedSettingsDihedralBend_t * JPC_SoftBodySharedSettingsDihedralBend_new(
+JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_SoftBodySharedSettingsDihedralBend_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
   unsigned long inVertex3,
   unsigned long inVertex4,
-  float inCompliance
+  float inCompliance,
+  char** outErrMsg
 );
 
 //endregion constructors
 
 //region properties
 
-size_t JPC_SoftBodySharedSettingsDihedralBend_mVertex_Get(
-  JPC_SoftBodySharedSettingsDihedralBend_t * self,
-  unsigned long * outValue
+size_t JoltC_SoftBodySharedSettingsDihedralBend_mVertex_Get(
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self,
+  unsigned long * outValue,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsDihedralBend_mVertex_Set(
-  JPC_SoftBodySharedSettingsDihedralBend_t * self,
+void JoltC_SoftBodySharedSettingsDihedralBend_mVertex_Set(
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize
+  size_t mVertexSize,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsDihedralBend_mCompliance_Get(
-  JPC_SoftBodySharedSettingsDihedralBend_t * self
+float JoltC_SoftBodySharedSettingsDihedralBend_mCompliance_Get(
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsDihedralBend_mCompliance_Set(
-  JPC_SoftBodySharedSettingsDihedralBend_t * self,
-  float mCompliance
+void JoltC_SoftBodySharedSettingsDihedralBend_mCompliance_Set(
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self,
+  float mCompliance,
+  char** outErrMsg
 );
 
-float JPC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Get(
-  JPC_SoftBodySharedSettingsDihedralBend_t * self
+float JoltC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Get(
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self,
+  char** outErrMsg
 );
 
-void JPC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Set(
-  JPC_SoftBodySharedSettingsDihedralBend_t * self,
-  float mInitialAngle
+void JoltC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Set(
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self,
+  float mInitialAngle,
+  char** outErrMsg
 );
 
 //endregion properties

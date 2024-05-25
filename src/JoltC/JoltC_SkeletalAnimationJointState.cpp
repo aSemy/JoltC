@@ -1,5 +1,6 @@
-#include "JoltC/JPC_SkeletalAnimationJointState.h"
+#include "JoltC/JoltC_SkeletalAnimationJointState.h"
 #include "JoltC/JoltJS.h"
+#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -7,59 +8,81 @@ extern "C" {
 
 //region functions
 
-void JPC_SkeletalAnimationJointState_FromMatrix(
-  JPC_SkeletalAnimationJointState_t * self,
-  const JPC_Mat44_t * inMatrix
+void JoltC_SkeletalAnimationJointState_FromMatrix(
+  JoltC_SkeletalAnimationJointState_t * self,
+  const JoltC_Mat44_t * inMatrix,
+  char** outErrMsg
 ) {
-  SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
-  
-  selfCpp->FromMatrix(
-  *reinterpret_cast<Mat44 *>(inMatrix->obj)
-  );
+  try {
+    SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
+    
+    selfCpp->FromMatrix(
+    *reinterpret_cast<Mat44 *>(inMatrix->obj)
+    );
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
-JPC_Mat44_t * JPC_SkeletalAnimationJointState_ToMatrix(
-  JPC_SkeletalAnimationJointState_t * self
+JoltC_Mat44_t * JoltC_SkeletalAnimationJointState_ToMatrix(
+  JoltC_SkeletalAnimationJointState_t * self,
+  char** outErrMsg
 ) {
-  SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
-  Mat44 resultValue = selfCpp->ToMatrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JPC_Mat44_t *>(result);
+  try {
+    SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
+    Mat44 resultValue = selfCpp->ToMatrix();
+    Mat44* result = new Mat44(resultValue);
+    return reinterpret_cast<JoltC_Mat44_t *>(result);
+  }
+  catch (exception& e) {
+    if (outErrMsg) {
+      *outErrMsg = strdup(e.what());
+    }
+    throw e;
+  };
 };
 
 //endregion functions
 
 //region properties
 
-JPC_Vec3_t * JPC_SkeletalAnimationJointState_mTranslation_Get(
-  JPC_SkeletalAnimationJointState_t * self
+JoltC_Vec3_t * JoltC_SkeletalAnimationJointState_mTranslation_Get(
+  JoltC_SkeletalAnimationJointState_t * self,
+  char** outErrMsg
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
   Vec3 resultValue = selfCpp->mTranslation;
   Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JPC_Vec3_t *>(result);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
-void JPC_SkeletalAnimationJointState_mTranslation_Set(
-  JPC_SkeletalAnimationJointState_t * self,
-  JPC_Vec3_t * mTranslation
+void JoltC_SkeletalAnimationJointState_mTranslation_Set(
+  JoltC_SkeletalAnimationJointState_t * self,
+  JoltC_Vec3_t * mTranslation,
+  char** outErrMsg
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
   selfCpp->mTranslation = *reinterpret_cast<Vec3 *>(mTranslation->obj);
 };
 
-JPC_Quat_t * JPC_SkeletalAnimationJointState_mRotation_Get(
-  JPC_SkeletalAnimationJointState_t * self
+JoltC_Quat_t * JoltC_SkeletalAnimationJointState_mRotation_Get(
+  JoltC_SkeletalAnimationJointState_t * self,
+  char** outErrMsg
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
   Quat resultValue = selfCpp->mRotation;
   Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JPC_Quat_t *>(result);
+  return reinterpret_cast<JoltC_Quat_t *>(result);
 };
 
-void JPC_SkeletalAnimationJointState_mRotation_Set(
-  JPC_SkeletalAnimationJointState_t * self,
-  JPC_Quat_t * mRotation
+void JoltC_SkeletalAnimationJointState_mRotation_Set(
+  JoltC_SkeletalAnimationJointState_t * self,
+  JoltC_Quat_t * mRotation,
+  char** outErrMsg
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
   selfCpp->mRotation = *reinterpret_cast<Quat *>(mRotation->obj);
