@@ -8,46 +8,39 @@ extern "C" {
 
 //region constructors
 
-JoltC_Triangle_t * JoltC_Triangle_new_0(
-  char** outErrMsg
-);
+JoltC_Triangle_t * JoltC_Triangle_new_0();
 
 JoltC_Triangle_t * JoltC_Triangle_new_1(
   const JoltC_Vec3_t * inV1,
   const JoltC_Vec3_t * inV2,
-  const JoltC_Vec3_t * inV3,
-  char** outErrMsg
+  const JoltC_Vec3_t * inV3
 );
 
-//endregion constructors
+//endregion
 
 //region properties
 
 size_t JoltC_Triangle_mV_Get(
   JoltC_Triangle_t * self,
-  JoltC_Float3_t * * outValue,
-  char** outErrMsg
+  JoltC_Float3_t * * outValue
 );
 
 void JoltC_Triangle_mV_Set(
   JoltC_Triangle_t * self,
   JoltC_Float3_t * * mV,
-  size_t mVSize,
-  char** outErrMsg
+  size_t mVSize
 );
 
 unsigned long JoltC_Triangle_mMaterialIndex_Get(
-  JoltC_Triangle_t * self,
-  char** outErrMsg
+  JoltC_Triangle_t * self
 );
 
 void JoltC_Triangle_mMaterialIndex_Set(
   JoltC_Triangle_t * self,
-  unsigned long mMaterialIndex,
-  char** outErrMsg
+  unsigned long mMaterialIndex
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

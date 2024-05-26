@@ -9,11 +9,10 @@ extern "C" {
 //region functions
 
 unsigned long JoltC_BroadPhaseLayerInterfaceEm_GetNumBroadPhaseLayers(
-  JoltC_BroadPhaseLayerInterfaceEm_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseLayerInterfaceEm_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

@@ -9,45 +9,38 @@ extern "C" {
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsInvBind_empty(
-  JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsInvBind_t * self
 );
 
 long JoltC_ArraySoftBodySharedSettingsInvBind_size(
-  JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsInvBind_t * self
 );
 
 JoltC_SoftBodySharedSettingsInvBind_t * JoltC_ArraySoftBodySharedSettingsInvBind_at(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_push_back(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
-  const JoltC_SoftBodySharedSettingsInvBind_t * inValue,
-  char** outErrMsg
+  const JoltC_SoftBodySharedSettingsInvBind_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_reserve(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_resize(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_clear(
-  JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsInvBind_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

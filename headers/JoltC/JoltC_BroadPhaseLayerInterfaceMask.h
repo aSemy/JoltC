@@ -9,11 +9,10 @@ extern "C" {
 //region constructors
 
 JoltC_BroadPhaseLayerInterfaceMask_t * JoltC_BroadPhaseLayerInterfaceMask_new(
-  unsigned long inNumBroadPhaseLayers,
-  char** outErrMsg
+  unsigned long inNumBroadPhaseLayers
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
@@ -21,16 +20,14 @@ void JoltC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
   JoltC_BroadPhaseLayerInterfaceMask_t * self,
   const JoltC_BroadPhaseLayer_t * inBroadPhaseLayer,
   unsigned long inGroupsToInclude,
-  unsigned long inGroupsToExclude,
-  char** outErrMsg
+  unsigned long inGroupsToExclude
 );
 
 unsigned long JoltC_BroadPhaseLayerInterfaceMask_GetNumBroadPhaseLayers(
-  JoltC_BroadPhaseLayerInterfaceMask_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseLayerInterfaceMask_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

@@ -8,42 +8,35 @@ extern "C" {
 
 //region constructors
 
-JoltC_StateRecorderImpl_t * JoltC_StateRecorderImpl_new(
-  char** outErrMsg
-);
+JoltC_StateRecorderImpl_t * JoltC_StateRecorderImpl_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
 void JoltC_StateRecorderImpl_Clear(
-  JoltC_StateRecorderImpl_t * self,
-  char** outErrMsg
+  JoltC_StateRecorderImpl_t * self
 );
 
 void JoltC_StateRecorderImpl_Rewind(
-  JoltC_StateRecorderImpl_t * self,
-  char** outErrMsg
+  JoltC_StateRecorderImpl_t * self
 );
 
 bool JoltC_StateRecorderImpl_IsEqual(
   JoltC_StateRecorderImpl_t * self,
-  JoltC_StateRecorderImpl_t * inReference,
-  char** outErrMsg
+  JoltC_StateRecorderImpl_t * inReference
 );
 
 void JoltC_StateRecorderImpl_SetValidating(
   JoltC_StateRecorderImpl_t * self,
-  bool inValidating,
-  char** outErrMsg
+  bool inValidating
 );
 
 bool JoltC_StateRecorderImpl_IsValidating(
-  JoltC_StateRecorderImpl_t * self,
-  char** outErrMsg
+  JoltC_StateRecorderImpl_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

@@ -8,75 +8,62 @@ extern "C" {
 
 //region constructors
 
-JoltC_Vec4_t * JoltC_Vec4_new_0(
-  char** outErrMsg
-);
+JoltC_Vec4_t * JoltC_Vec4_new_0();
 
 JoltC_Vec4_t * JoltC_Vec4_new_1(
-  const JoltC_Vec4_t * inV,
-  char** outErrMsg
+  const JoltC_Vec4_t * inV
 );
 
 JoltC_Vec4_t * JoltC_Vec4_new_2(
   JoltC_Vec3_t * inV,
-  float inW,
-  char** outErrMsg
+  float inW
 );
 
 JoltC_Vec4_t * JoltC_Vec4_new_3(
   float inX,
   float inY,
   float inZ,
-  float inW,
-  char** outErrMsg
+  float inW
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 float JoltC_Vec4_GetX(
-  JoltC_Vec4_t * self,
-  char** outErrMsg
+  JoltC_Vec4_t * self
 );
 
 float JoltC_Vec4_GetY(
-  JoltC_Vec4_t * self,
-  char** outErrMsg
+  JoltC_Vec4_t * self
 );
 
 float JoltC_Vec4_GetZ(
-  JoltC_Vec4_t * self,
-  char** outErrMsg
+  JoltC_Vec4_t * self
 );
 
 float JoltC_Vec4_GetW(
-  JoltC_Vec4_t * self,
-  char** outErrMsg
+  JoltC_Vec4_t * self
 );
 
 void JoltC_Vec4_SetX(
   JoltC_Vec4_t * self,
-  float inX,
-  char** outErrMsg
+  float inX
 );
 
 void JoltC_Vec4_SetY(
   JoltC_Vec4_t * self,
-  float inY,
-  char** outErrMsg
+  float inY
 );
 
 void JoltC_Vec4_SetZ(
   JoltC_Vec4_t * self,
-  float inZ,
-  char** outErrMsg
+  float inZ
 );
 
 void JoltC_Vec4_SetW(
   JoltC_Vec4_t * self,
-  float inW,
-  char** outErrMsg
+  float inW
 );
 
 void JoltC_Vec4_Set(
@@ -84,17 +71,15 @@ void JoltC_Vec4_Set(
   float inX,
   float inY,
   float inZ,
-  float inW,
-  char** outErrMsg
+  float inW
 );
 
 float JoltC_Vec4_GetComponent(
   JoltC_Vec4_t * self,
-  unsigned long inCoordinate,
-  char** outErrMsg
+  unsigned long inCoordinate
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

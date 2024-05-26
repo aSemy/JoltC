@@ -11,35 +11,25 @@ extern "C" {
 JoltC_SoftBodySharedSettingsLRA_t * JoltC_SoftBodySharedSettingsLRA_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
-  float inMaxDistance,
-  char** outErrMsg
+  float inMaxDistance
 ) {
-  try {
-    JoltC_SoftBodySharedSettingsLRA_t * cInstance = new JoltC_SoftBodySharedSettingsLRA_t();
-    SoftBodySharedSettingsLRA * cppInstance = new SoftBodySharedSettingsLRA(
-      inVertex1,
-      inVertex2,
-      inMaxDistance
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_SoftBodySharedSettingsLRA_t * cInstance = new JoltC_SoftBodySharedSettingsLRA_t();
+  SoftBodySharedSettingsLRA * cppInstance = new SoftBodySharedSettingsLRA(
+    inVertex1,
+    inVertex2,
+    inMaxDistance
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsLRA_mVertex_Get(
   JoltC_SoftBodySharedSettingsLRA_t * self,
-  unsigned long * outValue,
-  char** outErrMsg
+  unsigned long * outValue
 ) {
   SoftBodySharedSettingsLRA * selfCpp = static_cast<SoftBodySharedSettingsLRA *>(self->obj);
   size_t resultSize = std::size(selfCpp->mVertex);
@@ -50,8 +40,7 @@ size_t JoltC_SoftBodySharedSettingsLRA_mVertex_Get(
 void JoltC_SoftBodySharedSettingsLRA_mVertex_Set(
   JoltC_SoftBodySharedSettingsLRA_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize,
-  char** outErrMsg
+  size_t mVertexSize
 ) {
   SoftBodySharedSettingsLRA * selfCpp = static_cast<SoftBodySharedSettingsLRA *>(self->obj);
   for (size_t i = 0; i < mVertexSize; i++) {
@@ -60,8 +49,7 @@ void JoltC_SoftBodySharedSettingsLRA_mVertex_Set(
 };
 
 float JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Get(
-  JoltC_SoftBodySharedSettingsLRA_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsLRA_t * self
 ) {
   SoftBodySharedSettingsLRA * selfCpp = static_cast<SoftBodySharedSettingsLRA *>(self->obj);
   float result = selfCpp->mMaxDistance;
@@ -70,14 +58,13 @@ float JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Get(
 
 void JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Set(
   JoltC_SoftBodySharedSettingsLRA_t * self,
-  float mMaxDistance,
-  char** outErrMsg
+  float mMaxDistance
 ) {
   SoftBodySharedSettingsLRA * selfCpp = static_cast<SoftBodySharedSettingsLRA *>(self->obj);
   selfCpp->mMaxDistance = mMaxDistance;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

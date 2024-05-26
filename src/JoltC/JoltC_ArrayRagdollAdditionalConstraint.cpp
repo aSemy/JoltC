@@ -8,160 +8,87 @@ extern "C" {
 
 //region constructors
 
-JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_ArrayRagdollAdditionalConstraint_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_ArrayRagdollAdditionalConstraint_t * cInstance = new JoltC_ArrayRagdollAdditionalConstraint_t();
-    ArrayRagdollAdditionalConstraint * cppInstance = new ArrayRagdollAdditionalConstraint();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_ArrayRagdollAdditionalConstraint_new() {
+  JoltC_ArrayRagdollAdditionalConstraint_t * cInstance = new JoltC_ArrayRagdollAdditionalConstraint_t();
+  ArrayRagdollAdditionalConstraint * cppInstance = new ArrayRagdollAdditionalConstraint();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 bool JoltC_ArrayRagdollAdditionalConstraint_empty(
-  JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  char** outErrMsg
+  JoltC_ArrayRagdollAdditionalConstraint_t * self
 ) {
-  try {
-    ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_ArrayRagdollAdditionalConstraint_size(
-  JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  char** outErrMsg
+  JoltC_ArrayRagdollAdditionalConstraint_t * self
 ) {
-  try {
-    ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 JoltC_RagdollAdditionalConstraint_t * JoltC_ArrayRagdollAdditionalConstraint_at(
   JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-    RagdollAdditionalConstraint& resultRef = selfCpp->at(
-    inIndex
-    );
-    RagdollAdditionalConstraint * result = &resultRef;
-    return reinterpret_cast<JoltC_RagdollAdditionalConstraint_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
+  RagdollAdditionalConstraint& resultRef = selfCpp->at(
+  inIndex
+  );
+  RagdollAdditionalConstraint * result = &resultRef;
+  return reinterpret_cast<JoltC_RagdollAdditionalConstraint_t *>(result);
 };
 
 void JoltC_ArrayRagdollAdditionalConstraint_push_back(
   JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  JoltC_RagdollAdditionalConstraint_t * inValue,
-  char** outErrMsg
+  JoltC_RagdollAdditionalConstraint_t * inValue
 ) {
-  try {
-    ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-    
-    selfCpp->push_back(
-    *reinterpret_cast<RagdollAdditionalConstraint *>(inValue->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
+  
+  selfCpp->push_back(
+  *reinterpret_cast<RagdollAdditionalConstraint *>(inValue->obj)
+  );
 };
 
 void JoltC_ArrayRagdollAdditionalConstraint_reserve(
   JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-    
-    selfCpp->reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
+  
+  selfCpp->reserve(
+  inSize
+  );
 };
 
 void JoltC_ArrayRagdollAdditionalConstraint_resize(
   JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_ArrayRagdollAdditionalConstraint_clear(
-  JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  char** outErrMsg
+  JoltC_ArrayRagdollAdditionalConstraint_t * self
 ) {
-  try {
-    ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
+  
+  selfCpp->clear();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

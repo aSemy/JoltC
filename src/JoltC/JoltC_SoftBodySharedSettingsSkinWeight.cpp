@@ -9,8 +9,7 @@ extern "C" {
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsSkinWeight_mInvBindIndex_Get(
-  JoltC_SoftBodySharedSettingsSkinWeight_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsSkinWeight_t * self
 ) {
   SoftBodySharedSettingsSkinWeight * selfCpp = static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
   unsigned long result = selfCpp->mInvBindIndex;
@@ -19,16 +18,14 @@ unsigned long JoltC_SoftBodySharedSettingsSkinWeight_mInvBindIndex_Get(
 
 void JoltC_SoftBodySharedSettingsSkinWeight_mInvBindIndex_Set(
   JoltC_SoftBodySharedSettingsSkinWeight_t * self,
-  unsigned long mInvBindIndex,
-  char** outErrMsg
+  unsigned long mInvBindIndex
 ) {
   SoftBodySharedSettingsSkinWeight * selfCpp = static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
   selfCpp->mInvBindIndex = mInvBindIndex;
 };
 
 float JoltC_SoftBodySharedSettingsSkinWeight_mWeight_Get(
-  JoltC_SoftBodySharedSettingsSkinWeight_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsSkinWeight_t * self
 ) {
   SoftBodySharedSettingsSkinWeight * selfCpp = static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
   float result = selfCpp->mWeight;
@@ -37,14 +34,13 @@ float JoltC_SoftBodySharedSettingsSkinWeight_mWeight_Get(
 
 void JoltC_SoftBodySharedSettingsSkinWeight_mWeight_Set(
   JoltC_SoftBodySharedSettingsSkinWeight_t * self,
-  float mWeight,
-  char** outErrMsg
+  float mWeight
 ) {
   SoftBodySharedSettingsSkinWeight * selfCpp = static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
   selfCpp->mWeight = mWeight;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

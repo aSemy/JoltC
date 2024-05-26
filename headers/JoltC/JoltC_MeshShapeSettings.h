@@ -8,128 +8,106 @@ extern "C" {
 
 //region constructors
 
-JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_0(
-  char** outErrMsg
-);
+JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_0();
 
 JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_1(
   const JoltC_TriangleList_t * inTriangleList,
-  const JoltC_PhysicsMaterialList_t * inMaterialList,
-  char** outErrMsg
+  const JoltC_PhysicsMaterialList_t * inMaterialList
 );
 
 JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_2(
   const JoltC_VertexList_t * inVertices,
   const JoltC_IndexedTriangleList_t * inTriangles,
-  const JoltC_PhysicsMaterialList_t * inMaterialList,
-  char** outErrMsg
+  const JoltC_PhysicsMaterialList_t * inMaterialList
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 void JoltC_MeshShapeSettings_Sanitize(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 unsigned long JoltC_MeshShapeSettings_GetRefCount(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_AddRef(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_Release(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_MeshShapeSettings_Create(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_ClearCachedResult(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 JoltC_VertexList_t * JoltC_MeshShapeSettings_mTriangleVertices_Get(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_mTriangleVertices_Set(
   JoltC_MeshShapeSettings_t * self,
-  JoltC_VertexList_t * mTriangleVertices,
-  char** outErrMsg
+  JoltC_VertexList_t * mTriangleVertices
 );
 
 JoltC_IndexedTriangleList_t * JoltC_MeshShapeSettings_mIndexedTriangles_Get(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_mIndexedTriangles_Set(
   JoltC_MeshShapeSettings_t * self,
-  JoltC_IndexedTriangleList_t * mIndexedTriangles,
-  char** outErrMsg
+  JoltC_IndexedTriangleList_t * mIndexedTriangles
 );
 
 JoltC_PhysicsMaterialList_t * JoltC_MeshShapeSettings_mMaterials_Get(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_mMaterials_Set(
   JoltC_MeshShapeSettings_t * self,
-  JoltC_PhysicsMaterialList_t * mMaterials,
-  char** outErrMsg
+  JoltC_PhysicsMaterialList_t * mMaterials
 );
 
 unsigned long JoltC_MeshShapeSettings_mMaxTrianglesPerLeaf_Get(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_mMaxTrianglesPerLeaf_Set(
   JoltC_MeshShapeSettings_t * self,
-  unsigned long mMaxTrianglesPerLeaf,
-  char** outErrMsg
+  unsigned long mMaxTrianglesPerLeaf
 );
 
 float JoltC_MeshShapeSettings_mActiveEdgeCosThresholdAngle_Get(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_mActiveEdgeCosThresholdAngle_Set(
   JoltC_MeshShapeSettings_t * self,
-  float mActiveEdgeCosThresholdAngle,
-  char** outErrMsg
+  float mActiveEdgeCosThresholdAngle
 );
 
 unsigned long long int JoltC_MeshShapeSettings_mUserData_Get(
-  JoltC_MeshShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_MeshShapeSettings_t * self
 );
 
 void JoltC_MeshShapeSettings_mUserData_Set(
   JoltC_MeshShapeSettings_t * self,
-  unsigned long long int mUserData,
-  char** outErrMsg
+  unsigned long long int mUserData
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

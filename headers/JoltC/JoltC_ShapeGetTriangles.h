@@ -13,36 +13,31 @@ JoltC_ShapeGetTriangles_t * JoltC_ShapeGetTriangles_new(
   const JoltC_AABox_t * inBox,
   const JoltC_Vec3_t * inPositionCOM,
   const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
-  char** outErrMsg
+  const JoltC_Vec3_t * inScale
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 long JoltC_ShapeGetTriangles_GetNumTriangles(
-  JoltC_ShapeGetTriangles_t * self,
-  char** outErrMsg
+  JoltC_ShapeGetTriangles_t * self
 );
 
 long JoltC_ShapeGetTriangles_GetVerticesSize(
-  JoltC_ShapeGetTriangles_t * self,
-  char** outErrMsg
+  JoltC_ShapeGetTriangles_t * self
 );
 
 const void* JoltC_ShapeGetTriangles_GetVerticesData(
-  JoltC_ShapeGetTriangles_t * self,
-  char** outErrMsg
+  JoltC_ShapeGetTriangles_t * self
 );
 
 const JoltC_PhysicsMaterial_t * JoltC_ShapeGetTriangles_GetMaterial(
   JoltC_ShapeGetTriangles_t * self,
-  long inTriangle,
-  char** outErrMsg
+  long inTriangle
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

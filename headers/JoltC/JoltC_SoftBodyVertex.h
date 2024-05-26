@@ -9,50 +9,42 @@ extern "C" {
 //region properties
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mPreviousPosition_Get(
-  JoltC_SoftBodyVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertex_t * self
 );
 
 void JoltC_SoftBodyVertex_mPreviousPosition_Set(
   JoltC_SoftBodyVertex_t * self,
-  JoltC_Vec3_t * mPreviousPosition,
-  char** outErrMsg
+  JoltC_Vec3_t * mPreviousPosition
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mPosition_Get(
-  JoltC_SoftBodyVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertex_t * self
 );
 
 void JoltC_SoftBodyVertex_mPosition_Set(
   JoltC_SoftBodyVertex_t * self,
-  JoltC_Vec3_t * mPosition,
-  char** outErrMsg
+  JoltC_Vec3_t * mPosition
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mVelocity_Get(
-  JoltC_SoftBodyVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertex_t * self
 );
 
 void JoltC_SoftBodyVertex_mVelocity_Set(
   JoltC_SoftBodyVertex_t * self,
-  JoltC_Vec3_t * mVelocity,
-  char** outErrMsg
+  JoltC_Vec3_t * mVelocity
 );
 
 float JoltC_SoftBodyVertex_mInvMass_Get(
-  JoltC_SoftBodyVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertex_t * self
 );
 
 void JoltC_SoftBodyVertex_mInvMass_Set(
   JoltC_SoftBodyVertex_t * self,
-  float mInvMass,
-  char** outErrMsg
+  float mInvMass
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

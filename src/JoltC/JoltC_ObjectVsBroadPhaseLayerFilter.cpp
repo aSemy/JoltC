@@ -8,24 +8,45 @@ extern "C" {
 
 //region constructors
 
-JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_ObjectVsBroadPhaseLayerFilter_t * cInstance = new JoltC_ObjectVsBroadPhaseLayerFilter_t();
-    ObjectVsBroadPhaseLayerFilter * cppInstance = new ObjectVsBroadPhaseLayerFilter();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_new() {
+  JoltC_ObjectVsBroadPhaseLayerFilter_t * cInstance = new JoltC_ObjectVsBroadPhaseLayerFilter_t();
+  ObjectVsBroadPhaseLayerFilter * cppInstance = new ObjectVsBroadPhaseLayerFilter();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
+
+//region converters
+
+/**
+ * Convert an instance of JoltC_ObjectVsBroadPhaseLayerFilterEm_t into JoltC_ObjectVsBroadPhaseLayerFilter_t.
+ */
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_From_ObjectVsBroadPhaseLayerFilterEm(
+  JoltC_ObjectVsBroadPhaseLayerFilterEm_t * subtype
+) {
+  return (JoltC_ObjectVsBroadPhaseLayerFilter_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_ObjectVsBroadPhaseLayerFilterTable_t into JoltC_ObjectVsBroadPhaseLayerFilter_t.
+ */
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_From_ObjectVsBroadPhaseLayerFilterTable(
+  JoltC_ObjectVsBroadPhaseLayerFilterTable_t * subtype
+) {
+  return (JoltC_ObjectVsBroadPhaseLayerFilter_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_ObjectVsBroadPhaseLayerFilterMask_t into JoltC_ObjectVsBroadPhaseLayerFilter_t.
+ */
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_From_ObjectVsBroadPhaseLayerFilterMask(
+  JoltC_ObjectVsBroadPhaseLayerFilterMask_t * subtype
+) {
+  return (JoltC_ObjectVsBroadPhaseLayerFilter_t*) subtype;
+};
+
+//endregion
 
 #ifdef __cplusplus
 }

@@ -9,20 +9,18 @@ extern "C" {
 //region constructors
 
 JoltC_BroadPhaseLayer_t * JoltC_BroadPhaseLayer_new(
-  unsigned short inLayer,
-  char** outErrMsg
+  unsigned short inLayer
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned short JoltC_BroadPhaseLayer_GetValue(
-  JoltC_BroadPhaseLayer_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseLayer_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

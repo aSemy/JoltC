@@ -13,25 +13,16 @@ void JoltC_BroadPhaseQuery_CastRay(
   const JoltC_RayCast_t * inRay,
   JoltC_RayCastBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
-  try {
-    BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-    
-    selfCpp->CastRay(
-    *reinterpret_cast<RayCast *>(inRay->obj),
-    *reinterpret_cast<RayCastBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  
+  selfCpp->CastRay(
+  *reinterpret_cast<RayCast *>(inRay->obj),
+  *reinterpret_cast<RayCastBodyCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+  );
 };
 
 void JoltC_BroadPhaseQuery_CollideAABox(
@@ -39,25 +30,16 @@ void JoltC_BroadPhaseQuery_CollideAABox(
   const JoltC_AABox_t * inBox,
   JoltC_CollideShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
-  try {
-    BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-    
-    selfCpp->CollideAABox(
-    *reinterpret_cast<AABox *>(inBox->obj),
-    *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  
+  selfCpp->CollideAABox(
+  *reinterpret_cast<AABox *>(inBox->obj),
+  *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+  );
 };
 
 void JoltC_BroadPhaseQuery_CollideSphere(
@@ -66,26 +48,17 @@ void JoltC_BroadPhaseQuery_CollideSphere(
   float inRadius,
   JoltC_CollideShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
-  try {
-    BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-    
-    selfCpp->CollideSphere(
-    *reinterpret_cast<Vec3 *>(inCenter->obj),
-    inRadius,
-    *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  
+  selfCpp->CollideSphere(
+  *reinterpret_cast<Vec3 *>(inCenter->obj),
+  inRadius,
+  *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+  );
 };
 
 void JoltC_BroadPhaseQuery_CollidePoint(
@@ -93,25 +66,16 @@ void JoltC_BroadPhaseQuery_CollidePoint(
   const JoltC_Vec3_t * inPoint,
   JoltC_CollideShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
-  try {
-    BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-    
-    selfCpp->CollidePoint(
-    *reinterpret_cast<Vec3 *>(inPoint->obj),
-    *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  
+  selfCpp->CollidePoint(
+  *reinterpret_cast<Vec3 *>(inPoint->obj),
+  *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+  );
 };
 
 void JoltC_BroadPhaseQuery_CollideOrientedBox(
@@ -119,25 +83,16 @@ void JoltC_BroadPhaseQuery_CollideOrientedBox(
   const JoltC_OrientedBox_t * inBox,
   JoltC_CollideShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
-  try {
-    BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-    
-    selfCpp->CollideOrientedBox(
-    *reinterpret_cast<OrientedBox *>(inBox->obj),
-    *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  
+  selfCpp->CollideOrientedBox(
+  *reinterpret_cast<OrientedBox *>(inBox->obj),
+  *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+  );
 };
 
 void JoltC_BroadPhaseQuery_CastAABox(
@@ -145,28 +100,19 @@ void JoltC_BroadPhaseQuery_CastAABox(
   const JoltC_AABoxCast_t * inBox,
   JoltC_CastShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
-  try {
-    BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-    
-    selfCpp->CastAABox(
-    *reinterpret_cast<AABoxCast *>(inBox->obj),
-    *reinterpret_cast<CastShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  
+  selfCpp->CastAABox(
+  *reinterpret_cast<AABoxCast *>(inBox->obj),
+  *reinterpret_cast<CastShapeBodyCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+  );
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

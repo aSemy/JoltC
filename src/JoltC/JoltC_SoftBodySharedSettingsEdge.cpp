@@ -11,35 +11,25 @@ extern "C" {
 JoltC_SoftBodySharedSettingsEdge_t * JoltC_SoftBodySharedSettingsEdge_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
-  float inCompliance,
-  char** outErrMsg
+  float inCompliance
 ) {
-  try {
-    JoltC_SoftBodySharedSettingsEdge_t * cInstance = new JoltC_SoftBodySharedSettingsEdge_t();
-    SoftBodySharedSettingsEdge * cppInstance = new SoftBodySharedSettingsEdge(
-      inVertex1,
-      inVertex2,
-      inCompliance
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_SoftBodySharedSettingsEdge_t * cInstance = new JoltC_SoftBodySharedSettingsEdge_t();
+  SoftBodySharedSettingsEdge * cppInstance = new SoftBodySharedSettingsEdge(
+    inVertex1,
+    inVertex2,
+    inCompliance
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsEdge_mVertex_Get(
   JoltC_SoftBodySharedSettingsEdge_t * self,
-  unsigned long * outValue,
-  char** outErrMsg
+  unsigned long * outValue
 ) {
   SoftBodySharedSettingsEdge * selfCpp = static_cast<SoftBodySharedSettingsEdge *>(self->obj);
   size_t resultSize = std::size(selfCpp->mVertex);
@@ -50,8 +40,7 @@ size_t JoltC_SoftBodySharedSettingsEdge_mVertex_Get(
 void JoltC_SoftBodySharedSettingsEdge_mVertex_Set(
   JoltC_SoftBodySharedSettingsEdge_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize,
-  char** outErrMsg
+  size_t mVertexSize
 ) {
   SoftBodySharedSettingsEdge * selfCpp = static_cast<SoftBodySharedSettingsEdge *>(self->obj);
   for (size_t i = 0; i < mVertexSize; i++) {
@@ -60,8 +49,7 @@ void JoltC_SoftBodySharedSettingsEdge_mVertex_Set(
 };
 
 float JoltC_SoftBodySharedSettingsEdge_mRestLength_Get(
-  JoltC_SoftBodySharedSettingsEdge_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsEdge_t * self
 ) {
   SoftBodySharedSettingsEdge * selfCpp = static_cast<SoftBodySharedSettingsEdge *>(self->obj);
   float result = selfCpp->mRestLength;
@@ -70,16 +58,14 @@ float JoltC_SoftBodySharedSettingsEdge_mRestLength_Get(
 
 void JoltC_SoftBodySharedSettingsEdge_mRestLength_Set(
   JoltC_SoftBodySharedSettingsEdge_t * self,
-  float mRestLength,
-  char** outErrMsg
+  float mRestLength
 ) {
   SoftBodySharedSettingsEdge * selfCpp = static_cast<SoftBodySharedSettingsEdge *>(self->obj);
   selfCpp->mRestLength = mRestLength;
 };
 
 float JoltC_SoftBodySharedSettingsEdge_mCompliance_Get(
-  JoltC_SoftBodySharedSettingsEdge_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsEdge_t * self
 ) {
   SoftBodySharedSettingsEdge * selfCpp = static_cast<SoftBodySharedSettingsEdge *>(self->obj);
   float result = selfCpp->mCompliance;
@@ -88,14 +74,13 @@ float JoltC_SoftBodySharedSettingsEdge_mCompliance_Get(
 
 void JoltC_SoftBodySharedSettingsEdge_mCompliance_Set(
   JoltC_SoftBodySharedSettingsEdge_t * self,
-  float mCompliance,
-  char** outErrMsg
+  float mCompliance
 ) {
   SoftBodySharedSettingsEdge * selfCpp = static_cast<SoftBodySharedSettingsEdge *>(self->obj);
   selfCpp->mCompliance = mCompliance;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

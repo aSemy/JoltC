@@ -8,24 +8,14 @@ extern "C" {
 
 //region constructors
 
-JoltC_BroadPhaseLayerFilter_t * JoltC_BroadPhaseLayerFilter_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_BroadPhaseLayerFilter_t * cInstance = new JoltC_BroadPhaseLayerFilter_t();
-    BroadPhaseLayerFilter * cppInstance = new BroadPhaseLayerFilter();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_BroadPhaseLayerFilter_t * JoltC_BroadPhaseLayerFilter_new() {
+  JoltC_BroadPhaseLayerFilter_t * cInstance = new JoltC_BroadPhaseLayerFilter_t();
+  BroadPhaseLayerFilter * cppInstance = new BroadPhaseLayerFilter();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 #ifdef __cplusplus
 }

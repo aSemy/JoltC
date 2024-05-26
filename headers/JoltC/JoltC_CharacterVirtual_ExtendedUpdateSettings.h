@@ -8,81 +8,67 @@ extern "C" {
 
 //region constructors
 
-JoltC_CharacterVirtual_ExtendedUpdateSettings_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_new(
-  char** outErrMsg
-);
+JoltC_CharacterVirtual_ExtendedUpdateSettings_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_new();
 
-//endregion constructors
+//endregion
 
 //region properties
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mStickToFloorStepDown_Get(
-  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 );
 
 void JoltC_CharacterVirtual_ExtendedUpdateSettings_mStickToFloorStepDown_Set(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  JoltC_Vec3_t * mStickToFloorStepDown,
-  char** outErrMsg
+  JoltC_Vec3_t * mStickToFloorStepDown
 );
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepUp_Get(
-  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 );
 
 void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepUp_Set(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  JoltC_Vec3_t * mWalkStairsStepUp,
-  char** outErrMsg
+  JoltC_Vec3_t * mWalkStairsStepUp
 );
 
 float JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsMinStepForward_Get(
-  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 );
 
 void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsMinStepForward_Set(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  float mWalkStairsMinStepForward,
-  char** outErrMsg
+  float mWalkStairsMinStepForward
 );
 
 float JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepForwardTest_Get(
-  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 );
 
 void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepForwardTest_Set(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  float mWalkStairsStepForwardTest,
-  char** outErrMsg
+  float mWalkStairsStepForwardTest
 );
 
 float JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsCosAngleForwardContact_Get(
-  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 );
 
 void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsCosAngleForwardContact_Set(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  float mWalkStairsCosAngleForwardContact,
-  char** outErrMsg
+  float mWalkStairsCosAngleForwardContact
 );
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepDownExtra_Get(
-  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 );
 
 void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepDownExtra_Set(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self,
-  JoltC_Vec3_t * mWalkStairsStepDownExtra,
-  char** outErrMsg
+  JoltC_Vec3_t * mWalkStairsStepDownExtra
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

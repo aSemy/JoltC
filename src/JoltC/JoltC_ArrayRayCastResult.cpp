@@ -9,138 +9,75 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayRayCastResult_empty(
-  JoltC_ArrayRayCastResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayRayCastResult_t * self
 ) {
-  try {
-    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_ArrayRayCastResult_size(
-  JoltC_ArrayRayCastResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayRayCastResult_t * self
 ) {
-  try {
-    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 JoltC_RayCastResult_t * JoltC_ArrayRayCastResult_at(
   JoltC_ArrayRayCastResult_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-    RayCastResult& resultRef = selfCpp->at(
-    inIndex
-    );
-    RayCastResult * result = &resultRef;
-    return reinterpret_cast<JoltC_RayCastResult_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+  RayCastResult& resultRef = selfCpp->at(
+  inIndex
+  );
+  RayCastResult * result = &resultRef;
+  return reinterpret_cast<JoltC_RayCastResult_t *>(result);
 };
 
 void JoltC_ArrayRayCastResult_push_back(
   JoltC_ArrayRayCastResult_t * self,
-  const JoltC_RayCastResult_t * inValue,
-  char** outErrMsg
+  const JoltC_RayCastResult_t * inValue
 ) {
-  try {
-    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-    
-    selfCpp->push_back(
-    *reinterpret_cast<RayCastResult *>(inValue->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+  
+  selfCpp->push_back(
+  *reinterpret_cast<RayCastResult *>(inValue->obj)
+  );
 };
 
 void JoltC_ArrayRayCastResult_reserve(
   JoltC_ArrayRayCastResult_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-    
-    selfCpp->reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+  
+  selfCpp->reserve(
+  inSize
+  );
 };
 
 void JoltC_ArrayRayCastResult_resize(
   JoltC_ArrayRayCastResult_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_ArrayRayCastResult_clear(
-  JoltC_ArrayRayCastResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayRayCastResult_t * self
 ) {
-  try {
-    ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+  
+  selfCpp->clear();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

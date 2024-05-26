@@ -10,11 +10,10 @@ extern "C" {
 
 JoltC_Body_t * JoltC_BodyLockInterfaceLocking_TryGetBody(
   JoltC_BodyLockInterfaceLocking_t * self,
-  const JoltC_BodyID_t * inBodyID,
-  char** outErrMsg
+  const JoltC_BodyID_t * inBodyID
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

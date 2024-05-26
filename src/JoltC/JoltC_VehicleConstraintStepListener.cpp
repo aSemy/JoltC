@@ -9,26 +9,17 @@ extern "C" {
 //region constructors
 
 JoltC_VehicleConstraintStepListener_t * JoltC_VehicleConstraintStepListener_new(
-  JoltC_VehicleConstraint_t * inConstraint,
-  char** outErrMsg
+  JoltC_VehicleConstraint_t * inConstraint
 ) {
-  try {
-    JoltC_VehicleConstraintStepListener_t * cInstance = new JoltC_VehicleConstraintStepListener_t();
-    VehicleConstraintStepListener * cppInstance = new VehicleConstraintStepListener(
-      reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_VehicleConstraintStepListener_t * cInstance = new JoltC_VehicleConstraintStepListener_t();
+  VehicleConstraintStepListener * cppInstance = new VehicleConstraintStepListener(
+    reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 #ifdef __cplusplus
 }

@@ -8,81 +8,67 @@ extern "C" {
 
 //region constructors
 
-JoltC_VehicleDifferentialSettings_t * JoltC_VehicleDifferentialSettings_new(
-  char** outErrMsg
-);
+JoltC_VehicleDifferentialSettings_t * JoltC_VehicleDifferentialSettings_new();
 
-//endregion constructors
+//endregion
 
 //region properties
 
 long JoltC_VehicleDifferentialSettings_mLeftWheel_Get(
-  JoltC_VehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleDifferentialSettings_t * self
 );
 
 void JoltC_VehicleDifferentialSettings_mLeftWheel_Set(
   JoltC_VehicleDifferentialSettings_t * self,
-  long mLeftWheel,
-  char** outErrMsg
+  long mLeftWheel
 );
 
 long JoltC_VehicleDifferentialSettings_mRightWheel_Get(
-  JoltC_VehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleDifferentialSettings_t * self
 );
 
 void JoltC_VehicleDifferentialSettings_mRightWheel_Set(
   JoltC_VehicleDifferentialSettings_t * self,
-  long mRightWheel,
-  char** outErrMsg
+  long mRightWheel
 );
 
 float JoltC_VehicleDifferentialSettings_mDifferentialRatio_Get(
-  JoltC_VehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleDifferentialSettings_t * self
 );
 
 void JoltC_VehicleDifferentialSettings_mDifferentialRatio_Set(
   JoltC_VehicleDifferentialSettings_t * self,
-  float mDifferentialRatio,
-  char** outErrMsg
+  float mDifferentialRatio
 );
 
 float JoltC_VehicleDifferentialSettings_mLeftRightSplit_Get(
-  JoltC_VehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleDifferentialSettings_t * self
 );
 
 void JoltC_VehicleDifferentialSettings_mLeftRightSplit_Set(
   JoltC_VehicleDifferentialSettings_t * self,
-  float mLeftRightSplit,
-  char** outErrMsg
+  float mLeftRightSplit
 );
 
 float JoltC_VehicleDifferentialSettings_mLimitedSlipRatio_Get(
-  JoltC_VehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleDifferentialSettings_t * self
 );
 
 void JoltC_VehicleDifferentialSettings_mLimitedSlipRatio_Set(
   JoltC_VehicleDifferentialSettings_t * self,
-  float mLimitedSlipRatio,
-  char** outErrMsg
+  float mLimitedSlipRatio
 );
 
 float JoltC_VehicleDifferentialSettings_mEngineTorqueRatio_Get(
-  JoltC_VehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleDifferentialSettings_t * self
 );
 
 void JoltC_VehicleDifferentialSettings_mEngineTorqueRatio_Set(
   JoltC_VehicleDifferentialSettings_t * self,
-  float mEngineTorqueRatio,
-  char** outErrMsg
+  float mEngineTorqueRatio
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

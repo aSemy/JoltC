@@ -8,11 +8,34 @@ extern "C" {
 
 //region constructors
 
-JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_new(
-  char** outErrMsg
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_new();
+
+//endregion
+
+//region converters
+
+/**
+ * Convert an instance of JoltC_ObjectVsBroadPhaseLayerFilterEm_t into JoltC_ObjectVsBroadPhaseLayerFilter_t.
+ */
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_From_ObjectVsBroadPhaseLayerFilterEm(
+  JoltC_ObjectVsBroadPhaseLayerFilterEm_t * subtype
 );
 
-//endregion constructors
+/**
+ * Convert an instance of JoltC_ObjectVsBroadPhaseLayerFilterTable_t into JoltC_ObjectVsBroadPhaseLayerFilter_t.
+ */
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_From_ObjectVsBroadPhaseLayerFilterTable(
+  JoltC_ObjectVsBroadPhaseLayerFilterTable_t * subtype
+);
+
+/**
+ * Convert an instance of JoltC_ObjectVsBroadPhaseLayerFilterMask_t into JoltC_ObjectVsBroadPhaseLayerFilter_t.
+ */
+JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_From_ObjectVsBroadPhaseLayerFilterMask(
+  JoltC_ObjectVsBroadPhaseLayerFilterMask_t * subtype
+);
+
+//endregion
 
 
 #ifdef __cplusplus

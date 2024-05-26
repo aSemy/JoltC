@@ -9,45 +9,38 @@ extern "C" {
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsVolume_empty(
-  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self
 );
 
 long JoltC_ArraySoftBodySharedSettingsVolume_size(
-  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self
 );
 
 JoltC_SoftBodySharedSettingsVolume_t * JoltC_ArraySoftBodySharedSettingsVolume_at(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArraySoftBodySharedSettingsVolume_push_back(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  const JoltC_SoftBodySharedSettingsVolume_t * inValue,
-  char** outErrMsg
+  const JoltC_SoftBodySharedSettingsVolume_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsVolume_reserve(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArraySoftBodySharedSettingsVolume_resize(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArraySoftBodySharedSettingsVolume_clear(
-  JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

@@ -9,21 +9,18 @@ extern "C" {
 //region properties
 
 unsigned long JoltC_SoftBodyVertexTraits_mPreviousPositionOffset_Get(
-  JoltC_SoftBodyVertexTraits_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertexTraits_t * self
 );
 
 unsigned long JoltC_SoftBodyVertexTraits_mPositionOffset_Get(
-  JoltC_SoftBodyVertexTraits_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertexTraits_t * self
 );
 
 unsigned long JoltC_SoftBodyVertexTraits_mVelocityOffset_Get(
-  JoltC_SoftBodyVertexTraits_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertexTraits_t * self
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

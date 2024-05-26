@@ -9,11 +9,10 @@ extern "C" {
 //region constructors
 
 JoltC_SpecifiedObjectLayerFilter_t * JoltC_SpecifiedObjectLayerFilter_new(
-  unsigned long inObjectLayer,
-  char** outErrMsg
+  unsigned long inObjectLayer
 );
 
-//endregion constructors
+//endregion
 
 
 #ifdef __cplusplus

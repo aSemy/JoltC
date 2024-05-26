@@ -8,70 +8,58 @@ extern "C" {
 
 //region constructors
 
-JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_SoftBodySharedSettingsVertexAttributes_new(
-  char** outErrMsg
-);
+JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_SoftBodySharedSettingsVertexAttributes_new();
 
-//endregion constructors
+//endregion
 
 //region properties
 
 float JoltC_SoftBodySharedSettingsVertexAttributes_mCompliance_Get(
-  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 );
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mCompliance_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  float mCompliance,
-  char** outErrMsg
+  float mCompliance
 );
 
 float JoltC_SoftBodySharedSettingsVertexAttributes_mShearCompliance_Get(
-  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 );
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mShearCompliance_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  float mShearCompliance,
-  char** outErrMsg
+  float mShearCompliance
 );
 
 float JoltC_SoftBodySharedSettingsVertexAttributes_mBendCompliance_Get(
-  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 );
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mBendCompliance_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  float mBendCompliance,
-  char** outErrMsg
+  float mBendCompliance
 );
 
 JoltC_SoftBodySharedSettings_ELRAType JoltC_SoftBodySharedSettingsVertexAttributes_mLRAType_Get(
-  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 );
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mLRAType_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  JoltC_SoftBodySharedSettings_ELRAType mLRAType,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettings_ELRAType mLRAType
 );
 
 float JoltC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Get(
-  JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 );
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
-  float mLRAMaxDistanceMultiplier,
-  char** outErrMsg
+  float mLRAMaxDistanceMultiplier
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

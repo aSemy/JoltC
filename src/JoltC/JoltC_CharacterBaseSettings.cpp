@@ -6,66 +6,51 @@
 extern "C" {
 #endif
 
+//region converters
+
+/**
+ * Convert an instance of JoltC_CharacterVirtualSettings_t into JoltC_CharacterBaseSettings_t.
+ */
+JoltC_CharacterBaseSettings_t * JoltC_CharacterBaseSettings_From_CharacterVirtualSettings(
+  JoltC_CharacterVirtualSettings_t * subtype
+) {
+  return (JoltC_CharacterBaseSettings_t*) subtype;
+};
+
+//endregion
+
 //region functions
 
 unsigned long JoltC_CharacterBaseSettings_GetRefCount(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 ) {
-  try {
-    CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
-    unsigned long result = selfCpp->GetRefCount();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
+  unsigned long result = selfCpp->GetRefCount();
+  return result;
 };
 
 void JoltC_CharacterBaseSettings_AddRef(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 ) {
-  try {
-    CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
-    
-    selfCpp->AddRef();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
+  
+  selfCpp->AddRef();
 };
 
 void JoltC_CharacterBaseSettings_Release(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 ) {
-  try {
-    CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
-    
-    selfCpp->Release();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
+  
+  selfCpp->Release();
 };
 
-//endregion functions
+//endregion
 
 //region properties
 
 JoltC_Vec3_t * JoltC_CharacterBaseSettings_mUp_Get(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   Vec3 resultValue = selfCpp->mUp;
@@ -75,16 +60,14 @@ JoltC_Vec3_t * JoltC_CharacterBaseSettings_mUp_Get(
 
 void JoltC_CharacterBaseSettings_mUp_Set(
   JoltC_CharacterBaseSettings_t * self,
-  JoltC_Vec3_t * mUp,
-  char** outErrMsg
+  JoltC_Vec3_t * mUp
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mUp = *reinterpret_cast<Vec3 *>(mUp->obj);
 };
 
 JoltC_Plane_t * JoltC_CharacterBaseSettings_mSupportingVolume_Get(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   Plane resultValue = selfCpp->mSupportingVolume;
@@ -94,16 +77,14 @@ JoltC_Plane_t * JoltC_CharacterBaseSettings_mSupportingVolume_Get(
 
 void JoltC_CharacterBaseSettings_mSupportingVolume_Set(
   JoltC_CharacterBaseSettings_t * self,
-  JoltC_Plane_t * mSupportingVolume,
-  char** outErrMsg
+  JoltC_Plane_t * mSupportingVolume
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mSupportingVolume = *reinterpret_cast<Plane *>(mSupportingVolume->obj);
 };
 
 float JoltC_CharacterBaseSettings_mMaxSlopeAngle_Get(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   float result = selfCpp->mMaxSlopeAngle;
@@ -112,16 +93,14 @@ float JoltC_CharacterBaseSettings_mMaxSlopeAngle_Get(
 
 void JoltC_CharacterBaseSettings_mMaxSlopeAngle_Set(
   JoltC_CharacterBaseSettings_t * self,
-  float mMaxSlopeAngle,
-  char** outErrMsg
+  float mMaxSlopeAngle
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mMaxSlopeAngle = mMaxSlopeAngle;
 };
 
 const JoltC_Shape_t * JoltC_CharacterBaseSettings_mShape_Get(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   const Shape * result = selfCpp->mShape;
@@ -130,14 +109,13 @@ const JoltC_Shape_t * JoltC_CharacterBaseSettings_mShape_Get(
 
 const void JoltC_CharacterBaseSettings_mShape_Set(
   JoltC_CharacterBaseSettings_t * self,
-  const JoltC_Shape_t * mShape,
-  char** outErrMsg
+  const JoltC_Shape_t * mShape
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mShape = reinterpret_cast<Shape *>(mShape->obj);
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

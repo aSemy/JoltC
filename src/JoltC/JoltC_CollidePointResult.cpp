@@ -8,30 +8,19 @@ extern "C" {
 
 //region constructors
 
-JoltC_CollidePointResult_t * JoltC_CollidePointResult_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_CollidePointResult_t * cInstance = new JoltC_CollidePointResult_t();
-    CollidePointResult * cppInstance = new CollidePointResult();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_CollidePointResult_t * JoltC_CollidePointResult_new() {
+  JoltC_CollidePointResult_t * cInstance = new JoltC_CollidePointResult_t();
+  CollidePointResult * cppInstance = new CollidePointResult();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region properties
 
 JoltC_BodyID_t * JoltC_CollidePointResult_mBodyID_Get(
-  JoltC_CollidePointResult_t * self,
-  char** outErrMsg
+  JoltC_CollidePointResult_t * self
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
   BodyID resultValue = selfCpp->mBodyID;
@@ -41,16 +30,14 @@ JoltC_BodyID_t * JoltC_CollidePointResult_mBodyID_Get(
 
 void JoltC_CollidePointResult_mBodyID_Set(
   JoltC_CollidePointResult_t * self,
-  JoltC_BodyID_t * mBodyID,
-  char** outErrMsg
+  JoltC_BodyID_t * mBodyID
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
   selfCpp->mBodyID = *reinterpret_cast<BodyID *>(mBodyID->obj);
 };
 
 JoltC_SubShapeID_t * JoltC_CollidePointResult_mSubShapeID2_Get(
-  JoltC_CollidePointResult_t * self,
-  char** outErrMsg
+  JoltC_CollidePointResult_t * self
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
   SubShapeID resultValue = selfCpp->mSubShapeID2;
@@ -60,14 +47,13 @@ JoltC_SubShapeID_t * JoltC_CollidePointResult_mSubShapeID2_Get(
 
 void JoltC_CollidePointResult_mSubShapeID2_Set(
   JoltC_CollidePointResult_t * self,
-  JoltC_SubShapeID_t * mSubShapeID2,
-  char** outErrMsg
+  JoltC_SubShapeID_t * mSubShapeID2
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
   selfCpp->mSubShapeID2 = *reinterpret_cast<SubShapeID *>(mSubShapeID2->obj);
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

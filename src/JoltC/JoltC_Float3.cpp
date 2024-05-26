@@ -11,78 +11,50 @@ extern "C" {
 JoltC_Float3_t * JoltC_Float3_new(
   float inX,
   float inY,
-  float inZ,
-  char** outErrMsg
+  float inZ
 ) {
-  try {
-    JoltC_Float3_t * cInstance = new JoltC_Float3_t();
-    Float3 * cppInstance = new Float3(
-      inX,
-      inY,
-      inZ
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_Float3_t * cInstance = new JoltC_Float3_t();
+  Float3 * cppInstance = new Float3(
+    inX,
+    inY,
+    inZ
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 bool JoltC_Float3_Equals(
   JoltC_Float3_t * self,
-  const JoltC_Float3_t * inV,
-  char** outErrMsg
+  const JoltC_Float3_t * inV
 ) {
-  try {
-    Float3 * selfCpp = static_cast<Float3 *>(self->obj);
-    bool result = selfCpp->operator==(
-    *reinterpret_cast<Float3 *>(inV->obj)
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Float3 * selfCpp = static_cast<Float3 *>(self->obj);
+  bool result = selfCpp->operator==(
+  *reinterpret_cast<Float3 *>(inV->obj)
+  );
+  return result;
 };
 
 bool JoltC_Float3_NotEquals(
   JoltC_Float3_t * self,
-  const JoltC_Float3_t * inV,
-  char** outErrMsg
+  const JoltC_Float3_t * inV
 ) {
-  try {
-    Float3 * selfCpp = static_cast<Float3 *>(self->obj);
-    bool result = selfCpp->operator!=(
-    *reinterpret_cast<Float3 *>(inV->obj)
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Float3 * selfCpp = static_cast<Float3 *>(self->obj);
+  bool result = selfCpp->operator!=(
+  *reinterpret_cast<Float3 *>(inV->obj)
+  );
+  return result;
 };
 
-//endregion functions
+//endregion
 
 //region properties
 
 float JoltC_Float3_x_Get(
-  JoltC_Float3_t * self,
-  char** outErrMsg
+  JoltC_Float3_t * self
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   float result = selfCpp->x;
@@ -91,16 +63,14 @@ float JoltC_Float3_x_Get(
 
 void JoltC_Float3_x_Set(
   JoltC_Float3_t * self,
-  float x,
-  char** outErrMsg
+  float x
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   selfCpp->x = x;
 };
 
 float JoltC_Float3_y_Get(
-  JoltC_Float3_t * self,
-  char** outErrMsg
+  JoltC_Float3_t * self
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   float result = selfCpp->y;
@@ -109,16 +79,14 @@ float JoltC_Float3_y_Get(
 
 void JoltC_Float3_y_Set(
   JoltC_Float3_t * self,
-  float y,
-  char** outErrMsg
+  float y
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   selfCpp->y = y;
 };
 
 float JoltC_Float3_z_Get(
-  JoltC_Float3_t * self,
-  char** outErrMsg
+  JoltC_Float3_t * self
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   float result = selfCpp->z;
@@ -127,14 +95,13 @@ float JoltC_Float3_z_Get(
 
 void JoltC_Float3_z_Set(
   JoltC_Float3_t * self,
-  float z,
-  char** outErrMsg
+  float z
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   selfCpp->z = z;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

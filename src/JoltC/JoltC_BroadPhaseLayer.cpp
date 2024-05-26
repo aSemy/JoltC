@@ -9,47 +9,29 @@ extern "C" {
 //region constructors
 
 JoltC_BroadPhaseLayer_t * JoltC_BroadPhaseLayer_new(
-  unsigned short inLayer,
-  char** outErrMsg
+  unsigned short inLayer
 ) {
-  try {
-    JoltC_BroadPhaseLayer_t * cInstance = new JoltC_BroadPhaseLayer_t();
-    BroadPhaseLayer * cppInstance = new BroadPhaseLayer(
-      inLayer
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_BroadPhaseLayer_t * cInstance = new JoltC_BroadPhaseLayer_t();
+  BroadPhaseLayer * cppInstance = new BroadPhaseLayer(
+    inLayer
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned short JoltC_BroadPhaseLayer_GetValue(
-  JoltC_BroadPhaseLayer_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseLayer_t * self
 ) {
-  try {
-    BroadPhaseLayer * selfCpp = static_cast<BroadPhaseLayer *>(self->obj);
-    unsigned short result = selfCpp->GetValue();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseLayer * selfCpp = static_cast<BroadPhaseLayer *>(self->obj);
+  unsigned short result = selfCpp->GetValue();
+  return result;
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

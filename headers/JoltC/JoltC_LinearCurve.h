@@ -8,54 +8,45 @@ extern "C" {
 
 //region constructors
 
-JoltC_LinearCurve_t * JoltC_LinearCurve_new(
-  char** outErrMsg
-);
+JoltC_LinearCurve_t * JoltC_LinearCurve_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
 void JoltC_LinearCurve_Clear(
-  JoltC_LinearCurve_t * self,
-  char** outErrMsg
+  JoltC_LinearCurve_t * self
 );
 
 void JoltC_LinearCurve_Reserve(
   JoltC_LinearCurve_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_LinearCurve_AddPoint(
   JoltC_LinearCurve_t * self,
   float inX,
-  float inY,
-  char** outErrMsg
+  float inY
 );
 
 void JoltC_LinearCurve_Sort(
-  JoltC_LinearCurve_t * self,
-  char** outErrMsg
+  JoltC_LinearCurve_t * self
 );
 
 float JoltC_LinearCurve_GetMinX(
-  JoltC_LinearCurve_t * self,
-  char** outErrMsg
+  JoltC_LinearCurve_t * self
 );
 
 float JoltC_LinearCurve_GetMaxX(
-  JoltC_LinearCurve_t * self,
-  char** outErrMsg
+  JoltC_LinearCurve_t * self
 );
 
 float JoltC_LinearCurve_GetValue(
   JoltC_LinearCurve_t * self,
-  float inX,
-  char** outErrMsg
+  float inX
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

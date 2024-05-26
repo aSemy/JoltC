@@ -8,65 +8,37 @@ extern "C" {
 
 //region constructors
 
-JoltC_SubShapeID_t * JoltC_SubShapeID_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_SubShapeID_t * cInstance = new JoltC_SubShapeID_t();
-    SubShapeID * cppInstance = new SubShapeID();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_SubShapeID_t * JoltC_SubShapeID_new() {
+  JoltC_SubShapeID_t * cInstance = new JoltC_SubShapeID_t();
+  SubShapeID * cppInstance = new SubShapeID();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 const long JoltC_SubShapeID_GetValue(
-  JoltC_SubShapeID_t * self,
-  char** outErrMsg
+  JoltC_SubShapeID_t * self
 ) {
-  try {
-    SubShapeID * selfCpp = static_cast<SubShapeID *>(self->obj);
-    const long result = selfCpp->GetValue();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  SubShapeID * selfCpp = static_cast<SubShapeID *>(self->obj);
+  const long result = selfCpp->GetValue();
+  return result;
 };
 
 void JoltC_SubShapeID_SetValue(
   JoltC_SubShapeID_t * self,
-  long inValue,
-  char** outErrMsg
+  long inValue
 ) {
-  try {
-    SubShapeID * selfCpp = static_cast<SubShapeID *>(self->obj);
-    
-    selfCpp->SetValue(
-    inValue
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  SubShapeID * selfCpp = static_cast<SubShapeID *>(self->obj);
+  
+  selfCpp->SetValue(
+  inValue
+  );
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

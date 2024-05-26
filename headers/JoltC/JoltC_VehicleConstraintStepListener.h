@@ -9,11 +9,10 @@ extern "C" {
 //region constructors
 
 JoltC_VehicleConstraintStepListener_t * JoltC_VehicleConstraintStepListener_new(
-  JoltC_VehicleConstraint_t * inConstraint,
-  char** outErrMsg
+  JoltC_VehicleConstraint_t * inConstraint
 );
 
-//endregion constructors
+//endregion
 
 
 #ifdef __cplusplus

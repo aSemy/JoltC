@@ -10,25 +10,16 @@ extern "C" {
 
 JoltC_Body_t * JoltC_BodyLockInterfaceLocking_TryGetBody(
   JoltC_BodyLockInterfaceLocking_t * self,
-  const JoltC_BodyID_t * inBodyID,
-  char** outErrMsg
+  const JoltC_BodyID_t * inBodyID
 ) {
-  try {
-    BodyLockInterfaceLocking * selfCpp = static_cast<BodyLockInterfaceLocking *>(self->obj);
-    Body * result = selfCpp->TryGetBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
-    );
-    return reinterpret_cast<JoltC_Body_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BodyLockInterfaceLocking * selfCpp = static_cast<BodyLockInterfaceLocking *>(self->obj);
+  Body * result = selfCpp->TryGetBody(
+  *reinterpret_cast<BodyID *>(inBodyID->obj)
+  );
+  return reinterpret_cast<JoltC_Body_t *>(result);
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

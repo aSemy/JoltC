@@ -6,319 +6,314 @@
 extern "C" {
 #endif
 
+//region converters
+
+/**
+ * Convert an instance of JoltC_ConvexShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_ConvexShape(
+  JoltC_ConvexShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_SphereShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_SphereShape(
+  JoltC_SphereShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_BoxShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_BoxShape(
+  JoltC_BoxShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_CylinderShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_CylinderShape(
+  JoltC_CylinderShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_CapsuleShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_CapsuleShape(
+  JoltC_CapsuleShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_TaperedCapsuleShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_TaperedCapsuleShape(
+  JoltC_TaperedCapsuleShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_ConvexHullShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_ConvexHullShape(
+  JoltC_ConvexHullShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_CompoundShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_CompoundShape(
+  JoltC_CompoundShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_StaticCompoundShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_StaticCompoundShape(
+  JoltC_StaticCompoundShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_DecoratedShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_DecoratedShape(
+  JoltC_DecoratedShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_ScaledShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_ScaledShape(
+  JoltC_ScaledShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_OffsetCenterOfMassShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_OffsetCenterOfMassShape(
+  JoltC_OffsetCenterOfMassShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_RotatedTranslatedShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_RotatedTranslatedShape(
+  JoltC_RotatedTranslatedShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_MeshShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_MeshShape(
+  JoltC_MeshShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_HeightFieldShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_HeightFieldShape(
+  JoltC_HeightFieldShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+/**
+ * Convert an instance of JoltC_SoftBodyShape_t into JoltC_Shape_t.
+ */
+JoltC_Shape_t * JoltC_Shape_From_SoftBodyShape(
+  JoltC_SoftBodyShape_t * subtype
+) {
+  return (JoltC_Shape_t*) subtype;
+};
+
+//endregion
+
 //region functions
 
 unsigned long JoltC_Shape_GetRefCount(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    unsigned long result = selfCpp->GetRefCount();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  unsigned long result = selfCpp->GetRefCount();
+  return result;
 };
 
 void JoltC_Shape_AddRef(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    
-    selfCpp->AddRef();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  
+  selfCpp->AddRef();
 };
 
 void JoltC_Shape_Release(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    
-    selfCpp->Release();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  
+  selfCpp->Release();
 };
 
 JoltC_EShapeType JoltC_Shape_GetType(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    EShapeType result = selfCpp->GetType();
-    return static_cast<JoltC_EShapeType>(static_cast<int>(result));
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  EShapeType result = selfCpp->GetType();
+  return static_cast<JoltC_EShapeType>(static_cast<int>(result));
 };
 
 JoltC_EShapeSubType JoltC_Shape_GetSubType(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    EShapeSubType result = selfCpp->GetSubType();
-    return static_cast<JoltC_EShapeSubType>(static_cast<int>(result));
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  EShapeSubType result = selfCpp->GetSubType();
+  return static_cast<JoltC_EShapeSubType>(static_cast<int>(result));
 };
 
 bool JoltC_Shape_MustBeStatic(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    bool result = selfCpp->MustBeStatic();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  bool result = selfCpp->MustBeStatic();
+  return result;
 };
 
 JoltC_AABox_t * JoltC_Shape_GetLocalBounds(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    AABox resultValue = selfCpp->GetLocalBounds();
-    AABox* result = new AABox(resultValue);
-    return reinterpret_cast<JoltC_AABox_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  AABox resultValue = selfCpp->GetLocalBounds();
+  AABox* result = new AABox(resultValue);
+  return reinterpret_cast<JoltC_AABox_t *>(result);
 };
 
 JoltC_AABox_t * JoltC_Shape_GetWorldSpaceBounds(
   JoltC_Shape_t * self,
   const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale,
-  char** outErrMsg
+  const JoltC_Vec3_t * inScale
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    AABox resultValue = selfCpp->GetWorldSpaceBounds(
-    *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
-    *reinterpret_cast<Vec3 *>(inScale->obj)
-    );
-    AABox* result = new AABox(resultValue);
-    return reinterpret_cast<JoltC_AABox_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  AABox resultValue = selfCpp->GetWorldSpaceBounds(
+  *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
+  *reinterpret_cast<Vec3 *>(inScale->obj)
+  );
+  AABox* result = new AABox(resultValue);
+  return reinterpret_cast<JoltC_AABox_t *>(result);
 };
 
 JoltC_Vec3_t * JoltC_Shape_GetCenterOfMass(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    Vec3 resultValue = selfCpp->GetCenterOfMass();
-    Vec3* result = new Vec3(resultValue);
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  Vec3 resultValue = selfCpp->GetCenterOfMass();
+  Vec3* result = new Vec3(resultValue);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 unsigned long long int JoltC_Shape_GetUserData(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    unsigned long long int result = selfCpp->GetUserData();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  unsigned long long int result = selfCpp->GetUserData();
+  return result;
 };
 
 void JoltC_Shape_SetUserData(
   JoltC_Shape_t * self,
-  unsigned long long int inUserData,
-  char** outErrMsg
+  unsigned long long int inUserData
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    
-    selfCpp->SetUserData(
-    inUserData
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  
+  selfCpp->SetUserData(
+  inUserData
+  );
 };
 
 unsigned long JoltC_Shape_GetSubShapeIDBitsRecursive(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    unsigned long result = selfCpp->GetSubShapeIDBitsRecursive();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  unsigned long result = selfCpp->GetSubShapeIDBitsRecursive();
+  return result;
 };
 
 float JoltC_Shape_GetInnerRadius(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    float result = selfCpp->GetInnerRadius();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  float result = selfCpp->GetInnerRadius();
+  return result;
 };
 
 JoltC_MassProperties_t * JoltC_Shape_GetMassProperties(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    MassProperties resultValue = selfCpp->GetMassProperties();
-    MassProperties* result = new MassProperties(resultValue);
-    return reinterpret_cast<JoltC_MassProperties_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  MassProperties resultValue = selfCpp->GetMassProperties();
+  MassProperties* result = new MassProperties(resultValue);
+  return reinterpret_cast<JoltC_MassProperties_t *>(result);
 };
 
 const JoltC_PhysicsMaterial_t * JoltC_Shape_GetMaterial(
   JoltC_Shape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  char** outErrMsg
+  const JoltC_SubShapeID_t * inSubShapeID
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    const PhysicsMaterial * result = selfCpp->GetMaterial(
-    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-    );
-    return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  const PhysicsMaterial * result = selfCpp->GetMaterial(
+  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+  );
+  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
 };
 
 JoltC_Vec3_t * JoltC_Shape_GetSurfaceNormal(
   JoltC_Shape_t * self,
   const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition,
-  char** outErrMsg
+  const JoltC_Vec3_t * inLocalSurfacePosition
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    Vec3 resultValue = selfCpp->GetSurfaceNormal(
-    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-    *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
-    );
-    Vec3* result = new Vec3(resultValue);
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  Vec3 resultValue = selfCpp->GetSurfaceNormal(
+  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+  *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
+  );
+  Vec3* result = new Vec3(resultValue);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 unsigned long long int JoltC_Shape_GetSubShapeUserData(
   JoltC_Shape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  char** outErrMsg
+  const JoltC_SubShapeID_t * inSubShapeID
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    unsigned long long int result = selfCpp->GetSubShapeUserData(
-    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  unsigned long long int result = selfCpp->GetSubShapeUserData(
+  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+  );
+  return result;
 };
 
 JoltC_TransformedShape_t * JoltC_Shape_GetSubShapeTransformedShape(
@@ -327,88 +322,52 @@ JoltC_TransformedShape_t * JoltC_Shape_GetSubShapeTransformedShape(
   const JoltC_Vec3_t * inPositionCOM,
   const JoltC_Quat_t * inRotation,
   const JoltC_Vec3_t * inScale,
-  JoltC_SubShapeID_t * outRemainder,
-  char** outErrMsg
+  JoltC_SubShapeID_t * outRemainder
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
-    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-    *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
-    *reinterpret_cast<Vec3 *>(inScale->obj),
-    *reinterpret_cast<SubShapeID *>(outRemainder->obj)
-    );
-    TransformedShape* result = new TransformedShape(resultValue);
-    return reinterpret_cast<JoltC_TransformedShape_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
+  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+  *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
+  *reinterpret_cast<Quat *>(inRotation->obj),
+  *reinterpret_cast<Vec3 *>(inScale->obj),
+  *reinterpret_cast<SubShapeID *>(outRemainder->obj)
+  );
+  TransformedShape* result = new TransformedShape(resultValue);
+  return reinterpret_cast<JoltC_TransformedShape_t *>(result);
 };
 
 float JoltC_Shape_GetVolume(
-  JoltC_Shape_t * self,
-  char** outErrMsg
+  JoltC_Shape_t * self
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    float result = selfCpp->GetVolume();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  float result = selfCpp->GetVolume();
+  return result;
 };
 
 bool JoltC_Shape_IsValidScale(
   JoltC_Shape_t * self,
-  const JoltC_Vec3_t * inScale,
-  char** outErrMsg
+  const JoltC_Vec3_t * inScale
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    bool result = selfCpp->IsValidScale(
-    *reinterpret_cast<Vec3 *>(inScale->obj)
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  bool result = selfCpp->IsValidScale(
+  *reinterpret_cast<Vec3 *>(inScale->obj)
+  );
+  return result;
 };
 
 JoltC_Shape_ShapeResult_t * JoltC_Shape_ScaleShape(
   JoltC_Shape_t * self,
-  const JoltC_Vec3_t * inScale,
-  char** outErrMsg
+  const JoltC_Vec3_t * inScale
 ) {
-  try {
-    Shape * selfCpp = static_cast<Shape *>(self->obj);
-    Shape::ShapeResult resultValue = selfCpp->ScaleShape(
-    *reinterpret_cast<Vec3 *>(inScale->obj)
-    );
-    Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-    return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  Shape * selfCpp = static_cast<Shape *>(self->obj);
+  Shape::ShapeResult resultValue = selfCpp->ScaleShape(
+  *reinterpret_cast<Vec3 *>(inScale->obj)
+  );
+  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
+  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

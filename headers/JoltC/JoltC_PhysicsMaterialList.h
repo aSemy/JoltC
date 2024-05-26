@@ -8,54 +8,45 @@ extern "C" {
 
 //region constructors
 
-JoltC_PhysicsMaterialList_t * JoltC_PhysicsMaterialList_new(
-  char** outErrMsg
-);
+JoltC_PhysicsMaterialList_t * JoltC_PhysicsMaterialList_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
 bool JoltC_PhysicsMaterialList_empty(
-  JoltC_PhysicsMaterialList_t * self,
-  char** outErrMsg
+  JoltC_PhysicsMaterialList_t * self
 );
 
 long JoltC_PhysicsMaterialList_size(
-  JoltC_PhysicsMaterialList_t * self,
-  char** outErrMsg
+  JoltC_PhysicsMaterialList_t * self
 );
 
 const JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
   JoltC_PhysicsMaterialList_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_PhysicsMaterialList_push_back(
   JoltC_PhysicsMaterialList_t * self,
-  const JoltC_PhysicsMaterial_t * inMaterial,
-  char** outErrMsg
+  const JoltC_PhysicsMaterial_t * inMaterial
 );
 
 void JoltC_PhysicsMaterialList_reserve(
   JoltC_PhysicsMaterialList_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_PhysicsMaterialList_resize(
   JoltC_PhysicsMaterialList_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_PhysicsMaterialList_clear(
-  JoltC_PhysicsMaterialList_t * self,
-  char** outErrMsg
+  JoltC_PhysicsMaterialList_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

@@ -9,26 +9,17 @@ extern "C" {
 //region constructors
 
 JoltC_SpecifiedObjectLayerFilter_t * JoltC_SpecifiedObjectLayerFilter_new(
-  unsigned long inObjectLayer,
-  char** outErrMsg
+  unsigned long inObjectLayer
 ) {
-  try {
-    JoltC_SpecifiedObjectLayerFilter_t * cInstance = new JoltC_SpecifiedObjectLayerFilter_t();
-    SpecifiedObjectLayerFilter * cppInstance = new SpecifiedObjectLayerFilter(
-      inObjectLayer
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_SpecifiedObjectLayerFilter_t * cInstance = new JoltC_SpecifiedObjectLayerFilter_t();
+  SpecifiedObjectLayerFilter * cppInstance = new SpecifiedObjectLayerFilter(
+    inObjectLayer
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 #ifdef __cplusplus
 }

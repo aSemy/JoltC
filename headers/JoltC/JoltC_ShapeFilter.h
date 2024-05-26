@@ -8,11 +8,9 @@ extern "C" {
 
 //region constructors
 
-JoltC_ShapeFilter_t * JoltC_ShapeFilter_new(
-  char** outErrMsg
-);
+JoltC_ShapeFilter_t * JoltC_ShapeFilter_new();
 
-//endregion constructors
+//endregion
 
 
 #ifdef __cplusplus

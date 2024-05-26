@@ -9,26 +9,17 @@ extern "C" {
 //region constructors
 
 JoltC_IgnoreSingleBodyFilter_t * JoltC_IgnoreSingleBodyFilter_new(
-  const JoltC_BodyID_t * inBodyID,
-  char** outErrMsg
+  const JoltC_BodyID_t * inBodyID
 ) {
-  try {
-    JoltC_IgnoreSingleBodyFilter_t * cInstance = new JoltC_IgnoreSingleBodyFilter_t();
-    IgnoreSingleBodyFilter * cppInstance = new IgnoreSingleBodyFilter(
-      *reinterpret_cast<BodyID *>(inBodyID->obj)
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_IgnoreSingleBodyFilter_t * cInstance = new JoltC_IgnoreSingleBodyFilter_t();
+  IgnoreSingleBodyFilter * cppInstance = new IgnoreSingleBodyFilter(
+    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 #ifdef __cplusplus
 }

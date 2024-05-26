@@ -16,8 +16,7 @@ void JoltC_NarrowPhaseQuery_CastRay(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 );
 
 void JoltC_NarrowPhaseQuery_CollidePoint(
@@ -27,8 +26,7 @@ void JoltC_NarrowPhaseQuery_CollidePoint(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 );
 
 void JoltC_NarrowPhaseQuery_CollideShape(
@@ -42,8 +40,7 @@ void JoltC_NarrowPhaseQuery_CollideShape(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 );
 
 void JoltC_NarrowPhaseQuery_CastShape(
@@ -55,8 +52,7 @@ void JoltC_NarrowPhaseQuery_CastShape(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 );
 
 void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
@@ -66,11 +62,10 @@ void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

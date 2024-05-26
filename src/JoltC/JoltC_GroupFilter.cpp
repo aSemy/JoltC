@@ -6,60 +6,46 @@
 extern "C" {
 #endif
 
+//region converters
+
+/**
+ * Convert an instance of JoltC_GroupFilterTable_t into JoltC_GroupFilter_t.
+ */
+JoltC_GroupFilter_t * JoltC_GroupFilter_From_GroupFilterTable(
+  JoltC_GroupFilterTable_t * subtype
+) {
+  return (JoltC_GroupFilter_t*) subtype;
+};
+
+//endregion
+
 //region functions
 
 unsigned long JoltC_GroupFilter_GetRefCount(
-  JoltC_GroupFilter_t * self,
-  char** outErrMsg
+  JoltC_GroupFilter_t * self
 ) {
-  try {
-    GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-    unsigned long result = selfCpp->GetRefCount();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
+  unsigned long result = selfCpp->GetRefCount();
+  return result;
 };
 
 void JoltC_GroupFilter_AddRef(
-  JoltC_GroupFilter_t * self,
-  char** outErrMsg
+  JoltC_GroupFilter_t * self
 ) {
-  try {
-    GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-    
-    selfCpp->AddRef();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
+  
+  selfCpp->AddRef();
 };
 
 void JoltC_GroupFilter_Release(
-  JoltC_GroupFilter_t * self,
-  char** outErrMsg
+  JoltC_GroupFilter_t * self
 ) {
-  try {
-    GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-    
-    selfCpp->Release();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
+  
+  selfCpp->Release();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

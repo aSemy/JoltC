@@ -9,14 +9,13 @@ extern "C" {
 //region properties
 
 const float JoltC_HeightFieldShapeConstantValues_cNoCollisionValue_Get(
-  JoltC_HeightFieldShapeConstantValues_t * self,
-  char** outErrMsg
+  JoltC_HeightFieldShapeConstantValues_t * self
 ) {
   const float result = HeightFieldShapeConstantValues::cNoCollisionValue;
   return result;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

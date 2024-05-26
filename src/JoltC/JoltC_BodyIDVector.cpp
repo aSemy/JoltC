@@ -8,160 +8,87 @@ extern "C" {
 
 //region constructors
 
-JoltC_BodyIDVector_t * JoltC_BodyIDVector_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_BodyIDVector_t * cInstance = new JoltC_BodyIDVector_t();
-    BodyIDVector * cppInstance = new BodyIDVector();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_BodyIDVector_t * JoltC_BodyIDVector_new() {
+  JoltC_BodyIDVector_t * cInstance = new JoltC_BodyIDVector_t();
+  BodyIDVector * cppInstance = new BodyIDVector();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 bool JoltC_BodyIDVector_empty(
-  JoltC_BodyIDVector_t * self,
-  char** outErrMsg
+  JoltC_BodyIDVector_t * self
 ) {
-  try {
-    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_BodyIDVector_size(
-  JoltC_BodyIDVector_t * self,
-  char** outErrMsg
+  JoltC_BodyIDVector_t * self
 ) {
-  try {
-    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 JoltC_BodyID_t * JoltC_BodyIDVector_at(
   JoltC_BodyIDVector_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-    BodyID& resultRef = selfCpp->at(
-    inIndex
-    );
-    BodyID * result = &resultRef;
-    return reinterpret_cast<JoltC_BodyID_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+  BodyID& resultRef = selfCpp->at(
+  inIndex
+  );
+  BodyID * result = &resultRef;
+  return reinterpret_cast<JoltC_BodyID_t *>(result);
 };
 
 void JoltC_BodyIDVector_push_back(
   JoltC_BodyIDVector_t * self,
-  const JoltC_BodyID_t * inBodyID,
-  char** outErrMsg
+  const JoltC_BodyID_t * inBodyID
 ) {
-  try {
-    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-    
-    selfCpp->push_back(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+  
+  selfCpp->push_back(
+  *reinterpret_cast<BodyID *>(inBodyID->obj)
+  );
 };
 
 void JoltC_BodyIDVector_reserve(
   JoltC_BodyIDVector_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-    
-    selfCpp->reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+  
+  selfCpp->reserve(
+  inSize
+  );
 };
 
 void JoltC_BodyIDVector_resize(
   JoltC_BodyIDVector_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_BodyIDVector_clear(
-  JoltC_BodyIDVector_t * self,
-  char** outErrMsg
+  JoltC_BodyIDVector_t * self
 ) {
-  try {
-    BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+  
+  selfCpp->clear();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

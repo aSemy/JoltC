@@ -9,39 +9,33 @@ extern "C" {
 //region functions
 
 bool JoltC_ContactPoints_empty(
-  JoltC_ContactPoints_t * self,
-  char** outErrMsg
+  JoltC_ContactPoints_t * self
 );
 
 long JoltC_ContactPoints_size(
-  JoltC_ContactPoints_t * self,
-  char** outErrMsg
+  JoltC_ContactPoints_t * self
 );
 
 JoltC_Vec3_t * JoltC_ContactPoints_at(
   JoltC_ContactPoints_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ContactPoints_push_back(
   JoltC_ContactPoints_t * self,
-  const JoltC_Vec3_t * inValue,
-  char** outErrMsg
+  const JoltC_Vec3_t * inValue
 );
 
 void JoltC_ContactPoints_resize(
   JoltC_ContactPoints_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ContactPoints_clear(
-  JoltC_ContactPoints_t * self,
-  char** outErrMsg
+  JoltC_ContactPoints_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

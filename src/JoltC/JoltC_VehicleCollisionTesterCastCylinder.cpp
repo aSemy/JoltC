@@ -10,82 +10,46 @@ extern "C" {
 
 JoltC_VehicleCollisionTesterCastCylinder_t * JoltC_VehicleCollisionTesterCastCylinder_new(
   unsigned long inObjectLayer,
-  float inConvexRadiusFraction,
-  char** outErrMsg
+  float inConvexRadiusFraction
 ) {
-  try {
-    JoltC_VehicleCollisionTesterCastCylinder_t * cInstance = new JoltC_VehicleCollisionTesterCastCylinder_t();
-    VehicleCollisionTesterCastCylinder * cppInstance = new VehicleCollisionTesterCastCylinder(
-      inObjectLayer,
-      inConvexRadiusFraction
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_VehicleCollisionTesterCastCylinder_t * cInstance = new JoltC_VehicleCollisionTesterCastCylinder_t();
+  VehicleCollisionTesterCastCylinder * cppInstance = new VehicleCollisionTesterCastCylinder(
+    inObjectLayer,
+    inConvexRadiusFraction
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_VehicleCollisionTesterCastCylinder_GetRefCount(
-  JoltC_VehicleCollisionTesterCastCylinder_t * self,
-  char** outErrMsg
+  JoltC_VehicleCollisionTesterCastCylinder_t * self
 ) {
-  try {
-    VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
-    unsigned long result = selfCpp->GetRefCount();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
+  unsigned long result = selfCpp->GetRefCount();
+  return result;
 };
 
 void JoltC_VehicleCollisionTesterCastCylinder_AddRef(
-  JoltC_VehicleCollisionTesterCastCylinder_t * self,
-  char** outErrMsg
+  JoltC_VehicleCollisionTesterCastCylinder_t * self
 ) {
-  try {
-    VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
-    
-    selfCpp->AddRef();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
+  
+  selfCpp->AddRef();
 };
 
 void JoltC_VehicleCollisionTesterCastCylinder_Release(
-  JoltC_VehicleCollisionTesterCastCylinder_t * self,
-  char** outErrMsg
+  JoltC_VehicleCollisionTesterCastCylinder_t * self
 ) {
-  try {
-    VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
-    
-    selfCpp->Release();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
+  
+  selfCpp->Release();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

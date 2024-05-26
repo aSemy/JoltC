@@ -9,113 +9,68 @@ extern "C" {
 //region constructors
 
 JoltC_ObjectLayerPairFilterTable_t * JoltC_ObjectLayerPairFilterTable_new(
-  unsigned long inNumObjectLayers,
-  char** outErrMsg
+  unsigned long inNumObjectLayers
 ) {
-  try {
-    JoltC_ObjectLayerPairFilterTable_t * cInstance = new JoltC_ObjectLayerPairFilterTable_t();
-    ObjectLayerPairFilterTable * cppInstance = new ObjectLayerPairFilterTable(
-      inNumObjectLayers
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_ObjectLayerPairFilterTable_t * cInstance = new JoltC_ObjectLayerPairFilterTable_t();
+  ObjectLayerPairFilterTable * cppInstance = new ObjectLayerPairFilterTable(
+    inNumObjectLayers
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_ObjectLayerPairFilterTable_GetNumObjectLayers(
-  JoltC_ObjectLayerPairFilterTable_t * self,
-  char** outErrMsg
+  JoltC_ObjectLayerPairFilterTable_t * self
 ) {
-  try {
-    ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
-    unsigned long result = selfCpp->GetNumObjectLayers();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
+  unsigned long result = selfCpp->GetNumObjectLayers();
+  return result;
 };
 
 void JoltC_ObjectLayerPairFilterTable_DisableCollision(
   JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2,
-  char** outErrMsg
+  unsigned long inLayer2
 ) {
-  try {
-    ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
-    
-    selfCpp->DisableCollision(
-    inLayer1,
-    inLayer2
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
+  
+  selfCpp->DisableCollision(
+  inLayer1,
+  inLayer2
+  );
 };
 
 void JoltC_ObjectLayerPairFilterTable_EnableCollision(
   JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2,
-  char** outErrMsg
+  unsigned long inLayer2
 ) {
-  try {
-    ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
-    
-    selfCpp->EnableCollision(
-    inLayer1,
-    inLayer2
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
+  
+  selfCpp->EnableCollision(
+  inLayer1,
+  inLayer2
+  );
 };
 
 bool JoltC_ObjectLayerPairFilterTable_ShouldCollide(
   JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2,
-  char** outErrMsg
+  unsigned long inLayer2
 ) {
-  try {
-    ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
-    bool result = selfCpp->ShouldCollide(
-    inLayer1,
-    inLayer2
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
+  bool result = selfCpp->ShouldCollide(
+  inLayer1,
+  inLayer2
+  );
+  return result;
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

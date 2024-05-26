@@ -9,39 +9,33 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayVehicleDifferentialSettings_empty(
-  JoltC_ArrayVehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayVehicleDifferentialSettings_t * self
 );
 
 long JoltC_ArrayVehicleDifferentialSettings_size(
-  JoltC_ArrayVehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayVehicleDifferentialSettings_t * self
 );
 
 JoltC_VehicleDifferentialSettings_t * JoltC_ArrayVehicleDifferentialSettings_at(
   JoltC_ArrayVehicleDifferentialSettings_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArrayVehicleDifferentialSettings_push_back(
   JoltC_ArrayVehicleDifferentialSettings_t * self,
-  JoltC_VehicleDifferentialSettings_t * inValue,
-  char** outErrMsg
+  JoltC_VehicleDifferentialSettings_t * inValue
 );
 
 void JoltC_ArrayVehicleDifferentialSettings_resize(
   JoltC_ArrayVehicleDifferentialSettings_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayVehicleDifferentialSettings_clear(
-  JoltC_ArrayVehicleDifferentialSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayVehicleDifferentialSettings_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

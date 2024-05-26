@@ -8,22 +8,37 @@ extern "C" {
 
 //region constructors
 
-JoltC_ObjectLayerPairFilter_t * JoltC_ObjectLayerPairFilter_new(
-  char** outErrMsg
+JoltC_ObjectLayerPairFilter_t * JoltC_ObjectLayerPairFilter_new();
+
+//endregion
+
+//region converters
+
+/**
+ * Convert an instance of JoltC_ObjectLayerPairFilterTable_t into JoltC_ObjectLayerPairFilter_t.
+ */
+JoltC_ObjectLayerPairFilter_t * JoltC_ObjectLayerPairFilter_From_ObjectLayerPairFilterTable(
+  JoltC_ObjectLayerPairFilterTable_t * subtype
 );
 
-//endregion constructors
+/**
+ * Convert an instance of JoltC_ObjectLayerPairFilterMask_t into JoltC_ObjectLayerPairFilter_t.
+ */
+JoltC_ObjectLayerPairFilter_t * JoltC_ObjectLayerPairFilter_From_ObjectLayerPairFilterMask(
+  JoltC_ObjectLayerPairFilterMask_t * subtype
+);
+
+//endregion
 
 //region functions
 
 bool JoltC_ObjectLayerPairFilter_ShouldCollide(
   JoltC_ObjectLayerPairFilter_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2,
-  char** outErrMsg
+  unsigned long inLayer2
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

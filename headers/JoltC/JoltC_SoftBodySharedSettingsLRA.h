@@ -11,39 +11,34 @@ extern "C" {
 JoltC_SoftBodySharedSettingsLRA_t * JoltC_SoftBodySharedSettingsLRA_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
-  float inMaxDistance,
-  char** outErrMsg
+  float inMaxDistance
 );
 
-//endregion constructors
+//endregion
 
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsLRA_mVertex_Get(
   JoltC_SoftBodySharedSettingsLRA_t * self,
-  unsigned long * outValue,
-  char** outErrMsg
+  unsigned long * outValue
 );
 
 void JoltC_SoftBodySharedSettingsLRA_mVertex_Set(
   JoltC_SoftBodySharedSettingsLRA_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize,
-  char** outErrMsg
+  size_t mVertexSize
 );
 
 float JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Get(
-  JoltC_SoftBodySharedSettingsLRA_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsLRA_t * self
 );
 
 void JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Set(
   JoltC_SoftBodySharedSettingsLRA_t * self,
-  float mMaxDistance,
-  char** outErrMsg
+  float mMaxDistance
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

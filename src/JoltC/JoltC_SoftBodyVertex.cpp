@@ -9,8 +9,7 @@ extern "C" {
 //region properties
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mPreviousPosition_Get(
-  JoltC_SoftBodyVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   Vec3 resultValue = selfCpp->mPreviousPosition;
@@ -20,16 +19,14 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mPreviousPosition_Get(
 
 void JoltC_SoftBodyVertex_mPreviousPosition_Set(
   JoltC_SoftBodyVertex_t * self,
-  JoltC_Vec3_t * mPreviousPosition,
-  char** outErrMsg
+  JoltC_Vec3_t * mPreviousPosition
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   selfCpp->mPreviousPosition = *reinterpret_cast<Vec3 *>(mPreviousPosition->obj);
 };
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mPosition_Get(
-  JoltC_SoftBodyVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   Vec3 resultValue = selfCpp->mPosition;
@@ -39,16 +36,14 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mPosition_Get(
 
 void JoltC_SoftBodyVertex_mPosition_Set(
   JoltC_SoftBodyVertex_t * self,
-  JoltC_Vec3_t * mPosition,
-  char** outErrMsg
+  JoltC_Vec3_t * mPosition
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   selfCpp->mPosition = *reinterpret_cast<Vec3 *>(mPosition->obj);
 };
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mVelocity_Get(
-  JoltC_SoftBodyVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   Vec3 resultValue = selfCpp->mVelocity;
@@ -58,16 +53,14 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mVelocity_Get(
 
 void JoltC_SoftBodyVertex_mVelocity_Set(
   JoltC_SoftBodyVertex_t * self,
-  JoltC_Vec3_t * mVelocity,
-  char** outErrMsg
+  JoltC_Vec3_t * mVelocity
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   selfCpp->mVelocity = *reinterpret_cast<Vec3 *>(mVelocity->obj);
 };
 
 float JoltC_SoftBodyVertex_mInvMass_Get(
-  JoltC_SoftBodyVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   float result = selfCpp->mInvMass;
@@ -76,14 +69,13 @@ float JoltC_SoftBodyVertex_mInvMass_Get(
 
 void JoltC_SoftBodyVertex_mInvMass_Set(
   JoltC_SoftBodyVertex_t * self,
-  float mInvMass,
-  char** outErrMsg
+  float mInvMass
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   selfCpp->mInvMass = mInvMass;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

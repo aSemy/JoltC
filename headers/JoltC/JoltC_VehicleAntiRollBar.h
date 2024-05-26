@@ -8,48 +8,40 @@ extern "C" {
 
 //region constructors
 
-JoltC_VehicleAntiRollBar_t * JoltC_VehicleAntiRollBar_new(
-  char** outErrMsg
-);
+JoltC_VehicleAntiRollBar_t * JoltC_VehicleAntiRollBar_new();
 
-//endregion constructors
+//endregion
 
 //region properties
 
 long JoltC_VehicleAntiRollBar_mLeftWheel_Get(
-  JoltC_VehicleAntiRollBar_t * self,
-  char** outErrMsg
+  JoltC_VehicleAntiRollBar_t * self
 );
 
 void JoltC_VehicleAntiRollBar_mLeftWheel_Set(
   JoltC_VehicleAntiRollBar_t * self,
-  long mLeftWheel,
-  char** outErrMsg
+  long mLeftWheel
 );
 
 long JoltC_VehicleAntiRollBar_mRightWheel_Get(
-  JoltC_VehicleAntiRollBar_t * self,
-  char** outErrMsg
+  JoltC_VehicleAntiRollBar_t * self
 );
 
 void JoltC_VehicleAntiRollBar_mRightWheel_Set(
   JoltC_VehicleAntiRollBar_t * self,
-  long mRightWheel,
-  char** outErrMsg
+  long mRightWheel
 );
 
 float JoltC_VehicleAntiRollBar_mStiffness_Get(
-  JoltC_VehicleAntiRollBar_t * self,
-  char** outErrMsg
+  JoltC_VehicleAntiRollBar_t * self
 );
 
 void JoltC_VehicleAntiRollBar_mStiffness_Set(
   JoltC_VehicleAntiRollBar_t * self,
-  float mStiffness,
-  char** outErrMsg
+  float mStiffness
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

@@ -8,54 +8,45 @@ extern "C" {
 
 //region constructors
 
-JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_ArrayRagdollAdditionalConstraint_new(
-  char** outErrMsg
-);
+JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_ArrayRagdollAdditionalConstraint_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
 bool JoltC_ArrayRagdollAdditionalConstraint_empty(
-  JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  char** outErrMsg
+  JoltC_ArrayRagdollAdditionalConstraint_t * self
 );
 
 long JoltC_ArrayRagdollAdditionalConstraint_size(
-  JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  char** outErrMsg
+  JoltC_ArrayRagdollAdditionalConstraint_t * self
 );
 
 JoltC_RagdollAdditionalConstraint_t * JoltC_ArrayRagdollAdditionalConstraint_at(
   JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArrayRagdollAdditionalConstraint_push_back(
   JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  JoltC_RagdollAdditionalConstraint_t * inValue,
-  char** outErrMsg
+  JoltC_RagdollAdditionalConstraint_t * inValue
 );
 
 void JoltC_ArrayRagdollAdditionalConstraint_reserve(
   JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayRagdollAdditionalConstraint_resize(
   JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayRagdollAdditionalConstraint_clear(
-  JoltC_ArrayRagdollAdditionalConstraint_t * self,
-  char** outErrMsg
+  JoltC_ArrayRagdollAdditionalConstraint_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

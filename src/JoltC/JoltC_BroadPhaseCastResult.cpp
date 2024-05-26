@@ -8,51 +8,44 @@ extern "C" {
 
 //region constructors
 
-JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_BroadPhaseCastResult_t * cInstance = new JoltC_BroadPhaseCastResult_t();
-    BroadPhaseCastResult * cppInstance = new BroadPhaseCastResult();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_new() {
+  JoltC_BroadPhaseCastResult_t * cInstance = new JoltC_BroadPhaseCastResult_t();
+  BroadPhaseCastResult * cppInstance = new BroadPhaseCastResult();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
+
+//region converters
+
+/**
+ * Convert an instance of JoltC_RayCastResult_t into JoltC_BroadPhaseCastResult_t.
+ */
+JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_From_RayCastResult(
+  JoltC_RayCastResult_t * subtype
+) {
+  return (JoltC_BroadPhaseCastResult_t*) subtype;
+};
+
+//endregion
 
 //region functions
 
 void JoltC_BroadPhaseCastResult_Reset(
-  JoltC_BroadPhaseCastResult_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseCastResult_t * self
 ) {
-  try {
-    BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
-    
-    selfCpp->Reset();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
+  
+  selfCpp->Reset();
 };
 
-//endregion functions
+//endregion
 
 //region properties
 
 JoltC_BodyID_t * JoltC_BroadPhaseCastResult_mBodyID_Get(
-  JoltC_BroadPhaseCastResult_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseCastResult_t * self
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
   BodyID resultValue = selfCpp->mBodyID;
@@ -62,16 +55,14 @@ JoltC_BodyID_t * JoltC_BroadPhaseCastResult_mBodyID_Get(
 
 void JoltC_BroadPhaseCastResult_mBodyID_Set(
   JoltC_BroadPhaseCastResult_t * self,
-  JoltC_BodyID_t * mBodyID,
-  char** outErrMsg
+  JoltC_BodyID_t * mBodyID
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
   selfCpp->mBodyID = *reinterpret_cast<BodyID *>(mBodyID->obj);
 };
 
 float JoltC_BroadPhaseCastResult_mFraction_Get(
-  JoltC_BroadPhaseCastResult_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseCastResult_t * self
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
   float result = selfCpp->mFraction;
@@ -80,14 +71,13 @@ float JoltC_BroadPhaseCastResult_mFraction_Get(
 
 void JoltC_BroadPhaseCastResult_mFraction_Set(
   JoltC_BroadPhaseCastResult_t * self,
-  float mFraction,
-  char** outErrMsg
+  float mFraction
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
   selfCpp->mFraction = mFraction;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

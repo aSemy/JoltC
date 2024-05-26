@@ -16,28 +16,19 @@ void JoltC_NarrowPhaseQuery_CastRay(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 ) {
-  try {
-    NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-    
-    selfCpp->CastRay(
-    *reinterpret_cast<RRayCast *>(inRay->obj),
-    *reinterpret_cast<RayCastSettings *>(inRayCastSettings->obj),
-    *reinterpret_cast<CastRayCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  
+  selfCpp->CastRay(
+  *reinterpret_cast<RRayCast *>(inRay->obj),
+  *reinterpret_cast<RayCastSettings *>(inRayCastSettings->obj),
+  *reinterpret_cast<CastRayCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+  );
 };
 
 void JoltC_NarrowPhaseQuery_CollidePoint(
@@ -47,27 +38,18 @@ void JoltC_NarrowPhaseQuery_CollidePoint(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 ) {
-  try {
-    NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-    
-    selfCpp->CollidePoint(
-    *reinterpret_cast<RVec3 *>(inPoint->obj),
-    *reinterpret_cast<CollidePointCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  
+  selfCpp->CollidePoint(
+  *reinterpret_cast<RVec3 *>(inPoint->obj),
+  *reinterpret_cast<CollidePointCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+  );
 };
 
 void JoltC_NarrowPhaseQuery_CollideShape(
@@ -81,31 +63,22 @@ void JoltC_NarrowPhaseQuery_CollideShape(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 ) {
-  try {
-    NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-    
-    selfCpp->CollideShape(
-    reinterpret_cast<Shape *>(inShape->obj),
-    *reinterpret_cast<Vec3 *>(inShapeScale->obj),
-    *reinterpret_cast<RMat44 *>(inCenterOfMassTransform->obj),
-    *reinterpret_cast<CollideShapeSettings *>(inCollideShapeSettings->obj),
-    *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
-    *reinterpret_cast<CollideShapeCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  
+  selfCpp->CollideShape(
+  reinterpret_cast<Shape *>(inShape->obj),
+  *reinterpret_cast<Vec3 *>(inShapeScale->obj),
+  *reinterpret_cast<RMat44 *>(inCenterOfMassTransform->obj),
+  *reinterpret_cast<CollideShapeSettings *>(inCollideShapeSettings->obj),
+  *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
+  *reinterpret_cast<CollideShapeCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+  );
 };
 
 void JoltC_NarrowPhaseQuery_CastShape(
@@ -117,29 +90,20 @@ void JoltC_NarrowPhaseQuery_CastShape(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 ) {
-  try {
-    NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-    
-    selfCpp->CastShape(
-    *reinterpret_cast<RShapeCast *>(inShapeCast->obj),
-    *reinterpret_cast<ShapeCastSettings *>(inShapeCastSettings->obj),
-    *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
-    *reinterpret_cast<CastShapeCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  
+  selfCpp->CastShape(
+  *reinterpret_cast<RShapeCast *>(inShapeCast->obj),
+  *reinterpret_cast<ShapeCastSettings *>(inShapeCastSettings->obj),
+  *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
+  *reinterpret_cast<CastShapeCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+  );
 };
 
 void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
@@ -149,30 +113,21 @@ void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
   const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
   const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
-  char** outErrMsg
+  const JoltC_ShapeFilter_t * inShapeFilter
 ) {
-  try {
-    NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-    
-    selfCpp->CollectTransformedShapes(
-    *reinterpret_cast<AABox *>(inBox->obj),
-    *reinterpret_cast<TransformedShapeCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  
+  selfCpp->CollectTransformedShapes(
+  *reinterpret_cast<AABox *>(inBox->obj),
+  *reinterpret_cast<TransformedShapeCollector *>(ioCollector->obj),
+  *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
+  *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
+  *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
+  *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+  );
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

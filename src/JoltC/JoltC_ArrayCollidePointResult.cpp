@@ -9,138 +9,75 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayCollidePointResult_empty(
-  JoltC_ArrayCollidePointResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayCollidePointResult_t * self
 ) {
-  try {
-    ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_ArrayCollidePointResult_size(
-  JoltC_ArrayCollidePointResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayCollidePointResult_t * self
 ) {
-  try {
-    ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 JoltC_CollidePointResult_t * JoltC_ArrayCollidePointResult_at(
   JoltC_ArrayCollidePointResult_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-    CollidePointResult& resultRef = selfCpp->at(
-    inIndex
-    );
-    CollidePointResult * result = &resultRef;
-    return reinterpret_cast<JoltC_CollidePointResult_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
+  CollidePointResult& resultRef = selfCpp->at(
+  inIndex
+  );
+  CollidePointResult * result = &resultRef;
+  return reinterpret_cast<JoltC_CollidePointResult_t *>(result);
 };
 
 void JoltC_ArrayCollidePointResult_push_back(
   JoltC_ArrayCollidePointResult_t * self,
-  const JoltC_CollidePointResult_t * inValue,
-  char** outErrMsg
+  const JoltC_CollidePointResult_t * inValue
 ) {
-  try {
-    ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-    
-    selfCpp->push_back(
-    *reinterpret_cast<CollidePointResult *>(inValue->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
+  
+  selfCpp->push_back(
+  *reinterpret_cast<CollidePointResult *>(inValue->obj)
+  );
 };
 
 void JoltC_ArrayCollidePointResult_reserve(
   JoltC_ArrayCollidePointResult_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-    
-    selfCpp->reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
+  
+  selfCpp->reserve(
+  inSize
+  );
 };
 
 void JoltC_ArrayCollidePointResult_resize(
   JoltC_ArrayCollidePointResult_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_ArrayCollidePointResult_clear(
-  JoltC_ArrayCollidePointResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayCollidePointResult_t * self
 ) {
-  try {
-    ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
+  
+  selfCpp->clear();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

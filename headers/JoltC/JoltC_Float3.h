@@ -11,64 +11,55 @@ extern "C" {
 JoltC_Float3_t * JoltC_Float3_new(
   float inX,
   float inY,
-  float inZ,
-  char** outErrMsg
+  float inZ
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 bool JoltC_Float3_Equals(
   JoltC_Float3_t * self,
-  const JoltC_Float3_t * inV,
-  char** outErrMsg
+  const JoltC_Float3_t * inV
 );
 
 bool JoltC_Float3_NotEquals(
   JoltC_Float3_t * self,
-  const JoltC_Float3_t * inV,
-  char** outErrMsg
+  const JoltC_Float3_t * inV
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 float JoltC_Float3_x_Get(
-  JoltC_Float3_t * self,
-  char** outErrMsg
+  JoltC_Float3_t * self
 );
 
 void JoltC_Float3_x_Set(
   JoltC_Float3_t * self,
-  float x,
-  char** outErrMsg
+  float x
 );
 
 float JoltC_Float3_y_Get(
-  JoltC_Float3_t * self,
-  char** outErrMsg
+  JoltC_Float3_t * self
 );
 
 void JoltC_Float3_y_Set(
   JoltC_Float3_t * self,
-  float y,
-  char** outErrMsg
+  float y
 );
 
 float JoltC_Float3_z_Get(
-  JoltC_Float3_t * self,
-  char** outErrMsg
+  JoltC_Float3_t * self
 );
 
 void JoltC_Float3_z_Set(
   JoltC_Float3_t * self,
-  float z,
-  char** outErrMsg
+  float z
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

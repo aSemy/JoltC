@@ -8,85 +8,48 @@ extern "C" {
 
 //region constructors
 
-JoltC_IgnoreMultipleBodiesFilter_t * JoltC_IgnoreMultipleBodiesFilter_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_IgnoreMultipleBodiesFilter_t * cInstance = new JoltC_IgnoreMultipleBodiesFilter_t();
-    IgnoreMultipleBodiesFilter * cppInstance = new IgnoreMultipleBodiesFilter();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_IgnoreMultipleBodiesFilter_t * JoltC_IgnoreMultipleBodiesFilter_new() {
+  JoltC_IgnoreMultipleBodiesFilter_t * cInstance = new JoltC_IgnoreMultipleBodiesFilter_t();
+  IgnoreMultipleBodiesFilter * cppInstance = new IgnoreMultipleBodiesFilter();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 void JoltC_IgnoreMultipleBodiesFilter_Clear(
-  JoltC_IgnoreMultipleBodiesFilter_t * self,
-  char** outErrMsg
+  JoltC_IgnoreMultipleBodiesFilter_t * self
 ) {
-  try {
-    IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-    
-    selfCpp->Clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
+  
+  selfCpp->Clear();
 };
 
 void JoltC_IgnoreMultipleBodiesFilter_Reserve(
   JoltC_IgnoreMultipleBodiesFilter_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-    
-    selfCpp->Reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
+  
+  selfCpp->Reserve(
+  inSize
+  );
 };
 
 void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
   JoltC_IgnoreMultipleBodiesFilter_t * self,
-  const JoltC_BodyID_t * inBodyID,
-  char** outErrMsg
+  const JoltC_BodyID_t * inBodyID
 ) {
-  try {
-    IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-    
-    selfCpp->IgnoreBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
+  
+  selfCpp->IgnoreBody(
+  *reinterpret_cast<BodyID *>(inBodyID->obj)
+  );
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

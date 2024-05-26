@@ -6,75 +6,74 @@
 extern "C" {
 #endif
 
+//region converters
+
+/**
+ * Convert an instance of JoltC_VehicleTrack_t into JoltC_VehicleTrackSettings_t.
+ */
+JoltC_VehicleTrackSettings_t * JoltC_VehicleTrackSettings_From_VehicleTrack(
+  JoltC_VehicleTrack_t * subtype
+);
+
+//endregion
+
 //region properties
 
 long JoltC_VehicleTrackSettings_mDrivenWheel_Get(
-  JoltC_VehicleTrackSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleTrackSettings_t * self
 );
 
 void JoltC_VehicleTrackSettings_mDrivenWheel_Set(
   JoltC_VehicleTrackSettings_t * self,
-  long mDrivenWheel,
-  char** outErrMsg
+  long mDrivenWheel
 );
 
 JoltC_ArrayUint_t * JoltC_VehicleTrackSettings_mWheels_Get(
-  JoltC_VehicleTrackSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleTrackSettings_t * self
 );
 
 void JoltC_VehicleTrackSettings_mWheels_Set(
   JoltC_VehicleTrackSettings_t * self,
-  JoltC_ArrayUint_t * mWheels,
-  char** outErrMsg
+  JoltC_ArrayUint_t * mWheels
 );
 
 float JoltC_VehicleTrackSettings_mInertia_Get(
-  JoltC_VehicleTrackSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleTrackSettings_t * self
 );
 
 void JoltC_VehicleTrackSettings_mInertia_Set(
   JoltC_VehicleTrackSettings_t * self,
-  float mInertia,
-  char** outErrMsg
+  float mInertia
 );
 
 float JoltC_VehicleTrackSettings_mAngularDamping_Get(
-  JoltC_VehicleTrackSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleTrackSettings_t * self
 );
 
 void JoltC_VehicleTrackSettings_mAngularDamping_Set(
   JoltC_VehicleTrackSettings_t * self,
-  float mAngularDamping,
-  char** outErrMsg
+  float mAngularDamping
 );
 
 float JoltC_VehicleTrackSettings_mMaxBrakeTorque_Get(
-  JoltC_VehicleTrackSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleTrackSettings_t * self
 );
 
 void JoltC_VehicleTrackSettings_mMaxBrakeTorque_Set(
   JoltC_VehicleTrackSettings_t * self,
-  float mMaxBrakeTorque,
-  char** outErrMsg
+  float mMaxBrakeTorque
 );
 
 float JoltC_VehicleTrackSettings_mDifferentialRatio_Get(
-  JoltC_VehicleTrackSettings_t * self,
-  char** outErrMsg
+  JoltC_VehicleTrackSettings_t * self
 );
 
 void JoltC_VehicleTrackSettings_mDifferentialRatio_Set(
   JoltC_VehicleTrackSettings_t * self,
-  float mDifferentialRatio,
-  char** outErrMsg
+  float mDifferentialRatio
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

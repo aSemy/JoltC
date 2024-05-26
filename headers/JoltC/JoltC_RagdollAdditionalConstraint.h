@@ -10,29 +10,25 @@ extern "C" {
 
 size_t JoltC_RagdollAdditionalConstraint_mBodyIdx_Get(
   JoltC_RagdollAdditionalConstraint_t * self,
-  long * outValue,
-  char** outErrMsg
+  long * outValue
 );
 
 void JoltC_RagdollAdditionalConstraint_mBodyIdx_Set(
   JoltC_RagdollAdditionalConstraint_t * self,
   long * mBodyIdx,
-  size_t mBodyIdxSize,
-  char** outErrMsg
+  size_t mBodyIdxSize
 );
 
 JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollAdditionalConstraint_mConstraint_Get(
-  JoltC_RagdollAdditionalConstraint_t * self,
-  char** outErrMsg
+  JoltC_RagdollAdditionalConstraint_t * self
 );
 
 void JoltC_RagdollAdditionalConstraint_mConstraint_Set(
   JoltC_RagdollAdditionalConstraint_t * self,
-  JoltC_TwoBodyConstraintSettings_t * mConstraint,
-  char** outErrMsg
+  JoltC_TwoBodyConstraintSettings_t * mConstraint
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

@@ -8,37 +8,31 @@ extern "C" {
 
 //region constructors
 
-JoltC_RayCastSettings_t * JoltC_RayCastSettings_new(
-  char** outErrMsg
-);
+JoltC_RayCastSettings_t * JoltC_RayCastSettings_new();
 
-//endregion constructors
+//endregion
 
 //region properties
 
 JoltC_EBackFaceMode JoltC_RayCastSettings_mBackFaceMode_Get(
-  JoltC_RayCastSettings_t * self,
-  char** outErrMsg
+  JoltC_RayCastSettings_t * self
 );
 
 void JoltC_RayCastSettings_mBackFaceMode_Set(
   JoltC_RayCastSettings_t * self,
-  JoltC_EBackFaceMode mBackFaceMode,
-  char** outErrMsg
+  JoltC_EBackFaceMode mBackFaceMode
 );
 
 bool JoltC_RayCastSettings_mTreatConvexAsSolid_Get(
-  JoltC_RayCastSettings_t * self,
-  char** outErrMsg
+  JoltC_RayCastSettings_t * self
 );
 
 void JoltC_RayCastSettings_mTreatConvexAsSolid_Set(
   JoltC_RayCastSettings_t * self,
-  bool mTreatConvexAsSolid,
-  char** outErrMsg
+  bool mTreatConvexAsSolid
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

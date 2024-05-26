@@ -9,117 +9,63 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayWheelSettings_empty(
-  JoltC_ArrayWheelSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayWheelSettings_t * self
 ) {
-  try {
-    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_ArrayWheelSettings_size(
-  JoltC_ArrayWheelSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayWheelSettings_t * self
 ) {
-  try {
-    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 JoltC_WheelSettings_t * JoltC_ArrayWheelSettings_at(
   JoltC_ArrayWheelSettings_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-    WheelSettings * result = selfCpp->at(
-    inIndex
-    );
-    return reinterpret_cast<JoltC_WheelSettings_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+  WheelSettings * result = selfCpp->at(
+  inIndex
+  );
+  return reinterpret_cast<JoltC_WheelSettings_t *>(result);
 };
 
 void JoltC_ArrayWheelSettings_push_back(
   JoltC_ArrayWheelSettings_t * self,
-  JoltC_WheelSettings_t * inValue,
-  char** outErrMsg
+  JoltC_WheelSettings_t * inValue
 ) {
-  try {
-    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-    
-    selfCpp->push_back(
-    Ref<WheelSettings>(reinterpret_cast<WheelSettings *>(inValue->obj))
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+  
+  selfCpp->push_back(
+  Ref<WheelSettings>(reinterpret_cast<WheelSettings *>(inValue->obj))
+  );
 };
 
 void JoltC_ArrayWheelSettings_resize(
   JoltC_ArrayWheelSettings_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_ArrayWheelSettings_clear(
-  JoltC_ArrayWheelSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayWheelSettings_t * self
 ) {
-  try {
-    ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
+  
+  selfCpp->clear();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

@@ -9,154 +9,82 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayFloat_empty(
-  JoltC_ArrayFloat_t * self,
-  char** outErrMsg
+  JoltC_ArrayFloat_t * self
 ) {
-  try {
-    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_ArrayFloat_size(
-  JoltC_ArrayFloat_t * self,
-  char** outErrMsg
+  JoltC_ArrayFloat_t * self
 ) {
-  try {
-    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 float JoltC_ArrayFloat_at(
   JoltC_ArrayFloat_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-    float result = selfCpp->at(
-    inIndex
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+  float result = selfCpp->at(
+  inIndex
+  );
+  return result;
 };
 
 void JoltC_ArrayFloat_push_back(
   JoltC_ArrayFloat_t * self,
-  float inValue,
-  char** outErrMsg
+  float inValue
 ) {
-  try {
-    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-    
-    selfCpp->push_back(
-    inValue
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+  
+  selfCpp->push_back(
+  inValue
+  );
 };
 
 void JoltC_ArrayFloat_reserve(
   JoltC_ArrayFloat_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-    
-    selfCpp->reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+  
+  selfCpp->reserve(
+  inSize
+  );
 };
 
 void JoltC_ArrayFloat_resize(
   JoltC_ArrayFloat_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_ArrayFloat_clear(
-  JoltC_ArrayFloat_t * self,
-  char** outErrMsg
+  JoltC_ArrayFloat_t * self
 ) {
-  try {
-    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+  
+  selfCpp->clear();
 };
 
 JoltC_FloatMemRef_t * JoltC_ArrayFloat_data(
-  JoltC_ArrayFloat_t * self,
-  char** outErrMsg
+  JoltC_ArrayFloat_t * self
 ) {
-  try {
-    ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-    FloatMemRef * result = selfCpp->data();
-    return reinterpret_cast<JoltC_FloatMemRef_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
+  FloatMemRef * result = selfCpp->data();
+  return reinterpret_cast<JoltC_FloatMemRef_t *>(result);
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

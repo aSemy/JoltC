@@ -8,54 +8,45 @@ extern "C" {
 
 //region constructors
 
-JoltC_ArraySkeletonKeyframe_t * JoltC_ArraySkeletonKeyframe_new(
-  char** outErrMsg
-);
+JoltC_ArraySkeletonKeyframe_t * JoltC_ArraySkeletonKeyframe_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
 bool JoltC_ArraySkeletonKeyframe_empty(
-  JoltC_ArraySkeletonKeyframe_t * self,
-  char** outErrMsg
+  JoltC_ArraySkeletonKeyframe_t * self
 );
 
 long JoltC_ArraySkeletonKeyframe_size(
-  JoltC_ArraySkeletonKeyframe_t * self,
-  char** outErrMsg
+  JoltC_ArraySkeletonKeyframe_t * self
 );
 
 JoltC_SkeletalAnimationKeyframe_t * JoltC_ArraySkeletonKeyframe_at(
   JoltC_ArraySkeletonKeyframe_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArraySkeletonKeyframe_push_back(
   JoltC_ArraySkeletonKeyframe_t * self,
-  JoltC_SkeletalAnimationKeyframe_t * inValue,
-  char** outErrMsg
+  JoltC_SkeletalAnimationKeyframe_t * inValue
 );
 
 void JoltC_ArraySkeletonKeyframe_reserve(
   JoltC_ArraySkeletonKeyframe_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArraySkeletonKeyframe_resize(
   JoltC_ArraySkeletonKeyframe_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArraySkeletonKeyframe_clear(
-  JoltC_ArraySkeletonKeyframe_t * self,
-  char** outErrMsg
+  JoltC_ArraySkeletonKeyframe_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

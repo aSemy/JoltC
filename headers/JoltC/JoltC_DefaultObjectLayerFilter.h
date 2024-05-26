@@ -10,11 +10,10 @@ extern "C" {
 
 JoltC_DefaultObjectLayerFilter_t * JoltC_DefaultObjectLayerFilter_new(
   const JoltC_ObjectLayerPairFilter_t * inFilter,
-  unsigned long inObjectLayer,
-  char** outErrMsg
+  unsigned long inObjectLayer
 );
 
-//endregion constructors
+//endregion
 
 
 #ifdef __cplusplus

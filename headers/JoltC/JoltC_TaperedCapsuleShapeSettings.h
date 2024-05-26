@@ -12,110 +12,92 @@ JoltC_TaperedCapsuleShapeSettings_t * JoltC_TaperedCapsuleShapeSettings_new(
   float inHalfHeightOfTaperedCylinder,
   float inTopRadius,
   float inBottomRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial,
-  char** outErrMsg
+  const JoltC_PhysicsMaterial_t * inMaterial
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_TaperedCapsuleShapeSettings_GetRefCount(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 void JoltC_TaperedCapsuleShapeSettings_AddRef(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 void JoltC_TaperedCapsuleShapeSettings_Release(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_TaperedCapsuleShapeSettings_Create(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 void JoltC_TaperedCapsuleShapeSettings_ClearCachedResult(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 float JoltC_TaperedCapsuleShapeSettings_mHalfHeightOfTaperedCylinder_Get(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 void JoltC_TaperedCapsuleShapeSettings_mHalfHeightOfTaperedCylinder_Set(
   JoltC_TaperedCapsuleShapeSettings_t * self,
-  float mHalfHeightOfTaperedCylinder,
-  char** outErrMsg
+  float mHalfHeightOfTaperedCylinder
 );
 
 float JoltC_TaperedCapsuleShapeSettings_mTopRadius_Get(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 void JoltC_TaperedCapsuleShapeSettings_mTopRadius_Set(
   JoltC_TaperedCapsuleShapeSettings_t * self,
-  float mTopRadius,
-  char** outErrMsg
+  float mTopRadius
 );
 
 float JoltC_TaperedCapsuleShapeSettings_mBottomRadius_Get(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 void JoltC_TaperedCapsuleShapeSettings_mBottomRadius_Set(
   JoltC_TaperedCapsuleShapeSettings_t * self,
-  float mBottomRadius,
-  char** outErrMsg
+  float mBottomRadius
 );
 
 const JoltC_PhysicsMaterial_t * JoltC_TaperedCapsuleShapeSettings_mMaterial_Get(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 const void JoltC_TaperedCapsuleShapeSettings_mMaterial_Set(
   JoltC_TaperedCapsuleShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial,
-  char** outErrMsg
+  const JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_TaperedCapsuleShapeSettings_mDensity_Get(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 void JoltC_TaperedCapsuleShapeSettings_mDensity_Set(
   JoltC_TaperedCapsuleShapeSettings_t * self,
-  float mDensity,
-  char** outErrMsg
+  float mDensity
 );
 
 unsigned long long int JoltC_TaperedCapsuleShapeSettings_mUserData_Get(
-  JoltC_TaperedCapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
 void JoltC_TaperedCapsuleShapeSettings_mUserData_Set(
   JoltC_TaperedCapsuleShapeSettings_t * self,
-  unsigned long long int mUserData,
-  char** outErrMsg
+  unsigned long long int mUserData
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

@@ -9,50 +9,42 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayUint_empty(
-  JoltC_ArrayUint_t * self,
-  char** outErrMsg
+  JoltC_ArrayUint_t * self
 );
 
 long JoltC_ArrayUint_size(
-  JoltC_ArrayUint_t * self,
-  char** outErrMsg
+  JoltC_ArrayUint_t * self
 );
 
 unsigned long JoltC_ArrayUint_at(
   JoltC_ArrayUint_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArrayUint_push_back(
   JoltC_ArrayUint_t * self,
-  unsigned long inValue,
-  char** outErrMsg
+  unsigned long inValue
 );
 
 void JoltC_ArrayUint_reserve(
   JoltC_ArrayUint_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayUint_resize(
   JoltC_ArrayUint_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayUint_clear(
-  JoltC_ArrayUint_t * self,
-  char** outErrMsg
+  JoltC_ArrayUint_t * self
 );
 
 JoltC_UintMemRef_t * JoltC_ArrayUint_data(
-  JoltC_ArrayUint_t * self,
-  char** outErrMsg
+  JoltC_ArrayUint_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

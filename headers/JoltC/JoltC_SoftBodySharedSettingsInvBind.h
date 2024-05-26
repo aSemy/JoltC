@@ -9,28 +9,24 @@ extern "C" {
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Get(
-  JoltC_SoftBodySharedSettingsInvBind_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsInvBind_t * self
 );
 
 void JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Set(
   JoltC_SoftBodySharedSettingsInvBind_t * self,
-  unsigned long mJointIndex,
-  char** outErrMsg
+  unsigned long mJointIndex
 );
 
 JoltC_Mat44_t * JoltC_SoftBodySharedSettingsInvBind_mInvBind_Get(
-  JoltC_SoftBodySharedSettingsInvBind_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsInvBind_t * self
 );
 
 void JoltC_SoftBodySharedSettingsInvBind_mInvBind_Set(
   JoltC_SoftBodySharedSettingsInvBind_t * self,
-  JoltC_Mat44_t * mInvBind,
-  char** outErrMsg
+  JoltC_Mat44_t * mInvBind
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

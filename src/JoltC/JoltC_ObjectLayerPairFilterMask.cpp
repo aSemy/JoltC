@@ -8,106 +8,60 @@ extern "C" {
 
 //region constructors
 
-JoltC_ObjectLayerPairFilterMask_t * JoltC_ObjectLayerPairFilterMask_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_ObjectLayerPairFilterMask_t * cInstance = new JoltC_ObjectLayerPairFilterMask_t();
-    ObjectLayerPairFilterMask * cppInstance = new ObjectLayerPairFilterMask();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_ObjectLayerPairFilterMask_t * JoltC_ObjectLayerPairFilterMask_new() {
+  JoltC_ObjectLayerPairFilterMask_t * cInstance = new JoltC_ObjectLayerPairFilterMask_t();
+  ObjectLayerPairFilterMask * cppInstance = new ObjectLayerPairFilterMask();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_ObjectLayerPairFilterMask_sGetObjectLayer(
   unsigned long inGroup,
-  unsigned long inMask,
-  char** outErrMsg
+  unsigned long inMask
 ) {
-  try {
-    unsigned long result = ObjectLayerPairFilterMask::sGetObjectLayer(
-    inGroup,
-    inMask
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  unsigned long result = ObjectLayerPairFilterMask::sGetObjectLayer(
+  inGroup,
+  inMask
+  );
+  return result;
 };
 
 unsigned long JoltC_ObjectLayerPairFilterMask_sGetGroup(
-  unsigned long inObjectLayer,
-  char** outErrMsg
+  unsigned long inObjectLayer
 ) {
-  try {
-    unsigned long result = ObjectLayerPairFilterMask::sGetGroup(
-    inObjectLayer
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  unsigned long result = ObjectLayerPairFilterMask::sGetGroup(
+  inObjectLayer
+  );
+  return result;
 };
 
 unsigned long JoltC_ObjectLayerPairFilterMask_sGetMask(
-  unsigned long inObjectLayer,
-  char** outErrMsg
+  unsigned long inObjectLayer
 ) {
-  try {
-    unsigned long result = ObjectLayerPairFilterMask::sGetMask(
-    inObjectLayer
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  unsigned long result = ObjectLayerPairFilterMask::sGetMask(
+  inObjectLayer
+  );
+  return result;
 };
 
 bool JoltC_ObjectLayerPairFilterMask_ShouldCollide(
   JoltC_ObjectLayerPairFilterMask_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2,
-  char** outErrMsg
+  unsigned long inLayer2
 ) {
-  try {
-    ObjectLayerPairFilterMask * selfCpp = static_cast<ObjectLayerPairFilterMask *>(self->obj);
-    bool result = selfCpp->ShouldCollide(
-    inLayer1,
-    inLayer2
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ObjectLayerPairFilterMask * selfCpp = static_cast<ObjectLayerPairFilterMask *>(self->obj);
+  bool result = selfCpp->ShouldCollide(
+  inLayer1,
+  inLayer2
+  );
+  return result;
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

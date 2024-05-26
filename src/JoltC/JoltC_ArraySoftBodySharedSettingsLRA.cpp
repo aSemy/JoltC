@@ -9,138 +9,75 @@ extern "C" {
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsLRA_empty(
-  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self
 ) {
-  try {
-    ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_ArraySoftBodySharedSettingsLRA_size(
-  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self
 ) {
-  try {
-    ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 JoltC_SoftBodySharedSettingsLRA_t * JoltC_ArraySoftBodySharedSettingsLRA_at(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-    SoftBodySharedSettingsLRA& resultRef = selfCpp->at(
-    inIndex
-    );
-    SoftBodySharedSettingsLRA * result = &resultRef;
-    return reinterpret_cast<JoltC_SoftBodySharedSettingsLRA_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
+  SoftBodySharedSettingsLRA& resultRef = selfCpp->at(
+  inIndex
+  );
+  SoftBodySharedSettingsLRA * result = &resultRef;
+  return reinterpret_cast<JoltC_SoftBodySharedSettingsLRA_t *>(result);
 };
 
 void JoltC_ArraySoftBodySharedSettingsLRA_push_back(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  const JoltC_SoftBodySharedSettingsLRA_t * inValue,
-  char** outErrMsg
+  const JoltC_SoftBodySharedSettingsLRA_t * inValue
 ) {
-  try {
-    ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-    
-    selfCpp->push_back(
-    *reinterpret_cast<SoftBodySharedSettingsLRA *>(inValue->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
+  
+  selfCpp->push_back(
+  *reinterpret_cast<SoftBodySharedSettingsLRA *>(inValue->obj)
+  );
 };
 
 void JoltC_ArraySoftBodySharedSettingsLRA_reserve(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-    
-    selfCpp->reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
+  
+  selfCpp->reserve(
+  inSize
+  );
 };
 
 void JoltC_ArraySoftBodySharedSettingsLRA_resize(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_ArraySoftBodySharedSettingsLRA_clear(
-  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self
 ) {
-  try {
-    ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
+  
+  selfCpp->clear();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

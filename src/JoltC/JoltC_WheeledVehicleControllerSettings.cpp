@@ -8,30 +8,32 @@ extern "C" {
 
 //region constructors
 
-JoltC_WheeledVehicleControllerSettings_t * JoltC_WheeledVehicleControllerSettings_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_WheeledVehicleControllerSettings_t * cInstance = new JoltC_WheeledVehicleControllerSettings_t();
-    WheeledVehicleControllerSettings * cppInstance = new WheeledVehicleControllerSettings();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_WheeledVehicleControllerSettings_t * JoltC_WheeledVehicleControllerSettings_new() {
+  JoltC_WheeledVehicleControllerSettings_t * cInstance = new JoltC_WheeledVehicleControllerSettings_t();
+  WheeledVehicleControllerSettings * cppInstance = new WheeledVehicleControllerSettings();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
+
+//region converters
+
+/**
+ * Convert an instance of JoltC_MotorcycleControllerSettings_t into JoltC_WheeledVehicleControllerSettings_t.
+ */
+JoltC_WheeledVehicleControllerSettings_t * JoltC_WheeledVehicleControllerSettings_From_MotorcycleControllerSettings(
+  JoltC_MotorcycleControllerSettings_t * subtype
+) {
+  return (JoltC_WheeledVehicleControllerSettings_t*) subtype;
+};
+
+//endregion
 
 //region properties
 
 JoltC_VehicleEngineSettings_t * JoltC_WheeledVehicleControllerSettings_mEngine_Get(
-  JoltC_WheeledVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_WheeledVehicleControllerSettings_t * self
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   VehicleEngineSettings resultValue = selfCpp->mEngine;
@@ -41,16 +43,14 @@ JoltC_VehicleEngineSettings_t * JoltC_WheeledVehicleControllerSettings_mEngine_G
 
 void JoltC_WheeledVehicleControllerSettings_mEngine_Set(
   JoltC_WheeledVehicleControllerSettings_t * self,
-  JoltC_VehicleEngineSettings_t * mEngine,
-  char** outErrMsg
+  JoltC_VehicleEngineSettings_t * mEngine
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   selfCpp->mEngine = *reinterpret_cast<VehicleEngineSettings *>(mEngine->obj);
 };
 
 JoltC_VehicleTransmissionSettings_t * JoltC_WheeledVehicleControllerSettings_mTransmission_Get(
-  JoltC_WheeledVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_WheeledVehicleControllerSettings_t * self
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   VehicleTransmissionSettings resultValue = selfCpp->mTransmission;
@@ -60,16 +60,14 @@ JoltC_VehicleTransmissionSettings_t * JoltC_WheeledVehicleControllerSettings_mTr
 
 void JoltC_WheeledVehicleControllerSettings_mTransmission_Set(
   JoltC_WheeledVehicleControllerSettings_t * self,
-  JoltC_VehicleTransmissionSettings_t * mTransmission,
-  char** outErrMsg
+  JoltC_VehicleTransmissionSettings_t * mTransmission
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   selfCpp->mTransmission = *reinterpret_cast<VehicleTransmissionSettings *>(mTransmission->obj);
 };
 
 JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleControllerSettings_mDifferentials_Get(
-  JoltC_WheeledVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_WheeledVehicleControllerSettings_t * self
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   ArrayVehicleDifferentialSettings resultValue = selfCpp->mDifferentials;
@@ -79,16 +77,14 @@ JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleControllerSetting
 
 void JoltC_WheeledVehicleControllerSettings_mDifferentials_Set(
   JoltC_WheeledVehicleControllerSettings_t * self,
-  JoltC_ArrayVehicleDifferentialSettings_t * mDifferentials,
-  char** outErrMsg
+  JoltC_ArrayVehicleDifferentialSettings_t * mDifferentials
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   selfCpp->mDifferentials = *reinterpret_cast<ArrayVehicleDifferentialSettings *>(mDifferentials->obj);
 };
 
 float JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Get(
-  JoltC_WheeledVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_WheeledVehicleControllerSettings_t * self
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   float result = selfCpp->mDifferentialLimitedSlipRatio;
@@ -97,14 +93,13 @@ float JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Get(
 
 void JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Set(
   JoltC_WheeledVehicleControllerSettings_t * self,
-  float mDifferentialLimitedSlipRatio,
-  char** outErrMsg
+  float mDifferentialLimitedSlipRatio
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   selfCpp->mDifferentialLimitedSlipRatio = mDifferentialLimitedSlipRatio;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

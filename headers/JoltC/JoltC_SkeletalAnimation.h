@@ -8,38 +8,32 @@ extern "C" {
 
 //region constructors
 
-JoltC_SkeletalAnimation_t * JoltC_SkeletalAnimation_new(
-  char** outErrMsg
-);
+JoltC_SkeletalAnimation_t * JoltC_SkeletalAnimation_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
 float JoltC_SkeletalAnimation_GetDuration(
-  JoltC_SkeletalAnimation_t * self,
-  char** outErrMsg
+  JoltC_SkeletalAnimation_t * self
 );
 
 void JoltC_SkeletalAnimation_ScaleJoints(
   JoltC_SkeletalAnimation_t * self,
-  float inScale,
-  char** outErrMsg
+  float inScale
 );
 
 void JoltC_SkeletalAnimation_Sample(
   JoltC_SkeletalAnimation_t * self,
   float inTime,
-  JoltC_SkeletonPose_t * ioPose,
-  char** outErrMsg
+  JoltC_SkeletonPose_t * ioPose
 );
 
 JoltC_ArraySkeletonAnimatedJoint_t * JoltC_SkeletalAnimation_GetAnimatedJoints(
-  JoltC_SkeletalAnimation_t * self,
-  char** outErrMsg
+  JoltC_SkeletalAnimation_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

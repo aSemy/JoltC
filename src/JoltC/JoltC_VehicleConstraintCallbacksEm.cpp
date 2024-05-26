@@ -10,25 +10,16 @@ extern "C" {
 
 void JoltC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
   JoltC_VehicleConstraintCallbacksEm_t * self,
-  JoltC_VehicleConstraint_t * inConstraint,
-  char** outErrMsg
+  JoltC_VehicleConstraint_t * inConstraint
 ) {
-  try {
-    VehicleConstraintCallbacksEm * selfCpp = static_cast<VehicleConstraintCallbacksEm *>(self->obj);
-    
-    selfCpp->SetVehicleConstraint(
-    *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleConstraintCallbacksEm * selfCpp = static_cast<VehicleConstraintCallbacksEm *>(self->obj);
+  
+  selfCpp->SetVehicleConstraint(
+  *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
+  );
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

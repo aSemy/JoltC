@@ -10,11 +10,10 @@ extern "C" {
 
 void JoltC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
   JoltC_VehicleConstraintCallbacksEm_t * self,
-  JoltC_VehicleConstraint_t * inConstraint,
-  char** outErrMsg
+  JoltC_VehicleConstraint_t * inConstraint
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

@@ -10,11 +10,10 @@ extern "C" {
 
 JoltC_DefaultBroadPhaseLayerFilter_t * JoltC_DefaultBroadPhaseLayerFilter_new(
   const JoltC_ObjectVsBroadPhaseLayerFilter_t * inFilter,
-  unsigned long inObjectLayer,
-  char** outErrMsg
+  unsigned long inObjectLayer
 );
 
-//endregion constructors
+//endregion
 
 
 #ifdef __cplusplus

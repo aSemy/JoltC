@@ -8,48 +8,40 @@ extern "C" {
 
 //region constructors
 
-JoltC_SoftBodySharedSettingsVertex_t * JoltC_SoftBodySharedSettingsVertex_new(
-  char** outErrMsg
-);
+JoltC_SoftBodySharedSettingsVertex_t * JoltC_SoftBodySharedSettingsVertex_new();
 
-//endregion constructors
+//endregion
 
 //region properties
 
 JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mPosition_Get(
-  JoltC_SoftBodySharedSettingsVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsVertex_t * self
 );
 
 void JoltC_SoftBodySharedSettingsVertex_mPosition_Set(
   JoltC_SoftBodySharedSettingsVertex_t * self,
-  JoltC_Float3_t * mPosition,
-  char** outErrMsg
+  JoltC_Float3_t * mPosition
 );
 
 JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mVelocity_Get(
-  JoltC_SoftBodySharedSettingsVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsVertex_t * self
 );
 
 void JoltC_SoftBodySharedSettingsVertex_mVelocity_Set(
   JoltC_SoftBodySharedSettingsVertex_t * self,
-  JoltC_Float3_t * mVelocity,
-  char** outErrMsg
+  JoltC_Float3_t * mVelocity
 );
 
 float JoltC_SoftBodySharedSettingsVertex_mInvMass_Get(
-  JoltC_SoftBodySharedSettingsVertex_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsVertex_t * self
 );
 
 void JoltC_SoftBodySharedSettingsVertex_mInvMass_Set(
   JoltC_SoftBodySharedSettingsVertex_t * self,
-  float mInvMass,
-  char** outErrMsg
+  float mInvMass
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

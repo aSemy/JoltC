@@ -8,57 +8,47 @@ extern "C" {
 
 //region constructors
 
-JoltC_AABox_t * JoltC_AABox_new_0(
-  char** outErrMsg
-);
+JoltC_AABox_t * JoltC_AABox_new_0();
 
 JoltC_AABox_t * JoltC_AABox_new_1(
   const JoltC_Vec3_t * inMin,
-  const JoltC_Vec3_t * inMax,
-  char** outErrMsg
+  const JoltC_Vec3_t * inMax
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
-JoltC_AABox_t * JoltC_AABox_sBiggest(
-  char** outErrMsg
-);
+JoltC_AABox_t * JoltC_AABox_sBiggest();
 
 bool JoltC_AABox_Overlaps(
   JoltC_AABox_t * self,
-  const JoltC_AABox_t * inOther,
-  char** outErrMsg
+  const JoltC_AABox_t * inOther
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 JoltC_Vec3_t * JoltC_AABox_mMin_Get(
-  JoltC_AABox_t * self,
-  char** outErrMsg
+  JoltC_AABox_t * self
 );
 
 void JoltC_AABox_mMin_Set(
   JoltC_AABox_t * self,
-  JoltC_Vec3_t * mMin,
-  char** outErrMsg
+  JoltC_Vec3_t * mMin
 );
 
 JoltC_Vec3_t * JoltC_AABox_mMax_Get(
-  JoltC_AABox_t * self,
-  char** outErrMsg
+  JoltC_AABox_t * self
 );
 
 void JoltC_AABox_mMax_Set(
   JoltC_AABox_t * self,
-  JoltC_Vec3_t * mMax,
-  char** outErrMsg
+  JoltC_Vec3_t * mMax
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

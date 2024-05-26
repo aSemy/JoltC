@@ -8,46 +8,50 @@ extern "C" {
 
 //region constructors
 
-JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_new(
-  char** outErrMsg
+JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_new();
+
+//endregion
+
+//region converters
+
+/**
+ * Convert an instance of JoltC_RayCastResult_t into JoltC_BroadPhaseCastResult_t.
+ */
+JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_From_RayCastResult(
+  JoltC_RayCastResult_t * subtype
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 void JoltC_BroadPhaseCastResult_Reset(
-  JoltC_BroadPhaseCastResult_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseCastResult_t * self
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 JoltC_BodyID_t * JoltC_BroadPhaseCastResult_mBodyID_Get(
-  JoltC_BroadPhaseCastResult_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseCastResult_t * self
 );
 
 void JoltC_BroadPhaseCastResult_mBodyID_Set(
   JoltC_BroadPhaseCastResult_t * self,
-  JoltC_BodyID_t * mBodyID,
-  char** outErrMsg
+  JoltC_BodyID_t * mBodyID
 );
 
 float JoltC_BroadPhaseCastResult_mFraction_Get(
-  JoltC_BroadPhaseCastResult_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseCastResult_t * self
 );
 
 void JoltC_BroadPhaseCastResult_mFraction_Set(
   JoltC_BroadPhaseCastResult_t * self,
-  float mFraction,
-  char** outErrMsg
+  float mFraction
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

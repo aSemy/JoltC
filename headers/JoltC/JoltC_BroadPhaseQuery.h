@@ -13,8 +13,7 @@ void JoltC_BroadPhaseQuery_CastRay(
   const JoltC_RayCast_t * inRay,
   JoltC_RayCastBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 );
 
 void JoltC_BroadPhaseQuery_CollideAABox(
@@ -22,8 +21,7 @@ void JoltC_BroadPhaseQuery_CollideAABox(
   const JoltC_AABox_t * inBox,
   JoltC_CollideShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 );
 
 void JoltC_BroadPhaseQuery_CollideSphere(
@@ -32,8 +30,7 @@ void JoltC_BroadPhaseQuery_CollideSphere(
   float inRadius,
   JoltC_CollideShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 );
 
 void JoltC_BroadPhaseQuery_CollidePoint(
@@ -41,8 +38,7 @@ void JoltC_BroadPhaseQuery_CollidePoint(
   const JoltC_Vec3_t * inPoint,
   JoltC_CollideShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 );
 
 void JoltC_BroadPhaseQuery_CollideOrientedBox(
@@ -50,8 +46,7 @@ void JoltC_BroadPhaseQuery_CollideOrientedBox(
   const JoltC_OrientedBox_t * inBox,
   JoltC_CollideShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 );
 
 void JoltC_BroadPhaseQuery_CastAABox(
@@ -59,11 +54,10 @@ void JoltC_BroadPhaseQuery_CastAABox(
   const JoltC_AABoxCast_t * inBox,
   JoltC_CastShapeBodyCollector_t * ioCollector,
   const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  char** outErrMsg
+  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

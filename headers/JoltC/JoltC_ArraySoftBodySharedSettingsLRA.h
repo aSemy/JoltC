@@ -9,45 +9,38 @@ extern "C" {
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsLRA_empty(
-  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self
 );
 
 long JoltC_ArraySoftBodySharedSettingsLRA_size(
-  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self
 );
 
 JoltC_SoftBodySharedSettingsLRA_t * JoltC_ArraySoftBodySharedSettingsLRA_at(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArraySoftBodySharedSettingsLRA_push_back(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  const JoltC_SoftBodySharedSettingsLRA_t * inValue,
-  char** outErrMsg
+  const JoltC_SoftBodySharedSettingsLRA_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsLRA_reserve(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArraySoftBodySharedSettingsLRA_resize(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArraySoftBodySharedSettingsLRA_clear(
-  JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  char** outErrMsg
+  JoltC_ArraySoftBodySharedSettingsLRA_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

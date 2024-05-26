@@ -9,103 +9,57 @@ extern "C" {
 //region functions
 
 void JoltC_VehicleEngine_ClampRPM(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
-  try {
-    VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-    
-    selfCpp->ClampRPM();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
+  
+  selfCpp->ClampRPM();
 };
 
 float JoltC_VehicleEngine_GetCurrentRPM(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
-  try {
-    VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-    float result = selfCpp->GetCurrentRPM();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
+  float result = selfCpp->GetCurrentRPM();
+  return result;
 };
 
 void JoltC_VehicleEngine_SetCurrentRPM(
   JoltC_VehicleEngine_t * self,
-  float inRPM,
-  char** outErrMsg
+  float inRPM
 ) {
-  try {
-    VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-    
-    selfCpp->SetCurrentRPM(
-    inRPM
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
+  
+  selfCpp->SetCurrentRPM(
+  inRPM
+  );
 };
 
 float JoltC_VehicleEngine_GetAngularVelocity(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
-  try {
-    VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-    float result = selfCpp->GetAngularVelocity();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
+  float result = selfCpp->GetAngularVelocity();
+  return result;
 };
 
 float JoltC_VehicleEngine_GetTorque(
   JoltC_VehicleEngine_t * self,
-  float inAcceleration,
-  char** outErrMsg
+  float inAcceleration
 ) {
-  try {
-    VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-    float result = selfCpp->GetTorque(
-    inAcceleration
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
+  float result = selfCpp->GetTorque(
+  inAcceleration
+  );
+  return result;
 };
 
-//endregion functions
+//endregion
 
 //region properties
 
 float JoltC_VehicleEngine_mMaxTorque_Get(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   float result = selfCpp->mMaxTorque;
@@ -114,16 +68,14 @@ float JoltC_VehicleEngine_mMaxTorque_Get(
 
 void JoltC_VehicleEngine_mMaxTorque_Set(
   JoltC_VehicleEngine_t * self,
-  float mMaxTorque,
-  char** outErrMsg
+  float mMaxTorque
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   selfCpp->mMaxTorque = mMaxTorque;
 };
 
 float JoltC_VehicleEngine_mMinRPM_Get(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   float result = selfCpp->mMinRPM;
@@ -132,16 +84,14 @@ float JoltC_VehicleEngine_mMinRPM_Get(
 
 void JoltC_VehicleEngine_mMinRPM_Set(
   JoltC_VehicleEngine_t * self,
-  float mMinRPM,
-  char** outErrMsg
+  float mMinRPM
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   selfCpp->mMinRPM = mMinRPM;
 };
 
 float JoltC_VehicleEngine_mMaxRPM_Get(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   float result = selfCpp->mMaxRPM;
@@ -150,16 +100,14 @@ float JoltC_VehicleEngine_mMaxRPM_Get(
 
 void JoltC_VehicleEngine_mMaxRPM_Set(
   JoltC_VehicleEngine_t * self,
-  float mMaxRPM,
-  char** outErrMsg
+  float mMaxRPM
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   selfCpp->mMaxRPM = mMaxRPM;
 };
 
 JoltC_LinearCurve_t * JoltC_VehicleEngine_mNormalizedTorque_Get(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   LinearCurve resultValue = selfCpp->mNormalizedTorque;
@@ -169,16 +117,14 @@ JoltC_LinearCurve_t * JoltC_VehicleEngine_mNormalizedTorque_Get(
 
 void JoltC_VehicleEngine_mNormalizedTorque_Set(
   JoltC_VehicleEngine_t * self,
-  JoltC_LinearCurve_t * mNormalizedTorque,
-  char** outErrMsg
+  JoltC_LinearCurve_t * mNormalizedTorque
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   selfCpp->mNormalizedTorque = *reinterpret_cast<LinearCurve *>(mNormalizedTorque->obj);
 };
 
 float JoltC_VehicleEngine_mInertia_Get(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   float result = selfCpp->mInertia;
@@ -187,16 +133,14 @@ float JoltC_VehicleEngine_mInertia_Get(
 
 void JoltC_VehicleEngine_mInertia_Set(
   JoltC_VehicleEngine_t * self,
-  float mInertia,
-  char** outErrMsg
+  float mInertia
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   selfCpp->mInertia = mInertia;
 };
 
 float JoltC_VehicleEngine_mAngularDamping_Get(
-  JoltC_VehicleEngine_t * self,
-  char** outErrMsg
+  JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   float result = selfCpp->mAngularDamping;
@@ -205,14 +149,13 @@ float JoltC_VehicleEngine_mAngularDamping_Get(
 
 void JoltC_VehicleEngine_mAngularDamping_Set(
   JoltC_VehicleEngine_t * self,
-  float mAngularDamping,
-  char** outErrMsg
+  float mAngularDamping
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   selfCpp->mAngularDamping = mAngularDamping;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

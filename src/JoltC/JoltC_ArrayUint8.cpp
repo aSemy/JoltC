@@ -9,154 +9,82 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayUint8_empty(
-  JoltC_ArrayUint8_t * self,
-  char** outErrMsg
+  JoltC_ArrayUint8_t * self
 ) {
-  try {
-    ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_ArrayUint8_size(
-  JoltC_ArrayUint8_t * self,
-  char** outErrMsg
+  JoltC_ArrayUint8_t * self
 ) {
-  try {
-    ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 unsigned char JoltC_ArrayUint8_at(
   JoltC_ArrayUint8_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-    unsigned char result = selfCpp->at(
-    inIndex
-    );
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
+  unsigned char result = selfCpp->at(
+  inIndex
+  );
+  return result;
 };
 
 void JoltC_ArrayUint8_push_back(
   JoltC_ArrayUint8_t * self,
-  unsigned char inValue,
-  char** outErrMsg
+  unsigned char inValue
 ) {
-  try {
-    ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-    
-    selfCpp->push_back(
-    inValue
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
+  
+  selfCpp->push_back(
+  inValue
+  );
 };
 
 void JoltC_ArrayUint8_reserve(
   JoltC_ArrayUint8_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-    
-    selfCpp->reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
+  
+  selfCpp->reserve(
+  inSize
+  );
 };
 
 void JoltC_ArrayUint8_resize(
   JoltC_ArrayUint8_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_ArrayUint8_clear(
-  JoltC_ArrayUint8_t * self,
-  char** outErrMsg
+  JoltC_ArrayUint8_t * self
 ) {
-  try {
-    ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
+  
+  selfCpp->clear();
 };
 
 JoltC_Uint8MemRef_t * JoltC_ArrayUint8_data(
-  JoltC_ArrayUint8_t * self,
-  char** outErrMsg
+  JoltC_ArrayUint8_t * self
 ) {
-  try {
-    ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-    Uint8MemRef * result = selfCpp->data();
-    return reinterpret_cast<JoltC_Uint8MemRef_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
+  Uint8MemRef * result = selfCpp->data();
+  return reinterpret_cast<JoltC_Uint8MemRef_t *>(result);
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

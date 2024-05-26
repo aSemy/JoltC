@@ -9,11 +9,10 @@ extern "C" {
 //region constructors
 
 JoltC_ObjectVsBroadPhaseLayerFilterMask_t * JoltC_ObjectVsBroadPhaseLayerFilterMask_new(
-  const JoltC_BroadPhaseLayerInterfaceMask_t * inBroadPhaseLayerInterface,
-  char** outErrMsg
+  const JoltC_BroadPhaseLayerInterfaceMask_t * inBroadPhaseLayerInterface
 );
 
-//endregion constructors
+//endregion
 
 
 #ifdef __cplusplus

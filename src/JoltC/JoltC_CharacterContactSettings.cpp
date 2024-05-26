@@ -8,30 +8,19 @@ extern "C" {
 
 //region constructors
 
-JoltC_CharacterContactSettings_t * JoltC_CharacterContactSettings_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_CharacterContactSettings_t * cInstance = new JoltC_CharacterContactSettings_t();
-    CharacterContactSettings * cppInstance = new CharacterContactSettings();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_CharacterContactSettings_t * JoltC_CharacterContactSettings_new() {
+  JoltC_CharacterContactSettings_t * cInstance = new JoltC_CharacterContactSettings_t();
+  CharacterContactSettings * cppInstance = new CharacterContactSettings();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region properties
 
 bool JoltC_CharacterContactSettings_mCanPushCharacter_Get(
-  JoltC_CharacterContactSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterContactSettings_t * self
 ) {
   CharacterContactSettings * selfCpp = static_cast<CharacterContactSettings *>(self->obj);
   bool result = selfCpp->mCanPushCharacter;
@@ -40,16 +29,14 @@ bool JoltC_CharacterContactSettings_mCanPushCharacter_Get(
 
 void JoltC_CharacterContactSettings_mCanPushCharacter_Set(
   JoltC_CharacterContactSettings_t * self,
-  bool mCanPushCharacter,
-  char** outErrMsg
+  bool mCanPushCharacter
 ) {
   CharacterContactSettings * selfCpp = static_cast<CharacterContactSettings *>(self->obj);
   selfCpp->mCanPushCharacter = mCanPushCharacter;
 };
 
 bool JoltC_CharacterContactSettings_mCanReceiveImpulses_Get(
-  JoltC_CharacterContactSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterContactSettings_t * self
 ) {
   CharacterContactSettings * selfCpp = static_cast<CharacterContactSettings *>(self->obj);
   bool result = selfCpp->mCanReceiveImpulses;
@@ -58,14 +45,13 @@ bool JoltC_CharacterContactSettings_mCanReceiveImpulses_Get(
 
 void JoltC_CharacterContactSettings_mCanReceiveImpulses_Set(
   JoltC_CharacterContactSettings_t * self,
-  bool mCanReceiveImpulses,
-  char** outErrMsg
+  bool mCanReceiveImpulses
 ) {
   CharacterContactSettings * selfCpp = static_cast<CharacterContactSettings *>(self->obj);
   selfCpp->mCanReceiveImpulses = mCanReceiveImpulses;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

@@ -9,63 +9,53 @@ extern "C" {
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsSkinned_mVertex_Get(
-  JoltC_SoftBodySharedSettingsSkinned_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsSkinned_t * self
 );
 
 void JoltC_SoftBodySharedSettingsSkinned_mVertex_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
-  unsigned long mVertex,
-  char** outErrMsg
+  unsigned long mVertex
 );
 
 size_t JoltC_SoftBodySharedSettingsSkinned_mWeights_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
-  JoltC_SoftBodySharedSettingsSkinWeight_t * * outValue,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsSkinWeight_t * * outValue
 );
 
 void JoltC_SoftBodySharedSettingsSkinned_mWeights_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
   JoltC_SoftBodySharedSettingsSkinWeight_t * * mWeights,
-  size_t mWeightsSize,
-  char** outErrMsg
+  size_t mWeightsSize
 );
 
 float JoltC_SoftBodySharedSettingsSkinned_mMaxDistance_Get(
-  JoltC_SoftBodySharedSettingsSkinned_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsSkinned_t * self
 );
 
 void JoltC_SoftBodySharedSettingsSkinned_mMaxDistance_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
-  float mMaxDistance,
-  char** outErrMsg
+  float mMaxDistance
 );
 
 float JoltC_SoftBodySharedSettingsSkinned_mBackStopDistance_Get(
-  JoltC_SoftBodySharedSettingsSkinned_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsSkinned_t * self
 );
 
 void JoltC_SoftBodySharedSettingsSkinned_mBackStopDistance_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
-  float mBackStopDistance,
-  char** outErrMsg
+  float mBackStopDistance
 );
 
 float JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Get(
-  JoltC_SoftBodySharedSettingsSkinned_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsSkinned_t * self
 );
 
 void JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
-  float mBackStopRadius,
-  char** outErrMsg
+  float mBackStopRadius
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

@@ -9,41 +9,36 @@ extern "C" {
 //region constructors
 
 JoltC_ObjectLayerPairFilterTable_t * JoltC_ObjectLayerPairFilterTable_new(
-  unsigned long inNumObjectLayers,
-  char** outErrMsg
+  unsigned long inNumObjectLayers
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_ObjectLayerPairFilterTable_GetNumObjectLayers(
-  JoltC_ObjectLayerPairFilterTable_t * self,
-  char** outErrMsg
+  JoltC_ObjectLayerPairFilterTable_t * self
 );
 
 void JoltC_ObjectLayerPairFilterTable_DisableCollision(
   JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2,
-  char** outErrMsg
+  unsigned long inLayer2
 );
 
 void JoltC_ObjectLayerPairFilterTable_EnableCollision(
   JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2,
-  char** outErrMsg
+  unsigned long inLayer2
 );
 
 bool JoltC_ObjectLayerPairFilterTable_ShouldCollide(
   JoltC_ObjectLayerPairFilterTable_t * self,
   unsigned long inLayer1,
-  unsigned long inLayer2,
-  char** outErrMsg
+  unsigned long inLayer2
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

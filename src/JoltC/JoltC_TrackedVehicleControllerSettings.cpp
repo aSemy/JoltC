@@ -8,30 +8,19 @@ extern "C" {
 
 //region constructors
 
-JoltC_TrackedVehicleControllerSettings_t * JoltC_TrackedVehicleControllerSettings_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_TrackedVehicleControllerSettings_t * cInstance = new JoltC_TrackedVehicleControllerSettings_t();
-    TrackedVehicleControllerSettings * cppInstance = new TrackedVehicleControllerSettings();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_TrackedVehicleControllerSettings_t * JoltC_TrackedVehicleControllerSettings_new() {
+  JoltC_TrackedVehicleControllerSettings_t * cInstance = new JoltC_TrackedVehicleControllerSettings_t();
+  TrackedVehicleControllerSettings * cppInstance = new TrackedVehicleControllerSettings();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region properties
 
 JoltC_VehicleEngineSettings_t * JoltC_TrackedVehicleControllerSettings_mEngine_Get(
-  JoltC_TrackedVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_TrackedVehicleControllerSettings_t * self
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
   VehicleEngineSettings resultValue = selfCpp->mEngine;
@@ -41,16 +30,14 @@ JoltC_VehicleEngineSettings_t * JoltC_TrackedVehicleControllerSettings_mEngine_G
 
 void JoltC_TrackedVehicleControllerSettings_mEngine_Set(
   JoltC_TrackedVehicleControllerSettings_t * self,
-  JoltC_VehicleEngineSettings_t * mEngine,
-  char** outErrMsg
+  JoltC_VehicleEngineSettings_t * mEngine
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
   selfCpp->mEngine = *reinterpret_cast<VehicleEngineSettings *>(mEngine->obj);
 };
 
 JoltC_VehicleTransmissionSettings_t * JoltC_TrackedVehicleControllerSettings_mTransmission_Get(
-  JoltC_TrackedVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_TrackedVehicleControllerSettings_t * self
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
   VehicleTransmissionSettings resultValue = selfCpp->mTransmission;
@@ -60,8 +47,7 @@ JoltC_VehicleTransmissionSettings_t * JoltC_TrackedVehicleControllerSettings_mTr
 
 void JoltC_TrackedVehicleControllerSettings_mTransmission_Set(
   JoltC_TrackedVehicleControllerSettings_t * self,
-  JoltC_VehicleTransmissionSettings_t * mTransmission,
-  char** outErrMsg
+  JoltC_VehicleTransmissionSettings_t * mTransmission
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
   selfCpp->mTransmission = *reinterpret_cast<VehicleTransmissionSettings *>(mTransmission->obj);
@@ -69,8 +55,7 @@ void JoltC_TrackedVehicleControllerSettings_mTransmission_Set(
 
 size_t JoltC_TrackedVehicleControllerSettings_mTracks_Get(
   JoltC_TrackedVehicleControllerSettings_t * self,
-  JoltC_VehicleTrackSettings_t * * outValue,
-  char** outErrMsg
+  JoltC_VehicleTrackSettings_t * * outValue
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
   size_t resultSize = std::size(selfCpp->mTracks);
@@ -81,8 +66,7 @@ size_t JoltC_TrackedVehicleControllerSettings_mTracks_Get(
 void JoltC_TrackedVehicleControllerSettings_mTracks_Set(
   JoltC_TrackedVehicleControllerSettings_t * self,
   JoltC_VehicleTrackSettings_t * * mTracks,
-  size_t mTracksSize,
-  char** outErrMsg
+  size_t mTracksSize
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
   for (size_t i = 0; i < mTracksSize; i++) {
@@ -90,7 +74,7 @@ void JoltC_TrackedVehicleControllerSettings_mTracks_Set(
   };
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

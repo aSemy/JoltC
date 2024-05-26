@@ -12,45 +12,39 @@ JoltC_RShapeCast_t * JoltC_RShapeCast_new(
   const JoltC_Shape_t * inShape,
   const JoltC_Vec3_t * inScale,
   const JoltC_RMat44_t * inCenterOfMassStart,
-  const JoltC_Vec3_t * inDirection,
-  char** outErrMsg
+  const JoltC_Vec3_t * inDirection
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 const JoltC_RVec3_t * JoltC_RShapeCast_GetPointOnRay(
   JoltC_RShapeCast_t * self,
-  float inFraction,
-  char** outErrMsg
+  float inFraction
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 const JoltC_Shape_t * JoltC_RShapeCast_mShape_Get(
-  JoltC_RShapeCast_t * self,
-  char** outErrMsg
+  JoltC_RShapeCast_t * self
 );
 
 const JoltC_Vec3_t * JoltC_RShapeCast_mScale_Get(
-  JoltC_RShapeCast_t * self,
-  char** outErrMsg
+  JoltC_RShapeCast_t * self
 );
 
 const JoltC_RMat44_t * JoltC_RShapeCast_mCenterOfMassStart_Get(
-  JoltC_RShapeCast_t * self,
-  char** outErrMsg
+  JoltC_RShapeCast_t * self
 );
 
 const JoltC_Vec3_t * JoltC_RShapeCast_mDirection_Get(
-  JoltC_RShapeCast_t * self,
-  char** outErrMsg
+  JoltC_RShapeCast_t * self
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

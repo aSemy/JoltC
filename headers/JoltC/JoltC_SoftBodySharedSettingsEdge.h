@@ -11,50 +11,43 @@ extern "C" {
 JoltC_SoftBodySharedSettingsEdge_t * JoltC_SoftBodySharedSettingsEdge_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
-  float inCompliance,
-  char** outErrMsg
+  float inCompliance
 );
 
-//endregion constructors
+//endregion
 
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsEdge_mVertex_Get(
   JoltC_SoftBodySharedSettingsEdge_t * self,
-  unsigned long * outValue,
-  char** outErrMsg
+  unsigned long * outValue
 );
 
 void JoltC_SoftBodySharedSettingsEdge_mVertex_Set(
   JoltC_SoftBodySharedSettingsEdge_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize,
-  char** outErrMsg
+  size_t mVertexSize
 );
 
 float JoltC_SoftBodySharedSettingsEdge_mRestLength_Get(
-  JoltC_SoftBodySharedSettingsEdge_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsEdge_t * self
 );
 
 void JoltC_SoftBodySharedSettingsEdge_mRestLength_Set(
   JoltC_SoftBodySharedSettingsEdge_t * self,
-  float mRestLength,
-  char** outErrMsg
+  float mRestLength
 );
 
 float JoltC_SoftBodySharedSettingsEdge_mCompliance_Get(
-  JoltC_SoftBodySharedSettingsEdge_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsEdge_t * self
 );
 
 void JoltC_SoftBodySharedSettingsEdge_mCompliance_Set(
   JoltC_SoftBodySharedSettingsEdge_t * self,
-  float mCompliance,
-  char** outErrMsg
+  float mCompliance
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

@@ -8,85 +8,47 @@ extern "C" {
 
 //region constructors
 
-JoltC_WheelSettingsWV_t * JoltC_WheelSettingsWV_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_WheelSettingsWV_t * cInstance = new JoltC_WheelSettingsWV_t();
-    WheelSettingsWV * cppInstance = new WheelSettingsWV();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_WheelSettingsWV_t * JoltC_WheelSettingsWV_new() {
+  JoltC_WheelSettingsWV_t * cInstance = new JoltC_WheelSettingsWV_t();
+  WheelSettingsWV * cppInstance = new WheelSettingsWV();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_WheelSettingsWV_GetRefCount(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
-  try {
-    WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
-    unsigned long result = selfCpp->GetRefCount();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
+  unsigned long result = selfCpp->GetRefCount();
+  return result;
 };
 
 void JoltC_WheelSettingsWV_AddRef(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
-  try {
-    WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
-    
-    selfCpp->AddRef();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
+  
+  selfCpp->AddRef();
 };
 
 void JoltC_WheelSettingsWV_Release(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
-  try {
-    WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
-    
-    selfCpp->Release();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
+  
+  selfCpp->Release();
 };
 
-//endregion functions
+//endregion
 
 //region properties
 
 float JoltC_WheelSettingsWV_mInertia_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mInertia;
@@ -95,16 +57,14 @@ float JoltC_WheelSettingsWV_mInertia_Get(
 
 void JoltC_WheelSettingsWV_mInertia_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mInertia,
-  char** outErrMsg
+  float mInertia
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mInertia = mInertia;
 };
 
 float JoltC_WheelSettingsWV_mAngularDamping_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mAngularDamping;
@@ -113,16 +73,14 @@ float JoltC_WheelSettingsWV_mAngularDamping_Get(
 
 void JoltC_WheelSettingsWV_mAngularDamping_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mAngularDamping,
-  char** outErrMsg
+  float mAngularDamping
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mAngularDamping = mAngularDamping;
 };
 
 float JoltC_WheelSettingsWV_mMaxSteerAngle_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mMaxSteerAngle;
@@ -131,16 +89,14 @@ float JoltC_WheelSettingsWV_mMaxSteerAngle_Get(
 
 void JoltC_WheelSettingsWV_mMaxSteerAngle_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mMaxSteerAngle,
-  char** outErrMsg
+  float mMaxSteerAngle
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mMaxSteerAngle = mMaxSteerAngle;
 };
 
 JoltC_LinearCurve_t * JoltC_WheelSettingsWV_mLongitudinalFriction_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   LinearCurve resultValue = selfCpp->mLongitudinalFriction;
@@ -150,16 +106,14 @@ JoltC_LinearCurve_t * JoltC_WheelSettingsWV_mLongitudinalFriction_Get(
 
 void JoltC_WheelSettingsWV_mLongitudinalFriction_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_LinearCurve_t * mLongitudinalFriction,
-  char** outErrMsg
+  JoltC_LinearCurve_t * mLongitudinalFriction
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mLongitudinalFriction = *reinterpret_cast<LinearCurve *>(mLongitudinalFriction->obj);
 };
 
 JoltC_LinearCurve_t * JoltC_WheelSettingsWV_mLateralFriction_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   LinearCurve resultValue = selfCpp->mLateralFriction;
@@ -169,16 +123,14 @@ JoltC_LinearCurve_t * JoltC_WheelSettingsWV_mLateralFriction_Get(
 
 void JoltC_WheelSettingsWV_mLateralFriction_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_LinearCurve_t * mLateralFriction,
-  char** outErrMsg
+  JoltC_LinearCurve_t * mLateralFriction
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mLateralFriction = *reinterpret_cast<LinearCurve *>(mLateralFriction->obj);
 };
 
 float JoltC_WheelSettingsWV_mMaxBrakeTorque_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mMaxBrakeTorque;
@@ -187,16 +139,14 @@ float JoltC_WheelSettingsWV_mMaxBrakeTorque_Get(
 
 void JoltC_WheelSettingsWV_mMaxBrakeTorque_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mMaxBrakeTorque,
-  char** outErrMsg
+  float mMaxBrakeTorque
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mMaxBrakeTorque = mMaxBrakeTorque;
 };
 
 float JoltC_WheelSettingsWV_mMaxHandBrakeTorque_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mMaxHandBrakeTorque;
@@ -205,16 +155,14 @@ float JoltC_WheelSettingsWV_mMaxHandBrakeTorque_Get(
 
 void JoltC_WheelSettingsWV_mMaxHandBrakeTorque_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mMaxHandBrakeTorque,
-  char** outErrMsg
+  float mMaxHandBrakeTorque
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mMaxHandBrakeTorque = mMaxHandBrakeTorque;
 };
 
 JoltC_Vec3_t * JoltC_WheelSettingsWV_mPosition_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   Vec3 resultValue = selfCpp->mPosition;
@@ -224,16 +172,14 @@ JoltC_Vec3_t * JoltC_WheelSettingsWV_mPosition_Get(
 
 void JoltC_WheelSettingsWV_mPosition_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_Vec3_t * mPosition,
-  char** outErrMsg
+  JoltC_Vec3_t * mPosition
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mPosition = *reinterpret_cast<Vec3 *>(mPosition->obj);
 };
 
 JoltC_Vec3_t * JoltC_WheelSettingsWV_mSuspensionForcePoint_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   Vec3 resultValue = selfCpp->mSuspensionForcePoint;
@@ -243,16 +189,14 @@ JoltC_Vec3_t * JoltC_WheelSettingsWV_mSuspensionForcePoint_Get(
 
 void JoltC_WheelSettingsWV_mSuspensionForcePoint_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_Vec3_t * mSuspensionForcePoint,
-  char** outErrMsg
+  JoltC_Vec3_t * mSuspensionForcePoint
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mSuspensionForcePoint = *reinterpret_cast<Vec3 *>(mSuspensionForcePoint->obj);
 };
 
 JoltC_Vec3_t * JoltC_WheelSettingsWV_mSuspensionDirection_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   Vec3 resultValue = selfCpp->mSuspensionDirection;
@@ -262,16 +206,14 @@ JoltC_Vec3_t * JoltC_WheelSettingsWV_mSuspensionDirection_Get(
 
 void JoltC_WheelSettingsWV_mSuspensionDirection_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_Vec3_t * mSuspensionDirection,
-  char** outErrMsg
+  JoltC_Vec3_t * mSuspensionDirection
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mSuspensionDirection = *reinterpret_cast<Vec3 *>(mSuspensionDirection->obj);
 };
 
 JoltC_Vec3_t * JoltC_WheelSettingsWV_mSteeringAxis_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   Vec3 resultValue = selfCpp->mSteeringAxis;
@@ -281,16 +223,14 @@ JoltC_Vec3_t * JoltC_WheelSettingsWV_mSteeringAxis_Get(
 
 void JoltC_WheelSettingsWV_mSteeringAxis_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_Vec3_t * mSteeringAxis,
-  char** outErrMsg
+  JoltC_Vec3_t * mSteeringAxis
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mSteeringAxis = *reinterpret_cast<Vec3 *>(mSteeringAxis->obj);
 };
 
 JoltC_Vec3_t * JoltC_WheelSettingsWV_mWheelUp_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   Vec3 resultValue = selfCpp->mWheelUp;
@@ -300,16 +240,14 @@ JoltC_Vec3_t * JoltC_WheelSettingsWV_mWheelUp_Get(
 
 void JoltC_WheelSettingsWV_mWheelUp_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_Vec3_t * mWheelUp,
-  char** outErrMsg
+  JoltC_Vec3_t * mWheelUp
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mWheelUp = *reinterpret_cast<Vec3 *>(mWheelUp->obj);
 };
 
 JoltC_Vec3_t * JoltC_WheelSettingsWV_mWheelForward_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   Vec3 resultValue = selfCpp->mWheelForward;
@@ -319,16 +257,14 @@ JoltC_Vec3_t * JoltC_WheelSettingsWV_mWheelForward_Get(
 
 void JoltC_WheelSettingsWV_mWheelForward_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_Vec3_t * mWheelForward,
-  char** outErrMsg
+  JoltC_Vec3_t * mWheelForward
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mWheelForward = *reinterpret_cast<Vec3 *>(mWheelForward->obj);
 };
 
 JoltC_SpringSettings_t * JoltC_WheelSettingsWV_mSuspensionSpring_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   SpringSettings resultValue = selfCpp->mSuspensionSpring;
@@ -338,16 +274,14 @@ JoltC_SpringSettings_t * JoltC_WheelSettingsWV_mSuspensionSpring_Get(
 
 void JoltC_WheelSettingsWV_mSuspensionSpring_Set(
   JoltC_WheelSettingsWV_t * self,
-  JoltC_SpringSettings_t * mSuspensionSpring,
-  char** outErrMsg
+  JoltC_SpringSettings_t * mSuspensionSpring
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mSuspensionSpring = *reinterpret_cast<SpringSettings *>(mSuspensionSpring->obj);
 };
 
 float JoltC_WheelSettingsWV_mSuspensionMinLength_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mSuspensionMinLength;
@@ -356,16 +290,14 @@ float JoltC_WheelSettingsWV_mSuspensionMinLength_Get(
 
 void JoltC_WheelSettingsWV_mSuspensionMinLength_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mSuspensionMinLength,
-  char** outErrMsg
+  float mSuspensionMinLength
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mSuspensionMinLength = mSuspensionMinLength;
 };
 
 float JoltC_WheelSettingsWV_mSuspensionMaxLength_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mSuspensionMaxLength;
@@ -374,16 +306,14 @@ float JoltC_WheelSettingsWV_mSuspensionMaxLength_Get(
 
 void JoltC_WheelSettingsWV_mSuspensionMaxLength_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mSuspensionMaxLength,
-  char** outErrMsg
+  float mSuspensionMaxLength
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mSuspensionMaxLength = mSuspensionMaxLength;
 };
 
 float JoltC_WheelSettingsWV_mSuspensionPreloadLength_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mSuspensionPreloadLength;
@@ -392,16 +322,14 @@ float JoltC_WheelSettingsWV_mSuspensionPreloadLength_Get(
 
 void JoltC_WheelSettingsWV_mSuspensionPreloadLength_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mSuspensionPreloadLength,
-  char** outErrMsg
+  float mSuspensionPreloadLength
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mSuspensionPreloadLength = mSuspensionPreloadLength;
 };
 
 float JoltC_WheelSettingsWV_mRadius_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mRadius;
@@ -410,16 +338,14 @@ float JoltC_WheelSettingsWV_mRadius_Get(
 
 void JoltC_WheelSettingsWV_mRadius_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mRadius,
-  char** outErrMsg
+  float mRadius
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mRadius = mRadius;
 };
 
 float JoltC_WheelSettingsWV_mWidth_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   float result = selfCpp->mWidth;
@@ -428,16 +354,14 @@ float JoltC_WheelSettingsWV_mWidth_Get(
 
 void JoltC_WheelSettingsWV_mWidth_Set(
   JoltC_WheelSettingsWV_t * self,
-  float mWidth,
-  char** outErrMsg
+  float mWidth
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mWidth = mWidth;
 };
 
 bool JoltC_WheelSettingsWV_mEnableSuspensionForcePoint_Get(
-  JoltC_WheelSettingsWV_t * self,
-  char** outErrMsg
+  JoltC_WheelSettingsWV_t * self
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   bool result = selfCpp->mEnableSuspensionForcePoint;
@@ -446,14 +370,13 @@ bool JoltC_WheelSettingsWV_mEnableSuspensionForcePoint_Get(
 
 void JoltC_WheelSettingsWV_mEnableSuspensionForcePoint_Set(
   JoltC_WheelSettingsWV_t * self,
-  bool mEnableSuspensionForcePoint,
-  char** outErrMsg
+  bool mEnableSuspensionForcePoint
 ) {
   WheelSettingsWV * selfCpp = static_cast<WheelSettingsWV *>(self->obj);
   selfCpp->mEnableSuspensionForcePoint = mEnableSuspensionForcePoint;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

@@ -9,45 +9,38 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayCollideShapeResult_empty(
-  JoltC_ArrayCollideShapeResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayCollideShapeResult_t * self
 );
 
 long JoltC_ArrayCollideShapeResult_size(
-  JoltC_ArrayCollideShapeResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayCollideShapeResult_t * self
 );
 
 JoltC_CollideShapeResult_t * JoltC_ArrayCollideShapeResult_at(
   JoltC_ArrayCollideShapeResult_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArrayCollideShapeResult_push_back(
   JoltC_ArrayCollideShapeResult_t * self,
-  const JoltC_CollideShapeResult_t * inValue,
-  char** outErrMsg
+  const JoltC_CollideShapeResult_t * inValue
 );
 
 void JoltC_ArrayCollideShapeResult_reserve(
   JoltC_ArrayCollideShapeResult_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayCollideShapeResult_resize(
   JoltC_ArrayCollideShapeResult_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayCollideShapeResult_clear(
-  JoltC_ArrayCollideShapeResult_t * self,
-  char** outErrMsg
+  JoltC_ArrayCollideShapeResult_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

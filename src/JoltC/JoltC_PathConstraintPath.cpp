@@ -6,97 +6,65 @@
 extern "C" {
 #endif
 
+//region converters
+
+/**
+ * Convert an instance of JoltC_PathConstraintPathEm_t into JoltC_PathConstraintPath_t.
+ */
+JoltC_PathConstraintPath_t * JoltC_PathConstraintPath_From_PathConstraintPathEm(
+  JoltC_PathConstraintPathEm_t * subtype
+) {
+  return (JoltC_PathConstraintPath_t*) subtype;
+};
+
+//endregion
+
 //region functions
 
 bool JoltC_PathConstraintPath_IsLooping(
-  JoltC_PathConstraintPath_t * self,
-  char** outErrMsg
+  JoltC_PathConstraintPath_t * self
 ) {
-  try {
-    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-    bool result = selfCpp->IsLooping();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+  bool result = selfCpp->IsLooping();
+  return result;
 };
 
 void JoltC_PathConstraintPath_SetIsLooping(
   JoltC_PathConstraintPath_t * self,
-  bool inIsLooping,
-  char** outErrMsg
+  bool inIsLooping
 ) {
-  try {
-    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-    
-    selfCpp->SetIsLooping(
-    inIsLooping
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+  
+  selfCpp->SetIsLooping(
+  inIsLooping
+  );
 };
 
 unsigned long JoltC_PathConstraintPath_GetRefCount(
-  JoltC_PathConstraintPath_t * self,
-  char** outErrMsg
+  JoltC_PathConstraintPath_t * self
 ) {
-  try {
-    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-    unsigned long result = selfCpp->GetRefCount();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+  unsigned long result = selfCpp->GetRefCount();
+  return result;
 };
 
 void JoltC_PathConstraintPath_AddRef(
-  JoltC_PathConstraintPath_t * self,
-  char** outErrMsg
+  JoltC_PathConstraintPath_t * self
 ) {
-  try {
-    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-    
-    selfCpp->AddRef();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+  
+  selfCpp->AddRef();
 };
 
 void JoltC_PathConstraintPath_Release(
-  JoltC_PathConstraintPath_t * self,
-  char** outErrMsg
+  JoltC_PathConstraintPath_t * self
 ) {
-  try {
-    PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-    
-    selfCpp->Release();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
+  
+  selfCpp->Release();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

@@ -9,155 +9,83 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayVec3_empty(
-  JoltC_ArrayVec3_t * self,
-  char** outErrMsg
+  JoltC_ArrayVec3_t * self
 ) {
-  try {
-    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_ArrayVec3_size(
-  JoltC_ArrayVec3_t * self,
-  char** outErrMsg
+  JoltC_ArrayVec3_t * self
 ) {
-  try {
-    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_ArrayVec3_at(
   JoltC_ArrayVec3_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-    Vec3& resultRef = selfCpp->at(
-    inIndex
-    );
-    Vec3 * result = &resultRef;
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  Vec3& resultRef = selfCpp->at(
+  inIndex
+  );
+  Vec3 * result = &resultRef;
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 void JoltC_ArrayVec3_push_back(
   JoltC_ArrayVec3_t * self,
-  const JoltC_Vec3_t * inValue,
-  char** outErrMsg
+  const JoltC_Vec3_t * inValue
 ) {
-  try {
-    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-    
-    selfCpp->push_back(
-    *reinterpret_cast<Vec3 *>(inValue->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  
+  selfCpp->push_back(
+  *reinterpret_cast<Vec3 *>(inValue->obj)
+  );
 };
 
 void JoltC_ArrayVec3_reserve(
   JoltC_ArrayVec3_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-    
-    selfCpp->reserve(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  
+  selfCpp->reserve(
+  inSize
+  );
 };
 
 void JoltC_ArrayVec3_resize(
   JoltC_ArrayVec3_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_ArrayVec3_clear(
-  JoltC_ArrayVec3_t * self,
-  char** outErrMsg
+  JoltC_ArrayVec3_t * self
 ) {
-  try {
-    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  
+  selfCpp->clear();
 };
 
 JoltC_Vec3MemRef_t * JoltC_ArrayVec3_data(
-  JoltC_ArrayVec3_t * self,
-  char** outErrMsg
+  JoltC_ArrayVec3_t * self
 ) {
-  try {
-    ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-    Vec3MemRef * result = selfCpp->data();
-    return reinterpret_cast<JoltC_Vec3MemRef_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  Vec3MemRef * result = selfCpp->data();
+  return reinterpret_cast<JoltC_Vec3MemRef_t *>(result);
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

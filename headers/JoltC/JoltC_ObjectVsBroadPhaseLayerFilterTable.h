@@ -12,11 +12,10 @@ JoltC_ObjectVsBroadPhaseLayerFilterTable_t * JoltC_ObjectVsBroadPhaseLayerFilter
   const JoltC_BroadPhaseLayerInterface_t * inBroadPhaseLayerInterface,
   unsigned long inNumBroadPhaseLayers,
   const JoltC_ObjectLayerPairFilter_t * inObjectLayerPairFilter,
-  unsigned long inNumObjectLayers,
-  char** outErrMsg
+  unsigned long inNumObjectLayers
 );
 
-//endregion constructors
+//endregion
 
 
 #ifdef __cplusplus

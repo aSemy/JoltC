@@ -8,59 +8,60 @@ extern "C" {
 
 //region constructors
 
-JoltC_WheeledVehicleControllerSettings_t * JoltC_WheeledVehicleControllerSettings_new(
-  char** outErrMsg
+JoltC_WheeledVehicleControllerSettings_t * JoltC_WheeledVehicleControllerSettings_new();
+
+//endregion
+
+//region converters
+
+/**
+ * Convert an instance of JoltC_MotorcycleControllerSettings_t into JoltC_WheeledVehicleControllerSettings_t.
+ */
+JoltC_WheeledVehicleControllerSettings_t * JoltC_WheeledVehicleControllerSettings_From_MotorcycleControllerSettings(
+  JoltC_MotorcycleControllerSettings_t * subtype
 );
 
-//endregion constructors
+//endregion
 
 //region properties
 
 JoltC_VehicleEngineSettings_t * JoltC_WheeledVehicleControllerSettings_mEngine_Get(
-  JoltC_WheeledVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_WheeledVehicleControllerSettings_t * self
 );
 
 void JoltC_WheeledVehicleControllerSettings_mEngine_Set(
   JoltC_WheeledVehicleControllerSettings_t * self,
-  JoltC_VehicleEngineSettings_t * mEngine,
-  char** outErrMsg
+  JoltC_VehicleEngineSettings_t * mEngine
 );
 
 JoltC_VehicleTransmissionSettings_t * JoltC_WheeledVehicleControllerSettings_mTransmission_Get(
-  JoltC_WheeledVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_WheeledVehicleControllerSettings_t * self
 );
 
 void JoltC_WheeledVehicleControllerSettings_mTransmission_Set(
   JoltC_WheeledVehicleControllerSettings_t * self,
-  JoltC_VehicleTransmissionSettings_t * mTransmission,
-  char** outErrMsg
+  JoltC_VehicleTransmissionSettings_t * mTransmission
 );
 
 JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleControllerSettings_mDifferentials_Get(
-  JoltC_WheeledVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_WheeledVehicleControllerSettings_t * self
 );
 
 void JoltC_WheeledVehicleControllerSettings_mDifferentials_Set(
   JoltC_WheeledVehicleControllerSettings_t * self,
-  JoltC_ArrayVehicleDifferentialSettings_t * mDifferentials,
-  char** outErrMsg
+  JoltC_ArrayVehicleDifferentialSettings_t * mDifferentials
 );
 
 float JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Get(
-  JoltC_WheeledVehicleControllerSettings_t * self,
-  char** outErrMsg
+  JoltC_WheeledVehicleControllerSettings_t * self
 );
 
 void JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Set(
   JoltC_WheeledVehicleControllerSettings_t * self,
-  float mDifferentialLimitedSlipRatio,
-  char** outErrMsg
+  float mDifferentialLimitedSlipRatio
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

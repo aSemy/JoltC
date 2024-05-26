@@ -10,25 +10,22 @@ extern "C" {
 
 JoltC_JPHString_t * JoltC_JPHString_new(
   char* str,
-  long length,
-  char** outErrMsg
+  long length
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 const char* JoltC_JPHString_c_str(
-  JoltC_JPHString_t * self,
-  char** outErrMsg
+  JoltC_JPHString_t * self
 );
 
 unsigned long JoltC_JPHString_size(
-  JoltC_JPHString_t * self,
-  char** outErrMsg
+  JoltC_JPHString_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

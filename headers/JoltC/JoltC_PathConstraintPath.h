@@ -6,35 +6,41 @@
 extern "C" {
 #endif
 
+//region converters
+
+/**
+ * Convert an instance of JoltC_PathConstraintPathEm_t into JoltC_PathConstraintPath_t.
+ */
+JoltC_PathConstraintPath_t * JoltC_PathConstraintPath_From_PathConstraintPathEm(
+  JoltC_PathConstraintPathEm_t * subtype
+);
+
+//endregion
+
 //region functions
 
 bool JoltC_PathConstraintPath_IsLooping(
-  JoltC_PathConstraintPath_t * self,
-  char** outErrMsg
+  JoltC_PathConstraintPath_t * self
 );
 
 void JoltC_PathConstraintPath_SetIsLooping(
   JoltC_PathConstraintPath_t * self,
-  bool inIsLooping,
-  char** outErrMsg
+  bool inIsLooping
 );
 
 unsigned long JoltC_PathConstraintPath_GetRefCount(
-  JoltC_PathConstraintPath_t * self,
-  char** outErrMsg
+  JoltC_PathConstraintPath_t * self
 );
 
 void JoltC_PathConstraintPath_AddRef(
-  JoltC_PathConstraintPath_t * self,
-  char** outErrMsg
+  JoltC_PathConstraintPath_t * self
 );
 
 void JoltC_PathConstraintPath_Release(
-  JoltC_PathConstraintPath_t * self,
-  char** outErrMsg
+  JoltC_PathConstraintPath_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

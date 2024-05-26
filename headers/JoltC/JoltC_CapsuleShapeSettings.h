@@ -11,99 +11,83 @@ extern "C" {
 JoltC_CapsuleShapeSettings_t * JoltC_CapsuleShapeSettings_new(
   float inHalfHeight,
   float inRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial,
-  char** outErrMsg
+  const JoltC_PhysicsMaterial_t * inMaterial
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_CapsuleShapeSettings_GetRefCount(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 void JoltC_CapsuleShapeSettings_AddRef(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 void JoltC_CapsuleShapeSettings_Release(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_CapsuleShapeSettings_Create(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 void JoltC_CapsuleShapeSettings_ClearCachedResult(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 float JoltC_CapsuleShapeSettings_mRadius_Get(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 void JoltC_CapsuleShapeSettings_mRadius_Set(
   JoltC_CapsuleShapeSettings_t * self,
-  float mRadius,
-  char** outErrMsg
+  float mRadius
 );
 
 float JoltC_CapsuleShapeSettings_mHalfHeightOfCylinder_Get(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 void JoltC_CapsuleShapeSettings_mHalfHeightOfCylinder_Set(
   JoltC_CapsuleShapeSettings_t * self,
-  float mHalfHeightOfCylinder,
-  char** outErrMsg
+  float mHalfHeightOfCylinder
 );
 
 const JoltC_PhysicsMaterial_t * JoltC_CapsuleShapeSettings_mMaterial_Get(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 const void JoltC_CapsuleShapeSettings_mMaterial_Set(
   JoltC_CapsuleShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial,
-  char** outErrMsg
+  const JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_CapsuleShapeSettings_mDensity_Get(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 void JoltC_CapsuleShapeSettings_mDensity_Set(
   JoltC_CapsuleShapeSettings_t * self,
-  float mDensity,
-  char** outErrMsg
+  float mDensity
 );
 
 unsigned long long int JoltC_CapsuleShapeSettings_mUserData_Get(
-  JoltC_CapsuleShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_CapsuleShapeSettings_t * self
 );
 
 void JoltC_CapsuleShapeSettings_mUserData_Set(
   JoltC_CapsuleShapeSettings_t * self,
-  unsigned long long int mUserData,
-  char** outErrMsg
+  unsigned long long int mUserData
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

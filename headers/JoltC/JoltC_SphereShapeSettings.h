@@ -10,88 +10,74 @@ extern "C" {
 
 JoltC_SphereShapeSettings_t * JoltC_SphereShapeSettings_new(
   float inRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial,
-  char** outErrMsg
+  const JoltC_PhysicsMaterial_t * inMaterial
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_SphereShapeSettings_GetRefCount(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
 void JoltC_SphereShapeSettings_AddRef(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
 void JoltC_SphereShapeSettings_Release(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_SphereShapeSettings_Create(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
 void JoltC_SphereShapeSettings_ClearCachedResult(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 float JoltC_SphereShapeSettings_mRadius_Get(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
 void JoltC_SphereShapeSettings_mRadius_Set(
   JoltC_SphereShapeSettings_t * self,
-  float mRadius,
-  char** outErrMsg
+  float mRadius
 );
 
 const JoltC_PhysicsMaterial_t * JoltC_SphereShapeSettings_mMaterial_Get(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
 const void JoltC_SphereShapeSettings_mMaterial_Set(
   JoltC_SphereShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial,
-  char** outErrMsg
+  const JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_SphereShapeSettings_mDensity_Get(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
 void JoltC_SphereShapeSettings_mDensity_Set(
   JoltC_SphereShapeSettings_t * self,
-  float mDensity,
-  char** outErrMsg
+  float mDensity
 );
 
 unsigned long long int JoltC_SphereShapeSettings_mUserData_Get(
-  JoltC_SphereShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_SphereShapeSettings_t * self
 );
 
 void JoltC_SphereShapeSettings_mUserData_Set(
   JoltC_SphereShapeSettings_t * self,
-  unsigned long long int mUserData,
-  char** outErrMsg
+  unsigned long long int mUserData
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

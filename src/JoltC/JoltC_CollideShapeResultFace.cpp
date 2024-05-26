@@ -9,118 +9,64 @@ extern "C" {
 //region functions
 
 bool JoltC_CollideShapeResultFace_empty(
-  JoltC_CollideShapeResultFace_t * self,
-  char** outErrMsg
+  JoltC_CollideShapeResultFace_t * self
 ) {
-  try {
-    CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-    bool result = selfCpp->empty();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
+  bool result = selfCpp->empty();
+  return result;
 };
 
 long JoltC_CollideShapeResultFace_size(
-  JoltC_CollideShapeResultFace_t * self,
-  char** outErrMsg
+  JoltC_CollideShapeResultFace_t * self
 ) {
-  try {
-    CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-    long result = selfCpp->size();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
+  long result = selfCpp->size();
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_CollideShapeResultFace_at(
   JoltC_CollideShapeResultFace_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 ) {
-  try {
-    CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-    Vec3& resultRef = selfCpp->at(
-    inIndex
-    );
-    Vec3 * result = &resultRef;
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
+  Vec3& resultRef = selfCpp->at(
+  inIndex
+  );
+  Vec3 * result = &resultRef;
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 void JoltC_CollideShapeResultFace_push_back(
   JoltC_CollideShapeResultFace_t * self,
-  const JoltC_Vec3_t * inValue,
-  char** outErrMsg
+  const JoltC_Vec3_t * inValue
 ) {
-  try {
-    CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-    
-    selfCpp->push_back(
-    *reinterpret_cast<Vec3 *>(inValue->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
+  
+  selfCpp->push_back(
+  *reinterpret_cast<Vec3 *>(inValue->obj)
+  );
 };
 
 void JoltC_CollideShapeResultFace_resize(
   JoltC_CollideShapeResultFace_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 ) {
-  try {
-    CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-    
-    selfCpp->resize(
-    inSize
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
+  
+  selfCpp->resize(
+  inSize
+  );
 };
 
 void JoltC_CollideShapeResultFace_clear(
-  JoltC_CollideShapeResultFace_t * self,
-  char** outErrMsg
+  JoltC_CollideShapeResultFace_t * self
 ) {
-  try {
-    CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-    
-    selfCpp->clear();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
+  
+  selfCpp->clear();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

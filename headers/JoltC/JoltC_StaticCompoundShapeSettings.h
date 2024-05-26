@@ -8,11 +8,9 @@ extern "C" {
 
 //region constructors
 
-JoltC_StaticCompoundShapeSettings_t * JoltC_StaticCompoundShapeSettings_new(
-  char** outErrMsg
-);
+JoltC_StaticCompoundShapeSettings_t * JoltC_StaticCompoundShapeSettings_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
@@ -21,51 +19,43 @@ void JoltC_StaticCompoundShapeSettings_AddShape(
   const JoltC_Vec3_t * inPosition,
   const JoltC_Quat_t * inRotation,
   const JoltC_ShapeSettings_t * inShape,
-  unsigned long inUserData,
-  char** outErrMsg
+  unsigned long inUserData
 );
 
 unsigned long JoltC_StaticCompoundShapeSettings_GetRefCount(
-  JoltC_StaticCompoundShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_StaticCompoundShapeSettings_t * self
 );
 
 void JoltC_StaticCompoundShapeSettings_AddRef(
-  JoltC_StaticCompoundShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_StaticCompoundShapeSettings_t * self
 );
 
 void JoltC_StaticCompoundShapeSettings_Release(
-  JoltC_StaticCompoundShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_StaticCompoundShapeSettings_t * self
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_StaticCompoundShapeSettings_Create(
-  JoltC_StaticCompoundShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_StaticCompoundShapeSettings_t * self
 );
 
 void JoltC_StaticCompoundShapeSettings_ClearCachedResult(
-  JoltC_StaticCompoundShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_StaticCompoundShapeSettings_t * self
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 unsigned long long int JoltC_StaticCompoundShapeSettings_mUserData_Get(
-  JoltC_StaticCompoundShapeSettings_t * self,
-  char** outErrMsg
+  JoltC_StaticCompoundShapeSettings_t * self
 );
 
 void JoltC_StaticCompoundShapeSettings_mUserData_Set(
   JoltC_StaticCompoundShapeSettings_t * self,
-  unsigned long long int mUserData,
-  char** outErrMsg
+  unsigned long long int mUserData
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

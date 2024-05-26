@@ -9,11 +9,10 @@ extern "C" {
 //region constructors
 
 JoltC_IgnoreSingleBodyFilter_t * JoltC_IgnoreSingleBodyFilter_new(
-  const JoltC_BodyID_t * inBodyID,
-  char** outErrMsg
+  const JoltC_BodyID_t * inBodyID
 );
 
-//endregion constructors
+//endregion
 
 
 #ifdef __cplusplus

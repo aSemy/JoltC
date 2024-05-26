@@ -9,30 +9,27 @@ extern "C" {
 //region properties
 
 unsigned long JoltC_SoftBodyVertexTraits_mPreviousPositionOffset_Get(
-  JoltC_SoftBodyVertexTraits_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertexTraits_t * self
 ) {
   unsigned long result = SoftBodyVertexTraits::mPreviousPositionOffset;
   return result;
 };
 
 unsigned long JoltC_SoftBodyVertexTraits_mPositionOffset_Get(
-  JoltC_SoftBodyVertexTraits_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertexTraits_t * self
 ) {
   unsigned long result = SoftBodyVertexTraits::mPositionOffset;
   return result;
 };
 
 unsigned long JoltC_SoftBodyVertexTraits_mVelocityOffset_Get(
-  JoltC_SoftBodyVertexTraits_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyVertexTraits_t * self
 ) {
   unsigned long result = SoftBodyVertexTraits::mVelocityOffset;
   return result;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

@@ -12,30 +12,26 @@ JoltC_VehicleCollisionTesterCastSphere_t * JoltC_VehicleCollisionTesterCastSpher
   unsigned long inObjectLayer,
   float inRadius,
   JoltC_Vec3_t * inUp,
-  float inMaxSlopeAngle,
-  char** outErrMsg
+  float inMaxSlopeAngle
 );
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_VehicleCollisionTesterCastSphere_GetRefCount(
-  JoltC_VehicleCollisionTesterCastSphere_t * self,
-  char** outErrMsg
+  JoltC_VehicleCollisionTesterCastSphere_t * self
 );
 
 void JoltC_VehicleCollisionTesterCastSphere_AddRef(
-  JoltC_VehicleCollisionTesterCastSphere_t * self,
-  char** outErrMsg
+  JoltC_VehicleCollisionTesterCastSphere_t * self
 );
 
 void JoltC_VehicleCollisionTesterCastSphere_Release(
-  JoltC_VehicleCollisionTesterCastSphere_t * self,
-  char** outErrMsg
+  JoltC_VehicleCollisionTesterCastSphere_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

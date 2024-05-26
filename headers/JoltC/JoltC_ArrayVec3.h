@@ -9,50 +9,42 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayVec3_empty(
-  JoltC_ArrayVec3_t * self,
-  char** outErrMsg
+  JoltC_ArrayVec3_t * self
 );
 
 long JoltC_ArrayVec3_size(
-  JoltC_ArrayVec3_t * self,
-  char** outErrMsg
+  JoltC_ArrayVec3_t * self
 );
 
 JoltC_Vec3_t * JoltC_ArrayVec3_at(
   JoltC_ArrayVec3_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArrayVec3_push_back(
   JoltC_ArrayVec3_t * self,
-  const JoltC_Vec3_t * inValue,
-  char** outErrMsg
+  const JoltC_Vec3_t * inValue
 );
 
 void JoltC_ArrayVec3_reserve(
   JoltC_ArrayVec3_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayVec3_resize(
   JoltC_ArrayVec3_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayVec3_clear(
-  JoltC_ArrayVec3_t * self,
-  char** outErrMsg
+  JoltC_ArrayVec3_t * self
 );
 
 JoltC_Vec3MemRef_t * JoltC_ArrayVec3_data(
-  JoltC_ArrayVec3_t * self,
-  char** outErrMsg
+  JoltC_ArrayVec3_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

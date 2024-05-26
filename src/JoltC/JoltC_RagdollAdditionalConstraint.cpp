@@ -10,8 +10,7 @@ extern "C" {
 
 size_t JoltC_RagdollAdditionalConstraint_mBodyIdx_Get(
   JoltC_RagdollAdditionalConstraint_t * self,
-  long * outValue,
-  char** outErrMsg
+  long * outValue
 ) {
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
   size_t resultSize = std::size(selfCpp->mBodyIdx);
@@ -22,8 +21,7 @@ size_t JoltC_RagdollAdditionalConstraint_mBodyIdx_Get(
 void JoltC_RagdollAdditionalConstraint_mBodyIdx_Set(
   JoltC_RagdollAdditionalConstraint_t * self,
   long * mBodyIdx,
-  size_t mBodyIdxSize,
-  char** outErrMsg
+  size_t mBodyIdxSize
 ) {
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
   for (size_t i = 0; i < mBodyIdxSize; i++) {
@@ -32,8 +30,7 @@ void JoltC_RagdollAdditionalConstraint_mBodyIdx_Set(
 };
 
 JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollAdditionalConstraint_mConstraint_Get(
-  JoltC_RagdollAdditionalConstraint_t * self,
-  char** outErrMsg
+  JoltC_RagdollAdditionalConstraint_t * self
 ) {
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
   TwoBodyConstraintSettings * result = selfCpp->mConstraint;
@@ -42,14 +39,13 @@ JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollAdditionalConstraint_mConstrain
 
 void JoltC_RagdollAdditionalConstraint_mConstraint_Set(
   JoltC_RagdollAdditionalConstraint_t * self,
-  JoltC_TwoBodyConstraintSettings_t * mConstraint,
-  char** outErrMsg
+  JoltC_TwoBodyConstraintSettings_t * mConstraint
 ) {
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
   selfCpp->mConstraint = reinterpret_cast<TwoBodyConstraintSettings *>(mConstraint->obj);
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

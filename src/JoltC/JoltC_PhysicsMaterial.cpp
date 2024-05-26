@@ -8,79 +8,42 @@ extern "C" {
 
 //region constructors
 
-JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterial_new(
-  char** outErrMsg
-) {
-  try {
-    JoltC_PhysicsMaterial_t * cInstance = new JoltC_PhysicsMaterial_t();
-    PhysicsMaterial * cppInstance = new PhysicsMaterial();
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterial_new() {
+  JoltC_PhysicsMaterial_t * cInstance = new JoltC_PhysicsMaterial_t();
+  PhysicsMaterial * cppInstance = new PhysicsMaterial();
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 unsigned long JoltC_PhysicsMaterial_GetRefCount(
-  JoltC_PhysicsMaterial_t * self,
-  char** outErrMsg
+  JoltC_PhysicsMaterial_t * self
 ) {
-  try {
-    PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
-    unsigned long result = selfCpp->GetRefCount();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
+  unsigned long result = selfCpp->GetRefCount();
+  return result;
 };
 
 void JoltC_PhysicsMaterial_AddRef(
-  JoltC_PhysicsMaterial_t * self,
-  char** outErrMsg
+  JoltC_PhysicsMaterial_t * self
 ) {
-  try {
-    PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
-    
-    selfCpp->AddRef();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
+  
+  selfCpp->AddRef();
 };
 
 void JoltC_PhysicsMaterial_Release(
-  JoltC_PhysicsMaterial_t * self,
-  char** outErrMsg
+  JoltC_PhysicsMaterial_t * self
 ) {
-  try {
-    PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
-    
-    selfCpp->Release();
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
+  
+  selfCpp->Release();
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

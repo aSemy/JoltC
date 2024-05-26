@@ -9,26 +9,17 @@ extern "C" {
 //region constructors
 
 JoltC_ObjectVsBroadPhaseLayerFilterMask_t * JoltC_ObjectVsBroadPhaseLayerFilterMask_new(
-  const JoltC_BroadPhaseLayerInterfaceMask_t * inBroadPhaseLayerInterface,
-  char** outErrMsg
+  const JoltC_BroadPhaseLayerInterfaceMask_t * inBroadPhaseLayerInterface
 ) {
-  try {
-    JoltC_ObjectVsBroadPhaseLayerFilterMask_t * cInstance = new JoltC_ObjectVsBroadPhaseLayerFilterMask_t();
-    ObjectVsBroadPhaseLayerFilterMask * cppInstance = new ObjectVsBroadPhaseLayerFilterMask(
-      *reinterpret_cast<BroadPhaseLayerInterfaceMask *>(inBroadPhaseLayerInterface->obj)
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_ObjectVsBroadPhaseLayerFilterMask_t * cInstance = new JoltC_ObjectVsBroadPhaseLayerFilterMask_t();
+  ObjectVsBroadPhaseLayerFilterMask * cppInstance = new ObjectVsBroadPhaseLayerFilterMask(
+    *reinterpret_cast<BroadPhaseLayerInterfaceMask *>(inBroadPhaseLayerInterface->obj)
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 #ifdef __cplusplus
 }

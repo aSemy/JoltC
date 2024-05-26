@@ -10,70 +10,43 @@ extern "C" {
 
 JoltC_BroadPhaseLayerInterfaceTable_t * JoltC_BroadPhaseLayerInterfaceTable_new(
   unsigned long inNumObjectLayers,
-  unsigned long inNumBroadPhaseLayers,
-  char** outErrMsg
+  unsigned long inNumBroadPhaseLayers
 ) {
-  try {
-    JoltC_BroadPhaseLayerInterfaceTable_t * cInstance = new JoltC_BroadPhaseLayerInterfaceTable_t();
-    BroadPhaseLayerInterfaceTable * cppInstance = new BroadPhaseLayerInterfaceTable(
-      inNumObjectLayers,
-      inNumBroadPhaseLayers
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_BroadPhaseLayerInterfaceTable_t * cInstance = new JoltC_BroadPhaseLayerInterfaceTable_t();
+  BroadPhaseLayerInterfaceTable * cppInstance = new BroadPhaseLayerInterfaceTable(
+    inNumObjectLayers,
+    inNumBroadPhaseLayers
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 void JoltC_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
   JoltC_BroadPhaseLayerInterfaceTable_t * self,
   unsigned long inObjectLayer,
-  const JoltC_BroadPhaseLayer_t * inBroadPhaseLayer,
-  char** outErrMsg
+  const JoltC_BroadPhaseLayer_t * inBroadPhaseLayer
 ) {
-  try {
-    BroadPhaseLayerInterfaceTable * selfCpp = static_cast<BroadPhaseLayerInterfaceTable *>(self->obj);
-    
-    selfCpp->MapObjectToBroadPhaseLayer(
-    inObjectLayer,
-    *reinterpret_cast<BroadPhaseLayer *>(inBroadPhaseLayer->obj)
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseLayerInterfaceTable * selfCpp = static_cast<BroadPhaseLayerInterfaceTable *>(self->obj);
+  
+  selfCpp->MapObjectToBroadPhaseLayer(
+  inObjectLayer,
+  *reinterpret_cast<BroadPhaseLayer *>(inBroadPhaseLayer->obj)
+  );
 };
 
 unsigned long JoltC_BroadPhaseLayerInterfaceTable_GetNumBroadPhaseLayers(
-  JoltC_BroadPhaseLayerInterfaceTable_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseLayerInterfaceTable_t * self
 ) {
-  try {
-    BroadPhaseLayerInterfaceTable * selfCpp = static_cast<BroadPhaseLayerInterfaceTable *>(self->obj);
-    unsigned long result = selfCpp->GetNumBroadPhaseLayers();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseLayerInterfaceTable * selfCpp = static_cast<BroadPhaseLayerInterfaceTable *>(self->obj);
+  unsigned long result = selfCpp->GetNumBroadPhaseLayers();
+  return result;
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

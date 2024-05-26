@@ -9,23 +9,14 @@ extern "C" {
 //region functions
 
 unsigned long JoltC_BroadPhaseLayerInterfaceEm_GetNumBroadPhaseLayers(
-  JoltC_BroadPhaseLayerInterfaceEm_t * self,
-  char** outErrMsg
+  JoltC_BroadPhaseLayerInterfaceEm_t * self
 ) {
-  try {
-    BroadPhaseLayerInterfaceEm * selfCpp = static_cast<BroadPhaseLayerInterfaceEm *>(self->obj);
-    unsigned long result = selfCpp->GetNumBroadPhaseLayers();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  BroadPhaseLayerInterfaceEm * selfCpp = static_cast<BroadPhaseLayerInterfaceEm *>(self->obj);
+  unsigned long result = selfCpp->GetNumBroadPhaseLayers();
+  return result;
 };
 
-//endregion functions
+//endregion
 
 #ifdef __cplusplus
 }

@@ -9,39 +9,33 @@ extern "C" {
 //region functions
 
 bool JoltC_ArrayWheelSettings_empty(
-  JoltC_ArrayWheelSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayWheelSettings_t * self
 );
 
 long JoltC_ArrayWheelSettings_size(
-  JoltC_ArrayWheelSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayWheelSettings_t * self
 );
 
 JoltC_WheelSettings_t * JoltC_ArrayWheelSettings_at(
   JoltC_ArrayWheelSettings_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_ArrayWheelSettings_push_back(
   JoltC_ArrayWheelSettings_t * self,
-  JoltC_WheelSettings_t * inValue,
-  char** outErrMsg
+  JoltC_WheelSettings_t * inValue
 );
 
 void JoltC_ArrayWheelSettings_resize(
   JoltC_ArrayWheelSettings_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_ArrayWheelSettings_clear(
-  JoltC_ArrayWheelSettings_t * self,
-  char** outErrMsg
+  JoltC_ArrayWheelSettings_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

@@ -6,72 +6,72 @@
 extern "C" {
 #endif
 
+//region converters
+
+/**
+ * Convert an instance of JoltC_CharacterVirtualSettings_t into JoltC_CharacterBaseSettings_t.
+ */
+JoltC_CharacterBaseSettings_t * JoltC_CharacterBaseSettings_From_CharacterVirtualSettings(
+  JoltC_CharacterVirtualSettings_t * subtype
+);
+
+//endregion
+
 //region functions
 
 unsigned long JoltC_CharacterBaseSettings_GetRefCount(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 );
 
 void JoltC_CharacterBaseSettings_AddRef(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 );
 
 void JoltC_CharacterBaseSettings_Release(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 JoltC_Vec3_t * JoltC_CharacterBaseSettings_mUp_Get(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 );
 
 void JoltC_CharacterBaseSettings_mUp_Set(
   JoltC_CharacterBaseSettings_t * self,
-  JoltC_Vec3_t * mUp,
-  char** outErrMsg
+  JoltC_Vec3_t * mUp
 );
 
 JoltC_Plane_t * JoltC_CharacterBaseSettings_mSupportingVolume_Get(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 );
 
 void JoltC_CharacterBaseSettings_mSupportingVolume_Set(
   JoltC_CharacterBaseSettings_t * self,
-  JoltC_Plane_t * mSupportingVolume,
-  char** outErrMsg
+  JoltC_Plane_t * mSupportingVolume
 );
 
 float JoltC_CharacterBaseSettings_mMaxSlopeAngle_Get(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 );
 
 void JoltC_CharacterBaseSettings_mMaxSlopeAngle_Set(
   JoltC_CharacterBaseSettings_t * self,
-  float mMaxSlopeAngle,
-  char** outErrMsg
+  float mMaxSlopeAngle
 );
 
 const JoltC_Shape_t * JoltC_CharacterBaseSettings_mShape_Get(
-  JoltC_CharacterBaseSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterBaseSettings_t * self
 );
 
 const void JoltC_CharacterBaseSettings_mShape_Set(
   JoltC_CharacterBaseSettings_t * self,
-  const JoltC_Shape_t * mShape,
-  char** outErrMsg
+  const JoltC_Shape_t * mShape
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

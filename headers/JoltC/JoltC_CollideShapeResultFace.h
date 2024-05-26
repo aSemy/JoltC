@@ -9,39 +9,33 @@ extern "C" {
 //region functions
 
 bool JoltC_CollideShapeResultFace_empty(
-  JoltC_CollideShapeResultFace_t * self,
-  char** outErrMsg
+  JoltC_CollideShapeResultFace_t * self
 );
 
 long JoltC_CollideShapeResultFace_size(
-  JoltC_CollideShapeResultFace_t * self,
-  char** outErrMsg
+  JoltC_CollideShapeResultFace_t * self
 );
 
 JoltC_Vec3_t * JoltC_CollideShapeResultFace_at(
   JoltC_CollideShapeResultFace_t * self,
-  long inIndex,
-  char** outErrMsg
+  long inIndex
 );
 
 void JoltC_CollideShapeResultFace_push_back(
   JoltC_CollideShapeResultFace_t * self,
-  const JoltC_Vec3_t * inValue,
-  char** outErrMsg
+  const JoltC_Vec3_t * inValue
 );
 
 void JoltC_CollideShapeResultFace_resize(
   JoltC_CollideShapeResultFace_t * self,
-  unsigned long inSize,
-  char** outErrMsg
+  unsigned long inSize
 );
 
 void JoltC_CollideShapeResultFace_clear(
-  JoltC_CollideShapeResultFace_t * self,
-  char** outErrMsg
+  JoltC_CollideShapeResultFace_t * self
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

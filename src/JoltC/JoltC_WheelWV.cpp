@@ -9,391 +9,201 @@ extern "C" {
 //region constructors
 
 JoltC_WheelWV_t * JoltC_WheelWV_new(
-  const JoltC_WheelSettingsWV_t * inWheel,
-  char** outErrMsg
+  const JoltC_WheelSettingsWV_t * inWheel
 ) {
-  try {
-    JoltC_WheelWV_t * cInstance = new JoltC_WheelWV_t();
-    WheelWV * cppInstance = new WheelWV(
-      *reinterpret_cast<WheelSettingsWV *>(inWheel->obj)
-    );
-    cInstance->obj = cppInstance;
-    return cInstance;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  JoltC_WheelWV_t * cInstance = new JoltC_WheelWV_t();
+  WheelWV * cppInstance = new WheelWV(
+    *reinterpret_cast<WheelSettingsWV *>(inWheel->obj)
+  );
+  cInstance->obj = cppInstance;
+  return cInstance;
 };
 
-//endregion constructors
+//endregion
 
 //region functions
 
 const JoltC_WheelSettingsWV_t * JoltC_WheelWV_GetSettings_0(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    const WheelSettingsWV * result = selfCpp->GetSettings();
-    return reinterpret_cast<const JoltC_WheelSettingsWV_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  const WheelSettingsWV * result = selfCpp->GetSettings();
+  return reinterpret_cast<const JoltC_WheelSettingsWV_t *>(result);
 };
 
 const JoltC_WheelSettings_t * JoltC_WheelWV_GetSettings_1(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    const WheelSettings * result = selfCpp->GetSettings();
-    return reinterpret_cast<const JoltC_WheelSettings_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  const WheelSettings * result = selfCpp->GetSettings();
+  return reinterpret_cast<const JoltC_WheelSettings_t *>(result);
 };
 
 float JoltC_WheelWV_GetAngularVelocity(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    float result = selfCpp->GetAngularVelocity();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  float result = selfCpp->GetAngularVelocity();
+  return result;
 };
 
 void JoltC_WheelWV_SetAngularVelocity(
   JoltC_WheelWV_t * self,
-  float inVel,
-  char** outErrMsg
+  float inVel
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    
-    selfCpp->SetAngularVelocity(
-    inVel
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  
+  selfCpp->SetAngularVelocity(
+  inVel
+  );
 };
 
 float JoltC_WheelWV_GetRotationAngle(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    float result = selfCpp->GetRotationAngle();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  float result = selfCpp->GetRotationAngle();
+  return result;
 };
 
 void JoltC_WheelWV_SetRotationAngle(
   JoltC_WheelWV_t * self,
-  float inAngle,
-  char** outErrMsg
+  float inAngle
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    
-    selfCpp->SetRotationAngle(
-    inAngle
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  
+  selfCpp->SetRotationAngle(
+  inAngle
+  );
 };
 
 float JoltC_WheelWV_GetSteerAngle(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    float result = selfCpp->GetSteerAngle();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  float result = selfCpp->GetSteerAngle();
+  return result;
 };
 
 void JoltC_WheelWV_SetSteerAngle(
   JoltC_WheelWV_t * self,
-  float inAngle,
-  char** outErrMsg
+  float inAngle
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    
-    selfCpp->SetSteerAngle(
-    inAngle
-    );
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  
+  selfCpp->SetSteerAngle(
+  inAngle
+  );
 };
 
 bool JoltC_WheelWV_HasContact(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    bool result = selfCpp->HasContact();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  bool result = selfCpp->HasContact();
+  return result;
 };
 
 JoltC_BodyID_t * JoltC_WheelWV_GetContactBodyID(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    BodyID resultValue = selfCpp->GetContactBodyID();
-    BodyID* result = new BodyID(resultValue);
-    return reinterpret_cast<JoltC_BodyID_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  BodyID resultValue = selfCpp->GetContactBodyID();
+  BodyID* result = new BodyID(resultValue);
+  return reinterpret_cast<JoltC_BodyID_t *>(result);
 };
 
 JoltC_RVec3_t * JoltC_WheelWV_GetContactPosition(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    RVec3 resultValue = selfCpp->GetContactPosition();
-    RVec3* result = new RVec3(resultValue);
-    return reinterpret_cast<JoltC_RVec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  RVec3 resultValue = selfCpp->GetContactPosition();
+  RVec3* result = new RVec3(resultValue);
+  return reinterpret_cast<JoltC_RVec3_t *>(result);
 };
 
 JoltC_Vec3_t * JoltC_WheelWV_GetContactPointVelocity(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    Vec3 resultValue = selfCpp->GetContactPointVelocity();
-    Vec3* result = new Vec3(resultValue);
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  Vec3 resultValue = selfCpp->GetContactPointVelocity();
+  Vec3* result = new Vec3(resultValue);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 JoltC_Vec3_t * JoltC_WheelWV_GetContactNormal(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    Vec3 resultValue = selfCpp->GetContactNormal();
-    Vec3* result = new Vec3(resultValue);
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  Vec3 resultValue = selfCpp->GetContactNormal();
+  Vec3* result = new Vec3(resultValue);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 JoltC_Vec3_t * JoltC_WheelWV_GetContactLongitudinal(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    Vec3 resultValue = selfCpp->GetContactLongitudinal();
-    Vec3* result = new Vec3(resultValue);
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  Vec3 resultValue = selfCpp->GetContactLongitudinal();
+  Vec3* result = new Vec3(resultValue);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 JoltC_Vec3_t * JoltC_WheelWV_GetContactLateral(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    Vec3 resultValue = selfCpp->GetContactLateral();
-    Vec3* result = new Vec3(resultValue);
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  Vec3 resultValue = selfCpp->GetContactLateral();
+  Vec3* result = new Vec3(resultValue);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 float JoltC_WheelWV_GetSuspensionLength(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    float result = selfCpp->GetSuspensionLength();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  float result = selfCpp->GetSuspensionLength();
+  return result;
 };
 
 bool JoltC_WheelWV_HasHitHardPoint(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    bool result = selfCpp->HasHitHardPoint();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  bool result = selfCpp->HasHitHardPoint();
+  return result;
 };
 
 float JoltC_WheelWV_GetSuspensionLambda(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    float result = selfCpp->GetSuspensionLambda();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  float result = selfCpp->GetSuspensionLambda();
+  return result;
 };
 
 float JoltC_WheelWV_GetLongitudinalLambda(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    float result = selfCpp->GetLongitudinalLambda();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  float result = selfCpp->GetLongitudinalLambda();
+  return result;
 };
 
 float JoltC_WheelWV_GetLateralLambda(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
-  try {
-    WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-    float result = selfCpp->GetLateralLambda();
-    return result;
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
+  float result = selfCpp->GetLateralLambda();
+  return result;
 };
 
-//endregion functions
+//endregion
 
 //region properties
 
 float JoltC_WheelWV_mLongitudinalSlip_Get(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   float result = selfCpp->mLongitudinalSlip;
@@ -402,16 +212,14 @@ float JoltC_WheelWV_mLongitudinalSlip_Get(
 
 void JoltC_WheelWV_mLongitudinalSlip_Set(
   JoltC_WheelWV_t * self,
-  float mLongitudinalSlip,
-  char** outErrMsg
+  float mLongitudinalSlip
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mLongitudinalSlip = mLongitudinalSlip;
 };
 
 float JoltC_WheelWV_mLateralSlip_Get(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   float result = selfCpp->mLateralSlip;
@@ -420,16 +228,14 @@ float JoltC_WheelWV_mLateralSlip_Get(
 
 void JoltC_WheelWV_mLateralSlip_Set(
   JoltC_WheelWV_t * self,
-  float mLateralSlip,
-  char** outErrMsg
+  float mLateralSlip
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mLateralSlip = mLateralSlip;
 };
 
 float JoltC_WheelWV_mCombinedLongitudinalFriction_Get(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   float result = selfCpp->mCombinedLongitudinalFriction;
@@ -438,16 +244,14 @@ float JoltC_WheelWV_mCombinedLongitudinalFriction_Get(
 
 void JoltC_WheelWV_mCombinedLongitudinalFriction_Set(
   JoltC_WheelWV_t * self,
-  float mCombinedLongitudinalFriction,
-  char** outErrMsg
+  float mCombinedLongitudinalFriction
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mCombinedLongitudinalFriction = mCombinedLongitudinalFriction;
 };
 
 float JoltC_WheelWV_mCombinedLateralFriction_Get(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   float result = selfCpp->mCombinedLateralFriction;
@@ -456,16 +260,14 @@ float JoltC_WheelWV_mCombinedLateralFriction_Get(
 
 void JoltC_WheelWV_mCombinedLateralFriction_Set(
   JoltC_WheelWV_t * self,
-  float mCombinedLateralFriction,
-  char** outErrMsg
+  float mCombinedLateralFriction
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mCombinedLateralFriction = mCombinedLateralFriction;
 };
 
 float JoltC_WheelWV_mBrakeImpulse_Get(
-  JoltC_WheelWV_t * self,
-  char** outErrMsg
+  JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   float result = selfCpp->mBrakeImpulse;
@@ -474,14 +276,13 @@ float JoltC_WheelWV_mBrakeImpulse_Get(
 
 void JoltC_WheelWV_mBrakeImpulse_Set(
   JoltC_WheelWV_t * self,
-  float mBrakeImpulse,
-  char** outErrMsg
+  float mBrakeImpulse
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mBrakeImpulse = mBrakeImpulse;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

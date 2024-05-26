@@ -9,50 +9,42 @@ extern "C" {
 //region properties
 
 float JoltC_SoftBodyContactSettings_mInvMassScale1_Get(
-  JoltC_SoftBodyContactSettings_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyContactSettings_t * self
 );
 
 void JoltC_SoftBodyContactSettings_mInvMassScale1_Set(
   JoltC_SoftBodyContactSettings_t * self,
-  float mInvMassScale1,
-  char** outErrMsg
+  float mInvMassScale1
 );
 
 float JoltC_SoftBodyContactSettings_mInvMassScale2_Get(
-  JoltC_SoftBodyContactSettings_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyContactSettings_t * self
 );
 
 void JoltC_SoftBodyContactSettings_mInvMassScale2_Set(
   JoltC_SoftBodyContactSettings_t * self,
-  float mInvMassScale2,
-  char** outErrMsg
+  float mInvMassScale2
 );
 
 float JoltC_SoftBodyContactSettings_mInvInertiaScale2_Get(
-  JoltC_SoftBodyContactSettings_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyContactSettings_t * self
 );
 
 void JoltC_SoftBodyContactSettings_mInvInertiaScale2_Set(
   JoltC_SoftBodyContactSettings_t * self,
-  float mInvInertiaScale2,
-  char** outErrMsg
+  float mInvInertiaScale2
 );
 
 bool JoltC_SoftBodyContactSettings_mIsSensor_Get(
-  JoltC_SoftBodyContactSettings_t * self,
-  char** outErrMsg
+  JoltC_SoftBodyContactSettings_t * self
 );
 
 void JoltC_SoftBodyContactSettings_mIsSensor_Set(
   JoltC_SoftBodyContactSettings_t * self,
-  bool mIsSensor,
-  char** outErrMsg
+  bool mIsSensor
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

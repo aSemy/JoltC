@@ -13,50 +13,43 @@ JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_SoftBodySharedSettingsDihedra
   unsigned long inVertex2,
   unsigned long inVertex3,
   unsigned long inVertex4,
-  float inCompliance,
-  char** outErrMsg
+  float inCompliance
 );
 
-//endregion constructors
+//endregion
 
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsDihedralBend_mVertex_Get(
   JoltC_SoftBodySharedSettingsDihedralBend_t * self,
-  unsigned long * outValue,
-  char** outErrMsg
+  unsigned long * outValue
 );
 
 void JoltC_SoftBodySharedSettingsDihedralBend_mVertex_Set(
   JoltC_SoftBodySharedSettingsDihedralBend_t * self,
   unsigned long * mVertex,
-  size_t mVertexSize,
-  char** outErrMsg
+  size_t mVertexSize
 );
 
 float JoltC_SoftBodySharedSettingsDihedralBend_mCompliance_Get(
-  JoltC_SoftBodySharedSettingsDihedralBend_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self
 );
 
 void JoltC_SoftBodySharedSettingsDihedralBend_mCompliance_Set(
   JoltC_SoftBodySharedSettingsDihedralBend_t * self,
-  float mCompliance,
-  char** outErrMsg
+  float mCompliance
 );
 
 float JoltC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Get(
-  JoltC_SoftBodySharedSettingsDihedralBend_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self
 );
 
 void JoltC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Set(
   JoltC_SoftBodySharedSettingsDihedralBend_t * self,
-  float mInitialAngle,
-  char** outErrMsg
+  float mInitialAngle
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

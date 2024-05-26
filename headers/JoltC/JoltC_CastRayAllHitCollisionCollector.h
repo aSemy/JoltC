@@ -8,88 +8,73 @@ extern "C" {
 
 //region constructors
 
-JoltC_CastRayAllHitCollisionCollector_t * JoltC_CastRayAllHitCollisionCollector_new(
-  char** outErrMsg
-);
+JoltC_CastRayAllHitCollisionCollector_t * JoltC_CastRayAllHitCollisionCollector_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
 void JoltC_CastRayAllHitCollisionCollector_Sort(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
 bool JoltC_CastRayAllHitCollisionCollector_HadHit(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
 void JoltC_CastRayAllHitCollisionCollector_Reset(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
 void JoltC_CastRayAllHitCollisionCollector_SetContext(
   JoltC_CastRayAllHitCollisionCollector_t * self,
-  const JoltC_TransformedShape_t * inContext,
-  char** outErrMsg
+  const JoltC_TransformedShape_t * inContext
 );
 
 const JoltC_TransformedShape_t * JoltC_CastRayAllHitCollisionCollector_GetContext(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
 void JoltC_CastRayAllHitCollisionCollector_UpdateEarlyOutFraction(
   JoltC_CastRayAllHitCollisionCollector_t * self,
-  float inFraction,
-  char** outErrMsg
+  float inFraction
 );
 
 void JoltC_CastRayAllHitCollisionCollector_ResetEarlyOutFraction(
   JoltC_CastRayAllHitCollisionCollector_t * self,
-  float inFraction,
-  char** outErrMsg
+  float inFraction
 );
 
 void JoltC_CastRayAllHitCollisionCollector_ForceEarlyOut(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
 bool JoltC_CastRayAllHitCollisionCollector_ShouldEarlyOut(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
 float JoltC_CastRayAllHitCollisionCollector_GetEarlyOutFraction(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
 float JoltC_CastRayAllHitCollisionCollector_GetPositiveEarlyOutFraction(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
-//endregion functions
+//endregion
 
 //region properties
 
 JoltC_ArrayRayCastResult_t * JoltC_CastRayAllHitCollisionCollector_mHits_Get(
-  JoltC_CastRayAllHitCollisionCollector_t * self,
-  char** outErrMsg
+  JoltC_CastRayAllHitCollisionCollector_t * self
 );
 
 void JoltC_CastRayAllHitCollisionCollector_mHits_Set(
   JoltC_CastRayAllHitCollisionCollector_t * self,
-  JoltC_ArrayRayCastResult_t * mHits,
-  char** outErrMsg
+  JoltC_ArrayRayCastResult_t * mHits
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

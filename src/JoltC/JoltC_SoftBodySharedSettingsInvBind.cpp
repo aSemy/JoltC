@@ -9,8 +9,7 @@ extern "C" {
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Get(
-  JoltC_SoftBodySharedSettingsInvBind_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsInvBind_t * self
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   unsigned long result = selfCpp->mJointIndex;
@@ -19,16 +18,14 @@ unsigned long JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Get(
 
 void JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Set(
   JoltC_SoftBodySharedSettingsInvBind_t * self,
-  unsigned long mJointIndex,
-  char** outErrMsg
+  unsigned long mJointIndex
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   selfCpp->mJointIndex = mJointIndex;
 };
 
 JoltC_Mat44_t * JoltC_SoftBodySharedSettingsInvBind_mInvBind_Get(
-  JoltC_SoftBodySharedSettingsInvBind_t * self,
-  char** outErrMsg
+  JoltC_SoftBodySharedSettingsInvBind_t * self
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   Mat44 resultValue = selfCpp->mInvBind;
@@ -38,14 +35,13 @@ JoltC_Mat44_t * JoltC_SoftBodySharedSettingsInvBind_mInvBind_Get(
 
 void JoltC_SoftBodySharedSettingsInvBind_mInvBind_Set(
   JoltC_SoftBodySharedSettingsInvBind_t * self,
-  JoltC_Mat44_t * mInvBind,
-  char** outErrMsg
+  JoltC_Mat44_t * mInvBind
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   selfCpp->mInvBind = *reinterpret_cast<Mat44 *>(mInvBind->obj);
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }

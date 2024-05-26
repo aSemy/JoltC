@@ -8,37 +8,31 @@ extern "C" {
 
 //region constructors
 
-JoltC_CharacterContactSettings_t * JoltC_CharacterContactSettings_new(
-  char** outErrMsg
-);
+JoltC_CharacterContactSettings_t * JoltC_CharacterContactSettings_new();
 
-//endregion constructors
+//endregion
 
 //region properties
 
 bool JoltC_CharacterContactSettings_mCanPushCharacter_Get(
-  JoltC_CharacterContactSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterContactSettings_t * self
 );
 
 void JoltC_CharacterContactSettings_mCanPushCharacter_Set(
   JoltC_CharacterContactSettings_t * self,
-  bool mCanPushCharacter,
-  char** outErrMsg
+  bool mCanPushCharacter
 );
 
 bool JoltC_CharacterContactSettings_mCanReceiveImpulses_Get(
-  JoltC_CharacterContactSettings_t * self,
-  char** outErrMsg
+  JoltC_CharacterContactSettings_t * self
 );
 
 void JoltC_CharacterContactSettings_mCanReceiveImpulses_Set(
   JoltC_CharacterContactSettings_t * self,
-  bool mCanReceiveImpulses,
-  char** outErrMsg
+  bool mCanReceiveImpulses
 );
 
-//endregion properties
+//endregion
 
 
 #ifdef __cplusplus

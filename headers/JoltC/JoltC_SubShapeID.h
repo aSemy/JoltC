@@ -8,26 +8,22 @@ extern "C" {
 
 //region constructors
 
-JoltC_SubShapeID_t * JoltC_SubShapeID_new(
-  char** outErrMsg
-);
+JoltC_SubShapeID_t * JoltC_SubShapeID_new();
 
-//endregion constructors
+//endregion
 
 //region functions
 
 const long JoltC_SubShapeID_GetValue(
-  JoltC_SubShapeID_t * self,
-  char** outErrMsg
+  JoltC_SubShapeID_t * self
 );
 
 void JoltC_SubShapeID_SetValue(
   JoltC_SubShapeID_t * self,
-  long inValue,
-  char** outErrMsg
+  long inValue
 );
 
-//endregion functions
+//endregion
 
 
 #ifdef __cplusplus

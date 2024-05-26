@@ -9,48 +9,29 @@ extern "C" {
 //region functions
 
 JoltC_Vec3_t * JoltC_CompoundShapeSubShape_GetPositionCOM(
-  JoltC_CompoundShapeSubShape_t * self,
-  char** outErrMsg
+  JoltC_CompoundShapeSubShape_t * self
 ) {
-  try {
-    CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
-    Vec3 resultValue = selfCpp->GetPositionCOM();
-    Vec3* result = new Vec3(resultValue);
-    return reinterpret_cast<JoltC_Vec3_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
+  Vec3 resultValue = selfCpp->GetPositionCOM();
+  Vec3* result = new Vec3(resultValue);
+  return reinterpret_cast<JoltC_Vec3_t *>(result);
 };
 
 JoltC_Quat_t * JoltC_CompoundShapeSubShape_GetRotation(
-  JoltC_CompoundShapeSubShape_t * self,
-  char** outErrMsg
+  JoltC_CompoundShapeSubShape_t * self
 ) {
-  try {
-    CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
-    Quat resultValue = selfCpp->GetRotation();
-    Quat* result = new Quat(resultValue);
-    return reinterpret_cast<JoltC_Quat_t *>(result);
-  }
-  catch (exception& e) {
-    if (outErrMsg) {
-      *outErrMsg = strdup(e.what());
-    }
-    throw e;
-  };
+  CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
+  Quat resultValue = selfCpp->GetRotation();
+  Quat* result = new Quat(resultValue);
+  return reinterpret_cast<JoltC_Quat_t *>(result);
 };
 
-//endregion functions
+//endregion
 
 //region properties
 
 const JoltC_Shape_t * JoltC_CompoundShapeSubShape_mShape_Get(
-  JoltC_CompoundShapeSubShape_t * self,
-  char** outErrMsg
+  JoltC_CompoundShapeSubShape_t * self
 ) {
   CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
   const Shape * result = selfCpp->mShape;
@@ -59,16 +40,14 @@ const JoltC_Shape_t * JoltC_CompoundShapeSubShape_mShape_Get(
 
 const void JoltC_CompoundShapeSubShape_mShape_Set(
   JoltC_CompoundShapeSubShape_t * self,
-  const JoltC_Shape_t * mShape,
-  char** outErrMsg
+  const JoltC_Shape_t * mShape
 ) {
   CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
   selfCpp->mShape = reinterpret_cast<Shape *>(mShape->obj);
 };
 
 unsigned long JoltC_CompoundShapeSubShape_mUserData_Get(
-  JoltC_CompoundShapeSubShape_t * self,
-  char** outErrMsg
+  JoltC_CompoundShapeSubShape_t * self
 ) {
   CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
   unsigned long result = selfCpp->mUserData;
@@ -77,14 +56,13 @@ unsigned long JoltC_CompoundShapeSubShape_mUserData_Get(
 
 void JoltC_CompoundShapeSubShape_mUserData_Set(
   JoltC_CompoundShapeSubShape_t * self,
-  unsigned long mUserData,
-  char** outErrMsg
+  unsigned long mUserData
 ) {
   CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
   selfCpp->mUserData = mUserData;
 };
 
-//endregion properties
+//endregion
 
 #ifdef __cplusplus
 }
