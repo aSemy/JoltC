@@ -35,9 +35,10 @@ JoltC_SubShapeID_t * JoltC_RayCastResult_mSubShapeID2_Get(
   JoltC_RayCastResult_t * self
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
-  SubShapeID resultValue = selfCpp->mSubShapeID2;
-  SubShapeID* result = new SubShapeID(resultValue);
-  return reinterpret_cast<JoltC_SubShapeID_t *>(result);
+  static SubShapeID resultValue = selfCpp->mSubShapeID2;
+  JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RayCastResult_mSubShapeID2_Set(
@@ -52,9 +53,10 @@ JoltC_BodyID_t * JoltC_RayCastResult_mBodyID_Get(
   JoltC_RayCastResult_t * self
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
-  BodyID resultValue = selfCpp->mBodyID;
-  BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JoltC_BodyID_t *>(result);
+  static BodyID resultValue = selfCpp->mBodyID;
+  JoltC_BodyID_t* result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RayCastResult_mBodyID_Set(

@@ -23,7 +23,7 @@ JoltC_SoftBodySharedSettingsFace_t * JoltC_ArraySoftBodySharedSettingsFace_at(
 
 void JoltC_ArraySoftBodySharedSettingsFace_push_back(
   JoltC_ArraySoftBodySharedSettingsFace_t * self,
-  const JoltC_SoftBodySharedSettingsFace_t * inValue
+  JoltC_SoftBodySharedSettingsFace_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsFace_reserve(

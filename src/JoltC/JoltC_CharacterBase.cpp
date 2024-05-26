@@ -52,7 +52,7 @@ void JoltC_CharacterBase_SetMaxSlopeAngle(
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
   
   selfCpp->SetMaxSlopeAngle(
-  inMaxSlopeAngle
+    inMaxSlopeAngle
   );
 };
 
@@ -66,12 +66,12 @@ float JoltC_CharacterBase_GetCosMaxSlopeAngle(
 
 void JoltC_CharacterBase_SetUp(
   JoltC_CharacterBase_t * self,
-  const JoltC_Vec3_t * inUp
+  JoltC_Vec3_t * inUp
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
   
   selfCpp->SetUp(
-  *reinterpret_cast<Vec3 *>(inUp->obj)
+    *reinterpret_cast<Vec3 *>(inUp->obj)
   );
 };
 
@@ -79,17 +79,20 @@ JoltC_Vec3_t * JoltC_CharacterBase_GetUp(
   JoltC_CharacterBase_t * self
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
-  Vec3 resultValue = selfCpp->GetUp();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetUp();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Shape_t * JoltC_CharacterBase_GetShape(
+JoltC_Shape_t * JoltC_CharacterBase_GetShape(
   JoltC_CharacterBase_t * self
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
-  const Shape * result = selfCpp->GetShape();
-  return reinterpret_cast<const JoltC_Shape_t *>(result);
+  const Shape * resultValue = selfCpp->GetShape();
+  JoltC_Shape_t* result = new JoltC_Shape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_EGroundState JoltC_CharacterBase_GetGroundState(
@@ -106,7 +109,7 @@ bool JoltC_CharacterBase_IsSlopeTooSteep(
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
   bool result = selfCpp->IsSlopeTooSteep(
-  *reinterpret_cast<Vec3 *>(inNormal->obj)
+    *reinterpret_cast<Vec3 *>(inNormal->obj)
   );
   return result;
 };
@@ -123,44 +126,50 @@ JoltC_RVec3_t * JoltC_CharacterBase_GetGroundPosition(
   JoltC_CharacterBase_t * self
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
-  RVec3 resultValue = selfCpp->GetGroundPosition();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->GetGroundPosition();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_CharacterBase_GetGroundNormal(
   JoltC_CharacterBase_t * self
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
-  Vec3 resultValue = selfCpp->GetGroundNormal();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetGroundNormal();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_CharacterBase_GetGroundVelocity(
   JoltC_CharacterBase_t * self
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
-  Vec3 resultValue = selfCpp->GetGroundVelocity();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetGroundVelocity();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_CharacterBase_GetGroundMaterial(
+JoltC_PhysicsMaterial_t * JoltC_CharacterBase_GetGroundMaterial(
   JoltC_CharacterBase_t * self
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetGroundMaterial();
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  const PhysicsMaterial * resultValue = selfCpp->GetGroundMaterial();
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_BodyID_t * JoltC_CharacterBase_GetGroundBodyID(
   JoltC_CharacterBase_t * self
 ) {
   CharacterBase * selfCpp = static_cast<CharacterBase *>(self->obj);
-  BodyID resultValue = selfCpp->GetGroundBodyID();
-  BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JoltC_BodyID_t *>(result);
+  static BodyID resultValue = selfCpp->GetGroundBodyID();
+  JoltC_BodyID_t* result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

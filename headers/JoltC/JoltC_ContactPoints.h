@@ -23,7 +23,7 @@ JoltC_Vec3_t * JoltC_ContactPoints_at(
 
 void JoltC_ContactPoints_push_back(
   JoltC_ContactPoints_t * self,
-  const JoltC_Vec3_t * inValue
+  JoltC_Vec3_t * inValue
 );
 
 void JoltC_ContactPoints_resize(

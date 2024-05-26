@@ -35,25 +35,27 @@ long JoltC_PhysicsMaterialList_size(
   return result;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
+JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
   JoltC_PhysicsMaterialList_t * self,
   long inIndex
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->at(
-  inIndex
+  const PhysicsMaterial * resultValue = selfCpp->at(
+    inIndex
   );
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_PhysicsMaterialList_push_back(
   JoltC_PhysicsMaterialList_t * self,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
   
   selfCpp->push_back(
-  reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
+    reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
   );
 };
 
@@ -64,7 +66,7 @@ void JoltC_PhysicsMaterialList_reserve(
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -75,7 +77,7 @@ void JoltC_PhysicsMaterialList_resize(
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

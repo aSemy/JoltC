@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_JoltInterface_t * JoltC_JoltInterface_new(
-  const JoltC_JoltSettings_t * inSettings
+  JoltC_JoltSettings_t * inSettings
 ) {
   JoltC_JoltInterface_t * cInstance = new JoltC_JoltInterface_t();
   JoltInterface * cppInstance = new JoltInterface(
@@ -31,8 +31,8 @@ void JoltC_JoltInterface_Step(
   JoltInterface * selfCpp = static_cast<JoltInterface *>(self->obj);
   
   selfCpp->Step(
-  inDeltaTime,
-  inCollisionSteps
+    inDeltaTime,
+    inCollisionSteps
   );
 };
 
@@ -40,32 +40,40 @@ JoltC_PhysicsSystem_t * JoltC_JoltInterface_GetPhysicsSystem(
   JoltC_JoltInterface_t * self
 ) {
   JoltInterface * selfCpp = static_cast<JoltInterface *>(self->obj);
-  PhysicsSystem * result = selfCpp->GetPhysicsSystem();
-  return reinterpret_cast<JoltC_PhysicsSystem_t *>(result);
+  PhysicsSystem * resultValue = selfCpp->GetPhysicsSystem();
+  JoltC_PhysicsSystem_t* result = new JoltC_PhysicsSystem_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_TempAllocator_t * JoltC_JoltInterface_GetTempAllocator(
   JoltC_JoltInterface_t * self
 ) {
   JoltInterface * selfCpp = static_cast<JoltInterface *>(self->obj);
-  TempAllocator * result = selfCpp->GetTempAllocator();
-  return reinterpret_cast<JoltC_TempAllocator_t *>(result);
+  TempAllocator * resultValue = selfCpp->GetTempAllocator();
+  JoltC_TempAllocator_t* result = new JoltC_TempAllocator_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_ObjectLayerPairFilter_t * JoltC_JoltInterface_GetObjectLayerPairFilter(
   JoltC_JoltInterface_t * self
 ) {
   JoltInterface * selfCpp = static_cast<JoltInterface *>(self->obj);
-  ObjectLayerPairFilter * result = selfCpp->GetObjectLayerPairFilter();
-  return reinterpret_cast<JoltC_ObjectLayerPairFilter_t *>(result);
+  ObjectLayerPairFilter * resultValue = selfCpp->GetObjectLayerPairFilter();
+  JoltC_ObjectLayerPairFilter_t* result = new JoltC_ObjectLayerPairFilter_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_JoltInterface_GetObjectVsBroadPhaseLayerFilter(
   JoltC_JoltInterface_t * self
 ) {
   JoltInterface * selfCpp = static_cast<JoltInterface *>(self->obj);
-  ObjectVsBroadPhaseLayerFilter * result = selfCpp->GetObjectVsBroadPhaseLayerFilter();
-  return reinterpret_cast<JoltC_ObjectVsBroadPhaseLayerFilter_t *>(result);
+  ObjectVsBroadPhaseLayerFilter * resultValue = selfCpp->GetObjectVsBroadPhaseLayerFilter();
+  JoltC_ObjectVsBroadPhaseLayerFilter_t* result = new JoltC_ObjectVsBroadPhaseLayerFilter_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long long int JoltC_JoltInterface_sGetTotalMemory() {

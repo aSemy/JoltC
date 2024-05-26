@@ -29,21 +29,22 @@ JoltC_ShapeCastResult_t * JoltC_ArrayShapeCastResult_at(
   long inIndex
 ) {
   ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  ShapeCastResult& resultRef = selfCpp->at(
-  inIndex
+  ShapeCastResult* resultRef = &selfCpp->at(
+    inIndex
   );
-  ShapeCastResult * result = &resultRef;
-  return reinterpret_cast<JoltC_ShapeCastResult_t *>(result);
+  JoltC_ShapeCastResult_t* result = new JoltC_ShapeCastResult_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArrayShapeCastResult_push_back(
   JoltC_ArrayShapeCastResult_t * self,
-  const JoltC_ShapeCastResult_t * inValue
+  JoltC_ShapeCastResult_t * inValue
 ) {
   ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<ShapeCastResult *>(inValue->obj)
+    *reinterpret_cast<ShapeCastResult *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArrayShapeCastResult_reserve(
   ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArrayShapeCastResult_resize(
   ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

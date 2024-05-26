@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_IgnoreSingleBodyFilter_t * JoltC_IgnoreSingleBodyFilter_new(
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 );
 
 //endregion

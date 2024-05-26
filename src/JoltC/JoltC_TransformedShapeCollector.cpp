@@ -18,21 +18,23 @@ void JoltC_TransformedShapeCollector_Reset(
 
 void JoltC_TransformedShapeCollector_SetContext(
   JoltC_TransformedShapeCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 ) {
   TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
   
   selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
+    reinterpret_cast<TransformedShape *>(inContext->obj)
   );
 };
 
-const JoltC_TransformedShape_t * JoltC_TransformedShapeCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_TransformedShapeCollector_GetContext(
   JoltC_TransformedShapeCollector_t * self
 ) {
   TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  const TransformedShape * resultValue = selfCpp->GetContext();
+  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_TransformedShapeCollector_UpdateEarlyOutFraction(
@@ -42,7 +44,7 @@ void JoltC_TransformedShapeCollector_UpdateEarlyOutFraction(
   TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
   
   selfCpp->UpdateEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 
@@ -53,7 +55,7 @@ void JoltC_TransformedShapeCollector_ResetEarlyOutFraction(
   TransformedShapeCollector * selfCpp = static_cast<TransformedShapeCollector *>(self->obj);
   
   selfCpp->ResetEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 

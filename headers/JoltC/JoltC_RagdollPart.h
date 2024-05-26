@@ -8,26 +8,26 @@ extern "C" {
 
 //region functions
 
-const JoltC_ShapeSettings_t * JoltC_RagdollPart_GetShapeSettings(
+JoltC_ShapeSettings_t * JoltC_RagdollPart_GetShapeSettings(
   JoltC_RagdollPart_t * self
 );
 
 void JoltC_RagdollPart_SetShapeSettings(
   JoltC_RagdollPart_t * self,
-  const JoltC_ShapeSettings_t * inShape
+  JoltC_ShapeSettings_t * inShape
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_RagdollPart_ConvertShapeSettings(
   JoltC_RagdollPart_t * self
 );
 
-const JoltC_Shape_t * JoltC_RagdollPart_GetShape(
+JoltC_Shape_t * JoltC_RagdollPart_GetShape(
   JoltC_RagdollPart_t * self
 );
 
 void JoltC_RagdollPart_SetShape(
   JoltC_RagdollPart_t * self,
-  const JoltC_Shape_t * inShape
+  JoltC_Shape_t * inShape
 );
 
 bool JoltC_RagdollPart_HasMassProperties(

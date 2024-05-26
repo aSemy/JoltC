@@ -29,21 +29,22 @@ JoltC_SoftBodySharedSettingsVertex_t * JoltC_ArraySoftBodySharedSettingsVertex_a
   long inIndex
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
-  SoftBodySharedSettingsVertex& resultRef = selfCpp->at(
-  inIndex
+  SoftBodySharedSettingsVertex* resultRef = &selfCpp->at(
+    inIndex
   );
-  SoftBodySharedSettingsVertex * result = &resultRef;
-  return reinterpret_cast<JoltC_SoftBodySharedSettingsVertex_t *>(result);
+  JoltC_SoftBodySharedSettingsVertex_t* result = new JoltC_SoftBodySharedSettingsVertex_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArraySoftBodySharedSettingsVertex_push_back(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self,
-  const JoltC_SoftBodySharedSettingsVertex_t * inValue
+  JoltC_SoftBodySharedSettingsVertex_t * inValue
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<SoftBodySharedSettingsVertex *>(inValue->obj)
+    *reinterpret_cast<SoftBodySharedSettingsVertex *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArraySoftBodySharedSettingsVertex_reserve(
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArraySoftBodySharedSettingsVertex_resize(
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

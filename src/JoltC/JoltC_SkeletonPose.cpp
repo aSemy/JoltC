@@ -21,21 +21,23 @@ JoltC_SkeletonPose_t * JoltC_SkeletonPose_new() {
 
 void JoltC_SkeletonPose_SetSkeleton(
   JoltC_SkeletonPose_t * self,
-  const JoltC_Skeleton_t * inSkeleton
+  JoltC_Skeleton_t * inSkeleton
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
   
   selfCpp->SetSkeleton(
-  reinterpret_cast<Skeleton *>(inSkeleton->obj)
+    reinterpret_cast<Skeleton *>(inSkeleton->obj)
   );
 };
 
-const JoltC_Skeleton_t * JoltC_SkeletonPose_GetSkeleton(
+JoltC_Skeleton_t * JoltC_SkeletonPose_GetSkeleton(
   JoltC_SkeletonPose_t * self
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  const Skeleton * result = selfCpp->GetSkeleton();
-  return reinterpret_cast<const JoltC_Skeleton_t *>(result);
+  const Skeleton * resultValue = selfCpp->GetSkeleton();
+  JoltC_Skeleton_t* result = new JoltC_Skeleton_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SkeletonPose_SetRootOffset(
@@ -45,7 +47,7 @@ void JoltC_SkeletonPose_SetRootOffset(
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
   
   selfCpp->SetRootOffset(
-  *reinterpret_cast<RVec3 *>(inOffset->obj)
+    *reinterpret_cast<RVec3 *>(inOffset->obj)
   );
 };
 
@@ -53,9 +55,10 @@ JoltC_RVec3_t * JoltC_SkeletonPose_GetRootOffset(
   JoltC_SkeletonPose_t * self
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  RVec3 resultValue = selfCpp->GetRootOffset();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->GetRootOffset();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 long JoltC_SkeletonPose_GetJointCount(
@@ -71,20 +74,22 @@ JoltC_SkeletalAnimationJointState_t * JoltC_SkeletonPose_GetJoint(
   long inJoint
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  SkeletalAnimationJointState& resultRef = selfCpp->GetJoint(
-  inJoint
+  SkeletalAnimationJointState* resultRef = &selfCpp->GetJoint(
+    inJoint
   );
-  SkeletalAnimationJointState * result = &resultRef;
-  return reinterpret_cast<JoltC_SkeletalAnimationJointState_t *>(result);
+  JoltC_SkeletalAnimationJointState_t* result = new JoltC_SkeletalAnimationJointState_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_ArrayMat44_t * JoltC_SkeletonPose_GetJointMatrices(
   JoltC_SkeletonPose_t * self
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  ArrayMat44& resultRef = selfCpp->GetJointMatrices();
-  ArrayMat44 * result = &resultRef;
-  return reinterpret_cast<JoltC_ArrayMat44_t *>(result);
+  ArrayMat44* resultRef = &selfCpp->GetJointMatrices();
+  JoltC_ArrayMat44_t* result = new JoltC_ArrayMat44_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_SkeletonPose_GetJointMatrix(
@@ -92,11 +97,12 @@ JoltC_Mat44_t * JoltC_SkeletonPose_GetJointMatrix(
   long inJoint
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  Mat44& resultRef = selfCpp->GetJointMatrix(
-  inJoint
+  Mat44* resultRef = &selfCpp->GetJointMatrix(
+    inJoint
   );
-  Mat44 * result = &resultRef;
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_SkeletonPose_CalculateJointMatrices(

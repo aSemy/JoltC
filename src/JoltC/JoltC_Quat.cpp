@@ -37,72 +37,76 @@ JoltC_Quat_t * JoltC_Quat_new_1(
 //region functions
 
 JoltC_Quat_t * JoltC_Quat_sZero() {
-  Quat resultValue = Quat::sZero();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = Quat::sZero();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Quat_t * JoltC_Quat_sIdentity() {
-  Quat resultValue = Quat::sIdentity();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = Quat::sIdentity();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Quat_t * JoltC_Quat_sRotation(
-  const JoltC_Vec3_t * inRotation,
+  JoltC_Vec3_t * inRotation,
   float inAngle
 ) {
-  Quat resultValue = Quat::sRotation(
-  *reinterpret_cast<Vec3 *>(inRotation->obj),
-  inAngle
+  static Quat resultValue = Quat::sRotation(
+    *reinterpret_cast<Vec3 *>(inRotation->obj),
+    inAngle
   );
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Quat_t * JoltC_Quat_sFromTo(
-  const JoltC_Vec3_t * inFrom,
-  const JoltC_Vec3_t * inTo
+  JoltC_Vec3_t * inFrom,
+  JoltC_Vec3_t * inTo
 ) {
-  Quat resultValue = Quat::sFromTo(
-  *reinterpret_cast<Vec3 *>(inFrom->obj),
-  *reinterpret_cast<Vec3 *>(inTo->obj)
+  static Quat resultValue = Quat::sFromTo(
+    *reinterpret_cast<Vec3 *>(inFrom->obj),
+    *reinterpret_cast<Vec3 *>(inTo->obj)
   );
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 bool JoltC_Quat_Equals(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inQ
+  JoltC_Quat_t * inQ
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   bool result = selfCpp->operator==(
-  *reinterpret_cast<Quat *>(inQ->obj)
+    *reinterpret_cast<Quat *>(inQ->obj)
   );
   return result;
 };
 
 bool JoltC_Quat_NotEquals(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inQ
+  JoltC_Quat_t * inQ
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   bool result = selfCpp->operator!=(
-  *reinterpret_cast<Quat *>(inQ->obj)
+    *reinterpret_cast<Quat *>(inQ->obj)
   );
   return result;
 };
 
 bool JoltC_Quat_IsClose(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inQ,
+  JoltC_Quat_t * inQ,
   float inMaxDistSq
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   bool result = selfCpp->IsClose(
-  *reinterpret_cast<Quat *>(inQ->obj),
-  inMaxDistSq
+    *reinterpret_cast<Quat *>(inQ->obj),
+    inMaxDistSq
   );
   return result;
 };
@@ -113,7 +117,7 @@ bool JoltC_Quat_IsNormalized(
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   bool result = selfCpp->IsNormalized(
-  inTolerance
+    inTolerance
   );
   return result;
 };
@@ -138,28 +142,31 @@ JoltC_Quat_t * JoltC_Quat_Normalized(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  Quat resultValue = selfCpp->Normalized();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->Normalized();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Quat_t * JoltC_Quat_sEulerAngles(
-  const JoltC_Vec3_t * inInput
+  JoltC_Vec3_t * inInput
 ) {
-  Quat resultValue = Quat::sEulerAngles(
-  *reinterpret_cast<Vec3 *>(inInput->obj)
+  static Quat resultValue = Quat::sEulerAngles(
+    *reinterpret_cast<Vec3 *>(inInput->obj)
   );
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Vec3_t * JoltC_Quat_GetEulerAngles(
+JoltC_Vec3_t * JoltC_Quat_GetEulerAngles(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Vec3 resultValue = selfCpp->GetEulerAngles();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetEulerAngles();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_Quat_GetX(
@@ -194,13 +201,14 @@ float JoltC_Quat_GetW(
   return result;
 };
 
-const JoltC_Vec3_t * JoltC_Quat_GetXYZ(
+JoltC_Vec3_t * JoltC_Quat_GetXYZ(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Vec3 resultValue = selfCpp->GetXYZ();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetXYZ();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_Quat_SetX(
@@ -210,7 +218,7 @@ void JoltC_Quat_SetX(
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   
   selfCpp->SetX(
-  inX
+    inX
   );
 };
 
@@ -221,7 +229,7 @@ void JoltC_Quat_SetY(
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   
   selfCpp->SetY(
-  inY
+    inY
   );
 };
 
@@ -232,7 +240,7 @@ void JoltC_Quat_SetZ(
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   
   selfCpp->SetZ(
-  inZ
+    inZ
   );
 };
 
@@ -243,7 +251,7 @@ void JoltC_Quat_SetW(
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   
   selfCpp->SetW(
-  inW
+    inW
   );
 };
 
@@ -257,120 +265,129 @@ void JoltC_Quat_Set(
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   
   selfCpp->Set(
-  inX,
-  inY,
-  inZ,
-  inW
+    inX,
+    inY,
+    inZ,
+    inW
   );
 };
 
-const JoltC_Vec3_t * JoltC_Quat_InverseRotate(
+JoltC_Vec3_t * JoltC_Quat_InverseRotate(
   JoltC_Quat_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Vec3 resultValue = selfCpp->InverseRotate(
-  *reinterpret_cast<Vec3 *>(inV->obj)
+  static Vec3 resultValue = selfCpp->InverseRotate(
+    *reinterpret_cast<Vec3 *>(inV->obj)
   );
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Vec3_t * JoltC_Quat_RotateAxisX(
+JoltC_Vec3_t * JoltC_Quat_RotateAxisX(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Vec3 resultValue = selfCpp->RotateAxisX();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->RotateAxisX();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Vec3_t * JoltC_Quat_RotateAxisY(
+JoltC_Vec3_t * JoltC_Quat_RotateAxisY(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Vec3 resultValue = selfCpp->RotateAxisY();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->RotateAxisY();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Vec3_t * JoltC_Quat_RotateAxisZ(
+JoltC_Vec3_t * JoltC_Quat_RotateAxisZ(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Vec3 resultValue = selfCpp->RotateAxisZ();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->RotateAxisZ();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_Quat_Dot(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inQ
+  JoltC_Quat_t * inQ
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   float result = selfCpp->Dot(
-  *reinterpret_cast<Quat *>(inQ->obj)
+    *reinterpret_cast<Quat *>(inQ->obj)
   );
   return result;
 };
 
-const JoltC_Quat_t * JoltC_Quat_Conjugated(
+JoltC_Quat_t * JoltC_Quat_Conjugated(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Quat resultValue = selfCpp->Conjugated();
-  const Quat* result = new Quat(resultValue);
-  return reinterpret_cast<const JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->Conjugated();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Quat_t * JoltC_Quat_Inversed(
+JoltC_Quat_t * JoltC_Quat_Inversed(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Quat resultValue = selfCpp->Inversed();
-  const Quat* result = new Quat(resultValue);
-  return reinterpret_cast<const JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->Inversed();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Quat_t * JoltC_Quat_EnsureWPositive(
+JoltC_Quat_t * JoltC_Quat_EnsureWPositive(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Quat resultValue = selfCpp->EnsureWPositive();
-  const Quat* result = new Quat(resultValue);
-  return reinterpret_cast<const JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->EnsureWPositive();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Quat_t * JoltC_Quat_GetPerpendicular(
+JoltC_Quat_t * JoltC_Quat_GetPerpendicular(
   JoltC_Quat_t * self
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Quat resultValue = selfCpp->GetPerpendicular();
-  const Quat* result = new Quat(resultValue);
-  return reinterpret_cast<const JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->GetPerpendicular();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_Quat_GetRotationAngle(
   JoltC_Quat_t * self,
-  const JoltC_Vec3_t * inAxis
+  JoltC_Vec3_t * inAxis
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   float result = selfCpp->GetRotationAngle(
-  *reinterpret_cast<Vec3 *>(inAxis->obj)
+    *reinterpret_cast<Vec3 *>(inAxis->obj)
   );
   return result;
 };
 
-const JoltC_Quat_t * JoltC_Quat_GetTwist(
+JoltC_Quat_t * JoltC_Quat_GetTwist(
   JoltC_Quat_t * self,
-  const JoltC_Vec3_t * inAxis
+  JoltC_Vec3_t * inAxis
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Quat resultValue = selfCpp->GetTwist(
-  *reinterpret_cast<Vec3 *>(inAxis->obj)
+  static Quat resultValue = selfCpp->GetTwist(
+    *reinterpret_cast<Vec3 *>(inAxis->obj)
   );
-  const Quat* result = new Quat(resultValue);
-  return reinterpret_cast<const JoltC_Quat_t *>(result);
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_Quat_GetSwingTwist(
@@ -381,37 +398,39 @@ void JoltC_Quat_GetSwingTwist(
   Quat * selfCpp = static_cast<Quat *>(self->obj);
   
   selfCpp->GetSwingTwist(
-  *reinterpret_cast<Quat *>(outSwing->obj),
-  *reinterpret_cast<Quat *>(outTwist->obj)
+    *reinterpret_cast<Quat *>(outSwing->obj),
+    *reinterpret_cast<Quat *>(outTwist->obj)
   );
 };
 
-const JoltC_Quat_t * JoltC_Quat_LERP(
+JoltC_Quat_t * JoltC_Quat_LERP(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inDestination,
+  JoltC_Quat_t * inDestination,
   float inFraction
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Quat resultValue = selfCpp->LERP(
-  *reinterpret_cast<Quat *>(inDestination->obj),
-  inFraction
+  static Quat resultValue = selfCpp->LERP(
+    *reinterpret_cast<Quat *>(inDestination->obj),
+    inFraction
   );
-  const Quat* result = new Quat(resultValue);
-  return reinterpret_cast<const JoltC_Quat_t *>(result);
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Quat_t * JoltC_Quat_SLERP(
+JoltC_Quat_t * JoltC_Quat_SLERP(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inDestination,
+  JoltC_Quat_t * inDestination,
   float inFraction
 ) {
   Quat * selfCpp = static_cast<Quat *>(self->obj);
-  const Quat resultValue = selfCpp->SLERP(
-  *reinterpret_cast<Quat *>(inDestination->obj),
-  inFraction
+  static Quat resultValue = selfCpp->SLERP(
+    *reinterpret_cast<Quat *>(inDestination->obj),
+    inFraction
   );
-  const Quat* result = new Quat(resultValue);
-  return reinterpret_cast<const JoltC_Quat_t *>(result);
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

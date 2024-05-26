@@ -10,12 +10,12 @@ extern "C" {
 
 void JoltC_PhysicsSystem_SetGravity(
   JoltC_PhysicsSystem_t * self,
-  const JoltC_Vec3_t * inGravity
+  JoltC_Vec3_t * inGravity
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->SetGravity(
-  *reinterpret_cast<Vec3 *>(inGravity->obj)
+    *reinterpret_cast<Vec3 *>(inGravity->obj)
   );
 };
 
@@ -23,28 +23,32 @@ JoltC_Vec3_t * JoltC_PhysicsSystem_GetGravity(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  Vec3 resultValue = selfCpp->GetGravity();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetGravity();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_PhysicsSettings_t * JoltC_PhysicsSystem_GetPhysicsSettings(
+JoltC_PhysicsSettings_t * JoltC_PhysicsSystem_GetPhysicsSettings(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  const PhysicsSettings& resultRef = selfCpp->GetPhysicsSettings();
-  const PhysicsSettings * result = &resultRef;
-  return reinterpret_cast<const JoltC_PhysicsSettings_t *>(result);
+  const PhysicsSettings* resultRef = &selfCpp->GetPhysicsSettings();
+  JoltC_PhysicsSettings_t* result = new JoltC_PhysicsSettings_t();
+  const void * resultConstPtr = reinterpret_cast<const void*>(resultRef);
+  void * resultPtr = const_cast<void*>(resultConstPtr);
+  result->obj = resultPtr;
+  return result;
 };
 
 void JoltC_PhysicsSystem_SetPhysicsSettings(
   JoltC_PhysicsSystem_t * self,
-  const JoltC_PhysicsSettings_t * inPhysicsSettings
+  JoltC_PhysicsSettings_t * inPhysicsSettings
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->SetPhysicsSettings(
-  *reinterpret_cast<PhysicsSettings *>(inPhysicsSettings->obj)
+    *reinterpret_cast<PhysicsSettings *>(inPhysicsSettings->obj)
   );
 };
 
@@ -62,7 +66,7 @@ unsigned long JoltC_PhysicsSystem_GetNumActiveBodies(
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   unsigned long result = selfCpp->GetNumActiveBodies(
-  static_cast<EBodyType>(static_cast<int>(inBodyType))
+    static_cast<EBodyType>(static_cast<int>(inBodyType))
   );
   return result;
 };
@@ -82,7 +86,7 @@ void JoltC_PhysicsSystem_GetBodies(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->GetBodies(
-  *reinterpret_cast<BodyIDVector *>(outBodies->obj)
+    *reinterpret_cast<BodyIDVector *>(outBodies->obj)
   );
 };
 
@@ -94,18 +98,19 @@ void JoltC_PhysicsSystem_GetActiveBodies(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->GetActiveBodies(
-  static_cast<EBodyType>(static_cast<int>(inBodyType)),
-  *reinterpret_cast<BodyIDVector *>(outBodies->obj)
+    static_cast<EBodyType>(static_cast<int>(inBodyType)),
+    *reinterpret_cast<BodyIDVector *>(outBodies->obj)
   );
 };
 
-const JoltC_AABox_t * JoltC_PhysicsSystem_GetBounds(
+JoltC_AABox_t * JoltC_PhysicsSystem_GetBounds(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  const AABox resultValue = selfCpp->GetBounds();
-  const AABox* result = new AABox(resultValue);
-  return reinterpret_cast<const JoltC_AABox_t *>(result);
+  static AABox resultValue = selfCpp->GetBounds();
+  JoltC_AABox_t* result = new JoltC_AABox_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_PhysicsSystem_AddConstraint(
@@ -115,7 +120,7 @@ void JoltC_PhysicsSystem_AddConstraint(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->AddConstraint(
-  reinterpret_cast<Constraint *>(inConstraint->obj)
+    reinterpret_cast<Constraint *>(inConstraint->obj)
   );
 };
 
@@ -126,7 +131,7 @@ void JoltC_PhysicsSystem_RemoveConstraint(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->RemoveConstraint(
-  reinterpret_cast<Constraint *>(inConstraint->obj)
+    reinterpret_cast<Constraint *>(inConstraint->obj)
   );
 };
 
@@ -137,7 +142,7 @@ void JoltC_PhysicsSystem_SetContactListener(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->SetContactListener(
-  reinterpret_cast<ContactListener *>(inListener->obj)
+    reinterpret_cast<ContactListener *>(inListener->obj)
   );
 };
 
@@ -145,8 +150,10 @@ JoltC_ContactListener_t * JoltC_PhysicsSystem_GetContactListener(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  ContactListener * result = selfCpp->GetContactListener();
-  return reinterpret_cast<JoltC_ContactListener_t *>(result);
+  ContactListener * resultValue = selfCpp->GetContactListener();
+  JoltC_ContactListener_t* result = new JoltC_ContactListener_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_PhysicsSystem_SetSoftBodyContactListener(
@@ -156,7 +163,7 @@ void JoltC_PhysicsSystem_SetSoftBodyContactListener(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->SetSoftBodyContactListener(
-  reinterpret_cast<SoftBodyContactListener *>(inListener->obj)
+    reinterpret_cast<SoftBodyContactListener *>(inListener->obj)
   );
 };
 
@@ -164,8 +171,10 @@ JoltC_SoftBodyContactListener_t * JoltC_PhysicsSystem_GetSoftBodyContactListener
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  SoftBodyContactListener * result = selfCpp->GetSoftBodyContactListener();
-  return reinterpret_cast<JoltC_SoftBodyContactListener_t *>(result);
+  SoftBodyContactListener * resultValue = selfCpp->GetSoftBodyContactListener();
+  JoltC_SoftBodyContactListener_t* result = new JoltC_SoftBodyContactListener_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_PhysicsSystem_OptimizeBroadPhase(
@@ -180,63 +189,80 @@ JoltC_BodyInterface_t * JoltC_PhysicsSystem_GetBodyInterface(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  BodyInterface& resultRef = selfCpp->GetBodyInterface();
-  BodyInterface * result = &resultRef;
-  return reinterpret_cast<JoltC_BodyInterface_t *>(result);
+  BodyInterface* resultRef = &selfCpp->GetBodyInterface();
+  JoltC_BodyInterface_t* result = new JoltC_BodyInterface_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_BodyInterface_t * JoltC_PhysicsSystem_GetBodyInterfaceNoLock(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  BodyInterface& resultRef = selfCpp->GetBodyInterfaceNoLock();
-  BodyInterface * result = &resultRef;
-  return reinterpret_cast<JoltC_BodyInterface_t *>(result);
+  BodyInterface* resultRef = &selfCpp->GetBodyInterfaceNoLock();
+  JoltC_BodyInterface_t* result = new JoltC_BodyInterface_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
-const JoltC_BodyLockInterfaceNoLock_t * JoltC_PhysicsSystem_GetBodyLockInterfaceNoLock(
+JoltC_BodyLockInterfaceNoLock_t * JoltC_PhysicsSystem_GetBodyLockInterfaceNoLock(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  const BodyLockInterfaceNoLock& resultRef = selfCpp->GetBodyLockInterfaceNoLock();
-  const BodyLockInterfaceNoLock * result = &resultRef;
-  return reinterpret_cast<const JoltC_BodyLockInterfaceNoLock_t *>(result);
+  const BodyLockInterfaceNoLock* resultRef = &selfCpp->GetBodyLockInterfaceNoLock();
+  JoltC_BodyLockInterfaceNoLock_t* result = new JoltC_BodyLockInterfaceNoLock_t();
+  const void * resultConstPtr = reinterpret_cast<const void*>(resultRef);
+  void * resultPtr = const_cast<void*>(resultConstPtr);
+  result->obj = resultPtr;
+  return result;
 };
 
-const JoltC_BodyLockInterfaceLocking_t * JoltC_PhysicsSystem_GetBodyLockInterface(
+JoltC_BodyLockInterfaceLocking_t * JoltC_PhysicsSystem_GetBodyLockInterface(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  const BodyLockInterfaceLocking& resultRef = selfCpp->GetBodyLockInterface();
-  const BodyLockInterfaceLocking * result = &resultRef;
-  return reinterpret_cast<const JoltC_BodyLockInterfaceLocking_t *>(result);
+  const BodyLockInterfaceLocking* resultRef = &selfCpp->GetBodyLockInterface();
+  JoltC_BodyLockInterfaceLocking_t* result = new JoltC_BodyLockInterfaceLocking_t();
+  const void * resultConstPtr = reinterpret_cast<const void*>(resultRef);
+  void * resultPtr = const_cast<void*>(resultConstPtr);
+  result->obj = resultPtr;
+  return result;
 };
 
-const JoltC_BroadPhaseQuery_t * JoltC_PhysicsSystem_GetBroadPhaseQuery(
+JoltC_BroadPhaseQuery_t * JoltC_PhysicsSystem_GetBroadPhaseQuery(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  const BroadPhaseQuery& resultRef = selfCpp->GetBroadPhaseQuery();
-  const BroadPhaseQuery * result = &resultRef;
-  return reinterpret_cast<const JoltC_BroadPhaseQuery_t *>(result);
+  const BroadPhaseQuery* resultRef = &selfCpp->GetBroadPhaseQuery();
+  JoltC_BroadPhaseQuery_t* result = new JoltC_BroadPhaseQuery_t();
+  const void * resultConstPtr = reinterpret_cast<const void*>(resultRef);
+  void * resultPtr = const_cast<void*>(resultConstPtr);
+  result->obj = resultPtr;
+  return result;
 };
 
-const JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQuery(
+JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQuery(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  const NarrowPhaseQuery& resultRef = selfCpp->GetNarrowPhaseQuery();
-  const NarrowPhaseQuery * result = &resultRef;
-  return reinterpret_cast<const JoltC_NarrowPhaseQuery_t *>(result);
+  const NarrowPhaseQuery* resultRef = &selfCpp->GetNarrowPhaseQuery();
+  JoltC_NarrowPhaseQuery_t* result = new JoltC_NarrowPhaseQuery_t();
+  const void * resultConstPtr = reinterpret_cast<const void*>(resultRef);
+  void * resultPtr = const_cast<void*>(resultConstPtr);
+  result->obj = resultPtr;
+  return result;
 };
 
-const JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQueryNoLock(
+JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQueryNoLock(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  const NarrowPhaseQuery& resultRef = selfCpp->GetNarrowPhaseQueryNoLock();
-  const NarrowPhaseQuery * result = &resultRef;
-  return reinterpret_cast<const JoltC_NarrowPhaseQuery_t *>(result);
+  const NarrowPhaseQuery* resultRef = &selfCpp->GetNarrowPhaseQueryNoLock();
+  JoltC_NarrowPhaseQuery_t* result = new JoltC_NarrowPhaseQuery_t();
+  const void * resultConstPtr = reinterpret_cast<const void*>(resultRef);
+  void * resultPtr = const_cast<void*>(resultConstPtr);
+  result->obj = resultPtr;
+  return result;
 };
 
 void JoltC_PhysicsSystem_SaveState(
@@ -247,8 +273,8 @@ void JoltC_PhysicsSystem_SaveState(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->SaveState(
-  *reinterpret_cast<StateRecorder *>(inStream->obj),
-  static_cast<EStateRecorderState>(static_cast<int>(inState))
+    *reinterpret_cast<StateRecorder *>(inStream->obj),
+    static_cast<EStateRecorderState>(static_cast<int>(inState))
   );
 };
 
@@ -258,7 +284,7 @@ bool JoltC_PhysicsSystem_RestoreState(
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   bool result = selfCpp->RestoreState(
-  *reinterpret_cast<StateRecorder *>(inStream->obj)
+    *reinterpret_cast<StateRecorder *>(inStream->obj)
   );
   return result;
 };
@@ -270,7 +296,7 @@ void JoltC_PhysicsSystem_AddStepListener(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->AddStepListener(
-  reinterpret_cast<PhysicsStepListener *>(inListener->obj)
+    reinterpret_cast<PhysicsStepListener *>(inListener->obj)
   );
 };
 
@@ -281,7 +307,7 @@ void JoltC_PhysicsSystem_RemoveStepListener(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->RemoveStepListener(
-  reinterpret_cast<PhysicsStepListener *>(inListener->obj)
+    reinterpret_cast<PhysicsStepListener *>(inListener->obj)
   );
 };
 
@@ -292,27 +318,29 @@ void JoltC_PhysicsSystem_SetBodyActivationListener(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   
   selfCpp->SetBodyActivationListener(
-  reinterpret_cast<BodyActivationListener *>(inListener->obj)
+    reinterpret_cast<BodyActivationListener *>(inListener->obj)
   );
 };
 
-const JoltC_BodyActivationListener_t * JoltC_PhysicsSystem_GetBodyActivationListener(
+JoltC_BodyActivationListener_t * JoltC_PhysicsSystem_GetBodyActivationListener(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  const BodyActivationListener * result = selfCpp->GetBodyActivationListener();
-  return reinterpret_cast<const JoltC_BodyActivationListener_t *>(result);
+  const BodyActivationListener * resultValue = selfCpp->GetBodyActivationListener();
+  JoltC_BodyActivationListener_t* result = new JoltC_BodyActivationListener_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 bool JoltC_PhysicsSystem_WereBodiesInContact(
   JoltC_PhysicsSystem_t * self,
-  const JoltC_BodyID_t * inBodyID1,
-  const JoltC_BodyID_t * inBodyID2
+  JoltC_BodyID_t * inBodyID1,
+  JoltC_BodyID_t * inBodyID2
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   bool result = selfCpp->WereBodiesInContact(
-  *reinterpret_cast<BodyID *>(inBodyID1->obj),
-  *reinterpret_cast<BodyID *>(inBodyID2->obj)
+    *reinterpret_cast<BodyID *>(inBodyID1->obj),
+    *reinterpret_cast<BodyID *>(inBodyID2->obj)
   );
   return result;
 };

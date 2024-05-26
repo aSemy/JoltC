@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_CharacterVirtual_t * JoltC_CharacterVirtual_new(
-  const JoltC_CharacterVirtualSettings_t * inSettings,
+  JoltC_CharacterVirtualSettings_t * inSettings,
   JoltC_RVec3_t * inPosition,
   JoltC_Quat_t * inRotation,
   JoltC_PhysicsSystem_t * inSystem
@@ -34,7 +34,7 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_GetLinearVelocity(
 
 void JoltC_CharacterVirtual_SetLinearVelocity(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_Vec3_t * inLinearVelocity
+  JoltC_Vec3_t * inLinearVelocity
 );
 
 JoltC_RVec3_t * JoltC_CharacterVirtual_GetPosition(
@@ -43,7 +43,7 @@ JoltC_RVec3_t * JoltC_CharacterVirtual_GetPosition(
 
 void JoltC_CharacterVirtual_SetPosition(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_RVec3_t * inPosition
+  JoltC_RVec3_t * inPosition
 );
 
 JoltC_Quat_t * JoltC_CharacterVirtual_GetRotation(
@@ -52,7 +52,7 @@ JoltC_Quat_t * JoltC_CharacterVirtual_GetRotation(
 
 void JoltC_CharacterVirtual_SetRotation(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_Quat_t * inRotation
+  JoltC_Quat_t * inRotation
 );
 
 JoltC_RMat44_t * JoltC_CharacterVirtual_GetWorldTransform(
@@ -122,7 +122,7 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_GetShapeOffset(
 
 void JoltC_CharacterVirtual_SetShapeOffset(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_Vec3_t * inShapeOffset
+  JoltC_Vec3_t * inShapeOffset
 );
 
 unsigned long long int JoltC_CharacterVirtual_GetUserData(
@@ -136,67 +136,67 @@ void JoltC_CharacterVirtual_SetUserData(
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_CancelVelocityTowardsSteepSlopes(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_Vec3_t * inDesiredVelocity
+  JoltC_Vec3_t * inDesiredVelocity
 );
 
 void JoltC_CharacterVirtual_Update(
   JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JoltC_Vec3_t * inGravity,
-  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_Vec3_t * inGravity,
+  JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  JoltC_BodyFilter_t * inBodyFilter,
+  JoltC_ShapeFilter_t * inShapeFilter,
   JoltC_TempAllocator_t * inAllocator
 );
 
 bool JoltC_CharacterVirtual_CanWalkStairs(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_Vec3_t * inLinearVelocity
+  JoltC_Vec3_t * inLinearVelocity
 );
 
 bool JoltC_CharacterVirtual_WalkStairs(
   JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JoltC_Vec3_t * inStepUp,
-  const JoltC_Vec3_t * inStepForward,
-  const JoltC_Vec3_t * inStepForwardTest,
-  const JoltC_Vec3_t * inStepDownExtra,
-  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_Vec3_t * inStepUp,
+  JoltC_Vec3_t * inStepForward,
+  JoltC_Vec3_t * inStepForwardTest,
+  JoltC_Vec3_t * inStepDownExtra,
+  JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  JoltC_BodyFilter_t * inBodyFilter,
+  JoltC_ShapeFilter_t * inShapeFilter,
   JoltC_TempAllocator_t * inAllocator
 );
 
 bool JoltC_CharacterVirtual_StickToFloor(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_Vec3_t * inStepDown,
-  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_Vec3_t * inStepDown,
+  JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  JoltC_BodyFilter_t * inBodyFilter,
+  JoltC_ShapeFilter_t * inShapeFilter,
   JoltC_TempAllocator_t * inAllocator
 );
 
 void JoltC_CharacterVirtual_ExtendedUpdate(
   JoltC_CharacterVirtual_t * self,
   float inDeltaTime,
-  const JoltC_Vec3_t * inGravity,
-  const JoltC_CharacterVirtual_ExtendedUpdateSettings_t * inSettings,
-  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_Vec3_t * inGravity,
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * inSettings,
+  JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  JoltC_BodyFilter_t * inBodyFilter,
+  JoltC_ShapeFilter_t * inShapeFilter,
   JoltC_TempAllocator_t * inAllocator
 );
 
 void JoltC_CharacterVirtual_RefreshContacts(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  JoltC_BodyFilter_t * inBodyFilter,
+  JoltC_ShapeFilter_t * inShapeFilter,
   JoltC_TempAllocator_t * inAllocator
 );
 
@@ -206,12 +206,12 @@ void JoltC_CharacterVirtual_UpdateGroundVelocity(
 
 bool JoltC_CharacterVirtual_SetShape(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_Shape_t * inShape,
+  JoltC_Shape_t * inShape,
   float inMaxPenetrationDepth,
-  const JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
-  const JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
-  const JoltC_BodyFilter_t * inBodyFilter,
-  const JoltC_ShapeFilter_t * inShapeFilter,
+  JoltC_BroadPhaseLayerFilter_t * inBroadPhaseLayerFilter,
+  JoltC_ObjectLayerFilter_t * inObjectLayerFilter,
+  JoltC_BodyFilter_t * inBodyFilter,
+  JoltC_ShapeFilter_t * inShapeFilter,
   JoltC_TempAllocator_t * inAllocator
 );
 
@@ -238,14 +238,14 @@ float JoltC_CharacterVirtual_GetCosMaxSlopeAngle(
 
 void JoltC_CharacterVirtual_SetUp(
   JoltC_CharacterVirtual_t * self,
-  const JoltC_Vec3_t * inUp
+  JoltC_Vec3_t * inUp
 );
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_GetUp(
   JoltC_CharacterVirtual_t * self
 );
 
-const JoltC_Shape_t * JoltC_CharacterVirtual_GetShape(
+JoltC_Shape_t * JoltC_CharacterVirtual_GetShape(
   JoltC_CharacterVirtual_t * self
 );
 
@@ -274,7 +274,7 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_GetGroundVelocity(
   JoltC_CharacterVirtual_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_CharacterVirtual_GetGroundMaterial(
+JoltC_PhysicsMaterial_t * JoltC_CharacterVirtual_GetGroundMaterial(
   JoltC_CharacterVirtual_t * self
 );
 

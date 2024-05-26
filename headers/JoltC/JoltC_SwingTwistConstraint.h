@@ -97,7 +97,7 @@ JoltC_EMotorState JoltC_SwingTwistConstraint_GetTwistMotorState(
 
 void JoltC_SwingTwistConstraint_SetTargetAngularVelocityCS(
   JoltC_SwingTwistConstraint_t * self,
-  const JoltC_Vec3_t * inAngularVelocity
+  JoltC_Vec3_t * inAngularVelocity
 );
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetTargetAngularVelocityCS(
@@ -106,7 +106,7 @@ JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetTargetAngularVelocityCS(
 
 void JoltC_SwingTwistConstraint_SetTargetOrientationCS(
   JoltC_SwingTwistConstraint_t * self,
-  const JoltC_Quat_t * inOrientation
+  JoltC_Quat_t * inOrientation
 );
 
 JoltC_Quat_t * JoltC_SwingTwistConstraint_GetTargetOrientationCS(
@@ -115,7 +115,7 @@ JoltC_Quat_t * JoltC_SwingTwistConstraint_GetTargetOrientationCS(
 
 void JoltC_SwingTwistConstraint_SetTargetOrientationBS(
   JoltC_SwingTwistConstraint_t * self,
-  const JoltC_Quat_t * inOrientation
+  JoltC_Quat_t * inOrientation
 );
 
 JoltC_Quat_t * JoltC_SwingTwistConstraint_GetRotationInConstraintSpace(

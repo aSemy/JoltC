@@ -21,12 +21,12 @@ JoltC_SkeletalAnimationKeyframe_t * JoltC_SkeletalAnimationKeyframe_new() {
 
 void JoltC_SkeletalAnimationKeyframe_FromMatrix(
   JoltC_SkeletalAnimationKeyframe_t * self,
-  const JoltC_Mat44_t * inMatrix
+  JoltC_Mat44_t * inMatrix
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   
   selfCpp->FromMatrix(
-  *reinterpret_cast<Mat44 *>(inMatrix->obj)
+    *reinterpret_cast<Mat44 *>(inMatrix->obj)
   );
 };
 
@@ -34,9 +34,10 @@ JoltC_Mat44_t * JoltC_SkeletalAnimationKeyframe_ToMatrix(
   JoltC_SkeletalAnimationKeyframe_t * self
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  Mat44 resultValue = selfCpp->ToMatrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->ToMatrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion
@@ -63,9 +64,10 @@ JoltC_Vec3_t * JoltC_SkeletalAnimationKeyframe_mTranslation_Get(
   JoltC_SkeletalAnimationKeyframe_t * self
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  Vec3 resultValue = selfCpp->mTranslation;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mTranslation;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SkeletalAnimationKeyframe_mTranslation_Set(
@@ -80,9 +82,10 @@ JoltC_Quat_t * JoltC_SkeletalAnimationKeyframe_mRotation_Get(
   JoltC_SkeletalAnimationKeyframe_t * self
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  Quat resultValue = selfCpp->mRotation;
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->mRotation;
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SkeletalAnimationKeyframe_mRotation_Set(

@@ -23,7 +23,7 @@ JoltC_Mat44_t * JoltC_ArrayMat44_at(
 
 void JoltC_ArrayMat44_push_back(
   JoltC_ArrayMat44_t * self,
-  const JoltC_Mat44_t * inValue
+  JoltC_Mat44_t * inValue
 );
 
 void JoltC_ArrayMat44_reserve(

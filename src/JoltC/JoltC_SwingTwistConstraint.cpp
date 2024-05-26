@@ -12,36 +12,40 @@ JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetLocalSpacePosition1(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetLocalSpacePosition1();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetLocalSpacePosition1();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetLocalSpacePosition2(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetLocalSpacePosition2();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetLocalSpacePosition2();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Quat_t * JoltC_SwingTwistConstraint_GetConstraintToBody1(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Quat resultValue = selfCpp->GetConstraintToBody1();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->GetConstraintToBody1();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Quat_t * JoltC_SwingTwistConstraint_GetConstraintToBody2(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Quat resultValue = selfCpp->GetConstraintToBody2();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->GetConstraintToBody2();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_SwingTwistConstraint_GetNormalHalfConeAngle(
@@ -59,7 +63,7 @@ void JoltC_SwingTwistConstraint_SetNormalHalfConeAngle(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetNormalHalfConeAngle(
-  inAngle
+    inAngle
   );
 };
 
@@ -78,7 +82,7 @@ void JoltC_SwingTwistConstraint_SetPlaneHalfConeAngle(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetPlaneHalfConeAngle(
-  inAngle
+    inAngle
   );
 };
 
@@ -97,7 +101,7 @@ void JoltC_SwingTwistConstraint_SetTwistMinAngle(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetTwistMinAngle(
-  inAngle
+    inAngle
   );
 };
 
@@ -116,7 +120,7 @@ void JoltC_SwingTwistConstraint_SetTwistMaxAngle(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetTwistMaxAngle(
-  inAngle
+    inAngle
   );
 };
 
@@ -124,18 +128,20 @@ JoltC_MotorSettings_t * JoltC_SwingTwistConstraint_GetSwingMotorSettings(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  MotorSettings& resultRef = selfCpp->GetSwingMotorSettings();
-  MotorSettings * result = &resultRef;
-  return reinterpret_cast<JoltC_MotorSettings_t *>(result);
+  MotorSettings* resultRef = &selfCpp->GetSwingMotorSettings();
+  JoltC_MotorSettings_t* result = new JoltC_MotorSettings_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_MotorSettings_t * JoltC_SwingTwistConstraint_GetTwistMotorSettings(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  MotorSettings& resultRef = selfCpp->GetTwistMotorSettings();
-  MotorSettings * result = &resultRef;
-  return reinterpret_cast<JoltC_MotorSettings_t *>(result);
+  MotorSettings* resultRef = &selfCpp->GetTwistMotorSettings();
+  JoltC_MotorSettings_t* result = new JoltC_MotorSettings_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_SwingTwistConstraint_SetMaxFrictionTorque(
@@ -145,7 +151,7 @@ void JoltC_SwingTwistConstraint_SetMaxFrictionTorque(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetMaxFrictionTorque(
-  inFrictionTorque
+    inFrictionTorque
   );
 };
 
@@ -164,7 +170,7 @@ void JoltC_SwingTwistConstraint_SetSwingMotorState(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetSwingMotorState(
-  static_cast<EMotorState>(static_cast<int>(inState))
+    static_cast<EMotorState>(static_cast<int>(inState))
   );
 };
 
@@ -183,7 +189,7 @@ void JoltC_SwingTwistConstraint_SetTwistMotorState(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetTwistMotorState(
-  static_cast<EMotorState>(static_cast<int>(inState))
+    static_cast<EMotorState>(static_cast<int>(inState))
   );
 };
 
@@ -197,12 +203,12 @@ JoltC_EMotorState JoltC_SwingTwistConstraint_GetTwistMotorState(
 
 void JoltC_SwingTwistConstraint_SetTargetAngularVelocityCS(
   JoltC_SwingTwistConstraint_t * self,
-  const JoltC_Vec3_t * inAngularVelocity
+  JoltC_Vec3_t * inAngularVelocity
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetTargetAngularVelocityCS(
-  *reinterpret_cast<Vec3 *>(inAngularVelocity->obj)
+    *reinterpret_cast<Vec3 *>(inAngularVelocity->obj)
   );
 };
 
@@ -210,19 +216,20 @@ JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetTargetAngularVelocityCS(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTargetAngularVelocityCS();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetTargetAngularVelocityCS();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SwingTwistConstraint_SetTargetOrientationCS(
   JoltC_SwingTwistConstraint_t * self,
-  const JoltC_Quat_t * inOrientation
+  JoltC_Quat_t * inOrientation
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetTargetOrientationCS(
-  *reinterpret_cast<Quat *>(inOrientation->obj)
+    *reinterpret_cast<Quat *>(inOrientation->obj)
   );
 };
 
@@ -230,19 +237,20 @@ JoltC_Quat_t * JoltC_SwingTwistConstraint_GetTargetOrientationCS(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Quat resultValue = selfCpp->GetTargetOrientationCS();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->GetTargetOrientationCS();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SwingTwistConstraint_SetTargetOrientationBS(
   JoltC_SwingTwistConstraint_t * self,
-  const JoltC_Quat_t * inOrientation
+  JoltC_Quat_t * inOrientation
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetTargetOrientationBS(
-  *reinterpret_cast<Quat *>(inOrientation->obj)
+    *reinterpret_cast<Quat *>(inOrientation->obj)
   );
 };
 
@@ -250,18 +258,20 @@ JoltC_Quat_t * JoltC_SwingTwistConstraint_GetRotationInConstraintSpace(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Quat resultValue = selfCpp->GetRotationInConstraintSpace();
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->GetRotationInConstraintSpace();
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetTotalLambdaPosition(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTotalLambdaPosition();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetTotalLambdaPosition();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_SwingTwistConstraint_GetTotalLambdaTwist(
@@ -292,43 +302,50 @@ JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetTotalLambdaMotor(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTotalLambdaMotor();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetTotalLambdaMotor();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Body_t * JoltC_SwingTwistConstraint_GetBody1(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody1();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Body_t * JoltC_SwingTwistConstraint_GetBody2(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody2();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_SwingTwistConstraint_GetConstraintToBody1Matrix(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_SwingTwistConstraint_GetConstraintToBody2Matrix(
   JoltC_SwingTwistConstraint_t * self
 ) {
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_SwingTwistConstraint_GetRefCount(
@@ -386,7 +403,7 @@ void JoltC_SwingTwistConstraint_SetConstraintPriority(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetConstraintPriority(
-  inPriority
+    inPriority
   );
 };
 
@@ -397,7 +414,7 @@ void JoltC_SwingTwistConstraint_SetNumVelocityStepsOverride(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetNumVelocityStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -416,7 +433,7 @@ void JoltC_SwingTwistConstraint_SetNumPositionStepsOverride(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetNumPositionStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -435,7 +452,7 @@ void JoltC_SwingTwistConstraint_SetEnabled(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetEnabled(
-  inEnabled
+    inEnabled
   );
 };
 
@@ -470,7 +487,7 @@ void JoltC_SwingTwistConstraint_SetUserData(
   SwingTwistConstraint * selfCpp = static_cast<SwingTwistConstraint *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 

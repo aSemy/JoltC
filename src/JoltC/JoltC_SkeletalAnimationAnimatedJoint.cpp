@@ -23,9 +23,10 @@ JoltC_JPHString_t * JoltC_SkeletalAnimationAnimatedJoint_mJointName_Get(
   JoltC_SkeletalAnimationAnimatedJoint_t * self
 ) {
   SkeletalAnimationAnimatedJoint * selfCpp = static_cast<SkeletalAnimationAnimatedJoint *>(self->obj);
-  JPHString resultValue = selfCpp->mJointName;
-  JPHString* result = new JPHString(resultValue);
-  return reinterpret_cast<JoltC_JPHString_t *>(result);
+  static JPHString resultValue = selfCpp->mJointName;
+  JoltC_JPHString_t* result = new JoltC_JPHString_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SkeletalAnimationAnimatedJoint_mJointName_Set(
@@ -40,9 +41,10 @@ JoltC_ArraySkeletonKeyframe_t * JoltC_SkeletalAnimationAnimatedJoint_mKeyframes_
   JoltC_SkeletalAnimationAnimatedJoint_t * self
 ) {
   SkeletalAnimationAnimatedJoint * selfCpp = static_cast<SkeletalAnimationAnimatedJoint *>(self->obj);
-  ArraySkeletonKeyframe resultValue = selfCpp->mKeyframes;
-  ArraySkeletonKeyframe* result = new ArraySkeletonKeyframe(resultValue);
-  return reinterpret_cast<JoltC_ArraySkeletonKeyframe_t *>(result);
+  static ArraySkeletonKeyframe resultValue = selfCpp->mKeyframes;
+  JoltC_ArraySkeletonKeyframe_t* result = new JoltC_ArraySkeletonKeyframe_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SkeletalAnimationAnimatedJoint_mKeyframes_Set(

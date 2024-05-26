@@ -32,13 +32,15 @@ JoltC_BodyLockInterface_t * JoltC_BodyLockInterface_From_BodyLockInterfaceLockin
 
 JoltC_Body_t * JoltC_BodyLockInterface_TryGetBody(
   JoltC_BodyLockInterface_t * self,
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 ) {
   BodyLockInterface * selfCpp = static_cast<BodyLockInterface *>(self->obj);
-  Body * result = selfCpp->TryGetBody(
-  *reinterpret_cast<BodyID *>(inBodyID->obj)
+  Body * resultValue = selfCpp->TryGetBody(
+    *reinterpret_cast<BodyID *>(inBodyID->obj)
   );
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

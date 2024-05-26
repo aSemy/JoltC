@@ -20,12 +20,12 @@ JoltC_Float3_t * JoltC_Float3_new(
 
 bool JoltC_Float3_Equals(
   JoltC_Float3_t * self,
-  const JoltC_Float3_t * inV
+  JoltC_Float3_t * inV
 );
 
 bool JoltC_Float3_NotEquals(
   JoltC_Float3_t * self,
-  const JoltC_Float3_t * inV
+  JoltC_Float3_t * inV
 );
 
 //endregion

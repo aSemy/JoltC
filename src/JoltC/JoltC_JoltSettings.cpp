@@ -71,8 +71,10 @@ JoltC_BroadPhaseLayerInterface_t * JoltC_JoltSettings_mBroadPhaseLayerInterface_
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  BroadPhaseLayerInterface * result = selfCpp->mBroadPhaseLayerInterface;
-  return reinterpret_cast<JoltC_BroadPhaseLayerInterface_t *>(result);
+  BroadPhaseLayerInterface * resultValue = selfCpp->mBroadPhaseLayerInterface;
+  JoltC_BroadPhaseLayerInterface_t* result = new JoltC_BroadPhaseLayerInterface_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_JoltSettings_mBroadPhaseLayerInterface_Set(
@@ -87,8 +89,10 @@ JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_JoltSettings_mObjectVsBroadPhaseLa
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  ObjectVsBroadPhaseLayerFilter * result = selfCpp->mObjectVsBroadPhaseLayerFilter;
-  return reinterpret_cast<JoltC_ObjectVsBroadPhaseLayerFilter_t *>(result);
+  ObjectVsBroadPhaseLayerFilter * resultValue = selfCpp->mObjectVsBroadPhaseLayerFilter;
+  JoltC_ObjectVsBroadPhaseLayerFilter_t* result = new JoltC_ObjectVsBroadPhaseLayerFilter_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Set(
@@ -103,8 +107,10 @@ JoltC_ObjectLayerPairFilter_t * JoltC_JoltSettings_mObjectLayerPairFilter_Get(
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  ObjectLayerPairFilter * result = selfCpp->mObjectLayerPairFilter;
-  return reinterpret_cast<JoltC_ObjectLayerPairFilter_t *>(result);
+  ObjectLayerPairFilter * resultValue = selfCpp->mObjectLayerPairFilter;
+  JoltC_ObjectLayerPairFilter_t* result = new JoltC_ObjectLayerPairFilter_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_JoltSettings_mObjectLayerPairFilter_Set(

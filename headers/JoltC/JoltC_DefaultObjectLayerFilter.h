@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_DefaultObjectLayerFilter_t * JoltC_DefaultObjectLayerFilter_new(
-  const JoltC_ObjectLayerPairFilter_t * inFilter,
+  JoltC_ObjectLayerPairFilter_t * inFilter,
   unsigned long inObjectLayer
 );
 

@@ -23,7 +23,7 @@ JoltC_CollidePointResult_t * JoltC_ArrayCollidePointResult_at(
 
 void JoltC_ArrayCollidePointResult_push_back(
   JoltC_ArrayCollidePointResult_t * self,
-  const JoltC_CollidePointResult_t * inValue
+  JoltC_CollidePointResult_t * inValue
 );
 
 void JoltC_ArrayCollidePointResult_reserve(

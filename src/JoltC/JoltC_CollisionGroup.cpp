@@ -41,16 +41,18 @@ void JoltC_CollisionGroup_SetGroupFilter(
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
   
   selfCpp->SetGroupFilter(
-  reinterpret_cast<GroupFilter *>(inFilter->obj)
+    reinterpret_cast<GroupFilter *>(inFilter->obj)
   );
 };
 
-const JoltC_GroupFilter_t * JoltC_CollisionGroup_GetGroupFilter(
+JoltC_GroupFilter_t * JoltC_CollisionGroup_GetGroupFilter(
   JoltC_CollisionGroup_t * self
 ) {
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
-  const GroupFilter * result = selfCpp->GetGroupFilter();
-  return reinterpret_cast<const JoltC_GroupFilter_t *>(result);
+  const GroupFilter * resultValue = selfCpp->GetGroupFilter();
+  JoltC_GroupFilter_t* result = new JoltC_GroupFilter_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CollisionGroup_SetGroupID(
@@ -60,7 +62,7 @@ void JoltC_CollisionGroup_SetGroupID(
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
   
   selfCpp->SetGroupID(
-  inGroupID
+    inGroupID
   );
 };
 
@@ -79,7 +81,7 @@ void JoltC_CollisionGroup_SetSubGroupID(
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
   
   selfCpp->SetSubGroupID(
-  inSubGroupID
+    inSubGroupID
   );
 };
 

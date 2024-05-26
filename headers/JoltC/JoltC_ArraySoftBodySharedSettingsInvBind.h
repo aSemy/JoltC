@@ -23,7 +23,7 @@ JoltC_SoftBodySharedSettingsInvBind_t * JoltC_ArraySoftBodySharedSettingsInvBind
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_push_back(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
-  const JoltC_SoftBodySharedSettingsInvBind_t * inValue
+  JoltC_SoftBodySharedSettingsInvBind_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_reserve(

@@ -45,7 +45,7 @@ void JoltC_Ragdoll_SetGroupID(
 
 void JoltC_Ragdoll_SetPose(
   JoltC_Ragdoll_t * self,
-  const JoltC_SkeletonPose_t * inPose,
+  JoltC_SkeletonPose_t * inPose,
   bool inLockBodies
 );
 
@@ -61,38 +61,38 @@ void JoltC_Ragdoll_ResetWarmStart(
 
 void JoltC_Ragdoll_DriveToPoseUsingKinematics(
   JoltC_Ragdoll_t * self,
-  const JoltC_SkeletonPose_t * inPose,
+  JoltC_SkeletonPose_t * inPose,
   float inDeltaTime,
   bool inLockBodies
 );
 
 void JoltC_Ragdoll_DriveToPoseUsingMotors(
   JoltC_Ragdoll_t * self,
-  const JoltC_SkeletonPose_t * inPose
+  JoltC_SkeletonPose_t * inPose
 );
 
 void JoltC_Ragdoll_SetLinearAndAngularVelocity(
   JoltC_Ragdoll_t * self,
-  const JoltC_Vec3_t * inLinearVelocity,
-  const JoltC_Vec3_t * inAngularVelocity,
+  JoltC_Vec3_t * inLinearVelocity,
+  JoltC_Vec3_t * inAngularVelocity,
   bool inLockBodies
 );
 
 void JoltC_Ragdoll_SetLinearVelocity(
   JoltC_Ragdoll_t * self,
-  const JoltC_Vec3_t * inLinearVelocity,
+  JoltC_Vec3_t * inLinearVelocity,
   bool inLockBodies
 );
 
 void JoltC_Ragdoll_AddLinearVelocity(
   JoltC_Ragdoll_t * self,
-  const JoltC_Vec3_t * inLinearVelocity,
+  JoltC_Vec3_t * inLinearVelocity,
   bool inLockBodies
 );
 
 void JoltC_Ragdoll_AddImpulse(
   JoltC_Ragdoll_t * self,
-  const JoltC_Vec3_t * inImpulse,
+  JoltC_Vec3_t * inImpulse,
   bool inLockBodies
 );
 
@@ -112,7 +112,7 @@ JoltC_BodyID_t * JoltC_Ragdoll_GetBodyID(
   long inBodyIndex
 );
 
-const JoltC_BodyIDVector_t * JoltC_Ragdoll_GetBodyIDs(
+JoltC_BodyIDVector_t * JoltC_Ragdoll_GetBodyIDs(
   JoltC_Ragdoll_t * self
 );
 
@@ -125,12 +125,12 @@ JoltC_AABox_t * JoltC_Ragdoll_GetWorldSpaceBounds(
   bool inLockBodies
 );
 
-const JoltC_TwoBodyConstraint_t * JoltC_Ragdoll_GetConstraint(
+JoltC_TwoBodyConstraint_t * JoltC_Ragdoll_GetConstraint(
   JoltC_Ragdoll_t * self,
   long inConstraintIndex
 );
 
-const JoltC_RagdollSettings_t * JoltC_Ragdoll_GetRagdollSettings(
+JoltC_RagdollSettings_t * JoltC_Ragdoll_GetRagdollSettings(
   JoltC_Ragdoll_t * self
 );
 

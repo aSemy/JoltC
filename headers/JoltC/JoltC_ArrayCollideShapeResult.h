@@ -23,7 +23,7 @@ JoltC_CollideShapeResult_t * JoltC_ArrayCollideShapeResult_at(
 
 void JoltC_ArrayCollideShapeResult_push_back(
   JoltC_ArrayCollideShapeResult_t * self,
-  const JoltC_CollideShapeResult_t * inValue
+  JoltC_CollideShapeResult_t * inValue
 );
 
 void JoltC_ArrayCollideShapeResult_reserve(

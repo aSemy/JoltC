@@ -29,21 +29,22 @@ JoltC_SoftBodySharedSettingsSkinned_t * JoltC_ArraySoftBodySharedSettingsSkinned
   long inIndex
 ) {
   ArraySoftBodySharedSettingsSkinned * selfCpp = static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
-  SoftBodySharedSettingsSkinned& resultRef = selfCpp->at(
-  inIndex
+  SoftBodySharedSettingsSkinned* resultRef = &selfCpp->at(
+    inIndex
   );
-  SoftBodySharedSettingsSkinned * result = &resultRef;
-  return reinterpret_cast<JoltC_SoftBodySharedSettingsSkinned_t *>(result);
+  JoltC_SoftBodySharedSettingsSkinned_t* result = new JoltC_SoftBodySharedSettingsSkinned_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArraySoftBodySharedSettingsSkinned_push_back(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self,
-  const JoltC_SoftBodySharedSettingsSkinned_t * inValue
+  JoltC_SoftBodySharedSettingsSkinned_t * inValue
 ) {
   ArraySoftBodySharedSettingsSkinned * selfCpp = static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<SoftBodySharedSettingsSkinned *>(inValue->obj)
+    *reinterpret_cast<SoftBodySharedSettingsSkinned *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArraySoftBodySharedSettingsSkinned_reserve(
   ArraySoftBodySharedSettingsSkinned * selfCpp = static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArraySoftBodySharedSettingsSkinned_resize(
   ArraySoftBodySharedSettingsSkinned * selfCpp = static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

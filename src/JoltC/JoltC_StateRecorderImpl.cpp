@@ -41,7 +41,7 @@ bool JoltC_StateRecorderImpl_IsEqual(
 ) {
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
   bool result = selfCpp->IsEqual(
-  *reinterpret_cast<StateRecorderImpl *>(inReference->obj)
+    *reinterpret_cast<StateRecorderImpl *>(inReference->obj)
   );
   return result;
 };
@@ -53,7 +53,7 @@ void JoltC_StateRecorderImpl_SetValidating(
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
   
   selfCpp->SetValidating(
-  inValidating
+    inValidating
   );
 };
 

@@ -25,11 +25,13 @@ JoltC_Constraint_t * JoltC_DistanceConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
+  Constraint * resultValue = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
   );
-  return reinterpret_cast<JoltC_Constraint_t *>(result);
+  JoltC_Constraint_t* result = new JoltC_Constraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_DistanceConstraintSettings_GetRefCount(
@@ -80,9 +82,10 @@ JoltC_RVec3_t * JoltC_DistanceConstraintSettings_mPoint1_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPoint1;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPoint1;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_DistanceConstraintSettings_mPoint1_Set(
@@ -97,9 +100,10 @@ JoltC_RVec3_t * JoltC_DistanceConstraintSettings_mPoint2_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPoint2;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPoint2;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_DistanceConstraintSettings_mPoint2_Set(
@@ -146,9 +150,10 @@ JoltC_SpringSettings_t * JoltC_DistanceConstraintSettings_mLimitsSpringSettings_
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  SpringSettings resultValue = selfCpp->mLimitsSpringSettings;
-  SpringSettings* result = new SpringSettings(resultValue);
-  return reinterpret_cast<JoltC_SpringSettings_t *>(result);
+  static SpringSettings resultValue = selfCpp->mLimitsSpringSettings;
+  JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_DistanceConstraintSettings_mLimitsSpringSettings_Set(

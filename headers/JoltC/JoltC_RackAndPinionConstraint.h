@@ -10,8 +10,8 @@ extern "C" {
 
 void JoltC_RackAndPinionConstraint_SetConstraints(
   JoltC_RackAndPinionConstraint_t * self,
-  const JoltC_Constraint_t * inPinion,
-  const JoltC_Constraint_t * inRack
+  JoltC_Constraint_t * inPinion,
+  JoltC_Constraint_t * inRack
 );
 
 float JoltC_RackAndPinionConstraint_GetTotalLambda(

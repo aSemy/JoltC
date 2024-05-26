@@ -26,7 +26,7 @@ void JoltC_SixDOFConstraintSettings_MakeFreeAxis(
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   
   selfCpp->MakeFreeAxis(
-  static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis))
+    static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis))
   );
 };
 
@@ -36,7 +36,7 @@ bool JoltC_SixDOFConstraintSettings_IsFreeAxis(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   bool result = selfCpp->IsFreeAxis(
-  static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis))
+    static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis))
   );
   return result;
 };
@@ -48,7 +48,7 @@ void JoltC_SixDOFConstraintSettings_MakeFixedAxis(
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   
   selfCpp->MakeFixedAxis(
-  static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis))
+    static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis))
   );
 };
 
@@ -58,7 +58,7 @@ bool JoltC_SixDOFConstraintSettings_IsFixedAxis(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   bool result = selfCpp->IsFixedAxis(
-  static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis))
+    static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis))
   );
   return result;
 };
@@ -72,9 +72,9 @@ void JoltC_SixDOFConstraintSettings_SetLimitedAxis(
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   
   selfCpp->SetLimitedAxis(
-  static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis)),
-  inMin,
-  inMax
+    static_cast<SixDOFConstraintSettings_EAxis>(static_cast<int>(inAxis)),
+    inMin,
+    inMax
   );
 };
 
@@ -84,11 +84,13 @@ JoltC_Constraint_t * JoltC_SixDOFConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
+  Constraint * resultValue = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
   );
-  return reinterpret_cast<JoltC_Constraint_t *>(result);
+  JoltC_Constraint_t* result = new JoltC_Constraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_SixDOFConstraintSettings_GetRefCount(
@@ -139,9 +141,10 @@ JoltC_RVec3_t * JoltC_SixDOFConstraintSettings_mPosition1_Get(
   JoltC_SixDOFConstraintSettings_t * self
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPosition1;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPosition1;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SixDOFConstraintSettings_mPosition1_Set(
@@ -156,9 +159,10 @@ JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisX1_Get(
   JoltC_SixDOFConstraintSettings_t * self
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mAxisX1;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mAxisX1;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SixDOFConstraintSettings_mAxisX1_Set(
@@ -173,9 +177,10 @@ JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisY1_Get(
   JoltC_SixDOFConstraintSettings_t * self
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mAxisY1;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mAxisY1;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SixDOFConstraintSettings_mAxisY1_Set(
@@ -190,9 +195,10 @@ JoltC_RVec3_t * JoltC_SixDOFConstraintSettings_mPosition2_Get(
   JoltC_SixDOFConstraintSettings_t * self
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPosition2;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPosition2;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SixDOFConstraintSettings_mPosition2_Set(
@@ -207,9 +213,10 @@ JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisX2_Get(
   JoltC_SixDOFConstraintSettings_t * self
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mAxisX2;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mAxisX2;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SixDOFConstraintSettings_mAxisX2_Set(
@@ -224,9 +231,10 @@ JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisY2_Get(
   JoltC_SixDOFConstraintSettings_t * self
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mAxisY2;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mAxisY2;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SixDOFConstraintSettings_mAxisY2_Set(

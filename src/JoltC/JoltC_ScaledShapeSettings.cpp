@@ -10,7 +10,7 @@ extern "C" {
 
 JoltC_ScaledShapeSettings_t * JoltC_ScaledShapeSettings_new(
   JoltC_ShapeSettings_t * inShape,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 ) {
   JoltC_ScaledShapeSettings_t * cInstance = new JoltC_ScaledShapeSettings_t();
   ScaledShapeSettings * cppInstance = new ScaledShapeSettings(
@@ -53,9 +53,10 @@ JoltC_Shape_ShapeResult_t * JoltC_ScaledShapeSettings_Create(
   JoltC_ScaledShapeSettings_t * self
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ScaledShapeSettings_ClearCachedResult(
@@ -74,9 +75,10 @@ JoltC_Vec3_t * JoltC_ScaledShapeSettings_mScale_Get(
   JoltC_ScaledShapeSettings_t * self
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mScale;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mScale;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ScaledShapeSettings_mScale_Set(

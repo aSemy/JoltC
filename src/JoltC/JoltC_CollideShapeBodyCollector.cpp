@@ -18,21 +18,23 @@ void JoltC_CollideShapeBodyCollector_Reset(
 
 void JoltC_CollideShapeBodyCollector_SetContext(
   JoltC_CollideShapeBodyCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
   
   selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
+    reinterpret_cast<TransformedShape *>(inContext->obj)
   );
 };
 
-const JoltC_TransformedShape_t * JoltC_CollideShapeBodyCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_CollideShapeBodyCollector_GetContext(
   JoltC_CollideShapeBodyCollector_t * self
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  const TransformedShape * resultValue = selfCpp->GetContext();
+  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CollideShapeBodyCollector_UpdateEarlyOutFraction(
@@ -42,7 +44,7 @@ void JoltC_CollideShapeBodyCollector_UpdateEarlyOutFraction(
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
   
   selfCpp->UpdateEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 
@@ -53,7 +55,7 @@ void JoltC_CollideShapeBodyCollector_ResetEarlyOutFraction(
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
   
   selfCpp->ResetEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 

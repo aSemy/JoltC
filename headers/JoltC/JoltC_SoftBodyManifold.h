@@ -8,28 +8,28 @@ extern "C" {
 
 //region functions
 
-const JoltC_ArraySoftBodyVertex_t * JoltC_SoftBodyManifold_GetVertices(
+JoltC_ArraySoftBodyVertex_t * JoltC_SoftBodyManifold_GetVertices(
   JoltC_SoftBodyManifold_t * self
 );
 
 bool JoltC_SoftBodyManifold_HasContact(
   JoltC_SoftBodyManifold_t * self,
-  const JoltC_SoftBodyVertex_t * inVertex
+  JoltC_SoftBodyVertex_t * inVertex
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyManifold_GetLocalContactPoint(
   JoltC_SoftBodyManifold_t * self,
-  const JoltC_SoftBodyVertex_t * inVertex
+  JoltC_SoftBodyVertex_t * inVertex
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyManifold_GetContactNormal(
   JoltC_SoftBodyManifold_t * self,
-  const JoltC_SoftBodyVertex_t * inVertex
+  JoltC_SoftBodyVertex_t * inVertex
 );
 
 JoltC_BodyID_t * JoltC_SoftBodyManifold_GetContactBodyID(
   JoltC_SoftBodyManifold_t * self,
-  const JoltC_SoftBodyVertex_t * inVertex
+  JoltC_SoftBodyVertex_t * inVertex
 );
 
 //endregion

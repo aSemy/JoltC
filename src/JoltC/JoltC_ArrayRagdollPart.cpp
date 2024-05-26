@@ -40,11 +40,12 @@ JoltC_RagdollPart_t * JoltC_ArrayRagdollPart_at(
   long inIndex
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  RagdollPart& resultRef = selfCpp->at(
-  inIndex
+  RagdollPart* resultRef = &selfCpp->at(
+    inIndex
   );
-  RagdollPart * result = &resultRef;
-  return reinterpret_cast<JoltC_RagdollPart_t *>(result);
+  JoltC_RagdollPart_t* result = new JoltC_RagdollPart_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArrayRagdollPart_push_back(
@@ -54,7 +55,7 @@ void JoltC_ArrayRagdollPart_push_back(
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<RagdollPart *>(inValue->obj)
+    *reinterpret_cast<RagdollPart *>(inValue->obj)
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArrayRagdollPart_reserve(
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -76,7 +77,7 @@ void JoltC_ArrayRagdollPart_resize(
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

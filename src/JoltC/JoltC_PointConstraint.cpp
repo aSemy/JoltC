@@ -12,61 +12,70 @@ JoltC_Vec3_t * JoltC_PointConstraint_GetLocalSpacePoint1(
   JoltC_PointConstraint_t * self
 ) {
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetLocalSpacePoint1();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetLocalSpacePoint1();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_PointConstraint_GetLocalSpacePoint2(
   JoltC_PointConstraint_t * self
 ) {
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetLocalSpacePoint2();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetLocalSpacePoint2();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_PointConstraint_GetTotalLambdaPosition(
   JoltC_PointConstraint_t * self
 ) {
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTotalLambdaPosition();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetTotalLambdaPosition();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Body_t * JoltC_PointConstraint_GetBody1(
   JoltC_PointConstraint_t * self
 ) {
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody1();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Body_t * JoltC_PointConstraint_GetBody2(
   JoltC_PointConstraint_t * self
 ) {
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody2();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_PointConstraint_GetConstraintToBody1Matrix(
   JoltC_PointConstraint_t * self
 ) {
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_PointConstraint_GetConstraintToBody2Matrix(
   JoltC_PointConstraint_t * self
 ) {
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_PointConstraint_GetRefCount(
@@ -124,7 +133,7 @@ void JoltC_PointConstraint_SetConstraintPriority(
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
   
   selfCpp->SetConstraintPriority(
-  inPriority
+    inPriority
   );
 };
 
@@ -135,7 +144,7 @@ void JoltC_PointConstraint_SetNumVelocityStepsOverride(
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
   
   selfCpp->SetNumVelocityStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -154,7 +163,7 @@ void JoltC_PointConstraint_SetNumPositionStepsOverride(
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
   
   selfCpp->SetNumPositionStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -173,7 +182,7 @@ void JoltC_PointConstraint_SetEnabled(
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
   
   selfCpp->SetEnabled(
-  inEnabled
+    inEnabled
   );
 };
 
@@ -208,7 +217,7 @@ void JoltC_PointConstraint_SetUserData(
   PointConstraint * selfCpp = static_cast<PointConstraint *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 

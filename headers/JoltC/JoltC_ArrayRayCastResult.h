@@ -23,7 +23,7 @@ JoltC_RayCastResult_t * JoltC_ArrayRayCastResult_at(
 
 void JoltC_ArrayRayCastResult_push_back(
   JoltC_ArrayRayCastResult_t * self,
-  const JoltC_RayCastResult_t * inValue
+  JoltC_RayCastResult_t * inValue
 );
 
 void JoltC_ArrayRayCastResult_reserve(

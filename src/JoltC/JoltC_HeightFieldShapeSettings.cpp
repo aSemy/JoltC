@@ -47,9 +47,10 @@ JoltC_Shape_ShapeResult_t * JoltC_HeightFieldShapeSettings_Create(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HeightFieldShapeSettings_ClearCachedResult(
@@ -68,9 +69,10 @@ JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mOffset_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mOffset;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mOffset;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HeightFieldShapeSettings_mOffset_Set(
@@ -85,9 +87,10 @@ JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mScale_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mScale;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mScale;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HeightFieldShapeSettings_mScale_Set(
@@ -182,9 +185,10 @@ JoltC_ArrayFloat_t * JoltC_HeightFieldShapeSettings_mHeightSamples_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  ArrayFloat resultValue = selfCpp->mHeightSamples;
-  ArrayFloat* result = new ArrayFloat(resultValue);
-  return reinterpret_cast<JoltC_ArrayFloat_t *>(result);
+  static ArrayFloat resultValue = selfCpp->mHeightSamples;
+  JoltC_ArrayFloat_t* result = new JoltC_ArrayFloat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HeightFieldShapeSettings_mHeightSamples_Set(
@@ -199,9 +203,10 @@ JoltC_ArrayUint8_t * JoltC_HeightFieldShapeSettings_mMaterialIndices_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  ArrayUint8 resultValue = selfCpp->mMaterialIndices;
-  ArrayUint8* result = new ArrayUint8(resultValue);
-  return reinterpret_cast<JoltC_ArrayUint8_t *>(result);
+  static ArrayUint8 resultValue = selfCpp->mMaterialIndices;
+  JoltC_ArrayUint8_t* result = new JoltC_ArrayUint8_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HeightFieldShapeSettings_mMaterialIndices_Set(
@@ -216,9 +221,10 @@ JoltC_PhysicsMaterialList_t * JoltC_HeightFieldShapeSettings_mMaterials_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  PhysicsMaterialList resultValue = selfCpp->mMaterials;
-  PhysicsMaterialList* result = new PhysicsMaterialList(resultValue);
-  return reinterpret_cast<JoltC_PhysicsMaterialList_t *>(result);
+  static PhysicsMaterialList resultValue = selfCpp->mMaterials;
+  JoltC_PhysicsMaterialList_t* result = new JoltC_PhysicsMaterialList_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HeightFieldShapeSettings_mMaterials_Set(

@@ -29,11 +29,12 @@ JoltC_VehicleAntiRollBar_t * JoltC_ArrayVehicleAntiRollBar_at(
   long inIndex
 ) {
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  VehicleAntiRollBar& resultRef = selfCpp->at(
-  inIndex
+  VehicleAntiRollBar* resultRef = &selfCpp->at(
+    inIndex
   );
-  VehicleAntiRollBar * result = &resultRef;
-  return reinterpret_cast<JoltC_VehicleAntiRollBar_t *>(result);
+  JoltC_VehicleAntiRollBar_t* result = new JoltC_VehicleAntiRollBar_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArrayVehicleAntiRollBar_push_back(
@@ -43,7 +44,7 @@ void JoltC_ArrayVehicleAntiRollBar_push_back(
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<VehicleAntiRollBar *>(inValue->obj)
+    *reinterpret_cast<VehicleAntiRollBar *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArrayVehicleAntiRollBar_resize(
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

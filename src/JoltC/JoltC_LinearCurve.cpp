@@ -34,7 +34,7 @@ void JoltC_LinearCurve_Reserve(
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
   
   selfCpp->Reserve(
-  inSize
+    inSize
   );
 };
 
@@ -46,8 +46,8 @@ void JoltC_LinearCurve_AddPoint(
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
   
   selfCpp->AddPoint(
-  inX,
-  inY
+    inX,
+    inY
   );
 };
 
@@ -81,7 +81,7 @@ float JoltC_LinearCurve_GetValue(
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
   float result = selfCpp->GetValue(
-  inX
+    inX
   );
   return result;
 };

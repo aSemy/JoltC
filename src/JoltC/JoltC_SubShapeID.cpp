@@ -34,7 +34,7 @@ void JoltC_SubShapeID_SetValue(
   SubShapeID * selfCpp = static_cast<SubShapeID *>(self->obj);
   
   selfCpp->SetValue(
-  inValue
+    inValue
   );
 };
 

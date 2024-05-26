@@ -16,8 +16,8 @@ JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_0() {
 };
 
 JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_1(
-  const JoltC_TriangleList_t * inTriangleList,
-  const JoltC_PhysicsMaterialList_t * inMaterialList
+  JoltC_TriangleList_t * inTriangleList,
+  JoltC_PhysicsMaterialList_t * inMaterialList
 ) {
   JoltC_MeshShapeSettings_t * cInstance = new JoltC_MeshShapeSettings_t();
   MeshShapeSettings * cppInstance = new MeshShapeSettings(
@@ -29,9 +29,9 @@ JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_1(
 };
 
 JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_2(
-  const JoltC_VertexList_t * inVertices,
-  const JoltC_IndexedTriangleList_t * inTriangles,
-  const JoltC_PhysicsMaterialList_t * inMaterialList
+  JoltC_VertexList_t * inVertices,
+  JoltC_IndexedTriangleList_t * inTriangles,
+  JoltC_PhysicsMaterialList_t * inMaterialList
 ) {
   JoltC_MeshShapeSettings_t * cInstance = new JoltC_MeshShapeSettings_t();
   MeshShapeSettings * cppInstance = new MeshShapeSettings(
@@ -83,9 +83,10 @@ JoltC_Shape_ShapeResult_t * JoltC_MeshShapeSettings_Create(
   JoltC_MeshShapeSettings_t * self
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_MeshShapeSettings_ClearCachedResult(
@@ -104,9 +105,10 @@ JoltC_VertexList_t * JoltC_MeshShapeSettings_mTriangleVertices_Get(
   JoltC_MeshShapeSettings_t * self
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
-  VertexList resultValue = selfCpp->mTriangleVertices;
-  VertexList* result = new VertexList(resultValue);
-  return reinterpret_cast<JoltC_VertexList_t *>(result);
+  static VertexList resultValue = selfCpp->mTriangleVertices;
+  JoltC_VertexList_t* result = new JoltC_VertexList_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_MeshShapeSettings_mTriangleVertices_Set(
@@ -121,9 +123,10 @@ JoltC_IndexedTriangleList_t * JoltC_MeshShapeSettings_mIndexedTriangles_Get(
   JoltC_MeshShapeSettings_t * self
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
-  IndexedTriangleList resultValue = selfCpp->mIndexedTriangles;
-  IndexedTriangleList* result = new IndexedTriangleList(resultValue);
-  return reinterpret_cast<JoltC_IndexedTriangleList_t *>(result);
+  static IndexedTriangleList resultValue = selfCpp->mIndexedTriangles;
+  JoltC_IndexedTriangleList_t* result = new JoltC_IndexedTriangleList_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_MeshShapeSettings_mIndexedTriangles_Set(
@@ -138,9 +141,10 @@ JoltC_PhysicsMaterialList_t * JoltC_MeshShapeSettings_mMaterials_Get(
   JoltC_MeshShapeSettings_t * self
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
-  PhysicsMaterialList resultValue = selfCpp->mMaterials;
-  PhysicsMaterialList* result = new PhysicsMaterialList(resultValue);
-  return reinterpret_cast<JoltC_PhysicsMaterialList_t *>(result);
+  static PhysicsMaterialList resultValue = selfCpp->mMaterials;
+  JoltC_PhysicsMaterialList_t* result = new JoltC_PhysicsMaterialList_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_MeshShapeSettings_mMaterials_Set(

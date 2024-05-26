@@ -23,7 +23,7 @@ JoltC_SoftBodySharedSettingsLRA_t * JoltC_ArraySoftBodySharedSettingsLRA_at(
 
 void JoltC_ArraySoftBodySharedSettingsLRA_push_back(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
-  const JoltC_SoftBodySharedSettingsLRA_t * inValue
+  JoltC_SoftBodySharedSettingsLRA_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsLRA_reserve(

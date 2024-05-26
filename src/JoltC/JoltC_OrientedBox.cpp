@@ -16,8 +16,8 @@ JoltC_OrientedBox_t * JoltC_OrientedBox_new_0() {
 };
 
 JoltC_OrientedBox_t * JoltC_OrientedBox_new_1(
-  const JoltC_Mat44_t * inOrientation,
-  const JoltC_Vec3_t * inHalfExtents
+  JoltC_Mat44_t * inOrientation,
+  JoltC_Vec3_t * inHalfExtents
 ) {
   JoltC_OrientedBox_t * cInstance = new JoltC_OrientedBox_t();
   OrientedBox * cppInstance = new OrientedBox(
@@ -36,9 +36,10 @@ JoltC_Mat44_t * JoltC_OrientedBox_mOrientation_Get(
   JoltC_OrientedBox_t * self
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
-  Mat44 resultValue = selfCpp->mOrientation;
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->mOrientation;
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_OrientedBox_mOrientation_Set(
@@ -53,9 +54,10 @@ JoltC_Vec3_t * JoltC_OrientedBox_mHalfExtents_Get(
   JoltC_OrientedBox_t * self
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
-  Vec3 resultValue = selfCpp->mHalfExtents;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mHalfExtents;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_OrientedBox_mHalfExtents_Set(

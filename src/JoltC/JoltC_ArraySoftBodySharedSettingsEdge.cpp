@@ -29,21 +29,22 @@ JoltC_SoftBodySharedSettingsEdge_t * JoltC_ArraySoftBodySharedSettingsEdge_at(
   long inIndex
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
-  SoftBodySharedSettingsEdge& resultRef = selfCpp->at(
-  inIndex
+  SoftBodySharedSettingsEdge* resultRef = &selfCpp->at(
+    inIndex
   );
-  SoftBodySharedSettingsEdge * result = &resultRef;
-  return reinterpret_cast<JoltC_SoftBodySharedSettingsEdge_t *>(result);
+  JoltC_SoftBodySharedSettingsEdge_t* result = new JoltC_SoftBodySharedSettingsEdge_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArraySoftBodySharedSettingsEdge_push_back(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self,
-  const JoltC_SoftBodySharedSettingsEdge_t * inValue
+  JoltC_SoftBodySharedSettingsEdge_t * inValue
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<SoftBodySharedSettingsEdge *>(inValue->obj)
+    *reinterpret_cast<SoftBodySharedSettingsEdge *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArraySoftBodySharedSettingsEdge_reserve(
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArraySoftBodySharedSettingsEdge_resize(
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

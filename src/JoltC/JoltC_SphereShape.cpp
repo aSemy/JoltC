@@ -10,7 +10,7 @@ extern "C" {
 
 JoltC_SphereShape_t * JoltC_SphereShape_new(
   float inRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 ) {
   JoltC_SphereShape_t * cInstance = new JoltC_SphereShape_t();
   SphereShape * cppInstance = new SphereShape(
@@ -48,7 +48,7 @@ void JoltC_SphereShape_SetDensity(
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
   
   selfCpp->SetDensity(
-  inDensity
+    inDensity
   );
 };
 
@@ -104,32 +104,35 @@ JoltC_AABox_t * JoltC_SphereShape_GetLocalBounds(
   JoltC_SphereShape_t * self
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  AABox resultValue = selfCpp->GetLocalBounds();
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JoltC_AABox_t *>(result);
+  static AABox resultValue = selfCpp->GetLocalBounds();
+  JoltC_AABox_t* result = new JoltC_AABox_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_AABox_t * JoltC_SphereShape_GetWorldSpaceBounds(
   JoltC_SphereShape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  AABox resultValue = selfCpp->GetWorldSpaceBounds(
-  *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj)
+  static AABox resultValue = selfCpp->GetWorldSpaceBounds(
+    *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj)
   );
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JoltC_AABox_t *>(result);
+  JoltC_AABox_t* result = new JoltC_AABox_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_SphereShape_GetCenterOfMass(
   JoltC_SphereShape_t * self
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetCenterOfMass();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetCenterOfMass();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long long int JoltC_SphereShape_GetUserData(
@@ -147,7 +150,7 @@ void JoltC_SphereShape_SetUserData(
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 
@@ -171,65 +174,70 @@ JoltC_MassProperties_t * JoltC_SphereShape_GetMassProperties(
   JoltC_SphereShape_t * self
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  MassProperties resultValue = selfCpp->GetMassProperties();
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  static MassProperties resultValue = selfCpp->GetMassProperties();
+  JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_SphereShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_SphereShape_GetMaterial(
   JoltC_SphereShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetMaterial(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+  const PhysicsMaterial * resultValue = selfCpp->GetMaterial(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
   );
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_SphereShape_GetSurfaceNormal(
   JoltC_SphereShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetSurfaceNormal(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
+  static Vec3 resultValue = selfCpp->GetSurfaceNormal(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
   );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long long int JoltC_SphereShape_GetSubShapeUserData(
   JoltC_SphereShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
   unsigned long long int result = selfCpp->GetSubShapeUserData(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
   );
   return result;
 };
 
 JoltC_TransformedShape_t * JoltC_SphereShape_GetSubShapeTransformedShape(
   JoltC_SphereShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
-  *reinterpret_cast<Quat *>(inRotation->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj),
-  *reinterpret_cast<SubShapeID *>(outRemainder->obj)
+  static TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
+    *reinterpret_cast<Quat *>(inRotation->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj),
+    *reinterpret_cast<SubShapeID *>(outRemainder->obj)
   );
-  TransformedShape* result = new TransformedShape(resultValue);
-  return reinterpret_cast<JoltC_TransformedShape_t *>(result);
+  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_SphereShape_GetVolume(
@@ -242,25 +250,26 @@ float JoltC_SphereShape_GetVolume(
 
 bool JoltC_SphereShape_IsValidScale(
   JoltC_SphereShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
   bool result = selfCpp->IsValidScale(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
+    *reinterpret_cast<Vec3 *>(inScale->obj)
   );
   return result;
 };
 
 JoltC_Shape_ShapeResult_t * JoltC_SphereShape_ScaleShape(
   JoltC_SphereShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 ) {
   SphereShape * selfCpp = static_cast<SphereShape *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->ScaleShape(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
+  static Shape::ShapeResult resultValue = selfCpp->ScaleShape(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
   );
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

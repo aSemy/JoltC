@@ -23,7 +23,7 @@ void JoltC_SliderConstraint_SetMaxFrictionForce(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetMaxFrictionForce(
-  inFrictionForce
+    inFrictionForce
   );
 };
 
@@ -39,9 +39,10 @@ JoltC_MotorSettings_t * JoltC_SliderConstraint_GetMotorSettings(
   JoltC_SliderConstraint_t * self
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  MotorSettings& resultRef = selfCpp->GetMotorSettings();
-  MotorSettings * result = &resultRef;
-  return reinterpret_cast<JoltC_MotorSettings_t *>(result);
+  MotorSettings* resultRef = &selfCpp->GetMotorSettings();
+  JoltC_MotorSettings_t* result = new JoltC_MotorSettings_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_SliderConstraint_SetMotorState(
@@ -51,7 +52,7 @@ void JoltC_SliderConstraint_SetMotorState(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetMotorState(
-  static_cast<EMotorState>(static_cast<int>(inState))
+    static_cast<EMotorState>(static_cast<int>(inState))
   );
 };
 
@@ -70,7 +71,7 @@ void JoltC_SliderConstraint_SetTargetVelocity(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetTargetVelocity(
-  inVelocity
+    inVelocity
   );
 };
 
@@ -89,7 +90,7 @@ void JoltC_SliderConstraint_SetTargetPosition(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetTargetPosition(
-  inPosition
+    inPosition
   );
 };
 
@@ -109,8 +110,8 @@ void JoltC_SliderConstraint_SetLimits(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetLimits(
-  inLimitsMin,
-  inLimitsMax
+    inLimitsMin,
+    inLimitsMax
   );
 };
 
@@ -142,19 +143,20 @@ JoltC_SpringSettings_t * JoltC_SliderConstraint_GetLimitsSpringSettings(
   JoltC_SliderConstraint_t * self
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  SpringSettings& resultRef = selfCpp->GetLimitsSpringSettings();
-  SpringSettings * result = &resultRef;
-  return reinterpret_cast<JoltC_SpringSettings_t *>(result);
+  SpringSettings* resultRef = &selfCpp->GetLimitsSpringSettings();
+  JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_SliderConstraint_SetLimitsSpringSettings(
   JoltC_SliderConstraint_t * self,
-  const JoltC_SpringSettings_t * inLimitsSpringSettings
+  JoltC_SpringSettings_t * inLimitsSpringSettings
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetLimitsSpringSettings(
-  *reinterpret_cast<SpringSettings *>(inLimitsSpringSettings->obj)
+    *reinterpret_cast<SpringSettings *>(inLimitsSpringSettings->obj)
   );
 };
 
@@ -162,9 +164,10 @@ JoltC_Vector2_t * JoltC_SliderConstraint_GetTotalLambdaPosition(
   JoltC_SliderConstraint_t * self
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Vector2 resultValue = selfCpp->GetTotalLambdaPosition();
-  Vector2* result = new Vector2(resultValue);
-  return reinterpret_cast<JoltC_Vector2_t *>(result);
+  static Vector2 resultValue = selfCpp->GetTotalLambdaPosition();
+  JoltC_Vector2_t* result = new JoltC_Vector2_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_SliderConstraint_GetTotalLambdaPositionLimits(
@@ -179,9 +182,10 @@ JoltC_Vec3_t * JoltC_SliderConstraint_GetTotalLambdaRotation(
   JoltC_SliderConstraint_t * self
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Vec3 resultValue = selfCpp->GetTotalLambdaRotation();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetTotalLambdaRotation();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_SliderConstraint_GetTotalLambdaMotor(
@@ -196,34 +200,40 @@ JoltC_Body_t * JoltC_SliderConstraint_GetBody1(
   JoltC_SliderConstraint_t * self
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody1();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Body_t * JoltC_SliderConstraint_GetBody2(
   JoltC_SliderConstraint_t * self
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody2();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_SliderConstraint_GetConstraintToBody1Matrix(
   JoltC_SliderConstraint_t * self
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_SliderConstraint_GetConstraintToBody2Matrix(
   JoltC_SliderConstraint_t * self
 ) {
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_SliderConstraint_GetRefCount(
@@ -281,7 +291,7 @@ void JoltC_SliderConstraint_SetConstraintPriority(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetConstraintPriority(
-  inPriority
+    inPriority
   );
 };
 
@@ -292,7 +302,7 @@ void JoltC_SliderConstraint_SetNumVelocityStepsOverride(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetNumVelocityStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -311,7 +321,7 @@ void JoltC_SliderConstraint_SetNumPositionStepsOverride(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetNumPositionStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -330,7 +340,7 @@ void JoltC_SliderConstraint_SetEnabled(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetEnabled(
-  inEnabled
+    inEnabled
   );
 };
 
@@ -365,7 +375,7 @@ void JoltC_SliderConstraint_SetUserData(
   SliderConstraint * selfCpp = static_cast<SliderConstraint *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 

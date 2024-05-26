@@ -11,7 +11,7 @@ extern "C" {
 JoltC_Vec3_t * JoltC_Vec3_new_0();
 
 JoltC_Vec3_t * JoltC_Vec3_new_1(
-  const JoltC_Float3_t * inV
+  JoltC_Float3_t * inV
 );
 
 JoltC_Vec3_t * JoltC_Vec3_new_2(
@@ -37,19 +37,19 @@ JoltC_Vec3_t * JoltC_Vec3_sReplicate(
 );
 
 JoltC_Vec3_t * JoltC_Vec3_sMin(
-  const JoltC_Vec3_t * inLHS,
-  const JoltC_Vec3_t * inRHS
+  JoltC_Vec3_t * inLHS,
+  JoltC_Vec3_t * inRHS
 );
 
 JoltC_Vec3_t * JoltC_Vec3_sMax(
-  const JoltC_Vec3_t * inLHS,
-  const JoltC_Vec3_t * inRHS
+  JoltC_Vec3_t * inLHS,
+  JoltC_Vec3_t * inRHS
 );
 
 JoltC_Vec3_t * JoltC_Vec3_sClamp(
-  const JoltC_Vec3_t * inValue,
-  const JoltC_Vec3_t * inMin,
-  const JoltC_Vec3_t * inMax
+  JoltC_Vec3_t * inValue,
+  JoltC_Vec3_t * inMin,
+  JoltC_Vec3_t * inMax
 );
 
 JoltC_Vec3_t * JoltC_Vec3_sUnitSpherical(
@@ -64,12 +64,12 @@ float JoltC_Vec3_GetComponent(
 
 bool JoltC_Vec3_Equals(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 bool JoltC_Vec3_NotEquals(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 float JoltC_Vec3_LengthSq(
@@ -86,7 +86,7 @@ JoltC_Vec3_t * JoltC_Vec3_Normalized(
 
 JoltC_Vec3_t * JoltC_Vec3_NormalizedOr(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inZeroValue
+  JoltC_Vec3_t * inZeroValue
 );
 
 JoltC_Vec3_t * JoltC_Vec3_GetNormalizedPerpendicular(
@@ -140,7 +140,7 @@ bool JoltC_Vec3_IsNearZero(
 
 bool JoltC_Vec3_IsClose(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV,
+  JoltC_Vec3_t * inV,
   float inMaxDistSq
 );
 
@@ -157,32 +157,32 @@ long JoltC_Vec3_GetHighestComponentIndex(
   JoltC_Vec3_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Vec3_Abs(
+JoltC_Vec3_t * JoltC_Vec3_Abs(
   JoltC_Vec3_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Vec3_Reciprocal(
+JoltC_Vec3_t * JoltC_Vec3_Reciprocal(
   JoltC_Vec3_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Vec3_Cross(
+JoltC_Vec3_t * JoltC_Vec3_Cross(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inRHS
+  JoltC_Vec3_t * inRHS
 );
 
 float JoltC_Vec3_Dot(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inRHS
+  JoltC_Vec3_t * inRHS
 );
 
 JoltC_Vec3_t * JoltC_Vec3_Add(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 JoltC_Vec3_t * JoltC_Vec3_Sub(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 JoltC_Vec3_t * JoltC_Vec3_Mul(
@@ -203,11 +203,11 @@ float JoltC_Vec3_ReduceMax(
   JoltC_Vec3_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Vec3_Sqrt(
+JoltC_Vec3_t * JoltC_Vec3_Sqrt(
   JoltC_Vec3_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Vec3_GetSign(
+JoltC_Vec3_t * JoltC_Vec3_GetSign(
   JoltC_Vec3_t * self
 );
 

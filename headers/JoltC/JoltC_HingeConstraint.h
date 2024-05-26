@@ -76,7 +76,7 @@ JoltC_SpringSettings_t * JoltC_HingeConstraint_GetLimitsSpringSettings(
 
 void JoltC_HingeConstraint_SetLimitsSpringSettings(
   JoltC_HingeConstraint_t * self,
-  const JoltC_SpringSettings_t * inLimitsSpringSettings
+  JoltC_SpringSettings_t * inLimitsSpringSettings
 );
 
 JoltC_Vec3_t * JoltC_HingeConstraint_GetTotalLambdaPosition(

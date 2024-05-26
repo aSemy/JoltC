@@ -23,7 +23,7 @@ JoltC_SoftBodySharedSettingsEdge_t * JoltC_ArraySoftBodySharedSettingsEdge_at(
 
 void JoltC_ArraySoftBodySharedSettingsEdge_push_back(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self,
-  const JoltC_SoftBodySharedSettingsEdge_t * inValue
+  JoltC_SoftBodySharedSettingsEdge_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsEdge_reserve(

@@ -11,7 +11,7 @@ extern "C" {
 JoltC_Vec4_t * JoltC_Vec4_new_0();
 
 JoltC_Vec4_t * JoltC_Vec4_new_1(
-  const JoltC_Vec4_t * inV
+  JoltC_Vec4_t * inV
 );
 
 JoltC_Vec4_t * JoltC_Vec4_new_2(

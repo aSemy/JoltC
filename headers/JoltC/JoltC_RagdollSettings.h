@@ -31,7 +31,7 @@ JoltC_Skeleton_t * JoltC_RagdollSettings_GetSkeleton(
 
 void JoltC_RagdollSettings_DisableParentChildCollisions(
   JoltC_RagdollSettings_t * self,
-  const JoltC_Mat44MemRef_t * inJointMatrices,
+  JoltC_Mat44MemRef_t * inJointMatrices,
   float inMinSeparationDistance
 );
 

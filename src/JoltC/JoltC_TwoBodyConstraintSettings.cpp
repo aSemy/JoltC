@@ -126,11 +126,13 @@ JoltC_Constraint_t * JoltC_TwoBodyConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
+  Constraint * resultValue = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
   );
-  return reinterpret_cast<JoltC_Constraint_t *>(result);
+  JoltC_Constraint_t* result = new JoltC_Constraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_TwoBodyConstraintSettings_GetRefCount(

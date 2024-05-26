@@ -22,14 +22,14 @@ long JoltC_PhysicsMaterialList_size(
   JoltC_PhysicsMaterialList_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
+JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
   JoltC_PhysicsMaterialList_t * self,
   long inIndex
 );
 
 void JoltC_PhysicsMaterialList_push_back(
   JoltC_PhysicsMaterialList_t * self,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 );
 
 void JoltC_PhysicsMaterialList_reserve(

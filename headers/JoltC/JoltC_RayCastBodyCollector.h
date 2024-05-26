@@ -14,10 +14,10 @@ void JoltC_RayCastBodyCollector_Reset(
 
 void JoltC_RayCastBodyCollector_SetContext(
   JoltC_RayCastBodyCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 );
 
-const JoltC_TransformedShape_t * JoltC_RayCastBodyCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_RayCastBodyCollector_GetContext(
   JoltC_RayCastBodyCollector_t * self
 );
 

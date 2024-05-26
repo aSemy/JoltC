@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_TrackedVehicleController_t * JoltC_TrackedVehicleController_new(
-  const JoltC_TrackedVehicleControllerSettings_t * inSettings,
+  JoltC_TrackedVehicleControllerSettings_t * inSettings,
   JoltC_VehicleConstraint_t * inConstraint
 );
 

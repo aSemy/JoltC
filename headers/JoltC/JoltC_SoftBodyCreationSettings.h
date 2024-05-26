@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_SoftBodyCreationSettings_t * JoltC_SoftBodyCreationSettings_new(
-  const JoltC_SoftBodySharedSettings_t * inSettings,
+  JoltC_SoftBodySharedSettings_t * inSettings,
   JoltC_RVec3_t * inPosition,
   JoltC_Quat_t * inRotation,
   unsigned long inObjectLayer

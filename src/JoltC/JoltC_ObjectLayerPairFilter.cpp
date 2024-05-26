@@ -48,8 +48,8 @@ bool JoltC_ObjectLayerPairFilter_ShouldCollide(
 ) {
   ObjectLayerPairFilter * selfCpp = static_cast<ObjectLayerPairFilter *>(self->obj);
   bool result = selfCpp->ShouldCollide(
-  inLayer1,
-  inLayer2
+    inLayer1,
+    inLayer2
   );
   return result;
 };

@@ -16,7 +16,7 @@ JoltC_Vec3_t * JoltC_RotatedTranslatedShape_GetPosition(
   JoltC_RotatedTranslatedShape_t * self
 );
 
-const JoltC_Shape_t * JoltC_RotatedTranslatedShape_GetInnerShape(
+JoltC_Shape_t * JoltC_RotatedTranslatedShape_GetInnerShape(
   JoltC_RotatedTranslatedShape_t * self
 );
 
@@ -50,8 +50,8 @@ JoltC_AABox_t * JoltC_RotatedTranslatedShape_GetLocalBounds(
 
 JoltC_AABox_t * JoltC_RotatedTranslatedShape_GetWorldSpaceBounds(
   JoltC_RotatedTranslatedShape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Vec3_t * JoltC_RotatedTranslatedShape_GetCenterOfMass(
@@ -79,28 +79,28 @@ JoltC_MassProperties_t * JoltC_RotatedTranslatedShape_GetMassProperties(
   JoltC_RotatedTranslatedShape_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_RotatedTranslatedShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_RotatedTranslatedShape_GetMaterial(
   JoltC_RotatedTranslatedShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_Vec3_t * JoltC_RotatedTranslatedShape_GetSurfaceNormal(
   JoltC_RotatedTranslatedShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 );
 
 unsigned long long int JoltC_RotatedTranslatedShape_GetSubShapeUserData(
   JoltC_RotatedTranslatedShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_TransformedShape_t * JoltC_RotatedTranslatedShape_GetSubShapeTransformedShape(
   JoltC_RotatedTranslatedShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 );
 
@@ -110,12 +110,12 @@ float JoltC_RotatedTranslatedShape_GetVolume(
 
 bool JoltC_RotatedTranslatedShape_IsValidScale(
   JoltC_RotatedTranslatedShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_RotatedTranslatedShape_ScaleShape(
   JoltC_RotatedTranslatedShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

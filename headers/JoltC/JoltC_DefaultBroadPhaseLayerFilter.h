@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_DefaultBroadPhaseLayerFilter_t * JoltC_DefaultBroadPhaseLayerFilter_new(
-  const JoltC_ObjectVsBroadPhaseLayerFilter_t * inFilter,
+  JoltC_ObjectVsBroadPhaseLayerFilter_t * inFilter,
   unsigned long inObjectLayer
 );
 

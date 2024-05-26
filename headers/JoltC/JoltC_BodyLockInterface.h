@@ -28,7 +28,7 @@ JoltC_BodyLockInterface_t * JoltC_BodyLockInterface_From_BodyLockInterfaceLockin
 
 JoltC_Body_t * JoltC_BodyLockInterface_TryGetBody(
   JoltC_BodyLockInterface_t * self,
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 );
 
 //endregion

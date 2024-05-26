@@ -23,7 +23,7 @@ JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_ArraySoftBodySharedSettingsDi
 
 void JoltC_ArraySoftBodySharedSettingsDihedralBend_push_back(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
-  const JoltC_SoftBodySharedSettingsDihedralBend_t * inValue
+  JoltC_SoftBodySharedSettingsDihedralBend_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsDihedralBend_reserve(

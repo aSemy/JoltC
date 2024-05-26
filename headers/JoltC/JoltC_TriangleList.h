@@ -29,7 +29,7 @@ JoltC_Triangle_t * JoltC_TriangleList_at(
 
 void JoltC_TriangleList_push_back(
   JoltC_TriangleList_t * self,
-  const JoltC_Triangle_t * inTriangle
+  JoltC_Triangle_t * inTriangle
 );
 
 void JoltC_TriangleList_reserve(

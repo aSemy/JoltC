@@ -21,18 +21,18 @@ JoltC_StaticCompoundShapeSettings_t * JoltC_StaticCompoundShapeSettings_new() {
 
 void JoltC_StaticCompoundShapeSettings_AddShape(
   JoltC_StaticCompoundShapeSettings_t * self,
-  const JoltC_Vec3_t * inPosition,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_ShapeSettings_t * inShape,
+  JoltC_Vec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
+  JoltC_ShapeSettings_t * inShape,
   unsigned long inUserData
 ) {
   StaticCompoundShapeSettings * selfCpp = static_cast<StaticCompoundShapeSettings *>(self->obj);
   
   selfCpp->AddShape(
-  *reinterpret_cast<Vec3 *>(inPosition->obj),
-  *reinterpret_cast<Quat *>(inRotation->obj),
-  reinterpret_cast<ShapeSettings *>(inShape->obj),
-  inUserData
+    *reinterpret_cast<Vec3 *>(inPosition->obj),
+    *reinterpret_cast<Quat *>(inRotation->obj),
+    reinterpret_cast<ShapeSettings *>(inShape->obj),
+    inUserData
   );
 };
 
@@ -64,9 +64,10 @@ JoltC_Shape_ShapeResult_t * JoltC_StaticCompoundShapeSettings_Create(
   JoltC_StaticCompoundShapeSettings_t * self
 ) {
   StaticCompoundShapeSettings * selfCpp = static_cast<StaticCompoundShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_StaticCompoundShapeSettings_ClearCachedResult(

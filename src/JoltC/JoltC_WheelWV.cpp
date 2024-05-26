@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_WheelWV_t * JoltC_WheelWV_new(
-  const JoltC_WheelSettingsWV_t * inWheel
+  JoltC_WheelSettingsWV_t * inWheel
 ) {
   JoltC_WheelWV_t * cInstance = new JoltC_WheelWV_t();
   WheelWV * cppInstance = new WheelWV(
@@ -23,20 +23,24 @@ JoltC_WheelWV_t * JoltC_WheelWV_new(
 
 //region functions
 
-const JoltC_WheelSettingsWV_t * JoltC_WheelWV_GetSettings_0(
+JoltC_WheelSettingsWV_t * JoltC_WheelWV_GetSettings_0(
   JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-  const WheelSettingsWV * result = selfCpp->GetSettings();
-  return reinterpret_cast<const JoltC_WheelSettingsWV_t *>(result);
+  const WheelSettingsWV * resultValue = selfCpp->GetSettings();
+  JoltC_WheelSettingsWV_t* result = new JoltC_WheelSettingsWV_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_WheelSettings_t * JoltC_WheelWV_GetSettings_1(
+JoltC_WheelSettings_t * JoltC_WheelWV_GetSettings_1(
   JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-  const WheelSettings * result = selfCpp->GetSettings();
-  return reinterpret_cast<const JoltC_WheelSettings_t *>(result);
+  const WheelSettings * resultValue = selfCpp->GetSettings();
+  JoltC_WheelSettings_t* result = new JoltC_WheelSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_WheelWV_GetAngularVelocity(
@@ -54,7 +58,7 @@ void JoltC_WheelWV_SetAngularVelocity(
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   
   selfCpp->SetAngularVelocity(
-  inVel
+    inVel
   );
 };
 
@@ -73,7 +77,7 @@ void JoltC_WheelWV_SetRotationAngle(
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   
   selfCpp->SetRotationAngle(
-  inAngle
+    inAngle
   );
 };
 
@@ -92,7 +96,7 @@ void JoltC_WheelWV_SetSteerAngle(
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   
   selfCpp->SetSteerAngle(
-  inAngle
+    inAngle
   );
 };
 
@@ -108,54 +112,60 @@ JoltC_BodyID_t * JoltC_WheelWV_GetContactBodyID(
   JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-  BodyID resultValue = selfCpp->GetContactBodyID();
-  BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JoltC_BodyID_t *>(result);
+  static BodyID resultValue = selfCpp->GetContactBodyID();
+  JoltC_BodyID_t* result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_WheelWV_GetContactPosition(
   JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-  RVec3 resultValue = selfCpp->GetContactPosition();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->GetContactPosition();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_WheelWV_GetContactPointVelocity(
   JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-  Vec3 resultValue = selfCpp->GetContactPointVelocity();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetContactPointVelocity();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_WheelWV_GetContactNormal(
   JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-  Vec3 resultValue = selfCpp->GetContactNormal();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetContactNormal();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_WheelWV_GetContactLongitudinal(
   JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-  Vec3 resultValue = selfCpp->GetContactLongitudinal();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetContactLongitudinal();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_WheelWV_GetContactLateral(
   JoltC_WheelWV_t * self
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
-  Vec3 resultValue = selfCpp->GetContactLateral();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetContactLateral();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_WheelWV_GetSuspensionLength(

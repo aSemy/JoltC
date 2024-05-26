@@ -40,21 +40,22 @@ JoltC_Float3_t * JoltC_VertexList_at(
   long inIndex
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
-  Float3& resultRef = selfCpp->at(
-  inIndex
+  Float3* resultRef = &selfCpp->at(
+    inIndex
   );
-  Float3 * result = &resultRef;
-  return reinterpret_cast<JoltC_Float3_t *>(result);
+  JoltC_Float3_t* result = new JoltC_Float3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_VertexList_push_back(
   JoltC_VertexList_t * self,
-  const JoltC_Float3_t * inVertex
+  JoltC_Float3_t * inVertex
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<Float3 *>(inVertex->obj)
+    *reinterpret_cast<Float3 *>(inVertex->obj)
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_VertexList_reserve(
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -76,7 +77,7 @@ void JoltC_VertexList_resize(
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

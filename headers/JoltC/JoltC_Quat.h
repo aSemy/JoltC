@@ -26,28 +26,28 @@ JoltC_Quat_t * JoltC_Quat_sZero();
 JoltC_Quat_t * JoltC_Quat_sIdentity();
 
 JoltC_Quat_t * JoltC_Quat_sRotation(
-  const JoltC_Vec3_t * inRotation,
+  JoltC_Vec3_t * inRotation,
   float inAngle
 );
 
 JoltC_Quat_t * JoltC_Quat_sFromTo(
-  const JoltC_Vec3_t * inFrom,
-  const JoltC_Vec3_t * inTo
+  JoltC_Vec3_t * inFrom,
+  JoltC_Vec3_t * inTo
 );
 
 bool JoltC_Quat_Equals(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inQ
+  JoltC_Quat_t * inQ
 );
 
 bool JoltC_Quat_NotEquals(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inQ
+  JoltC_Quat_t * inQ
 );
 
 bool JoltC_Quat_IsClose(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inQ,
+  JoltC_Quat_t * inQ,
   float inMaxDistSq
 );
 
@@ -69,10 +69,10 @@ JoltC_Quat_t * JoltC_Quat_Normalized(
 );
 
 JoltC_Quat_t * JoltC_Quat_sEulerAngles(
-  const JoltC_Vec3_t * inInput
+  JoltC_Vec3_t * inInput
 );
 
-const JoltC_Vec3_t * JoltC_Quat_GetEulerAngles(
+JoltC_Vec3_t * JoltC_Quat_GetEulerAngles(
   JoltC_Quat_t * self
 );
 
@@ -92,7 +92,7 @@ float JoltC_Quat_GetW(
   JoltC_Quat_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Quat_GetXYZ(
+JoltC_Vec3_t * JoltC_Quat_GetXYZ(
   JoltC_Quat_t * self
 );
 
@@ -124,52 +124,52 @@ void JoltC_Quat_Set(
   float inW
 );
 
-const JoltC_Vec3_t * JoltC_Quat_InverseRotate(
+JoltC_Vec3_t * JoltC_Quat_InverseRotate(
   JoltC_Quat_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
-const JoltC_Vec3_t * JoltC_Quat_RotateAxisX(
+JoltC_Vec3_t * JoltC_Quat_RotateAxisX(
   JoltC_Quat_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Quat_RotateAxisY(
+JoltC_Vec3_t * JoltC_Quat_RotateAxisY(
   JoltC_Quat_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Quat_RotateAxisZ(
+JoltC_Vec3_t * JoltC_Quat_RotateAxisZ(
   JoltC_Quat_t * self
 );
 
 float JoltC_Quat_Dot(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inQ
+  JoltC_Quat_t * inQ
 );
 
-const JoltC_Quat_t * JoltC_Quat_Conjugated(
+JoltC_Quat_t * JoltC_Quat_Conjugated(
   JoltC_Quat_t * self
 );
 
-const JoltC_Quat_t * JoltC_Quat_Inversed(
+JoltC_Quat_t * JoltC_Quat_Inversed(
   JoltC_Quat_t * self
 );
 
-const JoltC_Quat_t * JoltC_Quat_EnsureWPositive(
+JoltC_Quat_t * JoltC_Quat_EnsureWPositive(
   JoltC_Quat_t * self
 );
 
-const JoltC_Quat_t * JoltC_Quat_GetPerpendicular(
+JoltC_Quat_t * JoltC_Quat_GetPerpendicular(
   JoltC_Quat_t * self
 );
 
 float JoltC_Quat_GetRotationAngle(
   JoltC_Quat_t * self,
-  const JoltC_Vec3_t * inAxis
+  JoltC_Vec3_t * inAxis
 );
 
-const JoltC_Quat_t * JoltC_Quat_GetTwist(
+JoltC_Quat_t * JoltC_Quat_GetTwist(
   JoltC_Quat_t * self,
-  const JoltC_Vec3_t * inAxis
+  JoltC_Vec3_t * inAxis
 );
 
 void JoltC_Quat_GetSwingTwist(
@@ -178,15 +178,15 @@ void JoltC_Quat_GetSwingTwist(
   JoltC_Quat_t * outTwist
 );
 
-const JoltC_Quat_t * JoltC_Quat_LERP(
+JoltC_Quat_t * JoltC_Quat_LERP(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inDestination,
+  JoltC_Quat_t * inDestination,
   float inFraction
 );
 
-const JoltC_Quat_t * JoltC_Quat_SLERP(
+JoltC_Quat_t * JoltC_Quat_SLERP(
   JoltC_Quat_t * self,
-  const JoltC_Quat_t * inDestination,
+  JoltC_Quat_t * inDestination,
   float inFraction
 );
 

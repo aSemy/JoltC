@@ -23,9 +23,10 @@ JoltC_AABox_t * JoltC_AABoxCast_mBox_Get(
   JoltC_AABoxCast_t * self
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
-  AABox resultValue = selfCpp->mBox;
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JoltC_AABox_t *>(result);
+  static AABox resultValue = selfCpp->mBox;
+  JoltC_AABox_t* result = new JoltC_AABox_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_AABoxCast_mBox_Set(
@@ -40,9 +41,10 @@ JoltC_Vec3_t * JoltC_AABoxCast_mDirection_Get(
   JoltC_AABoxCast_t * self
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
-  Vec3 resultValue = selfCpp->mDirection;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mDirection;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_AABoxCast_mDirection_Set(

@@ -11,7 +11,7 @@ extern "C" {
 JoltC_CapsuleShapeSettings_t * JoltC_CapsuleShapeSettings_new(
   float inHalfHeight,
   float inRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 );
 
 //endregion
@@ -60,13 +60,13 @@ void JoltC_CapsuleShapeSettings_mHalfHeightOfCylinder_Set(
   float mHalfHeightOfCylinder
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_CapsuleShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_CapsuleShapeSettings_mMaterial_Get(
   JoltC_CapsuleShapeSettings_t * self
 );
 
-const void JoltC_CapsuleShapeSettings_mMaterial_Set(
+void JoltC_CapsuleShapeSettings_mMaterial_Set(
   JoltC_CapsuleShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_CapsuleShapeSettings_mDensity_Get(

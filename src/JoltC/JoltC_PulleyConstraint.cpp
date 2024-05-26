@@ -16,8 +16,8 @@ void JoltC_PulleyConstraint_SetLength(
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
   
   selfCpp->SetLength(
-  inMinLength,
-  inMaxLength
+    inMinLength,
+    inMaxLength
   );
 };
 
@@ -49,34 +49,40 @@ JoltC_Body_t * JoltC_PulleyConstraint_GetBody1(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody1();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Body_t * JoltC_PulleyConstraint_GetBody2(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody2();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_PulleyConstraint_GetConstraintToBody1Matrix(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_PulleyConstraint_GetConstraintToBody2Matrix(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_PulleyConstraint_GetRefCount(
@@ -134,7 +140,7 @@ void JoltC_PulleyConstraint_SetConstraintPriority(
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
   
   selfCpp->SetConstraintPriority(
-  inPriority
+    inPriority
   );
 };
 
@@ -145,7 +151,7 @@ void JoltC_PulleyConstraint_SetNumVelocityStepsOverride(
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
   
   selfCpp->SetNumVelocityStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -164,7 +170,7 @@ void JoltC_PulleyConstraint_SetNumPositionStepsOverride(
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
   
   selfCpp->SetNumPositionStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -183,7 +189,7 @@ void JoltC_PulleyConstraint_SetEnabled(
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
   
   selfCpp->SetEnabled(
-  inEnabled
+    inEnabled
   );
 };
 
@@ -218,7 +224,7 @@ void JoltC_PulleyConstraint_SetUserData(
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 

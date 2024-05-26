@@ -21,7 +21,7 @@ JoltC_SkeletalAnimationJointState_t * JoltC_SkeletalAnimationJointState_From_Ske
 
 void JoltC_SkeletalAnimationJointState_FromMatrix(
   JoltC_SkeletalAnimationJointState_t * self,
-  const JoltC_Mat44_t * inMatrix
+  JoltC_Mat44_t * inMatrix
 );
 
 JoltC_Mat44_t * JoltC_SkeletalAnimationJointState_ToMatrix(

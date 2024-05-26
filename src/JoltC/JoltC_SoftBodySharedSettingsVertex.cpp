@@ -23,9 +23,10 @@ JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mPosition_Get(
   JoltC_SoftBodySharedSettingsVertex_t * self
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
-  Float3 resultValue = selfCpp->mPosition;
-  Float3* result = new Float3(resultValue);
-  return reinterpret_cast<JoltC_Float3_t *>(result);
+  static Float3 resultValue = selfCpp->mPosition;
+  JoltC_Float3_t* result = new JoltC_Float3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodySharedSettingsVertex_mPosition_Set(
@@ -40,9 +41,10 @@ JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mVelocity_Get(
   JoltC_SoftBodySharedSettingsVertex_t * self
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
-  Float3 resultValue = selfCpp->mVelocity;
-  Float3* result = new Float3(resultValue);
-  return reinterpret_cast<JoltC_Float3_t *>(result);
+  static Float3 resultValue = selfCpp->mVelocity;
+  JoltC_Float3_t* result = new JoltC_Float3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodySharedSettingsVertex_mVelocity_Set(

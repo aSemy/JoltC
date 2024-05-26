@@ -12,7 +12,7 @@ JoltC_CylinderShapeSettings_t * JoltC_CylinderShapeSettings_new(
   float inHalfHeight,
   float inRadius,
   float inConvexRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 ) {
   JoltC_CylinderShapeSettings_t * cInstance = new JoltC_CylinderShapeSettings_t();
   CylinderShapeSettings * cppInstance = new CylinderShapeSettings(
@@ -57,9 +57,10 @@ JoltC_Shape_ShapeResult_t * JoltC_CylinderShapeSettings_Create(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CylinderShapeSettings_ClearCachedResult(
@@ -122,17 +123,19 @@ void JoltC_CylinderShapeSettings_mConvexRadius_Set(
   selfCpp->mConvexRadius = mConvexRadius;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_CylinderShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_CylinderShapeSettings_mMaterial_Get(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->mMaterial;
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const void JoltC_CylinderShapeSettings_mMaterial_Set(
+void JoltC_CylinderShapeSettings_mMaterial_Set(
   JoltC_CylinderShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
   selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);

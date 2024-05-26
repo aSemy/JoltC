@@ -45,21 +45,23 @@ void JoltC_CastRayAllHitCollisionCollector_Reset(
 
 void JoltC_CastRayAllHitCollisionCollector_SetContext(
   JoltC_CastRayAllHitCollisionCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 ) {
   CastRayAllHitCollisionCollector * selfCpp = static_cast<CastRayAllHitCollisionCollector *>(self->obj);
   
   selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
+    reinterpret_cast<TransformedShape *>(inContext->obj)
   );
 };
 
-const JoltC_TransformedShape_t * JoltC_CastRayAllHitCollisionCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_CastRayAllHitCollisionCollector_GetContext(
   JoltC_CastRayAllHitCollisionCollector_t * self
 ) {
   CastRayAllHitCollisionCollector * selfCpp = static_cast<CastRayAllHitCollisionCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  const TransformedShape * resultValue = selfCpp->GetContext();
+  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CastRayAllHitCollisionCollector_UpdateEarlyOutFraction(
@@ -69,7 +71,7 @@ void JoltC_CastRayAllHitCollisionCollector_UpdateEarlyOutFraction(
   CastRayAllHitCollisionCollector * selfCpp = static_cast<CastRayAllHitCollisionCollector *>(self->obj);
   
   selfCpp->UpdateEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 
@@ -80,7 +82,7 @@ void JoltC_CastRayAllHitCollisionCollector_ResetEarlyOutFraction(
   CastRayAllHitCollisionCollector * selfCpp = static_cast<CastRayAllHitCollisionCollector *>(self->obj);
   
   selfCpp->ResetEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 
@@ -124,9 +126,10 @@ JoltC_ArrayRayCastResult_t * JoltC_CastRayAllHitCollisionCollector_mHits_Get(
   JoltC_CastRayAllHitCollisionCollector_t * self
 ) {
   CastRayAllHitCollisionCollector * selfCpp = static_cast<CastRayAllHitCollisionCollector *>(self->obj);
-  ArrayRayCastResult resultValue = selfCpp->mHits;
-  ArrayRayCastResult* result = new ArrayRayCastResult(resultValue);
-  return reinterpret_cast<JoltC_ArrayRayCastResult_t *>(result);
+  static ArrayRayCastResult resultValue = selfCpp->mHits;
+  JoltC_ArrayRayCastResult_t* result = new JoltC_ArrayRayCastResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CastRayAllHitCollisionCollector_mHits_Set(

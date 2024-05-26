@@ -51,9 +51,10 @@ JoltC_Vec3_t * JoltC_VehicleConstraintSettings_mUp_Get(
   JoltC_VehicleConstraintSettings_t * self
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mUp;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mUp;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleConstraintSettings_mUp_Set(
@@ -68,9 +69,10 @@ JoltC_Vec3_t * JoltC_VehicleConstraintSettings_mForward_Get(
   JoltC_VehicleConstraintSettings_t * self
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mForward;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mForward;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleConstraintSettings_mForward_Set(
@@ -101,9 +103,10 @@ JoltC_ArrayWheelSettings_t * JoltC_VehicleConstraintSettings_mWheels_Get(
   JoltC_VehicleConstraintSettings_t * self
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
-  ArrayWheelSettings resultValue = selfCpp->mWheels;
-  ArrayWheelSettings* result = new ArrayWheelSettings(resultValue);
-  return reinterpret_cast<JoltC_ArrayWheelSettings_t *>(result);
+  static ArrayWheelSettings resultValue = selfCpp->mWheels;
+  JoltC_ArrayWheelSettings_t* result = new JoltC_ArrayWheelSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleConstraintSettings_mWheels_Set(
@@ -118,9 +121,10 @@ JoltC_ArrayVehicleAntiRollBar_t * JoltC_VehicleConstraintSettings_mAntiRollBars_
   JoltC_VehicleConstraintSettings_t * self
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
-  ArrayVehicleAntiRollBar resultValue = selfCpp->mAntiRollBars;
-  ArrayVehicleAntiRollBar* result = new ArrayVehicleAntiRollBar(resultValue);
-  return reinterpret_cast<JoltC_ArrayVehicleAntiRollBar_t *>(result);
+  static ArrayVehicleAntiRollBar resultValue = selfCpp->mAntiRollBars;
+  JoltC_ArrayVehicleAntiRollBar_t* result = new JoltC_ArrayVehicleAntiRollBar_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleConstraintSettings_mAntiRollBars_Set(
@@ -135,8 +139,10 @@ JoltC_VehicleControllerSettings_t * JoltC_VehicleConstraintSettings_mController_
   JoltC_VehicleConstraintSettings_t * self
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
-  VehicleControllerSettings * result = selfCpp->mController;
-  return reinterpret_cast<JoltC_VehicleControllerSettings_t *>(result);
+  VehicleControllerSettings * resultValue = selfCpp->mController;
+  JoltC_VehicleControllerSettings_t* result = new JoltC_VehicleControllerSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleConstraintSettings_mController_Set(

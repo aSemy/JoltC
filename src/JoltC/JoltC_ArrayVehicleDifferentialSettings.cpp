@@ -29,11 +29,12 @@ JoltC_VehicleDifferentialSettings_t * JoltC_ArrayVehicleDifferentialSettings_at(
   long inIndex
 ) {
   ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  VehicleDifferentialSettings& resultRef = selfCpp->at(
-  inIndex
+  VehicleDifferentialSettings* resultRef = &selfCpp->at(
+    inIndex
   );
-  VehicleDifferentialSettings * result = &resultRef;
-  return reinterpret_cast<JoltC_VehicleDifferentialSettings_t *>(result);
+  JoltC_VehicleDifferentialSettings_t* result = new JoltC_VehicleDifferentialSettings_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArrayVehicleDifferentialSettings_push_back(
@@ -43,7 +44,7 @@ void JoltC_ArrayVehicleDifferentialSettings_push_back(
   ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<VehicleDifferentialSettings *>(inValue->obj)
+    *reinterpret_cast<VehicleDifferentialSettings *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArrayVehicleDifferentialSettings_resize(
   ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

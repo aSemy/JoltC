@@ -23,9 +23,10 @@ JoltC_SpringSettings_t * JoltC_MotorSettings_mSpringSettings_Get(
   JoltC_MotorSettings_t * self
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
-  SpringSettings resultValue = selfCpp->mSpringSettings;
-  SpringSettings* result = new SpringSettings(resultValue);
-  return reinterpret_cast<JoltC_SpringSettings_t *>(result);
+  static SpringSettings resultValue = selfCpp->mSpringSettings;
+  JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_MotorSettings_mSpringSettings_Set(

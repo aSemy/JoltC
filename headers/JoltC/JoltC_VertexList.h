@@ -29,7 +29,7 @@ JoltC_Float3_t * JoltC_VertexList_at(
 
 void JoltC_VertexList_push_back(
   JoltC_VertexList_t * self,
-  const JoltC_Float3_t * inVertex
+  JoltC_Float3_t * inVertex
 );
 
 void JoltC_VertexList_reserve(

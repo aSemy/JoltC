@@ -27,8 +27,8 @@ void JoltC_GearConstraintSettings_SetRatio(
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   
   selfCpp->SetRatio(
-  inNumTeethGear1,
-  inNumTeethGear2
+    inNumTeethGear1,
+    inNumTeethGear2
   );
 };
 
@@ -38,11 +38,13 @@ JoltC_Constraint_t * JoltC_GearConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
+  Constraint * resultValue = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
   );
-  return reinterpret_cast<JoltC_Constraint_t *>(result);
+  JoltC_Constraint_t* result = new JoltC_Constraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_GearConstraintSettings_GetRefCount(
@@ -93,9 +95,10 @@ JoltC_Vec3_t * JoltC_GearConstraintSettings_mHingeAxis1_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mHingeAxis1;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mHingeAxis1;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_GearConstraintSettings_mHingeAxis1_Set(
@@ -110,9 +113,10 @@ JoltC_Vec3_t * JoltC_GearConstraintSettings_mHingeAxis2_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mHingeAxis2;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mHingeAxis2;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_GearConstraintSettings_mHingeAxis2_Set(

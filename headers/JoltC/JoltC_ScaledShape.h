@@ -10,7 +10,7 @@ extern "C" {
 
 JoltC_ScaledShape_t * JoltC_ScaledShape_new(
   JoltC_Shape_t * inShape,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion
@@ -21,7 +21,7 @@ JoltC_Vec3_t * JoltC_ScaledShape_GetScale(
   JoltC_ScaledShape_t * self
 );
 
-const JoltC_Shape_t * JoltC_ScaledShape_GetInnerShape(
+JoltC_Shape_t * JoltC_ScaledShape_GetInnerShape(
   JoltC_ScaledShape_t * self
 );
 
@@ -55,8 +55,8 @@ JoltC_AABox_t * JoltC_ScaledShape_GetLocalBounds(
 
 JoltC_AABox_t * JoltC_ScaledShape_GetWorldSpaceBounds(
   JoltC_ScaledShape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Vec3_t * JoltC_ScaledShape_GetCenterOfMass(
@@ -84,28 +84,28 @@ JoltC_MassProperties_t * JoltC_ScaledShape_GetMassProperties(
   JoltC_ScaledShape_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_ScaledShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_ScaledShape_GetMaterial(
   JoltC_ScaledShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_Vec3_t * JoltC_ScaledShape_GetSurfaceNormal(
   JoltC_ScaledShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 );
 
 unsigned long long int JoltC_ScaledShape_GetSubShapeUserData(
   JoltC_ScaledShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_TransformedShape_t * JoltC_ScaledShape_GetSubShapeTransformedShape(
   JoltC_ScaledShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 );
 
@@ -115,12 +115,12 @@ float JoltC_ScaledShape_GetVolume(
 
 bool JoltC_ScaledShape_IsValidScale(
   JoltC_ScaledShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_ScaledShape_ScaleShape(
   JoltC_ScaledShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

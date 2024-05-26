@@ -29,21 +29,22 @@ JoltC_CollideShapeResult_t * JoltC_ArrayCollideShapeResult_at(
   long inIndex
 ) {
   ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  CollideShapeResult& resultRef = selfCpp->at(
-  inIndex
+  CollideShapeResult* resultRef = &selfCpp->at(
+    inIndex
   );
-  CollideShapeResult * result = &resultRef;
-  return reinterpret_cast<JoltC_CollideShapeResult_t *>(result);
+  JoltC_CollideShapeResult_t* result = new JoltC_CollideShapeResult_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArrayCollideShapeResult_push_back(
   JoltC_ArrayCollideShapeResult_t * self,
-  const JoltC_CollideShapeResult_t * inValue
+  JoltC_CollideShapeResult_t * inValue
 ) {
   ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<CollideShapeResult *>(inValue->obj)
+    *reinterpret_cast<CollideShapeResult *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArrayCollideShapeResult_reserve(
   ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArrayCollideShapeResult_resize(
   ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

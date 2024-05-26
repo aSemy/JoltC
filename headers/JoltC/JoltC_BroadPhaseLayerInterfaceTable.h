@@ -20,7 +20,7 @@ JoltC_BroadPhaseLayerInterfaceTable_t * JoltC_BroadPhaseLayerInterfaceTable_new(
 void JoltC_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
   JoltC_BroadPhaseLayerInterfaceTable_t * self,
   unsigned long inObjectLayer,
-  const JoltC_BroadPhaseLayer_t * inBroadPhaseLayer
+  JoltC_BroadPhaseLayer_t * inBroadPhaseLayer
 );
 
 unsigned long JoltC_BroadPhaseLayerInterfaceTable_GetNumBroadPhaseLayers(

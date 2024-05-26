@@ -9,9 +9,9 @@ extern "C" {
 //region constructors
 
 JoltC_ObjectVsBroadPhaseLayerFilterTable_t * JoltC_ObjectVsBroadPhaseLayerFilterTable_new(
-  const JoltC_BroadPhaseLayerInterface_t * inBroadPhaseLayerInterface,
+  JoltC_BroadPhaseLayerInterface_t * inBroadPhaseLayerInterface,
   unsigned long inNumBroadPhaseLayers,
-  const JoltC_ObjectLayerPairFilter_t * inObjectLayerPairFilter,
+  JoltC_ObjectLayerPairFilter_t * inObjectLayerPairFilter,
   unsigned long inNumObjectLayers
 ) {
   JoltC_ObjectVsBroadPhaseLayerFilterTable_t * cInstance = new JoltC_ObjectVsBroadPhaseLayerFilterTable_t();

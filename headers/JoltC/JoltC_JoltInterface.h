@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_JoltInterface_t * JoltC_JoltInterface_new(
-  const JoltC_JoltSettings_t * inSettings
+  JoltC_JoltSettings_t * inSettings
 );
 
 //endregion

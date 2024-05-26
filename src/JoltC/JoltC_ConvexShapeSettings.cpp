@@ -94,9 +94,10 @@ JoltC_Shape_ShapeResult_t * JoltC_ConvexShapeSettings_Create(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ConvexShapeSettings_ClearCachedResult(
@@ -111,17 +112,19 @@ void JoltC_ConvexShapeSettings_ClearCachedResult(
 
 //region properties
 
-const JoltC_PhysicsMaterial_t * JoltC_ConvexShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_ConvexShapeSettings_mMaterial_Get(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->mMaterial;
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const void JoltC_ConvexShapeSettings_mMaterial_Set(
+void JoltC_ConvexShapeSettings_mMaterial_Set(
   JoltC_ConvexShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
   selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);

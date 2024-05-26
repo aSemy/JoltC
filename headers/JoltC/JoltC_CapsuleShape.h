@@ -11,7 +11,7 @@ extern "C" {
 JoltC_CapsuleShape_t * JoltC_CapsuleShape_new(
   float inHalfHeight,
   float inRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 );
 
 //endregion
@@ -65,8 +65,8 @@ JoltC_AABox_t * JoltC_CapsuleShape_GetLocalBounds(
 
 JoltC_AABox_t * JoltC_CapsuleShape_GetWorldSpaceBounds(
   JoltC_CapsuleShape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Vec3_t * JoltC_CapsuleShape_GetCenterOfMass(
@@ -94,28 +94,28 @@ JoltC_MassProperties_t * JoltC_CapsuleShape_GetMassProperties(
   JoltC_CapsuleShape_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_CapsuleShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_CapsuleShape_GetMaterial(
   JoltC_CapsuleShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_Vec3_t * JoltC_CapsuleShape_GetSurfaceNormal(
   JoltC_CapsuleShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 );
 
 unsigned long long int JoltC_CapsuleShape_GetSubShapeUserData(
   JoltC_CapsuleShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_TransformedShape_t * JoltC_CapsuleShape_GetSubShapeTransformedShape(
   JoltC_CapsuleShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 );
 
@@ -125,12 +125,12 @@ float JoltC_CapsuleShape_GetVolume(
 
 bool JoltC_CapsuleShape_IsValidScale(
   JoltC_CapsuleShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_CapsuleShape_ScaleShape(
   JoltC_CapsuleShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

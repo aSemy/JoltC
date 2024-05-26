@@ -16,8 +16,8 @@ void JoltC_DistanceConstraint_SetDistance(
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
   
   selfCpp->SetDistance(
-  inMinDistance,
-  inMaxDistance
+    inMinDistance,
+    inMaxDistance
   );
 };
 
@@ -41,19 +41,20 @@ JoltC_SpringSettings_t * JoltC_DistanceConstraint_GetLimitsSpringSettings(
   JoltC_DistanceConstraint_t * self
 ) {
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  SpringSettings& resultRef = selfCpp->GetLimitsSpringSettings();
-  SpringSettings * result = &resultRef;
-  return reinterpret_cast<JoltC_SpringSettings_t *>(result);
+  SpringSettings* resultRef = &selfCpp->GetLimitsSpringSettings();
+  JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_DistanceConstraint_SetLimitsSpringSettings(
   JoltC_DistanceConstraint_t * self,
-  const JoltC_SpringSettings_t * inSettings
+  JoltC_SpringSettings_t * inSettings
 ) {
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
   
   selfCpp->SetLimitsSpringSettings(
-  *reinterpret_cast<SpringSettings *>(inSettings->obj)
+    *reinterpret_cast<SpringSettings *>(inSettings->obj)
   );
 };
 
@@ -69,34 +70,40 @@ JoltC_Body_t * JoltC_DistanceConstraint_GetBody1(
   JoltC_DistanceConstraint_t * self
 ) {
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody1();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Body_t * JoltC_DistanceConstraint_GetBody2(
   JoltC_DistanceConstraint_t * self
 ) {
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody2();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_DistanceConstraint_GetConstraintToBody1Matrix(
   JoltC_DistanceConstraint_t * self
 ) {
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_DistanceConstraint_GetConstraintToBody2Matrix(
   JoltC_DistanceConstraint_t * self
 ) {
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_DistanceConstraint_GetRefCount(
@@ -154,7 +161,7 @@ void JoltC_DistanceConstraint_SetConstraintPriority(
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
   
   selfCpp->SetConstraintPriority(
-  inPriority
+    inPriority
   );
 };
 
@@ -165,7 +172,7 @@ void JoltC_DistanceConstraint_SetNumVelocityStepsOverride(
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
   
   selfCpp->SetNumVelocityStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -184,7 +191,7 @@ void JoltC_DistanceConstraint_SetNumPositionStepsOverride(
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
   
   selfCpp->SetNumPositionStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -203,7 +210,7 @@ void JoltC_DistanceConstraint_SetEnabled(
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
   
   selfCpp->SetEnabled(
-  inEnabled
+    inEnabled
   );
 };
 
@@ -238,7 +245,7 @@ void JoltC_DistanceConstraint_SetUserData(
   DistanceConstraint * selfCpp = static_cast<DistanceConstraint *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 

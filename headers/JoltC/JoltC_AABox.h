@@ -11,8 +11,8 @@ extern "C" {
 JoltC_AABox_t * JoltC_AABox_new_0();
 
 JoltC_AABox_t * JoltC_AABox_new_1(
-  const JoltC_Vec3_t * inMin,
-  const JoltC_Vec3_t * inMax
+  JoltC_Vec3_t * inMin,
+  JoltC_Vec3_t * inMax
 );
 
 //endregion
@@ -23,7 +23,7 @@ JoltC_AABox_t * JoltC_AABox_sBiggest();
 
 bool JoltC_AABox_Overlaps(
   JoltC_AABox_t * self,
-  const JoltC_AABox_t * inOther
+  JoltC_AABox_t * inOther
 );
 
 //endregion

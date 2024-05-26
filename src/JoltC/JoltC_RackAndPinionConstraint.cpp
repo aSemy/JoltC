@@ -10,14 +10,14 @@ extern "C" {
 
 void JoltC_RackAndPinionConstraint_SetConstraints(
   JoltC_RackAndPinionConstraint_t * self,
-  const JoltC_Constraint_t * inPinion,
-  const JoltC_Constraint_t * inRack
+  JoltC_Constraint_t * inPinion,
+  JoltC_Constraint_t * inRack
 ) {
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
   
   selfCpp->SetConstraints(
-  reinterpret_cast<Constraint *>(inPinion->obj),
-  reinterpret_cast<Constraint *>(inRack->obj)
+    reinterpret_cast<Constraint *>(inPinion->obj),
+    reinterpret_cast<Constraint *>(inRack->obj)
   );
 };
 
@@ -33,34 +33,40 @@ JoltC_Body_t * JoltC_RackAndPinionConstraint_GetBody1(
   JoltC_RackAndPinionConstraint_t * self
 ) {
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody1();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody1();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Body_t * JoltC_RackAndPinionConstraint_GetBody2(
   JoltC_RackAndPinionConstraint_t * self
 ) {
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
-  Body * result = selfCpp->GetBody2();
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  Body * resultValue = selfCpp->GetBody2();
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_RackAndPinionConstraint_GetConstraintToBody1Matrix(
   JoltC_RackAndPinionConstraint_t * self
 ) {
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Mat44_t * JoltC_RackAndPinionConstraint_GetConstraintToBody2Matrix(
   JoltC_RackAndPinionConstraint_t * self
 ) {
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
-  Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_RackAndPinionConstraint_GetRefCount(
@@ -118,7 +124,7 @@ void JoltC_RackAndPinionConstraint_SetConstraintPriority(
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
   
   selfCpp->SetConstraintPriority(
-  inPriority
+    inPriority
   );
 };
 
@@ -129,7 +135,7 @@ void JoltC_RackAndPinionConstraint_SetNumVelocityStepsOverride(
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
   
   selfCpp->SetNumVelocityStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -148,7 +154,7 @@ void JoltC_RackAndPinionConstraint_SetNumPositionStepsOverride(
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
   
   selfCpp->SetNumPositionStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -167,7 +173,7 @@ void JoltC_RackAndPinionConstraint_SetEnabled(
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
   
   selfCpp->SetEnabled(
-  inEnabled
+    inEnabled
   );
 };
 
@@ -202,7 +208,7 @@ void JoltC_RackAndPinionConstraint_SetUserData(
   RackAndPinionConstraint * selfCpp = static_cast<RackAndPinionConstraint *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 

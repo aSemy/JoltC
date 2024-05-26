@@ -29,21 +29,22 @@ JoltC_SoftBodySharedSettingsVolume_t * JoltC_ArraySoftBodySharedSettingsVolume_a
   long inIndex
 ) {
   ArraySoftBodySharedSettingsVolume * selfCpp = static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
-  SoftBodySharedSettingsVolume& resultRef = selfCpp->at(
-  inIndex
+  SoftBodySharedSettingsVolume* resultRef = &selfCpp->at(
+    inIndex
   );
-  SoftBodySharedSettingsVolume * result = &resultRef;
-  return reinterpret_cast<JoltC_SoftBodySharedSettingsVolume_t *>(result);
+  JoltC_SoftBodySharedSettingsVolume_t* result = new JoltC_SoftBodySharedSettingsVolume_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArraySoftBodySharedSettingsVolume_push_back(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  const JoltC_SoftBodySharedSettingsVolume_t * inValue
+  JoltC_SoftBodySharedSettingsVolume_t * inValue
 ) {
   ArraySoftBodySharedSettingsVolume * selfCpp = static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<SoftBodySharedSettingsVolume *>(inValue->obj)
+    *reinterpret_cast<SoftBodySharedSettingsVolume *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArraySoftBodySharedSettingsVolume_reserve(
   ArraySoftBodySharedSettingsVolume * selfCpp = static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArraySoftBodySharedSettingsVolume_resize(
   ArraySoftBodySharedSettingsVolume * selfCpp = static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

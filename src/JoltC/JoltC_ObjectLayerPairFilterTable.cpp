@@ -39,8 +39,8 @@ void JoltC_ObjectLayerPairFilterTable_DisableCollision(
   ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
   
   selfCpp->DisableCollision(
-  inLayer1,
-  inLayer2
+    inLayer1,
+    inLayer2
   );
 };
 
@@ -52,8 +52,8 @@ void JoltC_ObjectLayerPairFilterTable_EnableCollision(
   ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
   
   selfCpp->EnableCollision(
-  inLayer1,
-  inLayer2
+    inLayer1,
+    inLayer2
   );
 };
 
@@ -64,8 +64,8 @@ bool JoltC_ObjectLayerPairFilterTable_ShouldCollide(
 ) {
   ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
   bool result = selfCpp->ShouldCollide(
-  inLayer1,
-  inLayer2
+    inLayer1,
+    inLayer2
   );
   return result;
 };

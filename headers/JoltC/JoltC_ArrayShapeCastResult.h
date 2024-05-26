@@ -23,7 +23,7 @@ JoltC_ShapeCastResult_t * JoltC_ArrayShapeCastResult_at(
 
 void JoltC_ArrayShapeCastResult_push_back(
   JoltC_ArrayShapeCastResult_t * self,
-  const JoltC_ShapeCastResult_t * inValue
+  JoltC_ShapeCastResult_t * inValue
 );
 
 void JoltC_ArrayShapeCastResult_reserve(

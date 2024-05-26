@@ -53,9 +53,10 @@ JoltC_Vec3_t * JoltC_CharacterBaseSettings_mUp_Get(
   JoltC_CharacterBaseSettings_t * self
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mUp;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mUp;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CharacterBaseSettings_mUp_Set(
@@ -70,9 +71,10 @@ JoltC_Plane_t * JoltC_CharacterBaseSettings_mSupportingVolume_Get(
   JoltC_CharacterBaseSettings_t * self
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
-  Plane resultValue = selfCpp->mSupportingVolume;
-  Plane* result = new Plane(resultValue);
-  return reinterpret_cast<JoltC_Plane_t *>(result);
+  static Plane resultValue = selfCpp->mSupportingVolume;
+  JoltC_Plane_t* result = new JoltC_Plane_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CharacterBaseSettings_mSupportingVolume_Set(
@@ -99,17 +101,19 @@ void JoltC_CharacterBaseSettings_mMaxSlopeAngle_Set(
   selfCpp->mMaxSlopeAngle = mMaxSlopeAngle;
 };
 
-const JoltC_Shape_t * JoltC_CharacterBaseSettings_mShape_Get(
+JoltC_Shape_t * JoltC_CharacterBaseSettings_mShape_Get(
   JoltC_CharacterBaseSettings_t * self
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
-  const Shape * result = selfCpp->mShape;
-  return reinterpret_cast<const JoltC_Shape_t *>(result);
+  const Shape * resultValue = selfCpp->mShape;
+  JoltC_Shape_t* result = new JoltC_Shape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const void JoltC_CharacterBaseSettings_mShape_Set(
+void JoltC_CharacterBaseSettings_mShape_Set(
   JoltC_CharacterBaseSettings_t * self,
-  const JoltC_Shape_t * mShape
+  JoltC_Shape_t * mShape
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mShape = reinterpret_cast<Shape *>(mShape->obj);

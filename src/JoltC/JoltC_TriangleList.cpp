@@ -40,21 +40,22 @@ JoltC_Triangle_t * JoltC_TriangleList_at(
   long inIndex
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  Triangle& resultRef = selfCpp->at(
-  inIndex
+  Triangle* resultRef = &selfCpp->at(
+    inIndex
   );
-  Triangle * result = &resultRef;
-  return reinterpret_cast<JoltC_Triangle_t *>(result);
+  JoltC_Triangle_t* result = new JoltC_Triangle_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_TriangleList_push_back(
   JoltC_TriangleList_t * self,
-  const JoltC_Triangle_t * inTriangle
+  JoltC_Triangle_t * inTriangle
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<Triangle *>(inTriangle->obj)
+    *reinterpret_cast<Triangle *>(inTriangle->obj)
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_TriangleList_reserve(
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -76,7 +77,7 @@ void JoltC_TriangleList_resize(
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

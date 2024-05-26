@@ -23,9 +23,10 @@ JoltC_VehicleEngineSettings_t * JoltC_TrackedVehicleControllerSettings_mEngine_G
   JoltC_TrackedVehicleControllerSettings_t * self
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
-  VehicleEngineSettings resultValue = selfCpp->mEngine;
-  VehicleEngineSettings* result = new VehicleEngineSettings(resultValue);
-  return reinterpret_cast<JoltC_VehicleEngineSettings_t *>(result);
+  static VehicleEngineSettings resultValue = selfCpp->mEngine;
+  JoltC_VehicleEngineSettings_t* result = new JoltC_VehicleEngineSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_TrackedVehicleControllerSettings_mEngine_Set(
@@ -40,9 +41,10 @@ JoltC_VehicleTransmissionSettings_t * JoltC_TrackedVehicleControllerSettings_mTr
   JoltC_TrackedVehicleControllerSettings_t * self
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
-  VehicleTransmissionSettings resultValue = selfCpp->mTransmission;
-  VehicleTransmissionSettings* result = new VehicleTransmissionSettings(resultValue);
-  return reinterpret_cast<JoltC_VehicleTransmissionSettings_t *>(result);
+  static VehicleTransmissionSettings resultValue = selfCpp->mTransmission;
+  JoltC_VehicleTransmissionSettings_t* result = new JoltC_VehicleTransmissionSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_TrackedVehicleControllerSettings_mTransmission_Set(

@@ -40,11 +40,12 @@ JoltC_SkeletalAnimationAnimatedJoint_t * JoltC_ArraySkeletonAnimatedJoint_at(
   long inIndex
 ) {
   ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  SkeletalAnimationAnimatedJoint& resultRef = selfCpp->at(
-  inIndex
+  SkeletalAnimationAnimatedJoint* resultRef = &selfCpp->at(
+    inIndex
   );
-  SkeletalAnimationAnimatedJoint * result = &resultRef;
-  return reinterpret_cast<JoltC_SkeletalAnimationAnimatedJoint_t *>(result);
+  JoltC_SkeletalAnimationAnimatedJoint_t* result = new JoltC_SkeletalAnimationAnimatedJoint_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArraySkeletonAnimatedJoint_push_back(
@@ -54,7 +55,7 @@ void JoltC_ArraySkeletonAnimatedJoint_push_back(
   ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<SkeletalAnimationAnimatedJoint *>(inValue->obj)
+    *reinterpret_cast<SkeletalAnimationAnimatedJoint *>(inValue->obj)
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArraySkeletonAnimatedJoint_reserve(
   ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -76,7 +77,7 @@ void JoltC_ArraySkeletonAnimatedJoint_resize(
   ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

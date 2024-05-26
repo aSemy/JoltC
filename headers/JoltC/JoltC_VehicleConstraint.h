@@ -10,7 +10,7 @@ extern "C" {
 
 JoltC_VehicleConstraint_t * JoltC_VehicleConstraint_new(
   JoltC_Body_t * inVehicleBody,
-  const JoltC_VehicleConstraintSettings_t * inSettings
+  JoltC_VehicleConstraintSettings_t * inSettings
 );
 
 //endregion
@@ -24,7 +24,7 @@ void JoltC_VehicleConstraint_SetMaxPitchRollAngle(
 
 void JoltC_VehicleConstraint_SetVehicleCollisionTester(
   JoltC_VehicleConstraint_t * self,
-  const JoltC_VehicleCollisionTester_t * inTester
+  JoltC_VehicleCollisionTester_t * inTester
 );
 
 JoltC_Vec3_t * JoltC_VehicleConstraint_GetLocalUp(
@@ -47,7 +47,7 @@ JoltC_VehicleController_t * JoltC_VehicleConstraint_GetController(
   JoltC_VehicleConstraint_t * self
 );
 
-const JoltC_Wheel_t * JoltC_VehicleConstraint_GetWheel(
+JoltC_Wheel_t * JoltC_VehicleConstraint_GetWheel(
   JoltC_VehicleConstraint_t * self,
   unsigned long inIdx
 );

@@ -12,7 +12,7 @@ JoltC_TaperedCapsuleShapeSettings_t * JoltC_TaperedCapsuleShapeSettings_new(
   float inHalfHeightOfTaperedCylinder,
   float inTopRadius,
   float inBottomRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 ) {
   JoltC_TaperedCapsuleShapeSettings_t * cInstance = new JoltC_TaperedCapsuleShapeSettings_t();
   TaperedCapsuleShapeSettings * cppInstance = new TaperedCapsuleShapeSettings(
@@ -57,9 +57,10 @@ JoltC_Shape_ShapeResult_t * JoltC_TaperedCapsuleShapeSettings_Create(
   JoltC_TaperedCapsuleShapeSettings_t * self
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_TaperedCapsuleShapeSettings_ClearCachedResult(
@@ -122,17 +123,19 @@ void JoltC_TaperedCapsuleShapeSettings_mBottomRadius_Set(
   selfCpp->mBottomRadius = mBottomRadius;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_TaperedCapsuleShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_TaperedCapsuleShapeSettings_mMaterial_Get(
   JoltC_TaperedCapsuleShapeSettings_t * self
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->mMaterial;
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const void JoltC_TaperedCapsuleShapeSettings_mMaterial_Set(
+void JoltC_TaperedCapsuleShapeSettings_mMaterial_Set(
   JoltC_TaperedCapsuleShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
   selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);

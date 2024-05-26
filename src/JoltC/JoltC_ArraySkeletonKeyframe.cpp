@@ -40,11 +40,12 @@ JoltC_SkeletalAnimationKeyframe_t * JoltC_ArraySkeletonKeyframe_at(
   long inIndex
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  SkeletalAnimationKeyframe& resultRef = selfCpp->at(
-  inIndex
+  SkeletalAnimationKeyframe* resultRef = &selfCpp->at(
+    inIndex
   );
-  SkeletalAnimationKeyframe * result = &resultRef;
-  return reinterpret_cast<JoltC_SkeletalAnimationKeyframe_t *>(result);
+  JoltC_SkeletalAnimationKeyframe_t* result = new JoltC_SkeletalAnimationKeyframe_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArraySkeletonKeyframe_push_back(
@@ -54,7 +55,7 @@ void JoltC_ArraySkeletonKeyframe_push_back(
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<SkeletalAnimationKeyframe *>(inValue->obj)
+    *reinterpret_cast<SkeletalAnimationKeyframe *>(inValue->obj)
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArraySkeletonKeyframe_reserve(
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -76,7 +77,7 @@ void JoltC_ArraySkeletonKeyframe_resize(
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

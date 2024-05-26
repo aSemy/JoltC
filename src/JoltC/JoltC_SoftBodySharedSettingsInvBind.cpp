@@ -28,9 +28,10 @@ JoltC_Mat44_t * JoltC_SoftBodySharedSettingsInvBind_mInvBind_Get(
   JoltC_SoftBodySharedSettingsInvBind_t * self
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
-  Mat44 resultValue = selfCpp->mInvBind;
-  Mat44* result = new Mat44(resultValue);
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  static Mat44 resultValue = selfCpp->mInvBind;
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodySharedSettingsInvBind_mInvBind_Set(

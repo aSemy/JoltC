@@ -18,7 +18,7 @@ JoltC_BroadPhaseLayerInterfaceMask_t * JoltC_BroadPhaseLayerInterfaceMask_new(
 
 void JoltC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
   JoltC_BroadPhaseLayerInterfaceMask_t * self,
-  const JoltC_BroadPhaseLayer_t * inBroadPhaseLayer,
+  JoltC_BroadPhaseLayer_t * inBroadPhaseLayer,
   unsigned long inGroupsToInclude,
   unsigned long inGroupsToExclude
 );

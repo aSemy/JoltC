@@ -24,10 +24,10 @@ void JoltC_CollideShapeAnyHitCollisionCollector_Reset(
 
 void JoltC_CollideShapeAnyHitCollisionCollector_SetContext(
   JoltC_CollideShapeAnyHitCollisionCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 );
 
-const JoltC_TransformedShape_t * JoltC_CollideShapeAnyHitCollisionCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_CollideShapeAnyHitCollisionCollector_GetContext(
   JoltC_CollideShapeAnyHitCollisionCollector_t * self
 );
 

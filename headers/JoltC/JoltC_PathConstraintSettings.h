@@ -36,13 +36,13 @@ void JoltC_PathConstraintSettings_Release(
 
 //region properties
 
-const JoltC_PathConstraintPath_t * JoltC_PathConstraintSettings_mPath_Get(
+JoltC_PathConstraintPath_t * JoltC_PathConstraintSettings_mPath_Get(
   JoltC_PathConstraintSettings_t * self
 );
 
-const void JoltC_PathConstraintSettings_mPath_Set(
+void JoltC_PathConstraintSettings_mPath_Set(
   JoltC_PathConstraintSettings_t * self,
-  const JoltC_PathConstraintPath_t * mPath
+  JoltC_PathConstraintPath_t * mPath
 );
 
 JoltC_Vec3_t * JoltC_PathConstraintSettings_mPathPosition_Get(

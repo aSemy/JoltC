@@ -10,11 +10,11 @@ extern "C" {
 
 void JoltC_PathConstraint_SetPath(
   JoltC_PathConstraint_t * self,
-  const JoltC_PathConstraintPath_t * inPath,
+  JoltC_PathConstraintPath_t * inPath,
   float inPathFraction
 );
 
-const JoltC_PathConstraintPath_t * JoltC_PathConstraint_GetPath(
+JoltC_PathConstraintPath_t * JoltC_PathConstraint_GetPath(
   JoltC_PathConstraint_t * self
 );
 

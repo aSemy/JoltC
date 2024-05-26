@@ -10,10 +10,10 @@ extern "C" {
 
 JoltC_ShapeGetTriangles_t * JoltC_ShapeGetTriangles_new(
   JoltC_Shape_t * inShape,
-  const JoltC_AABox_t * inBox,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale
+  JoltC_AABox_t * inBox,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale
 ) {
   JoltC_ShapeGetTriangles_t * cInstance = new JoltC_ShapeGetTriangles_t();
   ShapeGetTriangles * cppInstance = new ShapeGetTriangles(
@@ -55,15 +55,17 @@ const void* JoltC_ShapeGetTriangles_GetVerticesData(
   return result;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_ShapeGetTriangles_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_ShapeGetTriangles_GetMaterial(
   JoltC_ShapeGetTriangles_t * self,
   long inTriangle
 ) {
   ShapeGetTriangles * selfCpp = static_cast<ShapeGetTriangles *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetMaterial(
-  inTriangle
+  const PhysicsMaterial * resultValue = selfCpp->GetMaterial(
+    inTriangle
   );
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

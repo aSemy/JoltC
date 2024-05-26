@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_MotorcycleController_t * JoltC_MotorcycleController_new(
-  const JoltC_MotorcycleControllerSettings_t * inSettings,
+  JoltC_MotorcycleControllerSettings_t * inSettings,
   JoltC_VehicleConstraint_t * inConstraint
 ) {
   JoltC_MotorcycleController_t * cInstance = new JoltC_MotorcycleController_t();
@@ -40,7 +40,7 @@ void JoltC_MotorcycleController_EnableLeanController(
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
   
   selfCpp->EnableLeanController(
-  inEnable
+    inEnable
   );
 };
 
@@ -62,10 +62,10 @@ void JoltC_MotorcycleController_SetDriverInput(
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
   
   selfCpp->SetDriverInput(
-  inForward,
-  inRight,
-  inBrake,
-  inHandBrake
+    inForward,
+    inRight,
+    inBrake,
+    inHandBrake
   );
 };
 
@@ -76,7 +76,7 @@ void JoltC_MotorcycleController_SetForwardInput(
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
   
   selfCpp->SetForwardInput(
-  inForward
+    inForward
   );
 };
 
@@ -95,7 +95,7 @@ void JoltC_MotorcycleController_SetRightInput(
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
   
   selfCpp->SetRightInput(
-  inRight
+    inRight
   );
 };
 
@@ -114,7 +114,7 @@ void JoltC_MotorcycleController_SetBrakeInput(
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
   
   selfCpp->SetBrakeInput(
-  inBrake
+    inBrake
   );
 };
 
@@ -133,7 +133,7 @@ void JoltC_MotorcycleController_SetHandBrakeInput(
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
   
   selfCpp->SetHandBrakeInput(
-  inHandBrake
+    inHandBrake
   );
 };
 
@@ -149,27 +149,30 @@ JoltC_VehicleEngine_t * JoltC_MotorcycleController_GetEngine(
   JoltC_MotorcycleController_t * self
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  VehicleEngine& resultRef = selfCpp->GetEngine();
-  VehicleEngine * result = &resultRef;
-  return reinterpret_cast<JoltC_VehicleEngine_t *>(result);
+  VehicleEngine* resultRef = &selfCpp->GetEngine();
+  JoltC_VehicleEngine_t* result = new JoltC_VehicleEngine_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_VehicleTransmission_t * JoltC_MotorcycleController_GetTransmission(
   JoltC_MotorcycleController_t * self
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  VehicleTransmission& resultRef = selfCpp->GetTransmission();
-  VehicleTransmission * result = &resultRef;
-  return reinterpret_cast<JoltC_VehicleTransmission_t *>(result);
+  VehicleTransmission* resultRef = &selfCpp->GetTransmission();
+  JoltC_VehicleTransmission_t* result = new JoltC_VehicleTransmission_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_ArrayVehicleDifferentialSettings_t * JoltC_MotorcycleController_GetDifferentials(
   JoltC_MotorcycleController_t * self
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  ArrayVehicleDifferentialSettings& resultRef = selfCpp->GetDifferentials();
-  ArrayVehicleDifferentialSettings * result = &resultRef;
-  return reinterpret_cast<JoltC_ArrayVehicleDifferentialSettings_t *>(result);
+  ArrayVehicleDifferentialSettings* resultRef = &selfCpp->GetDifferentials();
+  JoltC_ArrayVehicleDifferentialSettings_t* result = new JoltC_ArrayVehicleDifferentialSettings_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 float JoltC_MotorcycleController_GetDifferentialLimitedSlipRatio(
@@ -187,7 +190,7 @@ void JoltC_MotorcycleController_SetDifferentialLimitedSlipRatio(
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
   
   selfCpp->SetDifferentialLimitedSlipRatio(
-  inV
+    inV
   );
 };
 

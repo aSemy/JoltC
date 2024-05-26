@@ -29,22 +29,22 @@ JoltC_Float3_t * JoltC_Float3_new(
 
 bool JoltC_Float3_Equals(
   JoltC_Float3_t * self,
-  const JoltC_Float3_t * inV
+  JoltC_Float3_t * inV
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   bool result = selfCpp->operator==(
-  *reinterpret_cast<Float3 *>(inV->obj)
+    *reinterpret_cast<Float3 *>(inV->obj)
   );
   return result;
 };
 
 bool JoltC_Float3_NotEquals(
   JoltC_Float3_t * self,
-  const JoltC_Float3_t * inV
+  JoltC_Float3_t * inV
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   bool result = selfCpp->operator!=(
-  *reinterpret_cast<Float3 *>(inV->obj)
+    *reinterpret_cast<Float3 *>(inV->obj)
   );
   return result;
 };

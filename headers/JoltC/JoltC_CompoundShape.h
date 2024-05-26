@@ -23,7 +23,7 @@ long JoltC_CompoundShape_GetNumSubShapes(
   JoltC_CompoundShape_t * self
 );
 
-const JoltC_CompoundShapeSubShape_t * JoltC_CompoundShape_GetSubShape(
+JoltC_CompoundShapeSubShape_t * JoltC_CompoundShape_GetSubShape(
   JoltC_CompoundShape_t * self,
   long inIdx
 );
@@ -58,8 +58,8 @@ JoltC_AABox_t * JoltC_CompoundShape_GetLocalBounds(
 
 JoltC_AABox_t * JoltC_CompoundShape_GetWorldSpaceBounds(
   JoltC_CompoundShape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Vec3_t * JoltC_CompoundShape_GetCenterOfMass(
@@ -87,28 +87,28 @@ JoltC_MassProperties_t * JoltC_CompoundShape_GetMassProperties(
   JoltC_CompoundShape_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_CompoundShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_CompoundShape_GetMaterial(
   JoltC_CompoundShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_Vec3_t * JoltC_CompoundShape_GetSurfaceNormal(
   JoltC_CompoundShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 );
 
 unsigned long long int JoltC_CompoundShape_GetSubShapeUserData(
   JoltC_CompoundShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_TransformedShape_t * JoltC_CompoundShape_GetSubShapeTransformedShape(
   JoltC_CompoundShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 );
 
@@ -118,12 +118,12 @@ float JoltC_CompoundShape_GetVolume(
 
 bool JoltC_CompoundShape_IsValidScale(
   JoltC_CompoundShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_CompoundShape_ScaleShape(
   JoltC_CompoundShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

@@ -24,7 +24,7 @@ void JoltC_Vector2_IsZero(
 
 void JoltC_Vector2_IsClose(
   JoltC_Vector2_t * self,
-  const JoltC_Vector2_t * inV,
+  JoltC_Vector2_t * inV,
   float inMaxDistSq
 );
 
@@ -33,7 +33,7 @@ void JoltC_Vector2_IsNormalized(
   float inTolerance
 );
 
-const JoltC_Vector2_t * JoltC_Vector2_Normalized(
+JoltC_Vector2_t * JoltC_Vector2_Normalized(
   JoltC_Vector2_t * self
 );
 
@@ -44,12 +44,12 @@ float JoltC_Vector2_GetComponent(
 
 JoltC_Vector2_t * JoltC_Vector2_Add(
   JoltC_Vector2_t * self,
-  const JoltC_Vector2_t * inV
+  JoltC_Vector2_t * inV
 );
 
 JoltC_Vector2_t * JoltC_Vector2_Sub(
   JoltC_Vector2_t * self,
-  const JoltC_Vector2_t * inV
+  JoltC_Vector2_t * inV
 );
 
 JoltC_Vector2_t * JoltC_Vector2_Mul(
@@ -64,7 +64,7 @@ JoltC_Vector2_t * JoltC_Vector2_Div(
 
 float JoltC_Vector2_Dot(
   JoltC_Vector2_t * self,
-  const JoltC_Vector2_t * inRHS
+  JoltC_Vector2_t * inRHS
 );
 
 //endregion

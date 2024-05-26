@@ -24,8 +24,8 @@ unsigned long JoltC_ObjectLayerPairFilterMask_sGetObjectLayer(
   unsigned long inMask
 ) {
   unsigned long result = ObjectLayerPairFilterMask::sGetObjectLayer(
-  inGroup,
-  inMask
+    inGroup,
+    inMask
   );
   return result;
 };
@@ -34,7 +34,7 @@ unsigned long JoltC_ObjectLayerPairFilterMask_sGetGroup(
   unsigned long inObjectLayer
 ) {
   unsigned long result = ObjectLayerPairFilterMask::sGetGroup(
-  inObjectLayer
+    inObjectLayer
   );
   return result;
 };
@@ -43,7 +43,7 @@ unsigned long JoltC_ObjectLayerPairFilterMask_sGetMask(
   unsigned long inObjectLayer
 ) {
   unsigned long result = ObjectLayerPairFilterMask::sGetMask(
-  inObjectLayer
+    inObjectLayer
   );
   return result;
 };
@@ -55,8 +55,8 @@ bool JoltC_ObjectLayerPairFilterMask_ShouldCollide(
 ) {
   ObjectLayerPairFilterMask * selfCpp = static_cast<ObjectLayerPairFilterMask *>(self->obj);
   bool result = selfCpp->ShouldCollide(
-  inLayer1,
-  inLayer2
+    inLayer1,
+    inLayer2
   );
   return result;
 };

@@ -24,10 +24,10 @@ void JoltC_CastRayClosestHitCollisionCollector_Reset(
 
 void JoltC_CastRayClosestHitCollisionCollector_SetContext(
   JoltC_CastRayClosestHitCollisionCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 );
 
-const JoltC_TransformedShape_t * JoltC_CastRayClosestHitCollisionCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_CastRayClosestHitCollisionCollector_GetContext(
   JoltC_CastRayClosestHitCollisionCollector_t * self
 );
 

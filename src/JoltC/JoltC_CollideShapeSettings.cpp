@@ -119,9 +119,10 @@ JoltC_Vec3_t * JoltC_CollideShapeSettings_mActiveEdgeMovementDirection_Get(
   JoltC_CollideShapeSettings_t * self
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mActiveEdgeMovementDirection;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mActiveEdgeMovementDirection;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CollideShapeSettings_mActiveEdgeMovementDirection_Set(

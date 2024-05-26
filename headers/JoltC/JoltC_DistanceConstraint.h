@@ -28,7 +28,7 @@ JoltC_SpringSettings_t * JoltC_DistanceConstraint_GetLimitsSpringSettings(
 
 void JoltC_DistanceConstraint_SetLimitsSpringSettings(
   JoltC_DistanceConstraint_t * self,
-  const JoltC_SpringSettings_t * inSettings
+  JoltC_SpringSettings_t * inSettings
 );
 
 float JoltC_DistanceConstraint_GetTotalLambdaPosition(

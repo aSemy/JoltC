@@ -73,9 +73,10 @@ JoltC_Vec3_t * JoltC_WheelSettings_mPosition_Get(
   JoltC_WheelSettings_t * self
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mPosition;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mPosition;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheelSettings_mPosition_Set(
@@ -90,9 +91,10 @@ JoltC_Vec3_t * JoltC_WheelSettings_mSuspensionForcePoint_Get(
   JoltC_WheelSettings_t * self
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mSuspensionForcePoint;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mSuspensionForcePoint;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheelSettings_mSuspensionForcePoint_Set(
@@ -107,9 +109,10 @@ JoltC_Vec3_t * JoltC_WheelSettings_mSuspensionDirection_Get(
   JoltC_WheelSettings_t * self
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mSuspensionDirection;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mSuspensionDirection;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheelSettings_mSuspensionDirection_Set(
@@ -124,9 +127,10 @@ JoltC_Vec3_t * JoltC_WheelSettings_mSteeringAxis_Get(
   JoltC_WheelSettings_t * self
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mSteeringAxis;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mSteeringAxis;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheelSettings_mSteeringAxis_Set(
@@ -141,9 +145,10 @@ JoltC_Vec3_t * JoltC_WheelSettings_mWheelUp_Get(
   JoltC_WheelSettings_t * self
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mWheelUp;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mWheelUp;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheelSettings_mWheelUp_Set(
@@ -158,9 +163,10 @@ JoltC_Vec3_t * JoltC_WheelSettings_mWheelForward_Get(
   JoltC_WheelSettings_t * self
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mWheelForward;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mWheelForward;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheelSettings_mWheelForward_Set(
@@ -175,9 +181,10 @@ JoltC_SpringSettings_t * JoltC_WheelSettings_mSuspensionSpring_Get(
   JoltC_WheelSettings_t * self
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
-  SpringSettings resultValue = selfCpp->mSuspensionSpring;
-  SpringSettings* result = new SpringSettings(resultValue);
-  return reinterpret_cast<JoltC_SpringSettings_t *>(result);
+  static SpringSettings resultValue = selfCpp->mSuspensionSpring;
+  JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheelSettings_mSuspensionSpring_Set(

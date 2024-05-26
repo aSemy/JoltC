@@ -28,9 +28,9 @@ void JoltC_RackAndPinionConstraintSettings_SetRatio(
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
   
   selfCpp->SetRatio(
-  inNumTeethRack,
-  inRackLength,
-  inNumTeethPinion
+    inNumTeethRack,
+    inRackLength,
+    inNumTeethPinion
   );
 };
 
@@ -40,11 +40,13 @@ JoltC_Constraint_t * JoltC_RackAndPinionConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
+  Constraint * resultValue = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
   );
-  return reinterpret_cast<JoltC_Constraint_t *>(result);
+  JoltC_Constraint_t* result = new JoltC_Constraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_RackAndPinionConstraintSettings_GetRefCount(
@@ -95,9 +97,10 @@ JoltC_Vec3_t * JoltC_RackAndPinionConstraintSettings_mHingeAxis_Get(
   JoltC_RackAndPinionConstraintSettings_t * self
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mHingeAxis;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mHingeAxis;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RackAndPinionConstraintSettings_mHingeAxis_Set(
@@ -112,9 +115,10 @@ JoltC_Vec3_t * JoltC_RackAndPinionConstraintSettings_mSliderAxis_Get(
   JoltC_RackAndPinionConstraintSettings_t * self
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mSliderAxis;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mSliderAxis;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RackAndPinionConstraintSettings_mSliderAxis_Set(

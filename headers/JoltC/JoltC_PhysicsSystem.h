@@ -10,20 +10,20 @@ extern "C" {
 
 void JoltC_PhysicsSystem_SetGravity(
   JoltC_PhysicsSystem_t * self,
-  const JoltC_Vec3_t * inGravity
+  JoltC_Vec3_t * inGravity
 );
 
 JoltC_Vec3_t * JoltC_PhysicsSystem_GetGravity(
   JoltC_PhysicsSystem_t * self
 );
 
-const JoltC_PhysicsSettings_t * JoltC_PhysicsSystem_GetPhysicsSettings(
+JoltC_PhysicsSettings_t * JoltC_PhysicsSystem_GetPhysicsSettings(
   JoltC_PhysicsSystem_t * self
 );
 
 void JoltC_PhysicsSystem_SetPhysicsSettings(
   JoltC_PhysicsSystem_t * self,
-  const JoltC_PhysicsSettings_t * inPhysicsSettings
+  JoltC_PhysicsSettings_t * inPhysicsSettings
 );
 
 unsigned long JoltC_PhysicsSystem_GetNumBodies(
@@ -50,7 +50,7 @@ void JoltC_PhysicsSystem_GetActiveBodies(
   JoltC_BodyIDVector_t * outBodies
 );
 
-const JoltC_AABox_t * JoltC_PhysicsSystem_GetBounds(
+JoltC_AABox_t * JoltC_PhysicsSystem_GetBounds(
   JoltC_PhysicsSystem_t * self
 );
 
@@ -94,23 +94,23 @@ JoltC_BodyInterface_t * JoltC_PhysicsSystem_GetBodyInterfaceNoLock(
   JoltC_PhysicsSystem_t * self
 );
 
-const JoltC_BodyLockInterfaceNoLock_t * JoltC_PhysicsSystem_GetBodyLockInterfaceNoLock(
+JoltC_BodyLockInterfaceNoLock_t * JoltC_PhysicsSystem_GetBodyLockInterfaceNoLock(
   JoltC_PhysicsSystem_t * self
 );
 
-const JoltC_BodyLockInterfaceLocking_t * JoltC_PhysicsSystem_GetBodyLockInterface(
+JoltC_BodyLockInterfaceLocking_t * JoltC_PhysicsSystem_GetBodyLockInterface(
   JoltC_PhysicsSystem_t * self
 );
 
-const JoltC_BroadPhaseQuery_t * JoltC_PhysicsSystem_GetBroadPhaseQuery(
+JoltC_BroadPhaseQuery_t * JoltC_PhysicsSystem_GetBroadPhaseQuery(
   JoltC_PhysicsSystem_t * self
 );
 
-const JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQuery(
+JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQuery(
   JoltC_PhysicsSystem_t * self
 );
 
-const JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQueryNoLock(
+JoltC_NarrowPhaseQuery_t * JoltC_PhysicsSystem_GetNarrowPhaseQueryNoLock(
   JoltC_PhysicsSystem_t * self
 );
 
@@ -140,14 +140,14 @@ void JoltC_PhysicsSystem_SetBodyActivationListener(
   JoltC_BodyActivationListener_t * inListener
 );
 
-const JoltC_BodyActivationListener_t * JoltC_PhysicsSystem_GetBodyActivationListener(
+JoltC_BodyActivationListener_t * JoltC_PhysicsSystem_GetBodyActivationListener(
   JoltC_PhysicsSystem_t * self
 );
 
 bool JoltC_PhysicsSystem_WereBodiesInContact(
   JoltC_PhysicsSystem_t * self,
-  const JoltC_BodyID_t * inBodyID1,
-  const JoltC_BodyID_t * inBodyID2
+  JoltC_BodyID_t * inBodyID1,
+  JoltC_BodyID_t * inBodyID2
 );
 
 //endregion

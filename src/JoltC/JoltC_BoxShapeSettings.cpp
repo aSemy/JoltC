@@ -11,7 +11,7 @@ extern "C" {
 JoltC_BoxShapeSettings_t * JoltC_BoxShapeSettings_new(
   JoltC_Vec3_t * inHalfExtent,
   float inConvexRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 ) {
   JoltC_BoxShapeSettings_t * cInstance = new JoltC_BoxShapeSettings_t();
   BoxShapeSettings * cppInstance = new BoxShapeSettings(
@@ -55,9 +55,10 @@ JoltC_Shape_ShapeResult_t * JoltC_BoxShapeSettings_Create(
   JoltC_BoxShapeSettings_t * self
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BoxShapeSettings_ClearCachedResult(
@@ -76,9 +77,10 @@ JoltC_Vec3_t * JoltC_BoxShapeSettings_mHalfExtent_Get(
   JoltC_BoxShapeSettings_t * self
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mHalfExtent;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mHalfExtent;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BoxShapeSettings_mHalfExtent_Set(
@@ -105,17 +107,19 @@ void JoltC_BoxShapeSettings_mConvexRadius_Set(
   selfCpp->mConvexRadius = mConvexRadius;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_BoxShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_BoxShapeSettings_mMaterial_Get(
   JoltC_BoxShapeSettings_t * self
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->mMaterial;
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const void JoltC_BoxShapeSettings_mMaterial_Set(
+void JoltC_BoxShapeSettings_mMaterial_Set(
   JoltC_BoxShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
   selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);

@@ -30,7 +30,7 @@ unsigned long JoltC_ArrayUint_at(
 ) {
   ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
   unsigned long result = selfCpp->at(
-  inIndex
+    inIndex
   );
   return result;
 };
@@ -42,7 +42,7 @@ void JoltC_ArrayUint_push_back(
   ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
   
   selfCpp->push_back(
-  inValue
+    inValue
   );
 };
 
@@ -53,7 +53,7 @@ void JoltC_ArrayUint_reserve(
   ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -64,7 +64,7 @@ void JoltC_ArrayUint_resize(
   ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 
@@ -80,8 +80,10 @@ JoltC_UintMemRef_t * JoltC_ArrayUint_data(
   JoltC_ArrayUint_t * self
 ) {
   ArrayUint * selfCpp = static_cast<ArrayUint *>(self->obj);
-  UintMemRef * result = selfCpp->data();
-  return reinterpret_cast<JoltC_UintMemRef_t *>(result);
+  UintMemRef * resultValue = selfCpp->data();
+  JoltC_UintMemRef_t* result = new JoltC_UintMemRef_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

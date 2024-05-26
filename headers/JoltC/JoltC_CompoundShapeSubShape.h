@@ -20,13 +20,13 @@ JoltC_Quat_t * JoltC_CompoundShapeSubShape_GetRotation(
 
 //region properties
 
-const JoltC_Shape_t * JoltC_CompoundShapeSubShape_mShape_Get(
+JoltC_Shape_t * JoltC_CompoundShapeSubShape_mShape_Get(
   JoltC_CompoundShapeSubShape_t * self
 );
 
-const void JoltC_CompoundShapeSubShape_mShape_Set(
+void JoltC_CompoundShapeSubShape_mShape_Set(
   JoltC_CompoundShapeSubShape_t * self,
-  const JoltC_Shape_t * mShape
+  JoltC_Shape_t * mShape
 );
 
 unsigned long JoltC_CompoundShapeSubShape_mUserData_Get(

@@ -23,7 +23,7 @@ JoltC_SoftBodyVertex_t * JoltC_ArraySoftBodyVertex_at(
 
 void JoltC_ArraySoftBodyVertex_push_back(
   JoltC_ArraySoftBodyVertex_t * self,
-  const JoltC_SoftBodyVertex_t * inValue
+  JoltC_SoftBodyVertex_t * inValue
 );
 
 void JoltC_ArraySoftBodyVertex_reserve(

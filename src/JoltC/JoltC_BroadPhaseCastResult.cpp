@@ -48,9 +48,10 @@ JoltC_BodyID_t * JoltC_BroadPhaseCastResult_mBodyID_Get(
   JoltC_BroadPhaseCastResult_t * self
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
-  BodyID resultValue = selfCpp->mBodyID;
-  BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JoltC_BodyID_t *>(result);
+  static BodyID resultValue = selfCpp->mBodyID;
+  JoltC_BodyID_t* result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BroadPhaseCastResult_mBodyID_Set(

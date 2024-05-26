@@ -16,10 +16,10 @@ JoltC_SkeletonPose_t * JoltC_SkeletonPose_new();
 
 void JoltC_SkeletonPose_SetSkeleton(
   JoltC_SkeletonPose_t * self,
-  const JoltC_Skeleton_t * inSkeleton
+  JoltC_Skeleton_t * inSkeleton
 );
 
-const JoltC_Skeleton_t * JoltC_SkeletonPose_GetSkeleton(
+JoltC_Skeleton_t * JoltC_SkeletonPose_GetSkeleton(
   JoltC_SkeletonPose_t * self
 );
 

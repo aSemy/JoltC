@@ -23,9 +23,10 @@ JoltC_BodyID_t * JoltC_CollidePointResult_mBodyID_Get(
   JoltC_CollidePointResult_t * self
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
-  BodyID resultValue = selfCpp->mBodyID;
-  BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JoltC_BodyID_t *>(result);
+  static BodyID resultValue = selfCpp->mBodyID;
+  JoltC_BodyID_t* result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CollidePointResult_mBodyID_Set(
@@ -40,9 +41,10 @@ JoltC_SubShapeID_t * JoltC_CollidePointResult_mSubShapeID2_Get(
   JoltC_CollidePointResult_t * self
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
-  SubShapeID resultValue = selfCpp->mSubShapeID2;
-  SubShapeID* result = new SubShapeID(resultValue);
-  return reinterpret_cast<JoltC_SubShapeID_t *>(result);
+  static SubShapeID resultValue = selfCpp->mSubShapeID2;
+  JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CollidePointResult_mSubShapeID2_Set(

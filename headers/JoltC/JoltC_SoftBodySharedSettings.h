@@ -36,7 +36,7 @@ void JoltC_SoftBodySharedSettings_CreateConstraints(
 
 void JoltC_SoftBodySharedSettings_AddFace(
   JoltC_SoftBodySharedSettings_t * self,
-  const JoltC_SoftBodySharedSettingsFace_t * inFace
+  JoltC_SoftBodySharedSettingsFace_t * inFace
 );
 
 void JoltC_SoftBodySharedSettings_CalculateEdgeLengths(

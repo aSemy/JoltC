@@ -16,7 +16,7 @@ JoltC_Vec3_t * JoltC_Vec3_new_0() {
 };
 
 JoltC_Vec3_t * JoltC_Vec3_new_1(
-  const JoltC_Float3_t * inV
+  JoltC_Float3_t * inV
 ) {
   JoltC_Vec3_t * cInstance = new JoltC_Vec3_t();
   Vec3 * cppInstance = new Vec3(
@@ -46,87 +46,96 @@ JoltC_Vec3_t * JoltC_Vec3_new_2(
 //region functions
 
 JoltC_Vec3_t * JoltC_Vec3_sZero() {
-  Vec3 resultValue = Vec3::sZero();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = Vec3::sZero();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_sAxisX() {
-  Vec3 resultValue = Vec3::sAxisX();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = Vec3::sAxisX();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_sAxisY() {
-  Vec3 resultValue = Vec3::sAxisY();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = Vec3::sAxisY();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_sAxisZ() {
-  Vec3 resultValue = Vec3::sAxisZ();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = Vec3::sAxisZ();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_sReplicate(
   float inValue
 ) {
-  Vec3 resultValue = Vec3::sReplicate(
-  inValue
+  static Vec3 resultValue = Vec3::sReplicate(
+    inValue
   );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_sMin(
-  const JoltC_Vec3_t * inLHS,
-  const JoltC_Vec3_t * inRHS
+  JoltC_Vec3_t * inLHS,
+  JoltC_Vec3_t * inRHS
 ) {
-  Vec3 resultValue = Vec3::sMin(
-  *reinterpret_cast<Vec3 *>(inLHS->obj),
-  *reinterpret_cast<Vec3 *>(inRHS->obj)
+  static Vec3 resultValue = Vec3::sMin(
+    *reinterpret_cast<Vec3 *>(inLHS->obj),
+    *reinterpret_cast<Vec3 *>(inRHS->obj)
   );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_sMax(
-  const JoltC_Vec3_t * inLHS,
-  const JoltC_Vec3_t * inRHS
+  JoltC_Vec3_t * inLHS,
+  JoltC_Vec3_t * inRHS
 ) {
-  Vec3 resultValue = Vec3::sMax(
-  *reinterpret_cast<Vec3 *>(inLHS->obj),
-  *reinterpret_cast<Vec3 *>(inRHS->obj)
+  static Vec3 resultValue = Vec3::sMax(
+    *reinterpret_cast<Vec3 *>(inLHS->obj),
+    *reinterpret_cast<Vec3 *>(inRHS->obj)
   );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_sClamp(
-  const JoltC_Vec3_t * inValue,
-  const JoltC_Vec3_t * inMin,
-  const JoltC_Vec3_t * inMax
+  JoltC_Vec3_t * inValue,
+  JoltC_Vec3_t * inMin,
+  JoltC_Vec3_t * inMax
 ) {
-  Vec3 resultValue = Vec3::sClamp(
-  *reinterpret_cast<Vec3 *>(inValue->obj),
-  *reinterpret_cast<Vec3 *>(inMin->obj),
-  *reinterpret_cast<Vec3 *>(inMax->obj)
+  static Vec3 resultValue = Vec3::sClamp(
+    *reinterpret_cast<Vec3 *>(inValue->obj),
+    *reinterpret_cast<Vec3 *>(inMin->obj),
+    *reinterpret_cast<Vec3 *>(inMax->obj)
   );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_sUnitSpherical(
   float inTheta,
   float inPhi
 ) {
-  Vec3 resultValue = Vec3::sUnitSpherical(
-  inTheta,
-  inPhi
+  static Vec3 resultValue = Vec3::sUnitSpherical(
+    inTheta,
+    inPhi
   );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_Vec3_GetComponent(
@@ -135,29 +144,29 @@ float JoltC_Vec3_GetComponent(
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   float result = selfCpp->operator[](
-  inCoordinate
+    inCoordinate
   );
   return result;
 };
 
 bool JoltC_Vec3_Equals(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   bool result = selfCpp->operator==(
-  *reinterpret_cast<Vec3 *>(inV->obj)
+    *reinterpret_cast<Vec3 *>(inV->obj)
   );
   return result;
 };
 
 bool JoltC_Vec3_NotEquals(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   bool result = selfCpp->operator!=(
-  *reinterpret_cast<Vec3 *>(inV->obj)
+    *reinterpret_cast<Vec3 *>(inV->obj)
   );
   return result;
 };
@@ -182,30 +191,33 @@ JoltC_Vec3_t * JoltC_Vec3_Normalized(
   JoltC_Vec3_t * self
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  Vec3 resultValue = selfCpp->Normalized();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->Normalized();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_NormalizedOr(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inZeroValue
+  JoltC_Vec3_t * inZeroValue
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  Vec3 resultValue = selfCpp->NormalizedOr(
-  *reinterpret_cast<Vec3 *>(inZeroValue->obj)
+  static Vec3 resultValue = selfCpp->NormalizedOr(
+    *reinterpret_cast<Vec3 *>(inZeroValue->obj)
   );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_GetNormalizedPerpendicular(
   JoltC_Vec3_t * self
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  Vec3 resultValue = selfCpp->GetNormalizedPerpendicular();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetNormalizedPerpendicular();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_Vec3_GetX(
@@ -239,7 +251,7 @@ void JoltC_Vec3_SetX(
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   
   selfCpp->SetX(
-  inX
+    inX
   );
 };
 
@@ -250,7 +262,7 @@ void JoltC_Vec3_SetY(
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   
   selfCpp->SetY(
-  inY
+    inY
   );
 };
 
@@ -261,7 +273,7 @@ void JoltC_Vec3_SetZ(
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   
   selfCpp->SetZ(
-  inZ
+    inZ
   );
 };
 
@@ -274,9 +286,9 @@ void JoltC_Vec3_Set(
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   
   selfCpp->Set(
-  inX,
-  inY,
-  inZ
+    inX,
+    inY,
+    inZ
   );
 };
 
@@ -288,8 +300,8 @@ void JoltC_Vec3_SetComponent(
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   
   selfCpp->SetComponent(
-  inCoordinate,
-  inValue
+    inCoordinate,
+    inValue
   );
 };
 
@@ -299,20 +311,20 @@ bool JoltC_Vec3_IsNearZero(
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   bool result = selfCpp->IsNearZero(
-  inMaxDistSq
+    inMaxDistSq
   );
   return result;
 };
 
 bool JoltC_Vec3_IsClose(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV,
+  JoltC_Vec3_t * inV,
   float inMaxDistSq
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   bool result = selfCpp->IsClose(
-  *reinterpret_cast<Vec3 *>(inV->obj),
-  inMaxDistSq
+    *reinterpret_cast<Vec3 *>(inV->obj),
+    inMaxDistSq
   );
   return result;
 };
@@ -323,7 +335,7 @@ bool JoltC_Vec3_IsNormalized(
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   bool result = selfCpp->IsNormalized(
-  inTolerance
+    inTolerance
   );
   return result;
 };
@@ -344,69 +356,74 @@ long JoltC_Vec3_GetHighestComponentIndex(
   return result;
 };
 
-const JoltC_Vec3_t * JoltC_Vec3_Abs(
+JoltC_Vec3_t * JoltC_Vec3_Abs(
   JoltC_Vec3_t * self
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  const Vec3 resultValue = selfCpp->Abs();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->Abs();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Vec3_t * JoltC_Vec3_Reciprocal(
+JoltC_Vec3_t * JoltC_Vec3_Reciprocal(
   JoltC_Vec3_t * self
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  const Vec3 resultValue = selfCpp->Reciprocal();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->Reciprocal();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Vec3_t * JoltC_Vec3_Cross(
+JoltC_Vec3_t * JoltC_Vec3_Cross(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inRHS
+  JoltC_Vec3_t * inRHS
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  const Vec3 resultValue = selfCpp->Cross(
-  *reinterpret_cast<Vec3 *>(inRHS->obj)
+  static Vec3 resultValue = selfCpp->Cross(
+    *reinterpret_cast<Vec3 *>(inRHS->obj)
   );
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_Vec3_Dot(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inRHS
+  JoltC_Vec3_t * inRHS
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
   float result = selfCpp->Dot(
-  *reinterpret_cast<Vec3 *>(inRHS->obj)
+    *reinterpret_cast<Vec3 *>(inRHS->obj)
   );
   return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_Add(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  Vec3& resultRef = selfCpp->operator+=(
-  *reinterpret_cast<Vec3 *>(inV->obj)
+  Vec3* resultRef = &selfCpp->operator+=(
+    *reinterpret_cast<Vec3 *>(inV->obj)
   );
-  Vec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_Sub(
   JoltC_Vec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  Vec3& resultRef = selfCpp->operator-=(
-  *reinterpret_cast<Vec3 *>(inV->obj)
+  Vec3* resultRef = &selfCpp->operator-=(
+    *reinterpret_cast<Vec3 *>(inV->obj)
   );
-  Vec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_Mul(
@@ -414,11 +431,12 @@ JoltC_Vec3_t * JoltC_Vec3_Mul(
   float inV
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  Vec3& resultRef = selfCpp->operator*=(
-  inV
+  Vec3* resultRef = &selfCpp->operator*=(
+    inV
   );
-  Vec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_Vec3_Div(
@@ -426,11 +444,12 @@ JoltC_Vec3_t * JoltC_Vec3_Div(
   float inV
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  Vec3& resultRef = selfCpp->operator/=(
-  inV
+  Vec3* resultRef = &selfCpp->operator/=(
+    inV
   );
-  Vec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 float JoltC_Vec3_ReduceMin(
@@ -449,22 +468,24 @@ float JoltC_Vec3_ReduceMax(
   return result;
 };
 
-const JoltC_Vec3_t * JoltC_Vec3_Sqrt(
+JoltC_Vec3_t * JoltC_Vec3_Sqrt(
   JoltC_Vec3_t * self
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  const Vec3 resultValue = selfCpp->Sqrt();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->Sqrt();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Vec3_t * JoltC_Vec3_GetSign(
+JoltC_Vec3_t * JoltC_Vec3_GetSign(
   JoltC_Vec3_t * self
 ) {
   Vec3 * selfCpp = static_cast<Vec3 *>(self->obj);
-  const Vec3 resultValue = selfCpp->GetSign();
-  const Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<const JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetSign();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

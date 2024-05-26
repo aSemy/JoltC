@@ -31,7 +31,7 @@ void JoltC_VehicleEngine_SetCurrentRPM(
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   
   selfCpp->SetCurrentRPM(
-  inRPM
+    inRPM
   );
 };
 
@@ -49,7 +49,7 @@ float JoltC_VehicleEngine_GetTorque(
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   float result = selfCpp->GetTorque(
-  inAcceleration
+    inAcceleration
   );
   return result;
 };
@@ -110,9 +110,10 @@ JoltC_LinearCurve_t * JoltC_VehicleEngine_mNormalizedTorque_Get(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  LinearCurve resultValue = selfCpp->mNormalizedTorque;
-  LinearCurve* result = new LinearCurve(resultValue);
-  return reinterpret_cast<JoltC_LinearCurve_t *>(result);
+  static LinearCurve resultValue = selfCpp->mNormalizedTorque;
+  JoltC_LinearCurve_t* result = new JoltC_LinearCurve_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleEngine_mNormalizedTorque_Set(

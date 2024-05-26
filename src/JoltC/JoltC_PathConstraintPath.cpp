@@ -36,7 +36,7 @@ void JoltC_PathConstraintPath_SetIsLooping(
   PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
   
   selfCpp->SetIsLooping(
-  inIsLooping
+    inIsLooping
   );
 };
 

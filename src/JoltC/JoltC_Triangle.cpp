@@ -16,9 +16,9 @@ JoltC_Triangle_t * JoltC_Triangle_new_0() {
 };
 
 JoltC_Triangle_t * JoltC_Triangle_new_1(
-  const JoltC_Vec3_t * inV1,
-  const JoltC_Vec3_t * inV2,
-  const JoltC_Vec3_t * inV3
+  JoltC_Vec3_t * inV1,
+  JoltC_Vec3_t * inV2,
+  JoltC_Vec3_t * inV3
 ) {
   JoltC_Triangle_t * cInstance = new JoltC_Triangle_t();
   Triangle * cppInstance = new Triangle(

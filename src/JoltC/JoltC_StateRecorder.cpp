@@ -28,7 +28,7 @@ void JoltC_StateRecorder_SetValidating(
   StateRecorder * selfCpp = static_cast<StateRecorder *>(self->obj);
   
   selfCpp->SetValidating(
-  inValidating
+    inValidating
   );
 };
 

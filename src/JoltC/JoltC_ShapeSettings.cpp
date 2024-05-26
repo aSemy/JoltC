@@ -166,9 +166,10 @@ JoltC_Shape_ShapeResult_t * JoltC_ShapeSettings_Create(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeSettings_ClearCachedResult(

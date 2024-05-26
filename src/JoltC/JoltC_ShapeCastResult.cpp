@@ -55,9 +55,10 @@ JoltC_Vec3_t * JoltC_ShapeCastResult_mContactPointOn1_Get(
   JoltC_ShapeCastResult_t * self
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
-  Vec3 resultValue = selfCpp->mContactPointOn1;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mContactPointOn1;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeCastResult_mContactPointOn1_Set(
@@ -72,9 +73,10 @@ JoltC_Vec3_t * JoltC_ShapeCastResult_mContactPointOn2_Get(
   JoltC_ShapeCastResult_t * self
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
-  Vec3 resultValue = selfCpp->mContactPointOn2;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mContactPointOn2;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeCastResult_mContactPointOn2_Set(
@@ -89,9 +91,10 @@ JoltC_Vec3_t * JoltC_ShapeCastResult_mPenetrationAxis_Get(
   JoltC_ShapeCastResult_t * self
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
-  Vec3 resultValue = selfCpp->mPenetrationAxis;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mPenetrationAxis;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeCastResult_mPenetrationAxis_Set(
@@ -122,9 +125,10 @@ JoltC_SubShapeID_t * JoltC_ShapeCastResult_mSubShapeID1_Get(
   JoltC_ShapeCastResult_t * self
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
-  SubShapeID resultValue = selfCpp->mSubShapeID1;
-  SubShapeID* result = new SubShapeID(resultValue);
-  return reinterpret_cast<JoltC_SubShapeID_t *>(result);
+  static SubShapeID resultValue = selfCpp->mSubShapeID1;
+  JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeCastResult_mSubShapeID1_Set(
@@ -139,9 +143,10 @@ JoltC_SubShapeID_t * JoltC_ShapeCastResult_mSubShapeID2_Get(
   JoltC_ShapeCastResult_t * self
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
-  SubShapeID resultValue = selfCpp->mSubShapeID2;
-  SubShapeID* result = new SubShapeID(resultValue);
-  return reinterpret_cast<JoltC_SubShapeID_t *>(result);
+  static SubShapeID resultValue = selfCpp->mSubShapeID2;
+  JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeCastResult_mSubShapeID2_Set(
@@ -156,9 +161,10 @@ JoltC_BodyID_t * JoltC_ShapeCastResult_mBodyID2_Get(
   JoltC_ShapeCastResult_t * self
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
-  BodyID resultValue = selfCpp->mBodyID2;
-  BodyID* result = new BodyID(resultValue);
-  return reinterpret_cast<JoltC_BodyID_t *>(result);
+  static BodyID resultValue = selfCpp->mBodyID2;
+  JoltC_BodyID_t* result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeCastResult_mBodyID2_Set(
@@ -173,9 +179,10 @@ JoltC_CollideShapeResultFace_t * JoltC_ShapeCastResult_mShape1Face_Get(
   JoltC_ShapeCastResult_t * self
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
-  CollideShapeResultFace resultValue = selfCpp->mShape1Face;
-  CollideShapeResultFace* result = new CollideShapeResultFace(resultValue);
-  return reinterpret_cast<JoltC_CollideShapeResultFace_t *>(result);
+  static CollideShapeResultFace resultValue = selfCpp->mShape1Face;
+  JoltC_CollideShapeResultFace_t* result = new JoltC_CollideShapeResultFace_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeCastResult_mShape1Face_Set(
@@ -190,9 +197,10 @@ JoltC_CollideShapeResultFace_t * JoltC_ShapeCastResult_mShape2Face_Get(
   JoltC_ShapeCastResult_t * self
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
-  CollideShapeResultFace resultValue = selfCpp->mShape2Face;
-  CollideShapeResultFace* result = new CollideShapeResultFace(resultValue);
-  return reinterpret_cast<JoltC_CollideShapeResultFace_t *>(result);
+  static CollideShapeResultFace resultValue = selfCpp->mShape2Face;
+  JoltC_CollideShapeResultFace_t* result = new JoltC_CollideShapeResultFace_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ShapeCastResult_mShape2Face_Set(

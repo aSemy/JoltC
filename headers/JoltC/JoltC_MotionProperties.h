@@ -37,12 +37,12 @@ JoltC_Vec3_t * JoltC_MotionProperties_GetLinearVelocity(
 
 void JoltC_MotionProperties_SetLinearVelocity(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_MotionProperties_SetLinearVelocityClamped(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 JoltC_Vec3_t * JoltC_MotionProperties_GetAngularVelocity(
@@ -51,18 +51,18 @@ JoltC_Vec3_t * JoltC_MotionProperties_GetAngularVelocity(
 
 void JoltC_MotionProperties_SetAngularVelocity(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_MotionProperties_SetAngularVelocityClamped(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_MotionProperties_MoveKinematic(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inPosition,
-  const JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
   float inDeltaTime
 );
 
@@ -122,7 +122,7 @@ void JoltC_MotionProperties_SetGravityFactor(
 void JoltC_MotionProperties_SetMassProperties(
   JoltC_MotionProperties_t * self,
   JoltC_EAllowedDOFs inAllowedDOFs,
-  const JoltC_MassProperties_t * inMassProperties
+  JoltC_MassProperties_t * inMassProperties
 );
 
 float JoltC_MotionProperties_GetInverseMass(
@@ -148,8 +148,8 @@ JoltC_Quat_t * JoltC_MotionProperties_GetInertiaRotation(
 
 void JoltC_MotionProperties_SetInverseInertia(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inInvI,
-  const JoltC_Quat_t * inRotation
+  JoltC_Vec3_t * inInvI,
+  JoltC_Quat_t * inRotation
 );
 
 JoltC_Mat44_t * JoltC_MotionProperties_GetLocalSpaceInverseInertia(
@@ -158,18 +158,18 @@ JoltC_Mat44_t * JoltC_MotionProperties_GetLocalSpaceInverseInertia(
 
 JoltC_Mat44_t * JoltC_MotionProperties_GetInverseInertiaForRotation(
   JoltC_MotionProperties_t * self,
-  const JoltC_Mat44_t * inRotation
+  JoltC_Mat44_t * inRotation
 );
 
 JoltC_Vec3_t * JoltC_MotionProperties_MultiplyWorldSpaceInverseInertiaByVector(
   JoltC_MotionProperties_t * self,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inV
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inV
 );
 
 JoltC_Vec3_t * JoltC_MotionProperties_GetPointVelocityCOM(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inPointRelativeToCOM
+  JoltC_Vec3_t * inPointRelativeToCOM
 );
 
 JoltC_Vec3_t * JoltC_MotionProperties_GetAccumulatedForce(
@@ -192,14 +192,14 @@ void JoltC_MotionProperties_ResetMotion(
   JoltC_MotionProperties_t * self
 );
 
-const JoltC_Vec3_t * JoltC_MotionProperties_LockTranslation(
+JoltC_Vec3_t * JoltC_MotionProperties_LockTranslation(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
-const JoltC_Vec3_t * JoltC_MotionProperties_LockAngular(
+JoltC_Vec3_t * JoltC_MotionProperties_LockAngular(
   JoltC_MotionProperties_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 void JoltC_MotionProperties_SetNumVelocityStepsOverride(

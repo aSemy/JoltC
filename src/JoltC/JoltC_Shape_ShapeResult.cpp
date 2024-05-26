@@ -24,21 +24,26 @@ bool JoltC_Shape_ShapeResult_HasError(
   return result;
 };
 
-const JoltC_JPHString_t * JoltC_Shape_ShapeResult_GetError(
+JoltC_JPHString_t * JoltC_Shape_ShapeResult_GetError(
   JoltC_Shape_ShapeResult_t * self
 ) {
   Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  const JPHString& resultRef = selfCpp->GetError();
-  const JPHString * result = &resultRef;
-  return reinterpret_cast<const JoltC_JPHString_t *>(result);
+  const JPHString* resultRef = &selfCpp->GetError();
+  JoltC_JPHString_t* result = new JoltC_JPHString_t();
+  const void * resultConstPtr = reinterpret_cast<const void*>(resultRef);
+  void * resultPtr = const_cast<void*>(resultConstPtr);
+  result->obj = resultPtr;
+  return result;
 };
 
 JoltC_Shape_t * JoltC_Shape_ShapeResult_Get(
   JoltC_Shape_ShapeResult_t * self
 ) {
   Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  Shape * result = selfCpp->Get();
-  return reinterpret_cast<JoltC_Shape_t *>(result);
+  Shape * resultValue = selfCpp->Get();
+  JoltC_Shape_t* result = new JoltC_Shape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_Shape_ShapeResult_Clear(

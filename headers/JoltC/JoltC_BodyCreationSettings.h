@@ -11,7 +11,7 @@ extern "C" {
 JoltC_BodyCreationSettings_t * JoltC_BodyCreationSettings_new_0();
 
 JoltC_BodyCreationSettings_t * JoltC_BodyCreationSettings_new_1(
-  const JoltC_Shape_t * inShape,
+  JoltC_Shape_t * inShape,
   JoltC_RVec3_t * inPosition,
   JoltC_Quat_t * inRotation,
   JoltC_EMotionType inMotionType,
@@ -33,26 +33,26 @@ JoltC_BodyCreationSettings_t * JoltC_BodyCreationSettings_From_RagdollPart(
 
 //region functions
 
-const JoltC_ShapeSettings_t * JoltC_BodyCreationSettings_GetShapeSettings(
+JoltC_ShapeSettings_t * JoltC_BodyCreationSettings_GetShapeSettings(
   JoltC_BodyCreationSettings_t * self
 );
 
 void JoltC_BodyCreationSettings_SetShapeSettings(
   JoltC_BodyCreationSettings_t * self,
-  const JoltC_ShapeSettings_t * inShape
+  JoltC_ShapeSettings_t * inShape
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_BodyCreationSettings_ConvertShapeSettings(
   JoltC_BodyCreationSettings_t * self
 );
 
-const JoltC_Shape_t * JoltC_BodyCreationSettings_GetShape(
+JoltC_Shape_t * JoltC_BodyCreationSettings_GetShape(
   JoltC_BodyCreationSettings_t * self
 );
 
 void JoltC_BodyCreationSettings_SetShape(
   JoltC_BodyCreationSettings_t * self,
-  const JoltC_Shape_t * inShape
+  JoltC_Shape_t * inShape
 );
 
 bool JoltC_BodyCreationSettings_HasMassProperties(

@@ -12,7 +12,7 @@ JoltC_CylinderShape_t * JoltC_CylinderShape_new(
   float inHalfHeight,
   float inRadius,
   float inConvexRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 ) {
   JoltC_CylinderShape_t * cInstance = new JoltC_CylinderShape_t();
   CylinderShape * cppInstance = new CylinderShape(
@@ -60,7 +60,7 @@ void JoltC_CylinderShape_SetDensity(
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
   
   selfCpp->SetDensity(
-  inDensity
+    inDensity
   );
 };
 
@@ -116,32 +116,35 @@ JoltC_AABox_t * JoltC_CylinderShape_GetLocalBounds(
   JoltC_CylinderShape_t * self
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
-  AABox resultValue = selfCpp->GetLocalBounds();
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JoltC_AABox_t *>(result);
+  static AABox resultValue = selfCpp->GetLocalBounds();
+  JoltC_AABox_t* result = new JoltC_AABox_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_AABox_t * JoltC_CylinderShape_GetWorldSpaceBounds(
   JoltC_CylinderShape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
-  AABox resultValue = selfCpp->GetWorldSpaceBounds(
-  *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj)
+  static AABox resultValue = selfCpp->GetWorldSpaceBounds(
+    *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj)
   );
-  AABox* result = new AABox(resultValue);
-  return reinterpret_cast<JoltC_AABox_t *>(result);
+  JoltC_AABox_t* result = new JoltC_AABox_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_CylinderShape_GetCenterOfMass(
   JoltC_CylinderShape_t * self
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetCenterOfMass();
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->GetCenterOfMass();
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long long int JoltC_CylinderShape_GetUserData(
@@ -159,7 +162,7 @@ void JoltC_CylinderShape_SetUserData(
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 
@@ -183,65 +186,70 @@ JoltC_MassProperties_t * JoltC_CylinderShape_GetMassProperties(
   JoltC_CylinderShape_t * self
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
-  MassProperties resultValue = selfCpp->GetMassProperties();
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  static MassProperties resultValue = selfCpp->GetMassProperties();
+  JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_CylinderShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_CylinderShape_GetMaterial(
   JoltC_CylinderShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->GetMaterial(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+  const PhysicsMaterial * resultValue = selfCpp->GetMaterial(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
   );
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Vec3_t * JoltC_CylinderShape_GetSurfaceNormal(
   JoltC_CylinderShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
-  Vec3 resultValue = selfCpp->GetSurfaceNormal(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
+  static Vec3 resultValue = selfCpp->GetSurfaceNormal(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
   );
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long long int JoltC_CylinderShape_GetSubShapeUserData(
   JoltC_CylinderShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
   unsigned long long int result = selfCpp->GetSubShapeUserData(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
   );
   return result;
 };
 
 JoltC_TransformedShape_t * JoltC_CylinderShape_GetSubShapeTransformedShape(
   JoltC_CylinderShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
-  TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
-  *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
-  *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
-  *reinterpret_cast<Quat *>(inRotation->obj),
-  *reinterpret_cast<Vec3 *>(inScale->obj),
-  *reinterpret_cast<SubShapeID *>(outRemainder->obj)
+  static TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
+    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
+    *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
+    *reinterpret_cast<Quat *>(inRotation->obj),
+    *reinterpret_cast<Vec3 *>(inScale->obj),
+    *reinterpret_cast<SubShapeID *>(outRemainder->obj)
   );
-  TransformedShape* result = new TransformedShape(resultValue);
-  return reinterpret_cast<JoltC_TransformedShape_t *>(result);
+  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 float JoltC_CylinderShape_GetVolume(
@@ -254,25 +262,26 @@ float JoltC_CylinderShape_GetVolume(
 
 bool JoltC_CylinderShape_IsValidScale(
   JoltC_CylinderShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
   bool result = selfCpp->IsValidScale(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
+    *reinterpret_cast<Vec3 *>(inScale->obj)
   );
   return result;
 };
 
 JoltC_Shape_ShapeResult_t * JoltC_CylinderShape_ScaleShape(
   JoltC_CylinderShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 ) {
   CylinderShape * selfCpp = static_cast<CylinderShape *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->ScaleShape(
-  *reinterpret_cast<Vec3 *>(inScale->obj)
+  static Shape::ShapeResult resultValue = selfCpp->ScaleShape(
+    *reinterpret_cast<Vec3 *>(inScale->obj)
   );
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

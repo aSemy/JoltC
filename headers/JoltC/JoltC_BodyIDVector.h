@@ -29,7 +29,7 @@ JoltC_BodyID_t * JoltC_BodyIDVector_at(
 
 void JoltC_BodyIDVector_push_back(
   JoltC_BodyIDVector_t * self,
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 );
 
 void JoltC_BodyIDVector_reserve(

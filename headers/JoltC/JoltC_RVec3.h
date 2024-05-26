@@ -33,19 +33,19 @@ JoltC_RVec3_t * JoltC_RVec3_sReplicate(
 );
 
 JoltC_RVec3_t * JoltC_RVec3_sMin(
-  const JoltC_RVec3_t * inLHS,
-  const JoltC_RVec3_t * inRHS
+  JoltC_RVec3_t * inLHS,
+  JoltC_RVec3_t * inRHS
 );
 
 JoltC_RVec3_t * JoltC_RVec3_sMax(
-  const JoltC_RVec3_t * inLHS,
-  const JoltC_RVec3_t * inRHS
+  JoltC_RVec3_t * inLHS,
+  JoltC_RVec3_t * inRHS
 );
 
 JoltC_RVec3_t * JoltC_RVec3_sClamp(
-  const JoltC_RVec3_t * inValue,
-  const JoltC_RVec3_t * inMin,
-  const JoltC_RVec3_t * inMax
+  JoltC_RVec3_t * inValue,
+  JoltC_RVec3_t * inMin,
+  JoltC_RVec3_t * inMax
 );
 
 double JoltC_RVec3_GetComponent(
@@ -55,12 +55,12 @@ double JoltC_RVec3_GetComponent(
 
 bool JoltC_RVec3_Equals(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inV
+  JoltC_RVec3_t * inV
 );
 
 bool JoltC_RVec3_NotEquals(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inV
+  JoltC_RVec3_t * inV
 );
 
 double JoltC_RVec3_LengthSq(
@@ -122,7 +122,7 @@ bool JoltC_RVec3_IsNearZero(
 
 bool JoltC_RVec3_IsClose(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inV,
+  JoltC_RVec3_t * inV,
   double inMaxDistSq
 );
 
@@ -131,32 +131,32 @@ bool JoltC_RVec3_IsNormalized(
   double inTolerance
 );
 
-const JoltC_RVec3_t * JoltC_RVec3_Abs(
+JoltC_RVec3_t * JoltC_RVec3_Abs(
   JoltC_RVec3_t * self
 );
 
-const JoltC_RVec3_t * JoltC_RVec3_Reciprocal(
+JoltC_RVec3_t * JoltC_RVec3_Reciprocal(
   JoltC_RVec3_t * self
 );
 
-const JoltC_RVec3_t * JoltC_RVec3_Cross(
+JoltC_RVec3_t * JoltC_RVec3_Cross(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inRHS
+  JoltC_RVec3_t * inRHS
 );
 
 double JoltC_RVec3_Dot(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inRHS
+  JoltC_RVec3_t * inRHS
 );
 
 JoltC_RVec3_t * JoltC_RVec3_Add(
   JoltC_RVec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 JoltC_RVec3_t * JoltC_RVec3_Sub(
   JoltC_RVec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 JoltC_RVec3_t * JoltC_RVec3_Mul(
@@ -169,11 +169,11 @@ JoltC_RVec3_t * JoltC_RVec3_Div(
   double inV
 );
 
-const JoltC_RVec3_t * JoltC_RVec3_Sqrt(
+JoltC_RVec3_t * JoltC_RVec3_Sqrt(
   JoltC_RVec3_t * self
 );
 
-const JoltC_RVec3_t * JoltC_RVec3_GetSign(
+JoltC_RVec3_t * JoltC_RVec3_GetSign(
   JoltC_RVec3_t * self
 );
 

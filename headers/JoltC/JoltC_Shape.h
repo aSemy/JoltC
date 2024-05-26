@@ -154,8 +154,8 @@ JoltC_AABox_t * JoltC_Shape_GetLocalBounds(
 
 JoltC_AABox_t * JoltC_Shape_GetWorldSpaceBounds(
   JoltC_Shape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Vec3_t * JoltC_Shape_GetCenterOfMass(
@@ -183,28 +183,28 @@ JoltC_MassProperties_t * JoltC_Shape_GetMassProperties(
   JoltC_Shape_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_Shape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_Shape_GetMaterial(
   JoltC_Shape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_Vec3_t * JoltC_Shape_GetSurfaceNormal(
   JoltC_Shape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 );
 
 unsigned long long int JoltC_Shape_GetSubShapeUserData(
   JoltC_Shape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_TransformedShape_t * JoltC_Shape_GetSubShapeTransformedShape(
   JoltC_Shape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 );
 
@@ -214,12 +214,12 @@ float JoltC_Shape_GetVolume(
 
 bool JoltC_Shape_IsValidScale(
   JoltC_Shape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_Shape_ScaleShape(
   JoltC_Shape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

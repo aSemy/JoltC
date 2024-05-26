@@ -76,7 +76,7 @@ JoltC_SpringSettings_t * JoltC_SliderConstraint_GetLimitsSpringSettings(
 
 void JoltC_SliderConstraint_SetLimitsSpringSettings(
   JoltC_SliderConstraint_t * self,
-  const JoltC_SpringSettings_t * inLimitsSpringSettings
+  JoltC_SpringSettings_t * inLimitsSpringSettings
 );
 
 JoltC_Vector2_t * JoltC_SliderConstraint_GetTotalLambdaPosition(

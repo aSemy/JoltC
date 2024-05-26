@@ -12,9 +12,10 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mPreviousPosition_Get(
   JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
-  Vec3 resultValue = selfCpp->mPreviousPosition;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mPreviousPosition;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodyVertex_mPreviousPosition_Set(
@@ -29,9 +30,10 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mPosition_Get(
   JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
-  Vec3 resultValue = selfCpp->mPosition;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mPosition;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodyVertex_mPosition_Set(
@@ -46,9 +48,10 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mVelocity_Get(
   JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
-  Vec3 resultValue = selfCpp->mVelocity;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mVelocity;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodyVertex_mVelocity_Set(

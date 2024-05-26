@@ -10,13 +10,15 @@ extern "C" {
 
 JoltC_Body_t * JoltC_BodyLockInterfaceNoLock_TryGetBody(
   JoltC_BodyLockInterfaceNoLock_t * self,
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 ) {
   BodyLockInterfaceNoLock * selfCpp = static_cast<BodyLockInterfaceNoLock *>(self->obj);
-  Body * result = selfCpp->TryGetBody(
-  *reinterpret_cast<BodyID *>(inBodyID->obj)
+  Body * resultValue = selfCpp->TryGetBody(
+    *reinterpret_cast<BodyID *>(inBodyID->obj)
   );
-  return reinterpret_cast<JoltC_Body_t *>(result);
+  JoltC_Body_t* result = new JoltC_Body_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

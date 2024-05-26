@@ -9,8 +9,8 @@ extern "C" {
 //region constructors
 
 JoltC_RotatedTranslatedShapeSettings_t * JoltC_RotatedTranslatedShapeSettings_new(
-  const JoltC_Vec3_t * inPosition,
-  const JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
   JoltC_ShapeSettings_t * inShape
 );
 

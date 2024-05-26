@@ -23,7 +23,7 @@ JoltC_SoftBodySharedSettingsVolume_t * JoltC_ArraySoftBodySharedSettingsVolume_a
 
 void JoltC_ArraySoftBodySharedSettingsVolume_push_back(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
-  const JoltC_SoftBodySharedSettingsVolume_t * inValue
+  JoltC_SoftBodySharedSettingsVolume_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsVolume_reserve(

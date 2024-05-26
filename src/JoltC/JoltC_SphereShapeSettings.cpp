@@ -10,7 +10,7 @@ extern "C" {
 
 JoltC_SphereShapeSettings_t * JoltC_SphereShapeSettings_new(
   float inRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 ) {
   JoltC_SphereShapeSettings_t * cInstance = new JoltC_SphereShapeSettings_t();
   SphereShapeSettings * cppInstance = new SphereShapeSettings(
@@ -53,9 +53,10 @@ JoltC_Shape_ShapeResult_t * JoltC_SphereShapeSettings_Create(
   JoltC_SphereShapeSettings_t * self
 ) {
   SphereShapeSettings * selfCpp = static_cast<SphereShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SphereShapeSettings_ClearCachedResult(
@@ -86,17 +87,19 @@ void JoltC_SphereShapeSettings_mRadius_Set(
   selfCpp->mRadius = mRadius;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_SphereShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_SphereShapeSettings_mMaterial_Get(
   JoltC_SphereShapeSettings_t * self
 ) {
   SphereShapeSettings * selfCpp = static_cast<SphereShapeSettings *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->mMaterial;
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const void JoltC_SphereShapeSettings_mMaterial_Set(
+void JoltC_SphereShapeSettings_mMaterial_Set(
   JoltC_SphereShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 ) {
   SphereShapeSettings * selfCpp = static_cast<SphereShapeSettings *>(self->obj);
   selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);

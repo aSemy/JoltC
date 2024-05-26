@@ -36,9 +36,10 @@ JoltC_VehicleEngineSettings_t * JoltC_WheeledVehicleControllerSettings_mEngine_G
   JoltC_WheeledVehicleControllerSettings_t * self
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
-  VehicleEngineSettings resultValue = selfCpp->mEngine;
-  VehicleEngineSettings* result = new VehicleEngineSettings(resultValue);
-  return reinterpret_cast<JoltC_VehicleEngineSettings_t *>(result);
+  static VehicleEngineSettings resultValue = selfCpp->mEngine;
+  JoltC_VehicleEngineSettings_t* result = new JoltC_VehicleEngineSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheeledVehicleControllerSettings_mEngine_Set(
@@ -53,9 +54,10 @@ JoltC_VehicleTransmissionSettings_t * JoltC_WheeledVehicleControllerSettings_mTr
   JoltC_WheeledVehicleControllerSettings_t * self
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
-  VehicleTransmissionSettings resultValue = selfCpp->mTransmission;
-  VehicleTransmissionSettings* result = new VehicleTransmissionSettings(resultValue);
-  return reinterpret_cast<JoltC_VehicleTransmissionSettings_t *>(result);
+  static VehicleTransmissionSettings resultValue = selfCpp->mTransmission;
+  JoltC_VehicleTransmissionSettings_t* result = new JoltC_VehicleTransmissionSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheeledVehicleControllerSettings_mTransmission_Set(
@@ -70,9 +72,10 @@ JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleControllerSetting
   JoltC_WheeledVehicleControllerSettings_t * self
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
-  ArrayVehicleDifferentialSettings resultValue = selfCpp->mDifferentials;
-  ArrayVehicleDifferentialSettings* result = new ArrayVehicleDifferentialSettings(resultValue);
-  return reinterpret_cast<JoltC_ArrayVehicleDifferentialSettings_t *>(result);
+  static ArrayVehicleDifferentialSettings resultValue = selfCpp->mDifferentials;
+  JoltC_ArrayVehicleDifferentialSettings_t* result = new JoltC_ArrayVehicleDifferentialSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_WheeledVehicleControllerSettings_mDifferentials_Set(

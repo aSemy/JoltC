@@ -10,10 +10,10 @@ extern "C" {
 
 JoltC_ShapeGetTriangles_t * JoltC_ShapeGetTriangles_new(
   JoltC_Shape_t * inShape,
-  const JoltC_AABox_t * inBox,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale
+  JoltC_AABox_t * inBox,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale
 );
 
 //endregion
@@ -32,7 +32,7 @@ const void* JoltC_ShapeGetTriangles_GetVerticesData(
   JoltC_ShapeGetTriangles_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_ShapeGetTriangles_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_ShapeGetTriangles_GetMaterial(
   JoltC_ShapeGetTriangles_t * self,
   long inTriangle
 );

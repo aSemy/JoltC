@@ -184,7 +184,7 @@ void JoltC_Constraint_SetConstraintPriority(
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   
   selfCpp->SetConstraintPriority(
-  inPriority
+    inPriority
   );
 };
 
@@ -195,7 +195,7 @@ void JoltC_Constraint_SetNumVelocityStepsOverride(
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   
   selfCpp->SetNumVelocityStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -214,7 +214,7 @@ void JoltC_Constraint_SetNumPositionStepsOverride(
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   
   selfCpp->SetNumPositionStepsOverride(
-  inN
+    inN
   );
 };
 
@@ -233,7 +233,7 @@ void JoltC_Constraint_SetEnabled(
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   
   selfCpp->SetEnabled(
-  inEnabled
+    inEnabled
   );
 };
 
@@ -268,7 +268,7 @@ void JoltC_Constraint_SetUserData(
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   
   selfCpp->SetUserData(
-  inUserData
+    inUserData
   );
 };
 

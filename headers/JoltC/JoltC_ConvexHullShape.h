@@ -47,8 +47,8 @@ JoltC_AABox_t * JoltC_ConvexHullShape_GetLocalBounds(
 
 JoltC_AABox_t * JoltC_ConvexHullShape_GetWorldSpaceBounds(
   JoltC_ConvexHullShape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Vec3_t * JoltC_ConvexHullShape_GetCenterOfMass(
@@ -76,28 +76,28 @@ JoltC_MassProperties_t * JoltC_ConvexHullShape_GetMassProperties(
   JoltC_ConvexHullShape_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_ConvexHullShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_ConvexHullShape_GetMaterial(
   JoltC_ConvexHullShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_Vec3_t * JoltC_ConvexHullShape_GetSurfaceNormal(
   JoltC_ConvexHullShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 );
 
 unsigned long long int JoltC_ConvexHullShape_GetSubShapeUserData(
   JoltC_ConvexHullShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_TransformedShape_t * JoltC_ConvexHullShape_GetSubShapeTransformedShape(
   JoltC_ConvexHullShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 );
 
@@ -107,12 +107,12 @@ float JoltC_ConvexHullShape_GetVolume(
 
 bool JoltC_ConvexHullShape_IsValidScale(
   JoltC_ConvexHullShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_ConvexHullShape_ScaleShape(
   JoltC_ConvexHullShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

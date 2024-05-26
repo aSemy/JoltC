@@ -14,7 +14,7 @@ const unsigned long JoltC_SoftBodyShape_GetSubShapeIDBits(
 
 const unsigned long JoltC_SoftBodyShape_GetFaceIndex(
   JoltC_SoftBodyShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 unsigned long JoltC_SoftBodyShape_GetRefCount(
@@ -47,8 +47,8 @@ JoltC_AABox_t * JoltC_SoftBodyShape_GetLocalBounds(
 
 JoltC_AABox_t * JoltC_SoftBodyShape_GetWorldSpaceBounds(
   JoltC_SoftBodyShape_t * self,
-  const JoltC_Mat44_t * inCenterOfMassTransform,
-  const JoltC_Vec3_t * inScale
+  JoltC_Mat44_t * inCenterOfMassTransform,
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyShape_GetCenterOfMass(
@@ -76,28 +76,28 @@ JoltC_MassProperties_t * JoltC_SoftBodyShape_GetMassProperties(
   JoltC_SoftBodyShape_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_SoftBodyShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_SoftBodyShape_GetMaterial(
   JoltC_SoftBodyShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyShape_GetSurfaceNormal(
   JoltC_SoftBodyShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inLocalSurfacePosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inLocalSurfacePosition
 );
 
 unsigned long long int JoltC_SoftBodyShape_GetSubShapeUserData(
   JoltC_SoftBodyShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 JoltC_TransformedShape_t * JoltC_SoftBodyShape_GetSubShapeTransformedShape(
   JoltC_SoftBodyShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_Vec3_t * inPositionCOM,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale,
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_Vec3_t * inPositionCOM,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale,
   JoltC_SubShapeID_t * outRemainder
 );
 
@@ -107,12 +107,12 @@ float JoltC_SoftBodyShape_GetVolume(
 
 bool JoltC_SoftBodyShape_IsValidScale(
   JoltC_SoftBodyShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Shape_ShapeResult_t * JoltC_SoftBodyShape_ScaleShape(
   JoltC_SoftBodyShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

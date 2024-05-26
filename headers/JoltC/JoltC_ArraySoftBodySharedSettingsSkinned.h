@@ -23,7 +23,7 @@ JoltC_SoftBodySharedSettingsSkinned_t * JoltC_ArraySoftBodySharedSettingsSkinned
 
 void JoltC_ArraySoftBodySharedSettingsSkinned_push_back(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self,
-  const JoltC_SoftBodySharedSettingsSkinned_t * inValue
+  JoltC_SoftBodySharedSettingsSkinned_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsSkinned_reserve(

@@ -29,10 +29,12 @@ JoltC_WheelSettings_t * JoltC_ArrayWheelSettings_at(
   long inIndex
 ) {
   ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  WheelSettings * result = selfCpp->at(
-  inIndex
+  WheelSettings * resultValue = selfCpp->at(
+    inIndex
   );
-  return reinterpret_cast<JoltC_WheelSettings_t *>(result);
+  JoltC_WheelSettings_t* result = new JoltC_WheelSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ArrayWheelSettings_push_back(
@@ -42,7 +44,7 @@ void JoltC_ArrayWheelSettings_push_back(
   ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
   
   selfCpp->push_back(
-  Ref<WheelSettings>(reinterpret_cast<WheelSettings *>(inValue->obj))
+    Ref<WheelSettings>(reinterpret_cast<WheelSettings *>(inValue->obj))
   );
 };
 
@@ -53,7 +55,7 @@ void JoltC_ArrayWheelSettings_resize(
   ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

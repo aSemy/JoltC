@@ -31,8 +31,8 @@ void JoltC_GroupFilterTable_DisableCollision(
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
   
   selfCpp->DisableCollision(
-  inSubGroup1,
-  inSubGroup2
+    inSubGroup1,
+    inSubGroup2
   );
 };
 
@@ -44,8 +44,8 @@ void JoltC_GroupFilterTable_EnableCollision(
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
   
   selfCpp->EnableCollision(
-  inSubGroup1,
-  inSubGroup2
+    inSubGroup1,
+    inSubGroup2
   );
 };
 
@@ -56,8 +56,8 @@ bool JoltC_GroupFilterTable_IsCollisionEnabled(
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
   bool result = selfCpp->IsCollisionEnabled(
-  inSubGroup1,
-  inSubGroup2
+    inSubGroup1,
+    inSubGroup2
   );
   return result;
 };

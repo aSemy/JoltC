@@ -40,11 +40,12 @@ JoltC_RagdollAdditionalConstraint_t * JoltC_ArrayRagdollAdditionalConstraint_at(
   long inIndex
 ) {
   ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-  RagdollAdditionalConstraint& resultRef = selfCpp->at(
-  inIndex
+  RagdollAdditionalConstraint* resultRef = &selfCpp->at(
+    inIndex
   );
-  RagdollAdditionalConstraint * result = &resultRef;
-  return reinterpret_cast<JoltC_RagdollAdditionalConstraint_t *>(result);
+  JoltC_RagdollAdditionalConstraint_t* result = new JoltC_RagdollAdditionalConstraint_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArrayRagdollAdditionalConstraint_push_back(
@@ -54,7 +55,7 @@ void JoltC_ArrayRagdollAdditionalConstraint_push_back(
   ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<RagdollAdditionalConstraint *>(inValue->obj)
+    *reinterpret_cast<RagdollAdditionalConstraint *>(inValue->obj)
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArrayRagdollAdditionalConstraint_reserve(
   ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -76,7 +77,7 @@ void JoltC_ArrayRagdollAdditionalConstraint_resize(
   ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

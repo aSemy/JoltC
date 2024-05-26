@@ -25,11 +25,13 @@ JoltC_Constraint_t * JoltC_HingeConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
+  Constraint * resultValue = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
   );
-  return reinterpret_cast<JoltC_Constraint_t *>(result);
+  JoltC_Constraint_t* result = new JoltC_Constraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_HingeConstraintSettings_GetRefCount(
@@ -80,9 +82,10 @@ JoltC_RVec3_t * JoltC_HingeConstraintSettings_mPoint1_Get(
   JoltC_HingeConstraintSettings_t * self
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPoint1;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPoint1;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HingeConstraintSettings_mPoint1_Set(
@@ -97,9 +100,10 @@ JoltC_Vec3_t * JoltC_HingeConstraintSettings_mHingeAxis1_Get(
   JoltC_HingeConstraintSettings_t * self
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mHingeAxis1;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mHingeAxis1;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HingeConstraintSettings_mHingeAxis1_Set(
@@ -114,9 +118,10 @@ JoltC_Vec3_t * JoltC_HingeConstraintSettings_mNormalAxis1_Get(
   JoltC_HingeConstraintSettings_t * self
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mNormalAxis1;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mNormalAxis1;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HingeConstraintSettings_mNormalAxis1_Set(
@@ -131,9 +136,10 @@ JoltC_RVec3_t * JoltC_HingeConstraintSettings_mPoint2_Get(
   JoltC_HingeConstraintSettings_t * self
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPoint2;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPoint2;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HingeConstraintSettings_mPoint2_Set(
@@ -148,9 +154,10 @@ JoltC_Vec3_t * JoltC_HingeConstraintSettings_mHingeAxis2_Get(
   JoltC_HingeConstraintSettings_t * self
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mHingeAxis2;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mHingeAxis2;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HingeConstraintSettings_mHingeAxis2_Set(
@@ -165,9 +172,10 @@ JoltC_Vec3_t * JoltC_HingeConstraintSettings_mNormalAxis2_Get(
   JoltC_HingeConstraintSettings_t * self
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mNormalAxis2;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mNormalAxis2;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HingeConstraintSettings_mNormalAxis2_Set(
@@ -214,9 +222,10 @@ JoltC_SpringSettings_t * JoltC_HingeConstraintSettings_mLimitsSpringSettings_Get
   JoltC_HingeConstraintSettings_t * self
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  SpringSettings resultValue = selfCpp->mLimitsSpringSettings;
-  SpringSettings* result = new SpringSettings(resultValue);
-  return reinterpret_cast<JoltC_SpringSettings_t *>(result);
+  static SpringSettings resultValue = selfCpp->mLimitsSpringSettings;
+  JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HingeConstraintSettings_mLimitsSpringSettings_Set(
@@ -247,9 +256,10 @@ JoltC_MotorSettings_t * JoltC_HingeConstraintSettings_mMotorSettings_Get(
   JoltC_HingeConstraintSettings_t * self
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
-  MotorSettings resultValue = selfCpp->mMotorSettings;
-  MotorSettings* result = new MotorSettings(resultValue);
-  return reinterpret_cast<JoltC_MotorSettings_t *>(result);
+  static MotorSettings resultValue = selfCpp->mMotorSettings;
+  JoltC_MotorSettings_t* result = new JoltC_MotorSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_HingeConstraintSettings_mMotorSettings_Set(

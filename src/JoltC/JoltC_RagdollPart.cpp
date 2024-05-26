@@ -8,22 +8,24 @@ extern "C" {
 
 //region functions
 
-const JoltC_ShapeSettings_t * JoltC_RagdollPart_GetShapeSettings(
+JoltC_ShapeSettings_t * JoltC_RagdollPart_GetShapeSettings(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  const ShapeSettings * result = selfCpp->GetShapeSettings();
-  return reinterpret_cast<const JoltC_ShapeSettings_t *>(result);
+  const ShapeSettings * resultValue = selfCpp->GetShapeSettings();
+  JoltC_ShapeSettings_t* result = new JoltC_ShapeSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_SetShapeSettings(
   JoltC_RagdollPart_t * self,
-  const JoltC_ShapeSettings_t * inShape
+  JoltC_ShapeSettings_t * inShape
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   
   selfCpp->SetShapeSettings(
-  reinterpret_cast<ShapeSettings *>(inShape->obj)
+    reinterpret_cast<ShapeSettings *>(inShape->obj)
   );
 };
 
@@ -31,27 +33,30 @@ JoltC_Shape_ShapeResult_t * JoltC_RagdollPart_ConvertShapeSettings(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->ConvertShapeSettings();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->ConvertShapeSettings();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Shape_t * JoltC_RagdollPart_GetShape(
+JoltC_Shape_t * JoltC_RagdollPart_GetShape(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  const Shape * result = selfCpp->GetShape();
-  return reinterpret_cast<const JoltC_Shape_t *>(result);
+  const Shape * resultValue = selfCpp->GetShape();
+  JoltC_Shape_t* result = new JoltC_Shape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_SetShape(
   JoltC_RagdollPart_t * self,
-  const JoltC_Shape_t * inShape
+  JoltC_Shape_t * inShape
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   
   selfCpp->SetShape(
-  reinterpret_cast<Shape *>(inShape->obj)
+    reinterpret_cast<Shape *>(inShape->obj)
   );
 };
 
@@ -67,9 +72,10 @@ JoltC_MassProperties_t * JoltC_RagdollPart_GetMassProperties(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  MassProperties resultValue = selfCpp->GetMassProperties();
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  static MassProperties resultValue = selfCpp->GetMassProperties();
+  JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion
@@ -80,8 +86,10 @@ JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollPart_mToParent_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  TwoBodyConstraintSettings * result = selfCpp->mToParent;
-  return reinterpret_cast<JoltC_TwoBodyConstraintSettings_t *>(result);
+  TwoBodyConstraintSettings * resultValue = selfCpp->mToParent;
+  JoltC_TwoBodyConstraintSettings_t* result = new JoltC_TwoBodyConstraintSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_mToParent_Set(
@@ -96,9 +104,10 @@ JoltC_RVec3_t * JoltC_RagdollPart_mPosition_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  RVec3 resultValue = selfCpp->mPosition;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPosition;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_mPosition_Set(
@@ -113,9 +122,10 @@ JoltC_Quat_t * JoltC_RagdollPart_mRotation_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  Quat resultValue = selfCpp->mRotation;
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->mRotation;
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_mRotation_Set(
@@ -130,9 +140,10 @@ JoltC_Vec3_t * JoltC_RagdollPart_mLinearVelocity_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  Vec3 resultValue = selfCpp->mLinearVelocity;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mLinearVelocity;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_mLinearVelocity_Set(
@@ -147,9 +158,10 @@ JoltC_Vec3_t * JoltC_RagdollPart_mAngularVelocity_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  Vec3 resultValue = selfCpp->mAngularVelocity;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mAngularVelocity;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_mAngularVelocity_Set(
@@ -196,9 +208,10 @@ JoltC_CollisionGroup_t * JoltC_RagdollPart_mCollisionGroup_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  CollisionGroup resultValue = selfCpp->mCollisionGroup;
-  CollisionGroup* result = new CollisionGroup(resultValue);
-  return reinterpret_cast<JoltC_CollisionGroup_t *>(result);
+  static CollisionGroup resultValue = selfCpp->mCollisionGroup;
+  JoltC_CollisionGroup_t* result = new JoltC_CollisionGroup_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_mCollisionGroup_Set(
@@ -549,9 +562,10 @@ JoltC_MassProperties_t * JoltC_RagdollPart_mMassPropertiesOverride_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  MassProperties resultValue = selfCpp->mMassPropertiesOverride;
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  static MassProperties resultValue = selfCpp->mMassPropertiesOverride;
+  JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollPart_mMassPropertiesOverride_Set(

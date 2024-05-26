@@ -29,21 +29,22 @@ JoltC_Mat44_t * JoltC_ArrayMat44_at(
   long inIndex
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  Mat44& resultRef = selfCpp->at(
-  inIndex
+  Mat44* resultRef = &selfCpp->at(
+    inIndex
   );
-  Mat44 * result = &resultRef;
-  return reinterpret_cast<JoltC_Mat44_t *>(result);
+  JoltC_Mat44_t* result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArrayMat44_push_back(
   JoltC_ArrayMat44_t * self,
-  const JoltC_Mat44_t * inValue
+  JoltC_Mat44_t * inValue
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<Mat44 *>(inValue->obj)
+    *reinterpret_cast<Mat44 *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArrayMat44_reserve(
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArrayMat44_resize(
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 
@@ -81,8 +82,10 @@ JoltC_Mat44MemRef_t * JoltC_ArrayMat44_data(
   JoltC_ArrayMat44_t * self
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  Mat44MemRef * result = selfCpp->data();
-  return reinterpret_cast<JoltC_Mat44MemRef_t *>(result);
+  Mat44MemRef * resultValue = selfCpp->data();
+  JoltC_Mat44MemRef_t* result = new JoltC_Mat44MemRef_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

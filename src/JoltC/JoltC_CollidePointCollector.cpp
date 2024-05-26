@@ -49,21 +49,23 @@ void JoltC_CollidePointCollector_Reset(
 
 void JoltC_CollidePointCollector_SetContext(
   JoltC_CollidePointCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 ) {
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
   
   selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
+    reinterpret_cast<TransformedShape *>(inContext->obj)
   );
 };
 
-const JoltC_TransformedShape_t * JoltC_CollidePointCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_CollidePointCollector_GetContext(
   JoltC_CollidePointCollector_t * self
 ) {
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  const TransformedShape * resultValue = selfCpp->GetContext();
+  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CollidePointCollector_UpdateEarlyOutFraction(
@@ -73,7 +75,7 @@ void JoltC_CollidePointCollector_UpdateEarlyOutFraction(
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
   
   selfCpp->UpdateEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 
@@ -84,7 +86,7 @@ void JoltC_CollidePointCollector_ResetEarlyOutFraction(
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
   
   selfCpp->ResetEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 

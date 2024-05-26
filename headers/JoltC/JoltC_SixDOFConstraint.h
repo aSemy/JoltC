@@ -10,14 +10,14 @@ extern "C" {
 
 void JoltC_SixDOFConstraint_SetTranslationLimits(
   JoltC_SixDOFConstraint_t * self,
-  const JoltC_Vec3_t * inLimitMin,
-  const JoltC_Vec3_t * inLimitMax
+  JoltC_Vec3_t * inLimitMin,
+  JoltC_Vec3_t * inLimitMax
 );
 
 void JoltC_SixDOFConstraint_SetRotationLimits(
   JoltC_SixDOFConstraint_t * self,
-  const JoltC_Vec3_t * inLimitMin,
-  const JoltC_Vec3_t * inLimitMax
+  JoltC_Vec3_t * inLimitMin,
+  JoltC_Vec3_t * inLimitMax
 );
 
 float JoltC_SixDOFConstraint_GetLimitsMin(
@@ -30,19 +30,19 @@ float JoltC_SixDOFConstraint_GetLimitsMax(
   JoltC_SixDOFConstraintSettings_EAxis inAxis
 );
 
-const JoltC_Vec3_t * JoltC_SixDOFConstraint_GetTranslationLimitsMin(
+JoltC_Vec3_t * JoltC_SixDOFConstraint_GetTranslationLimitsMin(
   JoltC_SixDOFConstraint_t * self
 );
 
-const JoltC_Vec3_t * JoltC_SixDOFConstraint_GetTranslationLimitsMax(
+JoltC_Vec3_t * JoltC_SixDOFConstraint_GetTranslationLimitsMax(
   JoltC_SixDOFConstraint_t * self
 );
 
-const JoltC_Vec3_t * JoltC_SixDOFConstraint_GetRotationLimitsMin(
+JoltC_Vec3_t * JoltC_SixDOFConstraint_GetRotationLimitsMin(
   JoltC_SixDOFConstraint_t * self
 );
 
-const JoltC_Vec3_t * JoltC_SixDOFConstraint_GetRotationLimitsMax(
+JoltC_Vec3_t * JoltC_SixDOFConstraint_GetRotationLimitsMax(
   JoltC_SixDOFConstraint_t * self
 );
 
@@ -56,7 +56,7 @@ bool JoltC_SixDOFConstraint_IsFreeAxis(
   JoltC_SixDOFConstraintSettings_EAxis inAxis
 );
 
-const JoltC_SpringSettings_t * JoltC_SixDOFConstraint_GetLimitsSpringSettings(
+JoltC_SpringSettings_t * JoltC_SixDOFConstraint_GetLimitsSpringSettings(
   JoltC_SixDOFConstraint_t * self,
   JoltC_SixDOFConstraintSettings_EAxis inAxis
 );
@@ -64,7 +64,7 @@ const JoltC_SpringSettings_t * JoltC_SixDOFConstraint_GetLimitsSpringSettings(
 void JoltC_SixDOFConstraint_SetLimitsSpringSettings(
   JoltC_SixDOFConstraint_t * self,
   JoltC_SixDOFConstraintSettings_EAxis inAxis,
-  const JoltC_SpringSettings_t * inLimitsSpringSettings
+  JoltC_SpringSettings_t * inLimitsSpringSettings
 );
 
 void JoltC_SixDOFConstraint_SetMaxFriction(
@@ -104,12 +104,12 @@ JoltC_Vec3_t * JoltC_SixDOFConstraint_GetTargetVelocityCS(
 
 void JoltC_SixDOFConstraint_SetTargetVelocityCS(
   JoltC_SixDOFConstraint_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_SixDOFConstraint_SetTargetAngularVelocityCS(
   JoltC_SixDOFConstraint_t * self,
-  const JoltC_Vec3_t * inAngularVelocity
+  JoltC_Vec3_t * inAngularVelocity
 );
 
 JoltC_Vec3_t * JoltC_SixDOFConstraint_GetTargetAngularVelocityCS(
@@ -122,12 +122,12 @@ JoltC_Vec3_t * JoltC_SixDOFConstraint_GetTargetPositionCS(
 
 void JoltC_SixDOFConstraint_SetTargetPositionCS(
   JoltC_SixDOFConstraint_t * self,
-  const JoltC_Vec3_t * inPosition
+  JoltC_Vec3_t * inPosition
 );
 
 void JoltC_SixDOFConstraint_SetTargetOrientationCS(
   JoltC_SixDOFConstraint_t * self,
-  const JoltC_Quat_t * inOrientation
+  JoltC_Quat_t * inOrientation
 );
 
 JoltC_Quat_t * JoltC_SixDOFConstraint_GetTargetOrientationCS(
@@ -136,7 +136,7 @@ JoltC_Quat_t * JoltC_SixDOFConstraint_GetTargetOrientationCS(
 
 void JoltC_SixDOFConstraint_SetTargetOrientationBS(
   JoltC_SixDOFConstraint_t * self,
-  const JoltC_Quat_t * inOrientation
+  JoltC_Quat_t * inOrientation
 );
 
 JoltC_Vec3_t * JoltC_SixDOFConstraint_GetTotalLambdaPosition(

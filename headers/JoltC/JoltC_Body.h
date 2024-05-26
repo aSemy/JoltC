@@ -8,7 +8,7 @@ extern "C" {
 
 //region functions
 
-const JoltC_BodyID_t * JoltC_Body_GetID(
+JoltC_BodyID_t * JoltC_Body_GetID(
   JoltC_Body_t * self
 );
 
@@ -138,12 +138,12 @@ JoltC_Vec3_t * JoltC_Body_GetLinearVelocity(
 
 void JoltC_Body_SetLinearVelocity(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_Body_SetLinearVelocityClamped(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 JoltC_Vec3_t * JoltC_Body_GetAngularVelocity(
@@ -152,35 +152,35 @@ JoltC_Vec3_t * JoltC_Body_GetAngularVelocity(
 
 void JoltC_Body_SetAngularVelocity(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_Body_SetAngularVelocityClamped(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_Body_AddForce_0(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inForce
+  JoltC_Vec3_t * inForce
 );
 
 void JoltC_Body_AddForce_1(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inForce,
-  const JoltC_RVec3_t * inPosition
+  JoltC_Vec3_t * inForce,
+  JoltC_RVec3_t * inPosition
 );
 
 void JoltC_Body_AddTorque(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inTorque
+  JoltC_Vec3_t * inTorque
 );
 
-const JoltC_Vec3_t * JoltC_Body_GetAccumulatedForce(
+JoltC_Vec3_t * JoltC_Body_GetAccumulatedForce(
   JoltC_Body_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Body_GetAccumulatedTorque(
+JoltC_Vec3_t * JoltC_Body_GetAccumulatedTorque(
   JoltC_Body_t * self
 );
 
@@ -198,36 +198,36 @@ void JoltC_Body_ResetMotion(
 
 void JoltC_Body_AddImpulse_0(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inImpulse
+  JoltC_Vec3_t * inImpulse
 );
 
 void JoltC_Body_AddImpulse_1(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inImpulse,
-  const JoltC_RVec3_t * inPosition
+  JoltC_Vec3_t * inImpulse,
+  JoltC_RVec3_t * inPosition
 );
 
 void JoltC_Body_AddAngularImpulse(
   JoltC_Body_t * self,
-  const JoltC_Vec3_t * inAngularImpulse
+  JoltC_Vec3_t * inAngularImpulse
 );
 
 void JoltC_Body_MoveKinematic(
   JoltC_Body_t * self,
-  const JoltC_RVec3_t * inPosition,
-  const JoltC_Quat_t * inRotation,
+  JoltC_RVec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
   float inDeltaTime
 );
 
 bool JoltC_Body_ApplyBuoyancyImpulse(
   JoltC_Body_t * self,
-  const JoltC_RVec3_t * inSurfacePosition,
-  const JoltC_Vec3_t * inSurfaceNormal,
+  JoltC_RVec3_t * inSurfacePosition,
+  JoltC_Vec3_t * inSurfaceNormal,
   float inBuoyancy,
   float inLinearDrag,
   float inAngularDrag,
-  const JoltC_Vec3_t * inFluidVelocity,
-  const JoltC_Vec3_t * inGravity,
+  JoltC_Vec3_t * inFluidVelocity,
+  JoltC_Vec3_t * inGravity,
   float inDeltaTime
 );
 
@@ -235,11 +235,11 @@ bool JoltC_Body_IsInBroadPhase(
   JoltC_Body_t * self
 );
 
-const JoltC_Mat44_t * JoltC_Body_GetInverseInertia(
+JoltC_Mat44_t * JoltC_Body_GetInverseInertia(
   JoltC_Body_t * self
 );
 
-const JoltC_Shape_t * JoltC_Body_GetShape(
+JoltC_Shape_t * JoltC_Body_GetShape(
   JoltC_Body_t * self
 );
 
@@ -287,10 +287,10 @@ JoltC_MotionProperties_t * JoltC_Body_GetMotionProperties(
   JoltC_Body_t * self
 );
 
-const JoltC_Vec3_t * JoltC_Body_GetWorldSpaceSurfaceNormal(
+JoltC_Vec3_t * JoltC_Body_GetWorldSpaceSurfaceNormal(
   JoltC_Body_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_RVec3_t * inPosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_RVec3_t * inPosition
 );
 
 unsigned long long int JoltC_Body_GetUserData(

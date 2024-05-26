@@ -16,50 +16,50 @@ JoltC_TransformedShape_t * JoltC_TransformedShape_new();
 
 void JoltC_TransformedShape_CastRay_0(
   JoltC_TransformedShape_t * self,
-  const JoltC_RRayCast_t * inRay,
+  JoltC_RRayCast_t * inRay,
   JoltC_RayCastResult_t * ioHit
 );
 
 void JoltC_TransformedShape_CastRay_1(
   JoltC_TransformedShape_t * self,
-  const JoltC_RRayCast_t * inRay,
-  const JoltC_RayCastSettings_t * inRayCastSettings,
+  JoltC_RRayCast_t * inRay,
+  JoltC_RayCastSettings_t * inRayCastSettings,
   JoltC_CastRayCollector_t * ioCollector,
-  const JoltC_ShapeFilter_t * inShapeFilter
+  JoltC_ShapeFilter_t * inShapeFilter
 );
 
 void JoltC_TransformedShape_CollidePoint(
   JoltC_TransformedShape_t * self,
-  const JoltC_RVec3_t * inPoint,
+  JoltC_RVec3_t * inPoint,
   JoltC_CollidePointCollector_t * ioCollector,
-  const JoltC_ShapeFilter_t * inShapeFilter
+  JoltC_ShapeFilter_t * inShapeFilter
 );
 
 void JoltC_TransformedShape_CollideShape(
   JoltC_TransformedShape_t * self,
-  const JoltC_Shape_t * inShape,
-  const JoltC_Vec3_t * inShapeScale,
-  const JoltC_RMat44_t * inCenterOfMassTransform,
-  const JoltC_CollideShapeSettings_t * inCollideShapeSettings,
-  const JoltC_RVec3_t * inBaseOffset,
+  JoltC_Shape_t * inShape,
+  JoltC_Vec3_t * inShapeScale,
+  JoltC_RMat44_t * inCenterOfMassTransform,
+  JoltC_CollideShapeSettings_t * inCollideShapeSettings,
+  JoltC_RVec3_t * inBaseOffset,
   JoltC_CollideShapeCollector_t * ioCollector,
-  const JoltC_ShapeFilter_t * inShapeFilter
+  JoltC_ShapeFilter_t * inShapeFilter
 );
 
 void JoltC_TransformedShape_CastShape(
   JoltC_TransformedShape_t * self,
-  const JoltC_RShapeCast_t * inShapeCast,
-  const JoltC_ShapeCastSettings_t * inShapeCastSettings,
-  const JoltC_RVec3_t * inBaseOffset,
+  JoltC_RShapeCast_t * inShapeCast,
+  JoltC_ShapeCastSettings_t * inShapeCastSettings,
+  JoltC_RVec3_t * inBaseOffset,
   JoltC_CastShapeCollector_t * ioCollector,
-  const JoltC_ShapeFilter_t * inShapeFilter
+  JoltC_ShapeFilter_t * inShapeFilter
 );
 
 void JoltC_TransformedShape_CollectTransformedShapes(
   JoltC_TransformedShape_t * self,
-  const JoltC_AABox_t * inBox,
+  JoltC_AABox_t * inBox,
   JoltC_TransformedShapeCollector_t * ioCollector,
-  const JoltC_ShapeFilter_t * inShapeFilter
+  JoltC_ShapeFilter_t * inShapeFilter
 );
 
 JoltC_Vec3_t * JoltC_TransformedShape_GetShapeScale(
@@ -68,7 +68,7 @@ JoltC_Vec3_t * JoltC_TransformedShape_GetShapeScale(
 
 void JoltC_TransformedShape_SetShapeScale(
   JoltC_TransformedShape_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_RMat44_t * JoltC_TransformedShape_GetCenterOfMassTransform(
@@ -81,14 +81,14 @@ JoltC_RMat44_t * JoltC_TransformedShape_GetInverseCenterOfMassTransform(
 
 void JoltC_TransformedShape_SetWorldTransform_0(
   JoltC_TransformedShape_t * self,
-  const JoltC_RVec3_t * inPosition,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inScale
+  JoltC_RVec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inScale
 );
 
 void JoltC_TransformedShape_SetWorldTransform_1(
   JoltC_TransformedShape_t * self,
-  const JoltC_RMat44_t * inTransform
+  JoltC_RMat44_t * inTransform
 );
 
 JoltC_RMat44_t * JoltC_TransformedShape_GetWorldTransform(
@@ -101,13 +101,13 @@ JoltC_AABox_t * JoltC_TransformedShape_GetWorldSpaceBounds(
 
 JoltC_Vec3_t * JoltC_TransformedShape_GetWorldSpaceSurfaceNormal(
   JoltC_TransformedShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID,
-  const JoltC_RVec3_t * inPosition
+  JoltC_SubShapeID_t * inSubShapeID,
+  JoltC_RVec3_t * inPosition
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_TransformedShape_GetMaterial(
+JoltC_PhysicsMaterial_t * JoltC_TransformedShape_GetMaterial(
   JoltC_TransformedShape_t * self,
-  const JoltC_SubShapeID_t * inSubShapeID
+  JoltC_SubShapeID_t * inSubShapeID
 );
 
 //endregion
@@ -132,13 +132,13 @@ void JoltC_TransformedShape_mShapeRotation_Set(
   JoltC_Quat_t * mShapeRotation
 );
 
-const JoltC_Shape_t * JoltC_TransformedShape_mShape_Get(
+JoltC_Shape_t * JoltC_TransformedShape_mShape_Get(
   JoltC_TransformedShape_t * self
 );
 
-const void JoltC_TransformedShape_mShape_Set(
+void JoltC_TransformedShape_mShape_Set(
   JoltC_TransformedShape_t * self,
-  const JoltC_Shape_t * mShape
+  JoltC_Shape_t * mShape
 );
 
 JoltC_Float3_t * JoltC_TransformedShape_mShapeScale_Get(

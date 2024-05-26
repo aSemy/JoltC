@@ -16,7 +16,7 @@ JoltC_BodyCreationSettings_t * JoltC_BodyCreationSettings_new_0() {
 };
 
 JoltC_BodyCreationSettings_t * JoltC_BodyCreationSettings_new_1(
-  const JoltC_Shape_t * inShape,
+  JoltC_Shape_t * inShape,
   JoltC_RVec3_t * inPosition,
   JoltC_Quat_t * inRotation,
   JoltC_EMotionType inMotionType,
@@ -51,22 +51,24 @@ JoltC_BodyCreationSettings_t * JoltC_BodyCreationSettings_From_RagdollPart(
 
 //region functions
 
-const JoltC_ShapeSettings_t * JoltC_BodyCreationSettings_GetShapeSettings(
+JoltC_ShapeSettings_t * JoltC_BodyCreationSettings_GetShapeSettings(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  const ShapeSettings * result = selfCpp->GetShapeSettings();
-  return reinterpret_cast<const JoltC_ShapeSettings_t *>(result);
+  const ShapeSettings * resultValue = selfCpp->GetShapeSettings();
+  JoltC_ShapeSettings_t* result = new JoltC_ShapeSettings_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BodyCreationSettings_SetShapeSettings(
   JoltC_BodyCreationSettings_t * self,
-  const JoltC_ShapeSettings_t * inShape
+  JoltC_ShapeSettings_t * inShape
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   
   selfCpp->SetShapeSettings(
-  reinterpret_cast<ShapeSettings *>(inShape->obj)
+    reinterpret_cast<ShapeSettings *>(inShape->obj)
   );
 };
 
@@ -74,27 +76,30 @@ JoltC_Shape_ShapeResult_t * JoltC_BodyCreationSettings_ConvertShapeSettings(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->ConvertShapeSettings();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->ConvertShapeSettings();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_Shape_t * JoltC_BodyCreationSettings_GetShape(
+JoltC_Shape_t * JoltC_BodyCreationSettings_GetShape(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  const Shape * result = selfCpp->GetShape();
-  return reinterpret_cast<const JoltC_Shape_t *>(result);
+  const Shape * resultValue = selfCpp->GetShape();
+  JoltC_Shape_t* result = new JoltC_Shape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BodyCreationSettings_SetShape(
   JoltC_BodyCreationSettings_t * self,
-  const JoltC_Shape_t * inShape
+  JoltC_Shape_t * inShape
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   
   selfCpp->SetShape(
-  reinterpret_cast<Shape *>(inShape->obj)
+    reinterpret_cast<Shape *>(inShape->obj)
   );
 };
 
@@ -110,9 +115,10 @@ JoltC_MassProperties_t * JoltC_BodyCreationSettings_GetMassProperties(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  MassProperties resultValue = selfCpp->GetMassProperties();
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  static MassProperties resultValue = selfCpp->GetMassProperties();
+  JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion
@@ -123,9 +129,10 @@ JoltC_RVec3_t * JoltC_BodyCreationSettings_mPosition_Get(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPosition;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPosition;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BodyCreationSettings_mPosition_Set(
@@ -140,9 +147,10 @@ JoltC_Quat_t * JoltC_BodyCreationSettings_mRotation_Get(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  Quat resultValue = selfCpp->mRotation;
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->mRotation;
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BodyCreationSettings_mRotation_Set(
@@ -157,9 +165,10 @@ JoltC_Vec3_t * JoltC_BodyCreationSettings_mLinearVelocity_Get(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mLinearVelocity;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mLinearVelocity;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BodyCreationSettings_mLinearVelocity_Set(
@@ -174,9 +183,10 @@ JoltC_Vec3_t * JoltC_BodyCreationSettings_mAngularVelocity_Get(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mAngularVelocity;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mAngularVelocity;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BodyCreationSettings_mAngularVelocity_Set(
@@ -223,9 +233,10 @@ JoltC_CollisionGroup_t * JoltC_BodyCreationSettings_mCollisionGroup_Get(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  CollisionGroup resultValue = selfCpp->mCollisionGroup;
-  CollisionGroup* result = new CollisionGroup(resultValue);
-  return reinterpret_cast<JoltC_CollisionGroup_t *>(result);
+  static CollisionGroup resultValue = selfCpp->mCollisionGroup;
+  JoltC_CollisionGroup_t* result = new JoltC_CollisionGroup_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BodyCreationSettings_mCollisionGroup_Set(
@@ -576,9 +587,10 @@ JoltC_MassProperties_t * JoltC_BodyCreationSettings_mMassPropertiesOverride_Get(
   JoltC_BodyCreationSettings_t * self
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
-  MassProperties resultValue = selfCpp->mMassPropertiesOverride;
-  MassProperties* result = new MassProperties(resultValue);
-  return reinterpret_cast<JoltC_MassProperties_t *>(result);
+  static MassProperties resultValue = selfCpp->mMassPropertiesOverride;
+  JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_BodyCreationSettings_mMassPropertiesOverride_Set(

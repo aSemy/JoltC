@@ -40,21 +40,22 @@ JoltC_BodyID_t * JoltC_BodyIDVector_at(
   long inIndex
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  BodyID& resultRef = selfCpp->at(
-  inIndex
+  BodyID* resultRef = &selfCpp->at(
+    inIndex
   );
-  BodyID * result = &resultRef;
-  return reinterpret_cast<JoltC_BodyID_t *>(result);
+  JoltC_BodyID_t* result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_BodyIDVector_push_back(
   JoltC_BodyIDVector_t * self,
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *reinterpret_cast<BodyID *>(inBodyID->obj)
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_BodyIDVector_reserve(
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -76,7 +77,7 @@ void JoltC_BodyIDVector_resize(
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

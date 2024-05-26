@@ -8,7 +8,7 @@ extern "C" {
 
 //region functions
 
-const JoltC_SoftBodySharedSettings_t * JoltC_SoftBodyMotionProperties_GetSettings(
+JoltC_SoftBodySharedSettings_t * JoltC_SoftBodyMotionProperties_GetSettings(
   JoltC_SoftBodyMotionProperties_t * self
 );
 
@@ -21,15 +21,15 @@ JoltC_SoftBodyVertex_t * JoltC_SoftBodyMotionProperties_GetVertex(
   unsigned long inIndex
 );
 
-const JoltC_PhysicsMaterialList_t * JoltC_SoftBodyMotionProperties_GetMaterials(
+JoltC_PhysicsMaterialList_t * JoltC_SoftBodyMotionProperties_GetMaterials(
   JoltC_SoftBodyMotionProperties_t * self
 );
 
-const JoltC_ArraySoftBodySharedSettingsFace_t * JoltC_SoftBodyMotionProperties_GetFaces(
+JoltC_ArraySoftBodySharedSettingsFace_t * JoltC_SoftBodyMotionProperties_GetFaces(
   JoltC_SoftBodyMotionProperties_t * self
 );
 
-const JoltC_SoftBodySharedSettingsFace_t * JoltC_SoftBodyMotionProperties_GetFace(
+JoltC_SoftBodySharedSettingsFace_t * JoltC_SoftBodyMotionProperties_GetFace(
   JoltC_SoftBodyMotionProperties_t * self,
   unsigned long inIndex
 );
@@ -79,7 +79,7 @@ void JoltC_SoftBodyMotionProperties_SetSkinnedMaxDistanceMultiplier(
   float inSkinnedMaxDistanceMultiplier
 );
 
-const JoltC_AABox_t * JoltC_SoftBodyMotionProperties_GetLocalBounds(
+JoltC_AABox_t * JoltC_SoftBodyMotionProperties_GetLocalBounds(
   JoltC_SoftBodyMotionProperties_t * self
 );
 
@@ -92,7 +92,7 @@ void JoltC_SoftBodyMotionProperties_CustomUpdate(
 
 void JoltC_SoftBodyMotionProperties_SkinVertices(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_RMat44_t * inRootTransform,
+  JoltC_RMat44_t * inRootTransform,
   JoltC_Mat44MemRef_t * inJointMatrices,
   unsigned long inNumJoints,
   bool inHardSkinAll,
@@ -117,12 +117,12 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetLinearVelocity(
 
 void JoltC_SoftBodyMotionProperties_SetLinearVelocity(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_SoftBodyMotionProperties_SetLinearVelocityClamped(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAngularVelocity(
@@ -131,18 +131,18 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAngularVelocity(
 
 void JoltC_SoftBodyMotionProperties_SetAngularVelocity(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_SoftBodyMotionProperties_SetAngularVelocityClamped(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inVelocity
+  JoltC_Vec3_t * inVelocity
 );
 
 void JoltC_SoftBodyMotionProperties_MoveKinematic(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inPosition,
-  const JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
   float inDeltaTime
 );
 
@@ -202,7 +202,7 @@ void JoltC_SoftBodyMotionProperties_SetGravityFactor(
 void JoltC_SoftBodyMotionProperties_SetMassProperties(
   JoltC_SoftBodyMotionProperties_t * self,
   JoltC_EAllowedDOFs inAllowedDOFs,
-  const JoltC_MassProperties_t * inMassProperties
+  JoltC_MassProperties_t * inMassProperties
 );
 
 float JoltC_SoftBodyMotionProperties_GetInverseMass(
@@ -228,8 +228,8 @@ JoltC_Quat_t * JoltC_SoftBodyMotionProperties_GetInertiaRotation(
 
 void JoltC_SoftBodyMotionProperties_SetInverseInertia(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inInvI,
-  const JoltC_Quat_t * inRotation
+  JoltC_Vec3_t * inInvI,
+  JoltC_Quat_t * inRotation
 );
 
 JoltC_Mat44_t * JoltC_SoftBodyMotionProperties_GetLocalSpaceInverseInertia(
@@ -238,18 +238,18 @@ JoltC_Mat44_t * JoltC_SoftBodyMotionProperties_GetLocalSpaceInverseInertia(
 
 JoltC_Mat44_t * JoltC_SoftBodyMotionProperties_GetInverseInertiaForRotation(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Mat44_t * inRotation
+  JoltC_Mat44_t * inRotation
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_MultiplyWorldSpaceInverseInertiaByVector(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inV
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inV
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetPointVelocityCOM(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inPointRelativeToCOM
+  JoltC_Vec3_t * inPointRelativeToCOM
 );
 
 JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAccumulatedForce(
@@ -272,14 +272,14 @@ void JoltC_SoftBodyMotionProperties_ResetMotion(
   JoltC_SoftBodyMotionProperties_t * self
 );
 
-const JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_LockTranslation(
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_LockTranslation(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
-const JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_LockAngular(
+JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_LockAngular(
   JoltC_SoftBodyMotionProperties_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 void JoltC_SoftBodyMotionProperties_SetNumVelocityStepsOverride(

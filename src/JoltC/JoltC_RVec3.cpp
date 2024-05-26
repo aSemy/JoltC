@@ -35,75 +35,83 @@ JoltC_RVec3_t * JoltC_RVec3_new_1(
 //region functions
 
 JoltC_RVec3_t * JoltC_RVec3_sZero() {
-  RVec3 resultValue = RVec3::sZero();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = RVec3::sZero();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_sAxisX() {
-  RVec3 resultValue = RVec3::sAxisX();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = RVec3::sAxisX();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_sAxisY() {
-  RVec3 resultValue = RVec3::sAxisY();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = RVec3::sAxisY();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_sAxisZ() {
-  RVec3 resultValue = RVec3::sAxisZ();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = RVec3::sAxisZ();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_sReplicate(
   double inValue
 ) {
-  RVec3 resultValue = RVec3::sReplicate(
-  inValue
+  static RVec3 resultValue = RVec3::sReplicate(
+    inValue
   );
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_sMin(
-  const JoltC_RVec3_t * inLHS,
-  const JoltC_RVec3_t * inRHS
+  JoltC_RVec3_t * inLHS,
+  JoltC_RVec3_t * inRHS
 ) {
-  RVec3 resultValue = RVec3::sMin(
-  *reinterpret_cast<RVec3 *>(inLHS->obj),
-  *reinterpret_cast<RVec3 *>(inRHS->obj)
+  static RVec3 resultValue = RVec3::sMin(
+    *reinterpret_cast<RVec3 *>(inLHS->obj),
+    *reinterpret_cast<RVec3 *>(inRHS->obj)
   );
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_sMax(
-  const JoltC_RVec3_t * inLHS,
-  const JoltC_RVec3_t * inRHS
+  JoltC_RVec3_t * inLHS,
+  JoltC_RVec3_t * inRHS
 ) {
-  RVec3 resultValue = RVec3::sMax(
-  *reinterpret_cast<RVec3 *>(inLHS->obj),
-  *reinterpret_cast<RVec3 *>(inRHS->obj)
+  static RVec3 resultValue = RVec3::sMax(
+    *reinterpret_cast<RVec3 *>(inLHS->obj),
+    *reinterpret_cast<RVec3 *>(inRHS->obj)
   );
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_sClamp(
-  const JoltC_RVec3_t * inValue,
-  const JoltC_RVec3_t * inMin,
-  const JoltC_RVec3_t * inMax
+  JoltC_RVec3_t * inValue,
+  JoltC_RVec3_t * inMin,
+  JoltC_RVec3_t * inMax
 ) {
-  RVec3 resultValue = RVec3::sClamp(
-  *reinterpret_cast<RVec3 *>(inValue->obj),
-  *reinterpret_cast<RVec3 *>(inMin->obj),
-  *reinterpret_cast<RVec3 *>(inMax->obj)
+  static RVec3 resultValue = RVec3::sClamp(
+    *reinterpret_cast<RVec3 *>(inValue->obj),
+    *reinterpret_cast<RVec3 *>(inMin->obj),
+    *reinterpret_cast<RVec3 *>(inMax->obj)
   );
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 double JoltC_RVec3_GetComponent(
@@ -112,29 +120,29 @@ double JoltC_RVec3_GetComponent(
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   double result = selfCpp->operator[](
-  inCoordinate
+    inCoordinate
   );
   return result;
 };
 
 bool JoltC_RVec3_Equals(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inV
+  JoltC_RVec3_t * inV
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   bool result = selfCpp->operator==(
-  *reinterpret_cast<RVec3 *>(inV->obj)
+    *reinterpret_cast<RVec3 *>(inV->obj)
   );
   return result;
 };
 
 bool JoltC_RVec3_NotEquals(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inV
+  JoltC_RVec3_t * inV
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   bool result = selfCpp->operator!=(
-  *reinterpret_cast<RVec3 *>(inV->obj)
+    *reinterpret_cast<RVec3 *>(inV->obj)
   );
   return result;
 };
@@ -159,9 +167,10 @@ JoltC_RVec3_t * JoltC_RVec3_Normalized(
   JoltC_RVec3_t * self
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  RVec3 resultValue = selfCpp->Normalized();
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->Normalized();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 double JoltC_RVec3_GetX(
@@ -195,7 +204,7 @@ void JoltC_RVec3_SetX(
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   
   selfCpp->SetX(
-  inX
+    inX
   );
 };
 
@@ -206,7 +215,7 @@ void JoltC_RVec3_SetY(
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   
   selfCpp->SetY(
-  inY
+    inY
   );
 };
 
@@ -217,7 +226,7 @@ void JoltC_RVec3_SetZ(
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   
   selfCpp->SetZ(
-  inZ
+    inZ
   );
 };
 
@@ -230,9 +239,9 @@ void JoltC_RVec3_Set(
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   
   selfCpp->Set(
-  inX,
-  inY,
-  inZ
+    inX,
+    inY,
+    inZ
   );
 };
 
@@ -244,8 +253,8 @@ void JoltC_RVec3_SetComponent(
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   
   selfCpp->SetComponent(
-  inCoordinate,
-  inValue
+    inCoordinate,
+    inValue
   );
 };
 
@@ -255,20 +264,20 @@ bool JoltC_RVec3_IsNearZero(
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   bool result = selfCpp->IsNearZero(
-  inMaxDistSq
+    inMaxDistSq
   );
   return result;
 };
 
 bool JoltC_RVec3_IsClose(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inV,
+  JoltC_RVec3_t * inV,
   double inMaxDistSq
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   bool result = selfCpp->IsClose(
-  *reinterpret_cast<RVec3 *>(inV->obj),
-  inMaxDistSq
+    *reinterpret_cast<RVec3 *>(inV->obj),
+    inMaxDistSq
   );
   return result;
 };
@@ -279,74 +288,79 @@ bool JoltC_RVec3_IsNormalized(
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   bool result = selfCpp->IsNormalized(
-  inTolerance
+    inTolerance
   );
   return result;
 };
 
-const JoltC_RVec3_t * JoltC_RVec3_Abs(
+JoltC_RVec3_t * JoltC_RVec3_Abs(
   JoltC_RVec3_t * self
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  const RVec3 resultValue = selfCpp->Abs();
-  const RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<const JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->Abs();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_RVec3_t * JoltC_RVec3_Reciprocal(
+JoltC_RVec3_t * JoltC_RVec3_Reciprocal(
   JoltC_RVec3_t * self
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  const RVec3 resultValue = selfCpp->Reciprocal();
-  const RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<const JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->Reciprocal();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_RVec3_t * JoltC_RVec3_Cross(
+JoltC_RVec3_t * JoltC_RVec3_Cross(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inRHS
+  JoltC_RVec3_t * inRHS
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  const RVec3 resultValue = selfCpp->Cross(
-  *reinterpret_cast<RVec3 *>(inRHS->obj)
+  static RVec3 resultValue = selfCpp->Cross(
+    *reinterpret_cast<RVec3 *>(inRHS->obj)
   );
-  const RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<const JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 double JoltC_RVec3_Dot(
   JoltC_RVec3_t * self,
-  const JoltC_RVec3_t * inRHS
+  JoltC_RVec3_t * inRHS
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
   double result = selfCpp->Dot(
-  *reinterpret_cast<RVec3 *>(inRHS->obj)
+    *reinterpret_cast<RVec3 *>(inRHS->obj)
   );
   return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_Add(
   JoltC_RVec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  RVec3& resultRef = selfCpp->operator+=(
-  *reinterpret_cast<Vec3 *>(inV->obj)
+  RVec3* resultRef = &selfCpp->operator+=(
+    *reinterpret_cast<Vec3 *>(inV->obj)
   );
-  RVec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_Sub(
   JoltC_RVec3_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  RVec3& resultRef = selfCpp->operator-=(
-  *reinterpret_cast<Vec3 *>(inV->obj)
+  RVec3* resultRef = &selfCpp->operator-=(
+    *reinterpret_cast<Vec3 *>(inV->obj)
   );
-  RVec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_Mul(
@@ -354,11 +368,12 @@ JoltC_RVec3_t * JoltC_RVec3_Mul(
   double inV
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  RVec3& resultRef = selfCpp->operator*=(
-  inV
+  RVec3* resultRef = &selfCpp->operator*=(
+    inV
   );
-  RVec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 JoltC_RVec3_t * JoltC_RVec3_Div(
@@ -366,29 +381,32 @@ JoltC_RVec3_t * JoltC_RVec3_Div(
   double inV
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  RVec3& resultRef = selfCpp->operator/=(
-  inV
+  RVec3* resultRef = &selfCpp->operator/=(
+    inV
   );
-  RVec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
-const JoltC_RVec3_t * JoltC_RVec3_Sqrt(
+JoltC_RVec3_t * JoltC_RVec3_Sqrt(
   JoltC_RVec3_t * self
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  const RVec3 resultValue = selfCpp->Sqrt();
-  const RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<const JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->Sqrt();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const JoltC_RVec3_t * JoltC_RVec3_GetSign(
+JoltC_RVec3_t * JoltC_RVec3_GetSign(
   JoltC_RVec3_t * self
 ) {
   RVec3 * selfCpp = static_cast<RVec3 *>(self->obj);
-  const RVec3 resultValue = selfCpp->GetSign();
-  const RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<const JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->GetSign();
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

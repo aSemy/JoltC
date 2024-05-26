@@ -11,14 +11,14 @@ extern "C" {
 JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_0();
 
 JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_1(
-  const JoltC_TriangleList_t * inTriangleList,
-  const JoltC_PhysicsMaterialList_t * inMaterialList
+  JoltC_TriangleList_t * inTriangleList,
+  JoltC_PhysicsMaterialList_t * inMaterialList
 );
 
 JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_2(
-  const JoltC_VertexList_t * inVertices,
-  const JoltC_IndexedTriangleList_t * inTriangles,
-  const JoltC_PhysicsMaterialList_t * inMaterialList
+  JoltC_VertexList_t * inVertices,
+  JoltC_IndexedTriangleList_t * inTriangles,
+  JoltC_PhysicsMaterialList_t * inMaterialList
 );
 
 //endregion

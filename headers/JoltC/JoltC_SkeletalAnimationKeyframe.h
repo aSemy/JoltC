@@ -16,7 +16,7 @@ JoltC_SkeletalAnimationKeyframe_t * JoltC_SkeletalAnimationKeyframe_new();
 
 void JoltC_SkeletalAnimationKeyframe_FromMatrix(
   JoltC_SkeletalAnimationKeyframe_t * self,
-  const JoltC_Mat44_t * inMatrix
+  JoltC_Mat44_t * inMatrix
 );
 
 JoltC_Mat44_t * JoltC_SkeletalAnimationKeyframe_ToMatrix(

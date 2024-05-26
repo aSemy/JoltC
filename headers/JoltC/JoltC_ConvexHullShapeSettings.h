@@ -74,13 +74,13 @@ void JoltC_ConvexHullShapeSettings_mHullTolerance_Set(
   float mHullTolerance
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_ConvexHullShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_ConvexHullShapeSettings_mMaterial_Get(
   JoltC_ConvexHullShapeSettings_t * self
 );
 
-const void JoltC_ConvexHullShapeSettings_mMaterial_Set(
+void JoltC_ConvexHullShapeSettings_mMaterial_Set(
   JoltC_ConvexHullShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_ConvexHullShapeSettings_mDensity_Get(

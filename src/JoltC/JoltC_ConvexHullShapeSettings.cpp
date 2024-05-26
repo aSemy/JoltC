@@ -47,9 +47,10 @@ JoltC_Shape_ShapeResult_t * JoltC_ConvexHullShapeSettings_Create(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ConvexHullShapeSettings_ClearCachedResult(
@@ -68,9 +69,10 @@ JoltC_ArrayVec3_t * JoltC_ConvexHullShapeSettings_mPoints_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  ArrayVec3 resultValue = selfCpp->mPoints;
-  ArrayVec3* result = new ArrayVec3(resultValue);
-  return reinterpret_cast<JoltC_ArrayVec3_t *>(result);
+  static ArrayVec3 resultValue = selfCpp->mPoints;
+  JoltC_ArrayVec3_t* result = new JoltC_ArrayVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ConvexHullShapeSettings_mPoints_Set(
@@ -129,17 +131,19 @@ void JoltC_ConvexHullShapeSettings_mHullTolerance_Set(
   selfCpp->mHullTolerance = mHullTolerance;
 };
 
-const JoltC_PhysicsMaterial_t * JoltC_ConvexHullShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_ConvexHullShapeSettings_mMaterial_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  const PhysicsMaterial * result = selfCpp->mMaterial;
-  return reinterpret_cast<const JoltC_PhysicsMaterial_t *>(result);
+  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
-const void JoltC_ConvexHullShapeSettings_mMaterial_Set(
+void JoltC_ConvexHullShapeSettings_mMaterial_Set(
   JoltC_ConvexHullShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);

@@ -16,7 +16,7 @@ JoltC_MassProperties_t * JoltC_MassProperties_new();
 
 void JoltC_MassProperties_SetMassAndInertiaOfSolidBox(
   JoltC_MassProperties_t * self,
-  const JoltC_Vec3_t * inBoxSize,
+  JoltC_Vec3_t * inBoxSize,
   float inDensity
 );
 
@@ -27,22 +27,22 @@ void JoltC_MassProperties_ScaleToMass(
 
 JoltC_Vec3_t * JoltC_MassProperties_sGetEquivalentSolidBoxSize(
   float inMass,
-  const JoltC_Vec3_t * inInertiaDiagonal
+  JoltC_Vec3_t * inInertiaDiagonal
 );
 
 void JoltC_MassProperties_Rotate(
   JoltC_MassProperties_t * self,
-  const JoltC_Mat44_t * inRotation
+  JoltC_Mat44_t * inRotation
 );
 
 void JoltC_MassProperties_Translate(
   JoltC_MassProperties_t * self,
-  const JoltC_Vec3_t * inTranslation
+  JoltC_Vec3_t * inTranslation
 );
 
 void JoltC_MassProperties_Scale(
   JoltC_MassProperties_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

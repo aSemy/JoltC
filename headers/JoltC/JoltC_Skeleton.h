@@ -16,7 +16,7 @@ JoltC_Skeleton_t * JoltC_Skeleton_new();
 
 long JoltC_Skeleton_AddJoint(
   JoltC_Skeleton_t * self,
-  const JoltC_JPHString_t * inName,
+  JoltC_JPHString_t * inName,
   long inParentIndex
 );
 

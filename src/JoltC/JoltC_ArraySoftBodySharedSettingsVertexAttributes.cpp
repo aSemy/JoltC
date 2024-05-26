@@ -29,21 +29,22 @@ JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_ArraySoftBodySharedSettin
   long inIndex
 ) {
   ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  SoftBodySharedSettingsVertexAttributes& resultRef = selfCpp->at(
-  inIndex
+  SoftBodySharedSettingsVertexAttributes* resultRef = &selfCpp->at(
+    inIndex
   );
-  SoftBodySharedSettingsVertexAttributes * result = &resultRef;
-  return reinterpret_cast<JoltC_SoftBodySharedSettingsVertexAttributes_t *>(result);
+  JoltC_SoftBodySharedSettingsVertexAttributes_t* result = new JoltC_SoftBodySharedSettingsVertexAttributes_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArraySoftBodySharedSettingsVertexAttributes_push_back(
   JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self,
-  const JoltC_SoftBodySharedSettingsVertexAttributes_t * inValue
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * inValue
 ) {
   ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<SoftBodySharedSettingsVertexAttributes *>(inValue->obj)
+    *reinterpret_cast<SoftBodySharedSettingsVertexAttributes *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArraySoftBodySharedSettingsVertexAttributes_reserve(
   ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArraySoftBodySharedSettingsVertexAttributes_resize(
   ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 
@@ -81,8 +82,10 @@ JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_ArraySoftBodySharedSettin
   JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self
 ) {
   ArraySoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
-  SoftBodySharedSettingsVertexAttributes * result = selfCpp->data();
-  return reinterpret_cast<JoltC_SoftBodySharedSettingsVertexAttributes_t *>(result);
+  SoftBodySharedSettingsVertexAttributes * resultValue = selfCpp->data();
+  JoltC_SoftBodySharedSettingsVertexAttributes_t* result = new JoltC_SoftBodySharedSettingsVertexAttributes_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 //endregion

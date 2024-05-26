@@ -39,10 +39,10 @@ void JoltC_CollideShapeCollector_Reset(
 
 void JoltC_CollideShapeCollector_SetContext(
   JoltC_CollideShapeCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 );
 
-const JoltC_TransformedShape_t * JoltC_CollideShapeCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_CollideShapeCollector_GetContext(
   JoltC_CollideShapeCollector_t * self
 );
 

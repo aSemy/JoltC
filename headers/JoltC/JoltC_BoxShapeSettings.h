@@ -11,7 +11,7 @@ extern "C" {
 JoltC_BoxShapeSettings_t * JoltC_BoxShapeSettings_new(
   JoltC_Vec3_t * inHalfExtent,
   float inConvexRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 );
 
 //endregion
@@ -60,13 +60,13 @@ void JoltC_BoxShapeSettings_mConvexRadius_Set(
   float mConvexRadius
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_BoxShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_BoxShapeSettings_mMaterial_Get(
   JoltC_BoxShapeSettings_t * self
 );
 
-const void JoltC_BoxShapeSettings_mMaterial_Set(
+void JoltC_BoxShapeSettings_mMaterial_Set(
   JoltC_BoxShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_BoxShapeSettings_mDensity_Get(

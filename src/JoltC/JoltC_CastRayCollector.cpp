@@ -49,21 +49,23 @@ void JoltC_CastRayCollector_Reset(
 
 void JoltC_CastRayCollector_SetContext(
   JoltC_CastRayCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
   
   selfCpp->SetContext(
-  reinterpret_cast<TransformedShape *>(inContext->obj)
+    reinterpret_cast<TransformedShape *>(inContext->obj)
   );
 };
 
-const JoltC_TransformedShape_t * JoltC_CastRayCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_CastRayCollector_GetContext(
   JoltC_CastRayCollector_t * self
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  const TransformedShape * result = selfCpp->GetContext();
-  return reinterpret_cast<const JoltC_TransformedShape_t *>(result);
+  const TransformedShape * resultValue = selfCpp->GetContext();
+  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_CastRayCollector_UpdateEarlyOutFraction(
@@ -73,7 +75,7 @@ void JoltC_CastRayCollector_UpdateEarlyOutFraction(
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
   
   selfCpp->UpdateEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 
@@ -84,7 +86,7 @@ void JoltC_CastRayCollector_ResetEarlyOutFraction(
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
   
   selfCpp->ResetEarlyOutFraction(
-  inFraction
+    inFraction
   );
 };
 

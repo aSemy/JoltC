@@ -25,7 +25,7 @@ void JoltC_IgnoreMultipleBodiesFilter_Reserve(
 
 void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
   JoltC_IgnoreMultipleBodiesFilter_t * self,
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 );
 
 //endregion

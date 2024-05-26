@@ -39,10 +39,10 @@ void JoltC_CastShapeCollector_Reset(
 
 void JoltC_CastShapeCollector_SetContext(
   JoltC_CastShapeCollector_t * self,
-  const JoltC_TransformedShape_t * inContext
+  JoltC_TransformedShape_t * inContext
 );
 
-const JoltC_TransformedShape_t * JoltC_CastShapeCollector_GetContext(
+JoltC_TransformedShape_t * JoltC_CastShapeCollector_GetContext(
   JoltC_CastShapeCollector_t * self
 );
 

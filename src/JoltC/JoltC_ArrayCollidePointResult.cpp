@@ -29,21 +29,22 @@ JoltC_CollidePointResult_t * JoltC_ArrayCollidePointResult_at(
   long inIndex
 ) {
   ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-  CollidePointResult& resultRef = selfCpp->at(
-  inIndex
+  CollidePointResult* resultRef = &selfCpp->at(
+    inIndex
   );
-  CollidePointResult * result = &resultRef;
-  return reinterpret_cast<JoltC_CollidePointResult_t *>(result);
+  JoltC_CollidePointResult_t* result = new JoltC_CollidePointResult_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArrayCollidePointResult_push_back(
   JoltC_ArrayCollidePointResult_t * self,
-  const JoltC_CollidePointResult_t * inValue
+  JoltC_CollidePointResult_t * inValue
 ) {
   ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<CollidePointResult *>(inValue->obj)
+    *reinterpret_cast<CollidePointResult *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArrayCollidePointResult_reserve(
   ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArrayCollidePointResult_resize(
   ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

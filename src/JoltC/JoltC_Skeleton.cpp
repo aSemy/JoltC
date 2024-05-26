@@ -21,13 +21,13 @@ JoltC_Skeleton_t * JoltC_Skeleton_new() {
 
 long JoltC_Skeleton_AddJoint(
   JoltC_Skeleton_t * self,
-  const JoltC_JPHString_t * inName,
+  JoltC_JPHString_t * inName,
   long inParentIndex
 ) {
   Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
   long result = selfCpp->AddJoint(
-  *reinterpret_cast<JPHString *>(inName->obj),
-  inParentIndex
+    *reinterpret_cast<JPHString *>(inName->obj),
+    inParentIndex
   );
   return result;
 };

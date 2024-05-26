@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_Wheel_t * JoltC_Wheel_new(
-  const JoltC_WheelSettings_t * inSettings
+  JoltC_WheelSettings_t * inSettings
 );
 
 //endregion
@@ -34,7 +34,7 @@ JoltC_Wheel_t * JoltC_Wheel_From_WheelTV(
 
 //region functions
 
-const JoltC_WheelSettings_t * JoltC_Wheel_GetSettings(
+JoltC_WheelSettings_t * JoltC_Wheel_GetSettings(
   JoltC_Wheel_t * self
 );
 

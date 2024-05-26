@@ -135,9 +135,10 @@ JoltC_Vec3_t * JoltC_ContactSettings_mRelativeLinearSurfaceVelocity_Get(
   JoltC_ContactSettings_t * self
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mRelativeLinearSurfaceVelocity;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mRelativeLinearSurfaceVelocity;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ContactSettings_mRelativeLinearSurfaceVelocity_Set(
@@ -152,9 +153,10 @@ JoltC_Vec3_t * JoltC_ContactSettings_mRelativeAngularSurfaceVelocity_Get(
   JoltC_ContactSettings_t * self
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mRelativeAngularSurfaceVelocity;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mRelativeAngularSurfaceVelocity;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ContactSettings_mRelativeAngularSurfaceVelocity_Set(

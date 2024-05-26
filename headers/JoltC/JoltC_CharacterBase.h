@@ -42,14 +42,14 @@ float JoltC_CharacterBase_GetCosMaxSlopeAngle(
 
 void JoltC_CharacterBase_SetUp(
   JoltC_CharacterBase_t * self,
-  const JoltC_Vec3_t * inUp
+  JoltC_Vec3_t * inUp
 );
 
 JoltC_Vec3_t * JoltC_CharacterBase_GetUp(
   JoltC_CharacterBase_t * self
 );
 
-const JoltC_Shape_t * JoltC_CharacterBase_GetShape(
+JoltC_Shape_t * JoltC_CharacterBase_GetShape(
   JoltC_CharacterBase_t * self
 );
 
@@ -78,7 +78,7 @@ JoltC_Vec3_t * JoltC_CharacterBase_GetGroundVelocity(
   JoltC_CharacterBase_t * self
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_CharacterBase_GetGroundMaterial(
+JoltC_PhysicsMaterial_t * JoltC_CharacterBase_GetGroundMaterial(
   JoltC_CharacterBase_t * self
 );
 

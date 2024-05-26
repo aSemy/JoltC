@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_OffsetCenterOfMassShapeSettings_t * JoltC_OffsetCenterOfMassShapeSettings_new(
-  const JoltC_Vec3_t * inOffset,
+  JoltC_Vec3_t * inOffset,
   JoltC_ShapeSettings_t * inShape
 ) {
   JoltC_OffsetCenterOfMassShapeSettings_t * cInstance = new JoltC_OffsetCenterOfMassShapeSettings_t();
@@ -53,9 +53,10 @@ JoltC_Shape_ShapeResult_t * JoltC_OffsetCenterOfMassShapeSettings_Create(
   JoltC_OffsetCenterOfMassShapeSettings_t * self
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
-  Shape::ShapeResult resultValue = selfCpp->Create();
-  Shape::ShapeResult* result = new Shape::ShapeResult(resultValue);
-  return reinterpret_cast<JoltC_Shape_ShapeResult_t *>(result);
+  static Shape::ShapeResult resultValue = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_OffsetCenterOfMassShapeSettings_ClearCachedResult(
@@ -74,9 +75,10 @@ JoltC_Vec3_t * JoltC_OffsetCenterOfMassShapeSettings_mOffset_Get(
   JoltC_OffsetCenterOfMassShapeSettings_t * self
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mOffset;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mOffset;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_OffsetCenterOfMassShapeSettings_mOffset_Set(

@@ -10,7 +10,7 @@ extern "C" {
 
 JoltC_Body_t * JoltC_BodyLockInterfaceNoLock_TryGetBody(
   JoltC_BodyLockInterfaceNoLock_t * self,
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 );
 
 //endregion

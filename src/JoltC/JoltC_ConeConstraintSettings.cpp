@@ -25,11 +25,13 @@ JoltC_Constraint_t * JoltC_ConeConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
+  Constraint * resultValue = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
   );
-  return reinterpret_cast<JoltC_Constraint_t *>(result);
+  JoltC_Constraint_t* result = new JoltC_Constraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_ConeConstraintSettings_GetRefCount(
@@ -80,9 +82,10 @@ JoltC_RVec3_t * JoltC_ConeConstraintSettings_mPoint1_Get(
   JoltC_ConeConstraintSettings_t * self
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPoint1;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPoint1;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ConeConstraintSettings_mPoint1_Set(
@@ -97,9 +100,10 @@ JoltC_Vec3_t * JoltC_ConeConstraintSettings_mTwistAxis1_Get(
   JoltC_ConeConstraintSettings_t * self
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mTwistAxis1;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mTwistAxis1;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ConeConstraintSettings_mTwistAxis1_Set(
@@ -114,9 +118,10 @@ JoltC_RVec3_t * JoltC_ConeConstraintSettings_mPoint2_Get(
   JoltC_ConeConstraintSettings_t * self
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPoint2;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPoint2;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ConeConstraintSettings_mPoint2_Set(
@@ -131,9 +136,10 @@ JoltC_Vec3_t * JoltC_ConeConstraintSettings_mTwistAxis2_Get(
   JoltC_ConeConstraintSettings_t * self
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
-  Vec3 resultValue = selfCpp->mTwistAxis2;
-  Vec3* result = new Vec3(resultValue);
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  static Vec3 resultValue = selfCpp->mTwistAxis2;
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_ConeConstraintSettings_mTwistAxis2_Set(

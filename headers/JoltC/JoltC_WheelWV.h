@@ -9,18 +9,18 @@ extern "C" {
 //region constructors
 
 JoltC_WheelWV_t * JoltC_WheelWV_new(
-  const JoltC_WheelSettingsWV_t * inWheel
+  JoltC_WheelSettingsWV_t * inWheel
 );
 
 //endregion
 
 //region functions
 
-const JoltC_WheelSettingsWV_t * JoltC_WheelWV_GetSettings_0(
+JoltC_WheelSettingsWV_t * JoltC_WheelWV_GetSettings_0(
   JoltC_WheelWV_t * self
 );
 
-const JoltC_WheelSettings_t * JoltC_WheelWV_GetSettings_1(
+JoltC_WheelSettings_t * JoltC_WheelWV_GetSettings_1(
   JoltC_WheelWV_t * self
 );
 

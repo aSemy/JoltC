@@ -23,7 +23,7 @@ JoltC_Vec3_t * JoltC_CollideShapeResultFace_at(
 
 void JoltC_CollideShapeResultFace_push_back(
   JoltC_CollideShapeResultFace_t * self,
-  const JoltC_Vec3_t * inValue
+  JoltC_Vec3_t * inValue
 );
 
 void JoltC_CollideShapeResultFace_resize(

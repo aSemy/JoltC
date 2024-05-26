@@ -34,32 +34,36 @@ JoltC_Ragdoll_t * JoltC_RagdollSettings_CreateRagdoll(
   JoltC_PhysicsSystem_t * inSystem
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  Ragdoll * result = selfCpp->CreateRagdoll(
-  inCollisionGroup,
-  inUserData,
-  reinterpret_cast<PhysicsSystem *>(inSystem->obj)
+  Ragdoll * resultValue = selfCpp->CreateRagdoll(
+    inCollisionGroup,
+    inUserData,
+    reinterpret_cast<PhysicsSystem *>(inSystem->obj)
   );
-  return reinterpret_cast<JoltC_Ragdoll_t *>(result);
+  JoltC_Ragdoll_t* result = new JoltC_Ragdoll_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 JoltC_Skeleton_t * JoltC_RagdollSettings_GetSkeleton(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  Skeleton * result = selfCpp->GetSkeleton();
-  return reinterpret_cast<JoltC_Skeleton_t *>(result);
+  Skeleton * resultValue = selfCpp->GetSkeleton();
+  JoltC_Skeleton_t* result = new JoltC_Skeleton_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollSettings_DisableParentChildCollisions(
   JoltC_RagdollSettings_t * self,
-  const JoltC_Mat44MemRef_t * inJointMatrices,
+  JoltC_Mat44MemRef_t * inJointMatrices,
   float inMinSeparationDistance
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
   
   selfCpp->DisableParentChildCollisions(
-  reinterpret_cast<Mat44MemRef *>(inJointMatrices->obj),
-  inMinSeparationDistance
+    reinterpret_cast<Mat44MemRef *>(inJointMatrices->obj),
+    inMinSeparationDistance
   );
 };
 
@@ -87,8 +91,10 @@ JoltC_Skeleton_t * JoltC_RagdollSettings_mSkeleton_Get(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  Skeleton * result = selfCpp->mSkeleton;
-  return reinterpret_cast<JoltC_Skeleton_t *>(result);
+  Skeleton * resultValue = selfCpp->mSkeleton;
+  JoltC_Skeleton_t* result = new JoltC_Skeleton_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollSettings_mSkeleton_Set(
@@ -103,9 +109,10 @@ JoltC_ArrayRagdollPart_t * JoltC_RagdollSettings_mParts_Get(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  ArrayRagdollPart resultValue = selfCpp->mParts;
-  ArrayRagdollPart* result = new ArrayRagdollPart(resultValue);
-  return reinterpret_cast<JoltC_ArrayRagdollPart_t *>(result);
+  static ArrayRagdollPart resultValue = selfCpp->mParts;
+  JoltC_ArrayRagdollPart_t* result = new JoltC_ArrayRagdollPart_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollSettings_mParts_Set(
@@ -120,9 +127,10 @@ JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_RagdollSettings_mAdditionalCons
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  ArrayRagdollAdditionalConstraint resultValue = selfCpp->mAdditionalConstraints;
-  ArrayRagdollAdditionalConstraint* result = new ArrayRagdollAdditionalConstraint(resultValue);
-  return reinterpret_cast<JoltC_ArrayRagdollAdditionalConstraint_t *>(result);
+  static ArrayRagdollAdditionalConstraint resultValue = selfCpp->mAdditionalConstraints;
+  JoltC_ArrayRagdollAdditionalConstraint_t* result = new JoltC_ArrayRagdollAdditionalConstraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_RagdollSettings_mAdditionalConstraints_Set(

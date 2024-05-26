@@ -12,7 +12,7 @@ JoltC_CylinderShapeSettings_t * JoltC_CylinderShapeSettings_new(
   float inHalfHeight,
   float inRadius,
   float inConvexRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 );
 
 //endregion
@@ -70,13 +70,13 @@ void JoltC_CylinderShapeSettings_mConvexRadius_Set(
   float mConvexRadius
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_CylinderShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_CylinderShapeSettings_mMaterial_Get(
   JoltC_CylinderShapeSettings_t * self
 );
 
-const void JoltC_CylinderShapeSettings_mMaterial_Set(
+void JoltC_CylinderShapeSettings_mMaterial_Set(
   JoltC_CylinderShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_CylinderShapeSettings_mDensity_Get(

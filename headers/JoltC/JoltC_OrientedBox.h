@@ -11,8 +11,8 @@ extern "C" {
 JoltC_OrientedBox_t * JoltC_OrientedBox_new_0();
 
 JoltC_OrientedBox_t * JoltC_OrientedBox_new_1(
-  const JoltC_Mat44_t * inOrientation,
-  const JoltC_Vec3_t * inHalfExtents
+  JoltC_Mat44_t * inOrientation,
+  JoltC_Vec3_t * inHalfExtents
 );
 
 //endregion

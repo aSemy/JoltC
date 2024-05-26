@@ -78,13 +78,13 @@ void JoltC_ConvexShapeSettings_ClearCachedResult(
 
 //region properties
 
-const JoltC_PhysicsMaterial_t * JoltC_ConvexShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_ConvexShapeSettings_mMaterial_Get(
   JoltC_ConvexShapeSettings_t * self
 );
 
-const void JoltC_ConvexShapeSettings_mMaterial_Set(
+void JoltC_ConvexShapeSettings_mMaterial_Set(
   JoltC_ConvexShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_ConvexShapeSettings_mDensity_Get(

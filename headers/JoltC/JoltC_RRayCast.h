@@ -11,25 +11,25 @@ extern "C" {
 JoltC_RRayCast_t * JoltC_RRayCast_new_0();
 
 JoltC_RRayCast_t * JoltC_RRayCast_new_1(
-  const JoltC_RVec3_t * inOrigin,
-  const JoltC_Vec3_t * inDirection
+  JoltC_RVec3_t * inOrigin,
+  JoltC_Vec3_t * inDirection
 );
 
 //endregion
 
 //region functions
 
-const JoltC_RRayCast_t * JoltC_RRayCast_Transformed(
+JoltC_RRayCast_t * JoltC_RRayCast_Transformed(
   JoltC_RRayCast_t * self,
-  const JoltC_RMat44_t * inTransform
+  JoltC_RMat44_t * inTransform
 );
 
-const JoltC_RRayCast_t * JoltC_RRayCast_Translated(
+JoltC_RRayCast_t * JoltC_RRayCast_Translated(
   JoltC_RRayCast_t * self,
-  const JoltC_RVec3_t * inTranslation
+  JoltC_RVec3_t * inTranslation
 );
 
-const JoltC_RVec3_t * JoltC_RRayCast_GetPointOnRay(
+JoltC_RVec3_t * JoltC_RRayCast_GetPointOnRay(
   JoltC_RRayCast_t * self,
   float inFraction
 );

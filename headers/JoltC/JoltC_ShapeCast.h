@@ -9,17 +9,17 @@ extern "C" {
 //region constructors
 
 JoltC_ShapeCast_t * JoltC_ShapeCast_new(
-  const JoltC_Shape_t * inShape,
-  const JoltC_Vec3_t * inScale,
-  const JoltC_Mat44_t * inCenterOfMassStart,
-  const JoltC_Vec3_t * inDirection
+  JoltC_Shape_t * inShape,
+  JoltC_Vec3_t * inScale,
+  JoltC_Mat44_t * inCenterOfMassStart,
+  JoltC_Vec3_t * inDirection
 );
 
 //endregion
 
 //region functions
 
-const JoltC_Vec3_t * JoltC_ShapeCast_GetPointOnRay(
+JoltC_Vec3_t * JoltC_ShapeCast_GetPointOnRay(
   JoltC_ShapeCast_t * self,
   float inFraction
 );
@@ -28,19 +28,19 @@ const JoltC_Vec3_t * JoltC_ShapeCast_GetPointOnRay(
 
 //region properties
 
-const JoltC_Shape_t * JoltC_ShapeCast_mShape_Get(
+JoltC_Shape_t * JoltC_ShapeCast_mShape_Get(
   JoltC_ShapeCast_t * self
 );
 
-const JoltC_Vec3_t * JoltC_ShapeCast_mScale_Get(
+JoltC_Vec3_t * JoltC_ShapeCast_mScale_Get(
   JoltC_ShapeCast_t * self
 );
 
-const JoltC_Mat44_t * JoltC_ShapeCast_mCenterOfMassStart_Get(
+JoltC_Mat44_t * JoltC_ShapeCast_mCenterOfMassStart_Get(
   JoltC_ShapeCast_t * self
 );
 
-const JoltC_Vec3_t * JoltC_ShapeCast_mDirection_Get(
+JoltC_Vec3_t * JoltC_ShapeCast_mDirection_Get(
   JoltC_ShapeCast_t * self
 );
 

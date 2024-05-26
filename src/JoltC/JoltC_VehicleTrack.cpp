@@ -44,9 +44,10 @@ JoltC_ArrayUint_t * JoltC_VehicleTrack_mWheels_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  ArrayUint resultValue = selfCpp->mWheels;
-  ArrayUint* result = new ArrayUint(resultValue);
-  return reinterpret_cast<JoltC_ArrayUint_t *>(result);
+  static ArrayUint resultValue = selfCpp->mWheels;
+  JoltC_ArrayUint_t* result = new JoltC_ArrayUint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleTrack_mWheels_Set(

@@ -25,11 +25,13 @@ JoltC_Constraint_t * JoltC_PulleyConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  Constraint * result = selfCpp->Create(
-  *reinterpret_cast<Body *>(inBody1->obj),
-  *reinterpret_cast<Body *>(inBody2->obj)
+  Constraint * resultValue = selfCpp->Create(
+    *reinterpret_cast<Body *>(inBody1->obj),
+    *reinterpret_cast<Body *>(inBody2->obj)
   );
-  return reinterpret_cast<JoltC_Constraint_t *>(result);
+  JoltC_Constraint_t* result = new JoltC_Constraint_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 unsigned long JoltC_PulleyConstraintSettings_GetRefCount(
@@ -80,9 +82,10 @@ JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mBodyPoint1_Get(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mBodyPoint1;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mBodyPoint1;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_PulleyConstraintSettings_mBodyPoint1_Set(
@@ -97,9 +100,10 @@ JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mFixedPoint1_Get(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mFixedPoint1;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mFixedPoint1;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_PulleyConstraintSettings_mFixedPoint1_Set(
@@ -114,9 +118,10 @@ JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mBodyPoint2_Get(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mBodyPoint2;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mBodyPoint2;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_PulleyConstraintSettings_mBodyPoint2_Set(
@@ -131,9 +136,10 @@ JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mFixedPoint2_Get(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mFixedPoint2;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mFixedPoint2;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_PulleyConstraintSettings_mFixedPoint2_Set(

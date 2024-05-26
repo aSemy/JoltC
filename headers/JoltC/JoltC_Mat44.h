@@ -31,21 +31,21 @@ JoltC_Mat44_t * JoltC_Mat44_sRotationZ(
 );
 
 JoltC_Mat44_t * JoltC_Mat44_sRotation(
-  const JoltC_Quat_t * inQ
+  JoltC_Quat_t * inQ
 );
 
 JoltC_Mat44_t * JoltC_Mat44_sTranslation(
-  const JoltC_Vec3_t * inTranslation
+  JoltC_Vec3_t * inTranslation
 );
 
 JoltC_Mat44_t * JoltC_Mat44_sRotationTranslation(
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inTranslation
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inTranslation
 );
 
 JoltC_Mat44_t * JoltC_Mat44_sInverseRotationTranslation(
-  const JoltC_Quat_t * inRotation,
-  const JoltC_Vec3_t * inTranslation
+  JoltC_Quat_t * inRotation,
+  JoltC_Vec3_t * inTranslation
 );
 
 JoltC_Mat44_t * JoltC_Mat44_sScale(
@@ -85,18 +85,18 @@ JoltC_Vec3_t * JoltC_Mat44_GetTranslation(
 
 bool JoltC_Mat44_IsClose(
   JoltC_Mat44_t * self,
-  const JoltC_Mat44_t * inM,
+  JoltC_Mat44_t * inM,
   float inMaxDistSq
 );
 
 JoltC_Vec3_t * JoltC_Mat44_Multiply3x3(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 JoltC_Vec3_t * JoltC_Mat44_Multiply3x3Transposed(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 JoltC_Mat44_t * JoltC_Mat44_Transposed(
@@ -129,54 +129,54 @@ JoltC_Mat44_t * JoltC_Mat44_GetDirectionPreservingMatrix(
 
 JoltC_Mat44_t * JoltC_Mat44_PreTranslated(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inTranslation
+  JoltC_Vec3_t * inTranslation
 );
 
 JoltC_Mat44_t * JoltC_Mat44_PostTranslated(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inTranslation
+  JoltC_Vec3_t * inTranslation
 );
 
 JoltC_Mat44_t * JoltC_Mat44_PreScaled(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 JoltC_Mat44_t * JoltC_Mat44_PostScaled(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 void JoltC_Mat44_SetColumn3(
   JoltC_Mat44_t * self,
   long inCol,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 void JoltC_Mat44_SetAxisX(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 void JoltC_Mat44_SetAxisY(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 void JoltC_Mat44_SetAxisZ(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 void JoltC_Mat44_SetTranslation(
   JoltC_Mat44_t * self,
-  const JoltC_Vec3_t * inV
+  JoltC_Vec3_t * inV
 );
 
 void JoltC_Mat44_SetColumn4(
   JoltC_Mat44_t * self,
   long inCol,
-  const JoltC_Vec4_t * inV
+  JoltC_Vec4_t * inV
 );
 
 //endregion

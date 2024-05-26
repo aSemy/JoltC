@@ -10,7 +10,7 @@ extern "C" {
 
 JoltC_ScaledShapeSettings_t * JoltC_ScaledShapeSettings_new(
   JoltC_ShapeSettings_t * inShape,
-  const JoltC_Vec3_t * inScale
+  JoltC_Vec3_t * inScale
 );
 
 //endregion

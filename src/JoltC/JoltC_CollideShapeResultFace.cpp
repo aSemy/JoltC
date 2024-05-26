@@ -29,21 +29,22 @@ JoltC_Vec3_t * JoltC_CollideShapeResultFace_at(
   long inIndex
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-  Vec3& resultRef = selfCpp->at(
-  inIndex
+  Vec3* resultRef = &selfCpp->at(
+    inIndex
   );
-  Vec3 * result = &resultRef;
-  return reinterpret_cast<JoltC_Vec3_t *>(result);
+  JoltC_Vec3_t* result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_CollideShapeResultFace_push_back(
   JoltC_CollideShapeResultFace_t * self,
-  const JoltC_Vec3_t * inValue
+  JoltC_Vec3_t * inValue
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<Vec3 *>(inValue->obj)
+    *reinterpret_cast<Vec3 *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_CollideShapeResultFace_resize(
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

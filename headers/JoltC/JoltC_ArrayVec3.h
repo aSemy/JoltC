@@ -23,7 +23,7 @@ JoltC_Vec3_t * JoltC_ArrayVec3_at(
 
 void JoltC_ArrayVec3_push_back(
   JoltC_ArrayVec3_t * self,
-  const JoltC_Vec3_t * inValue
+  JoltC_Vec3_t * inValue
 );
 
 void JoltC_ArrayVec3_reserve(

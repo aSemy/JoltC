@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_OffsetCenterOfMassShapeSettings_t * JoltC_OffsetCenterOfMassShapeSettings_new(
-  const JoltC_Vec3_t * inOffset,
+  JoltC_Vec3_t * inOffset,
   JoltC_ShapeSettings_t * inShape
 );
 

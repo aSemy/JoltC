@@ -34,18 +34,18 @@ void JoltC_IgnoreMultipleBodiesFilter_Reserve(
   IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
   
   selfCpp->Reserve(
-  inSize
+    inSize
   );
 };
 
 void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
   JoltC_IgnoreMultipleBodiesFilter_t * self,
-  const JoltC_BodyID_t * inBodyID
+  JoltC_BodyID_t * inBodyID
 ) {
   IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
   
   selfCpp->IgnoreBody(
-  *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *reinterpret_cast<BodyID *>(inBodyID->obj)
   );
 };
 

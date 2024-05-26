@@ -29,21 +29,22 @@ JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_ArraySoftBodySharedSettingsDi
   long inIndex
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
-  SoftBodySharedSettingsDihedralBend& resultRef = selfCpp->at(
-  inIndex
+  SoftBodySharedSettingsDihedralBend* resultRef = &selfCpp->at(
+    inIndex
   );
-  SoftBodySharedSettingsDihedralBend * result = &resultRef;
-  return reinterpret_cast<JoltC_SoftBodySharedSettingsDihedralBend_t *>(result);
+  JoltC_SoftBodySharedSettingsDihedralBend_t* result = new JoltC_SoftBodySharedSettingsDihedralBend_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 void JoltC_ArraySoftBodySharedSettingsDihedralBend_push_back(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
-  const JoltC_SoftBodySharedSettingsDihedralBend_t * inValue
+  JoltC_SoftBodySharedSettingsDihedralBend_t * inValue
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
   
   selfCpp->push_back(
-  *reinterpret_cast<SoftBodySharedSettingsDihedralBend *>(inValue->obj)
+    *reinterpret_cast<SoftBodySharedSettingsDihedralBend *>(inValue->obj)
   );
 };
 
@@ -54,7 +55,7 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_reserve(
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
   
   selfCpp->reserve(
-  inSize
+    inSize
   );
 };
 
@@ -65,7 +66,7 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_resize(
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
   
   selfCpp->resize(
-  inSize
+    inSize
   );
 };
 

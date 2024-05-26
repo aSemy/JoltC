@@ -12,7 +12,7 @@ JoltC_TaperedCapsuleShapeSettings_t * JoltC_TaperedCapsuleShapeSettings_new(
   float inHalfHeightOfTaperedCylinder,
   float inTopRadius,
   float inBottomRadius,
-  const JoltC_PhysicsMaterial_t * inMaterial
+  JoltC_PhysicsMaterial_t * inMaterial
 );
 
 //endregion
@@ -70,13 +70,13 @@ void JoltC_TaperedCapsuleShapeSettings_mBottomRadius_Set(
   float mBottomRadius
 );
 
-const JoltC_PhysicsMaterial_t * JoltC_TaperedCapsuleShapeSettings_mMaterial_Get(
+JoltC_PhysicsMaterial_t * JoltC_TaperedCapsuleShapeSettings_mMaterial_Get(
   JoltC_TaperedCapsuleShapeSettings_t * self
 );
 
-const void JoltC_TaperedCapsuleShapeSettings_mMaterial_Set(
+void JoltC_TaperedCapsuleShapeSettings_mMaterial_Set(
   JoltC_TaperedCapsuleShapeSettings_t * self,
-  const JoltC_PhysicsMaterial_t * mMaterial
+  JoltC_PhysicsMaterial_t * mMaterial
 );
 
 float JoltC_TaperedCapsuleShapeSettings_mDensity_Get(

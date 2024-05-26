@@ -10,8 +10,8 @@ extern "C" {
 
 void JoltC_GearConstraint_SetConstraints(
   JoltC_GearConstraint_t * self,
-  const JoltC_Constraint_t * inGear1,
-  const JoltC_Constraint_t * inGear2
+  JoltC_Constraint_t * inGear1,
+  JoltC_Constraint_t * inGear2
 );
 
 float JoltC_GearConstraint_GetTotalLambda(

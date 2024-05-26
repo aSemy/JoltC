@@ -73,9 +73,10 @@ JoltC_LinearCurve_t * JoltC_VehicleEngineSettings_mNormalizedTorque_Get(
   JoltC_VehicleEngineSettings_t * self
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  LinearCurve resultValue = selfCpp->mNormalizedTorque;
-  LinearCurve* result = new LinearCurve(resultValue);
-  return reinterpret_cast<JoltC_LinearCurve_t *>(result);
+  static LinearCurve resultValue = selfCpp->mNormalizedTorque;
+  JoltC_LinearCurve_t* result = new JoltC_LinearCurve_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleEngineSettings_mNormalizedTorque_Set(

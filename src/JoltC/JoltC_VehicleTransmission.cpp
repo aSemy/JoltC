@@ -16,8 +16,8 @@ void JoltC_VehicleTransmission_Set(
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   
   selfCpp->Set(
-  inCurrentGear,
-  inClutchFriction
+    inCurrentGear,
+    inClutchFriction
   );
 };
 
@@ -77,9 +77,10 @@ JoltC_ArrayFloat_t * JoltC_VehicleTransmission_mGearRatios_Get(
   JoltC_VehicleTransmission_t * self
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
-  ArrayFloat resultValue = selfCpp->mGearRatios;
-  ArrayFloat* result = new ArrayFloat(resultValue);
-  return reinterpret_cast<JoltC_ArrayFloat_t *>(result);
+  static ArrayFloat resultValue = selfCpp->mGearRatios;
+  JoltC_ArrayFloat_t* result = new JoltC_ArrayFloat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleTransmission_mGearRatios_Set(
@@ -94,9 +95,10 @@ JoltC_ArrayFloat_t * JoltC_VehicleTransmission_mReverseGearRatios_Get(
   JoltC_VehicleTransmission_t * self
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
-  ArrayFloat resultValue = selfCpp->mReverseGearRatios;
-  ArrayFloat* result = new ArrayFloat(resultValue);
-  return reinterpret_cast<JoltC_ArrayFloat_t *>(result);
+  static ArrayFloat resultValue = selfCpp->mReverseGearRatios;
+  JoltC_ArrayFloat_t* result = new JoltC_ArrayFloat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_VehicleTransmission_mReverseGearRatios_Set(

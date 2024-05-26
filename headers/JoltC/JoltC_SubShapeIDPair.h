@@ -14,19 +14,19 @@ JoltC_SubShapeIDPair_t * JoltC_SubShapeIDPair_new();
 
 //region functions
 
-const JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody1ID(
+JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody1ID(
   JoltC_SubShapeIDPair_t * self
 );
 
-const JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID1(
+JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID1(
   JoltC_SubShapeIDPair_t * self
 );
 
-const JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody2ID(
+JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody2ID(
   JoltC_SubShapeIDPair_t * self
 );
 
-const JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID2(
+JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID2(
   JoltC_SubShapeIDPair_t * self
 );
 

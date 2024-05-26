@@ -34,7 +34,7 @@ void JoltC_SkeletalAnimation_ScaleJoints(
   SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
   
   selfCpp->ScaleJoints(
-  inScale
+    inScale
   );
 };
 
@@ -46,8 +46,8 @@ void JoltC_SkeletalAnimation_Sample(
   SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
   
   selfCpp->Sample(
-  inTime,
-  *reinterpret_cast<SkeletonPose *>(ioPose->obj)
+    inTime,
+    *reinterpret_cast<SkeletonPose *>(ioPose->obj)
   );
 };
 
@@ -55,9 +55,10 @@ JoltC_ArraySkeletonAnimatedJoint_t * JoltC_SkeletalAnimation_GetAnimatedJoints(
   JoltC_SkeletalAnimation_t * self
 ) {
   SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
-  ArraySkeletonAnimatedJoint& resultRef = selfCpp->GetAnimatedJoints();
-  ArraySkeletonAnimatedJoint * result = &resultRef;
-  return reinterpret_cast<JoltC_ArraySkeletonAnimatedJoint_t *>(result);
+  ArraySkeletonAnimatedJoint* resultRef = &selfCpp->GetAnimatedJoints();
+  JoltC_ArraySkeletonAnimatedJoint_t* result = new JoltC_ArraySkeletonAnimatedJoint_t();
+  result->obj = reinterpret_cast<void*>(resultRef);
+  return result;
 };
 
 //endregion

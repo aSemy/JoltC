@@ -23,7 +23,7 @@ JoltC_SoftBodySharedSettingsVertex_t * JoltC_ArraySoftBodySharedSettingsVertex_a
 
 void JoltC_ArraySoftBodySharedSettingsVertex_push_back(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self,
-  const JoltC_SoftBodySharedSettingsVertex_t * inValue
+  JoltC_SoftBodySharedSettingsVertex_t * inValue
 );
 
 void JoltC_ArraySoftBodySharedSettingsVertex_reserve(

@@ -174,13 +174,13 @@ void JoltC_CharacterVirtualSettings_mMaxSlopeAngle_Set(
   float mMaxSlopeAngle
 );
 
-const JoltC_Shape_t * JoltC_CharacterVirtualSettings_mShape_Get(
+JoltC_Shape_t * JoltC_CharacterVirtualSettings_mShape_Get(
   JoltC_CharacterVirtualSettings_t * self
 );
 
-const void JoltC_CharacterVirtualSettings_mShape_Set(
+void JoltC_CharacterVirtualSettings_mShape_Set(
   JoltC_CharacterVirtualSettings_t * self,
-  const JoltC_Shape_t * mShape
+  JoltC_Shape_t * mShape
 );
 
 //endregion

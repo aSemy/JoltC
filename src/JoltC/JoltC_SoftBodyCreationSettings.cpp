@@ -9,7 +9,7 @@ extern "C" {
 //region constructors
 
 JoltC_SoftBodyCreationSettings_t * JoltC_SoftBodyCreationSettings_new(
-  const JoltC_SoftBodySharedSettings_t * inSettings,
+  JoltC_SoftBodySharedSettings_t * inSettings,
   JoltC_RVec3_t * inPosition,
   JoltC_Quat_t * inRotation,
   unsigned long inObjectLayer
@@ -33,9 +33,10 @@ JoltC_RVec3_t * JoltC_SoftBodyCreationSettings_mPosition_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  RVec3 resultValue = selfCpp->mPosition;
-  RVec3* result = new RVec3(resultValue);
-  return reinterpret_cast<JoltC_RVec3_t *>(result);
+  static RVec3 resultValue = selfCpp->mPosition;
+  JoltC_RVec3_t* result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodyCreationSettings_mPosition_Set(
@@ -50,9 +51,10 @@ JoltC_Quat_t * JoltC_SoftBodyCreationSettings_mRotation_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  Quat resultValue = selfCpp->mRotation;
-  Quat* result = new Quat(resultValue);
-  return reinterpret_cast<JoltC_Quat_t *>(result);
+  static Quat resultValue = selfCpp->mRotation;
+  JoltC_Quat_t* result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodyCreationSettings_mRotation_Set(
@@ -99,9 +101,10 @@ JoltC_CollisionGroup_t * JoltC_SoftBodyCreationSettings_mCollisionGroup_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  CollisionGroup resultValue = selfCpp->mCollisionGroup;
-  CollisionGroup* result = new CollisionGroup(resultValue);
-  return reinterpret_cast<JoltC_CollisionGroup_t *>(result);
+  static CollisionGroup resultValue = selfCpp->mCollisionGroup;
+  JoltC_CollisionGroup_t* result = new JoltC_CollisionGroup_t();
+  result->obj = reinterpret_cast<void*>(&resultValue);
+  return result;
 };
 
 void JoltC_SoftBodyCreationSettings_mCollisionGroup_Set(

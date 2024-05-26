@@ -16,9 +16,9 @@ JoltC_StaticCompoundShapeSettings_t * JoltC_StaticCompoundShapeSettings_new();
 
 void JoltC_StaticCompoundShapeSettings_AddShape(
   JoltC_StaticCompoundShapeSettings_t * self,
-  const JoltC_Vec3_t * inPosition,
-  const JoltC_Quat_t * inRotation,
-  const JoltC_ShapeSettings_t * inShape,
+  JoltC_Vec3_t * inPosition,
+  JoltC_Quat_t * inRotation,
+  JoltC_ShapeSettings_t * inShape,
   unsigned long inUserData
 );
 

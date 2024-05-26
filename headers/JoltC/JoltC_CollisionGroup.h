@@ -25,7 +25,7 @@ void JoltC_CollisionGroup_SetGroupFilter(
   JoltC_GroupFilter_t * inFilter
 );
 
-const JoltC_GroupFilter_t * JoltC_CollisionGroup_GetGroupFilter(
+JoltC_GroupFilter_t * JoltC_CollisionGroup_GetGroupFilter(
   JoltC_CollisionGroup_t * self
 );
 

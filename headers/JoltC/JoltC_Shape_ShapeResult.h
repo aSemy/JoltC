@@ -16,7 +16,7 @@ bool JoltC_Shape_ShapeResult_HasError(
   JoltC_Shape_ShapeResult_t * self
 );
 
-const JoltC_JPHString_t * JoltC_Shape_ShapeResult_GetError(
+JoltC_JPHString_t * JoltC_Shape_ShapeResult_GetError(
   JoltC_Shape_ShapeResult_t * self
 );
 
