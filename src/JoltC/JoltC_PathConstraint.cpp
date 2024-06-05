@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PathConstraint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,7 +13,6 @@ void JoltC_PathConstraint_SetPath(
   float inPathFraction
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetPath(
     reinterpret_cast<PathConstraintPath *>(inPath->obj),
     inPathFraction
@@ -27,7 +25,7 @@ JoltC_PathConstraintPath_t * JoltC_PathConstraint_GetPath(
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
   const PathConstraintPath * resultValue = selfCpp->GetPath();
   JoltC_PathConstraintPath_t* result = new JoltC_PathConstraintPath_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -44,7 +42,6 @@ void JoltC_PathConstraint_SetMaxFrictionForce(
   float inFrictionForce
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetMaxFrictionForce(
     inFrictionForce
   );
@@ -73,7 +70,6 @@ void JoltC_PathConstraint_SetPositionMotorState(
   JoltC_EMotorState inState
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetPositionMotorState(
     static_cast<EMotorState>(static_cast<int>(inState))
   );
@@ -92,7 +88,6 @@ void JoltC_PathConstraint_SetTargetVelocity(
   float inVelocity
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetTargetVelocity(
     inVelocity
   );
@@ -111,7 +106,6 @@ void JoltC_PathConstraint_SetTargetPathFraction(
   float inFraction
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetTargetPathFraction(
     inFraction
   );
@@ -129,9 +123,9 @@ JoltC_Body_t * JoltC_PathConstraint_GetBody1(
   JoltC_PathConstraint_t * self
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetBody1();
+  const Body * resultValue = selfCpp->GetBody1();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -139,9 +133,9 @@ JoltC_Body_t * JoltC_PathConstraint_GetBody2(
   JoltC_PathConstraint_t * self
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetBody2();
+  const Body * resultValue = selfCpp->GetBody2();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -149,9 +143,9 @@ JoltC_Mat44_t * JoltC_PathConstraint_GetConstraintToBody1Matrix(
   JoltC_PathConstraint_t * self
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  const Mat44& resultValue = selfCpp->GetConstraintToBody1Matrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -159,9 +153,9 @@ JoltC_Mat44_t * JoltC_PathConstraint_GetConstraintToBody2Matrix(
   JoltC_PathConstraint_t * self
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  const Mat44& resultValue = selfCpp->GetConstraintToBody2Matrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -177,7 +171,6 @@ void JoltC_PathConstraint_AddRef(
   JoltC_PathConstraint_t * self
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -185,7 +178,6 @@ void JoltC_PathConstraint_Release(
   JoltC_PathConstraint_t * self
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -218,7 +210,6 @@ void JoltC_PathConstraint_SetConstraintPriority(
   unsigned long inPriority
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetConstraintPriority(
     inPriority
   );
@@ -229,7 +220,6 @@ void JoltC_PathConstraint_SetNumVelocityStepsOverride(
   long inN
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
@@ -248,7 +238,6 @@ void JoltC_PathConstraint_SetNumPositionStepsOverride(
   long inN
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
@@ -267,7 +256,6 @@ void JoltC_PathConstraint_SetEnabled(
   bool inEnabled
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetEnabled(
     inEnabled
   );
@@ -302,7 +290,6 @@ void JoltC_PathConstraint_SetUserData(
   unsigned long long int inUserData
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -312,7 +299,6 @@ void JoltC_PathConstraint_ResetWarmStart(
   JoltC_PathConstraint_t * self
 ) {
   PathConstraint * selfCpp = static_cast<PathConstraint *>(self->obj);
-  
   selfCpp->ResetWarmStart();
 };
 

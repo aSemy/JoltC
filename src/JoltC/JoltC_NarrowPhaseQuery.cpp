@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_NarrowPhaseQuery.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -19,7 +18,6 @@ void JoltC_NarrowPhaseQuery_CastRay(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-  
   selfCpp->CastRay(
     *reinterpret_cast<RRayCast *>(inRay->obj),
     *reinterpret_cast<RayCastSettings *>(inRayCastSettings->obj),
@@ -41,7 +39,6 @@ void JoltC_NarrowPhaseQuery_CollidePoint(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-  
   selfCpp->CollidePoint(
     *reinterpret_cast<RVec3 *>(inPoint->obj),
     *reinterpret_cast<CollidePointCollector *>(ioCollector->obj),
@@ -66,7 +63,6 @@ void JoltC_NarrowPhaseQuery_CollideShape(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-  
   selfCpp->CollideShape(
     reinterpret_cast<Shape *>(inShape->obj),
     *reinterpret_cast<Vec3 *>(inShapeScale->obj),
@@ -93,7 +89,6 @@ void JoltC_NarrowPhaseQuery_CastShape(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-  
   selfCpp->CastShape(
     *reinterpret_cast<RShapeCast *>(inShapeCast->obj),
     *reinterpret_cast<ShapeCastSettings *>(inShapeCastSettings->obj),
@@ -116,7 +111,6 @@ void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
-  
   selfCpp->CollectTransformedShapes(
     *reinterpret_cast<AABox *>(inBox->obj),
     *reinterpret_cast<TransformedShapeCollector *>(ioCollector->obj),

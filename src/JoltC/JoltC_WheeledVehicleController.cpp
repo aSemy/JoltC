@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_WheeledVehicleController.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -46,7 +45,6 @@ void JoltC_WheeledVehicleController_SetDriverInput(
   float inHandBrake
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
   selfCpp->SetDriverInput(
     inForward,
     inRight,
@@ -60,7 +58,6 @@ void JoltC_WheeledVehicleController_SetForwardInput(
   float inForward
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
   selfCpp->SetForwardInput(
     inForward
   );
@@ -79,7 +76,6 @@ void JoltC_WheeledVehicleController_SetRightInput(
   float inRight
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
   selfCpp->SetRightInput(
     inRight
   );
@@ -98,7 +94,6 @@ void JoltC_WheeledVehicleController_SetBrakeInput(
   float inBrake
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
   selfCpp->SetBrakeInput(
     inBrake
   );
@@ -117,7 +112,6 @@ void JoltC_WheeledVehicleController_SetHandBrakeInput(
   float inHandBrake
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
   selfCpp->SetHandBrakeInput(
     inHandBrake
   );
@@ -174,7 +168,6 @@ void JoltC_WheeledVehicleController_SetDifferentialLimitedSlipRatio(
   float inV
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
   selfCpp->SetDifferentialLimitedSlipRatio(
     inV
   );
@@ -200,7 +193,6 @@ void JoltC_WheeledVehicleController_AddRef(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -208,7 +200,6 @@ void JoltC_WheeledVehicleController_Release(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  
   selfCpp->Release();
 };
 

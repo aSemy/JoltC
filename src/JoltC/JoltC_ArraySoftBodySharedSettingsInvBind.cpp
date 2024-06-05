@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArraySoftBodySharedSettingsInvBind.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArraySoftBodySharedSettingsInvBind_push_back(
   JoltC_SoftBodySharedSettingsInvBind_t * inValue
 ) {
   ArraySoftBodySharedSettingsInvBind * selfCpp = static_cast<ArraySoftBodySharedSettingsInvBind *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<SoftBodySharedSettingsInvBind *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArraySoftBodySharedSettingsInvBind_reserve(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsInvBind * selfCpp = static_cast<ArraySoftBodySharedSettingsInvBind *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArraySoftBodySharedSettingsInvBind_resize(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsInvBind * selfCpp = static_cast<ArraySoftBodySharedSettingsInvBind *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArraySoftBodySharedSettingsInvBind_clear(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self
 ) {
   ArraySoftBodySharedSettingsInvBind * selfCpp = static_cast<ArraySoftBodySharedSettingsInvBind *>(self->obj);
-  
   selfCpp->clear();
 };
 

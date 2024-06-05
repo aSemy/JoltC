@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArraySoftBodyVertex.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArraySoftBodyVertex_push_back(
   JoltC_SoftBodyVertex_t * inValue
 ) {
   ArraySoftBodyVertex * selfCpp = static_cast<ArraySoftBodyVertex *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<SoftBodyVertex *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArraySoftBodyVertex_reserve(
   unsigned long inSize
 ) {
   ArraySoftBodyVertex * selfCpp = static_cast<ArraySoftBodyVertex *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArraySoftBodyVertex_resize(
   unsigned long inSize
 ) {
   ArraySoftBodyVertex * selfCpp = static_cast<ArraySoftBodyVertex *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArraySoftBodyVertex_clear(
   JoltC_ArraySoftBodyVertex_t * self
 ) {
   ArraySoftBodyVertex * selfCpp = static_cast<ArraySoftBodyVertex *>(self->obj);
-  
   selfCpp->clear();
 };
 

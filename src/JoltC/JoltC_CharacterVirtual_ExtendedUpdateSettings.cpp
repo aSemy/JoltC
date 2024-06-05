@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CharacterVirtual_ExtendedUpdateSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,9 +22,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mStickToFloorStepDo
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mStickToFloorStepDown;
+  const Vec3& resultValue = selfCpp->mStickToFloorStepDown;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -41,9 +40,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepUp_G
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mWalkStairsStepUp;
+  const Vec3& resultValue = selfCpp->mWalkStairsStepUp;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -107,9 +106,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepDown
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mWalkStairsStepDownExtra;
+  const Vec3& resultValue = selfCpp->mWalkStairsStepDownExtra;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

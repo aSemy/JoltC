@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayVec3.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArrayVec3_push_back(
   JoltC_Vec3_t * inValue
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<Vec3 *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArrayVec3_reserve(
   unsigned long inSize
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArrayVec3_resize(
   unsigned long inSize
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArrayVec3_clear(
   JoltC_ArrayVec3_t * self
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  
   selfCpp->clear();
 };
 
@@ -82,9 +77,9 @@ JoltC_Vec3MemRef_t * JoltC_ArrayVec3_data(
   JoltC_ArrayVec3_t * self
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  Vec3MemRef * resultValue = selfCpp->data();
+  const Vec3MemRef * resultValue = selfCpp->data();
   JoltC_Vec3MemRef_t* result = new JoltC_Vec3MemRef_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

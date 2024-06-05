@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CollisionGroup.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,7 +38,6 @@ void JoltC_CollisionGroup_SetGroupFilter(
   JoltC_GroupFilter_t * inFilter
 ) {
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
-  
   selfCpp->SetGroupFilter(
     reinterpret_cast<GroupFilter *>(inFilter->obj)
   );
@@ -51,7 +49,7 @@ JoltC_GroupFilter_t * JoltC_CollisionGroup_GetGroupFilter(
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
   const GroupFilter * resultValue = selfCpp->GetGroupFilter();
   JoltC_GroupFilter_t* result = new JoltC_GroupFilter_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -60,7 +58,6 @@ void JoltC_CollisionGroup_SetGroupID(
   unsigned long inGroupID
 ) {
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
-  
   selfCpp->SetGroupID(
     inGroupID
   );
@@ -79,7 +76,6 @@ void JoltC_CollisionGroup_SetSubGroupID(
   unsigned long inSubGroupID
 ) {
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
-  
   selfCpp->SetSubGroupID(
     inSubGroupID
   );

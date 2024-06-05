@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SoftBodyVertexTraits.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {

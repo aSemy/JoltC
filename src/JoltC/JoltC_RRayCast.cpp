@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_RRayCast.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,11 +36,11 @@ JoltC_RRayCast_t * JoltC_RRayCast_Transformed(
   JoltC_RMat44_t * inTransform
 ) {
   RRayCast * selfCpp = static_cast<RRayCast *>(self->obj);
-  static RRayCast resultValue = selfCpp->Transformed(
+  const RRayCast& resultValue = selfCpp->Transformed(
     *reinterpret_cast<RMat44 *>(inTransform->obj)
   );
   JoltC_RRayCast_t* result = new JoltC_RRayCast_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -50,11 +49,11 @@ JoltC_RRayCast_t * JoltC_RRayCast_Translated(
   JoltC_RVec3_t * inTranslation
 ) {
   RRayCast * selfCpp = static_cast<RRayCast *>(self->obj);
-  static RRayCast resultValue = selfCpp->Translated(
+  const RRayCast& resultValue = selfCpp->Translated(
     *reinterpret_cast<RVec3 *>(inTranslation->obj)
   );
   JoltC_RRayCast_t* result = new JoltC_RRayCast_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -63,11 +62,11 @@ JoltC_RVec3_t * JoltC_RRayCast_GetPointOnRay(
   float inFraction
 ) {
   RRayCast * selfCpp = static_cast<RRayCast *>(self->obj);
-  static RVec3 resultValue = selfCpp->GetPointOnRay(
+  const RVec3& resultValue = selfCpp->GetPointOnRay(
     inFraction
   );
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -79,9 +78,9 @@ JoltC_RVec3_t * JoltC_RRayCast_mOrigin_Get(
   JoltC_RRayCast_t * self
 ) {
   RRayCast * selfCpp = static_cast<RRayCast *>(self->obj);
-  static RVec3 resultValue = selfCpp->mOrigin;
+  const RVec3& resultValue = selfCpp->mOrigin;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -97,9 +96,9 @@ JoltC_Vec3_t * JoltC_RRayCast_mDirection_Get(
   JoltC_RRayCast_t * self
 ) {
   RRayCast * selfCpp = static_cast<RRayCast *>(self->obj);
-  static Vec3 resultValue = selfCpp->mDirection;
+  const Vec3& resultValue = selfCpp->mDirection;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

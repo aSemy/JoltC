@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_IgnoreMultipleBodiesFilter.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,7 +22,6 @@ void JoltC_IgnoreMultipleBodiesFilter_Clear(
   JoltC_IgnoreMultipleBodiesFilter_t * self
 ) {
   IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-  
   selfCpp->Clear();
 };
 
@@ -32,7 +30,6 @@ void JoltC_IgnoreMultipleBodiesFilter_Reserve(
   unsigned long inSize
 ) {
   IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-  
   selfCpp->Reserve(
     inSize
   );
@@ -43,7 +40,6 @@ void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
   JoltC_BodyID_t * inBodyID
 ) {
   IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
-  
   selfCpp->IgnoreBody(
     *reinterpret_cast<BodyID *>(inBodyID->obj)
   );

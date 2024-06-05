@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayVehicleAntiRollBar.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArrayVehicleAntiRollBar_push_back(
   JoltC_VehicleAntiRollBar_t * inValue
 ) {
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<VehicleAntiRollBar *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArrayVehicleAntiRollBar_resize(
   unsigned long inSize
 ) {
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -63,7 +60,6 @@ void JoltC_ArrayVehicleAntiRollBar_clear(
   JoltC_ArrayVehicleAntiRollBar_t * self
 ) {
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  
   selfCpp->clear();
 };
 

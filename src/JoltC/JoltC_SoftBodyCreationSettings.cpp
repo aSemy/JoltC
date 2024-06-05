@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SoftBodyCreationSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,9 +32,9 @@ JoltC_RVec3_t * JoltC_SoftBodyCreationSettings_mPosition_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mPosition;
+  const RVec3& resultValue = selfCpp->mPosition;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -51,9 +50,9 @@ JoltC_Quat_t * JoltC_SoftBodyCreationSettings_mRotation_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  static Quat resultValue = selfCpp->mRotation;
+  const Quat& resultValue = selfCpp->mRotation;
   JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -101,9 +100,9 @@ JoltC_CollisionGroup_t * JoltC_SoftBodyCreationSettings_mCollisionGroup_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  static CollisionGroup resultValue = selfCpp->mCollisionGroup;
+  const CollisionGroup& resultValue = selfCpp->mCollisionGroup;
   JoltC_CollisionGroup_t* result = new JoltC_CollisionGroup_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

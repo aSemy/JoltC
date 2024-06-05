@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_RotatedTranslatedShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,7 +38,6 @@ void JoltC_RotatedTranslatedShapeSettings_AddRef(
   JoltC_RotatedTranslatedShapeSettings_t * self
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -47,7 +45,6 @@ void JoltC_RotatedTranslatedShapeSettings_Release(
   JoltC_RotatedTranslatedShapeSettings_t * self
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -55,9 +52,9 @@ JoltC_Shape_ShapeResult_t * JoltC_RotatedTranslatedShapeSettings_Create(
   JoltC_RotatedTranslatedShapeSettings_t * self
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -65,7 +62,6 @@ void JoltC_RotatedTranslatedShapeSettings_ClearCachedResult(
   JoltC_RotatedTranslatedShapeSettings_t * self
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 
@@ -77,9 +73,9 @@ JoltC_Vec3_t * JoltC_RotatedTranslatedShapeSettings_mPosition_Get(
   JoltC_RotatedTranslatedShapeSettings_t * self
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mPosition;
+  const Vec3& resultValue = selfCpp->mPosition;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -95,9 +91,9 @@ JoltC_Quat_t * JoltC_RotatedTranslatedShapeSettings_mRotation_Get(
   JoltC_RotatedTranslatedShapeSettings_t * self
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
-  static Quat resultValue = selfCpp->mRotation;
+  const Quat& resultValue = selfCpp->mRotation;
   JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

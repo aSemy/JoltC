@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArraySoftBodySharedSettingsDihedralBend.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_push_back(
   JoltC_SoftBodySharedSettingsDihedralBend_t * inValue
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<SoftBodySharedSettingsDihedralBend *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_reserve(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_resize(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_clear(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
-  
   selfCpp->clear();
 };
 

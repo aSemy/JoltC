@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_RShapeCast.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,11 +33,11 @@ JoltC_RVec3_t * JoltC_RShapeCast_GetPointOnRay(
   float inFraction
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  static RVec3 resultValue = selfCpp->GetPointOnRay(
+  const RVec3& resultValue = selfCpp->GetPointOnRay(
     inFraction
   );
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -52,7 +51,7 @@ JoltC_Shape_t * JoltC_RShapeCast_mShape_Get(
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
   const Shape * resultValue = selfCpp->mShape;
   JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -60,9 +59,9 @@ JoltC_Vec3_t * JoltC_RShapeCast_mScale_Get(
   JoltC_RShapeCast_t * self
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  static Vec3 resultValue = selfCpp->mScale;
+  const Vec3& resultValue = selfCpp->mScale;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -70,9 +69,9 @@ JoltC_RMat44_t * JoltC_RShapeCast_mCenterOfMassStart_Get(
   JoltC_RShapeCast_t * self
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  static RMat44 resultValue = selfCpp->mCenterOfMassStart;
+  const RMat44& resultValue = selfCpp->mCenterOfMassStart;
   JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -80,9 +79,9 @@ JoltC_Vec3_t * JoltC_RShapeCast_mDirection_Get(
   JoltC_RShapeCast_t * self
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  static Vec3 resultValue = selfCpp->mDirection;
+  const Vec3& resultValue = selfCpp->mDirection;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

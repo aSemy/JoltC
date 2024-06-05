@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArraySoftBodySharedSettingsFace.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArraySoftBodySharedSettingsFace_push_back(
   JoltC_SoftBodySharedSettingsFace_t * inValue
 ) {
   ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<SoftBodySharedSettingsFace *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArraySoftBodySharedSettingsFace_reserve(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArraySoftBodySharedSettingsFace_resize(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArraySoftBodySharedSettingsFace_clear(
   JoltC_ArraySoftBodySharedSettingsFace_t * self
 ) {
   ArraySoftBodySharedSettingsFace * selfCpp = static_cast<ArraySoftBodySharedSettingsFace *>(self->obj);
-  
   selfCpp->clear();
 };
 

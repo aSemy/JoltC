@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_RayCastResult.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,7 +22,6 @@ void JoltC_RayCastResult_Reset(
   JoltC_RayCastResult_t * self
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
-  
   selfCpp->Reset();
 };
 
@@ -35,9 +33,9 @@ JoltC_SubShapeID_t * JoltC_RayCastResult_mSubShapeID2_Get(
   JoltC_RayCastResult_t * self
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
-  static SubShapeID resultValue = selfCpp->mSubShapeID2;
+  const SubShapeID& resultValue = selfCpp->mSubShapeID2;
   JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -53,9 +51,9 @@ JoltC_BodyID_t * JoltC_RayCastResult_mBodyID_Get(
   JoltC_RayCastResult_t * self
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
-  static BodyID resultValue = selfCpp->mBodyID;
+  const BodyID& resultValue = selfCpp->mBodyID;
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

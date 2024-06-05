@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CastRayCollector.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -43,7 +42,6 @@ void JoltC_CastRayCollector_Reset(
   JoltC_CastRayCollector_t * self
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
   selfCpp->Reset();
 };
 
@@ -52,7 +50,6 @@ void JoltC_CastRayCollector_SetContext(
   JoltC_TransformedShape_t * inContext
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
   selfCpp->SetContext(
     reinterpret_cast<TransformedShape *>(inContext->obj)
   );
@@ -64,7 +61,7 @@ JoltC_TransformedShape_t * JoltC_CastRayCollector_GetContext(
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
   const TransformedShape * resultValue = selfCpp->GetContext();
   JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -73,7 +70,6 @@ void JoltC_CastRayCollector_UpdateEarlyOutFraction(
   float inFraction
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
   selfCpp->UpdateEarlyOutFraction(
     inFraction
   );
@@ -84,7 +80,6 @@ void JoltC_CastRayCollector_ResetEarlyOutFraction(
   float inFraction
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
   selfCpp->ResetEarlyOutFraction(
     inFraction
   );
@@ -94,7 +89,6 @@ void JoltC_CastRayCollector_ForceEarlyOut(
   JoltC_CastRayCollector_t * self
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  
   selfCpp->ForceEarlyOut();
 };
 

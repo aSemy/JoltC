@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_FixedConstraintSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,12 +24,12 @@ JoltC_Constraint_t * JoltC_FixedConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  Constraint * resultValue = selfCpp->Create(
+  const Constraint * resultValue = selfCpp->Create(
     *reinterpret_cast<Body *>(inBody1->obj),
     *reinterpret_cast<Body *>(inBody2->obj)
   );
   JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -46,7 +45,6 @@ void JoltC_FixedConstraintSettings_AddRef(
   JoltC_FixedConstraintSettings_t * self
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -54,7 +52,6 @@ void JoltC_FixedConstraintSettings_Release(
   JoltC_FixedConstraintSettings_t * self
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -98,9 +95,9 @@ JoltC_RVec3_t * JoltC_FixedConstraintSettings_mPoint1_Get(
   JoltC_FixedConstraintSettings_t * self
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mPoint1;
+  const RVec3& resultValue = selfCpp->mPoint1;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -116,9 +113,9 @@ JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisX1_Get(
   JoltC_FixedConstraintSettings_t * self
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mAxisX1;
+  const Vec3& resultValue = selfCpp->mAxisX1;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -134,9 +131,9 @@ JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisY1_Get(
   JoltC_FixedConstraintSettings_t * self
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mAxisY1;
+  const Vec3& resultValue = selfCpp->mAxisY1;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -152,9 +149,9 @@ JoltC_RVec3_t * JoltC_FixedConstraintSettings_mPoint2_Get(
   JoltC_FixedConstraintSettings_t * self
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mPoint2;
+  const RVec3& resultValue = selfCpp->mPoint2;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -170,9 +167,9 @@ JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisX2_Get(
   JoltC_FixedConstraintSettings_t * self
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mAxisX2;
+  const Vec3& resultValue = selfCpp->mAxisX2;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -188,9 +185,9 @@ JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisY2_Get(
   JoltC_FixedConstraintSettings_t * self
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mAxisY2;
+  const Vec3& resultValue = selfCpp->mAxisY2;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_Vector2.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,7 +22,6 @@ void JoltC_Vector2_SetZero(
   JoltC_Vector2_t * self
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
-  
   selfCpp->SetZero();
 };
 
@@ -31,7 +29,6 @@ void JoltC_Vector2_IsZero(
   JoltC_Vector2_t * self
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
-  
   selfCpp->IsZero();
 };
 
@@ -41,7 +38,6 @@ void JoltC_Vector2_IsClose(
   float inMaxDistSq
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
-  
   selfCpp->IsClose(
     *reinterpret_cast<Vector2 *>(inV->obj),
     inMaxDistSq
@@ -53,7 +49,6 @@ void JoltC_Vector2_IsNormalized(
   float inTolerance
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
-  
   selfCpp->IsNormalized(
     inTolerance
   );
@@ -63,9 +58,9 @@ JoltC_Vector2_t * JoltC_Vector2_Normalized(
   JoltC_Vector2_t * self
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
-  static Vector2 resultValue = selfCpp->Normalized();
+  const Vector2& resultValue = selfCpp->Normalized();
   JoltC_Vector2_t* result = new JoltC_Vector2_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

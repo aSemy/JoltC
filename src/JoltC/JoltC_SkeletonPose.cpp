@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SkeletonPose.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,7 +23,6 @@ void JoltC_SkeletonPose_SetSkeleton(
   JoltC_Skeleton_t * inSkeleton
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  
   selfCpp->SetSkeleton(
     reinterpret_cast<Skeleton *>(inSkeleton->obj)
   );
@@ -36,7 +34,7 @@ JoltC_Skeleton_t * JoltC_SkeletonPose_GetSkeleton(
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
   const Skeleton * resultValue = selfCpp->GetSkeleton();
   JoltC_Skeleton_t* result = new JoltC_Skeleton_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -45,7 +43,6 @@ void JoltC_SkeletonPose_SetRootOffset(
   JoltC_RVec3_t * inOffset
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  
   selfCpp->SetRootOffset(
     *reinterpret_cast<RVec3 *>(inOffset->obj)
   );
@@ -55,9 +52,9 @@ JoltC_RVec3_t * JoltC_SkeletonPose_GetRootOffset(
   JoltC_SkeletonPose_t * self
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  static RVec3 resultValue = selfCpp->GetRootOffset();
+  const RVec3& resultValue = selfCpp->GetRootOffset();
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -109,7 +106,6 @@ void JoltC_SkeletonPose_CalculateJointMatrices(
   JoltC_SkeletonPose_t * self
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  
   selfCpp->CalculateJointMatrices();
 };
 
@@ -117,7 +113,6 @@ void JoltC_SkeletonPose_CalculateJointStates(
   JoltC_SkeletonPose_t * self
 ) {
   SkeletonPose * selfCpp = static_cast<SkeletonPose *>(self->obj);
-  
   selfCpp->CalculateJointStates();
 };
 

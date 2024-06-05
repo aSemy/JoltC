@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_BroadPhaseCastResult.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,7 +35,6 @@ void JoltC_BroadPhaseCastResult_Reset(
   JoltC_BroadPhaseCastResult_t * self
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
-  
   selfCpp->Reset();
 };
 
@@ -48,9 +46,9 @@ JoltC_BodyID_t * JoltC_BroadPhaseCastResult_mBodyID_Get(
   JoltC_BroadPhaseCastResult_t * self
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
-  static BodyID resultValue = selfCpp->mBodyID;
+  const BodyID& resultValue = selfCpp->mBodyID;
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

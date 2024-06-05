@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CastShapeClosestHitCollisionCollector.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +30,6 @@ void JoltC_CastShapeClosestHitCollisionCollector_Reset(
   JoltC_CastShapeClosestHitCollisionCollector_t * self
 ) {
   CastShapeClosestHitCollisionCollector * selfCpp = static_cast<CastShapeClosestHitCollisionCollector *>(self->obj);
-  
   selfCpp->Reset();
 };
 
@@ -40,7 +38,6 @@ void JoltC_CastShapeClosestHitCollisionCollector_SetContext(
   JoltC_TransformedShape_t * inContext
 ) {
   CastShapeClosestHitCollisionCollector * selfCpp = static_cast<CastShapeClosestHitCollisionCollector *>(self->obj);
-  
   selfCpp->SetContext(
     reinterpret_cast<TransformedShape *>(inContext->obj)
   );
@@ -52,7 +49,7 @@ JoltC_TransformedShape_t * JoltC_CastShapeClosestHitCollisionCollector_GetContex
   CastShapeClosestHitCollisionCollector * selfCpp = static_cast<CastShapeClosestHitCollisionCollector *>(self->obj);
   const TransformedShape * resultValue = selfCpp->GetContext();
   JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -61,7 +58,6 @@ void JoltC_CastShapeClosestHitCollisionCollector_UpdateEarlyOutFraction(
   float inFraction
 ) {
   CastShapeClosestHitCollisionCollector * selfCpp = static_cast<CastShapeClosestHitCollisionCollector *>(self->obj);
-  
   selfCpp->UpdateEarlyOutFraction(
     inFraction
   );
@@ -72,7 +68,6 @@ void JoltC_CastShapeClosestHitCollisionCollector_ResetEarlyOutFraction(
   float inFraction
 ) {
   CastShapeClosestHitCollisionCollector * selfCpp = static_cast<CastShapeClosestHitCollisionCollector *>(self->obj);
-  
   selfCpp->ResetEarlyOutFraction(
     inFraction
   );
@@ -82,7 +77,6 @@ void JoltC_CastShapeClosestHitCollisionCollector_ForceEarlyOut(
   JoltC_CastShapeClosestHitCollisionCollector_t * self
 ) {
   CastShapeClosestHitCollisionCollector * selfCpp = static_cast<CastShapeClosestHitCollisionCollector *>(self->obj);
-  
   selfCpp->ForceEarlyOut();
 };
 
@@ -118,9 +112,9 @@ JoltC_ShapeCastResult_t * JoltC_CastShapeClosestHitCollisionCollector_mHit_Get(
   JoltC_CastShapeClosestHitCollisionCollector_t * self
 ) {
   CastShapeClosestHitCollisionCollector * selfCpp = static_cast<CastShapeClosestHitCollisionCollector *>(self->obj);
-  static ShapeCastResult resultValue = selfCpp->mHit;
+  const ShapeCastResult& resultValue = selfCpp->mHit;
   JoltC_ShapeCastResult_t* result = new JoltC_ShapeCastResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

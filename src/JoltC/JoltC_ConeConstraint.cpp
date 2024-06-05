@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ConeConstraint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -13,7 +12,6 @@ void JoltC_ConeConstraint_SetHalfConeAngle(
   float inHalfConeAngle
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->SetHalfConeAngle(
     inHalfConeAngle
   );
@@ -31,9 +29,9 @@ JoltC_Vec3_t * JoltC_ConeConstraint_GetTotalLambdaPosition(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetTotalLambdaPosition();
+  const Vec3& resultValue = selfCpp->GetTotalLambdaPosition();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -49,9 +47,9 @@ JoltC_Body_t * JoltC_ConeConstraint_GetBody1(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetBody1();
+  const Body * resultValue = selfCpp->GetBody1();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -59,9 +57,9 @@ JoltC_Body_t * JoltC_ConeConstraint_GetBody2(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetBody2();
+  const Body * resultValue = selfCpp->GetBody2();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -69,9 +67,9 @@ JoltC_Mat44_t * JoltC_ConeConstraint_GetConstraintToBody1Matrix(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  const Mat44& resultValue = selfCpp->GetConstraintToBody1Matrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -79,9 +77,9 @@ JoltC_Mat44_t * JoltC_ConeConstraint_GetConstraintToBody2Matrix(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  const Mat44& resultValue = selfCpp->GetConstraintToBody2Matrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -97,7 +95,6 @@ void JoltC_ConeConstraint_AddRef(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -105,7 +102,6 @@ void JoltC_ConeConstraint_Release(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -138,7 +134,6 @@ void JoltC_ConeConstraint_SetConstraintPriority(
   unsigned long inPriority
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->SetConstraintPriority(
     inPriority
   );
@@ -149,7 +144,6 @@ void JoltC_ConeConstraint_SetNumVelocityStepsOverride(
   long inN
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
@@ -168,7 +162,6 @@ void JoltC_ConeConstraint_SetNumPositionStepsOverride(
   long inN
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
@@ -187,7 +180,6 @@ void JoltC_ConeConstraint_SetEnabled(
   bool inEnabled
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->SetEnabled(
     inEnabled
   );
@@ -222,7 +214,6 @@ void JoltC_ConeConstraint_SetUserData(
   unsigned long long int inUserData
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -232,7 +223,6 @@ void JoltC_ConeConstraint_ResetWarmStart(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  
   selfCpp->ResetWarmStart();
 };
 

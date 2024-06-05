@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ShapeGetTriangles.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -64,7 +63,7 @@ JoltC_PhysicsMaterial_t * JoltC_ShapeGetTriangles_GetMaterial(
     inTriangle
   );
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

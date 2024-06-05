@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_Vec4.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -97,7 +96,6 @@ void JoltC_Vec4_SetX(
   float inX
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  
   selfCpp->SetX(
     inX
   );
@@ -108,7 +106,6 @@ void JoltC_Vec4_SetY(
   float inY
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  
   selfCpp->SetY(
     inY
   );
@@ -119,7 +116,6 @@ void JoltC_Vec4_SetZ(
   float inZ
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  
   selfCpp->SetZ(
     inZ
   );
@@ -130,7 +126,6 @@ void JoltC_Vec4_SetW(
   float inW
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  
   selfCpp->SetW(
     inW
   );
@@ -144,7 +139,6 @@ void JoltC_Vec4_Set(
   float inW
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  
   selfCpp->Set(
     inX,
     inY,

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayRagdollAdditionalConstraint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +52,6 @@ void JoltC_ArrayRagdollAdditionalConstraint_push_back(
   JoltC_RagdollAdditionalConstraint_t * inValue
 ) {
   ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<RagdollAdditionalConstraint *>(inValue->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_ArrayRagdollAdditionalConstraint_reserve(
   unsigned long inSize
 ) {
   ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_ArrayRagdollAdditionalConstraint_resize(
   unsigned long inSize
 ) {
   ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_ArrayRagdollAdditionalConstraint_clear(
   JoltC_ArrayRagdollAdditionalConstraint_t * self
 ) {
   ArrayRagdollAdditionalConstraint * selfCpp = static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
-  
   selfCpp->clear();
 };
 

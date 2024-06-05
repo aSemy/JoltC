@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PhysicsSystem.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -13,7 +12,6 @@ void JoltC_PhysicsSystem_SetGravity(
   JoltC_Vec3_t * inGravity
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->SetGravity(
     *reinterpret_cast<Vec3 *>(inGravity->obj)
   );
@@ -23,9 +21,9 @@ JoltC_Vec3_t * JoltC_PhysicsSystem_GetGravity(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetGravity();
+  const Vec3& resultValue = selfCpp->GetGravity();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -46,7 +44,6 @@ void JoltC_PhysicsSystem_SetPhysicsSettings(
   JoltC_PhysicsSettings_t * inPhysicsSettings
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->SetPhysicsSettings(
     *reinterpret_cast<PhysicsSettings *>(inPhysicsSettings->obj)
   );
@@ -84,7 +81,6 @@ void JoltC_PhysicsSystem_GetBodies(
   JoltC_BodyIDVector_t * outBodies
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->GetBodies(
     *reinterpret_cast<BodyIDVector *>(outBodies->obj)
   );
@@ -96,7 +92,6 @@ void JoltC_PhysicsSystem_GetActiveBodies(
   JoltC_BodyIDVector_t * outBodies
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->GetActiveBodies(
     static_cast<EBodyType>(static_cast<int>(inBodyType)),
     *reinterpret_cast<BodyIDVector *>(outBodies->obj)
@@ -107,9 +102,9 @@ JoltC_AABox_t * JoltC_PhysicsSystem_GetBounds(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  static AABox resultValue = selfCpp->GetBounds();
+  const AABox& resultValue = selfCpp->GetBounds();
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -118,7 +113,6 @@ void JoltC_PhysicsSystem_AddConstraint(
   JoltC_Constraint_t * inConstraint
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->AddConstraint(
     reinterpret_cast<Constraint *>(inConstraint->obj)
   );
@@ -129,7 +123,6 @@ void JoltC_PhysicsSystem_RemoveConstraint(
   JoltC_Constraint_t * inConstraint
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->RemoveConstraint(
     reinterpret_cast<Constraint *>(inConstraint->obj)
   );
@@ -140,7 +133,6 @@ void JoltC_PhysicsSystem_SetContactListener(
   JoltC_ContactListener_t * inListener
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->SetContactListener(
     reinterpret_cast<ContactListener *>(inListener->obj)
   );
@@ -150,9 +142,9 @@ JoltC_ContactListener_t * JoltC_PhysicsSystem_GetContactListener(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  ContactListener * resultValue = selfCpp->GetContactListener();
+  const ContactListener * resultValue = selfCpp->GetContactListener();
   JoltC_ContactListener_t* result = new JoltC_ContactListener_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -161,7 +153,6 @@ void JoltC_PhysicsSystem_SetSoftBodyContactListener(
   JoltC_SoftBodyContactListener_t * inListener
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->SetSoftBodyContactListener(
     reinterpret_cast<SoftBodyContactListener *>(inListener->obj)
   );
@@ -171,9 +162,9 @@ JoltC_SoftBodyContactListener_t * JoltC_PhysicsSystem_GetSoftBodyContactListener
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  SoftBodyContactListener * resultValue = selfCpp->GetSoftBodyContactListener();
+  const SoftBodyContactListener * resultValue = selfCpp->GetSoftBodyContactListener();
   JoltC_SoftBodyContactListener_t* result = new JoltC_SoftBodyContactListener_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -181,7 +172,6 @@ void JoltC_PhysicsSystem_OptimizeBroadPhase(
   JoltC_PhysicsSystem_t * self
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->OptimizeBroadPhase();
 };
 
@@ -271,7 +261,6 @@ void JoltC_PhysicsSystem_SaveState(
   JoltC_EStateRecorderState inState
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->SaveState(
     *reinterpret_cast<StateRecorder *>(inStream->obj),
     static_cast<EStateRecorderState>(static_cast<int>(inState))
@@ -294,7 +283,6 @@ void JoltC_PhysicsSystem_AddStepListener(
   JoltC_PhysicsStepListener_t * inListener
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->AddStepListener(
     reinterpret_cast<PhysicsStepListener *>(inListener->obj)
   );
@@ -305,7 +293,6 @@ void JoltC_PhysicsSystem_RemoveStepListener(
   JoltC_PhysicsStepListener_t * inListener
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->RemoveStepListener(
     reinterpret_cast<PhysicsStepListener *>(inListener->obj)
   );
@@ -316,7 +303,6 @@ void JoltC_PhysicsSystem_SetBodyActivationListener(
   JoltC_BodyActivationListener_t * inListener
 ) {
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
-  
   selfCpp->SetBodyActivationListener(
     reinterpret_cast<BodyActivationListener *>(inListener->obj)
   );
@@ -328,7 +314,7 @@ JoltC_BodyActivationListener_t * JoltC_PhysicsSystem_GetBodyActivationListener(
   PhysicsSystem * selfCpp = static_cast<PhysicsSystem *>(self->obj);
   const BodyActivationListener * resultValue = selfCpp->GetBodyActivationListener();
   JoltC_BodyActivationListener_t* result = new JoltC_BodyActivationListener_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayWheelSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,11 +28,11 @@ JoltC_WheelSettings_t * JoltC_ArrayWheelSettings_at(
   long inIndex
 ) {
   ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  WheelSettings * resultValue = selfCpp->at(
+  const WheelSettings * resultValue = selfCpp->at(
     inIndex
   );
   JoltC_WheelSettings_t* result = new JoltC_WheelSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -42,7 +41,6 @@ void JoltC_ArrayWheelSettings_push_back(
   JoltC_WheelSettings_t * inValue
 ) {
   ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  
   selfCpp->push_back(
     Ref<WheelSettings>(reinterpret_cast<WheelSettings *>(inValue->obj))
   );
@@ -53,7 +51,6 @@ void JoltC_ArrayWheelSettings_resize(
   unsigned long inSize
 ) {
   ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -63,7 +60,6 @@ void JoltC_ArrayWheelSettings_clear(
   JoltC_ArrayWheelSettings_t * self
 ) {
   ArrayWheelSettings * selfCpp = static_cast<ArrayWheelSettings *>(self->obj);
-  
   selfCpp->clear();
 };
 

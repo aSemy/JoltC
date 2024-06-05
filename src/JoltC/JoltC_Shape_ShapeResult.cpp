@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_Shape_ShapeResult.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -40,9 +39,9 @@ JoltC_Shape_t * JoltC_Shape_ShapeResult_Get(
   JoltC_Shape_ShapeResult_t * self
 ) {
   Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  Shape * resultValue = selfCpp->Get();
+  const Shape * resultValue = selfCpp->Get();
   JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -50,7 +49,6 @@ void JoltC_Shape_ShapeResult_Clear(
   JoltC_Shape_ShapeResult_t * self
 ) {
   Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  
   selfCpp->Clear();
 };
 

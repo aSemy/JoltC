@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_TrackedVehicleControllerSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,9 +22,9 @@ JoltC_VehicleEngineSettings_t * JoltC_TrackedVehicleControllerSettings_mEngine_G
   JoltC_TrackedVehicleControllerSettings_t * self
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
-  static VehicleEngineSettings resultValue = selfCpp->mEngine;
+  const VehicleEngineSettings& resultValue = selfCpp->mEngine;
   JoltC_VehicleEngineSettings_t* result = new JoltC_VehicleEngineSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -41,9 +40,9 @@ JoltC_VehicleTransmissionSettings_t * JoltC_TrackedVehicleControllerSettings_mTr
   JoltC_TrackedVehicleControllerSettings_t * self
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
-  static VehicleTransmissionSettings resultValue = selfCpp->mTransmission;
+  const VehicleTransmissionSettings& resultValue = selfCpp->mTransmission;
   JoltC_VehicleTransmissionSettings_t* result = new JoltC_VehicleTransmissionSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

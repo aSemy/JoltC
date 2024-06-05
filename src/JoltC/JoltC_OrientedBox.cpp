@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_OrientedBox.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,9 +35,9 @@ JoltC_Mat44_t * JoltC_OrientedBox_mOrientation_Get(
   JoltC_OrientedBox_t * self
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
-  static Mat44 resultValue = selfCpp->mOrientation;
+  const Mat44& resultValue = selfCpp->mOrientation;
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -54,9 +53,9 @@ JoltC_Vec3_t * JoltC_OrientedBox_mHalfExtents_Get(
   JoltC_OrientedBox_t * self
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
-  static Vec3 resultValue = selfCpp->mHalfExtents;
+  const Vec3& resultValue = selfCpp->mHalfExtents;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

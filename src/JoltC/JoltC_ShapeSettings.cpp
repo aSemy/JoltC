@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -150,7 +149,6 @@ void JoltC_ShapeSettings_AddRef(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -158,7 +156,6 @@ void JoltC_ShapeSettings_Release(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -166,9 +163,9 @@ JoltC_Shape_ShapeResult_t * JoltC_ShapeSettings_Create(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -176,7 +173,6 @@ void JoltC_ShapeSettings_ClearCachedResult(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 

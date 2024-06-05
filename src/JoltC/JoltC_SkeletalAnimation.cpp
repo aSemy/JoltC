@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SkeletalAnimation.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -32,7 +31,6 @@ void JoltC_SkeletalAnimation_ScaleJoints(
   float inScale
 ) {
   SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
-  
   selfCpp->ScaleJoints(
     inScale
   );
@@ -44,7 +42,6 @@ void JoltC_SkeletalAnimation_Sample(
   JoltC_SkeletonPose_t * ioPose
 ) {
   SkeletalAnimation * selfCpp = static_cast<SkeletalAnimation *>(self->obj);
-  
   selfCpp->Sample(
     inTime,
     *reinterpret_cast<SkeletonPose *>(ioPose->obj)

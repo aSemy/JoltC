@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleTrack.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,9 +43,9 @@ JoltC_ArrayUint_t * JoltC_VehicleTrack_mWheels_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  static ArrayUint resultValue = selfCpp->mWheels;
+  const ArrayUint& resultValue = selfCpp->mWheels;
   JoltC_ArrayUint_t* result = new JoltC_ArrayUint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

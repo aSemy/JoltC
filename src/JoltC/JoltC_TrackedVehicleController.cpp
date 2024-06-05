@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_TrackedVehicleController.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,7 +32,6 @@ void JoltC_TrackedVehicleController_SetDriverInput(
   float inBrake
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  
   selfCpp->SetDriverInput(
     inForward,
     inLeftRatio,
@@ -47,7 +45,6 @@ void JoltC_TrackedVehicleController_SetForwardInput(
   float inForward
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  
   selfCpp->SetForwardInput(
     inForward
   );
@@ -66,7 +63,6 @@ void JoltC_TrackedVehicleController_SetLeftRatio(
   float inLeftRatio
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  
   selfCpp->SetLeftRatio(
     inLeftRatio
   );
@@ -85,7 +81,6 @@ void JoltC_TrackedVehicleController_SetRightRatio(
   float inRightRatio
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  
   selfCpp->SetRightRatio(
     inRightRatio
   );
@@ -104,7 +99,6 @@ void JoltC_TrackedVehicleController_SetBrakeInput(
   float inBrake
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  
   selfCpp->SetBrakeInput(
     inBrake
   );
@@ -165,7 +159,6 @@ void JoltC_TrackedVehicleController_AddRef(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -173,7 +166,6 @@ void JoltC_TrackedVehicleController_Release(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  
   selfCpp->Release();
 };
 

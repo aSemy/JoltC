@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PhysicsMaterial.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +30,6 @@ void JoltC_PhysicsMaterial_AddRef(
   JoltC_PhysicsMaterial_t * self
 ) {
   PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -39,7 +37,6 @@ void JoltC_PhysicsMaterial_Release(
   JoltC_PhysicsMaterial_t * self
 ) {
   PhysicsMaterial * selfCpp = static_cast<PhysicsMaterial *>(self->obj);
-  
   selfCpp->Release();
 };
 

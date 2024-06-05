@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_AABoxCast.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,9 +22,9 @@ JoltC_AABox_t * JoltC_AABoxCast_mBox_Get(
   JoltC_AABoxCast_t * self
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
-  static AABox resultValue = selfCpp->mBox;
+  const AABox& resultValue = selfCpp->mBox;
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -41,9 +40,9 @@ JoltC_Vec3_t * JoltC_AABoxCast_mDirection_Get(
   JoltC_AABoxCast_t * self
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
-  static Vec3 resultValue = selfCpp->mDirection;
+  const Vec3& resultValue = selfCpp->mDirection;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

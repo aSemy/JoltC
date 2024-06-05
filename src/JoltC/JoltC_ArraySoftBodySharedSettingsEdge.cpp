@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArraySoftBodySharedSettingsEdge.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArraySoftBodySharedSettingsEdge_push_back(
   JoltC_SoftBodySharedSettingsEdge_t * inValue
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<SoftBodySharedSettingsEdge *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArraySoftBodySharedSettingsEdge_reserve(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArraySoftBodySharedSettingsEdge_resize(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArraySoftBodySharedSettingsEdge_clear(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
-  
   selfCpp->clear();
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PointConstraintSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,12 +24,12 @@ JoltC_Constraint_t * JoltC_PointConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  Constraint * resultValue = selfCpp->Create(
+  const Constraint * resultValue = selfCpp->Create(
     *reinterpret_cast<Body *>(inBody1->obj),
     *reinterpret_cast<Body *>(inBody2->obj)
   );
   JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -46,7 +45,6 @@ void JoltC_PointConstraintSettings_AddRef(
   JoltC_PointConstraintSettings_t * self
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -54,7 +52,6 @@ void JoltC_PointConstraintSettings_Release(
   JoltC_PointConstraintSettings_t * self
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -82,9 +79,9 @@ JoltC_RVec3_t * JoltC_PointConstraintSettings_mPoint1_Get(
   JoltC_PointConstraintSettings_t * self
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mPoint1;
+  const RVec3& resultValue = selfCpp->mPoint1;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -100,9 +97,9 @@ JoltC_RVec3_t * JoltC_PointConstraintSettings_mPoint2_Get(
   JoltC_PointConstraintSettings_t * self
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mPoint2;
+  const RVec3& resultValue = selfCpp->mPoint2;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

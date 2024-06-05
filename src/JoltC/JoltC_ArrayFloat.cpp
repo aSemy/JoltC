@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayFloat.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -40,7 +39,6 @@ void JoltC_ArrayFloat_push_back(
   float inValue
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  
   selfCpp->push_back(
     inValue
   );
@@ -51,7 +49,6 @@ void JoltC_ArrayFloat_reserve(
   unsigned long inSize
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -62,7 +59,6 @@ void JoltC_ArrayFloat_resize(
   unsigned long inSize
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -72,7 +68,6 @@ void JoltC_ArrayFloat_clear(
   JoltC_ArrayFloat_t * self
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  
   selfCpp->clear();
 };
 
@@ -80,9 +75,9 @@ JoltC_FloatMemRef_t * JoltC_ArrayFloat_data(
   JoltC_ArrayFloat_t * self
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  FloatMemRef * resultValue = selfCpp->data();
+  const FloatMemRef * resultValue = selfCpp->data();
   JoltC_FloatMemRef_t* result = new JoltC_FloatMemRef_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

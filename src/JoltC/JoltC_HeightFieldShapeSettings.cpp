@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_HeightFieldShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +30,6 @@ void JoltC_HeightFieldShapeSettings_AddRef(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -39,7 +37,6 @@ void JoltC_HeightFieldShapeSettings_Release(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -47,9 +44,9 @@ JoltC_Shape_ShapeResult_t * JoltC_HeightFieldShapeSettings_Create(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -57,7 +54,6 @@ void JoltC_HeightFieldShapeSettings_ClearCachedResult(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 
@@ -69,9 +65,9 @@ JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mOffset_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mOffset;
+  const Vec3& resultValue = selfCpp->mOffset;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -87,9 +83,9 @@ JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mScale_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mScale;
+  const Vec3& resultValue = selfCpp->mScale;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -185,9 +181,9 @@ JoltC_ArrayFloat_t * JoltC_HeightFieldShapeSettings_mHeightSamples_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  static ArrayFloat resultValue = selfCpp->mHeightSamples;
+  const ArrayFloat& resultValue = selfCpp->mHeightSamples;
   JoltC_ArrayFloat_t* result = new JoltC_ArrayFloat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -203,9 +199,9 @@ JoltC_ArrayUint8_t * JoltC_HeightFieldShapeSettings_mMaterialIndices_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  static ArrayUint8 resultValue = selfCpp->mMaterialIndices;
+  const ArrayUint8& resultValue = selfCpp->mMaterialIndices;
   JoltC_ArrayUint8_t* result = new JoltC_ArrayUint8_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -221,9 +217,9 @@ JoltC_PhysicsMaterialList_t * JoltC_HeightFieldShapeSettings_mMaterials_Get(
   JoltC_HeightFieldShapeSettings_t * self
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
-  static PhysicsMaterialList resultValue = selfCpp->mMaterials;
+  const PhysicsMaterialList& resultValue = selfCpp->mMaterials;
   JoltC_PhysicsMaterialList_t* result = new JoltC_PhysicsMaterialList_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

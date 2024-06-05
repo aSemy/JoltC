@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CylinderShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -41,7 +40,6 @@ void JoltC_CylinderShapeSettings_AddRef(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -49,7 +47,6 @@ void JoltC_CylinderShapeSettings_Release(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -57,9 +54,9 @@ JoltC_Shape_ShapeResult_t * JoltC_CylinderShapeSettings_Create(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -67,7 +64,6 @@ void JoltC_CylinderShapeSettings_ClearCachedResult(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 
@@ -129,7 +125,7 @@ JoltC_PhysicsMaterial_t * JoltC_CylinderShapeSettings_mMaterial_Get(
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
   const PhysicsMaterial * resultValue = selfCpp->mMaterial;
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

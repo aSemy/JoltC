@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ShapeCast.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,11 +33,11 @@ JoltC_Vec3_t * JoltC_ShapeCast_GetPointOnRay(
   float inFraction
 ) {
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetPointOnRay(
+  const Vec3& resultValue = selfCpp->GetPointOnRay(
     inFraction
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -52,7 +51,7 @@ JoltC_Shape_t * JoltC_ShapeCast_mShape_Get(
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
   const Shape * resultValue = selfCpp->mShape;
   JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -60,9 +59,9 @@ JoltC_Vec3_t * JoltC_ShapeCast_mScale_Get(
   JoltC_ShapeCast_t * self
 ) {
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
-  static Vec3 resultValue = selfCpp->mScale;
+  const Vec3& resultValue = selfCpp->mScale;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -70,9 +69,9 @@ JoltC_Mat44_t * JoltC_ShapeCast_mCenterOfMassStart_Get(
   JoltC_ShapeCast_t * self
 ) {
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
-  static Mat44 resultValue = selfCpp->mCenterOfMassStart;
+  const Mat44& resultValue = selfCpp->mCenterOfMassStart;
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -80,9 +79,9 @@ JoltC_Vec3_t * JoltC_ShapeCast_mDirection_Get(
   JoltC_ShapeCast_t * self
 ) {
   ShapeCast * selfCpp = static_cast<ShapeCast *>(self->obj);
-  static Vec3 resultValue = selfCpp->mDirection;
+  const Vec3& resultValue = selfCpp->mDirection;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

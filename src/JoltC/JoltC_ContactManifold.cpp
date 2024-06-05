@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ContactManifold.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,9 +22,9 @@ JoltC_ContactManifold_t * JoltC_ContactManifold_SwapShapes(
   JoltC_ContactManifold_t * self
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static ContactManifold resultValue = selfCpp->SwapShapes();
+  const ContactManifold& resultValue = selfCpp->SwapShapes();
   JoltC_ContactManifold_t* result = new JoltC_ContactManifold_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -34,11 +33,11 @@ JoltC_RVec3_t * JoltC_ContactManifold_GetWorldSpaceContactPointOn1(
   unsigned long inIndex
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static RVec3 resultValue = selfCpp->GetWorldSpaceContactPointOn1(
+  const RVec3& resultValue = selfCpp->GetWorldSpaceContactPointOn1(
     inIndex
   );
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -47,11 +46,11 @@ JoltC_RVec3_t * JoltC_ContactManifold_GetWorldSpaceContactPointOn2(
   unsigned long inIndex
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static RVec3 resultValue = selfCpp->GetWorldSpaceContactPointOn2(
+  const RVec3& resultValue = selfCpp->GetWorldSpaceContactPointOn2(
     inIndex
   );
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -63,9 +62,9 @@ JoltC_RVec3_t * JoltC_ContactManifold_mBaseOffset_Get(
   JoltC_ContactManifold_t * self
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static RVec3 resultValue = selfCpp->mBaseOffset;
+  const RVec3& resultValue = selfCpp->mBaseOffset;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -81,9 +80,9 @@ JoltC_Vec3_t * JoltC_ContactManifold_mWorldSpaceNormal_Get(
   JoltC_ContactManifold_t * self
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static Vec3 resultValue = selfCpp->mWorldSpaceNormal;
+  const Vec3& resultValue = selfCpp->mWorldSpaceNormal;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -115,9 +114,9 @@ JoltC_SubShapeID_t * JoltC_ContactManifold_mSubShapeID1_Get(
   JoltC_ContactManifold_t * self
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static SubShapeID resultValue = selfCpp->mSubShapeID1;
+  const SubShapeID& resultValue = selfCpp->mSubShapeID1;
   JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -133,9 +132,9 @@ JoltC_SubShapeID_t * JoltC_ContactManifold_mSubShapeID2_Get(
   JoltC_ContactManifold_t * self
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static SubShapeID resultValue = selfCpp->mSubShapeID2;
+  const SubShapeID& resultValue = selfCpp->mSubShapeID2;
   JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -151,9 +150,9 @@ JoltC_ContactPoints_t * JoltC_ContactManifold_mRelativeContactPointsOn1_Get(
   JoltC_ContactManifold_t * self
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static ContactPoints resultValue = selfCpp->mRelativeContactPointsOn1;
+  const ContactPoints& resultValue = selfCpp->mRelativeContactPointsOn1;
   JoltC_ContactPoints_t* result = new JoltC_ContactPoints_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -169,9 +168,9 @@ JoltC_ContactPoints_t * JoltC_ContactManifold_mRelativeContactPointsOn2_Get(
   JoltC_ContactManifold_t * self
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
-  static ContactPoints resultValue = selfCpp->mRelativeContactPointsOn2;
+  const ContactPoints& resultValue = selfCpp->mRelativeContactPointsOn2;
   JoltC_ContactPoints_t* result = new JoltC_ContactPoints_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

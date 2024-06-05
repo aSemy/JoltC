@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_TriangleList.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +52,6 @@ void JoltC_TriangleList_push_back(
   JoltC_Triangle_t * inTriangle
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<Triangle *>(inTriangle->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_TriangleList_reserve(
   unsigned long inSize
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_TriangleList_resize(
   unsigned long inSize
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_TriangleList_clear(
   JoltC_TriangleList_t * self
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  
   selfCpp->clear();
 };
 

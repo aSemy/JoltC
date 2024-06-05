@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CollideShapeResultFace.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_CollideShapeResultFace_push_back(
   JoltC_Vec3_t * inValue
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<Vec3 *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_CollideShapeResultFace_resize(
   unsigned long inSize
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -63,7 +60,6 @@ void JoltC_CollideShapeResultFace_clear(
   JoltC_CollideShapeResultFace_t * self
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-  
   selfCpp->clear();
 };
 

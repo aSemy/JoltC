@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PulleyConstraint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,7 +13,6 @@ void JoltC_PulleyConstraint_SetLength(
   float inMaxLength
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->SetLength(
     inMinLength,
     inMaxLength
@@ -49,9 +47,9 @@ JoltC_Body_t * JoltC_PulleyConstraint_GetBody1(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetBody1();
+  const Body * resultValue = selfCpp->GetBody1();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -59,9 +57,9 @@ JoltC_Body_t * JoltC_PulleyConstraint_GetBody2(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetBody2();
+  const Body * resultValue = selfCpp->GetBody2();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -69,9 +67,9 @@ JoltC_Mat44_t * JoltC_PulleyConstraint_GetConstraintToBody1Matrix(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  const Mat44& resultValue = selfCpp->GetConstraintToBody1Matrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -79,9 +77,9 @@ JoltC_Mat44_t * JoltC_PulleyConstraint_GetConstraintToBody2Matrix(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  const Mat44& resultValue = selfCpp->GetConstraintToBody2Matrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -97,7 +95,6 @@ void JoltC_PulleyConstraint_AddRef(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -105,7 +102,6 @@ void JoltC_PulleyConstraint_Release(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -138,7 +134,6 @@ void JoltC_PulleyConstraint_SetConstraintPriority(
   unsigned long inPriority
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->SetConstraintPriority(
     inPriority
   );
@@ -149,7 +144,6 @@ void JoltC_PulleyConstraint_SetNumVelocityStepsOverride(
   long inN
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
@@ -168,7 +162,6 @@ void JoltC_PulleyConstraint_SetNumPositionStepsOverride(
   long inN
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
@@ -187,7 +180,6 @@ void JoltC_PulleyConstraint_SetEnabled(
   bool inEnabled
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->SetEnabled(
     inEnabled
   );
@@ -222,7 +214,6 @@ void JoltC_PulleyConstraint_SetUserData(
   unsigned long long int inUserData
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -232,7 +223,6 @@ void JoltC_PulleyConstraint_ResetWarmStart(
   JoltC_PulleyConstraint_t * self
 ) {
   PulleyConstraint * selfCpp = static_cast<PulleyConstraint *>(self->obj);
-  
   selfCpp->ResetWarmStart();
 };
 

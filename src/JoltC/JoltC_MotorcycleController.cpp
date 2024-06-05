@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_MotorcycleController.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -38,7 +37,6 @@ void JoltC_MotorcycleController_EnableLeanController(
   bool inEnable
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->EnableLeanController(
     inEnable
   );
@@ -60,7 +58,6 @@ void JoltC_MotorcycleController_SetDriverInput(
   float inHandBrake
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->SetDriverInput(
     inForward,
     inRight,
@@ -74,7 +71,6 @@ void JoltC_MotorcycleController_SetForwardInput(
   float inForward
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->SetForwardInput(
     inForward
   );
@@ -93,7 +89,6 @@ void JoltC_MotorcycleController_SetRightInput(
   float inRight
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->SetRightInput(
     inRight
   );
@@ -112,7 +107,6 @@ void JoltC_MotorcycleController_SetBrakeInput(
   float inBrake
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->SetBrakeInput(
     inBrake
   );
@@ -131,7 +125,6 @@ void JoltC_MotorcycleController_SetHandBrakeInput(
   float inHandBrake
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->SetHandBrakeInput(
     inHandBrake
   );
@@ -188,7 +181,6 @@ void JoltC_MotorcycleController_SetDifferentialLimitedSlipRatio(
   float inV
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->SetDifferentialLimitedSlipRatio(
     inV
   );
@@ -214,7 +206,6 @@ void JoltC_MotorcycleController_AddRef(
   JoltC_MotorcycleController_t * self
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -222,7 +213,6 @@ void JoltC_MotorcycleController_Release(
   JoltC_MotorcycleController_t * self
 ) {
   MotorcycleController * selfCpp = static_cast<MotorcycleController *>(self->obj);
-  
   selfCpp->Release();
 };
 

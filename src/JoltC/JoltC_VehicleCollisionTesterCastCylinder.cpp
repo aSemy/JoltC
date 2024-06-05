@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleCollisionTesterCastCylinder.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,7 +36,6 @@ void JoltC_VehicleCollisionTesterCastCylinder_AddRef(
   JoltC_VehicleCollisionTesterCastCylinder_t * self
 ) {
   VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -45,7 +43,6 @@ void JoltC_VehicleCollisionTesterCastCylinder_Release(
   JoltC_VehicleCollisionTesterCastCylinder_t * self
 ) {
   VehicleCollisionTesterCastCylinder * selfCpp = static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
-  
   selfCpp->Release();
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ConstraintSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -150,7 +149,6 @@ void JoltC_ConstraintSettings_AddRef(
   JoltC_ConstraintSettings_t * self
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -158,7 +156,6 @@ void JoltC_ConstraintSettings_Release(
   JoltC_ConstraintSettings_t * self
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 

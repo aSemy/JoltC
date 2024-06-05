@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArraySkeletonAnimatedJoint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +52,6 @@ void JoltC_ArraySkeletonAnimatedJoint_push_back(
   JoltC_SkeletalAnimationAnimatedJoint_t * inValue
 ) {
   ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<SkeletalAnimationAnimatedJoint *>(inValue->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_ArraySkeletonAnimatedJoint_reserve(
   unsigned long inSize
 ) {
   ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_ArraySkeletonAnimatedJoint_resize(
   unsigned long inSize
 ) {
   ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_ArraySkeletonAnimatedJoint_clear(
   JoltC_ArraySkeletonAnimatedJoint_t * self
 ) {
   ArraySkeletonAnimatedJoint * selfCpp = static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
-  
   selfCpp->clear();
 };
 

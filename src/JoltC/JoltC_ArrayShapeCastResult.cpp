@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayShapeCastResult.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArrayShapeCastResult_push_back(
   JoltC_ShapeCastResult_t * inValue
 ) {
   ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<ShapeCastResult *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArrayShapeCastResult_reserve(
   unsigned long inSize
 ) {
   ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArrayShapeCastResult_resize(
   unsigned long inSize
 ) {
   ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArrayShapeCastResult_clear(
   JoltC_ArrayShapeCastResult_t * self
 ) {
   ArrayShapeCastResult * selfCpp = static_cast<ArrayShapeCastResult *>(self->obj);
-  
   selfCpp->clear();
 };
 

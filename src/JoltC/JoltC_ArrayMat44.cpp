@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayMat44.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArrayMat44_push_back(
   JoltC_Mat44_t * inValue
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<Mat44 *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArrayMat44_reserve(
   unsigned long inSize
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArrayMat44_resize(
   unsigned long inSize
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArrayMat44_clear(
   JoltC_ArrayMat44_t * self
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  
   selfCpp->clear();
 };
 
@@ -82,9 +77,9 @@ JoltC_Mat44MemRef_t * JoltC_ArrayMat44_data(
   JoltC_ArrayMat44_t * self
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  Mat44MemRef * resultValue = selfCpp->data();
+  const Mat44MemRef * resultValue = selfCpp->data();
   JoltC_Mat44MemRef_t* result = new JoltC_Mat44MemRef_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

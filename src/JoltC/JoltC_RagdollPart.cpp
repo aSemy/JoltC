@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_RagdollPart.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,7 +13,7 @@ JoltC_ShapeSettings_t * JoltC_RagdollPart_GetShapeSettings(
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   const ShapeSettings * resultValue = selfCpp->GetShapeSettings();
   JoltC_ShapeSettings_t* result = new JoltC_ShapeSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -23,7 +22,6 @@ void JoltC_RagdollPart_SetShapeSettings(
   JoltC_ShapeSettings_t * inShape
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  
   selfCpp->SetShapeSettings(
     reinterpret_cast<ShapeSettings *>(inShape->obj)
   );
@@ -33,9 +31,9 @@ JoltC_Shape_ShapeResult_t * JoltC_RagdollPart_ConvertShapeSettings(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->ConvertShapeSettings();
+  const Shape::ShapeResult& resultValue = selfCpp->ConvertShapeSettings();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -45,7 +43,7 @@ JoltC_Shape_t * JoltC_RagdollPart_GetShape(
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   const Shape * resultValue = selfCpp->GetShape();
   JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -54,7 +52,6 @@ void JoltC_RagdollPart_SetShape(
   JoltC_Shape_t * inShape
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  
   selfCpp->SetShape(
     reinterpret_cast<Shape *>(inShape->obj)
   );
@@ -72,9 +69,9 @@ JoltC_MassProperties_t * JoltC_RagdollPart_GetMassProperties(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  static MassProperties resultValue = selfCpp->GetMassProperties();
+  const MassProperties& resultValue = selfCpp->GetMassProperties();
   JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -86,9 +83,9 @@ JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollPart_mToParent_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  TwoBodyConstraintSettings * resultValue = selfCpp->mToParent;
+  const TwoBodyConstraintSettings * resultValue = selfCpp->mToParent;
   JoltC_TwoBodyConstraintSettings_t* result = new JoltC_TwoBodyConstraintSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -104,9 +101,9 @@ JoltC_RVec3_t * JoltC_RagdollPart_mPosition_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  static RVec3 resultValue = selfCpp->mPosition;
+  const RVec3& resultValue = selfCpp->mPosition;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -122,9 +119,9 @@ JoltC_Quat_t * JoltC_RagdollPart_mRotation_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  static Quat resultValue = selfCpp->mRotation;
+  const Quat& resultValue = selfCpp->mRotation;
   JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -140,9 +137,9 @@ JoltC_Vec3_t * JoltC_RagdollPart_mLinearVelocity_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  static Vec3 resultValue = selfCpp->mLinearVelocity;
+  const Vec3& resultValue = selfCpp->mLinearVelocity;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -158,9 +155,9 @@ JoltC_Vec3_t * JoltC_RagdollPart_mAngularVelocity_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  static Vec3 resultValue = selfCpp->mAngularVelocity;
+  const Vec3& resultValue = selfCpp->mAngularVelocity;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -208,9 +205,9 @@ JoltC_CollisionGroup_t * JoltC_RagdollPart_mCollisionGroup_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  static CollisionGroup resultValue = selfCpp->mCollisionGroup;
+  const CollisionGroup& resultValue = selfCpp->mCollisionGroup;
   JoltC_CollisionGroup_t* result = new JoltC_CollisionGroup_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -562,9 +559,9 @@ JoltC_MassProperties_t * JoltC_RagdollPart_mMassPropertiesOverride_Get(
   JoltC_RagdollPart_t * self
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
-  static MassProperties resultValue = selfCpp->mMassPropertiesOverride;
+  const MassProperties& resultValue = selfCpp->mMassPropertiesOverride;
   JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SoftBodySharedSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +30,6 @@ void JoltC_SoftBodySharedSettings_AddRef(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -39,7 +37,6 @@ void JoltC_SoftBodySharedSettings_Release(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -51,7 +48,6 @@ void JoltC_SoftBodySharedSettings_CreateConstraints(
   float inAngleTolerance
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->CreateConstraints(
     reinterpret_cast<SoftBodySharedSettingsVertexAttributes *>(inVertexAttributes->obj),
     inVertexAttributesLength,
@@ -65,7 +61,6 @@ void JoltC_SoftBodySharedSettings_AddFace(
   JoltC_SoftBodySharedSettingsFace_t * inFace
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->AddFace(
     *reinterpret_cast<SoftBodySharedSettingsFace *>(inFace->obj)
   );
@@ -75,7 +70,6 @@ void JoltC_SoftBodySharedSettings_CalculateEdgeLengths(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->CalculateEdgeLengths();
 };
 
@@ -83,7 +77,6 @@ void JoltC_SoftBodySharedSettings_CalculateLRALengths(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->CalculateLRALengths();
 };
 
@@ -91,7 +84,6 @@ void JoltC_SoftBodySharedSettings_CalculateBendConstraintConstants(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->CalculateBendConstraintConstants();
 };
 
@@ -99,7 +91,6 @@ void JoltC_SoftBodySharedSettings_CalculateVolumeConstraintVolumes(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->CalculateVolumeConstraintVolumes();
 };
 
@@ -107,7 +98,6 @@ void JoltC_SoftBodySharedSettings_CalculateSkinnedConstraintNormals(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->CalculateSkinnedConstraintNormals();
 };
 
@@ -115,7 +105,6 @@ void JoltC_SoftBodySharedSettings_Optimize(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  
   selfCpp->Optimize();
 };
 
@@ -123,9 +112,9 @@ JoltC_SoftBodySharedSettings_t * JoltC_SoftBodySharedSettings_Clone(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  SoftBodySharedSettings * resultValue = selfCpp->Clone();
+  const SoftBodySharedSettings * resultValue = selfCpp->Clone();
   JoltC_SoftBodySharedSettings_t* result = new JoltC_SoftBodySharedSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -137,9 +126,9 @@ JoltC_ArraySoftBodySharedSettingsVertex_t * JoltC_SoftBodySharedSettings_mVertic
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static ArraySoftBodySharedSettingsVertex resultValue = selfCpp->mVertices;
+  const ArraySoftBodySharedSettingsVertex& resultValue = selfCpp->mVertices;
   JoltC_ArraySoftBodySharedSettingsVertex_t* result = new JoltC_ArraySoftBodySharedSettingsVertex_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -155,9 +144,9 @@ JoltC_ArraySoftBodySharedSettingsFace_t * JoltC_SoftBodySharedSettings_mFaces_Ge
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static ArraySoftBodySharedSettingsFace resultValue = selfCpp->mFaces;
+  const ArraySoftBodySharedSettingsFace& resultValue = selfCpp->mFaces;
   JoltC_ArraySoftBodySharedSettingsFace_t* result = new JoltC_ArraySoftBodySharedSettingsFace_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -173,9 +162,9 @@ JoltC_ArraySoftBodySharedSettingsEdge_t * JoltC_SoftBodySharedSettings_mEdgeCons
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static ArraySoftBodySharedSettingsEdge resultValue = selfCpp->mEdgeConstraints;
+  const ArraySoftBodySharedSettingsEdge& resultValue = selfCpp->mEdgeConstraints;
   JoltC_ArraySoftBodySharedSettingsEdge_t* result = new JoltC_ArraySoftBodySharedSettingsEdge_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -191,9 +180,9 @@ JoltC_ArraySoftBodySharedSettingsDihedralBend_t * JoltC_SoftBodySharedSettings_m
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static ArraySoftBodySharedSettingsDihedralBend resultValue = selfCpp->mDihedralBendConstraints;
+  const ArraySoftBodySharedSettingsDihedralBend& resultValue = selfCpp->mDihedralBendConstraints;
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t* result = new JoltC_ArraySoftBodySharedSettingsDihedralBend_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -209,9 +198,9 @@ JoltC_ArraySoftBodySharedSettingsVolume_t * JoltC_SoftBodySharedSettings_mVolume
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static ArraySoftBodySharedSettingsVolume resultValue = selfCpp->mVolumeConstraints;
+  const ArraySoftBodySharedSettingsVolume& resultValue = selfCpp->mVolumeConstraints;
   JoltC_ArraySoftBodySharedSettingsVolume_t* result = new JoltC_ArraySoftBodySharedSettingsVolume_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -227,9 +216,9 @@ JoltC_ArraySoftBodySharedSettingsSkinned_t * JoltC_SoftBodySharedSettings_mSkinn
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static ArraySoftBodySharedSettingsSkinned resultValue = selfCpp->mSkinnedConstraints;
+  const ArraySoftBodySharedSettingsSkinned& resultValue = selfCpp->mSkinnedConstraints;
   JoltC_ArraySoftBodySharedSettingsSkinned_t* result = new JoltC_ArraySoftBodySharedSettingsSkinned_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -245,9 +234,9 @@ JoltC_ArraySoftBodySharedSettingsInvBind_t * JoltC_SoftBodySharedSettings_mInvBi
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static ArraySoftBodySharedSettingsInvBind resultValue = selfCpp->mInvBindMatrices;
+  const ArraySoftBodySharedSettingsInvBind& resultValue = selfCpp->mInvBindMatrices;
   JoltC_ArraySoftBodySharedSettingsInvBind_t* result = new JoltC_ArraySoftBodySharedSettingsInvBind_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -263,9 +252,9 @@ JoltC_ArraySoftBodySharedSettingsLRA_t * JoltC_SoftBodySharedSettings_mLRAConstr
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static ArraySoftBodySharedSettingsLRA resultValue = selfCpp->mLRAConstraints;
+  const ArraySoftBodySharedSettingsLRA& resultValue = selfCpp->mLRAConstraints;
   JoltC_ArraySoftBodySharedSettingsLRA_t* result = new JoltC_ArraySoftBodySharedSettingsLRA_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -281,9 +270,9 @@ JoltC_PhysicsMaterialList_t * JoltC_SoftBodySharedSettings_mMaterials_Get(
   JoltC_SoftBodySharedSettings_t * self
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
-  static PhysicsMaterialList resultValue = selfCpp->mMaterials;
+  const PhysicsMaterialList& resultValue = selfCpp->mMaterials;
   JoltC_PhysicsMaterialList_t* result = new JoltC_PhysicsMaterialList_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

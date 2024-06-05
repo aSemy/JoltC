@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_IndexedTriangleList.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +52,6 @@ void JoltC_IndexedTriangleList_push_back(
   JoltC_IndexedTriangle_t * inTriangle
 ) {
   IndexedTriangleList * selfCpp = static_cast<IndexedTriangleList *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<IndexedTriangle *>(inTriangle->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_IndexedTriangleList_reserve(
   unsigned long inSize
 ) {
   IndexedTriangleList * selfCpp = static_cast<IndexedTriangleList *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_IndexedTriangleList_resize(
   unsigned long inSize
 ) {
   IndexedTriangleList * selfCpp = static_cast<IndexedTriangleList *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_IndexedTriangleList_clear(
   JoltC_IndexedTriangleList_t * self
 ) {
   IndexedTriangleList * selfCpp = static_cast<IndexedTriangleList *>(self->obj);
-  
   selfCpp->clear();
 };
 

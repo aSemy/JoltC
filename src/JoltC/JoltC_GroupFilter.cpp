@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_GroupFilter.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,7 +32,6 @@ void JoltC_GroupFilter_AddRef(
   JoltC_GroupFilter_t * self
 ) {
   GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -41,7 +39,6 @@ void JoltC_GroupFilter_Release(
   JoltC_GroupFilter_t * self
 ) {
   GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-  
   selfCpp->Release();
 };
 

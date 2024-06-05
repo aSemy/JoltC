@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SoftBodyManifold.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,11 +35,11 @@ JoltC_Vec3_t * JoltC_SoftBodyManifold_GetLocalContactPoint(
   JoltC_SoftBodyVertex_t * inVertex
 ) {
   SoftBodyManifold * selfCpp = static_cast<SoftBodyManifold *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetLocalContactPoint(
+  const Vec3& resultValue = selfCpp->GetLocalContactPoint(
     *reinterpret_cast<SoftBodyVertex *>(inVertex->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -49,11 +48,11 @@ JoltC_Vec3_t * JoltC_SoftBodyManifold_GetContactNormal(
   JoltC_SoftBodyVertex_t * inVertex
 ) {
   SoftBodyManifold * selfCpp = static_cast<SoftBodyManifold *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetContactNormal(
+  const Vec3& resultValue = selfCpp->GetContactNormal(
     *reinterpret_cast<SoftBodyVertex *>(inVertex->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -62,11 +61,11 @@ JoltC_BodyID_t * JoltC_SoftBodyManifold_GetContactBodyID(
   JoltC_SoftBodyVertex_t * inVertex
 ) {
   SoftBodyManifold * selfCpp = static_cast<SoftBodyManifold *>(self->obj);
-  static BodyID resultValue = selfCpp->GetContactBodyID(
+  const BodyID& resultValue = selfCpp->GetContactBodyID(
     *reinterpret_cast<SoftBodyVertex *>(inVertex->obj)
   );
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

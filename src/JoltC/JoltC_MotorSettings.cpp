@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_MotorSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,9 +22,9 @@ JoltC_SpringSettings_t * JoltC_MotorSettings_mSpringSettings_Get(
   JoltC_MotorSettings_t * self
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
-  static SpringSettings resultValue = selfCpp->mSpringSettings;
+  const SpringSettings& resultValue = selfCpp->mSpringSettings;
   JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

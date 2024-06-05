@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PathConstraintSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,12 +24,12 @@ JoltC_Constraint_t * JoltC_PathConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
-  Constraint * resultValue = selfCpp->Create(
+  const Constraint * resultValue = selfCpp->Create(
     *reinterpret_cast<Body *>(inBody1->obj),
     *reinterpret_cast<Body *>(inBody2->obj)
   );
   JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -46,7 +45,6 @@ void JoltC_PathConstraintSettings_AddRef(
   JoltC_PathConstraintSettings_t * self
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -54,7 +52,6 @@ void JoltC_PathConstraintSettings_Release(
   JoltC_PathConstraintSettings_t * self
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -68,7 +65,7 @@ JoltC_PathConstraintPath_t * JoltC_PathConstraintSettings_mPath_Get(
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   const PathConstraintPath * resultValue = selfCpp->mPath;
   JoltC_PathConstraintPath_t* result = new JoltC_PathConstraintPath_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -84,9 +81,9 @@ JoltC_Vec3_t * JoltC_PathConstraintSettings_mPathPosition_Get(
   JoltC_PathConstraintSettings_t * self
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mPathPosition;
+  const Vec3& resultValue = selfCpp->mPathPosition;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -102,9 +99,9 @@ JoltC_Quat_t * JoltC_PathConstraintSettings_mPathRotation_Get(
   JoltC_PathConstraintSettings_t * self
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
-  static Quat resultValue = selfCpp->mPathRotation;
+  const Quat& resultValue = selfCpp->mPathRotation;
   JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -168,9 +165,9 @@ JoltC_MotorSettings_t * JoltC_PathConstraintSettings_mPositionMotorSettings_Get(
   JoltC_PathConstraintSettings_t * self
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
-  static MotorSettings resultValue = selfCpp->mPositionMotorSettings;
+  const MotorSettings& resultValue = selfCpp->mPositionMotorSettings;
   JoltC_MotorSettings_t* result = new JoltC_MotorSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

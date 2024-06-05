@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_Plane.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,9 +28,9 @@ JoltC_Vec3_t * JoltC_Plane_GetNormal(
   JoltC_Plane_t * self
 ) {
   Plane * selfCpp = static_cast<Plane *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetNormal();
+  const Vec3& resultValue = selfCpp->GetNormal();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -40,7 +39,6 @@ void JoltC_Plane_SetNormal(
   JoltC_Vec3_t * inNormal
 ) {
   Plane * selfCpp = static_cast<Plane *>(self->obj);
-  
   selfCpp->SetNormal(
     *reinterpret_cast<Vec3 *>(inNormal->obj)
   );
@@ -59,7 +57,6 @@ void JoltC_Plane_SetConstant(
   float inConstant
 ) {
   Plane * selfCpp = static_cast<Plane *>(self->obj);
-  
   selfCpp->SetConstant(
     inConstant
   );
@@ -71,12 +68,12 @@ JoltC_Plane_t * JoltC_Plane_sFromPointAndNormal(
   JoltC_Vec3_t * inNormal
 ) {
   Plane * selfCpp = static_cast<Plane *>(self->obj);
-  static Plane resultValue = selfCpp->sFromPointAndNormal(
+  const Plane& resultValue = selfCpp->sFromPointAndNormal(
     *reinterpret_cast<Vec3 *>(inPoint->obj),
     *reinterpret_cast<Vec3 *>(inNormal->obj)
   );
   JoltC_Plane_t* result = new JoltC_Plane_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -87,13 +84,13 @@ JoltC_Plane_t * JoltC_Plane_sFromPointsCCW(
   JoltC_Vec3_t * inPoint3
 ) {
   Plane * selfCpp = static_cast<Plane *>(self->obj);
-  static Plane resultValue = selfCpp->sFromPointsCCW(
+  const Plane& resultValue = selfCpp->sFromPointsCCW(
     *reinterpret_cast<Vec3 *>(inPoint1->obj),
     *reinterpret_cast<Vec3 *>(inPoint2->obj),
     *reinterpret_cast<Vec3 *>(inPoint3->obj)
   );
   JoltC_Plane_t* result = new JoltC_Plane_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -102,11 +99,11 @@ JoltC_Plane_t * JoltC_Plane_Offset(
   float inDistance
 ) {
   Plane * selfCpp = static_cast<Plane *>(self->obj);
-  static Plane resultValue = selfCpp->Offset(
+  const Plane& resultValue = selfCpp->Offset(
     inDistance
   );
   JoltC_Plane_t* result = new JoltC_Plane_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -115,11 +112,11 @@ JoltC_Plane_t * JoltC_Plane_GetTransformed(
   JoltC_Mat44_t * inTransform
 ) {
   Plane * selfCpp = static_cast<Plane *>(self->obj);
-  static Plane resultValue = selfCpp->GetTransformed(
+  const Plane& resultValue = selfCpp->GetTransformed(
     *reinterpret_cast<Mat44 *>(inTransform->obj)
   );
   JoltC_Plane_t* result = new JoltC_Plane_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

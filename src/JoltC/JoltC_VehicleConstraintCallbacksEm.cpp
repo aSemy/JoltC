@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleConstraintCallbacksEm.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -13,7 +12,6 @@ void JoltC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
   JoltC_VehicleConstraint_t * inConstraint
 ) {
   VehicleConstraintCallbacksEm * selfCpp = static_cast<VehicleConstraintCallbacksEm *>(self->obj);
-  
   selfCpp->SetVehicleConstraint(
     *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
   );

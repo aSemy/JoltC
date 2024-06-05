@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SkeletalAnimationKeyframe.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,7 +23,6 @@ void JoltC_SkeletalAnimationKeyframe_FromMatrix(
   JoltC_Mat44_t * inMatrix
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  
   selfCpp->FromMatrix(
     *reinterpret_cast<Mat44 *>(inMatrix->obj)
   );
@@ -34,9 +32,9 @@ JoltC_Mat44_t * JoltC_SkeletalAnimationKeyframe_ToMatrix(
   JoltC_SkeletalAnimationKeyframe_t * self
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  static Mat44 resultValue = selfCpp->ToMatrix();
+  const Mat44& resultValue = selfCpp->ToMatrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -64,9 +62,9 @@ JoltC_Vec3_t * JoltC_SkeletalAnimationKeyframe_mTranslation_Get(
   JoltC_SkeletalAnimationKeyframe_t * self
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  static Vec3 resultValue = selfCpp->mTranslation;
+  const Vec3& resultValue = selfCpp->mTranslation;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -82,9 +80,9 @@ JoltC_Quat_t * JoltC_SkeletalAnimationKeyframe_mRotation_Get(
   JoltC_SkeletalAnimationKeyframe_t * self
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
-  static Quat resultValue = selfCpp->mRotation;
+  const Quat& resultValue = selfCpp->mRotation;
   JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

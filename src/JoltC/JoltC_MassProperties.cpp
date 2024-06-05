@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_MassProperties.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,7 +24,6 @@ void JoltC_MassProperties_SetMassAndInertiaOfSolidBox(
   float inDensity
 ) {
   MassProperties * selfCpp = static_cast<MassProperties *>(self->obj);
-  
   selfCpp->SetMassAndInertiaOfSolidBox(
     *reinterpret_cast<Vec3 *>(inBoxSize->obj),
     inDensity
@@ -37,7 +35,6 @@ void JoltC_MassProperties_ScaleToMass(
   float inMass
 ) {
   MassProperties * selfCpp = static_cast<MassProperties *>(self->obj);
-  
   selfCpp->ScaleToMass(
     inMass
   );
@@ -47,12 +44,12 @@ JoltC_Vec3_t * JoltC_MassProperties_sGetEquivalentSolidBoxSize(
   float inMass,
   JoltC_Vec3_t * inInertiaDiagonal
 ) {
-  static Vec3 resultValue = MassProperties::sGetEquivalentSolidBoxSize(
+  const Vec3& resultValue = MassProperties::sGetEquivalentSolidBoxSize(
     inMass,
     *reinterpret_cast<Vec3 *>(inInertiaDiagonal->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -61,7 +58,6 @@ void JoltC_MassProperties_Rotate(
   JoltC_Mat44_t * inRotation
 ) {
   MassProperties * selfCpp = static_cast<MassProperties *>(self->obj);
-  
   selfCpp->Rotate(
     *reinterpret_cast<Mat44 *>(inRotation->obj)
   );
@@ -72,7 +68,6 @@ void JoltC_MassProperties_Translate(
   JoltC_Vec3_t * inTranslation
 ) {
   MassProperties * selfCpp = static_cast<MassProperties *>(self->obj);
-  
   selfCpp->Translate(
     *reinterpret_cast<Vec3 *>(inTranslation->obj)
   );
@@ -83,7 +78,6 @@ void JoltC_MassProperties_Scale(
   JoltC_Vec3_t * inScale
 ) {
   MassProperties * selfCpp = static_cast<MassProperties *>(self->obj);
-  
   selfCpp->Scale(
     *reinterpret_cast<Vec3 *>(inScale->obj)
   );
@@ -113,9 +107,9 @@ JoltC_Mat44_t * JoltC_MassProperties_mInertia_Get(
   JoltC_MassProperties_t * self
 ) {
   MassProperties * selfCpp = static_cast<MassProperties *>(self->obj);
-  static Mat44 resultValue = selfCpp->mInertia;
+  const Mat44& resultValue = selfCpp->mInertia;
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

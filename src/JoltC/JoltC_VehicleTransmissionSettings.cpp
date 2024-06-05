@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleTransmissionSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -41,9 +40,9 @@ JoltC_ArrayFloat_t * JoltC_VehicleTransmissionSettings_mGearRatios_Get(
   JoltC_VehicleTransmissionSettings_t * self
 ) {
   VehicleTransmissionSettings * selfCpp = static_cast<VehicleTransmissionSettings *>(self->obj);
-  static ArrayFloat resultValue = selfCpp->mGearRatios;
+  const ArrayFloat& resultValue = selfCpp->mGearRatios;
   JoltC_ArrayFloat_t* result = new JoltC_ArrayFloat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -59,9 +58,9 @@ JoltC_ArrayFloat_t * JoltC_VehicleTransmissionSettings_mReverseGearRatios_Get(
   JoltC_VehicleTransmissionSettings_t * self
 ) {
   VehicleTransmissionSettings * selfCpp = static_cast<VehicleTransmissionSettings *>(self->obj);
-  static ArrayFloat resultValue = selfCpp->mReverseGearRatios;
+  const ArrayFloat& resultValue = selfCpp->mReverseGearRatios;
   JoltC_ArrayFloat_t* result = new JoltC_ArrayFloat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

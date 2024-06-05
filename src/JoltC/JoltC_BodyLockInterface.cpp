@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_BodyLockInterface.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -35,11 +34,11 @@ JoltC_Body_t * JoltC_BodyLockInterface_TryGetBody(
   JoltC_BodyID_t * inBodyID
 ) {
   BodyLockInterface * selfCpp = static_cast<BodyLockInterface *>(self->obj);
-  Body * resultValue = selfCpp->TryGetBody(
+  const Body * resultValue = selfCpp->TryGetBody(
     *reinterpret_cast<BodyID *>(inBodyID->obj)
   );
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

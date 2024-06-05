@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_BroadPhaseLayerInterfaceTable.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +30,6 @@ void JoltC_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
   JoltC_BroadPhaseLayer_t * inBroadPhaseLayer
 ) {
   BroadPhaseLayerInterfaceTable * selfCpp = static_cast<BroadPhaseLayerInterfaceTable *>(self->obj);
-  
   selfCpp->MapObjectToBroadPhaseLayer(
     inObjectLayer,
     *reinterpret_cast<BroadPhaseLayer *>(inBroadPhaseLayer->obj)

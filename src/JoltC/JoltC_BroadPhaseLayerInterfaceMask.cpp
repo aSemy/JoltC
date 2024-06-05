@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_BroadPhaseLayerInterfaceMask.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,7 +29,6 @@ void JoltC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
   unsigned long inGroupsToExclude
 ) {
   BroadPhaseLayerInterfaceMask * selfCpp = static_cast<BroadPhaseLayerInterfaceMask *>(self->obj);
-  
   selfCpp->ConfigureLayer(
     *reinterpret_cast<BroadPhaseLayer *>(inBroadPhaseLayer->obj),
     inGroupsToInclude,

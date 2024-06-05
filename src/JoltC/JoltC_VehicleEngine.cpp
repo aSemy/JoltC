@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleEngine.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,7 +11,6 @@ void JoltC_VehicleEngine_ClampRPM(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  
   selfCpp->ClampRPM();
 };
 
@@ -29,7 +27,6 @@ void JoltC_VehicleEngine_SetCurrentRPM(
   float inRPM
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  
   selfCpp->SetCurrentRPM(
     inRPM
   );
@@ -110,9 +107,9 @@ JoltC_LinearCurve_t * JoltC_VehicleEngine_mNormalizedTorque_Get(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  static LinearCurve resultValue = selfCpp->mNormalizedTorque;
+  const LinearCurve& resultValue = selfCpp->mNormalizedTorque;
   JoltC_LinearCurve_t* result = new JoltC_LinearCurve_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

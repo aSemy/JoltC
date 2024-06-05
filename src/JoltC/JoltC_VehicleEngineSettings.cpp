@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleEngineSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -73,9 +72,9 @@ JoltC_LinearCurve_t * JoltC_VehicleEngineSettings_mNormalizedTorque_Get(
   JoltC_VehicleEngineSettings_t * self
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  static LinearCurve resultValue = selfCpp->mNormalizedTorque;
+  const LinearCurve& resultValue = selfCpp->mNormalizedTorque;
   JoltC_LinearCurve_t* result = new JoltC_LinearCurve_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

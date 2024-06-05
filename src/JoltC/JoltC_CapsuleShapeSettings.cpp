@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CapsuleShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,7 +38,6 @@ void JoltC_CapsuleShapeSettings_AddRef(
   JoltC_CapsuleShapeSettings_t * self
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -47,7 +45,6 @@ void JoltC_CapsuleShapeSettings_Release(
   JoltC_CapsuleShapeSettings_t * self
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -55,9 +52,9 @@ JoltC_Shape_ShapeResult_t * JoltC_CapsuleShapeSettings_Create(
   JoltC_CapsuleShapeSettings_t * self
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -65,7 +62,6 @@ void JoltC_CapsuleShapeSettings_ClearCachedResult(
   JoltC_CapsuleShapeSettings_t * self
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 
@@ -111,7 +107,7 @@ JoltC_PhysicsMaterial_t * JoltC_CapsuleShapeSettings_mMaterial_Get(
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   const PhysicsMaterial * resultValue = selfCpp->mMaterial;
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

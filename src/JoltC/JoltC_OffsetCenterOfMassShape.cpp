@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_OffsetCenterOfMassShape.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +30,7 @@ JoltC_Shape_t * JoltC_OffsetCenterOfMassShape_GetInnerShape(
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
   const Shape * resultValue = selfCpp->GetInnerShape();
   JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -47,7 +46,6 @@ void JoltC_OffsetCenterOfMassShape_AddRef(
   JoltC_OffsetCenterOfMassShape_t * self
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -55,7 +53,6 @@ void JoltC_OffsetCenterOfMassShape_Release(
   JoltC_OffsetCenterOfMassShape_t * self
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -87,9 +84,9 @@ JoltC_AABox_t * JoltC_OffsetCenterOfMassShape_GetLocalBounds(
   JoltC_OffsetCenterOfMassShape_t * self
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  static AABox resultValue = selfCpp->GetLocalBounds();
+  const AABox& resultValue = selfCpp->GetLocalBounds();
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -99,12 +96,12 @@ JoltC_AABox_t * JoltC_OffsetCenterOfMassShape_GetWorldSpaceBounds(
   JoltC_Vec3_t * inScale
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  static AABox resultValue = selfCpp->GetWorldSpaceBounds(
+  const AABox& resultValue = selfCpp->GetWorldSpaceBounds(
     *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
     *reinterpret_cast<Vec3 *>(inScale->obj)
   );
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -112,9 +109,9 @@ JoltC_Vec3_t * JoltC_OffsetCenterOfMassShape_GetCenterOfMass(
   JoltC_OffsetCenterOfMassShape_t * self
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetCenterOfMass();
+  const Vec3& resultValue = selfCpp->GetCenterOfMass();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -131,7 +128,6 @@ void JoltC_OffsetCenterOfMassShape_SetUserData(
   unsigned long long int inUserData
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -157,9 +153,9 @@ JoltC_MassProperties_t * JoltC_OffsetCenterOfMassShape_GetMassProperties(
   JoltC_OffsetCenterOfMassShape_t * self
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  static MassProperties resultValue = selfCpp->GetMassProperties();
+  const MassProperties& resultValue = selfCpp->GetMassProperties();
   JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -172,7 +168,7 @@ JoltC_PhysicsMaterial_t * JoltC_OffsetCenterOfMassShape_GetMaterial(
     *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
   );
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -182,12 +178,12 @@ JoltC_Vec3_t * JoltC_OffsetCenterOfMassShape_GetSurfaceNormal(
   JoltC_Vec3_t * inLocalSurfacePosition
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetSurfaceNormal(
+  const Vec3& resultValue = selfCpp->GetSurfaceNormal(
     *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
     *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -211,7 +207,7 @@ JoltC_TransformedShape_t * JoltC_OffsetCenterOfMassShape_GetSubShapeTransformedS
   JoltC_SubShapeID_t * outRemainder
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  static TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
+  const TransformedShape& resultValue = selfCpp->GetSubShapeTransformedShape(
     *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
     *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
     *reinterpret_cast<Quat *>(inRotation->obj),
@@ -219,7 +215,7 @@ JoltC_TransformedShape_t * JoltC_OffsetCenterOfMassShape_GetSubShapeTransformedS
     *reinterpret_cast<SubShapeID *>(outRemainder->obj)
   );
   JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -247,11 +243,11 @@ JoltC_Shape_ShapeResult_t * JoltC_OffsetCenterOfMassShape_ScaleShape(
   JoltC_Vec3_t * inScale
 ) {
   OffsetCenterOfMassShape * selfCpp = static_cast<OffsetCenterOfMassShape *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->ScaleShape(
+  const Shape::ShapeResult& resultValue = selfCpp->ScaleShape(
     *reinterpret_cast<Vec3 *>(inScale->obj)
   );
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

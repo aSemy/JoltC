@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SliderConstraintSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,12 +24,12 @@ JoltC_Constraint_t * JoltC_SliderConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  Constraint * resultValue = selfCpp->Create(
+  const Constraint * resultValue = selfCpp->Create(
     *reinterpret_cast<Body *>(inBody1->obj),
     *reinterpret_cast<Body *>(inBody2->obj)
   );
   JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -46,7 +45,6 @@ void JoltC_SliderConstraintSettings_AddRef(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -54,7 +52,6 @@ void JoltC_SliderConstraintSettings_Release(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -98,9 +95,9 @@ JoltC_RVec3_t * JoltC_SliderConstraintSettings_mPoint1_Get(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mPoint1;
+  const RVec3& resultValue = selfCpp->mPoint1;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -116,9 +113,9 @@ JoltC_Vec3_t * JoltC_SliderConstraintSettings_mSliderAxis1_Get(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mSliderAxis1;
+  const Vec3& resultValue = selfCpp->mSliderAxis1;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -134,9 +131,9 @@ JoltC_Vec3_t * JoltC_SliderConstraintSettings_mNormalAxis1_Get(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mNormalAxis1;
+  const Vec3& resultValue = selfCpp->mNormalAxis1;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -152,9 +149,9 @@ JoltC_RVec3_t * JoltC_SliderConstraintSettings_mPoint2_Get(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mPoint2;
+  const RVec3& resultValue = selfCpp->mPoint2;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -170,9 +167,9 @@ JoltC_Vec3_t * JoltC_SliderConstraintSettings_mSliderAxis2_Get(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mSliderAxis2;
+  const Vec3& resultValue = selfCpp->mSliderAxis2;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -188,9 +185,9 @@ JoltC_Vec3_t * JoltC_SliderConstraintSettings_mNormalAxis2_Get(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mNormalAxis2;
+  const Vec3& resultValue = selfCpp->mNormalAxis2;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -238,9 +235,9 @@ JoltC_SpringSettings_t * JoltC_SliderConstraintSettings_mLimitsSpringSettings_Ge
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  static SpringSettings resultValue = selfCpp->mLimitsSpringSettings;
+  const SpringSettings& resultValue = selfCpp->mLimitsSpringSettings;
   JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -272,9 +269,9 @@ JoltC_MotorSettings_t * JoltC_SliderConstraintSettings_mMotorSettings_Get(
   JoltC_SliderConstraintSettings_t * self
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
-  static MotorSettings resultValue = selfCpp->mMotorSettings;
+  const MotorSettings& resultValue = selfCpp->mMotorSettings;
   JoltC_MotorSettings_t* result = new JoltC_MotorSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

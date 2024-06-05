@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_Float3.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_TwoBodyConstraintSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -126,12 +125,12 @@ JoltC_Constraint_t * JoltC_TwoBodyConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  Constraint * resultValue = selfCpp->Create(
+  const Constraint * resultValue = selfCpp->Create(
     *reinterpret_cast<Body *>(inBody1->obj),
     *reinterpret_cast<Body *>(inBody2->obj)
   );
   JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -147,7 +146,6 @@ void JoltC_TwoBodyConstraintSettings_AddRef(
   JoltC_TwoBodyConstraintSettings_t * self
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -155,7 +153,6 @@ void JoltC_TwoBodyConstraintSettings_Release(
   JoltC_TwoBodyConstraintSettings_t * self
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 

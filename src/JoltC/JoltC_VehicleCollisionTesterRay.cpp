@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleCollisionTesterRay.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,7 +38,6 @@ void JoltC_VehicleCollisionTesterRay_AddRef(
   JoltC_VehicleCollisionTesterRay_t * self
 ) {
   VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -47,7 +45,6 @@ void JoltC_VehicleCollisionTesterRay_Release(
   JoltC_VehicleCollisionTesterRay_t * self
 ) {
   VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
-  
   selfCpp->Release();
 };
 

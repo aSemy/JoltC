@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ScaledShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,7 +36,6 @@ void JoltC_ScaledShapeSettings_AddRef(
   JoltC_ScaledShapeSettings_t * self
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -45,7 +43,6 @@ void JoltC_ScaledShapeSettings_Release(
   JoltC_ScaledShapeSettings_t * self
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -53,9 +50,9 @@ JoltC_Shape_ShapeResult_t * JoltC_ScaledShapeSettings_Create(
   JoltC_ScaledShapeSettings_t * self
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -63,7 +60,6 @@ void JoltC_ScaledShapeSettings_ClearCachedResult(
   JoltC_ScaledShapeSettings_t * self
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 
@@ -75,9 +71,9 @@ JoltC_Vec3_t * JoltC_ScaledShapeSettings_mScale_Get(
   JoltC_ScaledShapeSettings_t * self
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mScale;
+  const Vec3& resultValue = selfCpp->mScale;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

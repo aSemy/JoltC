@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_AABox.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,9 +32,9 @@ JoltC_AABox_t * JoltC_AABox_new_1(
 //region functions
 
 JoltC_AABox_t * JoltC_AABox_sBiggest() {
-  static AABox resultValue = AABox::sBiggest();
+  const AABox& resultValue = AABox::sBiggest();
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -58,9 +57,9 @@ JoltC_Vec3_t * JoltC_AABox_mMin_Get(
   JoltC_AABox_t * self
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
-  static Vec3 resultValue = selfCpp->mMin;
+  const Vec3& resultValue = selfCpp->mMin;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -76,9 +75,9 @@ JoltC_Vec3_t * JoltC_AABox_mMax_Get(
   JoltC_AABox_t * self
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
-  static Vec3 resultValue = selfCpp->mMax;
+  const Vec3& resultValue = selfCpp->mMax;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

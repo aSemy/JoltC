@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleController.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -51,7 +50,6 @@ void JoltC_VehicleController_AddRef(
   JoltC_VehicleController_t * self
 ) {
   VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -59,7 +57,6 @@ void JoltC_VehicleController_Release(
   JoltC_VehicleController_t * self
 ) {
   VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
-  
   selfCpp->Release();
 };
 

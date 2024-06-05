@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_StaticCompoundShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -27,7 +26,6 @@ void JoltC_StaticCompoundShapeSettings_AddShape(
   unsigned long inUserData
 ) {
   StaticCompoundShapeSettings * selfCpp = static_cast<StaticCompoundShapeSettings *>(self->obj);
-  
   selfCpp->AddShape(
     *reinterpret_cast<Vec3 *>(inPosition->obj),
     *reinterpret_cast<Quat *>(inRotation->obj),
@@ -48,7 +46,6 @@ void JoltC_StaticCompoundShapeSettings_AddRef(
   JoltC_StaticCompoundShapeSettings_t * self
 ) {
   StaticCompoundShapeSettings * selfCpp = static_cast<StaticCompoundShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -56,7 +53,6 @@ void JoltC_StaticCompoundShapeSettings_Release(
   JoltC_StaticCompoundShapeSettings_t * self
 ) {
   StaticCompoundShapeSettings * selfCpp = static_cast<StaticCompoundShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -64,9 +60,9 @@ JoltC_Shape_ShapeResult_t * JoltC_StaticCompoundShapeSettings_Create(
   JoltC_StaticCompoundShapeSettings_t * self
 ) {
   StaticCompoundShapeSettings * selfCpp = static_cast<StaticCompoundShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -74,7 +70,6 @@ void JoltC_StaticCompoundShapeSettings_ClearCachedResult(
   JoltC_StaticCompoundShapeSettings_t * self
 ) {
   StaticCompoundShapeSettings * selfCpp = static_cast<StaticCompoundShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 

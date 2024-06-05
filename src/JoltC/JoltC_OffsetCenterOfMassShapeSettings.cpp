@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_OffsetCenterOfMassShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,7 +36,6 @@ void JoltC_OffsetCenterOfMassShapeSettings_AddRef(
   JoltC_OffsetCenterOfMassShapeSettings_t * self
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -45,7 +43,6 @@ void JoltC_OffsetCenterOfMassShapeSettings_Release(
   JoltC_OffsetCenterOfMassShapeSettings_t * self
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -53,9 +50,9 @@ JoltC_Shape_ShapeResult_t * JoltC_OffsetCenterOfMassShapeSettings_Create(
   JoltC_OffsetCenterOfMassShapeSettings_t * self
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -63,7 +60,6 @@ void JoltC_OffsetCenterOfMassShapeSettings_ClearCachedResult(
   JoltC_OffsetCenterOfMassShapeSettings_t * self
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 
@@ -75,9 +71,9 @@ JoltC_Vec3_t * JoltC_OffsetCenterOfMassShapeSettings_mOffset_Get(
   JoltC_OffsetCenterOfMassShapeSettings_t * self
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mOffset;
+  const Vec3& resultValue = selfCpp->mOffset;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

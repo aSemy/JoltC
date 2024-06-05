@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_Ragdoll.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,7 +28,6 @@ void JoltC_Ragdoll_AddToPhysicsSystem(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->AddToPhysicsSystem(
     static_cast<EActivation>(static_cast<int>(inActivationMode)),
     inLockBodies
@@ -41,7 +39,6 @@ void JoltC_Ragdoll_RemoveFromPhysicsSystem(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->RemoveFromPhysicsSystem(
     inLockBodies
   );
@@ -52,7 +49,6 @@ void JoltC_Ragdoll_Activate(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->Activate(
     inLockBodies
   );
@@ -75,7 +71,6 @@ void JoltC_Ragdoll_SetGroupID(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->SetGroupID(
     inGroupID,
     inLockBodies
@@ -88,7 +83,6 @@ void JoltC_Ragdoll_SetPose(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->SetPose(
     *reinterpret_cast<SkeletonPose *>(inPose->obj),
     inLockBodies
@@ -101,7 +95,6 @@ void JoltC_Ragdoll_GetPose(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->GetPose(
     *reinterpret_cast<SkeletonPose *>(outPose->obj),
     inLockBodies
@@ -112,7 +105,6 @@ void JoltC_Ragdoll_ResetWarmStart(
   JoltC_Ragdoll_t * self
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->ResetWarmStart();
 };
 
@@ -123,7 +115,6 @@ void JoltC_Ragdoll_DriveToPoseUsingKinematics(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->DriveToPoseUsingKinematics(
     *reinterpret_cast<SkeletonPose *>(inPose->obj),
     inDeltaTime,
@@ -136,7 +127,6 @@ void JoltC_Ragdoll_DriveToPoseUsingMotors(
   JoltC_SkeletonPose_t * inPose
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->DriveToPoseUsingMotors(
     *reinterpret_cast<SkeletonPose *>(inPose->obj)
   );
@@ -149,7 +139,6 @@ void JoltC_Ragdoll_SetLinearAndAngularVelocity(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->SetLinearAndAngularVelocity(
     *reinterpret_cast<Vec3 *>(inLinearVelocity->obj),
     *reinterpret_cast<Vec3 *>(inAngularVelocity->obj),
@@ -163,7 +152,6 @@ void JoltC_Ragdoll_SetLinearVelocity(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->SetLinearVelocity(
     *reinterpret_cast<Vec3 *>(inLinearVelocity->obj),
     inLockBodies
@@ -176,7 +164,6 @@ void JoltC_Ragdoll_AddLinearVelocity(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->AddLinearVelocity(
     *reinterpret_cast<Vec3 *>(inLinearVelocity->obj),
     inLockBodies
@@ -189,7 +176,6 @@ void JoltC_Ragdoll_AddImpulse(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->AddImpulse(
     *reinterpret_cast<Vec3 *>(inImpulse->obj),
     inLockBodies
@@ -203,7 +189,6 @@ void JoltC_Ragdoll_GetRootTransform(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  
   selfCpp->GetRootTransform(
     *reinterpret_cast<RVec3 *>(outPosition->obj),
     *reinterpret_cast<Quat *>(outRotation->obj),
@@ -224,11 +209,11 @@ JoltC_BodyID_t * JoltC_Ragdoll_GetBodyID(
   long inBodyIndex
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  static BodyID resultValue = selfCpp->GetBodyID(
+  const BodyID& resultValue = selfCpp->GetBodyID(
     inBodyIndex
   );
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -257,11 +242,11 @@ JoltC_AABox_t * JoltC_Ragdoll_GetWorldSpaceBounds(
   bool inLockBodies
 ) {
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
-  static AABox resultValue = selfCpp->GetWorldSpaceBounds(
+  const AABox& resultValue = selfCpp->GetWorldSpaceBounds(
     inLockBodies
   );
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -274,7 +259,7 @@ JoltC_TwoBodyConstraint_t * JoltC_Ragdoll_GetConstraint(
     inConstraintIndex
   );
   JoltC_TwoBodyConstraint_t* result = new JoltC_TwoBodyConstraint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -284,7 +269,7 @@ JoltC_RagdollSettings_t * JoltC_Ragdoll_GetRagdollSettings(
   Ragdoll * selfCpp = static_cast<Ragdoll *>(self->obj);
   const RagdollSettings * resultValue = selfCpp->GetRagdollSettings();
   JoltC_RagdollSettings_t* result = new JoltC_RagdollSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

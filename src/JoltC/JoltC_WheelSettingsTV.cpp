@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_WheelSettingsTV.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +30,6 @@ void JoltC_WheelSettingsTV_AddRef(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -39,7 +37,6 @@ void JoltC_WheelSettingsTV_Release(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -83,9 +80,9 @@ JoltC_Vec3_t * JoltC_WheelSettingsTV_mPosition_Get(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  static Vec3 resultValue = selfCpp->mPosition;
+  const Vec3& resultValue = selfCpp->mPosition;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -101,9 +98,9 @@ JoltC_Vec3_t * JoltC_WheelSettingsTV_mSuspensionForcePoint_Get(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  static Vec3 resultValue = selfCpp->mSuspensionForcePoint;
+  const Vec3& resultValue = selfCpp->mSuspensionForcePoint;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -119,9 +116,9 @@ JoltC_Vec3_t * JoltC_WheelSettingsTV_mSuspensionDirection_Get(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  static Vec3 resultValue = selfCpp->mSuspensionDirection;
+  const Vec3& resultValue = selfCpp->mSuspensionDirection;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -137,9 +134,9 @@ JoltC_Vec3_t * JoltC_WheelSettingsTV_mSteeringAxis_Get(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  static Vec3 resultValue = selfCpp->mSteeringAxis;
+  const Vec3& resultValue = selfCpp->mSteeringAxis;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -155,9 +152,9 @@ JoltC_Vec3_t * JoltC_WheelSettingsTV_mWheelUp_Get(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  static Vec3 resultValue = selfCpp->mWheelUp;
+  const Vec3& resultValue = selfCpp->mWheelUp;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -173,9 +170,9 @@ JoltC_Vec3_t * JoltC_WheelSettingsTV_mWheelForward_Get(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  static Vec3 resultValue = selfCpp->mWheelForward;
+  const Vec3& resultValue = selfCpp->mWheelForward;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -191,9 +188,9 @@ JoltC_SpringSettings_t * JoltC_WheelSettingsTV_mSuspensionSpring_Get(
   JoltC_WheelSettingsTV_t * self
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
-  static SpringSettings resultValue = selfCpp->mSuspensionSpring;
+  const SpringSettings& resultValue = selfCpp->mSuspensionSpring;
   JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

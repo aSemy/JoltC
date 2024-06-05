@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_RagdollAdditionalConstraint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -33,9 +32,9 @@ JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollAdditionalConstraint_mConstrain
   JoltC_RagdollAdditionalConstraint_t * self
 ) {
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
-  TwoBodyConstraintSettings * resultValue = selfCpp->mConstraint;
+  const TwoBodyConstraintSettings * resultValue = selfCpp->mConstraint;
   JoltC_TwoBodyConstraintSettings_t* result = new JoltC_TwoBodyConstraintSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_Constraint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -141,7 +140,6 @@ void JoltC_Constraint_AddRef(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -149,7 +147,6 @@ void JoltC_Constraint_Release(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -182,7 +179,6 @@ void JoltC_Constraint_SetConstraintPriority(
   unsigned long inPriority
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  
   selfCpp->SetConstraintPriority(
     inPriority
   );
@@ -193,7 +189,6 @@ void JoltC_Constraint_SetNumVelocityStepsOverride(
   long inN
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
@@ -212,7 +207,6 @@ void JoltC_Constraint_SetNumPositionStepsOverride(
   long inN
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
@@ -231,7 +225,6 @@ void JoltC_Constraint_SetEnabled(
   bool inEnabled
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  
   selfCpp->SetEnabled(
     inEnabled
   );
@@ -266,7 +259,6 @@ void JoltC_Constraint_SetUserData(
   unsigned long long int inUserData
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -276,7 +268,6 @@ void JoltC_Constraint_ResetWarmStart(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  
   selfCpp->ResetWarmStart();
 };
 

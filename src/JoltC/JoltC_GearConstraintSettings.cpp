@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_GearConstraintSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,7 +24,6 @@ void JoltC_GearConstraintSettings_SetRatio(
   long inNumTeethGear2
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  
   selfCpp->SetRatio(
     inNumTeethGear1,
     inNumTeethGear2
@@ -38,12 +36,12 @@ JoltC_Constraint_t * JoltC_GearConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  Constraint * resultValue = selfCpp->Create(
+  const Constraint * resultValue = selfCpp->Create(
     *reinterpret_cast<Body *>(inBody1->obj),
     *reinterpret_cast<Body *>(inBody2->obj)
   );
   JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -59,7 +57,6 @@ void JoltC_GearConstraintSettings_AddRef(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -67,7 +64,6 @@ void JoltC_GearConstraintSettings_Release(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -95,9 +91,9 @@ JoltC_Vec3_t * JoltC_GearConstraintSettings_mHingeAxis1_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mHingeAxis1;
+  const Vec3& resultValue = selfCpp->mHingeAxis1;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -113,9 +109,9 @@ JoltC_Vec3_t * JoltC_GearConstraintSettings_mHingeAxis2_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mHingeAxis2;
+  const Vec3& resultValue = selfCpp->mHingeAxis2;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

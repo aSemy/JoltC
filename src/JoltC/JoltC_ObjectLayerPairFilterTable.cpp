@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ObjectLayerPairFilterTable.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -37,7 +36,6 @@ void JoltC_ObjectLayerPairFilterTable_DisableCollision(
   unsigned long inLayer2
 ) {
   ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
-  
   selfCpp->DisableCollision(
     inLayer1,
     inLayer2
@@ -50,7 +48,6 @@ void JoltC_ObjectLayerPairFilterTable_EnableCollision(
   unsigned long inLayer2
 ) {
   ObjectLayerPairFilterTable * selfCpp = static_cast<ObjectLayerPairFilterTable *>(self->obj);
-  
   selfCpp->EnableCollision(
     inLayer1,
     inLayer2

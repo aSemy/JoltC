@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ContactPoints.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ContactPoints_push_back(
   JoltC_Vec3_t * inValue
 ) {
   ContactPoints * selfCpp = static_cast<ContactPoints *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<Vec3 *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ContactPoints_resize(
   unsigned long inSize
 ) {
   ContactPoints * selfCpp = static_cast<ContactPoints *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -63,7 +60,6 @@ void JoltC_ContactPoints_clear(
   JoltC_ContactPoints_t * self
 ) {
   ContactPoints * selfCpp = static_cast<ContactPoints *>(self->obj);
-  
   selfCpp->clear();
 };
 

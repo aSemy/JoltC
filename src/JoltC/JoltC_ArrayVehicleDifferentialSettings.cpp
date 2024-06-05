@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayVehicleDifferentialSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArrayVehicleDifferentialSettings_push_back(
   JoltC_VehicleDifferentialSettings_t * inValue
 ) {
   ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<VehicleDifferentialSettings *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArrayVehicleDifferentialSettings_resize(
   unsigned long inSize
 ) {
   ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -63,7 +60,6 @@ void JoltC_ArrayVehicleDifferentialSettings_clear(
   JoltC_ArrayVehicleDifferentialSettings_t * self
 ) {
   ArrayVehicleDifferentialSettings * selfCpp = static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
-  
   selfCpp->clear();
 };
 

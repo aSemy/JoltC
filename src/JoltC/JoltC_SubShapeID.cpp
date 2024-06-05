@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SubShapeID.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -32,7 +31,6 @@ void JoltC_SubShapeID_SetValue(
   long inValue
 ) {
   SubShapeID * selfCpp = static_cast<SubShapeID *>(self->obj);
-  
   selfCpp->SetValue(
     inValue
   );

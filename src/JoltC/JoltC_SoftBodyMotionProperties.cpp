@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SoftBodyMotionProperties.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,7 +13,7 @@ JoltC_SoftBodySharedSettings_t * JoltC_SoftBodyMotionProperties_GetSettings(
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
   const SoftBodySharedSettings * resultValue = selfCpp->GetSettings();
   JoltC_SoftBodySharedSettings_t* result = new JoltC_SoftBodySharedSettings_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -93,7 +92,6 @@ void JoltC_SoftBodyMotionProperties_SetNumIterations(
   unsigned long inNumIterations
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetNumIterations(
     inNumIterations
   );
@@ -112,7 +110,6 @@ void JoltC_SoftBodyMotionProperties_SetPressure(
   float inPressure
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetPressure(
     inPressure
   );
@@ -131,7 +128,6 @@ void JoltC_SoftBodyMotionProperties_SetUpdatePosition(
   bool inUpdatePosition
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetUpdatePosition(
     inUpdatePosition
   );
@@ -150,7 +146,6 @@ void JoltC_SoftBodyMotionProperties_SetEnableSkinConstraints(
   bool inEnableSkinConstraints
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetEnableSkinConstraints(
     inEnableSkinConstraints
   );
@@ -169,7 +164,6 @@ void JoltC_SoftBodyMotionProperties_SetSkinnedMaxDistanceMultiplier(
   float inSkinnedMaxDistanceMultiplier
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetSkinnedMaxDistanceMultiplier(
     inSkinnedMaxDistanceMultiplier
   );
@@ -194,7 +188,6 @@ void JoltC_SoftBodyMotionProperties_CustomUpdate(
   JoltC_PhysicsSystem_t * inSystem
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->CustomUpdate(
     inDeltaTime,
     *reinterpret_cast<Body *>(ioSoftBody->obj),
@@ -211,7 +204,6 @@ void JoltC_SoftBodyMotionProperties_SkinVertices(
   JoltC_TempAllocator_t * ioTempAllocator
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SkinVertices(
     *reinterpret_cast<RMat44 *>(inRootTransform->obj),
     reinterpret_cast<Mat44MemRef *>(inJointMatrices->obj),
@@ -249,9 +241,9 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetLinearVelocity(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetLinearVelocity();
+  const Vec3& resultValue = selfCpp->GetLinearVelocity();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -260,7 +252,6 @@ void JoltC_SoftBodyMotionProperties_SetLinearVelocity(
   JoltC_Vec3_t * inVelocity
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetLinearVelocity(
     *reinterpret_cast<Vec3 *>(inVelocity->obj)
   );
@@ -271,7 +262,6 @@ void JoltC_SoftBodyMotionProperties_SetLinearVelocityClamped(
   JoltC_Vec3_t * inVelocity
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetLinearVelocityClamped(
     *reinterpret_cast<Vec3 *>(inVelocity->obj)
   );
@@ -281,9 +271,9 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAngularVelocity(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetAngularVelocity();
+  const Vec3& resultValue = selfCpp->GetAngularVelocity();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -292,7 +282,6 @@ void JoltC_SoftBodyMotionProperties_SetAngularVelocity(
   JoltC_Vec3_t * inVelocity
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetAngularVelocity(
     *reinterpret_cast<Vec3 *>(inVelocity->obj)
   );
@@ -303,7 +292,6 @@ void JoltC_SoftBodyMotionProperties_SetAngularVelocityClamped(
   JoltC_Vec3_t * inVelocity
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetAngularVelocityClamped(
     *reinterpret_cast<Vec3 *>(inVelocity->obj)
   );
@@ -316,7 +304,6 @@ void JoltC_SoftBodyMotionProperties_MoveKinematic(
   float inDeltaTime
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->MoveKinematic(
     *reinterpret_cast<Vec3 *>(inPosition->obj),
     *reinterpret_cast<Quat *>(inRotation->obj),
@@ -337,7 +324,6 @@ void JoltC_SoftBodyMotionProperties_SetMaxLinearVelocity(
   float inVelocity
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetMaxLinearVelocity(
     inVelocity
   );
@@ -356,7 +342,6 @@ void JoltC_SoftBodyMotionProperties_SetMaxAngularVelocity(
   float inVelocity
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetMaxAngularVelocity(
     inVelocity
   );
@@ -366,7 +351,6 @@ void JoltC_SoftBodyMotionProperties_ClampLinearVelocity(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->ClampLinearVelocity();
 };
 
@@ -374,7 +358,6 @@ void JoltC_SoftBodyMotionProperties_ClampAngularVelocity(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->ClampAngularVelocity();
 };
 
@@ -391,7 +374,6 @@ void JoltC_SoftBodyMotionProperties_SetLinearDamping(
   float inDamping
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetLinearDamping(
     inDamping
   );
@@ -410,7 +392,6 @@ void JoltC_SoftBodyMotionProperties_SetAngularDamping(
   float inDamping
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetAngularDamping(
     inDamping
   );
@@ -429,7 +410,6 @@ void JoltC_SoftBodyMotionProperties_SetGravityFactor(
   float inFactor
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetGravityFactor(
     inFactor
   );
@@ -441,7 +421,6 @@ void JoltC_SoftBodyMotionProperties_SetMassProperties(
   JoltC_MassProperties_t * inMassProperties
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetMassProperties(
     static_cast<EAllowedDOFs>(static_cast<int>(inAllowedDOFs)),
     *reinterpret_cast<MassProperties *>(inMassProperties->obj)
@@ -469,7 +448,6 @@ void JoltC_SoftBodyMotionProperties_SetInverseMass(
   float inInvM
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetInverseMass(
     inInvM
   );
@@ -479,9 +457,9 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetInverseInertiaDiagonal(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetInverseInertiaDiagonal();
+  const Vec3& resultValue = selfCpp->GetInverseInertiaDiagonal();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -489,9 +467,9 @@ JoltC_Quat_t * JoltC_SoftBodyMotionProperties_GetInertiaRotation(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Quat resultValue = selfCpp->GetInertiaRotation();
+  const Quat& resultValue = selfCpp->GetInertiaRotation();
   JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -501,7 +479,6 @@ void JoltC_SoftBodyMotionProperties_SetInverseInertia(
   JoltC_Quat_t * inRotation
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetInverseInertia(
     *reinterpret_cast<Vec3 *>(inInvI->obj),
     *reinterpret_cast<Quat *>(inRotation->obj)
@@ -512,9 +489,9 @@ JoltC_Mat44_t * JoltC_SoftBodyMotionProperties_GetLocalSpaceInverseInertia(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetLocalSpaceInverseInertia();
+  const Mat44& resultValue = selfCpp->GetLocalSpaceInverseInertia();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -523,11 +500,11 @@ JoltC_Mat44_t * JoltC_SoftBodyMotionProperties_GetInverseInertiaForRotation(
   JoltC_Mat44_t * inRotation
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetInverseInertiaForRotation(
+  const Mat44& resultValue = selfCpp->GetInverseInertiaForRotation(
     *reinterpret_cast<Mat44 *>(inRotation->obj)
   );
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -537,12 +514,12 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_MultiplyWorldSpaceInverseInertiaBy
   JoltC_Vec3_t * inV
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->MultiplyWorldSpaceInverseInertiaByVector(
+  const Vec3& resultValue = selfCpp->MultiplyWorldSpaceInverseInertiaByVector(
     *reinterpret_cast<Quat *>(inRotation->obj),
     *reinterpret_cast<Vec3 *>(inV->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -551,11 +528,11 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetPointVelocityCOM(
   JoltC_Vec3_t * inPointRelativeToCOM
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetPointVelocityCOM(
+  const Vec3& resultValue = selfCpp->GetPointVelocityCOM(
     *reinterpret_cast<Vec3 *>(inPointRelativeToCOM->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -563,9 +540,9 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAccumulatedForce(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetAccumulatedForce();
+  const Vec3& resultValue = selfCpp->GetAccumulatedForce();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -573,9 +550,9 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_GetAccumulatedTorque(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetAccumulatedTorque();
+  const Vec3& resultValue = selfCpp->GetAccumulatedTorque();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -583,7 +560,6 @@ void JoltC_SoftBodyMotionProperties_ResetForce(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->ResetForce();
 };
 
@@ -591,7 +567,6 @@ void JoltC_SoftBodyMotionProperties_ResetTorque(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->ResetTorque();
 };
 
@@ -599,7 +574,6 @@ void JoltC_SoftBodyMotionProperties_ResetMotion(
   JoltC_SoftBodyMotionProperties_t * self
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->ResetMotion();
 };
 
@@ -608,11 +582,11 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_LockTranslation(
   JoltC_Vec3_t * inV
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->LockTranslation(
+  const Vec3& resultValue = selfCpp->LockTranslation(
     *reinterpret_cast<Vec3 *>(inV->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -621,11 +595,11 @@ JoltC_Vec3_t * JoltC_SoftBodyMotionProperties_LockAngular(
   JoltC_Vec3_t * inV
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  static Vec3 resultValue = selfCpp->LockAngular(
+  const Vec3& resultValue = selfCpp->LockAngular(
     *reinterpret_cast<Vec3 *>(inV->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -634,7 +608,6 @@ void JoltC_SoftBodyMotionProperties_SetNumVelocityStepsOverride(
   unsigned long inN
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
@@ -653,7 +626,6 @@ void JoltC_SoftBodyMotionProperties_SetNumPositionStepsOverride(
   unsigned long inN
 ) {
   SoftBodyMotionProperties * selfCpp = static_cast<SoftBodyMotionProperties *>(self->obj);
-  
   selfCpp->SetNumPositionStepsOverride(
     inN
   );

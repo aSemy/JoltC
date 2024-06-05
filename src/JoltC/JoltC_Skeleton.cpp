@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_Skeleton.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -52,7 +51,6 @@ void JoltC_Skeleton_CalculateParentJointIndices(
   JoltC_Skeleton_t * self
 ) {
   Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
-  
   selfCpp->CalculateParentJointIndices();
 };
 

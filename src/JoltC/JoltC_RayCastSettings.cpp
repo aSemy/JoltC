@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_RayCastSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {

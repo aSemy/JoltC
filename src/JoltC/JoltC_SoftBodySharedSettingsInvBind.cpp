@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SoftBodySharedSettingsInvBind.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -28,9 +27,9 @@ JoltC_Mat44_t * JoltC_SoftBodySharedSettingsInvBind_mInvBind_Get(
   JoltC_SoftBodySharedSettingsInvBind_t * self
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
-  static Mat44 resultValue = selfCpp->mInvBind;
+  const Mat44& resultValue = selfCpp->mInvBind;
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

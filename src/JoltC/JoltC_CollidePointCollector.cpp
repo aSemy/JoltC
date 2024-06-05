@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CollidePointCollector.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -43,7 +42,6 @@ void JoltC_CollidePointCollector_Reset(
   JoltC_CollidePointCollector_t * self
 ) {
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
   selfCpp->Reset();
 };
 
@@ -52,7 +50,6 @@ void JoltC_CollidePointCollector_SetContext(
   JoltC_TransformedShape_t * inContext
 ) {
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
   selfCpp->SetContext(
     reinterpret_cast<TransformedShape *>(inContext->obj)
   );
@@ -64,7 +61,7 @@ JoltC_TransformedShape_t * JoltC_CollidePointCollector_GetContext(
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
   const TransformedShape * resultValue = selfCpp->GetContext();
   JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -73,7 +70,6 @@ void JoltC_CollidePointCollector_UpdateEarlyOutFraction(
   float inFraction
 ) {
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
   selfCpp->UpdateEarlyOutFraction(
     inFraction
   );
@@ -84,7 +80,6 @@ void JoltC_CollidePointCollector_ResetEarlyOutFraction(
   float inFraction
 ) {
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
   selfCpp->ResetEarlyOutFraction(
     inFraction
   );
@@ -94,7 +89,6 @@ void JoltC_CollidePointCollector_ForceEarlyOut(
   JoltC_CollidePointCollector_t * self
 ) {
   CollidePointCollector * selfCpp = static_cast<CollidePointCollector *>(self->obj);
-  
   selfCpp->ForceEarlyOut();
 };
 

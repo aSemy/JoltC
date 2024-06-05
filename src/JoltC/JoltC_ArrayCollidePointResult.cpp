@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayCollidePointResult.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArrayCollidePointResult_push_back(
   JoltC_CollidePointResult_t * inValue
 ) {
   ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<CollidePointResult *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArrayCollidePointResult_reserve(
   unsigned long inSize
 ) {
   ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArrayCollidePointResult_resize(
   unsigned long inSize
 ) {
   ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArrayCollidePointResult_clear(
   JoltC_ArrayCollidePointResult_t * self
 ) {
   ArrayCollidePointResult * selfCpp = static_cast<ArrayCollidePointResult *>(self->obj);
-  
   selfCpp->clear();
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SoftBodyVertex.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -12,9 +11,9 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mPreviousPosition_Get(
   JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
-  static Vec3 resultValue = selfCpp->mPreviousPosition;
+  const Vec3& resultValue = selfCpp->mPreviousPosition;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -30,9 +29,9 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mPosition_Get(
   JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
-  static Vec3 resultValue = selfCpp->mPosition;
+  const Vec3& resultValue = selfCpp->mPosition;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -48,9 +47,9 @@ JoltC_Vec3_t * JoltC_SoftBodyVertex_mVelocity_Get(
   JoltC_SoftBodyVertex_t * self
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
-  static Vec3 resultValue = selfCpp->mVelocity;
+  const Vec3& resultValue = selfCpp->mVelocity;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

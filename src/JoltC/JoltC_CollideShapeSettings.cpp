@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CollideShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -119,9 +118,9 @@ JoltC_Vec3_t * JoltC_CollideShapeSettings_mActiveEdgeMovementDirection_Get(
   JoltC_CollideShapeSettings_t * self
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mActiveEdgeMovementDirection;
+  const Vec3& resultValue = selfCpp->mActiveEdgeMovementDirection;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

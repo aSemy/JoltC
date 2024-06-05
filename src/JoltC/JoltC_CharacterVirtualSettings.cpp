@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CharacterVirtualSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,7 +30,6 @@ void JoltC_CharacterVirtualSettings_AddRef(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -39,7 +37,6 @@ void JoltC_CharacterVirtualSettings_Release(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -83,9 +80,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtualSettings_mShapeOffset_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mShapeOffset;
+  const Vec3& resultValue = selfCpp->mShapeOffset;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -261,9 +258,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtualSettings_mUp_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mUp;
+  const Vec3& resultValue = selfCpp->mUp;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -279,9 +276,9 @@ JoltC_Plane_t * JoltC_CharacterVirtualSettings_mSupportingVolume_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  static Plane resultValue = selfCpp->mSupportingVolume;
+  const Plane& resultValue = selfCpp->mSupportingVolume;
   JoltC_Plane_t* result = new JoltC_Plane_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -315,7 +312,7 @@ JoltC_Shape_t * JoltC_CharacterVirtualSettings_mShape_Get(
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
   const Shape * resultValue = selfCpp->mShape;
   JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

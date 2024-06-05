@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VertexList.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +52,6 @@ void JoltC_VertexList_push_back(
   JoltC_Float3_t * inVertex
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<Float3 *>(inVertex->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_VertexList_reserve(
   unsigned long inSize
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_VertexList_resize(
   unsigned long inSize
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_VertexList_clear(
   JoltC_VertexList_t * self
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
-  
   selfCpp->clear();
 };
 

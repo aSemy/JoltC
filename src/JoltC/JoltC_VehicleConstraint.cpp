@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleConstraint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,7 +29,6 @@ void JoltC_VehicleConstraint_SetMaxPitchRollAngle(
   float inMaxPitchRollAngle
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetMaxPitchRollAngle(
     inMaxPitchRollAngle
   );
@@ -41,7 +39,6 @@ void JoltC_VehicleConstraint_SetVehicleCollisionTester(
   JoltC_VehicleCollisionTester_t * inTester
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetVehicleCollisionTester(
     reinterpret_cast<VehicleCollisionTester *>(inTester->obj)
   );
@@ -51,9 +48,9 @@ JoltC_Vec3_t * JoltC_VehicleConstraint_GetLocalUp(
   JoltC_VehicleConstraint_t * self
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetLocalUp();
+  const Vec3& resultValue = selfCpp->GetLocalUp();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -61,9 +58,9 @@ JoltC_Vec3_t * JoltC_VehicleConstraint_GetLocalForward(
   JoltC_VehicleConstraint_t * self
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetLocalForward();
+  const Vec3& resultValue = selfCpp->GetLocalForward();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -71,9 +68,9 @@ JoltC_Vec3_t * JoltC_VehicleConstraint_GetWorldUp(
   JoltC_VehicleConstraint_t * self
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetWorldUp();
+  const Vec3& resultValue = selfCpp->GetWorldUp();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -81,9 +78,9 @@ JoltC_Body_t * JoltC_VehicleConstraint_GetVehicleBody(
   JoltC_VehicleConstraint_t * self
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetVehicleBody();
+  const Body * resultValue = selfCpp->GetVehicleBody();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -91,9 +88,9 @@ JoltC_VehicleController_t * JoltC_VehicleConstraint_GetController(
   JoltC_VehicleConstraint_t * self
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  VehicleController * resultValue = selfCpp->GetController();
+  const VehicleController * resultValue = selfCpp->GetController();
   JoltC_VehicleController_t* result = new JoltC_VehicleController_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -106,7 +103,7 @@ JoltC_Wheel_t * JoltC_VehicleConstraint_GetWheel(
     inIdx
   );
   JoltC_Wheel_t* result = new JoltC_Wheel_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -117,13 +114,13 @@ JoltC_Mat44_t * JoltC_VehicleConstraint_GetWheelLocalTransform(
   JoltC_Vec3_t * inWheelUp
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetWheelLocalTransform(
+  const Mat44& resultValue = selfCpp->GetWheelLocalTransform(
     inWheelIndex,
     *reinterpret_cast<Vec3 *>(inWheelRight->obj),
     *reinterpret_cast<Vec3 *>(inWheelUp->obj)
   );
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -134,13 +131,13 @@ JoltC_RMat44_t * JoltC_VehicleConstraint_GetWheelWorldTransform(
   JoltC_Vec3_t * inWheelUp
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  static RMat44 resultValue = selfCpp->GetWheelWorldTransform(
+  const RMat44& resultValue = selfCpp->GetWheelWorldTransform(
     inWheelIndex,
     *reinterpret_cast<Vec3 *>(inWheelRight->obj),
     *reinterpret_cast<Vec3 *>(inWheelUp->obj)
   );
   JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -149,7 +146,6 @@ void JoltC_VehicleConstraint_SetNumStepsBetweenCollisionTestActive(
   unsigned long inSteps
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetNumStepsBetweenCollisionTestActive(
     inSteps
   );
@@ -168,7 +164,6 @@ void JoltC_VehicleConstraint_SetNumStepsBetweenCollisionTestInactive(
   unsigned long inSteps
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetNumStepsBetweenCollisionTestInactive(
     inSteps
   );
@@ -194,7 +189,6 @@ void JoltC_VehicleConstraint_AddRef(
   JoltC_VehicleConstraint_t * self
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -202,7 +196,6 @@ void JoltC_VehicleConstraint_Release(
   JoltC_VehicleConstraint_t * self
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -235,7 +228,6 @@ void JoltC_VehicleConstraint_SetConstraintPriority(
   unsigned long inPriority
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetConstraintPriority(
     inPriority
   );
@@ -246,7 +238,6 @@ void JoltC_VehicleConstraint_SetNumVelocityStepsOverride(
   long inN
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
@@ -265,7 +256,6 @@ void JoltC_VehicleConstraint_SetNumPositionStepsOverride(
   long inN
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
@@ -284,7 +274,6 @@ void JoltC_VehicleConstraint_SetEnabled(
   bool inEnabled
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetEnabled(
     inEnabled
   );
@@ -319,7 +308,6 @@ void JoltC_VehicleConstraint_SetUserData(
   unsigned long long int inUserData
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -329,7 +317,6 @@ void JoltC_VehicleConstraint_ResetWarmStart(
   JoltC_VehicleConstraint_t * self
 ) {
   VehicleConstraint * selfCpp = static_cast<VehicleConstraint *>(self->obj);
-  
   selfCpp->ResetWarmStart();
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleCollisionTesterCastSphere.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -41,7 +40,6 @@ void JoltC_VehicleCollisionTesterCastSphere_AddRef(
   JoltC_VehicleCollisionTesterCastSphere_t * self
 ) {
   VehicleCollisionTesterCastSphere * selfCpp = static_cast<VehicleCollisionTesterCastSphere *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -49,7 +47,6 @@ void JoltC_VehicleCollisionTesterCastSphere_Release(
   JoltC_VehicleCollisionTesterCastSphere_t * self
 ) {
   VehicleCollisionTesterCastSphere * selfCpp = static_cast<VehicleCollisionTesterCastSphere *>(self->obj);
-  
   selfCpp->Release();
 };
 

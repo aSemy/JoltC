@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CollideShapeResult.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -36,9 +35,9 @@ JoltC_Vec3_t * JoltC_CollideShapeResult_mContactPointOn1_Get(
   JoltC_CollideShapeResult_t * self
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
-  static Vec3 resultValue = selfCpp->mContactPointOn1;
+  const Vec3& resultValue = selfCpp->mContactPointOn1;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -54,9 +53,9 @@ JoltC_Vec3_t * JoltC_CollideShapeResult_mContactPointOn2_Get(
   JoltC_CollideShapeResult_t * self
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
-  static Vec3 resultValue = selfCpp->mContactPointOn2;
+  const Vec3& resultValue = selfCpp->mContactPointOn2;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -72,9 +71,9 @@ JoltC_Vec3_t * JoltC_CollideShapeResult_mPenetrationAxis_Get(
   JoltC_CollideShapeResult_t * self
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
-  static Vec3 resultValue = selfCpp->mPenetrationAxis;
+  const Vec3& resultValue = selfCpp->mPenetrationAxis;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -106,9 +105,9 @@ JoltC_SubShapeID_t * JoltC_CollideShapeResult_mSubShapeID1_Get(
   JoltC_CollideShapeResult_t * self
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
-  static SubShapeID resultValue = selfCpp->mSubShapeID1;
+  const SubShapeID& resultValue = selfCpp->mSubShapeID1;
   JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -124,9 +123,9 @@ JoltC_SubShapeID_t * JoltC_CollideShapeResult_mSubShapeID2_Get(
   JoltC_CollideShapeResult_t * self
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
-  static SubShapeID resultValue = selfCpp->mSubShapeID2;
+  const SubShapeID& resultValue = selfCpp->mSubShapeID2;
   JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -142,9 +141,9 @@ JoltC_BodyID_t * JoltC_CollideShapeResult_mBodyID2_Get(
   JoltC_CollideShapeResult_t * self
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
-  static BodyID resultValue = selfCpp->mBodyID2;
+  const BodyID& resultValue = selfCpp->mBodyID2;
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -160,9 +159,9 @@ JoltC_CollideShapeResultFace_t * JoltC_CollideShapeResult_mShape1Face_Get(
   JoltC_CollideShapeResult_t * self
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
-  static CollideShapeResultFace resultValue = selfCpp->mShape1Face;
+  const CollideShapeResultFace& resultValue = selfCpp->mShape1Face;
   JoltC_CollideShapeResultFace_t* result = new JoltC_CollideShapeResultFace_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -178,9 +177,9 @@ JoltC_CollideShapeResultFace_t * JoltC_CollideShapeResult_mShape2Face_Get(
   JoltC_CollideShapeResult_t * self
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
-  static CollideShapeResultFace resultValue = selfCpp->mShape2Face;
+  const CollideShapeResultFace& resultValue = selfCpp->mShape2Face;
   JoltC_CollideShapeResultFace_t* result = new JoltC_CollideShapeResultFace_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

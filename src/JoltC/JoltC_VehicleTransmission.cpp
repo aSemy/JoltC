@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_VehicleTransmission.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,7 +13,6 @@ void JoltC_VehicleTransmission_Set(
   float inClutchFriction
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
-  
   selfCpp->Set(
     inCurrentGear,
     inClutchFriction
@@ -77,9 +75,9 @@ JoltC_ArrayFloat_t * JoltC_VehicleTransmission_mGearRatios_Get(
   JoltC_VehicleTransmission_t * self
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
-  static ArrayFloat resultValue = selfCpp->mGearRatios;
+  const ArrayFloat& resultValue = selfCpp->mGearRatios;
   JoltC_ArrayFloat_t* result = new JoltC_ArrayFloat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -95,9 +93,9 @@ JoltC_ArrayFloat_t * JoltC_VehicleTransmission_mReverseGearRatios_Get(
   JoltC_VehicleTransmission_t * self
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
-  static ArrayFloat resultValue = selfCpp->mReverseGearRatios;
+  const ArrayFloat& resultValue = selfCpp->mReverseGearRatios;
   JoltC_ArrayFloat_t* result = new JoltC_ArrayFloat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

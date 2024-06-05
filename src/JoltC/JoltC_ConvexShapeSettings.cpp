@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ConvexShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -78,7 +77,6 @@ void JoltC_ConvexShapeSettings_AddRef(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -86,7 +84,6 @@ void JoltC_ConvexShapeSettings_Release(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -94,9 +91,9 @@ JoltC_Shape_ShapeResult_t * JoltC_ConvexShapeSettings_Create(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -104,7 +101,6 @@ void JoltC_ConvexShapeSettings_ClearCachedResult(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 
@@ -118,7 +114,7 @@ JoltC_PhysicsMaterial_t * JoltC_ConvexShapeSettings_mMaterial_Get(
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
   const PhysicsMaterial * resultValue = selfCpp->mMaterial;
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArraySoftBodySharedSettingsVertex.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,7 +41,6 @@ void JoltC_ArraySoftBodySharedSettingsVertex_push_back(
   JoltC_SoftBodySharedSettingsVertex_t * inValue
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<SoftBodySharedSettingsVertex *>(inValue->obj)
   );
@@ -53,7 +51,6 @@ void JoltC_ArraySoftBodySharedSettingsVertex_reserve(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -64,7 +61,6 @@ void JoltC_ArraySoftBodySharedSettingsVertex_resize(
   unsigned long inSize
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -74,7 +70,6 @@ void JoltC_ArraySoftBodySharedSettingsVertex_clear(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
-  
   selfCpp->clear();
 };
 

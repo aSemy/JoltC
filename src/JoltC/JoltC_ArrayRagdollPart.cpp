@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayRagdollPart.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +52,6 @@ void JoltC_ArrayRagdollPart_push_back(
   JoltC_RagdollPart_t * inValue
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<RagdollPart *>(inValue->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_ArrayRagdollPart_reserve(
   unsigned long inSize
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_ArrayRagdollPart_resize(
   unsigned long inSize
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_ArrayRagdollPart_clear(
   JoltC_ArrayRagdollPart_t * self
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  
   selfCpp->clear();
 };
 

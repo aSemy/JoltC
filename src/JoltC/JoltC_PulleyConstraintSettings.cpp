@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PulleyConstraintSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,12 +24,12 @@ JoltC_Constraint_t * JoltC_PulleyConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  Constraint * resultValue = selfCpp->Create(
+  const Constraint * resultValue = selfCpp->Create(
     *reinterpret_cast<Body *>(inBody1->obj),
     *reinterpret_cast<Body *>(inBody2->obj)
   );
   JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -46,7 +45,6 @@ void JoltC_PulleyConstraintSettings_AddRef(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -54,7 +52,6 @@ void JoltC_PulleyConstraintSettings_Release(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -82,9 +79,9 @@ JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mBodyPoint1_Get(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mBodyPoint1;
+  const RVec3& resultValue = selfCpp->mBodyPoint1;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -100,9 +97,9 @@ JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mFixedPoint1_Get(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mFixedPoint1;
+  const RVec3& resultValue = selfCpp->mFixedPoint1;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -118,9 +115,9 @@ JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mBodyPoint2_Get(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mBodyPoint2;
+  const RVec3& resultValue = selfCpp->mBodyPoint2;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -136,9 +133,9 @@ JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mFixedPoint2_Get(
   JoltC_PulleyConstraintSettings_t * self
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
-  static RVec3 resultValue = selfCpp->mFixedPoint2;
+  const RVec3& resultValue = selfCpp->mFixedPoint2;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

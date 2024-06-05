@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CharacterVirtual.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,7 +33,6 @@ void JoltC_CharacterVirtual_SetListener(
   JoltC_CharacterContactListener_t * inListener
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetListener(
     reinterpret_cast<CharacterContactListener *>(inListener->obj)
   );
@@ -44,9 +42,9 @@ JoltC_CharacterContactListener_t * JoltC_CharacterVirtual_GetListener(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  CharacterContactListener * resultValue = selfCpp->GetListener();
+  const CharacterContactListener * resultValue = selfCpp->GetListener();
   JoltC_CharacterContactListener_t* result = new JoltC_CharacterContactListener_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -54,9 +52,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_GetLinearVelocity(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetLinearVelocity();
+  const Vec3& resultValue = selfCpp->GetLinearVelocity();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -65,7 +63,6 @@ void JoltC_CharacterVirtual_SetLinearVelocity(
   JoltC_Vec3_t * inLinearVelocity
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetLinearVelocity(
     *reinterpret_cast<Vec3 *>(inLinearVelocity->obj)
   );
@@ -75,9 +72,9 @@ JoltC_RVec3_t * JoltC_CharacterVirtual_GetPosition(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static RVec3 resultValue = selfCpp->GetPosition();
+  const RVec3& resultValue = selfCpp->GetPosition();
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -86,7 +83,6 @@ void JoltC_CharacterVirtual_SetPosition(
   JoltC_RVec3_t * inPosition
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetPosition(
     *reinterpret_cast<RVec3 *>(inPosition->obj)
   );
@@ -96,9 +92,9 @@ JoltC_Quat_t * JoltC_CharacterVirtual_GetRotation(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static Quat resultValue = selfCpp->GetRotation();
+  const Quat& resultValue = selfCpp->GetRotation();
   JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -107,7 +103,6 @@ void JoltC_CharacterVirtual_SetRotation(
   JoltC_Quat_t * inRotation
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetRotation(
     *reinterpret_cast<Quat *>(inRotation->obj)
   );
@@ -117,9 +112,9 @@ JoltC_RMat44_t * JoltC_CharacterVirtual_GetWorldTransform(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static RMat44 resultValue = selfCpp->GetWorldTransform();
+  const RMat44& resultValue = selfCpp->GetWorldTransform();
   JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -127,9 +122,9 @@ JoltC_RMat44_t * JoltC_CharacterVirtual_GetCenterOfMassTransform(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static RMat44 resultValue = selfCpp->GetCenterOfMassTransform();
+  const RMat44& resultValue = selfCpp->GetCenterOfMassTransform();
   JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -146,7 +141,6 @@ void JoltC_CharacterVirtual_SetMass(
   float inMass
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetMass(
     inMass
   );
@@ -165,7 +159,6 @@ void JoltC_CharacterVirtual_SetMaxStrength(
   float inMaxStrength
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetMaxStrength(
     inMaxStrength
   );
@@ -184,7 +177,6 @@ void JoltC_CharacterVirtual_SetPenetrationRecoverySpeed(
   float inSpeed
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetPenetrationRecoverySpeed(
     inSpeed
   );
@@ -211,7 +203,6 @@ void JoltC_CharacterVirtual_SetMaxNumHits(
   unsigned long inMaxHits
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetMaxNumHits(
     inMaxHits
   );
@@ -230,7 +221,6 @@ void JoltC_CharacterVirtual_SetHitReductionCosMaxAngle(
   float inCosMaxAngle
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetHitReductionCosMaxAngle(
     inCosMaxAngle
   );
@@ -248,9 +238,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_GetShapeOffset(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetShapeOffset();
+  const Vec3& resultValue = selfCpp->GetShapeOffset();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -259,7 +249,6 @@ void JoltC_CharacterVirtual_SetShapeOffset(
   JoltC_Vec3_t * inShapeOffset
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetShapeOffset(
     *reinterpret_cast<Vec3 *>(inShapeOffset->obj)
   );
@@ -278,7 +267,6 @@ void JoltC_CharacterVirtual_SetUserData(
   unsigned long long int inUserData
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -289,11 +277,11 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_CancelVelocityTowardsSteepSlopes(
   JoltC_Vec3_t * inDesiredVelocity
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static Vec3 resultValue = selfCpp->CancelVelocityTowardsSteepSlopes(
+  const Vec3& resultValue = selfCpp->CancelVelocityTowardsSteepSlopes(
     *reinterpret_cast<Vec3 *>(inDesiredVelocity->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -308,7 +296,6 @@ void JoltC_CharacterVirtual_Update(
   JoltC_TempAllocator_t * inAllocator
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->Update(
     inDeltaTime,
     *reinterpret_cast<Vec3 *>(inGravity->obj),
@@ -393,7 +380,6 @@ void JoltC_CharacterVirtual_ExtendedUpdate(
   JoltC_TempAllocator_t * inAllocator
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->ExtendedUpdate(
     inDeltaTime,
     *reinterpret_cast<Vec3 *>(inGravity->obj),
@@ -415,7 +401,6 @@ void JoltC_CharacterVirtual_RefreshContacts(
   JoltC_TempAllocator_t * inAllocator
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->RefreshContacts(
     *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
     *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
@@ -429,7 +414,6 @@ void JoltC_CharacterVirtual_UpdateGroundVelocity(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->UpdateGroundVelocity();
 };
 
@@ -468,7 +452,6 @@ void JoltC_CharacterVirtual_AddRef(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -476,7 +459,6 @@ void JoltC_CharacterVirtual_Release(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -485,7 +467,6 @@ void JoltC_CharacterVirtual_SetMaxSlopeAngle(
   float inMaxSlopeAngle
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetMaxSlopeAngle(
     inMaxSlopeAngle
   );
@@ -504,7 +485,6 @@ void JoltC_CharacterVirtual_SetUp(
   JoltC_Vec3_t * inUp
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  
   selfCpp->SetUp(
     *reinterpret_cast<Vec3 *>(inUp->obj)
   );
@@ -514,9 +494,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_GetUp(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetUp();
+  const Vec3& resultValue = selfCpp->GetUp();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -526,7 +506,7 @@ JoltC_Shape_t * JoltC_CharacterVirtual_GetShape(
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
   const Shape * resultValue = selfCpp->GetShape();
   JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -561,9 +541,9 @@ JoltC_RVec3_t * JoltC_CharacterVirtual_GetGroundPosition(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static RVec3 resultValue = selfCpp->GetGroundPosition();
+  const RVec3& resultValue = selfCpp->GetGroundPosition();
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -571,9 +551,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_GetGroundNormal(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetGroundNormal();
+  const Vec3& resultValue = selfCpp->GetGroundNormal();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -581,9 +561,9 @@ JoltC_Vec3_t * JoltC_CharacterVirtual_GetGroundVelocity(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetGroundVelocity();
+  const Vec3& resultValue = selfCpp->GetGroundVelocity();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -593,7 +573,7 @@ JoltC_PhysicsMaterial_t * JoltC_CharacterVirtual_GetGroundMaterial(
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
   const PhysicsMaterial * resultValue = selfCpp->GetGroundMaterial();
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -601,9 +581,9 @@ JoltC_BodyID_t * JoltC_CharacterVirtual_GetGroundBodyID(
   JoltC_CharacterVirtual_t * self
 ) {
   CharacterVirtual * selfCpp = static_cast<CharacterVirtual *>(self->obj);
-  static BodyID resultValue = selfCpp->GetGroundBodyID();
+  const BodyID& resultValue = selfCpp->GetGroundBodyID();
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

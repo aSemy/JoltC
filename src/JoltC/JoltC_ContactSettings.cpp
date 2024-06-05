@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ContactSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -135,9 +134,9 @@ JoltC_Vec3_t * JoltC_ContactSettings_mRelativeLinearSurfaceVelocity_Get(
   JoltC_ContactSettings_t * self
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mRelativeLinearSurfaceVelocity;
+  const Vec3& resultValue = selfCpp->mRelativeLinearSurfaceVelocity;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -153,9 +152,9 @@ JoltC_Vec3_t * JoltC_ContactSettings_mRelativeAngularSurfaceVelocity_Get(
   JoltC_ContactSettings_t * self
 ) {
   ContactSettings * selfCpp = static_cast<ContactSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mRelativeAngularSurfaceVelocity;
+  const Vec3& resultValue = selfCpp->mRelativeAngularSurfaceVelocity;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

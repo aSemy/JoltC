@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_MeshShape.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -20,7 +19,6 @@ void JoltC_MeshShape_AddRef(
   JoltC_MeshShape_t * self
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -28,7 +26,6 @@ void JoltC_MeshShape_Release(
   JoltC_MeshShape_t * self
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -60,9 +57,9 @@ JoltC_AABox_t * JoltC_MeshShape_GetLocalBounds(
   JoltC_MeshShape_t * self
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  static AABox resultValue = selfCpp->GetLocalBounds();
+  const AABox& resultValue = selfCpp->GetLocalBounds();
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -72,12 +69,12 @@ JoltC_AABox_t * JoltC_MeshShape_GetWorldSpaceBounds(
   JoltC_Vec3_t * inScale
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  static AABox resultValue = selfCpp->GetWorldSpaceBounds(
+  const AABox& resultValue = selfCpp->GetWorldSpaceBounds(
     *reinterpret_cast<Mat44 *>(inCenterOfMassTransform->obj),
     *reinterpret_cast<Vec3 *>(inScale->obj)
   );
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -85,9 +82,9 @@ JoltC_Vec3_t * JoltC_MeshShape_GetCenterOfMass(
   JoltC_MeshShape_t * self
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetCenterOfMass();
+  const Vec3& resultValue = selfCpp->GetCenterOfMass();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -104,7 +101,6 @@ void JoltC_MeshShape_SetUserData(
   unsigned long long int inUserData
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -130,9 +126,9 @@ JoltC_MassProperties_t * JoltC_MeshShape_GetMassProperties(
   JoltC_MeshShape_t * self
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  static MassProperties resultValue = selfCpp->GetMassProperties();
+  const MassProperties& resultValue = selfCpp->GetMassProperties();
   JoltC_MassProperties_t* result = new JoltC_MassProperties_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -145,7 +141,7 @@ JoltC_PhysicsMaterial_t * JoltC_MeshShape_GetMaterial(
     *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
   );
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -155,12 +151,12 @@ JoltC_Vec3_t * JoltC_MeshShape_GetSurfaceNormal(
   JoltC_Vec3_t * inLocalSurfacePosition
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetSurfaceNormal(
+  const Vec3& resultValue = selfCpp->GetSurfaceNormal(
     *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
     *reinterpret_cast<Vec3 *>(inLocalSurfacePosition->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -184,7 +180,7 @@ JoltC_TransformedShape_t * JoltC_MeshShape_GetSubShapeTransformedShape(
   JoltC_SubShapeID_t * outRemainder
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  static TransformedShape resultValue = selfCpp->GetSubShapeTransformedShape(
+  const TransformedShape& resultValue = selfCpp->GetSubShapeTransformedShape(
     *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
     *reinterpret_cast<Vec3 *>(inPositionCOM->obj),
     *reinterpret_cast<Quat *>(inRotation->obj),
@@ -192,7 +188,7 @@ JoltC_TransformedShape_t * JoltC_MeshShape_GetSubShapeTransformedShape(
     *reinterpret_cast<SubShapeID *>(outRemainder->obj)
   );
   JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -220,11 +216,11 @@ JoltC_Shape_ShapeResult_t * JoltC_MeshShape_ScaleShape(
   JoltC_Vec3_t * inScale
 ) {
   MeshShape * selfCpp = static_cast<MeshShape *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->ScaleShape(
+  const Shape::ShapeResult& resultValue = selfCpp->ScaleShape(
     *reinterpret_cast<Vec3 *>(inScale->obj)
   );
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SoftBodySharedSettingsVertex.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,9 +22,9 @@ JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mPosition_Get(
   JoltC_SoftBodySharedSettingsVertex_t * self
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
-  static Float3 resultValue = selfCpp->mPosition;
+  const Float3& resultValue = selfCpp->mPosition;
   JoltC_Float3_t* result = new JoltC_Float3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -41,9 +40,9 @@ JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mVelocity_Get(
   JoltC_SoftBodySharedSettingsVertex_t * self
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
-  static Float3 resultValue = selfCpp->mVelocity;
+  const Float3& resultValue = selfCpp->mVelocity;
   JoltC_Float3_t* result = new JoltC_Float3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

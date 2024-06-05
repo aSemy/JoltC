@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_JoltSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -71,9 +70,9 @@ JoltC_BroadPhaseLayerInterface_t * JoltC_JoltSettings_mBroadPhaseLayerInterface_
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  BroadPhaseLayerInterface * resultValue = selfCpp->mBroadPhaseLayerInterface;
+  const BroadPhaseLayerInterface * resultValue = selfCpp->mBroadPhaseLayerInterface;
   JoltC_BroadPhaseLayerInterface_t* result = new JoltC_BroadPhaseLayerInterface_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -89,9 +88,9 @@ JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_JoltSettings_mObjectVsBroadPhaseLa
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  ObjectVsBroadPhaseLayerFilter * resultValue = selfCpp->mObjectVsBroadPhaseLayerFilter;
+  const ObjectVsBroadPhaseLayerFilter * resultValue = selfCpp->mObjectVsBroadPhaseLayerFilter;
   JoltC_ObjectVsBroadPhaseLayerFilter_t* result = new JoltC_ObjectVsBroadPhaseLayerFilter_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -107,9 +106,9 @@ JoltC_ObjectLayerPairFilter_t * JoltC_JoltSettings_mObjectLayerPairFilter_Get(
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  ObjectLayerPairFilter * resultValue = selfCpp->mObjectLayerPairFilter;
+  const ObjectLayerPairFilter * resultValue = selfCpp->mObjectLayerPairFilter;
   JoltC_ObjectLayerPairFilter_t* result = new JoltC_ObjectLayerPairFilter_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

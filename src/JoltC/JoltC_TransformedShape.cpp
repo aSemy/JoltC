@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_TransformedShape.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -25,7 +24,6 @@ void JoltC_TransformedShape_CastRay_0(
   JoltC_RayCastResult_t * ioHit
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->CastRay(
     *reinterpret_cast<RRayCast *>(inRay->obj),
     *reinterpret_cast<RayCastResult *>(ioHit->obj)
@@ -40,7 +38,6 @@ void JoltC_TransformedShape_CastRay_1(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->CastRay(
     *reinterpret_cast<RRayCast *>(inRay->obj),
     *reinterpret_cast<RayCastSettings *>(inRayCastSettings->obj),
@@ -56,7 +53,6 @@ void JoltC_TransformedShape_CollidePoint(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->CollidePoint(
     *reinterpret_cast<RVec3 *>(inPoint->obj),
     *reinterpret_cast<CollidePointCollector *>(ioCollector->obj),
@@ -75,7 +71,6 @@ void JoltC_TransformedShape_CollideShape(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->CollideShape(
     reinterpret_cast<Shape *>(inShape->obj),
     *reinterpret_cast<Vec3 *>(inShapeScale->obj),
@@ -96,7 +91,6 @@ void JoltC_TransformedShape_CastShape(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->CastShape(
     *reinterpret_cast<RShapeCast *>(inShapeCast->obj),
     *reinterpret_cast<ShapeCastSettings *>(inShapeCastSettings->obj),
@@ -113,7 +107,6 @@ void JoltC_TransformedShape_CollectTransformedShapes(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->CollectTransformedShapes(
     *reinterpret_cast<AABox *>(inBox->obj),
     *reinterpret_cast<TransformedShapeCollector *>(ioCollector->obj),
@@ -125,9 +118,9 @@ JoltC_Vec3_t * JoltC_TransformedShape_GetShapeScale(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetShapeScale();
+  const Vec3& resultValue = selfCpp->GetShapeScale();
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -136,7 +129,6 @@ void JoltC_TransformedShape_SetShapeScale(
   JoltC_Vec3_t * inScale
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->SetShapeScale(
     *reinterpret_cast<Vec3 *>(inScale->obj)
   );
@@ -146,9 +138,9 @@ JoltC_RMat44_t * JoltC_TransformedShape_GetCenterOfMassTransform(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static RMat44 resultValue = selfCpp->GetCenterOfMassTransform();
+  const RMat44& resultValue = selfCpp->GetCenterOfMassTransform();
   JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -156,9 +148,9 @@ JoltC_RMat44_t * JoltC_TransformedShape_GetInverseCenterOfMassTransform(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static RMat44 resultValue = selfCpp->GetInverseCenterOfMassTransform();
+  const RMat44& resultValue = selfCpp->GetInverseCenterOfMassTransform();
   JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -169,7 +161,6 @@ void JoltC_TransformedShape_SetWorldTransform_0(
   JoltC_Vec3_t * inScale
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->SetWorldTransform(
     *reinterpret_cast<RVec3 *>(inPosition->obj),
     *reinterpret_cast<Quat *>(inRotation->obj),
@@ -182,7 +173,6 @@ void JoltC_TransformedShape_SetWorldTransform_1(
   JoltC_RMat44_t * inTransform
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  
   selfCpp->SetWorldTransform(
     *reinterpret_cast<RMat44 *>(inTransform->obj)
   );
@@ -192,9 +182,9 @@ JoltC_RMat44_t * JoltC_TransformedShape_GetWorldTransform(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static RMat44 resultValue = selfCpp->GetWorldTransform();
+  const RMat44& resultValue = selfCpp->GetWorldTransform();
   JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -202,9 +192,9 @@ JoltC_AABox_t * JoltC_TransformedShape_GetWorldSpaceBounds(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static AABox resultValue = selfCpp->GetWorldSpaceBounds();
+  const AABox& resultValue = selfCpp->GetWorldSpaceBounds();
   JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -214,12 +204,12 @@ JoltC_Vec3_t * JoltC_TransformedShape_GetWorldSpaceSurfaceNormal(
   JoltC_RVec3_t * inPosition
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static Vec3 resultValue = selfCpp->GetWorldSpaceSurfaceNormal(
+  const Vec3& resultValue = selfCpp->GetWorldSpaceSurfaceNormal(
     *reinterpret_cast<SubShapeID *>(inSubShapeID->obj),
     *reinterpret_cast<RVec3 *>(inPosition->obj)
   );
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -232,7 +222,7 @@ JoltC_PhysicsMaterial_t * JoltC_TransformedShape_GetMaterial(
     *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
   );
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -244,9 +234,9 @@ JoltC_RVec3_t * JoltC_TransformedShape_mShapePositionCOM_Get(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static RVec3 resultValue = selfCpp->mShapePositionCOM;
+  const RVec3& resultValue = selfCpp->mShapePositionCOM;
   JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -262,9 +252,9 @@ JoltC_Quat_t * JoltC_TransformedShape_mShapeRotation_Get(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static Quat resultValue = selfCpp->mShapeRotation;
+  const Quat& resultValue = selfCpp->mShapeRotation;
   JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -282,7 +272,7 @@ JoltC_Shape_t * JoltC_TransformedShape_mShape_Get(
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   const Shape * resultValue = selfCpp->mShape;
   JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -298,9 +288,9 @@ JoltC_Float3_t * JoltC_TransformedShape_mShapeScale_Get(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static Float3 resultValue = selfCpp->mShapeScale;
+  const Float3& resultValue = selfCpp->mShapeScale;
   JoltC_Float3_t* result = new JoltC_Float3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -316,9 +306,9 @@ JoltC_BodyID_t * JoltC_TransformedShape_mBodyID_Get(
   JoltC_TransformedShape_t * self
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
-  static BodyID resultValue = selfCpp->mBodyID;
+  const BodyID& resultValue = selfCpp->mBodyID;
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

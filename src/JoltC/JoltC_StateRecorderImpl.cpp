@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_StateRecorderImpl.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,7 +22,6 @@ void JoltC_StateRecorderImpl_Clear(
   JoltC_StateRecorderImpl_t * self
 ) {
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  
   selfCpp->Clear();
 };
 
@@ -31,7 +29,6 @@ void JoltC_StateRecorderImpl_Rewind(
   JoltC_StateRecorderImpl_t * self
 ) {
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  
   selfCpp->Rewind();
 };
 
@@ -51,7 +48,6 @@ void JoltC_StateRecorderImpl_SetValidating(
   bool inValidating
 ) {
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  
   selfCpp->SetValidating(
     inValidating
   );

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_LinearCurve.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,7 +22,6 @@ void JoltC_LinearCurve_Clear(
   JoltC_LinearCurve_t * self
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  
   selfCpp->Clear();
 };
 
@@ -32,7 +30,6 @@ void JoltC_LinearCurve_Reserve(
   unsigned long inSize
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  
   selfCpp->Reserve(
     inSize
   );
@@ -44,7 +41,6 @@ void JoltC_LinearCurve_AddPoint(
   float inY
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  
   selfCpp->AddPoint(
     inX,
     inY
@@ -55,7 +51,6 @@ void JoltC_LinearCurve_Sort(
   JoltC_LinearCurve_t * self
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  
   selfCpp->Sort();
 };
 

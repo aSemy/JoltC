@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArrayUint8.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -40,7 +39,6 @@ void JoltC_ArrayUint8_push_back(
   unsigned char inValue
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  
   selfCpp->push_back(
     inValue
   );
@@ -51,7 +49,6 @@ void JoltC_ArrayUint8_reserve(
   unsigned long inSize
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -62,7 +59,6 @@ void JoltC_ArrayUint8_resize(
   unsigned long inSize
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -72,7 +68,6 @@ void JoltC_ArrayUint8_clear(
   JoltC_ArrayUint8_t * self
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  
   selfCpp->clear();
 };
 
@@ -80,9 +75,9 @@ JoltC_Uint8MemRef_t * JoltC_ArrayUint8_data(
   JoltC_ArrayUint8_t * self
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  Uint8MemRef * resultValue = selfCpp->data();
+  const Uint8MemRef * resultValue = selfCpp->data();
   JoltC_Uint8MemRef_t* result = new JoltC_Uint8MemRef_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

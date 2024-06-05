@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_GearConstraint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -14,7 +13,6 @@ void JoltC_GearConstraint_SetConstraints(
   JoltC_Constraint_t * inGear2
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->SetConstraints(
     reinterpret_cast<Constraint *>(inGear1->obj),
     reinterpret_cast<Constraint *>(inGear2->obj)
@@ -33,9 +31,9 @@ JoltC_Body_t * JoltC_GearConstraint_GetBody1(
   JoltC_GearConstraint_t * self
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetBody1();
+  const Body * resultValue = selfCpp->GetBody1();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -43,9 +41,9 @@ JoltC_Body_t * JoltC_GearConstraint_GetBody2(
   JoltC_GearConstraint_t * self
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  Body * resultValue = selfCpp->GetBody2();
+  const Body * resultValue = selfCpp->GetBody2();
   JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -53,9 +51,9 @@ JoltC_Mat44_t * JoltC_GearConstraint_GetConstraintToBody1Matrix(
   JoltC_GearConstraint_t * self
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetConstraintToBody1Matrix();
+  const Mat44& resultValue = selfCpp->GetConstraintToBody1Matrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -63,9 +61,9 @@ JoltC_Mat44_t * JoltC_GearConstraint_GetConstraintToBody2Matrix(
   JoltC_GearConstraint_t * self
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  static Mat44 resultValue = selfCpp->GetConstraintToBody2Matrix();
+  const Mat44& resultValue = selfCpp->GetConstraintToBody2Matrix();
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -81,7 +79,6 @@ void JoltC_GearConstraint_AddRef(
   JoltC_GearConstraint_t * self
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -89,7 +86,6 @@ void JoltC_GearConstraint_Release(
   JoltC_GearConstraint_t * self
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -122,7 +118,6 @@ void JoltC_GearConstraint_SetConstraintPriority(
   unsigned long inPriority
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->SetConstraintPriority(
     inPriority
   );
@@ -133,7 +128,6 @@ void JoltC_GearConstraint_SetNumVelocityStepsOverride(
   long inN
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
@@ -152,7 +146,6 @@ void JoltC_GearConstraint_SetNumPositionStepsOverride(
   long inN
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
@@ -171,7 +164,6 @@ void JoltC_GearConstraint_SetEnabled(
   bool inEnabled
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->SetEnabled(
     inEnabled
   );
@@ -206,7 +198,6 @@ void JoltC_GearConstraint_SetUserData(
   unsigned long long int inUserData
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->SetUserData(
     inUserData
   );
@@ -216,7 +207,6 @@ void JoltC_GearConstraint_ResetWarmStart(
   JoltC_GearConstraint_t * self
 ) {
   GearConstraint * selfCpp = static_cast<GearConstraint *>(self->obj);
-  
   selfCpp->ResetWarmStart();
 };
 

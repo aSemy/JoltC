@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CharacterContactSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {

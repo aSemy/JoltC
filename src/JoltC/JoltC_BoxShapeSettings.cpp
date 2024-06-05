@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_BoxShapeSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,7 +38,6 @@ void JoltC_BoxShapeSettings_AddRef(
   JoltC_BoxShapeSettings_t * self
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -47,7 +45,6 @@ void JoltC_BoxShapeSettings_Release(
   JoltC_BoxShapeSettings_t * self
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
-  
   selfCpp->Release();
 };
 
@@ -55,9 +52,9 @@ JoltC_Shape_ShapeResult_t * JoltC_BoxShapeSettings_Create(
   JoltC_BoxShapeSettings_t * self
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
-  static Shape::ShapeResult resultValue = selfCpp->Create();
+  const Shape::ShapeResult& resultValue = selfCpp->Create();
   JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -65,7 +62,6 @@ void JoltC_BoxShapeSettings_ClearCachedResult(
   JoltC_BoxShapeSettings_t * self
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
-  
   selfCpp->ClearCachedResult();
 };
 
@@ -77,9 +73,9 @@ JoltC_Vec3_t * JoltC_BoxShapeSettings_mHalfExtent_Get(
   JoltC_BoxShapeSettings_t * self
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mHalfExtent;
+  const Vec3& resultValue = selfCpp->mHalfExtent;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -113,7 +109,7 @@ JoltC_PhysicsMaterial_t * JoltC_BoxShapeSettings_mMaterial_Get(
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
   const PhysicsMaterial * resultValue = selfCpp->mMaterial;
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_BodyIDVector.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +52,6 @@ void JoltC_BodyIDVector_push_back(
   JoltC_BodyID_t * inBodyID
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<BodyID *>(inBodyID->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_BodyIDVector_reserve(
   unsigned long inSize
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_BodyIDVector_resize(
   unsigned long inSize
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_BodyIDVector_clear(
   JoltC_BodyIDVector_t * self
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  
   selfCpp->clear();
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ArraySkeletonKeyframe.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -53,7 +52,6 @@ void JoltC_ArraySkeletonKeyframe_push_back(
   JoltC_SkeletalAnimationKeyframe_t * inValue
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  
   selfCpp->push_back(
     *reinterpret_cast<SkeletalAnimationKeyframe *>(inValue->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_ArraySkeletonKeyframe_reserve(
   unsigned long inSize
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_ArraySkeletonKeyframe_resize(
   unsigned long inSize
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_ArraySkeletonKeyframe_clear(
   JoltC_ArraySkeletonKeyframe_t * self
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  
   selfCpp->clear();
 };
 

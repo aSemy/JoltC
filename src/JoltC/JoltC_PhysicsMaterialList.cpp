@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PhysicsMaterialList.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,7 +43,7 @@ JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
     inIndex
   );
   JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -53,7 +52,6 @@ void JoltC_PhysicsMaterialList_push_back(
   JoltC_PhysicsMaterial_t * inMaterial
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  
   selfCpp->push_back(
     reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
   );
@@ -64,7 +62,6 @@ void JoltC_PhysicsMaterialList_reserve(
   unsigned long inSize
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  
   selfCpp->reserve(
     inSize
   );
@@ -75,7 +72,6 @@ void JoltC_PhysicsMaterialList_resize(
   unsigned long inSize
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  
   selfCpp->resize(
     inSize
   );
@@ -85,7 +81,6 @@ void JoltC_PhysicsMaterialList_clear(
   JoltC_PhysicsMaterialList_t * self
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  
   selfCpp->clear();
 };
 

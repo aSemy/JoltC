@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_SkeletalAnimationAnimatedJoint.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,9 +22,9 @@ JoltC_JPHString_t * JoltC_SkeletalAnimationAnimatedJoint_mJointName_Get(
   JoltC_SkeletalAnimationAnimatedJoint_t * self
 ) {
   SkeletalAnimationAnimatedJoint * selfCpp = static_cast<SkeletalAnimationAnimatedJoint *>(self->obj);
-  static JPHString resultValue = selfCpp->mJointName;
+  const JPHString& resultValue = selfCpp->mJointName;
   JoltC_JPHString_t* result = new JoltC_JPHString_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -41,9 +40,9 @@ JoltC_ArraySkeletonKeyframe_t * JoltC_SkeletalAnimationAnimatedJoint_mKeyframes_
   JoltC_SkeletalAnimationAnimatedJoint_t * self
 ) {
   SkeletalAnimationAnimatedJoint * selfCpp = static_cast<SkeletalAnimationAnimatedJoint *>(self->obj);
-  static ArraySkeletonKeyframe resultValue = selfCpp->mKeyframes;
+  const ArraySkeletonKeyframe& resultValue = selfCpp->mKeyframes;
   JoltC_ArraySkeletonKeyframe_t* result = new JoltC_ArraySkeletonKeyframe_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

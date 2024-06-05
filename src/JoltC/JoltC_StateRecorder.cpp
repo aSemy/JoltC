@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_StateRecorder.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -26,7 +25,6 @@ void JoltC_StateRecorder_SetValidating(
   bool inValidating
 ) {
   StateRecorder * selfCpp = static_cast<StateRecorder *>(self->obj);
-  
   selfCpp->SetValidating(
     inValidating
   );

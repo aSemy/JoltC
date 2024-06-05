@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_GroupFilterTable.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -29,7 +28,6 @@ void JoltC_GroupFilterTable_DisableCollision(
   unsigned long inSubGroup2
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
-  
   selfCpp->DisableCollision(
     inSubGroup1,
     inSubGroup2
@@ -42,7 +40,6 @@ void JoltC_GroupFilterTable_EnableCollision(
   unsigned long inSubGroup2
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
-  
   selfCpp->EnableCollision(
     inSubGroup1,
     inSubGroup2
@@ -74,7 +71,6 @@ void JoltC_GroupFilterTable_AddRef(
   JoltC_GroupFilterTable_t * self
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -82,7 +78,6 @@ void JoltC_GroupFilterTable_Release(
   JoltC_GroupFilterTable_t * self
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
-  
   selfCpp->Release();
 };
 

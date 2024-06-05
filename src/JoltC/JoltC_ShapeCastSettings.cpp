@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_ShapeCastSettings.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -151,9 +150,9 @@ JoltC_Vec3_t * JoltC_ShapeCastSettings_mActiveEdgeMovementDirection_Get(
   JoltC_ShapeCastSettings_t * self
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
-  static Vec3 resultValue = selfCpp->mActiveEdgeMovementDirection;
+  const Vec3& resultValue = selfCpp->mActiveEdgeMovementDirection;
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

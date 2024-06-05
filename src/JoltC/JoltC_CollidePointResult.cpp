@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_CollidePointResult.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,9 +22,9 @@ JoltC_BodyID_t * JoltC_CollidePointResult_mBodyID_Get(
   JoltC_CollidePointResult_t * self
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
-  static BodyID resultValue = selfCpp->mBodyID;
+  const BodyID& resultValue = selfCpp->mBodyID;
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 
@@ -41,9 +40,9 @@ JoltC_SubShapeID_t * JoltC_CollidePointResult_mSubShapeID2_Get(
   JoltC_CollidePointResult_t * self
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
-  static SubShapeID resultValue = selfCpp->mSubShapeID2;
+  const SubShapeID& resultValue = selfCpp->mSubShapeID2;
   JoltC_SubShapeID_t* result = new JoltC_SubShapeID_t();
-  result->obj = reinterpret_cast<void*>(&resultValue);
+  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
   return result;
 };
 

@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_BroadPhaseQuery.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -16,7 +15,6 @@ void JoltC_BroadPhaseQuery_CastRay(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-  
   selfCpp->CastRay(
     *reinterpret_cast<RayCast *>(inRay->obj),
     *reinterpret_cast<RayCastBodyCollector *>(ioCollector->obj),
@@ -33,7 +31,6 @@ void JoltC_BroadPhaseQuery_CollideAABox(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-  
   selfCpp->CollideAABox(
     *reinterpret_cast<AABox *>(inBox->obj),
     *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
@@ -51,7 +48,6 @@ void JoltC_BroadPhaseQuery_CollideSphere(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-  
   selfCpp->CollideSphere(
     *reinterpret_cast<Vec3 *>(inCenter->obj),
     inRadius,
@@ -69,7 +65,6 @@ void JoltC_BroadPhaseQuery_CollidePoint(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-  
   selfCpp->CollidePoint(
     *reinterpret_cast<Vec3 *>(inPoint->obj),
     *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
@@ -86,7 +81,6 @@ void JoltC_BroadPhaseQuery_CollideOrientedBox(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-  
   selfCpp->CollideOrientedBox(
     *reinterpret_cast<OrientedBox *>(inBox->obj),
     *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
@@ -103,7 +97,6 @@ void JoltC_BroadPhaseQuery_CastAABox(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
-  
   selfCpp->CastAABox(
     *reinterpret_cast<AABoxCast *>(inBox->obj),
     *reinterpret_cast<CastShapeBodyCollector *>(ioCollector->obj),

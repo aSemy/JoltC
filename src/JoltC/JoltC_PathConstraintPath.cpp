@@ -1,6 +1,5 @@
 #include "JoltC/JoltC_PathConstraintPath.h"
 #include "JoltC/JoltJS.h"
-#include <exception>
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,7 +33,6 @@ void JoltC_PathConstraintPath_SetIsLooping(
   bool inIsLooping
 ) {
   PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  
   selfCpp->SetIsLooping(
     inIsLooping
   );
@@ -52,7 +50,6 @@ void JoltC_PathConstraintPath_AddRef(
   JoltC_PathConstraintPath_t * self
 ) {
   PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  
   selfCpp->AddRef();
 };
 
@@ -60,7 +57,6 @@ void JoltC_PathConstraintPath_Release(
   JoltC_PathConstraintPath_t * self
 ) {
   PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  
   selfCpp->Release();
 };
 
