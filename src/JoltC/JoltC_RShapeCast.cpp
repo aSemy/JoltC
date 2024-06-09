@@ -7,18 +7,25 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `RShapeCast` instance.
+ */
 JoltC_RShapeCast_t * JoltC_RShapeCast_new(
   JoltC_Shape_t * inShape,
   JoltC_Vec3_t * inScale,
   JoltC_RMat44_t * inCenterOfMassStart,
   JoltC_Vec3_t * inDirection
 ) {
+  const Shape * inShapeCpp = static_cast<const Shape *>(inShape->obj);
+  const Vec3 * inScaleCpp = static_cast<const Vec3 *>(inScale->obj);
+  const RMat44 * inCenterOfMassStartCpp = static_cast<const RMat44 *>(inCenterOfMassStart->obj);
+  const Vec3 * inDirectionCpp = static_cast<const Vec3 *>(inDirection->obj);
   JoltC_RShapeCast_t * cInstance = new JoltC_RShapeCast_t();
   RShapeCast * cppInstance = new RShapeCast(
-    reinterpret_cast<Shape *>(inShape->obj),
-    *reinterpret_cast<Vec3 *>(inScale->obj),
-    *reinterpret_cast<RMat44 *>(inCenterOfMassStart->obj),
-    *reinterpret_cast<Vec3 *>(inDirection->obj)
+    inShapeCpp,
+    *inScaleCpp,
+    *inCenterOfMassStartCpp,
+    *inDirectionCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
@@ -33,13 +40,14 @@ JoltC_RVec3_t * JoltC_RShapeCast_GetPointOnRay(
   float inFraction
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  const RVec3& resultValue = selfCpp->GetPointOnRay(
+  RVec3 * resultPtr = new RVec3();
+  *resultPtr = selfCpp->GetPointOnRay(
     inFraction
   );
-  JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_RVec3_t * result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 //endregion
 
@@ -49,41 +57,44 @@ JoltC_Shape_t * JoltC_RShapeCast_mShape_Get(
   JoltC_RShapeCast_t * self
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  const Shape * resultValue = selfCpp->mShape;
-  JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Shape * resultPtr = selfCpp->mShape;
+  JoltC_Shape_t * result = new JoltC_Shape_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Vec3_t * JoltC_RShapeCast_mScale_Get(
   JoltC_RShapeCast_t * self
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  const Vec3& resultValue = selfCpp->mScale;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mScale;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_RMat44_t * JoltC_RShapeCast_mCenterOfMassStart_Get(
   JoltC_RShapeCast_t * self
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  const RMat44& resultValue = selfCpp->mCenterOfMassStart;
-  JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  RMat44 * resultPtr = new RMat44();
+  *resultPtr = selfCpp->mCenterOfMassStart;
+  JoltC_RMat44_t * result = new JoltC_RMat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_Vec3_t * JoltC_RShapeCast_mDirection_Get(
   JoltC_RShapeCast_t * self
 ) {
   RShapeCast * selfCpp = static_cast<RShapeCast *>(self->obj);
-  const Vec3& resultValue = selfCpp->mDirection;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mDirection;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 //endregion
 

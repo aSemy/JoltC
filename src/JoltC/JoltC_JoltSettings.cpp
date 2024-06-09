@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `JoltSettings` instance.
+ */
 JoltC_JoltSettings_t * JoltC_JoltSettings_new() {
   JoltC_JoltSettings_t * cInstance = new JoltC_JoltSettings_t();
   JoltSettings * cppInstance = new JoltSettings();
@@ -22,9 +25,8 @@ unsigned long JoltC_JoltSettings_mMaxBodies_Get(
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  unsigned long result = selfCpp->mMaxBodies;
-  return result;
-};
+  return selfCpp->mMaxBodies;
+}
 
 void JoltC_JoltSettings_mMaxBodies_Set(
   JoltC_JoltSettings_t * self,
@@ -38,9 +40,8 @@ unsigned long JoltC_JoltSettings_mMaxBodyPairs_Get(
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  unsigned long result = selfCpp->mMaxBodyPairs;
-  return result;
-};
+  return selfCpp->mMaxBodyPairs;
+}
 
 void JoltC_JoltSettings_mMaxBodyPairs_Set(
   JoltC_JoltSettings_t * self,
@@ -54,9 +55,8 @@ unsigned long JoltC_JoltSettings_mMaxContactConstraints_Get(
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  unsigned long result = selfCpp->mMaxContactConstraints;
-  return result;
-};
+  return selfCpp->mMaxContactConstraints;
+}
 
 void JoltC_JoltSettings_mMaxContactConstraints_Set(
   JoltC_JoltSettings_t * self,
@@ -70,54 +70,54 @@ JoltC_BroadPhaseLayerInterface_t * JoltC_JoltSettings_mBroadPhaseLayerInterface_
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  const BroadPhaseLayerInterface * resultValue = selfCpp->mBroadPhaseLayerInterface;
-  JoltC_BroadPhaseLayerInterface_t* result = new JoltC_BroadPhaseLayerInterface_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const BroadPhaseLayerInterface * resultPtr = selfCpp->mBroadPhaseLayerInterface;
+  JoltC_BroadPhaseLayerInterface_t * result = new JoltC_BroadPhaseLayerInterface_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_JoltSettings_mBroadPhaseLayerInterface_Set(
   JoltC_JoltSettings_t * self,
   JoltC_BroadPhaseLayerInterface_t * mBroadPhaseLayerInterface
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  selfCpp->mBroadPhaseLayerInterface = reinterpret_cast<BroadPhaseLayerInterface *>(mBroadPhaseLayerInterface->obj);
+  selfCpp->mBroadPhaseLayerInterface = static_cast<BroadPhaseLayerInterface *>(mBroadPhaseLayerInterface->obj);
 };
 
 JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Get(
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  const ObjectVsBroadPhaseLayerFilter * resultValue = selfCpp->mObjectVsBroadPhaseLayerFilter;
-  JoltC_ObjectVsBroadPhaseLayerFilter_t* result = new JoltC_ObjectVsBroadPhaseLayerFilter_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const ObjectVsBroadPhaseLayerFilter * resultPtr = selfCpp->mObjectVsBroadPhaseLayerFilter;
+  JoltC_ObjectVsBroadPhaseLayerFilter_t * result = new JoltC_ObjectVsBroadPhaseLayerFilter_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Set(
   JoltC_JoltSettings_t * self,
   JoltC_ObjectVsBroadPhaseLayerFilter_t * mObjectVsBroadPhaseLayerFilter
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  selfCpp->mObjectVsBroadPhaseLayerFilter = reinterpret_cast<ObjectVsBroadPhaseLayerFilter *>(mObjectVsBroadPhaseLayerFilter->obj);
+  selfCpp->mObjectVsBroadPhaseLayerFilter = static_cast<ObjectVsBroadPhaseLayerFilter *>(mObjectVsBroadPhaseLayerFilter->obj);
 };
 
 JoltC_ObjectLayerPairFilter_t * JoltC_JoltSettings_mObjectLayerPairFilter_Get(
   JoltC_JoltSettings_t * self
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  const ObjectLayerPairFilter * resultValue = selfCpp->mObjectLayerPairFilter;
-  JoltC_ObjectLayerPairFilter_t* result = new JoltC_ObjectLayerPairFilter_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const ObjectLayerPairFilter * resultPtr = selfCpp->mObjectLayerPairFilter;
+  JoltC_ObjectLayerPairFilter_t * result = new JoltC_ObjectLayerPairFilter_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_JoltSettings_mObjectLayerPairFilter_Set(
   JoltC_JoltSettings_t * self,
   JoltC_ObjectLayerPairFilter_t * mObjectLayerPairFilter
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
-  selfCpp->mObjectLayerPairFilter = reinterpret_cast<ObjectLayerPairFilter *>(mObjectLayerPairFilter->obj);
+  selfCpp->mObjectLayerPairFilter = static_cast<ObjectLayerPairFilter *>(mObjectLayerPairFilter->obj);
 };
 
 //endregion

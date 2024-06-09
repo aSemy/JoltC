@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `SoftBodySharedSettingsVertexAttributes` instance.
+ */
 JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_SoftBodySharedSettingsVertexAttributes_new() {
   JoltC_SoftBodySharedSettingsVertexAttributes_t * cInstance = new JoltC_SoftBodySharedSettingsVertexAttributes_t();
   SoftBodySharedSettingsVertexAttributes * cppInstance = new SoftBodySharedSettingsVertexAttributes();
@@ -22,9 +25,8 @@ float JoltC_SoftBodySharedSettingsVertexAttributes_mCompliance_Get(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 ) {
   SoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<SoftBodySharedSettingsVertexAttributes *>(self->obj);
-  float result = selfCpp->mCompliance;
-  return result;
-};
+  return selfCpp->mCompliance;
+}
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mCompliance_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
@@ -38,9 +40,8 @@ float JoltC_SoftBodySharedSettingsVertexAttributes_mShearCompliance_Get(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 ) {
   SoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<SoftBodySharedSettingsVertexAttributes *>(self->obj);
-  float result = selfCpp->mShearCompliance;
-  return result;
-};
+  return selfCpp->mShearCompliance;
+}
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mShearCompliance_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
@@ -54,9 +55,8 @@ float JoltC_SoftBodySharedSettingsVertexAttributes_mBendCompliance_Get(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 ) {
   SoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<SoftBodySharedSettingsVertexAttributes *>(self->obj);
-  float result = selfCpp->mBendCompliance;
-  return result;
-};
+  return selfCpp->mBendCompliance;
+}
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mBendCompliance_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
@@ -72,7 +72,7 @@ JoltC_SoftBodySharedSettings_ELRAType JoltC_SoftBodySharedSettingsVertexAttribut
   SoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<SoftBodySharedSettingsVertexAttributes *>(self->obj);
   SoftBodySharedSettings_ELRAType result = selfCpp->mLRAType;
   return static_cast<JoltC_SoftBodySharedSettings_ELRAType>(static_cast<int>(result));
-};
+}
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mLRAType_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,
@@ -86,9 +86,8 @@ float JoltC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Get
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self
 ) {
   SoftBodySharedSettingsVertexAttributes * selfCpp = static_cast<SoftBodySharedSettingsVertexAttributes *>(self->obj);
-  float result = selfCpp->mLRAMaxDistanceMultiplier;
-  return result;
-};
+  return selfCpp->mLRAMaxDistanceMultiplier;
+}
 
 void JoltC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Set(
   JoltC_SoftBodySharedSettingsVertexAttributes_t * self,

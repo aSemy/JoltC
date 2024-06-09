@@ -24,9 +24,8 @@ float JoltC_VehicleEngineSettings_mMaxTorque_Get(
   JoltC_VehicleEngineSettings_t * self
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  float result = selfCpp->mMaxTorque;
-  return result;
-};
+  return selfCpp->mMaxTorque;
+}
 
 void JoltC_VehicleEngineSettings_mMaxTorque_Set(
   JoltC_VehicleEngineSettings_t * self,
@@ -40,9 +39,8 @@ float JoltC_VehicleEngineSettings_mMinRPM_Get(
   JoltC_VehicleEngineSettings_t * self
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  float result = selfCpp->mMinRPM;
-  return result;
-};
+  return selfCpp->mMinRPM;
+}
 
 void JoltC_VehicleEngineSettings_mMinRPM_Set(
   JoltC_VehicleEngineSettings_t * self,
@@ -56,9 +54,8 @@ float JoltC_VehicleEngineSettings_mMaxRPM_Get(
   JoltC_VehicleEngineSettings_t * self
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  float result = selfCpp->mMaxRPM;
-  return result;
-};
+  return selfCpp->mMaxRPM;
+}
 
 void JoltC_VehicleEngineSettings_mMaxRPM_Set(
   JoltC_VehicleEngineSettings_t * self,
@@ -72,27 +69,27 @@ JoltC_LinearCurve_t * JoltC_VehicleEngineSettings_mNormalizedTorque_Get(
   JoltC_VehicleEngineSettings_t * self
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  const LinearCurve& resultValue = selfCpp->mNormalizedTorque;
-  JoltC_LinearCurve_t* result = new JoltC_LinearCurve_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  LinearCurve * resultPtr = new LinearCurve();
+  *resultPtr = selfCpp->mNormalizedTorque;
+  JoltC_LinearCurve_t * result = new JoltC_LinearCurve_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_VehicleEngineSettings_mNormalizedTorque_Set(
   JoltC_VehicleEngineSettings_t * self,
   JoltC_LinearCurve_t * mNormalizedTorque
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  selfCpp->mNormalizedTorque = *reinterpret_cast<LinearCurve *>(mNormalizedTorque->obj);
+  selfCpp->mNormalizedTorque = *static_cast<LinearCurve *>(mNormalizedTorque->obj);
 };
 
 float JoltC_VehicleEngineSettings_mInertia_Get(
   JoltC_VehicleEngineSettings_t * self
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  float result = selfCpp->mInertia;
-  return result;
-};
+  return selfCpp->mInertia;
+}
 
 void JoltC_VehicleEngineSettings_mInertia_Set(
   JoltC_VehicleEngineSettings_t * self,
@@ -106,9 +103,8 @@ float JoltC_VehicleEngineSettings_mAngularDamping_Get(
   JoltC_VehicleEngineSettings_t * self
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
-  float result = selfCpp->mAngularDamping;
-  return result;
-};
+  return selfCpp->mAngularDamping;
+}
 
 void JoltC_VehicleEngineSettings_mAngularDamping_Set(
   JoltC_VehicleEngineSettings_t * self,

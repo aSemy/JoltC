@@ -12,27 +12,28 @@ void JoltC_CollideShapeBodyCollector_Reset(
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
   selfCpp->Reset();
-};
+}
 
 void JoltC_CollideShapeBodyCollector_SetContext(
   JoltC_CollideShapeBodyCollector_t * self,
   JoltC_TransformedShape_t * inContext
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
+  const TransformedShape * inContextCpp = static_cast<const TransformedShape *>(inContext->obj);
   selfCpp->SetContext(
-    reinterpret_cast<TransformedShape *>(inContext->obj)
+    inContextCpp
   );
-};
+}
 
 JoltC_TransformedShape_t * JoltC_CollideShapeBodyCollector_GetContext(
   JoltC_CollideShapeBodyCollector_t * self
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
-  const TransformedShape * resultValue = selfCpp->GetContext();
-  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const TransformedShape * resultPtr = selfCpp->GetContext();
+  JoltC_TransformedShape_t * result = new JoltC_TransformedShape_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_CollideShapeBodyCollector_UpdateEarlyOutFraction(
   JoltC_CollideShapeBodyCollector_t * self,
@@ -42,7 +43,7 @@ void JoltC_CollideShapeBodyCollector_UpdateEarlyOutFraction(
   selfCpp->UpdateEarlyOutFraction(
     inFraction
   );
-};
+}
 
 void JoltC_CollideShapeBodyCollector_ResetEarlyOutFraction(
   JoltC_CollideShapeBodyCollector_t * self,
@@ -52,38 +53,35 @@ void JoltC_CollideShapeBodyCollector_ResetEarlyOutFraction(
   selfCpp->ResetEarlyOutFraction(
     inFraction
   );
-};
+}
 
 void JoltC_CollideShapeBodyCollector_ForceEarlyOut(
   JoltC_CollideShapeBodyCollector_t * self
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
   selfCpp->ForceEarlyOut();
-};
+}
 
 bool JoltC_CollideShapeBodyCollector_ShouldEarlyOut(
   JoltC_CollideShapeBodyCollector_t * self
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
-};
+  return selfCpp->ShouldEarlyOut();
+}
 
 float JoltC_CollideShapeBodyCollector_GetEarlyOutFraction(
   JoltC_CollideShapeBodyCollector_t * self
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
-};
+  return selfCpp->GetEarlyOutFraction();
+}
 
 float JoltC_CollideShapeBodyCollector_GetPositiveEarlyOutFraction(
   JoltC_CollideShapeBodyCollector_t * self
 ) {
   CollideShapeBodyCollector * selfCpp = static_cast<CollideShapeBodyCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
-};
+  return selfCpp->GetPositiveEarlyOutFraction();
+}
 
 //endregion
 

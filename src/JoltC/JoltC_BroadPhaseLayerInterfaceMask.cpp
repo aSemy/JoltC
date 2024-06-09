@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `BroadPhaseLayerInterfaceMask` instance.
+ */
 JoltC_BroadPhaseLayerInterfaceMask_t * JoltC_BroadPhaseLayerInterfaceMask_new(
   unsigned long inNumBroadPhaseLayers
 ) {
@@ -29,20 +32,20 @@ void JoltC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
   unsigned long inGroupsToExclude
 ) {
   BroadPhaseLayerInterfaceMask * selfCpp = static_cast<BroadPhaseLayerInterfaceMask *>(self->obj);
+  const BroadPhaseLayer * inBroadPhaseLayerCpp = static_cast<const BroadPhaseLayer *>(inBroadPhaseLayer->obj);
   selfCpp->ConfigureLayer(
-    *reinterpret_cast<BroadPhaseLayer *>(inBroadPhaseLayer->obj),
+    *inBroadPhaseLayerCpp,
     inGroupsToInclude,
     inGroupsToExclude
   );
-};
+}
 
 unsigned long JoltC_BroadPhaseLayerInterfaceMask_GetNumBroadPhaseLayers(
   JoltC_BroadPhaseLayerInterfaceMask_t * self
 ) {
   BroadPhaseLayerInterfaceMask * selfCpp = static_cast<BroadPhaseLayerInterfaceMask *>(self->obj);
-  unsigned long result = selfCpp->GetNumBroadPhaseLayers();
-  return result;
-};
+  return selfCpp->GetNumBroadPhaseLayers();
+}
 
 //endregion
 

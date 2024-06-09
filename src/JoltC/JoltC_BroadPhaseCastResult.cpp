@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `BroadPhaseCastResult` instance.
+ */
 JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_new() {
   JoltC_BroadPhaseCastResult_t * cInstance = new JoltC_BroadPhaseCastResult_t();
   BroadPhaseCastResult * cppInstance = new BroadPhaseCastResult();
@@ -36,7 +39,7 @@ void JoltC_BroadPhaseCastResult_Reset(
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
   selfCpp->Reset();
-};
+}
 
 //endregion
 
@@ -46,27 +49,27 @@ JoltC_BodyID_t * JoltC_BroadPhaseCastResult_mBodyID_Get(
   JoltC_BroadPhaseCastResult_t * self
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
-  const BodyID& resultValue = selfCpp->mBodyID;
-  JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  BodyID * resultPtr = new BodyID();
+  *resultPtr = selfCpp->mBodyID;
+  JoltC_BodyID_t * result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_BroadPhaseCastResult_mBodyID_Set(
   JoltC_BroadPhaseCastResult_t * self,
   JoltC_BodyID_t * mBodyID
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
-  selfCpp->mBodyID = *reinterpret_cast<BodyID *>(mBodyID->obj);
+  selfCpp->mBodyID = *static_cast<BodyID *>(mBodyID->obj);
 };
 
 float JoltC_BroadPhaseCastResult_mFraction_Get(
   JoltC_BroadPhaseCastResult_t * self
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
-  float result = selfCpp->mFraction;
-  return result;
-};
+  return selfCpp->mFraction;
+}
 
 void JoltC_BroadPhaseCastResult_mFraction_Set(
   JoltC_BroadPhaseCastResult_t * self,

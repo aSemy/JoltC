@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `SubShapeIDPair` instance.
+ */
 JoltC_SubShapeIDPair_t * JoltC_SubShapeIDPair_new() {
   JoltC_SubShapeIDPair_t * cInstance = new JoltC_SubShapeIDPair_t();
   SubShapeIDPair * cppInstance = new SubShapeIDPair();
@@ -28,7 +31,7 @@ JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody1ID(
   void * resultPtr = const_cast<void*>(resultConstPtr);
   result->obj = resultPtr;
   return result;
-};
+}
 
 JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID1(
   JoltC_SubShapeIDPair_t * self
@@ -40,7 +43,7 @@ JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID1(
   void * resultPtr = const_cast<void*>(resultConstPtr);
   result->obj = resultPtr;
   return result;
-};
+}
 
 JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody2ID(
   JoltC_SubShapeIDPair_t * self
@@ -52,7 +55,7 @@ JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody2ID(
   void * resultPtr = const_cast<void*>(resultConstPtr);
   result->obj = resultPtr;
   return result;
-};
+}
 
 JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID2(
   JoltC_SubShapeIDPair_t * self
@@ -64,7 +67,7 @@ JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID2(
   void * resultPtr = const_cast<void*>(resultConstPtr);
   result->obj = resultPtr;
   return result;
-};
+}
 
 //endregion
 

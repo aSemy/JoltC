@@ -7,13 +7,17 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `DefaultBroadPhaseLayerFilter` instance.
+ */
 JoltC_DefaultBroadPhaseLayerFilter_t * JoltC_DefaultBroadPhaseLayerFilter_new(
   JoltC_ObjectVsBroadPhaseLayerFilter_t * inFilter,
   unsigned long inObjectLayer
 ) {
+  const ObjectVsBroadPhaseLayerFilter * inFilterCpp = static_cast<const ObjectVsBroadPhaseLayerFilter *>(inFilter->obj);
   JoltC_DefaultBroadPhaseLayerFilter_t * cInstance = new JoltC_DefaultBroadPhaseLayerFilter_t();
   DefaultBroadPhaseLayerFilter * cppInstance = new DefaultBroadPhaseLayerFilter(
-    *reinterpret_cast<ObjectVsBroadPhaseLayerFilter *>(inFilter->obj),
+    *inFilterCpp,
     inObjectLayer
   );
   cInstance->obj = cppInstance;

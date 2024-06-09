@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `GroupFilterTable` instance.
+ */
 JoltC_GroupFilterTable_t * JoltC_GroupFilterTable_new(
   unsigned long inNumGroups
 ) {
@@ -32,7 +35,7 @@ void JoltC_GroupFilterTable_DisableCollision(
     inSubGroup1,
     inSubGroup2
   );
-};
+}
 
 void JoltC_GroupFilterTable_EnableCollision(
   JoltC_GroupFilterTable_t * self,
@@ -44,7 +47,7 @@ void JoltC_GroupFilterTable_EnableCollision(
     inSubGroup1,
     inSubGroup2
   );
-};
+}
 
 bool JoltC_GroupFilterTable_IsCollisionEnabled(
   JoltC_GroupFilterTable_t * self,
@@ -52,34 +55,32 @@ bool JoltC_GroupFilterTable_IsCollisionEnabled(
   unsigned long inSubGroup2
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
-  bool result = selfCpp->IsCollisionEnabled(
+  return selfCpp->IsCollisionEnabled(
     inSubGroup1,
     inSubGroup2
   );
-  return result;
-};
+}
 
 unsigned long JoltC_GroupFilterTable_GetRefCount(
   JoltC_GroupFilterTable_t * self
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_GroupFilterTable_AddRef(
   JoltC_GroupFilterTable_t * self
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_GroupFilterTable_Release(
   JoltC_GroupFilterTable_t * self
 ) {
   GroupFilterTable * selfCpp = static_cast<GroupFilterTable *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 

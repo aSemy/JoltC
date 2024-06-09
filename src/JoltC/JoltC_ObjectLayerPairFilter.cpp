@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `ObjectLayerPairFilter` instance.
+ */
 JoltC_ObjectLayerPairFilter_t * JoltC_ObjectLayerPairFilter_new() {
   JoltC_ObjectLayerPairFilter_t * cInstance = new JoltC_ObjectLayerPairFilter_t();
   ObjectLayerPairFilter * cppInstance = new ObjectLayerPairFilter();
@@ -46,12 +49,11 @@ bool JoltC_ObjectLayerPairFilter_ShouldCollide(
   unsigned long inLayer2
 ) {
   ObjectLayerPairFilter * selfCpp = static_cast<ObjectLayerPairFilter *>(self->obj);
-  bool result = selfCpp->ShouldCollide(
+  return selfCpp->ShouldCollide(
     inLayer1,
     inLayer2
   );
-  return result;
-};
+}
 
 //endregion
 

@@ -11,17 +11,15 @@ bool JoltC_ArrayCollideShapeResult_empty(
   JoltC_ArrayCollideShapeResult_t * self
 ) {
   ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArrayCollideShapeResult_size(
   JoltC_ArrayCollideShapeResult_t * self
 ) {
   ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_CollideShapeResult_t * JoltC_ArrayCollideShapeResult_at(
   JoltC_ArrayCollideShapeResult_t * self,
@@ -34,17 +32,18 @@ JoltC_CollideShapeResult_t * JoltC_ArrayCollideShapeResult_at(
   JoltC_CollideShapeResult_t* result = new JoltC_CollideShapeResult_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArrayCollideShapeResult_push_back(
   JoltC_ArrayCollideShapeResult_t * self,
   JoltC_CollideShapeResult_t * inValue
 ) {
   ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
+  const CollideShapeResult * inValueCpp = static_cast<const CollideShapeResult *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<CollideShapeResult *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArrayCollideShapeResult_reserve(
   JoltC_ArrayCollideShapeResult_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArrayCollideShapeResult_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArrayCollideShapeResult_resize(
   JoltC_ArrayCollideShapeResult_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArrayCollideShapeResult_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArrayCollideShapeResult_clear(
   JoltC_ArrayCollideShapeResult_t * self
 ) {
   ArrayCollideShapeResult * selfCpp = static_cast<ArrayCollideShapeResult *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

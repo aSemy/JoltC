@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `ArraySkeletonKeyframe` instance.
+ */
 JoltC_ArraySkeletonKeyframe_t * JoltC_ArraySkeletonKeyframe_new() {
   JoltC_ArraySkeletonKeyframe_t * cInstance = new JoltC_ArraySkeletonKeyframe_t();
   ArraySkeletonKeyframe * cppInstance = new ArraySkeletonKeyframe();
@@ -22,17 +25,15 @@ bool JoltC_ArraySkeletonKeyframe_empty(
   JoltC_ArraySkeletonKeyframe_t * self
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySkeletonKeyframe_size(
   JoltC_ArraySkeletonKeyframe_t * self
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SkeletalAnimationKeyframe_t * JoltC_ArraySkeletonKeyframe_at(
   JoltC_ArraySkeletonKeyframe_t * self,
@@ -45,17 +46,18 @@ JoltC_SkeletalAnimationKeyframe_t * JoltC_ArraySkeletonKeyframe_at(
   JoltC_SkeletalAnimationKeyframe_t* result = new JoltC_SkeletalAnimationKeyframe_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySkeletonKeyframe_push_back(
   JoltC_ArraySkeletonKeyframe_t * self,
   JoltC_SkeletalAnimationKeyframe_t * inValue
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
+  SkeletalAnimationKeyframe * inValueCpp = static_cast<SkeletalAnimationKeyframe *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SkeletalAnimationKeyframe *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySkeletonKeyframe_reserve(
   JoltC_ArraySkeletonKeyframe_t * self,
@@ -65,7 +67,7 @@ void JoltC_ArraySkeletonKeyframe_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySkeletonKeyframe_resize(
   JoltC_ArraySkeletonKeyframe_t * self,
@@ -75,14 +77,14 @@ void JoltC_ArraySkeletonKeyframe_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySkeletonKeyframe_clear(
   JoltC_ArraySkeletonKeyframe_t * self
 ) {
   ArraySkeletonKeyframe * selfCpp = static_cast<ArraySkeletonKeyframe *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

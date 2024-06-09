@@ -125,36 +125,37 @@ JoltC_Constraint_t * JoltC_TwoBodyConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  const Constraint * resultValue = selfCpp->Create(
-    *reinterpret_cast<Body *>(inBody1->obj),
-    *reinterpret_cast<Body *>(inBody2->obj)
+  Body * inBody1Cpp = static_cast<Body *>(inBody1->obj);
+  Body * inBody2Cpp = static_cast<Body *>(inBody2->obj);
+  const Constraint * resultPtr = selfCpp->Create(
+    *inBody1Cpp,
+    *inBody2Cpp
   );
-  JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Constraint_t * result = new JoltC_Constraint_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 unsigned long JoltC_TwoBodyConstraintSettings_GetRefCount(
   JoltC_TwoBodyConstraintSettings_t * self
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_TwoBodyConstraintSettings_AddRef(
   JoltC_TwoBodyConstraintSettings_t * self
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_TwoBodyConstraintSettings_Release(
   JoltC_TwoBodyConstraintSettings_t * self
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 
@@ -164,9 +165,8 @@ bool JoltC_TwoBodyConstraintSettings_mEnabled_Get(
   JoltC_TwoBodyConstraintSettings_t * self
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  bool result = selfCpp->mEnabled;
-  return result;
-};
+  return selfCpp->mEnabled;
+}
 
 void JoltC_TwoBodyConstraintSettings_mEnabled_Set(
   JoltC_TwoBodyConstraintSettings_t * self,
@@ -180,9 +180,8 @@ long JoltC_TwoBodyConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_TwoBodyConstraintSettings_t * self
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  long result = selfCpp->mNumVelocityStepsOverride;
-  return result;
-};
+  return selfCpp->mNumVelocityStepsOverride;
+}
 
 void JoltC_TwoBodyConstraintSettings_mNumVelocityStepsOverride_Set(
   JoltC_TwoBodyConstraintSettings_t * self,
@@ -196,9 +195,8 @@ long JoltC_TwoBodyConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_TwoBodyConstraintSettings_t * self
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
-  long result = selfCpp->mNumPositionStepsOverride;
-  return result;
-};
+  return selfCpp->mNumPositionStepsOverride;
+}
 
 void JoltC_TwoBodyConstraintSettings_mNumPositionStepsOverride_Set(
   JoltC_TwoBodyConstraintSettings_t * self,

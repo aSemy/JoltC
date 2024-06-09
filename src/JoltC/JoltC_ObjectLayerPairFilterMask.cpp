@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `ObjectLayerPairFilterMask` instance.
+ */
 JoltC_ObjectLayerPairFilterMask_t * JoltC_ObjectLayerPairFilterMask_new() {
   JoltC_ObjectLayerPairFilterMask_t * cInstance = new JoltC_ObjectLayerPairFilterMask_t();
   ObjectLayerPairFilterMask * cppInstance = new ObjectLayerPairFilterMask();
@@ -22,30 +25,27 @@ unsigned long JoltC_ObjectLayerPairFilterMask_sGetObjectLayer(
   unsigned long inGroup,
   unsigned long inMask
 ) {
-  unsigned long result = ObjectLayerPairFilterMask::sGetObjectLayer(
+  return ObjectLayerPairFilterMask::sGetObjectLayer(
     inGroup,
     inMask
   );
-  return result;
-};
+}
 
 unsigned long JoltC_ObjectLayerPairFilterMask_sGetGroup(
   unsigned long inObjectLayer
 ) {
-  unsigned long result = ObjectLayerPairFilterMask::sGetGroup(
+  return ObjectLayerPairFilterMask::sGetGroup(
     inObjectLayer
   );
-  return result;
-};
+}
 
 unsigned long JoltC_ObjectLayerPairFilterMask_sGetMask(
   unsigned long inObjectLayer
 ) {
-  unsigned long result = ObjectLayerPairFilterMask::sGetMask(
+  return ObjectLayerPairFilterMask::sGetMask(
     inObjectLayer
   );
-  return result;
-};
+}
 
 bool JoltC_ObjectLayerPairFilterMask_ShouldCollide(
   JoltC_ObjectLayerPairFilterMask_t * self,
@@ -53,12 +53,11 @@ bool JoltC_ObjectLayerPairFilterMask_ShouldCollide(
   unsigned long inLayer2
 ) {
   ObjectLayerPairFilterMask * selfCpp = static_cast<ObjectLayerPairFilterMask *>(self->obj);
-  bool result = selfCpp->ShouldCollide(
+  return selfCpp->ShouldCollide(
     inLayer1,
     inLayer2
   );
-  return result;
-};
+}
 
 //endregion
 

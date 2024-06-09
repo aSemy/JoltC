@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `Vector2` instance.
+ */
 JoltC_Vector2_t * JoltC_Vector2_new() {
   JoltC_Vector2_t * cInstance = new JoltC_Vector2_t();
   Vector2 * cppInstance = new Vector2();
@@ -23,14 +26,14 @@ void JoltC_Vector2_SetZero(
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
   selfCpp->SetZero();
-};
+}
 
 void JoltC_Vector2_IsZero(
   JoltC_Vector2_t * self
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
   selfCpp->IsZero();
-};
+}
 
 void JoltC_Vector2_IsClose(
   JoltC_Vector2_t * self,
@@ -38,11 +41,12 @@ void JoltC_Vector2_IsClose(
   float inMaxDistSq
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
+  const Vector2 * inVCpp = static_cast<const Vector2 *>(inV->obj);
   selfCpp->IsClose(
-    *reinterpret_cast<Vector2 *>(inV->obj),
+    *inVCpp,
     inMaxDistSq
   );
-};
+}
 
 void JoltC_Vector2_IsNormalized(
   JoltC_Vector2_t * self,
@@ -52,54 +56,56 @@ void JoltC_Vector2_IsNormalized(
   selfCpp->IsNormalized(
     inTolerance
   );
-};
+}
 
 JoltC_Vector2_t * JoltC_Vector2_Normalized(
   JoltC_Vector2_t * self
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
-  const Vector2& resultValue = selfCpp->Normalized();
-  JoltC_Vector2_t* result = new JoltC_Vector2_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vector2 * resultPtr = new Vector2();
+  *resultPtr = selfCpp->Normalized();
+  JoltC_Vector2_t * result = new JoltC_Vector2_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 float JoltC_Vector2_GetComponent(
   JoltC_Vector2_t * self,
   unsigned long inCoordinate
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
-  float result = selfCpp->operator[](
+  return selfCpp->operator[](
     inCoordinate
   );
-  return result;
-};
+}
 
 JoltC_Vector2_t * JoltC_Vector2_Add(
   JoltC_Vector2_t * self,
   JoltC_Vector2_t * inV
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
+  const Vector2 * inVCpp = static_cast<const Vector2 *>(inV->obj);
   Vector2* resultRef = &selfCpp->operator+=(
-    *reinterpret_cast<Vector2 *>(inV->obj)
+    *inVCpp
   );
   JoltC_Vector2_t* result = new JoltC_Vector2_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 JoltC_Vector2_t * JoltC_Vector2_Sub(
   JoltC_Vector2_t * self,
   JoltC_Vector2_t * inV
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
+  const Vector2 * inVCpp = static_cast<const Vector2 *>(inV->obj);
   Vector2* resultRef = &selfCpp->operator-=(
-    *reinterpret_cast<Vector2 *>(inV->obj)
+    *inVCpp
   );
   JoltC_Vector2_t* result = new JoltC_Vector2_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 JoltC_Vector2_t * JoltC_Vector2_Mul(
   JoltC_Vector2_t * self,
@@ -112,7 +118,7 @@ JoltC_Vector2_t * JoltC_Vector2_Mul(
   JoltC_Vector2_t* result = new JoltC_Vector2_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 JoltC_Vector2_t * JoltC_Vector2_Div(
   JoltC_Vector2_t * self,
@@ -125,18 +131,18 @@ JoltC_Vector2_t * JoltC_Vector2_Div(
   JoltC_Vector2_t* result = new JoltC_Vector2_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 float JoltC_Vector2_Dot(
   JoltC_Vector2_t * self,
   JoltC_Vector2_t * inRHS
 ) {
   Vector2 * selfCpp = static_cast<Vector2 *>(self->obj);
-  float result = selfCpp->Dot(
-    *reinterpret_cast<Vector2 *>(inRHS->obj)
+  const Vector2 * inRHSCpp = static_cast<const Vector2 *>(inRHS->obj);
+  return selfCpp->Dot(
+    *inRHSCpp
   );
-  return result;
-};
+}
 
 //endregion
 

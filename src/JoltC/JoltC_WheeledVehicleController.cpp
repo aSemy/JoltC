@@ -7,14 +7,19 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `WheeledVehicleController` instance.
+ */
 JoltC_WheeledVehicleController_t * JoltC_WheeledVehicleController_new(
   JoltC_WheeledVehicleControllerSettings_t * inSettings,
   JoltC_VehicleConstraint_t * inConstraint
 ) {
+  const WheeledVehicleControllerSettings * inSettingsCpp = static_cast<const WheeledVehicleControllerSettings *>(inSettings->obj);
+  VehicleConstraint * inConstraintCpp = static_cast<VehicleConstraint *>(inConstraint->obj);
   JoltC_WheeledVehicleController_t * cInstance = new JoltC_WheeledVehicleController_t();
   WheeledVehicleController * cppInstance = new WheeledVehicleController(
-    *reinterpret_cast<WheeledVehicleControllerSettings *>(inSettings->obj),
-    *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
+    *inSettingsCpp,
+    *inConstraintCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
@@ -51,7 +56,7 @@ void JoltC_WheeledVehicleController_SetDriverInput(
     inBrake,
     inHandBrake
   );
-};
+}
 
 void JoltC_WheeledVehicleController_SetForwardInput(
   JoltC_WheeledVehicleController_t * self,
@@ -61,15 +66,14 @@ void JoltC_WheeledVehicleController_SetForwardInput(
   selfCpp->SetForwardInput(
     inForward
   );
-};
+}
 
 float JoltC_WheeledVehicleController_GetForwardInput(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetForwardInput();
-  return result;
-};
+  return selfCpp->GetForwardInput();
+}
 
 void JoltC_WheeledVehicleController_SetRightInput(
   JoltC_WheeledVehicleController_t * self,
@@ -79,15 +83,14 @@ void JoltC_WheeledVehicleController_SetRightInput(
   selfCpp->SetRightInput(
     inRight
   );
-};
+}
 
 float JoltC_WheeledVehicleController_GetRightInput(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetRightInput();
-  return result;
-};
+  return selfCpp->GetRightInput();
+}
 
 void JoltC_WheeledVehicleController_SetBrakeInput(
   JoltC_WheeledVehicleController_t * self,
@@ -97,15 +100,14 @@ void JoltC_WheeledVehicleController_SetBrakeInput(
   selfCpp->SetBrakeInput(
     inBrake
   );
-};
+}
 
 float JoltC_WheeledVehicleController_GetBrakeInput(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetBrakeInput();
-  return result;
-};
+  return selfCpp->GetBrakeInput();
+}
 
 void JoltC_WheeledVehicleController_SetHandBrakeInput(
   JoltC_WheeledVehicleController_t * self,
@@ -115,15 +117,14 @@ void JoltC_WheeledVehicleController_SetHandBrakeInput(
   selfCpp->SetHandBrakeInput(
     inHandBrake
   );
-};
+}
 
 float JoltC_WheeledVehicleController_GetHandBrakeInput(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetHandBrakeInput();
-  return result;
-};
+  return selfCpp->GetHandBrakeInput();
+}
 
 JoltC_VehicleEngine_t * JoltC_WheeledVehicleController_GetEngine(
   JoltC_WheeledVehicleController_t * self
@@ -133,7 +134,7 @@ JoltC_VehicleEngine_t * JoltC_WheeledVehicleController_GetEngine(
   JoltC_VehicleEngine_t* result = new JoltC_VehicleEngine_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 JoltC_VehicleTransmission_t * JoltC_WheeledVehicleController_GetTransmission(
   JoltC_WheeledVehicleController_t * self
@@ -143,7 +144,7 @@ JoltC_VehicleTransmission_t * JoltC_WheeledVehicleController_GetTransmission(
   JoltC_VehicleTransmission_t* result = new JoltC_VehicleTransmission_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleController_GetDifferentials(
   JoltC_WheeledVehicleController_t * self
@@ -153,15 +154,14 @@ JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleController_GetDif
   JoltC_ArrayVehicleDifferentialSettings_t* result = new JoltC_ArrayVehicleDifferentialSettings_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 float JoltC_WheeledVehicleController_GetDifferentialLimitedSlipRatio(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetDifferentialLimitedSlipRatio();
-  return result;
-};
+  return selfCpp->GetDifferentialLimitedSlipRatio();
+}
 
 void JoltC_WheeledVehicleController_SetDifferentialLimitedSlipRatio(
   JoltC_WheeledVehicleController_t * self,
@@ -171,37 +171,35 @@ void JoltC_WheeledVehicleController_SetDifferentialLimitedSlipRatio(
   selfCpp->SetDifferentialLimitedSlipRatio(
     inV
   );
-};
+}
 
 float JoltC_WheeledVehicleController_GetWheelSpeedAtClutch(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  float result = selfCpp->GetWheelSpeedAtClutch();
-  return result;
-};
+  return selfCpp->GetWheelSpeedAtClutch();
+}
 
 unsigned long JoltC_WheeledVehicleController_GetRefCount(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_WheeledVehicleController_AddRef(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_WheeledVehicleController_Release(
   JoltC_WheeledVehicleController_t * self
 ) {
   WheeledVehicleController * selfCpp = static_cast<WheeledVehicleController *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 

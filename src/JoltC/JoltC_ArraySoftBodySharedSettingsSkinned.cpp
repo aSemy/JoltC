@@ -11,17 +11,15 @@ bool JoltC_ArraySoftBodySharedSettingsSkinned_empty(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self
 ) {
   ArraySoftBodySharedSettingsSkinned * selfCpp = static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySoftBodySharedSettingsSkinned_size(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self
 ) {
   ArraySoftBodySharedSettingsSkinned * selfCpp = static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SoftBodySharedSettingsSkinned_t * JoltC_ArraySoftBodySharedSettingsSkinned_at(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self,
@@ -34,17 +32,18 @@ JoltC_SoftBodySharedSettingsSkinned_t * JoltC_ArraySoftBodySharedSettingsSkinned
   JoltC_SoftBodySharedSettingsSkinned_t* result = new JoltC_SoftBodySharedSettingsSkinned_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsSkinned_push_back(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self,
   JoltC_SoftBodySharedSettingsSkinned_t * inValue
 ) {
   ArraySoftBodySharedSettingsSkinned * selfCpp = static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
+  const SoftBodySharedSettingsSkinned * inValueCpp = static_cast<const SoftBodySharedSettingsSkinned *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SoftBodySharedSettingsSkinned *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsSkinned_reserve(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArraySoftBodySharedSettingsSkinned_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsSkinned_resize(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArraySoftBodySharedSettingsSkinned_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsSkinned_clear(
   JoltC_ArraySoftBodySharedSettingsSkinned_t * self
 ) {
   ArraySoftBodySharedSettingsSkinned * selfCpp = static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

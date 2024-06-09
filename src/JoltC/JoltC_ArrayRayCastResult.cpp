@@ -11,17 +11,15 @@ bool JoltC_ArrayRayCastResult_empty(
   JoltC_ArrayRayCastResult_t * self
 ) {
   ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArrayRayCastResult_size(
   JoltC_ArrayRayCastResult_t * self
 ) {
   ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_RayCastResult_t * JoltC_ArrayRayCastResult_at(
   JoltC_ArrayRayCastResult_t * self,
@@ -34,17 +32,18 @@ JoltC_RayCastResult_t * JoltC_ArrayRayCastResult_at(
   JoltC_RayCastResult_t* result = new JoltC_RayCastResult_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArrayRayCastResult_push_back(
   JoltC_ArrayRayCastResult_t * self,
   JoltC_RayCastResult_t * inValue
 ) {
   ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
+  const RayCastResult * inValueCpp = static_cast<const RayCastResult *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<RayCastResult *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArrayRayCastResult_reserve(
   JoltC_ArrayRayCastResult_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArrayRayCastResult_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArrayRayCastResult_resize(
   JoltC_ArrayRayCastResult_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArrayRayCastResult_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArrayRayCastResult_clear(
   JoltC_ArrayRayCastResult_t * self
 ) {
   ArrayRayCastResult * selfCpp = static_cast<ArrayRayCastResult *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

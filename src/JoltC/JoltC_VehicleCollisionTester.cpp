@@ -42,23 +42,22 @@ unsigned long JoltC_VehicleCollisionTester_GetRefCount(
   JoltC_VehicleCollisionTester_t * self
 ) {
   VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_VehicleCollisionTester_AddRef(
   JoltC_VehicleCollisionTester_t * self
 ) {
   VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_VehicleCollisionTester_Release(
   JoltC_VehicleCollisionTester_t * self
 ) {
   VehicleCollisionTester * selfCpp = static_cast<VehicleCollisionTester *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 

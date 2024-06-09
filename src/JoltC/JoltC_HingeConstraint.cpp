@@ -11,9 +11,8 @@ float JoltC_HingeConstraint_GetCurrentAngle(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  float result = selfCpp->GetCurrentAngle();
-  return result;
-};
+  return selfCpp->GetCurrentAngle();
+}
 
 void JoltC_HingeConstraint_SetMaxFrictionTorque(
   JoltC_HingeConstraint_t * self,
@@ -23,15 +22,14 @@ void JoltC_HingeConstraint_SetMaxFrictionTorque(
   selfCpp->SetMaxFrictionTorque(
     inFrictionTorque
   );
-};
+}
 
 float JoltC_HingeConstraint_GetMaxFrictionTorque(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  float result = selfCpp->GetMaxFrictionTorque();
-  return result;
-};
+  return selfCpp->GetMaxFrictionTorque();
+}
 
 JoltC_MotorSettings_t * JoltC_HingeConstraint_GetMotorSettings(
   JoltC_HingeConstraint_t * self
@@ -41,17 +39,18 @@ JoltC_MotorSettings_t * JoltC_HingeConstraint_GetMotorSettings(
   JoltC_MotorSettings_t* result = new JoltC_MotorSettings_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_HingeConstraint_SetMotorState(
   JoltC_HingeConstraint_t * self,
   JoltC_EMotorState inState
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
+  EMotorState inStateCpp = static_cast<EMotorState>(static_cast<int>(inState));
   selfCpp->SetMotorState(
-    static_cast<EMotorState>(static_cast<int>(inState))
+    inStateCpp
   );
-};
+}
 
 JoltC_EMotorState JoltC_HingeConstraint_GetMotorState(
   JoltC_HingeConstraint_t * self
@@ -59,7 +58,7 @@ JoltC_EMotorState JoltC_HingeConstraint_GetMotorState(
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
   EMotorState result = selfCpp->GetMotorState();
   return static_cast<JoltC_EMotorState>(static_cast<int>(result));
-};
+}
 
 void JoltC_HingeConstraint_SetTargetAngularVelocity(
   JoltC_HingeConstraint_t * self,
@@ -69,15 +68,14 @@ void JoltC_HingeConstraint_SetTargetAngularVelocity(
   selfCpp->SetTargetAngularVelocity(
     inAngularVelocity
   );
-};
+}
 
 float JoltC_HingeConstraint_GetTargetAngularVelocity(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  float result = selfCpp->GetTargetAngularVelocity();
-  return result;
-};
+  return selfCpp->GetTargetAngularVelocity();
+}
 
 void JoltC_HingeConstraint_SetTargetAngle(
   JoltC_HingeConstraint_t * self,
@@ -87,15 +85,14 @@ void JoltC_HingeConstraint_SetTargetAngle(
   selfCpp->SetTargetAngle(
     inAngle
   );
-};
+}
 
 float JoltC_HingeConstraint_GetTargetAngle(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  float result = selfCpp->GetTargetAngle();
-  return result;
-};
+  return selfCpp->GetTargetAngle();
+}
 
 void JoltC_HingeConstraint_SetLimits(
   JoltC_HingeConstraint_t * self,
@@ -107,31 +104,28 @@ void JoltC_HingeConstraint_SetLimits(
     inLimitsMin,
     inLimitsMax
   );
-};
+}
 
 float JoltC_HingeConstraint_GetLimitsMin(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  float result = selfCpp->GetLimitsMin();
-  return result;
-};
+  return selfCpp->GetLimitsMin();
+}
 
 float JoltC_HingeConstraint_GetLimitsMax(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  float result = selfCpp->GetLimitsMax();
-  return result;
-};
+  return selfCpp->GetLimitsMax();
+}
 
 bool JoltC_HingeConstraint_HasLimits(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  bool result = selfCpp->HasLimits();
-  return result;
-};
+  return selfCpp->HasLimits();
+}
 
 JoltC_SpringSettings_t * JoltC_HingeConstraint_GetLimitsSpringSettings(
   JoltC_HingeConstraint_t * self
@@ -141,115 +135,117 @@ JoltC_SpringSettings_t * JoltC_HingeConstraint_GetLimitsSpringSettings(
   JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_HingeConstraint_SetLimitsSpringSettings(
   JoltC_HingeConstraint_t * self,
   JoltC_SpringSettings_t * inLimitsSpringSettings
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
+  const SpringSettings * inLimitsSpringSettingsCpp = static_cast<const SpringSettings *>(inLimitsSpringSettings->obj);
   selfCpp->SetLimitsSpringSettings(
-    *reinterpret_cast<SpringSettings *>(inLimitsSpringSettings->obj)
+    *inLimitsSpringSettingsCpp
   );
-};
+}
 
 JoltC_Vec3_t * JoltC_HingeConstraint_GetTotalLambdaPosition(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  const Vec3& resultValue = selfCpp->GetTotalLambdaPosition();
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->GetTotalLambdaPosition();
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_Vector2_t * JoltC_HingeConstraint_GetTotalLambdaRotation(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  const Vector2& resultValue = selfCpp->GetTotalLambdaRotation();
-  JoltC_Vector2_t* result = new JoltC_Vector2_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vector2 * resultPtr = new Vector2();
+  *resultPtr = selfCpp->GetTotalLambdaRotation();
+  JoltC_Vector2_t * result = new JoltC_Vector2_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 float JoltC_HingeConstraint_GetTotalLambdaRotationLimits(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaRotationLimits();
-  return result;
-};
+  return selfCpp->GetTotalLambdaRotationLimits();
+}
 
 float JoltC_HingeConstraint_GetTotalLambdaMotor(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaMotor();
-  return result;
-};
+  return selfCpp->GetTotalLambdaMotor();
+}
 
 JoltC_Body_t * JoltC_HingeConstraint_GetBody1(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  const Body * resultValue = selfCpp->GetBody1();
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Body * resultPtr = selfCpp->GetBody1();
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Body_t * JoltC_HingeConstraint_GetBody2(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  const Body * resultValue = selfCpp->GetBody2();
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Body * resultPtr = selfCpp->GetBody2();
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Mat44_t * JoltC_HingeConstraint_GetConstraintToBody1Matrix(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  const Mat44& resultValue = selfCpp->GetConstraintToBody1Matrix();
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_Mat44_t * JoltC_HingeConstraint_GetConstraintToBody2Matrix(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  const Mat44& resultValue = selfCpp->GetConstraintToBody2Matrix();
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 unsigned long JoltC_HingeConstraint_GetRefCount(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_HingeConstraint_AddRef(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_HingeConstraint_Release(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_EConstraintType JoltC_HingeConstraint_GetType(
   JoltC_HingeConstraint_t * self
@@ -257,7 +253,7 @@ JoltC_EConstraintType JoltC_HingeConstraint_GetType(
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
   EConstraintType result = selfCpp->GetType();
   return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
-};
+}
 
 JoltC_EConstraintSubType JoltC_HingeConstraint_GetSubType(
   JoltC_HingeConstraint_t * self
@@ -265,15 +261,14 @@ JoltC_EConstraintSubType JoltC_HingeConstraint_GetSubType(
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
   EConstraintSubType result = selfCpp->GetSubType();
   return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
-};
+}
 
 unsigned long JoltC_HingeConstraint_GetConstraintPriority(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
-};
+  return selfCpp->GetConstraintPriority();
+}
 
 void JoltC_HingeConstraint_SetConstraintPriority(
   JoltC_HingeConstraint_t * self,
@@ -283,7 +278,7 @@ void JoltC_HingeConstraint_SetConstraintPriority(
   selfCpp->SetConstraintPriority(
     inPriority
   );
-};
+}
 
 void JoltC_HingeConstraint_SetNumVelocityStepsOverride(
   JoltC_HingeConstraint_t * self,
@@ -293,15 +288,14 @@ void JoltC_HingeConstraint_SetNumVelocityStepsOverride(
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
-};
+}
 
 long JoltC_HingeConstraint_GetNumVelocityStepsOverride(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
-};
+  return selfCpp->GetNumVelocityStepsOverride();
+}
 
 void JoltC_HingeConstraint_SetNumPositionStepsOverride(
   JoltC_HingeConstraint_t * self,
@@ -311,15 +305,14 @@ void JoltC_HingeConstraint_SetNumPositionStepsOverride(
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
-};
+}
 
 long JoltC_HingeConstraint_GetNumPositionStepsOverride(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
-};
+  return selfCpp->GetNumPositionStepsOverride();
+}
 
 void JoltC_HingeConstraint_SetEnabled(
   JoltC_HingeConstraint_t * self,
@@ -329,31 +322,28 @@ void JoltC_HingeConstraint_SetEnabled(
   selfCpp->SetEnabled(
     inEnabled
   );
-};
+}
 
 bool JoltC_HingeConstraint_GetEnabled(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
-};
+  return selfCpp->GetEnabled();
+}
 
 bool JoltC_HingeConstraint_IsActive(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
-};
+  return selfCpp->IsActive();
+}
 
 unsigned long long int JoltC_HingeConstraint_GetUserData(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
-};
+  return selfCpp->GetUserData();
+}
 
 void JoltC_HingeConstraint_SetUserData(
   JoltC_HingeConstraint_t * self,
@@ -363,14 +353,14 @@ void JoltC_HingeConstraint_SetUserData(
   selfCpp->SetUserData(
     inUserData
   );
-};
+}
 
 void JoltC_HingeConstraint_ResetWarmStart(
   JoltC_HingeConstraint_t * self
 ) {
   HingeConstraint * selfCpp = static_cast<HingeConstraint *>(self->obj);
   selfCpp->ResetWarmStart();
-};
+}
 
 //endregion
 

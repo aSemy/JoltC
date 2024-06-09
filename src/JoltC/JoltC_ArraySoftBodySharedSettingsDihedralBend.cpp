@@ -11,17 +11,15 @@ bool JoltC_ArraySoftBodySharedSettingsDihedralBend_empty(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySoftBodySharedSettingsDihedralBend_size(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_ArraySoftBodySharedSettingsDihedralBend_at(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
@@ -34,17 +32,18 @@ JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_ArraySoftBodySharedSettingsDi
   JoltC_SoftBodySharedSettingsDihedralBend_t* result = new JoltC_SoftBodySharedSettingsDihedralBend_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsDihedralBend_push_back(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
   JoltC_SoftBodySharedSettingsDihedralBend_t * inValue
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
+  const SoftBodySharedSettingsDihedralBend * inValueCpp = static_cast<const SoftBodySharedSettingsDihedralBend *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SoftBodySharedSettingsDihedralBend *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsDihedralBend_reserve(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsDihedralBend_resize(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsDihedralBend_clear(
   JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self
 ) {
   ArraySoftBodySharedSettingsDihedralBend * selfCpp = static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

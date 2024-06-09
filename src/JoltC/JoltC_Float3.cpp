@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `Float3` instance.
+ */
 JoltC_Float3_t * JoltC_Float3_new(
   float inX,
   float inY,
@@ -31,22 +34,22 @@ bool JoltC_Float3_Equals(
   JoltC_Float3_t * inV
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
-  bool result = selfCpp->operator==(
-    *reinterpret_cast<Float3 *>(inV->obj)
+  const Float3 * inVCpp = static_cast<const Float3 *>(inV->obj);
+  return selfCpp->operator==(
+    *inVCpp
   );
-  return result;
-};
+}
 
 bool JoltC_Float3_NotEquals(
   JoltC_Float3_t * self,
   JoltC_Float3_t * inV
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
-  bool result = selfCpp->operator!=(
-    *reinterpret_cast<Float3 *>(inV->obj)
+  const Float3 * inVCpp = static_cast<const Float3 *>(inV->obj);
+  return selfCpp->operator!=(
+    *inVCpp
   );
-  return result;
-};
+}
 
 //endregion
 
@@ -56,9 +59,8 @@ float JoltC_Float3_x_Get(
   JoltC_Float3_t * self
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
-  float result = selfCpp->x;
-  return result;
-};
+  return selfCpp->x;
+}
 
 void JoltC_Float3_x_Set(
   JoltC_Float3_t * self,
@@ -72,9 +74,8 @@ float JoltC_Float3_y_Get(
   JoltC_Float3_t * self
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
-  float result = selfCpp->y;
-  return result;
-};
+  return selfCpp->y;
+}
 
 void JoltC_Float3_y_Set(
   JoltC_Float3_t * self,
@@ -88,9 +89,8 @@ float JoltC_Float3_z_Get(
   JoltC_Float3_t * self
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
-  float result = selfCpp->z;
-  return result;
-};
+  return selfCpp->z;
+}
 
 void JoltC_Float3_z_Set(
   JoltC_Float3_t * self,

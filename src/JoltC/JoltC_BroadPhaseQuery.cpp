@@ -15,13 +15,17 @@ void JoltC_BroadPhaseQuery_CastRay(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  const RayCast * inRayCpp = static_cast<const RayCast *>(inRay->obj);
+  RayCastBodyCollector * ioCollectorCpp = static_cast<RayCastBodyCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
   selfCpp->CastRay(
-    *reinterpret_cast<RayCast *>(inRay->obj),
-    *reinterpret_cast<RayCastBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+    *inRayCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseFilterCpp,
+    *inObjectLayerFilterCpp
   );
-};
+}
 
 void JoltC_BroadPhaseQuery_CollideAABox(
   JoltC_BroadPhaseQuery_t * self,
@@ -31,13 +35,17 @@ void JoltC_BroadPhaseQuery_CollideAABox(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  const AABox * inBoxCpp = static_cast<const AABox *>(inBox->obj);
+  CollideShapeBodyCollector * ioCollectorCpp = static_cast<CollideShapeBodyCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
   selfCpp->CollideAABox(
-    *reinterpret_cast<AABox *>(inBox->obj),
-    *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+    *inBoxCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseFilterCpp,
+    *inObjectLayerFilterCpp
   );
-};
+}
 
 void JoltC_BroadPhaseQuery_CollideSphere(
   JoltC_BroadPhaseQuery_t * self,
@@ -48,14 +56,18 @@ void JoltC_BroadPhaseQuery_CollideSphere(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  const Vec3 * inCenterCpp = static_cast<const Vec3 *>(inCenter->obj);
+  CollideShapeBodyCollector * ioCollectorCpp = static_cast<CollideShapeBodyCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseLayerFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
   selfCpp->CollideSphere(
-    *reinterpret_cast<Vec3 *>(inCenter->obj),
+    *inCenterCpp,
     inRadius,
-    *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+    *ioCollectorCpp,
+    *inBroadPhaseLayerFilterCpp,
+    *inObjectLayerFilterCpp
   );
-};
+}
 
 void JoltC_BroadPhaseQuery_CollidePoint(
   JoltC_BroadPhaseQuery_t * self,
@@ -65,13 +77,17 @@ void JoltC_BroadPhaseQuery_CollidePoint(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  const Vec3 * inPointCpp = static_cast<const Vec3 *>(inPoint->obj);
+  CollideShapeBodyCollector * ioCollectorCpp = static_cast<CollideShapeBodyCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
   selfCpp->CollidePoint(
-    *reinterpret_cast<Vec3 *>(inPoint->obj),
-    *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+    *inPointCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseFilterCpp,
+    *inObjectLayerFilterCpp
   );
-};
+}
 
 void JoltC_BroadPhaseQuery_CollideOrientedBox(
   JoltC_BroadPhaseQuery_t * self,
@@ -81,13 +97,17 @@ void JoltC_BroadPhaseQuery_CollideOrientedBox(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  const OrientedBox * inBoxCpp = static_cast<const OrientedBox *>(inBox->obj);
+  CollideShapeBodyCollector * ioCollectorCpp = static_cast<CollideShapeBodyCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
   selfCpp->CollideOrientedBox(
-    *reinterpret_cast<OrientedBox *>(inBox->obj),
-    *reinterpret_cast<CollideShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+    *inBoxCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseFilterCpp,
+    *inObjectLayerFilterCpp
   );
-};
+}
 
 void JoltC_BroadPhaseQuery_CastAABox(
   JoltC_BroadPhaseQuery_t * self,
@@ -97,13 +117,17 @@ void JoltC_BroadPhaseQuery_CastAABox(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BroadPhaseQuery * selfCpp = static_cast<BroadPhaseQuery *>(self->obj);
+  const AABoxCast * inBoxCpp = static_cast<const AABoxCast *>(inBox->obj);
+  CastShapeBodyCollector * ioCollectorCpp = static_cast<CastShapeBodyCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
   selfCpp->CastAABox(
-    *reinterpret_cast<AABoxCast *>(inBox->obj),
-    *reinterpret_cast<CastShapeBodyCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+    *inBoxCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseFilterCpp,
+    *inObjectLayerFilterCpp
   );
-};
+}
 
 //endregion
 

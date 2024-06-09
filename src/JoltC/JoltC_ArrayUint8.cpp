@@ -11,28 +11,25 @@ bool JoltC_ArrayUint8_empty(
   JoltC_ArrayUint8_t * self
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArrayUint8_size(
   JoltC_ArrayUint8_t * self
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 unsigned char JoltC_ArrayUint8_at(
   JoltC_ArrayUint8_t * self,
   long inIndex
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  unsigned char result = selfCpp->at(
+  return selfCpp->at(
     inIndex
   );
-  return result;
-};
+}
 
 void JoltC_ArrayUint8_push_back(
   JoltC_ArrayUint8_t * self,
@@ -42,7 +39,7 @@ void JoltC_ArrayUint8_push_back(
   selfCpp->push_back(
     inValue
   );
-};
+}
 
 void JoltC_ArrayUint8_reserve(
   JoltC_ArrayUint8_t * self,
@@ -52,7 +49,7 @@ void JoltC_ArrayUint8_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArrayUint8_resize(
   JoltC_ArrayUint8_t * self,
@@ -62,24 +59,24 @@ void JoltC_ArrayUint8_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArrayUint8_clear(
   JoltC_ArrayUint8_t * self
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
   selfCpp->clear();
-};
+}
 
 JoltC_Uint8MemRef_t * JoltC_ArrayUint8_data(
   JoltC_ArrayUint8_t * self
 ) {
   ArrayUint8 * selfCpp = static_cast<ArrayUint8 *>(self->obj);
-  const Uint8MemRef * resultValue = selfCpp->data();
-  JoltC_Uint8MemRef_t* result = new JoltC_Uint8MemRef_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Uint8MemRef * resultPtr = selfCpp->data();
+  JoltC_Uint8MemRef_t * result = new JoltC_Uint8MemRef_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 //endregion
 

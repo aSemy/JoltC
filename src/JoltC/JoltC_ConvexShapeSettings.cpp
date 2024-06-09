@@ -69,40 +69,40 @@ unsigned long JoltC_ConvexShapeSettings_GetRefCount(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_ConvexShapeSettings_AddRef(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_ConvexShapeSettings_Release(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_Shape_ShapeResult_t * JoltC_ConvexShapeSettings_Create(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  const Shape::ShapeResult& resultValue = selfCpp->Create();
-  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Shape::ShapeResult * resultPtr = new Shape::ShapeResult();
+  *resultPtr = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t * result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_ConvexShapeSettings_ClearCachedResult(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
   selfCpp->ClearCachedResult();
-};
+}
 
 //endregion
 
@@ -112,27 +112,26 @@ JoltC_PhysicsMaterial_t * JoltC_ConvexShapeSettings_mMaterial_Get(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
-  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const PhysicsMaterial * resultPtr = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t * result = new JoltC_PhysicsMaterial_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_ConvexShapeSettings_mMaterial_Set(
   JoltC_ConvexShapeSettings_t * self,
   JoltC_PhysicsMaterial_t * mMaterial
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);
+  selfCpp->mMaterial = static_cast<const PhysicsMaterial *>(mMaterial->obj);
 };
 
 float JoltC_ConvexShapeSettings_mDensity_Get(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  float result = selfCpp->mDensity;
-  return result;
-};
+  return selfCpp->mDensity;
+}
 
 void JoltC_ConvexShapeSettings_mDensity_Set(
   JoltC_ConvexShapeSettings_t * self,
@@ -146,9 +145,8 @@ unsigned long long int JoltC_ConvexShapeSettings_mUserData_Get(
   JoltC_ConvexShapeSettings_t * self
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
-  unsigned long long int result = selfCpp->mUserData;
-  return result;
-};
+  return selfCpp->mUserData;
+}
 
 void JoltC_ConvexShapeSettings_mUserData_Set(
   JoltC_ConvexShapeSettings_t * self,

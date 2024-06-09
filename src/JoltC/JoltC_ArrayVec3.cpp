@@ -11,17 +11,15 @@ bool JoltC_ArrayVec3_empty(
   JoltC_ArrayVec3_t * self
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArrayVec3_size(
   JoltC_ArrayVec3_t * self
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_Vec3_t * JoltC_ArrayVec3_at(
   JoltC_ArrayVec3_t * self,
@@ -34,17 +32,18 @@ JoltC_Vec3_t * JoltC_ArrayVec3_at(
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArrayVec3_push_back(
   JoltC_ArrayVec3_t * self,
   JoltC_Vec3_t * inValue
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
+  const Vec3 * inValueCpp = static_cast<const Vec3 *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<Vec3 *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArrayVec3_reserve(
   JoltC_ArrayVec3_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArrayVec3_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArrayVec3_resize(
   JoltC_ArrayVec3_t * self,
@@ -64,24 +63,24 @@ void JoltC_ArrayVec3_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArrayVec3_clear(
   JoltC_ArrayVec3_t * self
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
   selfCpp->clear();
-};
+}
 
 JoltC_Vec3MemRef_t * JoltC_ArrayVec3_data(
   JoltC_ArrayVec3_t * self
 ) {
   ArrayVec3 * selfCpp = static_cast<ArrayVec3 *>(self->obj);
-  const Vec3MemRef * resultValue = selfCpp->data();
-  JoltC_Vec3MemRef_t* result = new JoltC_Vec3MemRef_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Vec3MemRef * resultPtr = selfCpp->data();
+  JoltC_Vec3MemRef_t * result = new JoltC_Vec3MemRef_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 //endregion
 

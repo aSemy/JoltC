@@ -25,20 +25,22 @@ void JoltC_SkeletalAnimationJointState_FromMatrix(
   JoltC_Mat44_t * inMatrix
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
+  const Mat44 * inMatrixCpp = static_cast<const Mat44 *>(inMatrix->obj);
   selfCpp->FromMatrix(
-    *reinterpret_cast<Mat44 *>(inMatrix->obj)
+    *inMatrixCpp
   );
-};
+}
 
 JoltC_Mat44_t * JoltC_SkeletalAnimationJointState_ToMatrix(
   JoltC_SkeletalAnimationJointState_t * self
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
-  const Mat44& resultValue = selfCpp->ToMatrix();
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->ToMatrix();
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 //endregion
 
@@ -48,36 +50,38 @@ JoltC_Vec3_t * JoltC_SkeletalAnimationJointState_mTranslation_Get(
   JoltC_SkeletalAnimationJointState_t * self
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
-  const Vec3& resultValue = selfCpp->mTranslation;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mTranslation;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_SkeletalAnimationJointState_mTranslation_Set(
   JoltC_SkeletalAnimationJointState_t * self,
   JoltC_Vec3_t * mTranslation
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
-  selfCpp->mTranslation = *reinterpret_cast<Vec3 *>(mTranslation->obj);
+  selfCpp->mTranslation = *static_cast<Vec3 *>(mTranslation->obj);
 };
 
 JoltC_Quat_t * JoltC_SkeletalAnimationJointState_mRotation_Get(
   JoltC_SkeletalAnimationJointState_t * self
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
-  const Quat& resultValue = selfCpp->mRotation;
-  JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Quat * resultPtr = new Quat();
+  *resultPtr = selfCpp->mRotation;
+  JoltC_Quat_t * result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_SkeletalAnimationJointState_mRotation_Set(
   JoltC_SkeletalAnimationJointState_t * self,
   JoltC_Quat_t * mRotation
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
-  selfCpp->mRotation = *reinterpret_cast<Quat *>(mRotation->obj);
+  selfCpp->mRotation = *static_cast<Quat *>(mRotation->obj);
 };
 
 //endregion

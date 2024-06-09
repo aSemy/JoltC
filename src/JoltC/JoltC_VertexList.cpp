@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `VertexList` instance.
+ */
 JoltC_VertexList_t * JoltC_VertexList_new() {
   JoltC_VertexList_t * cInstance = new JoltC_VertexList_t();
   VertexList * cppInstance = new VertexList();
@@ -22,17 +25,15 @@ bool JoltC_VertexList_empty(
   JoltC_VertexList_t * self
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_VertexList_size(
   JoltC_VertexList_t * self
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_Float3_t * JoltC_VertexList_at(
   JoltC_VertexList_t * self,
@@ -45,17 +46,18 @@ JoltC_Float3_t * JoltC_VertexList_at(
   JoltC_Float3_t* result = new JoltC_Float3_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_VertexList_push_back(
   JoltC_VertexList_t * self,
   JoltC_Float3_t * inVertex
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
+  const Float3 * inVertexCpp = static_cast<const Float3 *>(inVertex->obj);
   selfCpp->push_back(
-    *reinterpret_cast<Float3 *>(inVertex->obj)
+    *inVertexCpp
   );
-};
+}
 
 void JoltC_VertexList_reserve(
   JoltC_VertexList_t * self,
@@ -65,7 +67,7 @@ void JoltC_VertexList_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_VertexList_resize(
   JoltC_VertexList_t * self,
@@ -75,14 +77,14 @@ void JoltC_VertexList_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_VertexList_clear(
   JoltC_VertexList_t * self
 ) {
   VertexList * selfCpp = static_cast<VertexList *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

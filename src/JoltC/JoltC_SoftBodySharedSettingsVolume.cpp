@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `SoftBodySharedSettingsVolume` instance.
+ */
 JoltC_SoftBodySharedSettingsVolume_t * JoltC_SoftBodySharedSettingsVolume_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
@@ -37,8 +40,7 @@ size_t JoltC_SoftBodySharedSettingsVolume_mVertex_Get(
   SoftBodySharedSettingsVolume * selfCpp = static_cast<SoftBodySharedSettingsVolume *>(self->obj);
   size_t resultSize = std::size(selfCpp->mVertex);
   // TODO get result array...
-  return resultSize;
-};
+}
 
 void JoltC_SoftBodySharedSettingsVolume_mVertex_Set(
   JoltC_SoftBodySharedSettingsVolume_t * self,
@@ -55,9 +57,8 @@ float JoltC_SoftBodySharedSettingsVolume_mSixRestVolume_Get(
   JoltC_SoftBodySharedSettingsVolume_t * self
 ) {
   SoftBodySharedSettingsVolume * selfCpp = static_cast<SoftBodySharedSettingsVolume *>(self->obj);
-  float result = selfCpp->mSixRestVolume;
-  return result;
-};
+  return selfCpp->mSixRestVolume;
+}
 
 void JoltC_SoftBodySharedSettingsVolume_mSixRestVolume_Set(
   JoltC_SoftBodySharedSettingsVolume_t * self,
@@ -71,9 +72,8 @@ float JoltC_SoftBodySharedSettingsVolume_mCompliance_Get(
   JoltC_SoftBodySharedSettingsVolume_t * self
 ) {
   SoftBodySharedSettingsVolume * selfCpp = static_cast<SoftBodySharedSettingsVolume *>(self->obj);
-  float result = selfCpp->mCompliance;
-  return result;
-};
+  return selfCpp->mCompliance;
+}
 
 void JoltC_SoftBodySharedSettingsVolume_mCompliance_Set(
   JoltC_SoftBodySharedSettingsVolume_t * self,

@@ -42,9 +42,8 @@ unsigned long JoltC_BroadPhaseLayerInterface_GetNumBroadPhaseLayers(
   JoltC_BroadPhaseLayerInterface_t * self
 ) {
   BroadPhaseLayerInterface * selfCpp = static_cast<BroadPhaseLayerInterface *>(self->obj);
-  unsigned long result = selfCpp->GetNumBroadPhaseLayers();
-  return result;
-};
+  return selfCpp->GetNumBroadPhaseLayers();
+}
 
 //endregion
 

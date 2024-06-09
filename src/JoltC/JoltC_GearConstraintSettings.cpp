@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `GearConstraintSettings` instance.
+ */
 JoltC_GearConstraintSettings_t * JoltC_GearConstraintSettings_new() {
   JoltC_GearConstraintSettings_t * cInstance = new JoltC_GearConstraintSettings_t();
   GearConstraintSettings * cppInstance = new GearConstraintSettings();
@@ -28,7 +31,7 @@ void JoltC_GearConstraintSettings_SetRatio(
     inNumTeethGear1,
     inNumTeethGear2
   );
-};
+}
 
 JoltC_Constraint_t * JoltC_GearConstraintSettings_Create(
   JoltC_GearConstraintSettings_t * self,
@@ -36,36 +39,37 @@ JoltC_Constraint_t * JoltC_GearConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  const Constraint * resultValue = selfCpp->Create(
-    *reinterpret_cast<Body *>(inBody1->obj),
-    *reinterpret_cast<Body *>(inBody2->obj)
+  Body * inBody1Cpp = static_cast<Body *>(inBody1->obj);
+  Body * inBody2Cpp = static_cast<Body *>(inBody2->obj);
+  const Constraint * resultPtr = selfCpp->Create(
+    *inBody1Cpp,
+    *inBody2Cpp
   );
-  JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Constraint_t * result = new JoltC_Constraint_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 unsigned long JoltC_GearConstraintSettings_GetRefCount(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_GearConstraintSettings_AddRef(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_GearConstraintSettings_Release(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 
@@ -77,7 +81,7 @@ JoltC_EConstraintSpace JoltC_GearConstraintSettings_mSpace_Get(
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   EConstraintSpace result = selfCpp->mSpace;
   return static_cast<JoltC_EConstraintSpace>(static_cast<int>(result));
-};
+}
 
 void JoltC_GearConstraintSettings_mSpace_Set(
   JoltC_GearConstraintSettings_t * self,
@@ -91,45 +95,46 @@ JoltC_Vec3_t * JoltC_GearConstraintSettings_mHingeAxis1_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  const Vec3& resultValue = selfCpp->mHingeAxis1;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mHingeAxis1;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_GearConstraintSettings_mHingeAxis1_Set(
   JoltC_GearConstraintSettings_t * self,
   JoltC_Vec3_t * mHingeAxis1
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  selfCpp->mHingeAxis1 = *reinterpret_cast<Vec3 *>(mHingeAxis1->obj);
+  selfCpp->mHingeAxis1 = *static_cast<Vec3 *>(mHingeAxis1->obj);
 };
 
 JoltC_Vec3_t * JoltC_GearConstraintSettings_mHingeAxis2_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  const Vec3& resultValue = selfCpp->mHingeAxis2;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mHingeAxis2;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_GearConstraintSettings_mHingeAxis2_Set(
   JoltC_GearConstraintSettings_t * self,
   JoltC_Vec3_t * mHingeAxis2
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  selfCpp->mHingeAxis2 = *reinterpret_cast<Vec3 *>(mHingeAxis2->obj);
+  selfCpp->mHingeAxis2 = *static_cast<Vec3 *>(mHingeAxis2->obj);
 };
 
 float JoltC_GearConstraintSettings_mRatio_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  float result = selfCpp->mRatio;
-  return result;
-};
+  return selfCpp->mRatio;
+}
 
 void JoltC_GearConstraintSettings_mRatio_Set(
   JoltC_GearConstraintSettings_t * self,
@@ -143,9 +148,8 @@ bool JoltC_GearConstraintSettings_mEnabled_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  bool result = selfCpp->mEnabled;
-  return result;
-};
+  return selfCpp->mEnabled;
+}
 
 void JoltC_GearConstraintSettings_mEnabled_Set(
   JoltC_GearConstraintSettings_t * self,
@@ -159,9 +163,8 @@ long JoltC_GearConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  long result = selfCpp->mNumVelocityStepsOverride;
-  return result;
-};
+  return selfCpp->mNumVelocityStepsOverride;
+}
 
 void JoltC_GearConstraintSettings_mNumVelocityStepsOverride_Set(
   JoltC_GearConstraintSettings_t * self,
@@ -175,9 +178,8 @@ long JoltC_GearConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_GearConstraintSettings_t * self
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
-  long result = selfCpp->mNumPositionStepsOverride;
-  return result;
-};
+  return selfCpp->mNumPositionStepsOverride;
+}
 
 void JoltC_GearConstraintSettings_mNumPositionStepsOverride_Set(
   JoltC_GearConstraintSettings_t * self,

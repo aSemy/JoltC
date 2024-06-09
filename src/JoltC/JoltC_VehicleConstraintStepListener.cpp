@@ -7,12 +7,16 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `VehicleConstraintStepListener` instance.
+ */
 JoltC_VehicleConstraintStepListener_t * JoltC_VehicleConstraintStepListener_new(
   JoltC_VehicleConstraint_t * inConstraint
 ) {
+  VehicleConstraint * inConstraintCpp = static_cast<VehicleConstraint *>(inConstraint->obj);
   JoltC_VehicleConstraintStepListener_t * cInstance = new JoltC_VehicleConstraintStepListener_t();
   VehicleConstraintStepListener * cppInstance = new VehicleConstraintStepListener(
-    reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
+    inConstraintCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;

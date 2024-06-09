@@ -24,9 +24,8 @@ bool JoltC_PathConstraintPath_IsLooping(
   JoltC_PathConstraintPath_t * self
 ) {
   PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  bool result = selfCpp->IsLooping();
-  return result;
-};
+  return selfCpp->IsLooping();
+}
 
 void JoltC_PathConstraintPath_SetIsLooping(
   JoltC_PathConstraintPath_t * self,
@@ -36,29 +35,28 @@ void JoltC_PathConstraintPath_SetIsLooping(
   selfCpp->SetIsLooping(
     inIsLooping
   );
-};
+}
 
 unsigned long JoltC_PathConstraintPath_GetRefCount(
   JoltC_PathConstraintPath_t * self
 ) {
   PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_PathConstraintPath_AddRef(
   JoltC_PathConstraintPath_t * self
 ) {
   PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_PathConstraintPath_Release(
   JoltC_PathConstraintPath_t * self
 ) {
   PathConstraintPath * selfCpp = static_cast<PathConstraintPath *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 

@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `SoftBodySharedSettingsLRA` instance.
+ */
 JoltC_SoftBodySharedSettingsLRA_t * JoltC_SoftBodySharedSettingsLRA_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
@@ -33,8 +36,7 @@ size_t JoltC_SoftBodySharedSettingsLRA_mVertex_Get(
   SoftBodySharedSettingsLRA * selfCpp = static_cast<SoftBodySharedSettingsLRA *>(self->obj);
   size_t resultSize = std::size(selfCpp->mVertex);
   // TODO get result array...
-  return resultSize;
-};
+}
 
 void JoltC_SoftBodySharedSettingsLRA_mVertex_Set(
   JoltC_SoftBodySharedSettingsLRA_t * self,
@@ -51,9 +53,8 @@ float JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Get(
   JoltC_SoftBodySharedSettingsLRA_t * self
 ) {
   SoftBodySharedSettingsLRA * selfCpp = static_cast<SoftBodySharedSettingsLRA *>(self->obj);
-  float result = selfCpp->mMaxDistance;
-  return result;
-};
+  return selfCpp->mMaxDistance;
+}
 
 void JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Set(
   JoltC_SoftBodySharedSettingsLRA_t * self,

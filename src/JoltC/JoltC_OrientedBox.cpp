@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `OrientedBox` instance.
+ */
 JoltC_OrientedBox_t * JoltC_OrientedBox_new_0() {
   JoltC_OrientedBox_t * cInstance = new JoltC_OrientedBox_t();
   OrientedBox * cppInstance = new OrientedBox();
@@ -14,14 +17,19 @@ JoltC_OrientedBox_t * JoltC_OrientedBox_new_0() {
   return cInstance;
 };
 
+/**
+  Construct a new `OrientedBox` instance.
+ */
 JoltC_OrientedBox_t * JoltC_OrientedBox_new_1(
   JoltC_Mat44_t * inOrientation,
   JoltC_Vec3_t * inHalfExtents
 ) {
+  const Mat44 * inOrientationCpp = static_cast<const Mat44 *>(inOrientation->obj);
+  const Vec3 * inHalfExtentsCpp = static_cast<const Vec3 *>(inHalfExtents->obj);
   JoltC_OrientedBox_t * cInstance = new JoltC_OrientedBox_t();
   OrientedBox * cppInstance = new OrientedBox(
-    *reinterpret_cast<Mat44 *>(inOrientation->obj),
-    *reinterpret_cast<Vec3 *>(inHalfExtents->obj)
+    *inOrientationCpp,
+    *inHalfExtentsCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
@@ -35,36 +43,38 @@ JoltC_Mat44_t * JoltC_OrientedBox_mOrientation_Get(
   JoltC_OrientedBox_t * self
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
-  const Mat44& resultValue = selfCpp->mOrientation;
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->mOrientation;
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_OrientedBox_mOrientation_Set(
   JoltC_OrientedBox_t * self,
   JoltC_Mat44_t * mOrientation
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
-  selfCpp->mOrientation = *reinterpret_cast<Mat44 *>(mOrientation->obj);
+  selfCpp->mOrientation = *static_cast<Mat44 *>(mOrientation->obj);
 };
 
 JoltC_Vec3_t * JoltC_OrientedBox_mHalfExtents_Get(
   JoltC_OrientedBox_t * self
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
-  const Vec3& resultValue = selfCpp->mHalfExtents;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mHalfExtents;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_OrientedBox_mHalfExtents_Set(
   JoltC_OrientedBox_t * self,
   JoltC_Vec3_t * mHalfExtents
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
-  selfCpp->mHalfExtents = *reinterpret_cast<Vec3 *>(mHalfExtents->obj);
+  selfCpp->mHalfExtents = *static_cast<Vec3 *>(mHalfExtents->obj);
 };
 
 //endregion

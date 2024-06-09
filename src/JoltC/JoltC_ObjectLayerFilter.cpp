@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `ObjectLayerFilter` instance.
+ */
 JoltC_ObjectLayerFilter_t * JoltC_ObjectLayerFilter_new() {
   JoltC_ObjectLayerFilter_t * cInstance = new JoltC_ObjectLayerFilter_t();
   ObjectLayerFilter * cppInstance = new ObjectLayerFilter();

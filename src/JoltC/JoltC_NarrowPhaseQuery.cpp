@@ -18,16 +18,23 @@ void JoltC_NarrowPhaseQuery_CastRay(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  const RRayCast * inRayCpp = static_cast<const RRayCast *>(inRay->obj);
+  const RayCastSettings * inRayCastSettingsCpp = static_cast<const RayCastSettings *>(inRayCastSettings->obj);
+  CastRayCollector * ioCollectorCpp = static_cast<CastRayCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseLayerFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
+  const BodyFilter * inBodyFilterCpp = static_cast<const BodyFilter *>(inBodyFilter->obj);
+  const ShapeFilter * inShapeFilterCpp = static_cast<const ShapeFilter *>(inShapeFilter->obj);
   selfCpp->CastRay(
-    *reinterpret_cast<RRayCast *>(inRay->obj),
-    *reinterpret_cast<RayCastSettings *>(inRayCastSettings->obj),
-    *reinterpret_cast<CastRayCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    *inRayCpp,
+    *inRayCastSettingsCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseLayerFilterCpp,
+    *inObjectLayerFilterCpp,
+    *inBodyFilterCpp,
+    *inShapeFilterCpp
   );
-};
+}
 
 void JoltC_NarrowPhaseQuery_CollidePoint(
   JoltC_NarrowPhaseQuery_t * self,
@@ -39,15 +46,21 @@ void JoltC_NarrowPhaseQuery_CollidePoint(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  const RVec3 * inPointCpp = static_cast<const RVec3 *>(inPoint->obj);
+  CollidePointCollector * ioCollectorCpp = static_cast<CollidePointCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseLayerFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
+  const BodyFilter * inBodyFilterCpp = static_cast<const BodyFilter *>(inBodyFilter->obj);
+  const ShapeFilter * inShapeFilterCpp = static_cast<const ShapeFilter *>(inShapeFilter->obj);
   selfCpp->CollidePoint(
-    *reinterpret_cast<RVec3 *>(inPoint->obj),
-    *reinterpret_cast<CollidePointCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    *inPointCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseLayerFilterCpp,
+    *inObjectLayerFilterCpp,
+    *inBodyFilterCpp,
+    *inShapeFilterCpp
   );
-};
+}
 
 void JoltC_NarrowPhaseQuery_CollideShape(
   JoltC_NarrowPhaseQuery_t * self,
@@ -63,19 +76,29 @@ void JoltC_NarrowPhaseQuery_CollideShape(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  const Shape * inShapeCpp = static_cast<const Shape *>(inShape->obj);
+  const Vec3 * inShapeScaleCpp = static_cast<const Vec3 *>(inShapeScale->obj);
+  const RMat44 * inCenterOfMassTransformCpp = static_cast<const RMat44 *>(inCenterOfMassTransform->obj);
+  const CollideShapeSettings * inCollideShapeSettingsCpp = static_cast<const CollideShapeSettings *>(inCollideShapeSettings->obj);
+  const RVec3 * inBaseOffsetCpp = static_cast<const RVec3 *>(inBaseOffset->obj);
+  CollideShapeCollector * ioCollectorCpp = static_cast<CollideShapeCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseLayerFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
+  const BodyFilter * inBodyFilterCpp = static_cast<const BodyFilter *>(inBodyFilter->obj);
+  const ShapeFilter * inShapeFilterCpp = static_cast<const ShapeFilter *>(inShapeFilter->obj);
   selfCpp->CollideShape(
-    reinterpret_cast<Shape *>(inShape->obj),
-    *reinterpret_cast<Vec3 *>(inShapeScale->obj),
-    *reinterpret_cast<RMat44 *>(inCenterOfMassTransform->obj),
-    *reinterpret_cast<CollideShapeSettings *>(inCollideShapeSettings->obj),
-    *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
-    *reinterpret_cast<CollideShapeCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    inShapeCpp,
+    *inShapeScaleCpp,
+    *inCenterOfMassTransformCpp,
+    *inCollideShapeSettingsCpp,
+    *inBaseOffsetCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseLayerFilterCpp,
+    *inObjectLayerFilterCpp,
+    *inBodyFilterCpp,
+    *inShapeFilterCpp
   );
-};
+}
 
 void JoltC_NarrowPhaseQuery_CastShape(
   JoltC_NarrowPhaseQuery_t * self,
@@ -89,17 +112,25 @@ void JoltC_NarrowPhaseQuery_CastShape(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  const RShapeCast * inShapeCastCpp = static_cast<const RShapeCast *>(inShapeCast->obj);
+  const ShapeCastSettings * inShapeCastSettingsCpp = static_cast<const ShapeCastSettings *>(inShapeCastSettings->obj);
+  const RVec3 * inBaseOffsetCpp = static_cast<const RVec3 *>(inBaseOffset->obj);
+  CastShapeCollector * ioCollectorCpp = static_cast<CastShapeCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseLayerFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
+  const BodyFilter * inBodyFilterCpp = static_cast<const BodyFilter *>(inBodyFilter->obj);
+  const ShapeFilter * inShapeFilterCpp = static_cast<const ShapeFilter *>(inShapeFilter->obj);
   selfCpp->CastShape(
-    *reinterpret_cast<RShapeCast *>(inShapeCast->obj),
-    *reinterpret_cast<ShapeCastSettings *>(inShapeCastSettings->obj),
-    *reinterpret_cast<RVec3 *>(inBaseOffset->obj),
-    *reinterpret_cast<CastShapeCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    *inShapeCastCpp,
+    *inShapeCastSettingsCpp,
+    *inBaseOffsetCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseLayerFilterCpp,
+    *inObjectLayerFilterCpp,
+    *inBodyFilterCpp,
+    *inShapeFilterCpp
   );
-};
+}
 
 void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
   JoltC_NarrowPhaseQuery_t * self,
@@ -111,15 +142,21 @@ void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
   JoltC_ShapeFilter_t * inShapeFilter
 ) {
   NarrowPhaseQuery * selfCpp = static_cast<NarrowPhaseQuery *>(self->obj);
+  const AABox * inBoxCpp = static_cast<const AABox *>(inBox->obj);
+  TransformedShapeCollector * ioCollectorCpp = static_cast<TransformedShapeCollector *>(ioCollector->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseLayerFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
+  const BodyFilter * inBodyFilterCpp = static_cast<const BodyFilter *>(inBodyFilter->obj);
+  const ShapeFilter * inShapeFilterCpp = static_cast<const ShapeFilter *>(inShapeFilter->obj);
   selfCpp->CollectTransformedShapes(
-    *reinterpret_cast<AABox *>(inBox->obj),
-    *reinterpret_cast<TransformedShapeCollector *>(ioCollector->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj),
-    *reinterpret_cast<BodyFilter *>(inBodyFilter->obj),
-    *reinterpret_cast<ShapeFilter *>(inShapeFilter->obj)
+    *inBoxCpp,
+    *ioCollectorCpp,
+    *inBroadPhaseLayerFilterCpp,
+    *inObjectLayerFilterCpp,
+    *inBodyFilterCpp,
+    *inShapeFilterCpp
   );
-};
+}
 
 //endregion
 

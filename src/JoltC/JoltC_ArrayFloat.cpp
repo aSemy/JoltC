@@ -11,28 +11,25 @@ bool JoltC_ArrayFloat_empty(
   JoltC_ArrayFloat_t * self
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArrayFloat_size(
   JoltC_ArrayFloat_t * self
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 float JoltC_ArrayFloat_at(
   JoltC_ArrayFloat_t * self,
   long inIndex
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  float result = selfCpp->at(
+  return selfCpp->at(
     inIndex
   );
-  return result;
-};
+}
 
 void JoltC_ArrayFloat_push_back(
   JoltC_ArrayFloat_t * self,
@@ -42,7 +39,7 @@ void JoltC_ArrayFloat_push_back(
   selfCpp->push_back(
     inValue
   );
-};
+}
 
 void JoltC_ArrayFloat_reserve(
   JoltC_ArrayFloat_t * self,
@@ -52,7 +49,7 @@ void JoltC_ArrayFloat_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArrayFloat_resize(
   JoltC_ArrayFloat_t * self,
@@ -62,24 +59,24 @@ void JoltC_ArrayFloat_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArrayFloat_clear(
   JoltC_ArrayFloat_t * self
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
   selfCpp->clear();
-};
+}
 
 JoltC_FloatMemRef_t * JoltC_ArrayFloat_data(
   JoltC_ArrayFloat_t * self
 ) {
   ArrayFloat * selfCpp = static_cast<ArrayFloat *>(self->obj);
-  const FloatMemRef * resultValue = selfCpp->data();
-  JoltC_FloatMemRef_t* result = new JoltC_FloatMemRef_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const FloatMemRef * resultPtr = selfCpp->data();
+  JoltC_FloatMemRef_t * result = new JoltC_FloatMemRef_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 //endregion
 

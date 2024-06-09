@@ -11,17 +11,15 @@ bool JoltC_ArraySoftBodySharedSettingsEdge_empty(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySoftBodySharedSettingsEdge_size(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SoftBodySharedSettingsEdge_t * JoltC_ArraySoftBodySharedSettingsEdge_at(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self,
@@ -34,17 +32,18 @@ JoltC_SoftBodySharedSettingsEdge_t * JoltC_ArraySoftBodySharedSettingsEdge_at(
   JoltC_SoftBodySharedSettingsEdge_t* result = new JoltC_SoftBodySharedSettingsEdge_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsEdge_push_back(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self,
   JoltC_SoftBodySharedSettingsEdge_t * inValue
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
+  const SoftBodySharedSettingsEdge * inValueCpp = static_cast<const SoftBodySharedSettingsEdge *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SoftBodySharedSettingsEdge *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsEdge_reserve(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArraySoftBodySharedSettingsEdge_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsEdge_resize(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArraySoftBodySharedSettingsEdge_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsEdge_clear(
   JoltC_ArraySoftBodySharedSettingsEdge_t * self
 ) {
   ArraySoftBodySharedSettingsEdge * selfCpp = static_cast<ArraySoftBodySharedSettingsEdge *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

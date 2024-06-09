@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `RayCastSettings` instance.
+ */
 JoltC_RayCastSettings_t * JoltC_RayCastSettings_new() {
   JoltC_RayCastSettings_t * cInstance = new JoltC_RayCastSettings_t();
   RayCastSettings * cppInstance = new RayCastSettings();
@@ -24,7 +27,7 @@ JoltC_EBackFaceMode JoltC_RayCastSettings_mBackFaceMode_Get(
   RayCastSettings * selfCpp = static_cast<RayCastSettings *>(self->obj);
   EBackFaceMode result = selfCpp->mBackFaceMode;
   return static_cast<JoltC_EBackFaceMode>(static_cast<int>(result));
-};
+}
 
 void JoltC_RayCastSettings_mBackFaceMode_Set(
   JoltC_RayCastSettings_t * self,
@@ -38,9 +41,8 @@ bool JoltC_RayCastSettings_mTreatConvexAsSolid_Get(
   JoltC_RayCastSettings_t * self
 ) {
   RayCastSettings * selfCpp = static_cast<RayCastSettings *>(self->obj);
-  bool result = selfCpp->mTreatConvexAsSolid;
-  return result;
-};
+  return selfCpp->mTreatConvexAsSolid;
+}
 
 void JoltC_RayCastSettings_mTreatConvexAsSolid_Set(
   JoltC_RayCastSettings_t * self,

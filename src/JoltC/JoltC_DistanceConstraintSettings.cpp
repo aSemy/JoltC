@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `DistanceConstraintSettings` instance.
+ */
 JoltC_DistanceConstraintSettings_t * JoltC_DistanceConstraintSettings_new() {
   JoltC_DistanceConstraintSettings_t * cInstance = new JoltC_DistanceConstraintSettings_t();
   DistanceConstraintSettings * cppInstance = new DistanceConstraintSettings();
@@ -24,36 +27,37 @@ JoltC_Constraint_t * JoltC_DistanceConstraintSettings_Create(
   JoltC_Body_t * inBody2
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  const Constraint * resultValue = selfCpp->Create(
-    *reinterpret_cast<Body *>(inBody1->obj),
-    *reinterpret_cast<Body *>(inBody2->obj)
+  Body * inBody1Cpp = static_cast<Body *>(inBody1->obj);
+  Body * inBody2Cpp = static_cast<Body *>(inBody2->obj);
+  const Constraint * resultPtr = selfCpp->Create(
+    *inBody1Cpp,
+    *inBody2Cpp
   );
-  JoltC_Constraint_t* result = new JoltC_Constraint_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Constraint_t * result = new JoltC_Constraint_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 unsigned long JoltC_DistanceConstraintSettings_GetRefCount(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_DistanceConstraintSettings_AddRef(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_DistanceConstraintSettings_Release(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 
@@ -65,7 +69,7 @@ JoltC_EConstraintSpace JoltC_DistanceConstraintSettings_mSpace_Get(
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
   EConstraintSpace result = selfCpp->mSpace;
   return static_cast<JoltC_EConstraintSpace>(static_cast<int>(result));
-};
+}
 
 void JoltC_DistanceConstraintSettings_mSpace_Set(
   JoltC_DistanceConstraintSettings_t * self,
@@ -79,45 +83,46 @@ JoltC_RVec3_t * JoltC_DistanceConstraintSettings_mPoint1_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  const RVec3& resultValue = selfCpp->mPoint1;
-  JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  RVec3 * resultPtr = new RVec3();
+  *resultPtr = selfCpp->mPoint1;
+  JoltC_RVec3_t * result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_DistanceConstraintSettings_mPoint1_Set(
   JoltC_DistanceConstraintSettings_t * self,
   JoltC_RVec3_t * mPoint1
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  selfCpp->mPoint1 = *reinterpret_cast<RVec3 *>(mPoint1->obj);
+  selfCpp->mPoint1 = *static_cast<RVec3 *>(mPoint1->obj);
 };
 
 JoltC_RVec3_t * JoltC_DistanceConstraintSettings_mPoint2_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  const RVec3& resultValue = selfCpp->mPoint2;
-  JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  RVec3 * resultPtr = new RVec3();
+  *resultPtr = selfCpp->mPoint2;
+  JoltC_RVec3_t * result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_DistanceConstraintSettings_mPoint2_Set(
   JoltC_DistanceConstraintSettings_t * self,
   JoltC_RVec3_t * mPoint2
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  selfCpp->mPoint2 = *reinterpret_cast<RVec3 *>(mPoint2->obj);
+  selfCpp->mPoint2 = *static_cast<RVec3 *>(mPoint2->obj);
 };
 
 float JoltC_DistanceConstraintSettings_mMinDistance_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  float result = selfCpp->mMinDistance;
-  return result;
-};
+  return selfCpp->mMinDistance;
+}
 
 void JoltC_DistanceConstraintSettings_mMinDistance_Set(
   JoltC_DistanceConstraintSettings_t * self,
@@ -131,9 +136,8 @@ float JoltC_DistanceConstraintSettings_mMaxDistance_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  float result = selfCpp->mMaxDistance;
-  return result;
-};
+  return selfCpp->mMaxDistance;
+}
 
 void JoltC_DistanceConstraintSettings_mMaxDistance_Set(
   JoltC_DistanceConstraintSettings_t * self,
@@ -147,27 +151,27 @@ JoltC_SpringSettings_t * JoltC_DistanceConstraintSettings_mLimitsSpringSettings_
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  const SpringSettings& resultValue = selfCpp->mLimitsSpringSettings;
-  JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  SpringSettings * resultPtr = new SpringSettings();
+  *resultPtr = selfCpp->mLimitsSpringSettings;
+  JoltC_SpringSettings_t * result = new JoltC_SpringSettings_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_DistanceConstraintSettings_mLimitsSpringSettings_Set(
   JoltC_DistanceConstraintSettings_t * self,
   JoltC_SpringSettings_t * mLimitsSpringSettings
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  selfCpp->mLimitsSpringSettings = *reinterpret_cast<SpringSettings *>(mLimitsSpringSettings->obj);
+  selfCpp->mLimitsSpringSettings = *static_cast<SpringSettings *>(mLimitsSpringSettings->obj);
 };
 
 bool JoltC_DistanceConstraintSettings_mEnabled_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  bool result = selfCpp->mEnabled;
-  return result;
-};
+  return selfCpp->mEnabled;
+}
 
 void JoltC_DistanceConstraintSettings_mEnabled_Set(
   JoltC_DistanceConstraintSettings_t * self,
@@ -181,9 +185,8 @@ long JoltC_DistanceConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  long result = selfCpp->mNumVelocityStepsOverride;
-  return result;
-};
+  return selfCpp->mNumVelocityStepsOverride;
+}
 
 void JoltC_DistanceConstraintSettings_mNumVelocityStepsOverride_Set(
   JoltC_DistanceConstraintSettings_t * self,
@@ -197,9 +200,8 @@ long JoltC_DistanceConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_DistanceConstraintSettings_t * self
 ) {
   DistanceConstraintSettings * selfCpp = static_cast<DistanceConstraintSettings *>(self->obj);
-  long result = selfCpp->mNumPositionStepsOverride;
-  return result;
-};
+  return selfCpp->mNumPositionStepsOverride;
+}
 
 void JoltC_DistanceConstraintSettings_mNumPositionStepsOverride_Set(
   JoltC_DistanceConstraintSettings_t * self,

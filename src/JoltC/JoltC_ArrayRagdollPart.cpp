@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `ArrayRagdollPart` instance.
+ */
 JoltC_ArrayRagdollPart_t * JoltC_ArrayRagdollPart_new() {
   JoltC_ArrayRagdollPart_t * cInstance = new JoltC_ArrayRagdollPart_t();
   ArrayRagdollPart * cppInstance = new ArrayRagdollPart();
@@ -22,17 +25,15 @@ bool JoltC_ArrayRagdollPart_empty(
   JoltC_ArrayRagdollPart_t * self
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArrayRagdollPart_size(
   JoltC_ArrayRagdollPart_t * self
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_RagdollPart_t * JoltC_ArrayRagdollPart_at(
   JoltC_ArrayRagdollPart_t * self,
@@ -45,17 +46,18 @@ JoltC_RagdollPart_t * JoltC_ArrayRagdollPart_at(
   JoltC_RagdollPart_t* result = new JoltC_RagdollPart_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArrayRagdollPart_push_back(
   JoltC_ArrayRagdollPart_t * self,
   JoltC_RagdollPart_t * inValue
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
+  RagdollPart * inValueCpp = static_cast<RagdollPart *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<RagdollPart *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArrayRagdollPart_reserve(
   JoltC_ArrayRagdollPart_t * self,
@@ -65,7 +67,7 @@ void JoltC_ArrayRagdollPart_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArrayRagdollPart_resize(
   JoltC_ArrayRagdollPart_t * self,
@@ -75,14 +77,14 @@ void JoltC_ArrayRagdollPart_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArrayRagdollPart_clear(
   JoltC_ArrayRagdollPart_t * self
 ) {
   ArrayRagdollPart * selfCpp = static_cast<ArrayRagdollPart *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

@@ -11,17 +11,15 @@ bool JoltC_Shape_ShapeResult_IsValid(
   JoltC_Shape_ShapeResult_t * self
 ) {
   Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  bool result = selfCpp->IsValid();
-  return result;
-};
+  return selfCpp->IsValid();
+}
 
 bool JoltC_Shape_ShapeResult_HasError(
   JoltC_Shape_ShapeResult_t * self
 ) {
   Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  bool result = selfCpp->HasError();
-  return result;
-};
+  return selfCpp->HasError();
+}
 
 JoltC_JPHString_t * JoltC_Shape_ShapeResult_GetError(
   JoltC_Shape_ShapeResult_t * self
@@ -33,24 +31,24 @@ JoltC_JPHString_t * JoltC_Shape_ShapeResult_GetError(
   void * resultPtr = const_cast<void*>(resultConstPtr);
   result->obj = resultPtr;
   return result;
-};
+}
 
 JoltC_Shape_t * JoltC_Shape_ShapeResult_Get(
   JoltC_Shape_ShapeResult_t * self
 ) {
   Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
-  const Shape * resultValue = selfCpp->Get();
-  JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Shape * resultPtr = selfCpp->Get();
+  JoltC_Shape_t * result = new JoltC_Shape_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_Shape_ShapeResult_Clear(
   JoltC_Shape_ShapeResult_t * self
 ) {
   Shape::ShapeResult * selfCpp = static_cast<Shape::ShapeResult *>(self->obj);
   selfCpp->Clear();
-};
+}
 
 //endregion
 

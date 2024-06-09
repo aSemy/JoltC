@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `SpecifiedObjectLayerFilter` instance.
+ */
 JoltC_SpecifiedObjectLayerFilter_t * JoltC_SpecifiedObjectLayerFilter_new(
   unsigned long inObjectLayer
 ) {

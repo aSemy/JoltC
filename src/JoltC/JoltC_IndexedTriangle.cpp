@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `IndexedTriangle` instance.
+ */
 JoltC_IndexedTriangle_t * JoltC_IndexedTriangle_new_0() {
   JoltC_IndexedTriangle_t * cInstance = new JoltC_IndexedTriangle_t();
   IndexedTriangle * cppInstance = new IndexedTriangle();
@@ -14,6 +17,9 @@ JoltC_IndexedTriangle_t * JoltC_IndexedTriangle_new_0() {
   return cInstance;
 };
 
+/**
+  Construct a new `IndexedTriangle` instance.
+ */
 JoltC_IndexedTriangle_t * JoltC_IndexedTriangle_new_1(
   unsigned long inI1,
   unsigned long inI2,
@@ -42,8 +48,7 @@ size_t JoltC_IndexedTriangle_mIdx_Get(
   IndexedTriangle * selfCpp = static_cast<IndexedTriangle *>(self->obj);
   size_t resultSize = std::size(selfCpp->mIdx);
   // TODO get result array...
-  return resultSize;
-};
+}
 
 void JoltC_IndexedTriangle_mIdx_Set(
   JoltC_IndexedTriangle_t * self,
@@ -60,9 +65,8 @@ unsigned long JoltC_IndexedTriangle_mMaterialIndex_Get(
   JoltC_IndexedTriangle_t * self
 ) {
   IndexedTriangle * selfCpp = static_cast<IndexedTriangle *>(self->obj);
-  unsigned long result = selfCpp->mMaterialIndex;
-  return result;
-};
+  return selfCpp->mMaterialIndex;
+}
 
 void JoltC_IndexedTriangle_mMaterialIndex_Set(
   JoltC_IndexedTriangle_t * self,

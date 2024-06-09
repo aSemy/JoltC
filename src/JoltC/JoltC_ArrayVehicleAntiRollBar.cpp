@@ -11,17 +11,15 @@ bool JoltC_ArrayVehicleAntiRollBar_empty(
   JoltC_ArrayVehicleAntiRollBar_t * self
 ) {
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArrayVehicleAntiRollBar_size(
   JoltC_ArrayVehicleAntiRollBar_t * self
 ) {
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_VehicleAntiRollBar_t * JoltC_ArrayVehicleAntiRollBar_at(
   JoltC_ArrayVehicleAntiRollBar_t * self,
@@ -34,17 +32,18 @@ JoltC_VehicleAntiRollBar_t * JoltC_ArrayVehicleAntiRollBar_at(
   JoltC_VehicleAntiRollBar_t* result = new JoltC_VehicleAntiRollBar_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArrayVehicleAntiRollBar_push_back(
   JoltC_ArrayVehicleAntiRollBar_t * self,
   JoltC_VehicleAntiRollBar_t * inValue
 ) {
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
+  VehicleAntiRollBar * inValueCpp = static_cast<VehicleAntiRollBar *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<VehicleAntiRollBar *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArrayVehicleAntiRollBar_resize(
   JoltC_ArrayVehicleAntiRollBar_t * self,
@@ -54,14 +53,14 @@ void JoltC_ArrayVehicleAntiRollBar_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArrayVehicleAntiRollBar_clear(
   JoltC_ArrayVehicleAntiRollBar_t * self
 ) {
   ArrayVehicleAntiRollBar * selfCpp = static_cast<ArrayVehicleAntiRollBar *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

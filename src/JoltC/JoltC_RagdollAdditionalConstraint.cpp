@@ -14,8 +14,7 @@ size_t JoltC_RagdollAdditionalConstraint_mBodyIdx_Get(
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
   size_t resultSize = std::size(selfCpp->mBodyIdx);
   // TODO get result array...
-  return resultSize;
-};
+}
 
 void JoltC_RagdollAdditionalConstraint_mBodyIdx_Set(
   JoltC_RagdollAdditionalConstraint_t * self,
@@ -32,18 +31,18 @@ JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollAdditionalConstraint_mConstrain
   JoltC_RagdollAdditionalConstraint_t * self
 ) {
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
-  const TwoBodyConstraintSettings * resultValue = selfCpp->mConstraint;
-  JoltC_TwoBodyConstraintSettings_t* result = new JoltC_TwoBodyConstraintSettings_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const TwoBodyConstraintSettings * resultPtr = selfCpp->mConstraint;
+  JoltC_TwoBodyConstraintSettings_t * result = new JoltC_TwoBodyConstraintSettings_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_RagdollAdditionalConstraint_mConstraint_Set(
   JoltC_RagdollAdditionalConstraint_t * self,
   JoltC_TwoBodyConstraintSettings_t * mConstraint
 ) {
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
-  selfCpp->mConstraint = reinterpret_cast<TwoBodyConstraintSettings *>(mConstraint->obj);
+  selfCpp->mConstraint = static_cast<TwoBodyConstraintSettings *>(mConstraint->obj);
 };
 
 //endregion

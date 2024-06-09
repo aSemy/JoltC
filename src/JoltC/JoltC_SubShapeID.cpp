@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `SubShapeID` instance.
+ */
 JoltC_SubShapeID_t * JoltC_SubShapeID_new() {
   JoltC_SubShapeID_t * cInstance = new JoltC_SubShapeID_t();
   SubShapeID * cppInstance = new SubShapeID();
@@ -22,9 +25,8 @@ const long JoltC_SubShapeID_GetValue(
   JoltC_SubShapeID_t * self
 ) {
   SubShapeID * selfCpp = static_cast<SubShapeID *>(self->obj);
-  const long result = selfCpp->GetValue();
-  return result;
-};
+  return selfCpp->GetValue();
+}
 
 void JoltC_SubShapeID_SetValue(
   JoltC_SubShapeID_t * self,
@@ -34,7 +36,7 @@ void JoltC_SubShapeID_SetValue(
   selfCpp->SetValue(
     inValue
   );
-};
+}
 
 //endregion
 

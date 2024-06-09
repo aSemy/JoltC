@@ -132,23 +132,22 @@ unsigned long JoltC_Constraint_GetRefCount(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_Constraint_AddRef(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_Constraint_Release(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_EConstraintType JoltC_Constraint_GetType(
   JoltC_Constraint_t * self
@@ -156,7 +155,7 @@ JoltC_EConstraintType JoltC_Constraint_GetType(
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   EConstraintType result = selfCpp->GetType();
   return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
-};
+}
 
 JoltC_EConstraintSubType JoltC_Constraint_GetSubType(
   JoltC_Constraint_t * self
@@ -164,15 +163,14 @@ JoltC_EConstraintSubType JoltC_Constraint_GetSubType(
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   EConstraintSubType result = selfCpp->GetSubType();
   return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
-};
+}
 
 unsigned long JoltC_Constraint_GetConstraintPriority(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
-};
+  return selfCpp->GetConstraintPriority();
+}
 
 void JoltC_Constraint_SetConstraintPriority(
   JoltC_Constraint_t * self,
@@ -182,7 +180,7 @@ void JoltC_Constraint_SetConstraintPriority(
   selfCpp->SetConstraintPriority(
     inPriority
   );
-};
+}
 
 void JoltC_Constraint_SetNumVelocityStepsOverride(
   JoltC_Constraint_t * self,
@@ -192,15 +190,14 @@ void JoltC_Constraint_SetNumVelocityStepsOverride(
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
-};
+}
 
 long JoltC_Constraint_GetNumVelocityStepsOverride(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
-};
+  return selfCpp->GetNumVelocityStepsOverride();
+}
 
 void JoltC_Constraint_SetNumPositionStepsOverride(
   JoltC_Constraint_t * self,
@@ -210,15 +207,14 @@ void JoltC_Constraint_SetNumPositionStepsOverride(
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
-};
+}
 
 long JoltC_Constraint_GetNumPositionStepsOverride(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
-};
+  return selfCpp->GetNumPositionStepsOverride();
+}
 
 void JoltC_Constraint_SetEnabled(
   JoltC_Constraint_t * self,
@@ -228,31 +224,28 @@ void JoltC_Constraint_SetEnabled(
   selfCpp->SetEnabled(
     inEnabled
   );
-};
+}
 
 bool JoltC_Constraint_GetEnabled(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
-};
+  return selfCpp->GetEnabled();
+}
 
 bool JoltC_Constraint_IsActive(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
-};
+  return selfCpp->IsActive();
+}
 
 unsigned long long int JoltC_Constraint_GetUserData(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
-};
+  return selfCpp->GetUserData();
+}
 
 void JoltC_Constraint_SetUserData(
   JoltC_Constraint_t * self,
@@ -262,14 +255,14 @@ void JoltC_Constraint_SetUserData(
   selfCpp->SetUserData(
     inUserData
   );
-};
+}
 
 void JoltC_Constraint_ResetWarmStart(
   JoltC_Constraint_t * self
 ) {
   Constraint * selfCpp = static_cast<Constraint *>(self->obj);
   selfCpp->ResetWarmStart();
-};
+}
 
 //endregion
 

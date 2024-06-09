@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `BodyID` instance.
+ */
 JoltC_BodyID_t * JoltC_BodyID_new_0() {
   JoltC_BodyID_t * cInstance = new JoltC_BodyID_t();
   BodyID * cppInstance = new BodyID();
@@ -14,6 +17,9 @@ JoltC_BodyID_t * JoltC_BodyID_new_0() {
   return cInstance;
 };
 
+/**
+  Construct a new `BodyID` instance.
+ */
 JoltC_BodyID_t * JoltC_BodyID_new_1(
   unsigned long inIndexAndSequenceNumber
 ) {
@@ -33,17 +39,15 @@ unsigned long JoltC_BodyID_GetIndex(
   JoltC_BodyID_t * self
 ) {
   BodyID * selfCpp = static_cast<BodyID *>(self->obj);
-  unsigned long result = selfCpp->GetIndex();
-  return result;
-};
+  return selfCpp->GetIndex();
+}
 
 unsigned long JoltC_BodyID_GetIndexAndSequenceNumber(
   JoltC_BodyID_t * self
 ) {
   BodyID * selfCpp = static_cast<BodyID *>(self->obj);
-  unsigned long result = selfCpp->GetIndexAndSequenceNumber();
-  return result;
-};
+  return selfCpp->GetIndexAndSequenceNumber();
+}
 
 //endregion
 

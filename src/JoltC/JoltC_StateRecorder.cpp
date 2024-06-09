@@ -28,15 +28,14 @@ void JoltC_StateRecorder_SetValidating(
   selfCpp->SetValidating(
     inValidating
   );
-};
+}
 
 bool JoltC_StateRecorder_IsValidating(
   JoltC_StateRecorder_t * self
 ) {
   StateRecorder * selfCpp = static_cast<StateRecorder *>(self->obj);
-  bool result = selfCpp->IsValidating();
-  return result;
-};
+  return selfCpp->IsValidating();
+}
 
 //endregion
 

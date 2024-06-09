@@ -7,14 +7,19 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `TrackedVehicleController` instance.
+ */
 JoltC_TrackedVehicleController_t * JoltC_TrackedVehicleController_new(
   JoltC_TrackedVehicleControllerSettings_t * inSettings,
   JoltC_VehicleConstraint_t * inConstraint
 ) {
+  const TrackedVehicleControllerSettings * inSettingsCpp = static_cast<const TrackedVehicleControllerSettings *>(inSettings->obj);
+  VehicleConstraint * inConstraintCpp = static_cast<VehicleConstraint *>(inConstraint->obj);
   JoltC_TrackedVehicleController_t * cInstance = new JoltC_TrackedVehicleController_t();
   TrackedVehicleController * cppInstance = new TrackedVehicleController(
-    *reinterpret_cast<TrackedVehicleControllerSettings *>(inSettings->obj),
-    *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
+    *inSettingsCpp,
+    *inConstraintCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
@@ -38,7 +43,7 @@ void JoltC_TrackedVehicleController_SetDriverInput(
     inRightRatio,
     inBrake
   );
-};
+}
 
 void JoltC_TrackedVehicleController_SetForwardInput(
   JoltC_TrackedVehicleController_t * self,
@@ -48,15 +53,14 @@ void JoltC_TrackedVehicleController_SetForwardInput(
   selfCpp->SetForwardInput(
     inForward
   );
-};
+}
 
 float JoltC_TrackedVehicleController_GetForwardInput(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  float result = selfCpp->GetForwardInput();
-  return result;
-};
+  return selfCpp->GetForwardInput();
+}
 
 void JoltC_TrackedVehicleController_SetLeftRatio(
   JoltC_TrackedVehicleController_t * self,
@@ -66,15 +70,14 @@ void JoltC_TrackedVehicleController_SetLeftRatio(
   selfCpp->SetLeftRatio(
     inLeftRatio
   );
-};
+}
 
 float JoltC_TrackedVehicleController_GetLeftRatio(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  float result = selfCpp->GetLeftRatio();
-  return result;
-};
+  return selfCpp->GetLeftRatio();
+}
 
 void JoltC_TrackedVehicleController_SetRightRatio(
   JoltC_TrackedVehicleController_t * self,
@@ -84,15 +87,14 @@ void JoltC_TrackedVehicleController_SetRightRatio(
   selfCpp->SetRightRatio(
     inRightRatio
   );
-};
+}
 
 float JoltC_TrackedVehicleController_GetRightRatio(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  float result = selfCpp->GetRightRatio();
-  return result;
-};
+  return selfCpp->GetRightRatio();
+}
 
 void JoltC_TrackedVehicleController_SetBrakeInput(
   JoltC_TrackedVehicleController_t * self,
@@ -102,15 +104,14 @@ void JoltC_TrackedVehicleController_SetBrakeInput(
   selfCpp->SetBrakeInput(
     inBrake
   );
-};
+}
 
 float JoltC_TrackedVehicleController_GetBrakeInput(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  float result = selfCpp->GetBrakeInput();
-  return result;
-};
+  return selfCpp->GetBrakeInput();
+}
 
 JoltC_VehicleEngine_t * JoltC_TrackedVehicleController_GetEngine(
   JoltC_TrackedVehicleController_t * self
@@ -120,7 +121,7 @@ JoltC_VehicleEngine_t * JoltC_TrackedVehicleController_GetEngine(
   JoltC_VehicleEngine_t* result = new JoltC_VehicleEngine_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 JoltC_VehicleTransmission_t * JoltC_TrackedVehicleController_GetTransmission(
   JoltC_TrackedVehicleController_t * self
@@ -130,7 +131,7 @@ JoltC_VehicleTransmission_t * JoltC_TrackedVehicleController_GetTransmission(
   JoltC_VehicleTransmission_t* result = new JoltC_VehicleTransmission_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 size_t JoltC_TrackedVehicleController_GetTracks(
   JoltC_TrackedVehicleController_t * self,
@@ -143,31 +144,30 @@ size_t JoltC_TrackedVehicleController_GetTracks(
     JoltC_VehicleTrack_t * element = new JoltC_VehicleTrack_t();
     element->obj = &(selfCpp->GetTracks()[i]);
     outValue[i] = element;
+    return resultSize;
   };
-  return resultSize;
-};
+}
 
 unsigned long JoltC_TrackedVehicleController_GetRefCount(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_TrackedVehicleController_AddRef(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_TrackedVehicleController_Release(
   JoltC_TrackedVehicleController_t * self
 ) {
   TrackedVehicleController * selfCpp = static_cast<TrackedVehicleController *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 

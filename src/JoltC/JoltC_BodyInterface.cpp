@@ -12,36 +12,39 @@ JoltC_Body_t * JoltC_BodyInterface_CreateBody(
   JoltC_BodyCreationSettings_t * inSettings
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const Body * resultValue = selfCpp->CreateBody(
-    *reinterpret_cast<BodyCreationSettings *>(inSettings->obj)
+  const BodyCreationSettings * inSettingsCpp = static_cast<const BodyCreationSettings *>(inSettings->obj);
+  const Body * resultPtr = selfCpp->CreateBody(
+    *inSettingsCpp
   );
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Body_t * JoltC_BodyInterface_CreateSoftBody(
   JoltC_BodyInterface_t * self,
   JoltC_SoftBodyCreationSettings_t * inSettings
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const Body * resultValue = selfCpp->CreateSoftBody(
-    *reinterpret_cast<SoftBodyCreationSettings *>(inSettings->obj)
+  const SoftBodyCreationSettings * inSettingsCpp = static_cast<const SoftBodyCreationSettings *>(inSettings->obj);
+  const Body * resultPtr = selfCpp->CreateSoftBody(
+    *inSettingsCpp
   );
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_BodyInterface_DestroyBody(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->DestroyBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
-};
+}
 
 void JoltC_BodyInterface_AddBody(
   JoltC_BodyInterface_t * self,
@@ -49,32 +52,35 @@ void JoltC_BodyInterface_AddBody(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
   selfCpp->AddBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+    *inBodyIDCpp,
+    inActivationModeCpp
   );
-};
+}
 
 void JoltC_BodyInterface_RemoveBody(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->RemoveBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
-};
+}
 
 bool JoltC_BodyInterface_IsAdded(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  bool result = selfCpp->IsAdded(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  return selfCpp->IsAdded(
+    *inBodyIDCpp
   );
-  return result;
-};
+}
 
 JoltC_BodyID_t * JoltC_BodyInterface_CreateAndAddBody(
   JoltC_BodyInterface_t * self,
@@ -82,14 +88,17 @@ JoltC_BodyID_t * JoltC_BodyInterface_CreateAndAddBody(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const BodyID& resultValue = selfCpp->CreateAndAddBody(
-    *reinterpret_cast<BodyCreationSettings *>(inSettings->obj),
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+  const BodyCreationSettings * inSettingsCpp = static_cast<const BodyCreationSettings *>(inSettings->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
+  BodyID * resultPtr = new BodyID();
+  *resultPtr = selfCpp->CreateAndAddBody(
+    *inSettingsCpp,
+    inActivationModeCpp
   );
-  JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_BodyID_t * result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_BodyID_t * JoltC_BodyInterface_CreateAndAddSoftBody(
   JoltC_BodyInterface_t * self,
@@ -97,14 +106,17 @@ JoltC_BodyID_t * JoltC_BodyInterface_CreateAndAddSoftBody(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const BodyID& resultValue = selfCpp->CreateAndAddSoftBody(
-    *reinterpret_cast<SoftBodyCreationSettings *>(inSettings->obj),
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+  const SoftBodyCreationSettings * inSettingsCpp = static_cast<const SoftBodyCreationSettings *>(inSettings->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
+  BodyID * resultPtr = new BodyID();
+  *resultPtr = selfCpp->CreateAndAddSoftBody(
+    *inSettingsCpp,
+    inActivationModeCpp
   );
-  JoltC_BodyID_t* result = new JoltC_BodyID_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_BodyID_t * result = new JoltC_BodyID_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_TwoBodyConstraint_t * JoltC_BodyInterface_CreateConstraint(
   JoltC_BodyInterface_t * self,
@@ -113,38 +125,43 @@ JoltC_TwoBodyConstraint_t * JoltC_BodyInterface_CreateConstraint(
   JoltC_BodyID_t * inBodyID2
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const TwoBodyConstraint * resultValue = selfCpp->CreateConstraint(
-    reinterpret_cast<TwoBodyConstraintSettings *>(inSettings->obj),
-    *reinterpret_cast<BodyID *>(inBodyID1->obj),
-    *reinterpret_cast<BodyID *>(inBodyID2->obj)
+  const TwoBodyConstraintSettings * inSettingsCpp = static_cast<const TwoBodyConstraintSettings *>(inSettings->obj);
+  const BodyID * inBodyID1Cpp = static_cast<const BodyID *>(inBodyID1->obj);
+  const BodyID * inBodyID2Cpp = static_cast<const BodyID *>(inBodyID2->obj);
+  const TwoBodyConstraint * resultPtr = selfCpp->CreateConstraint(
+    inSettingsCpp,
+    *inBodyID1Cpp,
+    *inBodyID2Cpp
   );
-  JoltC_TwoBodyConstraint_t* result = new JoltC_TwoBodyConstraint_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_TwoBodyConstraint_t * result = new JoltC_TwoBodyConstraint_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_BodyInterface_ActivateConstraint(
   JoltC_BodyInterface_t * self,
   JoltC_TwoBodyConstraint_t * inConstraint
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const TwoBodyConstraint * inConstraintCpp = static_cast<const TwoBodyConstraint *>(inConstraint->obj);
   selfCpp->ActivateConstraint(
-    reinterpret_cast<TwoBodyConstraint *>(inConstraint->obj)
+    inConstraintCpp
   );
-};
+}
 
 JoltC_Shape_t * JoltC_BodyInterface_GetShape(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const Shape * resultValue = selfCpp->GetShape(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Shape * resultPtr = selfCpp->GetShape(
+    *inBodyIDCpp
   );
-  JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Shape_t * result = new JoltC_Shape_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_BodyInterface_SetShape(
   JoltC_BodyInterface_t * self,
@@ -154,13 +171,16 @@ void JoltC_BodyInterface_SetShape(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Shape * inShapeCpp = static_cast<const Shape *>(inShape->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
   selfCpp->SetShape(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    reinterpret_cast<Shape *>(inShape->obj),
+    *inBodyIDCpp,
+    inShapeCpp,
     inUpdateMassProperties,
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+    inActivationModeCpp
   );
-};
+}
 
 void JoltC_BodyInterface_NotifyShapeChanged(
   JoltC_BodyInterface_t * self,
@@ -170,13 +190,16 @@ void JoltC_BodyInterface_NotifyShapeChanged(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inPreviousCenterOfMassCpp = static_cast<const Vec3 *>(inPreviousCenterOfMass->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
   selfCpp->NotifyShapeChanged(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inPreviousCenterOfMass->obj),
+    *inBodyIDCpp,
+    *inPreviousCenterOfMassCpp,
     inUpdateMassProperties,
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+    inActivationModeCpp
   );
-};
+}
 
 void JoltC_BodyInterface_SetObjectLayer(
   JoltC_BodyInterface_t * self,
@@ -184,22 +207,23 @@ void JoltC_BodyInterface_SetObjectLayer(
   unsigned long inLayer
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->SetObjectLayer(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
+    *inBodyIDCpp,
     inLayer
   );
-};
+}
 
 unsigned long JoltC_BodyInterface_GetObjectLayer(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  unsigned long result = selfCpp->GetObjectLayer(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  return selfCpp->GetObjectLayer(
+    *inBodyIDCpp
   );
-  return result;
-};
+}
 
 void JoltC_BodyInterface_SetPositionAndRotation(
   JoltC_BodyInterface_t * self,
@@ -209,13 +233,17 @@ void JoltC_BodyInterface_SetPositionAndRotation(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const RVec3 * inPositionCpp = static_cast<const RVec3 *>(inPosition->obj);
+  const Quat * inRotationCpp = static_cast<const Quat *>(inRotation->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
   selfCpp->SetPositionAndRotation(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<RVec3 *>(inPosition->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+    *inBodyIDCpp,
+    *inPositionCpp,
+    *inRotationCpp,
+    inActivationModeCpp
   );
-};
+}
 
 void JoltC_BodyInterface_SetPositionAndRotationWhenChanged(
   JoltC_BodyInterface_t * self,
@@ -225,13 +253,17 @@ void JoltC_BodyInterface_SetPositionAndRotationWhenChanged(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const RVec3 * inPositionCpp = static_cast<const RVec3 *>(inPosition->obj);
+  const Quat * inRotationCpp = static_cast<const Quat *>(inRotation->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
   selfCpp->SetPositionAndRotationWhenChanged(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<RVec3 *>(inPosition->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+    *inBodyIDCpp,
+    *inPositionCpp,
+    *inRotationCpp,
+    inActivationModeCpp
   );
-};
+}
 
 void JoltC_BodyInterface_GetPositionAndRotation(
   JoltC_BodyInterface_t * self,
@@ -240,12 +272,15 @@ void JoltC_BodyInterface_GetPositionAndRotation(
   JoltC_Quat_t * outRotation
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  RVec3 * outPositionCpp = static_cast<RVec3 *>(outPosition->obj);
+  Quat * outRotationCpp = static_cast<Quat *>(outRotation->obj);
   selfCpp->GetPositionAndRotation(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<RVec3 *>(outPosition->obj),
-    *reinterpret_cast<Quat *>(outRotation->obj)
+    *inBodyIDCpp,
+    *outPositionCpp,
+    *outRotationCpp
   );
-};
+}
 
 void JoltC_BodyInterface_SetPosition(
   JoltC_BodyInterface_t * self,
@@ -254,25 +289,30 @@ void JoltC_BodyInterface_SetPosition(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const RVec3 * inPositionCpp = static_cast<const RVec3 *>(inPosition->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
   selfCpp->SetPosition(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<RVec3 *>(inPosition->obj),
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+    *inBodyIDCpp,
+    *inPositionCpp,
+    inActivationModeCpp
   );
-};
+}
 
 JoltC_RVec3_t * JoltC_BodyInterface_GetPosition(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const RVec3& resultValue = selfCpp->GetPosition(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  RVec3 * resultPtr = new RVec3();
+  *resultPtr = selfCpp->GetPosition(
+    *inBodyIDCpp
   );
-  JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_RVec3_t * result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_BodyInterface_SetRotation(
   JoltC_BodyInterface_t * self,
@@ -281,51 +321,60 @@ void JoltC_BodyInterface_SetRotation(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Quat * inRotationCpp = static_cast<const Quat *>(inRotation->obj);
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
   selfCpp->SetRotation(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+    *inBodyIDCpp,
+    *inRotationCpp,
+    inActivationModeCpp
   );
-};
+}
 
 JoltC_Quat_t * JoltC_BodyInterface_GetRotation(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const Quat& resultValue = selfCpp->GetRotation(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  Quat * resultPtr = new Quat();
+  *resultPtr = selfCpp->GetRotation(
+    *inBodyIDCpp
   );
-  JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Quat_t * result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_RMat44_t * JoltC_BodyInterface_GetWorldTransform(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const RMat44& resultValue = selfCpp->GetWorldTransform(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  RMat44 * resultPtr = new RMat44();
+  *resultPtr = selfCpp->GetWorldTransform(
+    *inBodyIDCpp
   );
-  JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_RMat44_t * result = new JoltC_RMat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_RMat44_t * JoltC_BodyInterface_GetCenterOfMassTransform(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const RMat44& resultValue = selfCpp->GetCenterOfMassTransform(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  RMat44 * resultPtr = new RMat44();
+  *resultPtr = selfCpp->GetCenterOfMassTransform(
+    *inBodyIDCpp
   );
-  JoltC_RMat44_t* result = new JoltC_RMat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_RMat44_t * result = new JoltC_RMat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_BodyInterface_SetLinearVelocity(
   JoltC_BodyInterface_t * self,
@@ -333,24 +382,28 @@ void JoltC_BodyInterface_SetLinearVelocity(
   JoltC_Vec3_t * inLinearVelocity
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inLinearVelocityCpp = static_cast<const Vec3 *>(inLinearVelocity->obj);
   selfCpp->SetLinearVelocity(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inLinearVelocity->obj)
+    *inBodyIDCpp,
+    *inLinearVelocityCpp
   );
-};
+}
 
 JoltC_Vec3_t * JoltC_BodyInterface_GetLinearVelocity(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const Vec3& resultValue = selfCpp->GetLinearVelocity(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->GetLinearVelocity(
+    *inBodyIDCpp
   );
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_BodyInterface_AddLinearVelocity(
   JoltC_BodyInterface_t * self,
@@ -358,11 +411,13 @@ void JoltC_BodyInterface_AddLinearVelocity(
   JoltC_Vec3_t * inLinearVelocity
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inLinearVelocityCpp = static_cast<const Vec3 *>(inLinearVelocity->obj);
   selfCpp->AddLinearVelocity(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inLinearVelocity->obj)
+    *inBodyIDCpp,
+    *inLinearVelocityCpp
   );
-};
+}
 
 void JoltC_BodyInterface_AddLinearAndAngularVelocity(
   JoltC_BodyInterface_t * self,
@@ -371,12 +426,15 @@ void JoltC_BodyInterface_AddLinearAndAngularVelocity(
   JoltC_Vec3_t * inAngularVelocity
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inLinearVelocityCpp = static_cast<const Vec3 *>(inLinearVelocity->obj);
+  const Vec3 * inAngularVelocityCpp = static_cast<const Vec3 *>(inAngularVelocity->obj);
   selfCpp->AddLinearAndAngularVelocity(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inLinearVelocity->obj),
-    *reinterpret_cast<Vec3 *>(inAngularVelocity->obj)
+    *inBodyIDCpp,
+    *inLinearVelocityCpp,
+    *inAngularVelocityCpp
   );
-};
+}
 
 void JoltC_BodyInterface_SetAngularVelocity(
   JoltC_BodyInterface_t * self,
@@ -384,24 +442,28 @@ void JoltC_BodyInterface_SetAngularVelocity(
   JoltC_Vec3_t * inAngularVelocity
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inAngularVelocityCpp = static_cast<const Vec3 *>(inAngularVelocity->obj);
   selfCpp->SetAngularVelocity(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inAngularVelocity->obj)
+    *inBodyIDCpp,
+    *inAngularVelocityCpp
   );
-};
+}
 
 JoltC_Vec3_t * JoltC_BodyInterface_GetAngularVelocity(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const Vec3& resultValue = selfCpp->GetAngularVelocity(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->GetAngularVelocity(
+    *inBodyIDCpp
   );
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_Vec3_t * JoltC_BodyInterface_GetPointVelocity(
   JoltC_BodyInterface_t * self,
@@ -409,14 +471,17 @@ JoltC_Vec3_t * JoltC_BodyInterface_GetPointVelocity(
   JoltC_RVec3_t * inPoint
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const Vec3& resultValue = selfCpp->GetPointVelocity(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<RVec3 *>(inPoint->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const RVec3 * inPointCpp = static_cast<const RVec3 *>(inPoint->obj);
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->GetPointVelocity(
+    *inBodyIDCpp,
+    *inPointCpp
   );
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_BodyInterface_SetPositionRotationAndVelocity(
   JoltC_BodyInterface_t * self,
@@ -427,14 +492,19 @@ void JoltC_BodyInterface_SetPositionRotationAndVelocity(
   JoltC_Vec3_t * inAngularVelocity
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const RVec3 * inPositionCpp = static_cast<const RVec3 *>(inPosition->obj);
+  const Quat * inRotationCpp = static_cast<const Quat *>(inRotation->obj);
+  const Vec3 * inLinearVelocityCpp = static_cast<const Vec3 *>(inLinearVelocity->obj);
+  const Vec3 * inAngularVelocityCpp = static_cast<const Vec3 *>(inAngularVelocity->obj);
   selfCpp->SetPositionRotationAndVelocity(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<RVec3 *>(inPosition->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
-    *reinterpret_cast<Vec3 *>(inLinearVelocity->obj),
-    *reinterpret_cast<Vec3 *>(inAngularVelocity->obj)
+    *inBodyIDCpp,
+    *inPositionCpp,
+    *inRotationCpp,
+    *inLinearVelocityCpp,
+    *inAngularVelocityCpp
   );
-};
+}
 
 void JoltC_BodyInterface_MoveKinematic(
   JoltC_BodyInterface_t * self,
@@ -444,23 +514,27 @@ void JoltC_BodyInterface_MoveKinematic(
   float inDeltaTime
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const RVec3 * inPositionCpp = static_cast<const RVec3 *>(inPosition->obj);
+  const Quat * inRotationCpp = static_cast<const Quat *>(inRotation->obj);
   selfCpp->MoveKinematic(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<RVec3 *>(inPosition->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
+    *inBodyIDCpp,
+    *inPositionCpp,
+    *inRotationCpp,
     inDeltaTime
   );
-};
+}
 
 void JoltC_BodyInterface_ActivateBody(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->ActivateBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
-};
+}
 
 void JoltC_BodyInterface_ActivateBodiesInAABox(
   JoltC_BodyInterface_t * self,
@@ -469,44 +543,49 @@ void JoltC_BodyInterface_ActivateBodiesInAABox(
   JoltC_ObjectLayerFilter_t * inObjectLayerFilter
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const AABox * inBoxCpp = static_cast<const AABox *>(inBox->obj);
+  const BroadPhaseLayerFilter * inBroadPhaseLayerFilterCpp = static_cast<const BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj);
+  const ObjectLayerFilter * inObjectLayerFilterCpp = static_cast<const ObjectLayerFilter *>(inObjectLayerFilter->obj);
   selfCpp->ActivateBodiesInAABox(
-    *reinterpret_cast<AABox *>(inBox->obj),
-    *reinterpret_cast<BroadPhaseLayerFilter *>(inBroadPhaseLayerFilter->obj),
-    *reinterpret_cast<ObjectLayerFilter *>(inObjectLayerFilter->obj)
+    *inBoxCpp,
+    *inBroadPhaseLayerFilterCpp,
+    *inObjectLayerFilterCpp
   );
-};
+}
 
 void JoltC_BodyInterface_DeactivateBody(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->DeactivateBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
-};
+}
 
 bool JoltC_BodyInterface_IsActive(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  bool result = selfCpp->IsActive(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  return selfCpp->IsActive(
+    *inBodyIDCpp
   );
-  return result;
-};
+}
 
 JoltC_EBodyType JoltC_BodyInterface_GetBodyType(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   EBodyType result = selfCpp->GetBodyType(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
   return static_cast<JoltC_EBodyType>(static_cast<int>(result));
-};
+}
 
 void JoltC_BodyInterface_SetMotionType(
   JoltC_BodyInterface_t * self,
@@ -515,23 +594,27 @@ void JoltC_BodyInterface_SetMotionType(
   JoltC_EActivation inActivationMode
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  EMotionType inMotionTypeCpp = static_cast<EMotionType>(static_cast<int>(inMotionType));
+  EActivation inActivationModeCpp = static_cast<EActivation>(static_cast<int>(inActivationMode));
   selfCpp->SetMotionType(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    static_cast<EMotionType>(static_cast<int>(inMotionType)),
-    static_cast<EActivation>(static_cast<int>(inActivationMode))
+    *inBodyIDCpp,
+    inMotionTypeCpp,
+    inActivationModeCpp
   );
-};
+}
 
 JoltC_EMotionType JoltC_BodyInterface_GetMotionType(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   EMotionType result = selfCpp->GetMotionType(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
   return static_cast<JoltC_EMotionType>(static_cast<int>(result));
-};
+}
 
 void JoltC_BodyInterface_SetMotionQuality(
   JoltC_BodyInterface_t * self,
@@ -539,35 +622,40 @@ void JoltC_BodyInterface_SetMotionQuality(
   JoltC_EMotionQuality inMotionQuality
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  EMotionQuality inMotionQualityCpp = static_cast<EMotionQuality>(static_cast<int>(inMotionQuality));
   selfCpp->SetMotionQuality(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    static_cast<EMotionQuality>(static_cast<int>(inMotionQuality))
+    *inBodyIDCpp,
+    inMotionQualityCpp
   );
-};
+}
 
 JoltC_EMotionQuality JoltC_BodyInterface_GetMotionQuality(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   EMotionQuality result = selfCpp->GetMotionQuality(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
   return static_cast<JoltC_EMotionQuality>(static_cast<int>(result));
-};
+}
 
 JoltC_Mat44_t * JoltC_BodyInterface_GetInverseInertia(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const Mat44& resultValue = selfCpp->GetInverseInertia(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->GetInverseInertia(
+    *inBodyIDCpp
   );
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_BodyInterface_SetRestitution(
   JoltC_BodyInterface_t * self,
@@ -575,22 +663,23 @@ void JoltC_BodyInterface_SetRestitution(
   float inRestitution
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->SetRestitution(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
+    *inBodyIDCpp,
     inRestitution
   );
-};
+}
 
 float JoltC_BodyInterface_GetRestitution(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  float result = selfCpp->GetRestitution(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  return selfCpp->GetRestitution(
+    *inBodyIDCpp
   );
-  return result;
-};
+}
 
 void JoltC_BodyInterface_SetFriction(
   JoltC_BodyInterface_t * self,
@@ -598,22 +687,23 @@ void JoltC_BodyInterface_SetFriction(
   float inFriction
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->SetFriction(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
+    *inBodyIDCpp,
     inFriction
   );
-};
+}
 
 float JoltC_BodyInterface_GetFriction(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  float result = selfCpp->GetFriction(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  return selfCpp->GetFriction(
+    *inBodyIDCpp
   );
-  return result;
-};
+}
 
 void JoltC_BodyInterface_SetGravityFactor(
   JoltC_BodyInterface_t * self,
@@ -621,22 +711,23 @@ void JoltC_BodyInterface_SetGravityFactor(
   float inFactor
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->SetGravityFactor(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
+    *inBodyIDCpp,
     inFactor
   );
-};
+}
 
 float JoltC_BodyInterface_GetGravityFactor(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  float result = selfCpp->GetGravityFactor(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  return selfCpp->GetGravityFactor(
+    *inBodyIDCpp
   );
-  return result;
-};
+}
 
 void JoltC_BodyInterface_SetUseManifoldReduction(
   JoltC_BodyInterface_t * self,
@@ -644,22 +735,23 @@ void JoltC_BodyInterface_SetUseManifoldReduction(
   bool inUseReduction
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->SetUseManifoldReduction(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
+    *inBodyIDCpp,
     inUseReduction
   );
-};
+}
 
 bool JoltC_BodyInterface_GetUseManifoldReduction(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  bool result = selfCpp->GetUseManifoldReduction(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  return selfCpp->GetUseManifoldReduction(
+    *inBodyIDCpp
   );
-  return result;
-};
+}
 
 void JoltC_BodyInterface_AddForce_0(
   JoltC_BodyInterface_t * self,
@@ -667,11 +759,13 @@ void JoltC_BodyInterface_AddForce_0(
   JoltC_Vec3_t * inForce
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inForceCpp = static_cast<const Vec3 *>(inForce->obj);
   selfCpp->AddForce(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inForce->obj)
+    *inBodyIDCpp,
+    *inForceCpp
   );
-};
+}
 
 void JoltC_BodyInterface_AddForce_1(
   JoltC_BodyInterface_t * self,
@@ -680,12 +774,15 @@ void JoltC_BodyInterface_AddForce_1(
   JoltC_RVec3_t * inPoint
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inForceCpp = static_cast<const Vec3 *>(inForce->obj);
+  const RVec3 * inPointCpp = static_cast<const RVec3 *>(inPoint->obj);
   selfCpp->AddForce(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inForce->obj),
-    *reinterpret_cast<RVec3 *>(inPoint->obj)
+    *inBodyIDCpp,
+    *inForceCpp,
+    *inPointCpp
   );
-};
+}
 
 void JoltC_BodyInterface_AddTorque(
   JoltC_BodyInterface_t * self,
@@ -693,11 +790,13 @@ void JoltC_BodyInterface_AddTorque(
   JoltC_Vec3_t * inTorque
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inTorqueCpp = static_cast<const Vec3 *>(inTorque->obj);
   selfCpp->AddTorque(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inTorque->obj)
+    *inBodyIDCpp,
+    *inTorqueCpp
   );
-};
+}
 
 void JoltC_BodyInterface_AddForceAndTorque(
   JoltC_BodyInterface_t * self,
@@ -706,12 +805,15 @@ void JoltC_BodyInterface_AddForceAndTorque(
   JoltC_Vec3_t * inTorque
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inForceCpp = static_cast<const Vec3 *>(inForce->obj);
+  const Vec3 * inTorqueCpp = static_cast<const Vec3 *>(inTorque->obj);
   selfCpp->AddForceAndTorque(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inForce->obj),
-    *reinterpret_cast<Vec3 *>(inTorque->obj)
+    *inBodyIDCpp,
+    *inForceCpp,
+    *inTorqueCpp
   );
-};
+}
 
 bool JoltC_BodyInterface_ApplyBuoyancyImpulse(
   JoltC_BodyInterface_t * self,
@@ -726,19 +828,23 @@ bool JoltC_BodyInterface_ApplyBuoyancyImpulse(
   float inDeltaTime
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  bool result = selfCpp->ApplyBuoyancyImpulse(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<RVec3 *>(inSurfacePosition->obj),
-    *reinterpret_cast<Vec3 *>(inSurfaceNormal->obj),
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const RVec3 * inSurfacePositionCpp = static_cast<const RVec3 *>(inSurfacePosition->obj);
+  const Vec3 * inSurfaceNormalCpp = static_cast<const Vec3 *>(inSurfaceNormal->obj);
+  const Vec3 * inFluidVelocityCpp = static_cast<const Vec3 *>(inFluidVelocity->obj);
+  const Vec3 * inGravityCpp = static_cast<const Vec3 *>(inGravity->obj);
+  return selfCpp->ApplyBuoyancyImpulse(
+    *inBodyIDCpp,
+    *inSurfacePositionCpp,
+    *inSurfaceNormalCpp,
     inBuoyancy,
     inLinearDrag,
     inAngularDrag,
-    *reinterpret_cast<Vec3 *>(inFluidVelocity->obj),
-    *reinterpret_cast<Vec3 *>(inGravity->obj),
+    *inFluidVelocityCpp,
+    *inGravityCpp,
     inDeltaTime
   );
-  return result;
-};
+}
 
 void JoltC_BodyInterface_AddImpulse_0(
   JoltC_BodyInterface_t * self,
@@ -746,11 +852,13 @@ void JoltC_BodyInterface_AddImpulse_0(
   JoltC_Vec3_t * inImpulse
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inImpulseCpp = static_cast<const Vec3 *>(inImpulse->obj);
   selfCpp->AddImpulse(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inImpulse->obj)
+    *inBodyIDCpp,
+    *inImpulseCpp
   );
-};
+}
 
 void JoltC_BodyInterface_AddImpulse_1(
   JoltC_BodyInterface_t * self,
@@ -759,12 +867,15 @@ void JoltC_BodyInterface_AddImpulse_1(
   JoltC_RVec3_t * inPosition
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inImpulseCpp = static_cast<const Vec3 *>(inImpulse->obj);
+  const RVec3 * inPositionCpp = static_cast<const RVec3 *>(inPosition->obj);
   selfCpp->AddImpulse(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inImpulse->obj),
-    *reinterpret_cast<RVec3 *>(inPosition->obj)
+    *inBodyIDCpp,
+    *inImpulseCpp,
+    *inPositionCpp
   );
-};
+}
 
 void JoltC_BodyInterface_AddAngularImpulse(
   JoltC_BodyInterface_t * self,
@@ -772,35 +883,39 @@ void JoltC_BodyInterface_AddAngularImpulse(
   JoltC_Vec3_t * inAngularImpulse
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Vec3 * inAngularImpulseCpp = static_cast<const Vec3 *>(inAngularImpulse->obj);
   selfCpp->AddAngularImpulse(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<Vec3 *>(inAngularImpulse->obj)
+    *inBodyIDCpp,
+    *inAngularImpulseCpp
   );
-};
+}
 
 JoltC_TransformedShape_t * JoltC_BodyInterface_GetTransformedShape(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const TransformedShape& resultValue = selfCpp->GetTransformedShape(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  TransformedShape * resultPtr = new TransformedShape();
+  *resultPtr = selfCpp->GetTransformedShape(
+    *inBodyIDCpp
   );
-  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_TransformedShape_t * result = new JoltC_TransformedShape_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 unsigned long long int JoltC_BodyInterface_GetUserData(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  return selfCpp->GetUserData(
+    *inBodyIDCpp
   );
-  return result;
-};
+}
 
 void JoltC_BodyInterface_SetUserData(
   JoltC_BodyInterface_t * self,
@@ -808,11 +923,12 @@ void JoltC_BodyInterface_SetUserData(
   unsigned long long int inUserData
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->SetUserData(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
+    *inBodyIDCpp,
     inUserData
   );
-};
+}
 
 JoltC_PhysicsMaterial_t * JoltC_BodyInterface_GetMaterial(
   JoltC_BodyInterface_t * self,
@@ -820,24 +936,27 @@ JoltC_PhysicsMaterial_t * JoltC_BodyInterface_GetMaterial(
   JoltC_SubShapeID_t * inSubShapeID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
-  const PhysicsMaterial * resultValue = selfCpp->GetMaterial(
-    *reinterpret_cast<BodyID *>(inBodyID->obj),
-    *reinterpret_cast<SubShapeID *>(inSubShapeID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const SubShapeID * inSubShapeIDCpp = static_cast<const SubShapeID *>(inSubShapeID->obj);
+  const PhysicsMaterial * resultPtr = selfCpp->GetMaterial(
+    *inBodyIDCpp,
+    *inSubShapeIDCpp
   );
-  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_PhysicsMaterial_t * result = new JoltC_PhysicsMaterial_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_BodyInterface_InvalidateContactCache(
   JoltC_BodyInterface_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyInterface * selfCpp = static_cast<BodyInterface *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->InvalidateContactCache(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
-};
+}
 
 //endregion
 

@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `CharacterContactSettings` instance.
+ */
 JoltC_CharacterContactSettings_t * JoltC_CharacterContactSettings_new() {
   JoltC_CharacterContactSettings_t * cInstance = new JoltC_CharacterContactSettings_t();
   CharacterContactSettings * cppInstance = new CharacterContactSettings();
@@ -22,9 +25,8 @@ bool JoltC_CharacterContactSettings_mCanPushCharacter_Get(
   JoltC_CharacterContactSettings_t * self
 ) {
   CharacterContactSettings * selfCpp = static_cast<CharacterContactSettings *>(self->obj);
-  bool result = selfCpp->mCanPushCharacter;
-  return result;
-};
+  return selfCpp->mCanPushCharacter;
+}
 
 void JoltC_CharacterContactSettings_mCanPushCharacter_Set(
   JoltC_CharacterContactSettings_t * self,
@@ -38,9 +40,8 @@ bool JoltC_CharacterContactSettings_mCanReceiveImpulses_Get(
   JoltC_CharacterContactSettings_t * self
 ) {
   CharacterContactSettings * selfCpp = static_cast<CharacterContactSettings *>(self->obj);
-  bool result = selfCpp->mCanReceiveImpulses;
-  return result;
-};
+  return selfCpp->mCanReceiveImpulses;
+}
 
 void JoltC_CharacterContactSettings_mCanReceiveImpulses_Set(
   JoltC_CharacterContactSettings_t * self,

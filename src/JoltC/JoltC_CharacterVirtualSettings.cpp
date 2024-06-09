@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `CharacterVirtualSettings` instance.
+ */
 JoltC_CharacterVirtualSettings_t * JoltC_CharacterVirtualSettings_new() {
   JoltC_CharacterVirtualSettings_t * cInstance = new JoltC_CharacterVirtualSettings_t();
   CharacterVirtualSettings * cppInstance = new CharacterVirtualSettings();
@@ -22,23 +25,22 @@ unsigned long JoltC_CharacterVirtualSettings_GetRefCount(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_CharacterVirtualSettings_AddRef(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_CharacterVirtualSettings_Release(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 
@@ -48,9 +50,8 @@ float JoltC_CharacterVirtualSettings_mMass_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mMass;
-  return result;
-};
+  return selfCpp->mMass;
+}
 
 void JoltC_CharacterVirtualSettings_mMass_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -64,9 +65,8 @@ float JoltC_CharacterVirtualSettings_mMaxStrength_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mMaxStrength;
-  return result;
-};
+  return selfCpp->mMaxStrength;
+}
 
 void JoltC_CharacterVirtualSettings_mMaxStrength_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -80,18 +80,19 @@ JoltC_Vec3_t * JoltC_CharacterVirtualSettings_mShapeOffset_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  const Vec3& resultValue = selfCpp->mShapeOffset;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mShapeOffset;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_CharacterVirtualSettings_mShapeOffset_Set(
   JoltC_CharacterVirtualSettings_t * self,
   JoltC_Vec3_t * mShapeOffset
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  selfCpp->mShapeOffset = *reinterpret_cast<Vec3 *>(mShapeOffset->obj);
+  selfCpp->mShapeOffset = *static_cast<Vec3 *>(mShapeOffset->obj);
 };
 
 JoltC_EBackFaceMode JoltC_CharacterVirtualSettings_mBackFaceMode_Get(
@@ -100,7 +101,7 @@ JoltC_EBackFaceMode JoltC_CharacterVirtualSettings_mBackFaceMode_Get(
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
   EBackFaceMode result = selfCpp->mBackFaceMode;
   return static_cast<JoltC_EBackFaceMode>(static_cast<int>(result));
-};
+}
 
 void JoltC_CharacterVirtualSettings_mBackFaceMode_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -114,9 +115,8 @@ float JoltC_CharacterVirtualSettings_mPredictiveContactDistance_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mPredictiveContactDistance;
-  return result;
-};
+  return selfCpp->mPredictiveContactDistance;
+}
 
 void JoltC_CharacterVirtualSettings_mPredictiveContactDistance_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -130,9 +130,8 @@ unsigned long JoltC_CharacterVirtualSettings_mMaxCollisionIterations_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  unsigned long result = selfCpp->mMaxCollisionIterations;
-  return result;
-};
+  return selfCpp->mMaxCollisionIterations;
+}
 
 void JoltC_CharacterVirtualSettings_mMaxCollisionIterations_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -146,9 +145,8 @@ unsigned long JoltC_CharacterVirtualSettings_mMaxConstraintIterations_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  unsigned long result = selfCpp->mMaxConstraintIterations;
-  return result;
-};
+  return selfCpp->mMaxConstraintIterations;
+}
 
 void JoltC_CharacterVirtualSettings_mMaxConstraintIterations_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -162,9 +160,8 @@ float JoltC_CharacterVirtualSettings_mMinTimeRemaining_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mMinTimeRemaining;
-  return result;
-};
+  return selfCpp->mMinTimeRemaining;
+}
 
 void JoltC_CharacterVirtualSettings_mMinTimeRemaining_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -178,9 +175,8 @@ float JoltC_CharacterVirtualSettings_mCollisionTolerance_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mCollisionTolerance;
-  return result;
-};
+  return selfCpp->mCollisionTolerance;
+}
 
 void JoltC_CharacterVirtualSettings_mCollisionTolerance_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -194,9 +190,8 @@ float JoltC_CharacterVirtualSettings_mCharacterPadding_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mCharacterPadding;
-  return result;
-};
+  return selfCpp->mCharacterPadding;
+}
 
 void JoltC_CharacterVirtualSettings_mCharacterPadding_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -210,9 +205,8 @@ unsigned long JoltC_CharacterVirtualSettings_mMaxNumHits_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  unsigned long result = selfCpp->mMaxNumHits;
-  return result;
-};
+  return selfCpp->mMaxNumHits;
+}
 
 void JoltC_CharacterVirtualSettings_mMaxNumHits_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -226,9 +220,8 @@ float JoltC_CharacterVirtualSettings_mHitReductionCosMaxAngle_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mHitReductionCosMaxAngle;
-  return result;
-};
+  return selfCpp->mHitReductionCosMaxAngle;
+}
 
 void JoltC_CharacterVirtualSettings_mHitReductionCosMaxAngle_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -242,9 +235,8 @@ float JoltC_CharacterVirtualSettings_mPenetrationRecoverySpeed_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mPenetrationRecoverySpeed;
-  return result;
-};
+  return selfCpp->mPenetrationRecoverySpeed;
+}
 
 void JoltC_CharacterVirtualSettings_mPenetrationRecoverySpeed_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -258,45 +250,46 @@ JoltC_Vec3_t * JoltC_CharacterVirtualSettings_mUp_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  const Vec3& resultValue = selfCpp->mUp;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mUp;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_CharacterVirtualSettings_mUp_Set(
   JoltC_CharacterVirtualSettings_t * self,
   JoltC_Vec3_t * mUp
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  selfCpp->mUp = *reinterpret_cast<Vec3 *>(mUp->obj);
+  selfCpp->mUp = *static_cast<Vec3 *>(mUp->obj);
 };
 
 JoltC_Plane_t * JoltC_CharacterVirtualSettings_mSupportingVolume_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  const Plane& resultValue = selfCpp->mSupportingVolume;
-  JoltC_Plane_t* result = new JoltC_Plane_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Plane * resultPtr = new Plane();
+  *resultPtr = selfCpp->mSupportingVolume;
+  JoltC_Plane_t * result = new JoltC_Plane_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_CharacterVirtualSettings_mSupportingVolume_Set(
   JoltC_CharacterVirtualSettings_t * self,
   JoltC_Plane_t * mSupportingVolume
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  selfCpp->mSupportingVolume = *reinterpret_cast<Plane *>(mSupportingVolume->obj);
+  selfCpp->mSupportingVolume = *static_cast<Plane *>(mSupportingVolume->obj);
 };
 
 float JoltC_CharacterVirtualSettings_mMaxSlopeAngle_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  float result = selfCpp->mMaxSlopeAngle;
-  return result;
-};
+  return selfCpp->mMaxSlopeAngle;
+}
 
 void JoltC_CharacterVirtualSettings_mMaxSlopeAngle_Set(
   JoltC_CharacterVirtualSettings_t * self,
@@ -310,18 +303,18 @@ JoltC_Shape_t * JoltC_CharacterVirtualSettings_mShape_Get(
   JoltC_CharacterVirtualSettings_t * self
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  const Shape * resultValue = selfCpp->mShape;
-  JoltC_Shape_t* result = new JoltC_Shape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Shape * resultPtr = selfCpp->mShape;
+  JoltC_Shape_t * result = new JoltC_Shape_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_CharacterVirtualSettings_mShape_Set(
   JoltC_CharacterVirtualSettings_t * self,
   JoltC_Shape_t * mShape
 ) {
   CharacterVirtualSettings * selfCpp = static_cast<CharacterVirtualSettings *>(self->obj);
-  selfCpp->mShape = reinterpret_cast<Shape *>(mShape->obj);
+  selfCpp->mShape = static_cast<const Shape *>(mShape->obj);
 };
 
 //endregion

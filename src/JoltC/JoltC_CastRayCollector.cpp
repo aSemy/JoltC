@@ -43,27 +43,28 @@ void JoltC_CastRayCollector_Reset(
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
   selfCpp->Reset();
-};
+}
 
 void JoltC_CastRayCollector_SetContext(
   JoltC_CastRayCollector_t * self,
   JoltC_TransformedShape_t * inContext
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
+  const TransformedShape * inContextCpp = static_cast<const TransformedShape *>(inContext->obj);
   selfCpp->SetContext(
-    reinterpret_cast<TransformedShape *>(inContext->obj)
+    inContextCpp
   );
-};
+}
 
 JoltC_TransformedShape_t * JoltC_CastRayCollector_GetContext(
   JoltC_CastRayCollector_t * self
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  const TransformedShape * resultValue = selfCpp->GetContext();
-  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const TransformedShape * resultPtr = selfCpp->GetContext();
+  JoltC_TransformedShape_t * result = new JoltC_TransformedShape_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_CastRayCollector_UpdateEarlyOutFraction(
   JoltC_CastRayCollector_t * self,
@@ -73,7 +74,7 @@ void JoltC_CastRayCollector_UpdateEarlyOutFraction(
   selfCpp->UpdateEarlyOutFraction(
     inFraction
   );
-};
+}
 
 void JoltC_CastRayCollector_ResetEarlyOutFraction(
   JoltC_CastRayCollector_t * self,
@@ -83,38 +84,35 @@ void JoltC_CastRayCollector_ResetEarlyOutFraction(
   selfCpp->ResetEarlyOutFraction(
     inFraction
   );
-};
+}
 
 void JoltC_CastRayCollector_ForceEarlyOut(
   JoltC_CastRayCollector_t * self
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
   selfCpp->ForceEarlyOut();
-};
+}
 
 bool JoltC_CastRayCollector_ShouldEarlyOut(
   JoltC_CastRayCollector_t * self
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
-};
+  return selfCpp->ShouldEarlyOut();
+}
 
 float JoltC_CastRayCollector_GetEarlyOutFraction(
   JoltC_CastRayCollector_t * self
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
-};
+  return selfCpp->GetEarlyOutFraction();
+}
 
 float JoltC_CastRayCollector_GetPositiveEarlyOutFraction(
   JoltC_CastRayCollector_t * self
 ) {
   CastRayCollector * selfCpp = static_cast<CastRayCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
-};
+  return selfCpp->GetPositiveEarlyOutFraction();
+}
 
 //endregion
 

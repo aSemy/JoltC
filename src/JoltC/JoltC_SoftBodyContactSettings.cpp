@@ -11,9 +11,8 @@ float JoltC_SoftBodyContactSettings_mInvMassScale1_Get(
   JoltC_SoftBodyContactSettings_t * self
 ) {
   SoftBodyContactSettings * selfCpp = static_cast<SoftBodyContactSettings *>(self->obj);
-  float result = selfCpp->mInvMassScale1;
-  return result;
-};
+  return selfCpp->mInvMassScale1;
+}
 
 void JoltC_SoftBodyContactSettings_mInvMassScale1_Set(
   JoltC_SoftBodyContactSettings_t * self,
@@ -27,9 +26,8 @@ float JoltC_SoftBodyContactSettings_mInvMassScale2_Get(
   JoltC_SoftBodyContactSettings_t * self
 ) {
   SoftBodyContactSettings * selfCpp = static_cast<SoftBodyContactSettings *>(self->obj);
-  float result = selfCpp->mInvMassScale2;
-  return result;
-};
+  return selfCpp->mInvMassScale2;
+}
 
 void JoltC_SoftBodyContactSettings_mInvMassScale2_Set(
   JoltC_SoftBodyContactSettings_t * self,
@@ -43,9 +41,8 @@ float JoltC_SoftBodyContactSettings_mInvInertiaScale2_Get(
   JoltC_SoftBodyContactSettings_t * self
 ) {
   SoftBodyContactSettings * selfCpp = static_cast<SoftBodyContactSettings *>(self->obj);
-  float result = selfCpp->mInvInertiaScale2;
-  return result;
-};
+  return selfCpp->mInvInertiaScale2;
+}
 
 void JoltC_SoftBodyContactSettings_mInvInertiaScale2_Set(
   JoltC_SoftBodyContactSettings_t * self,
@@ -59,9 +56,8 @@ bool JoltC_SoftBodyContactSettings_mIsSensor_Get(
   JoltC_SoftBodyContactSettings_t * self
 ) {
   SoftBodyContactSettings * selfCpp = static_cast<SoftBodyContactSettings *>(self->obj);
-  bool result = selfCpp->mIsSensor;
-  return result;
-};
+  return selfCpp->mIsSensor;
+}
 
 void JoltC_SoftBodyContactSettings_mIsSensor_Set(
   JoltC_SoftBodyContactSettings_t * self,

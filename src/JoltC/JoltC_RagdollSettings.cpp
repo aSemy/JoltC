@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `RagdollSettings` instance.
+ */
 JoltC_RagdollSettings_t * JoltC_RagdollSettings_new() {
   JoltC_RagdollSettings_t * cInstance = new JoltC_RagdollSettings_t();
   RagdollSettings * cppInstance = new RagdollSettings();
@@ -22,9 +25,8 @@ bool JoltC_RagdollSettings_Stabilize(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  bool result = selfCpp->Stabilize();
-  return result;
-};
+  return selfCpp->Stabilize();
+}
 
 JoltC_Ragdoll_t * JoltC_RagdollSettings_CreateRagdoll(
   JoltC_RagdollSettings_t * self,
@@ -33,25 +35,26 @@ JoltC_Ragdoll_t * JoltC_RagdollSettings_CreateRagdoll(
   JoltC_PhysicsSystem_t * inSystem
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  const Ragdoll * resultValue = selfCpp->CreateRagdoll(
+  PhysicsSystem * inSystemCpp = static_cast<PhysicsSystem *>(inSystem->obj);
+  const Ragdoll * resultPtr = selfCpp->CreateRagdoll(
     inCollisionGroup,
     inUserData,
-    reinterpret_cast<PhysicsSystem *>(inSystem->obj)
+    inSystemCpp
   );
-  JoltC_Ragdoll_t* result = new JoltC_Ragdoll_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Ragdoll_t * result = new JoltC_Ragdoll_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Skeleton_t * JoltC_RagdollSettings_GetSkeleton(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  const Skeleton * resultValue = selfCpp->GetSkeleton();
-  JoltC_Skeleton_t* result = new JoltC_Skeleton_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Skeleton * resultPtr = selfCpp->GetSkeleton();
+  JoltC_Skeleton_t * result = new JoltC_Skeleton_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_RagdollSettings_DisableParentChildCollisions(
   JoltC_RagdollSettings_t * self,
@@ -59,25 +62,26 @@ void JoltC_RagdollSettings_DisableParentChildCollisions(
   float inMinSeparationDistance
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
+  const Mat44MemRef * inJointMatricesCpp = static_cast<const Mat44MemRef *>(inJointMatrices->obj);
   selfCpp->DisableParentChildCollisions(
-    reinterpret_cast<Mat44MemRef *>(inJointMatrices->obj),
+    inJointMatricesCpp,
     inMinSeparationDistance
   );
-};
+}
 
 void JoltC_RagdollSettings_CalculateBodyIndexToConstraintIndex(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
   selfCpp->CalculateBodyIndexToConstraintIndex();
-};
+}
 
 void JoltC_RagdollSettings_CalculateConstraintIndexToBodyIdxPair(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
   selfCpp->CalculateConstraintIndexToBodyIdxPair();
-};
+}
 
 //endregion
 
@@ -87,54 +91,56 @@ JoltC_Skeleton_t * JoltC_RagdollSettings_mSkeleton_Get(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  const Skeleton * resultValue = selfCpp->mSkeleton;
-  JoltC_Skeleton_t* result = new JoltC_Skeleton_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Skeleton * resultPtr = selfCpp->mSkeleton;
+  JoltC_Skeleton_t * result = new JoltC_Skeleton_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_RagdollSettings_mSkeleton_Set(
   JoltC_RagdollSettings_t * self,
   JoltC_Skeleton_t * mSkeleton
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  selfCpp->mSkeleton = reinterpret_cast<Skeleton *>(mSkeleton->obj);
+  selfCpp->mSkeleton = static_cast<Skeleton *>(mSkeleton->obj);
 };
 
 JoltC_ArrayRagdollPart_t * JoltC_RagdollSettings_mParts_Get(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  const ArrayRagdollPart& resultValue = selfCpp->mParts;
-  JoltC_ArrayRagdollPart_t* result = new JoltC_ArrayRagdollPart_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  ArrayRagdollPart * resultPtr = new ArrayRagdollPart();
+  *resultPtr = selfCpp->mParts;
+  JoltC_ArrayRagdollPart_t * result = new JoltC_ArrayRagdollPart_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_RagdollSettings_mParts_Set(
   JoltC_RagdollSettings_t * self,
   JoltC_ArrayRagdollPart_t * mParts
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  selfCpp->mParts = *reinterpret_cast<ArrayRagdollPart *>(mParts->obj);
+  selfCpp->mParts = *static_cast<ArrayRagdollPart *>(mParts->obj);
 };
 
 JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_RagdollSettings_mAdditionalConstraints_Get(
   JoltC_RagdollSettings_t * self
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  const ArrayRagdollAdditionalConstraint& resultValue = selfCpp->mAdditionalConstraints;
-  JoltC_ArrayRagdollAdditionalConstraint_t* result = new JoltC_ArrayRagdollAdditionalConstraint_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  ArrayRagdollAdditionalConstraint * resultPtr = new ArrayRagdollAdditionalConstraint();
+  *resultPtr = selfCpp->mAdditionalConstraints;
+  JoltC_ArrayRagdollAdditionalConstraint_t * result = new JoltC_ArrayRagdollAdditionalConstraint_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_RagdollSettings_mAdditionalConstraints_Set(
   JoltC_RagdollSettings_t * self,
   JoltC_ArrayRagdollAdditionalConstraint_t * mAdditionalConstraints
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
-  selfCpp->mAdditionalConstraints = *reinterpret_cast<ArrayRagdollAdditionalConstraint *>(mAdditionalConstraints->obj);
+  selfCpp->mAdditionalConstraints = *static_cast<ArrayRagdollAdditionalConstraint *>(mAdditionalConstraints->obj);
 };
 
 //endregion

@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `TrackedVehicleControllerSettings` instance.
+ */
 JoltC_TrackedVehicleControllerSettings_t * JoltC_TrackedVehicleControllerSettings_new() {
   JoltC_TrackedVehicleControllerSettings_t * cInstance = new JoltC_TrackedVehicleControllerSettings_t();
   TrackedVehicleControllerSettings * cppInstance = new TrackedVehicleControllerSettings();
@@ -22,36 +25,38 @@ JoltC_VehicleEngineSettings_t * JoltC_TrackedVehicleControllerSettings_mEngine_G
   JoltC_TrackedVehicleControllerSettings_t * self
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
-  const VehicleEngineSettings& resultValue = selfCpp->mEngine;
-  JoltC_VehicleEngineSettings_t* result = new JoltC_VehicleEngineSettings_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  VehicleEngineSettings * resultPtr = new VehicleEngineSettings();
+  *resultPtr = selfCpp->mEngine;
+  JoltC_VehicleEngineSettings_t * result = new JoltC_VehicleEngineSettings_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_TrackedVehicleControllerSettings_mEngine_Set(
   JoltC_TrackedVehicleControllerSettings_t * self,
   JoltC_VehicleEngineSettings_t * mEngine
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
-  selfCpp->mEngine = *reinterpret_cast<VehicleEngineSettings *>(mEngine->obj);
+  selfCpp->mEngine = *static_cast<VehicleEngineSettings *>(mEngine->obj);
 };
 
 JoltC_VehicleTransmissionSettings_t * JoltC_TrackedVehicleControllerSettings_mTransmission_Get(
   JoltC_TrackedVehicleControllerSettings_t * self
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
-  const VehicleTransmissionSettings& resultValue = selfCpp->mTransmission;
-  JoltC_VehicleTransmissionSettings_t* result = new JoltC_VehicleTransmissionSettings_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  VehicleTransmissionSettings * resultPtr = new VehicleTransmissionSettings();
+  *resultPtr = selfCpp->mTransmission;
+  JoltC_VehicleTransmissionSettings_t * result = new JoltC_VehicleTransmissionSettings_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_TrackedVehicleControllerSettings_mTransmission_Set(
   JoltC_TrackedVehicleControllerSettings_t * self,
   JoltC_VehicleTransmissionSettings_t * mTransmission
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
-  selfCpp->mTransmission = *reinterpret_cast<VehicleTransmissionSettings *>(mTransmission->obj);
+  selfCpp->mTransmission = *static_cast<VehicleTransmissionSettings *>(mTransmission->obj);
 };
 
 size_t JoltC_TrackedVehicleControllerSettings_mTracks_Get(
@@ -61,8 +66,7 @@ size_t JoltC_TrackedVehicleControllerSettings_mTracks_Get(
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
   size_t resultSize = std::size(selfCpp->mTracks);
   // TODO get result array...
-  return resultSize;
-};
+}
 
 void JoltC_TrackedVehicleControllerSettings_mTracks_Set(
   JoltC_TrackedVehicleControllerSettings_t * self,
@@ -71,7 +75,7 @@ void JoltC_TrackedVehicleControllerSettings_mTracks_Set(
 ) {
   TrackedVehicleControllerSettings * selfCpp = static_cast<TrackedVehicleControllerSettings *>(self->obj);
   for (size_t i = 0; i < mTracksSize; i++) {
-    selfCpp->mTracks[i] = *(reinterpret_cast<VehicleTrackSettings *>(mTracks[i]->obj));
+    selfCpp->mTracks[i] = *(static_cast<VehicleTrackSettings *>(mTracks[i]->obj));
   };
 };
 

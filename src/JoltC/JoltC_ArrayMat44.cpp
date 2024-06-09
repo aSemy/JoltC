@@ -11,17 +11,15 @@ bool JoltC_ArrayMat44_empty(
   JoltC_ArrayMat44_t * self
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArrayMat44_size(
   JoltC_ArrayMat44_t * self
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_Mat44_t * JoltC_ArrayMat44_at(
   JoltC_ArrayMat44_t * self,
@@ -34,17 +32,18 @@ JoltC_Mat44_t * JoltC_ArrayMat44_at(
   JoltC_Mat44_t* result = new JoltC_Mat44_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArrayMat44_push_back(
   JoltC_ArrayMat44_t * self,
   JoltC_Mat44_t * inValue
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
+  const Mat44 * inValueCpp = static_cast<const Mat44 *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<Mat44 *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArrayMat44_reserve(
   JoltC_ArrayMat44_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArrayMat44_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArrayMat44_resize(
   JoltC_ArrayMat44_t * self,
@@ -64,24 +63,24 @@ void JoltC_ArrayMat44_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArrayMat44_clear(
   JoltC_ArrayMat44_t * self
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
   selfCpp->clear();
-};
+}
 
 JoltC_Mat44MemRef_t * JoltC_ArrayMat44_data(
   JoltC_ArrayMat44_t * self
 ) {
   ArrayMat44 * selfCpp = static_cast<ArrayMat44 *>(self->obj);
-  const Mat44MemRef * resultValue = selfCpp->data();
-  JoltC_Mat44MemRef_t* result = new JoltC_Mat44MemRef_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Mat44MemRef * resultPtr = selfCpp->data();
+  JoltC_Mat44MemRef_t * result = new JoltC_Mat44MemRef_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 //endregion
 

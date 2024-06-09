@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `CollisionGroup` instance.
+ */
 JoltC_CollisionGroup_t * JoltC_CollisionGroup_new_0() {
   JoltC_CollisionGroup_t * cInstance = new JoltC_CollisionGroup_t();
   CollisionGroup * cppInstance = new CollisionGroup();
@@ -14,14 +17,18 @@ JoltC_CollisionGroup_t * JoltC_CollisionGroup_new_0() {
   return cInstance;
 };
 
+/**
+  Construct a new `CollisionGroup` instance.
+ */
 JoltC_CollisionGroup_t * JoltC_CollisionGroup_new_1(
   JoltC_GroupFilter_t * inFilter,
   unsigned long inGroupID,
   unsigned long inSubGroupID
 ) {
+  GroupFilter * inFilterCpp = static_cast<GroupFilter *>(inFilter->obj);
   JoltC_CollisionGroup_t * cInstance = new JoltC_CollisionGroup_t();
   CollisionGroup * cppInstance = new CollisionGroup(
-    reinterpret_cast<GroupFilter *>(inFilter->obj),
+    inFilterCpp,
     inGroupID,
     inSubGroupID
   );
@@ -38,20 +45,21 @@ void JoltC_CollisionGroup_SetGroupFilter(
   JoltC_GroupFilter_t * inFilter
 ) {
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
+  GroupFilter * inFilterCpp = static_cast<GroupFilter *>(inFilter->obj);
   selfCpp->SetGroupFilter(
-    reinterpret_cast<GroupFilter *>(inFilter->obj)
+    inFilterCpp
   );
-};
+}
 
 JoltC_GroupFilter_t * JoltC_CollisionGroup_GetGroupFilter(
   JoltC_CollisionGroup_t * self
 ) {
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
-  const GroupFilter * resultValue = selfCpp->GetGroupFilter();
-  JoltC_GroupFilter_t* result = new JoltC_GroupFilter_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const GroupFilter * resultPtr = selfCpp->GetGroupFilter();
+  JoltC_GroupFilter_t * result = new JoltC_GroupFilter_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_CollisionGroup_SetGroupID(
   JoltC_CollisionGroup_t * self,
@@ -61,15 +69,14 @@ void JoltC_CollisionGroup_SetGroupID(
   selfCpp->SetGroupID(
     inGroupID
   );
-};
+}
 
 unsigned long JoltC_CollisionGroup_GetGroupID(
   JoltC_CollisionGroup_t * self
 ) {
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
-  unsigned long result = selfCpp->GetGroupID();
-  return result;
-};
+  return selfCpp->GetGroupID();
+}
 
 void JoltC_CollisionGroup_SetSubGroupID(
   JoltC_CollisionGroup_t * self,
@@ -79,15 +86,14 @@ void JoltC_CollisionGroup_SetSubGroupID(
   selfCpp->SetSubGroupID(
     inSubGroupID
   );
-};
+}
 
 unsigned long JoltC_CollisionGroup_GetSubGroupID(
   JoltC_CollisionGroup_t * self
 ) {
   CollisionGroup * selfCpp = static_cast<CollisionGroup *>(self->obj);
-  unsigned long result = selfCpp->GetSubGroupID();
-  return result;
-};
+  return selfCpp->GetSubGroupID();
+}
 
 //endregion
 

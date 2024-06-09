@@ -10,9 +10,8 @@ extern "C" {
 const float JoltC_HeightFieldShapeConstantValues_cNoCollisionValue_Get(
   JoltC_HeightFieldShapeConstantValues_t * self
 ) {
-  const float result = HeightFieldShapeConstantValues::cNoCollisionValue;
-  return result;
-};
+  return HeightFieldShapeConstantValues::cNoCollisionValue;
+}
 
 //endregion
 

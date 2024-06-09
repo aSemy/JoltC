@@ -11,17 +11,15 @@ bool JoltC_ArraySoftBodySharedSettingsLRA_empty(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self
 ) {
   ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySoftBodySharedSettingsLRA_size(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self
 ) {
   ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SoftBodySharedSettingsLRA_t * JoltC_ArraySoftBodySharedSettingsLRA_at(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
@@ -34,17 +32,18 @@ JoltC_SoftBodySharedSettingsLRA_t * JoltC_ArraySoftBodySharedSettingsLRA_at(
   JoltC_SoftBodySharedSettingsLRA_t* result = new JoltC_SoftBodySharedSettingsLRA_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsLRA_push_back(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
   JoltC_SoftBodySharedSettingsLRA_t * inValue
 ) {
   ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
+  const SoftBodySharedSettingsLRA * inValueCpp = static_cast<const SoftBodySharedSettingsLRA *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SoftBodySharedSettingsLRA *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsLRA_reserve(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArraySoftBodySharedSettingsLRA_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsLRA_resize(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArraySoftBodySharedSettingsLRA_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsLRA_clear(
   JoltC_ArraySoftBodySharedSettingsLRA_t * self
 ) {
   ArraySoftBodySharedSettingsLRA * selfCpp = static_cast<ArraySoftBodySharedSettingsLRA *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

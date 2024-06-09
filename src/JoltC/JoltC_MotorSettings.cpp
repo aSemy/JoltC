@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `MotorSettings` instance.
+ */
 JoltC_MotorSettings_t * JoltC_MotorSettings_new() {
   JoltC_MotorSettings_t * cInstance = new JoltC_MotorSettings_t();
   MotorSettings * cppInstance = new MotorSettings();
@@ -22,27 +25,27 @@ JoltC_SpringSettings_t * JoltC_MotorSettings_mSpringSettings_Get(
   JoltC_MotorSettings_t * self
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
-  const SpringSettings& resultValue = selfCpp->mSpringSettings;
-  JoltC_SpringSettings_t* result = new JoltC_SpringSettings_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  SpringSettings * resultPtr = new SpringSettings();
+  *resultPtr = selfCpp->mSpringSettings;
+  JoltC_SpringSettings_t * result = new JoltC_SpringSettings_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_MotorSettings_mSpringSettings_Set(
   JoltC_MotorSettings_t * self,
   JoltC_SpringSettings_t * mSpringSettings
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
-  selfCpp->mSpringSettings = *reinterpret_cast<SpringSettings *>(mSpringSettings->obj);
+  selfCpp->mSpringSettings = *static_cast<SpringSettings *>(mSpringSettings->obj);
 };
 
 float JoltC_MotorSettings_mMinForceLimit_Get(
   JoltC_MotorSettings_t * self
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
-  float result = selfCpp->mMinForceLimit;
-  return result;
-};
+  return selfCpp->mMinForceLimit;
+}
 
 void JoltC_MotorSettings_mMinForceLimit_Set(
   JoltC_MotorSettings_t * self,
@@ -56,9 +59,8 @@ float JoltC_MotorSettings_mMaxForceLimit_Get(
   JoltC_MotorSettings_t * self
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
-  float result = selfCpp->mMaxForceLimit;
-  return result;
-};
+  return selfCpp->mMaxForceLimit;
+}
 
 void JoltC_MotorSettings_mMaxForceLimit_Set(
   JoltC_MotorSettings_t * self,
@@ -72,9 +74,8 @@ float JoltC_MotorSettings_mMinTorqueLimit_Get(
   JoltC_MotorSettings_t * self
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
-  float result = selfCpp->mMinTorqueLimit;
-  return result;
-};
+  return selfCpp->mMinTorqueLimit;
+}
 
 void JoltC_MotorSettings_mMinTorqueLimit_Set(
   JoltC_MotorSettings_t * self,
@@ -88,9 +89,8 @@ float JoltC_MotorSettings_mMaxTorqueLimit_Get(
   JoltC_MotorSettings_t * self
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
-  float result = selfCpp->mMaxTorqueLimit;
-  return result;
-};
+  return selfCpp->mMaxTorqueLimit;
+}
 
 void JoltC_MotorSettings_mMaxTorqueLimit_Set(
   JoltC_MotorSettings_t * self,

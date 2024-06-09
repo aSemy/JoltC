@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `BodyFilter` instance.
+ */
 JoltC_BodyFilter_t * JoltC_BodyFilter_new() {
   JoltC_BodyFilter_t * cInstance = new JoltC_BodyFilter_t();
   BodyFilter * cppInstance = new BodyFilter();

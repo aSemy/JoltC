@@ -24,23 +24,22 @@ unsigned long JoltC_GroupFilter_GetRefCount(
   JoltC_GroupFilter_t * self
 ) {
   GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_GroupFilter_AddRef(
   JoltC_GroupFilter_t * self
 ) {
   GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_GroupFilter_Release(
   JoltC_GroupFilter_t * self
 ) {
   GroupFilter * selfCpp = static_cast<GroupFilter *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 

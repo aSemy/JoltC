@@ -11,17 +11,15 @@ bool JoltC_ArraySoftBodySharedSettingsInvBind_empty(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self
 ) {
   ArraySoftBodySharedSettingsInvBind * selfCpp = static_cast<ArraySoftBodySharedSettingsInvBind *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySoftBodySharedSettingsInvBind_size(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self
 ) {
   ArraySoftBodySharedSettingsInvBind * selfCpp = static_cast<ArraySoftBodySharedSettingsInvBind *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SoftBodySharedSettingsInvBind_t * JoltC_ArraySoftBodySharedSettingsInvBind_at(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
@@ -34,17 +32,18 @@ JoltC_SoftBodySharedSettingsInvBind_t * JoltC_ArraySoftBodySharedSettingsInvBind
   JoltC_SoftBodySharedSettingsInvBind_t* result = new JoltC_SoftBodySharedSettingsInvBind_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_push_back(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
   JoltC_SoftBodySharedSettingsInvBind_t * inValue
 ) {
   ArraySoftBodySharedSettingsInvBind * selfCpp = static_cast<ArraySoftBodySharedSettingsInvBind *>(self->obj);
+  const SoftBodySharedSettingsInvBind * inValueCpp = static_cast<const SoftBodySharedSettingsInvBind *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SoftBodySharedSettingsInvBind *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_reserve(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArraySoftBodySharedSettingsInvBind_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_resize(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArraySoftBodySharedSettingsInvBind_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsInvBind_clear(
   JoltC_ArraySoftBodySharedSettingsInvBind_t * self
 ) {
   ArraySoftBodySharedSettingsInvBind * selfCpp = static_cast<ArraySoftBodySharedSettingsInvBind *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

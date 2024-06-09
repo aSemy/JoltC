@@ -7,18 +7,22 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `CylinderShapeSettings` instance.
+ */
 JoltC_CylinderShapeSettings_t * JoltC_CylinderShapeSettings_new(
   float inHalfHeight,
   float inRadius,
   float inConvexRadius,
   JoltC_PhysicsMaterial_t * inMaterial
 ) {
+  const PhysicsMaterial * inMaterialCpp = static_cast<const PhysicsMaterial *>(inMaterial->obj);
   JoltC_CylinderShapeSettings_t * cInstance = new JoltC_CylinderShapeSettings_t();
   CylinderShapeSettings * cppInstance = new CylinderShapeSettings(
     inHalfHeight,
     inRadius,
     inConvexRadius,
-    reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
+    inMaterialCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
@@ -32,40 +36,40 @@ unsigned long JoltC_CylinderShapeSettings_GetRefCount(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_CylinderShapeSettings_AddRef(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_CylinderShapeSettings_Release(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_Shape_ShapeResult_t * JoltC_CylinderShapeSettings_Create(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  const Shape::ShapeResult& resultValue = selfCpp->Create();
-  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Shape::ShapeResult * resultPtr = new Shape::ShapeResult();
+  *resultPtr = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t * result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_CylinderShapeSettings_ClearCachedResult(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
   selfCpp->ClearCachedResult();
-};
+}
 
 //endregion
 
@@ -75,9 +79,8 @@ float JoltC_CylinderShapeSettings_mHalfHeight_Get(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  float result = selfCpp->mHalfHeight;
-  return result;
-};
+  return selfCpp->mHalfHeight;
+}
 
 void JoltC_CylinderShapeSettings_mHalfHeight_Set(
   JoltC_CylinderShapeSettings_t * self,
@@ -91,9 +94,8 @@ float JoltC_CylinderShapeSettings_mRadius_Get(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  float result = selfCpp->mRadius;
-  return result;
-};
+  return selfCpp->mRadius;
+}
 
 void JoltC_CylinderShapeSettings_mRadius_Set(
   JoltC_CylinderShapeSettings_t * self,
@@ -107,9 +109,8 @@ float JoltC_CylinderShapeSettings_mConvexRadius_Get(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  float result = selfCpp->mConvexRadius;
-  return result;
-};
+  return selfCpp->mConvexRadius;
+}
 
 void JoltC_CylinderShapeSettings_mConvexRadius_Set(
   JoltC_CylinderShapeSettings_t * self,
@@ -123,27 +124,26 @@ JoltC_PhysicsMaterial_t * JoltC_CylinderShapeSettings_mMaterial_Get(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
-  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const PhysicsMaterial * resultPtr = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t * result = new JoltC_PhysicsMaterial_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_CylinderShapeSettings_mMaterial_Set(
   JoltC_CylinderShapeSettings_t * self,
   JoltC_PhysicsMaterial_t * mMaterial
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);
+  selfCpp->mMaterial = static_cast<const PhysicsMaterial *>(mMaterial->obj);
 };
 
 float JoltC_CylinderShapeSettings_mDensity_Get(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  float result = selfCpp->mDensity;
-  return result;
-};
+  return selfCpp->mDensity;
+}
 
 void JoltC_CylinderShapeSettings_mDensity_Set(
   JoltC_CylinderShapeSettings_t * self,
@@ -157,9 +157,8 @@ unsigned long long int JoltC_CylinderShapeSettings_mUserData_Get(
   JoltC_CylinderShapeSettings_t * self
 ) {
   CylinderShapeSettings * selfCpp = static_cast<CylinderShapeSettings *>(self->obj);
-  unsigned long long int result = selfCpp->mUserData;
-  return result;
-};
+  return selfCpp->mUserData;
+}
 
 void JoltC_CylinderShapeSettings_mUserData_Set(
   JoltC_CylinderShapeSettings_t * self,

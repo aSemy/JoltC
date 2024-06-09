@@ -42,23 +42,22 @@ unsigned long JoltC_VehicleController_GetRefCount(
   JoltC_VehicleController_t * self
 ) {
   VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_VehicleController_AddRef(
   JoltC_VehicleController_t * self
 ) {
   VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_VehicleController_Release(
   JoltC_VehicleController_t * self
 ) {
   VehicleController * selfCpp = static_cast<VehicleController *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 

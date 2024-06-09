@@ -7,12 +7,16 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `IgnoreSingleBodyFilter` instance.
+ */
 JoltC_IgnoreSingleBodyFilter_t * JoltC_IgnoreSingleBodyFilter_new(
   JoltC_BodyID_t * inBodyID
 ) {
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   JoltC_IgnoreSingleBodyFilter_t * cInstance = new JoltC_IgnoreSingleBodyFilter_t();
   IgnoreSingleBodyFilter * cppInstance = new IgnoreSingleBodyFilter(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;

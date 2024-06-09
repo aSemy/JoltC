@@ -11,9 +11,8 @@ float JoltC_VehicleTrack_mAngularVelocity_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  float result = selfCpp->mAngularVelocity;
-  return result;
-};
+  return selfCpp->mAngularVelocity;
+}
 
 void JoltC_VehicleTrack_mAngularVelocity_Set(
   JoltC_VehicleTrack_t * self,
@@ -27,9 +26,8 @@ long JoltC_VehicleTrack_mDrivenWheel_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  long result = selfCpp->mDrivenWheel;
-  return result;
-};
+  return selfCpp->mDrivenWheel;
+}
 
 void JoltC_VehicleTrack_mDrivenWheel_Set(
   JoltC_VehicleTrack_t * self,
@@ -43,27 +41,27 @@ JoltC_ArrayUint_t * JoltC_VehicleTrack_mWheels_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  const ArrayUint& resultValue = selfCpp->mWheels;
-  JoltC_ArrayUint_t* result = new JoltC_ArrayUint_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  ArrayUint * resultPtr = new ArrayUint();
+  *resultPtr = selfCpp->mWheels;
+  JoltC_ArrayUint_t * result = new JoltC_ArrayUint_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_VehicleTrack_mWheels_Set(
   JoltC_VehicleTrack_t * self,
   JoltC_ArrayUint_t * mWheels
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  selfCpp->mWheels = *reinterpret_cast<ArrayUint *>(mWheels->obj);
+  selfCpp->mWheels = *static_cast<ArrayUint *>(mWheels->obj);
 };
 
 float JoltC_VehicleTrack_mInertia_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  float result = selfCpp->mInertia;
-  return result;
-};
+  return selfCpp->mInertia;
+}
 
 void JoltC_VehicleTrack_mInertia_Set(
   JoltC_VehicleTrack_t * self,
@@ -77,9 +75,8 @@ float JoltC_VehicleTrack_mAngularDamping_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  float result = selfCpp->mAngularDamping;
-  return result;
-};
+  return selfCpp->mAngularDamping;
+}
 
 void JoltC_VehicleTrack_mAngularDamping_Set(
   JoltC_VehicleTrack_t * self,
@@ -93,9 +90,8 @@ float JoltC_VehicleTrack_mMaxBrakeTorque_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  float result = selfCpp->mMaxBrakeTorque;
-  return result;
-};
+  return selfCpp->mMaxBrakeTorque;
+}
 
 void JoltC_VehicleTrack_mMaxBrakeTorque_Set(
   JoltC_VehicleTrack_t * self,
@@ -109,9 +105,8 @@ float JoltC_VehicleTrack_mDifferentialRatio_Get(
   JoltC_VehicleTrack_t * self
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
-  float result = selfCpp->mDifferentialRatio;
-  return result;
-};
+  return selfCpp->mDifferentialRatio;
+}
 
 void JoltC_VehicleTrack_mDifferentialRatio_Set(
   JoltC_VehicleTrack_t * self,

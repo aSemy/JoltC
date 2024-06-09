@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `Vec4` instance.
+ */
 JoltC_Vec4_t * JoltC_Vec4_new_0() {
   JoltC_Vec4_t * cInstance = new JoltC_Vec4_t();
   Vec4 * cppInstance = new Vec4();
@@ -14,30 +17,41 @@ JoltC_Vec4_t * JoltC_Vec4_new_0() {
   return cInstance;
 };
 
+/**
+  Construct a new `Vec4` instance.
+ */
 JoltC_Vec4_t * JoltC_Vec4_new_1(
   JoltC_Vec4_t * inV
 ) {
+  const Vec4 * inVCpp = static_cast<const Vec4 *>(inV->obj);
   JoltC_Vec4_t * cInstance = new JoltC_Vec4_t();
   Vec4 * cppInstance = new Vec4(
-    *reinterpret_cast<Vec4 *>(inV->obj)
+    *inVCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
 };
 
+/**
+  Construct a new `Vec4` instance.
+ */
 JoltC_Vec4_t * JoltC_Vec4_new_2(
   JoltC_Vec3_t * inV,
   float inW
 ) {
+  Vec3 * inVCpp = static_cast<Vec3 *>(inV->obj);
   JoltC_Vec4_t * cInstance = new JoltC_Vec4_t();
   Vec4 * cppInstance = new Vec4(
-    *reinterpret_cast<Vec3 *>(inV->obj),
+    *inVCpp,
     inW
   );
   cInstance->obj = cppInstance;
   return cInstance;
 };
 
+/**
+  Construct a new `Vec4` instance.
+ */
 JoltC_Vec4_t * JoltC_Vec4_new_3(
   float inX,
   float inY,
@@ -63,33 +77,29 @@ float JoltC_Vec4_GetX(
   JoltC_Vec4_t * self
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  float result = selfCpp->GetX();
-  return result;
-};
+  return selfCpp->GetX();
+}
 
 float JoltC_Vec4_GetY(
   JoltC_Vec4_t * self
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  float result = selfCpp->GetY();
-  return result;
-};
+  return selfCpp->GetY();
+}
 
 float JoltC_Vec4_GetZ(
   JoltC_Vec4_t * self
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  float result = selfCpp->GetZ();
-  return result;
-};
+  return selfCpp->GetZ();
+}
 
 float JoltC_Vec4_GetW(
   JoltC_Vec4_t * self
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  float result = selfCpp->GetW();
-  return result;
-};
+  return selfCpp->GetW();
+}
 
 void JoltC_Vec4_SetX(
   JoltC_Vec4_t * self,
@@ -99,7 +109,7 @@ void JoltC_Vec4_SetX(
   selfCpp->SetX(
     inX
   );
-};
+}
 
 void JoltC_Vec4_SetY(
   JoltC_Vec4_t * self,
@@ -109,7 +119,7 @@ void JoltC_Vec4_SetY(
   selfCpp->SetY(
     inY
   );
-};
+}
 
 void JoltC_Vec4_SetZ(
   JoltC_Vec4_t * self,
@@ -119,7 +129,7 @@ void JoltC_Vec4_SetZ(
   selfCpp->SetZ(
     inZ
   );
-};
+}
 
 void JoltC_Vec4_SetW(
   JoltC_Vec4_t * self,
@@ -129,7 +139,7 @@ void JoltC_Vec4_SetW(
   selfCpp->SetW(
     inW
   );
-};
+}
 
 void JoltC_Vec4_Set(
   JoltC_Vec4_t * self,
@@ -145,18 +155,17 @@ void JoltC_Vec4_Set(
     inZ,
     inW
   );
-};
+}
 
 float JoltC_Vec4_GetComponent(
   JoltC_Vec4_t * self,
   unsigned long inCoordinate
 ) {
   Vec4 * selfCpp = static_cast<Vec4 *>(self->obj);
-  float result = selfCpp->operator[](
+  return selfCpp->operator[](
     inCoordinate
   );
-  return result;
-};
+}
 
 //endregion
 

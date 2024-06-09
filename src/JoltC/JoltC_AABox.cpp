@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `AABox` instance.
+ */
 JoltC_AABox_t * JoltC_AABox_new_0() {
   JoltC_AABox_t * cInstance = new JoltC_AABox_t();
   AABox * cppInstance = new AABox();
@@ -14,14 +17,19 @@ JoltC_AABox_t * JoltC_AABox_new_0() {
   return cInstance;
 };
 
+/**
+  Construct a new `AABox` instance.
+ */
 JoltC_AABox_t * JoltC_AABox_new_1(
   JoltC_Vec3_t * inMin,
   JoltC_Vec3_t * inMax
 ) {
+  const Vec3 * inMinCpp = static_cast<const Vec3 *>(inMin->obj);
+  const Vec3 * inMaxCpp = static_cast<const Vec3 *>(inMax->obj);
   JoltC_AABox_t * cInstance = new JoltC_AABox_t();
   AABox * cppInstance = new AABox(
-    *reinterpret_cast<Vec3 *>(inMin->obj),
-    *reinterpret_cast<Vec3 *>(inMax->obj)
+    *inMinCpp,
+    *inMaxCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
@@ -32,22 +40,23 @@ JoltC_AABox_t * JoltC_AABox_new_1(
 //region functions
 
 JoltC_AABox_t * JoltC_AABox_sBiggest() {
-  const AABox& resultValue = AABox::sBiggest();
-  JoltC_AABox_t* result = new JoltC_AABox_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  AABox * resultPtr = new AABox();
+  *resultPtr = AABox::sBiggest();
+  JoltC_AABox_t * result = new JoltC_AABox_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 bool JoltC_AABox_Overlaps(
   JoltC_AABox_t * self,
   JoltC_AABox_t * inOther
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
-  bool result = selfCpp->Overlaps(
-    *reinterpret_cast<AABox *>(inOther->obj)
+  const AABox * inOtherCpp = static_cast<const AABox *>(inOther->obj);
+  return selfCpp->Overlaps(
+    *inOtherCpp
   );
-  return result;
-};
+}
 
 //endregion
 
@@ -57,36 +66,38 @@ JoltC_Vec3_t * JoltC_AABox_mMin_Get(
   JoltC_AABox_t * self
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
-  const Vec3& resultValue = selfCpp->mMin;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mMin;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_AABox_mMin_Set(
   JoltC_AABox_t * self,
   JoltC_Vec3_t * mMin
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
-  selfCpp->mMin = *reinterpret_cast<Vec3 *>(mMin->obj);
+  selfCpp->mMin = *static_cast<Vec3 *>(mMin->obj);
 };
 
 JoltC_Vec3_t * JoltC_AABox_mMax_Get(
   JoltC_AABox_t * self
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
-  const Vec3& resultValue = selfCpp->mMax;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mMax;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_AABox_mMax_Set(
   JoltC_AABox_t * self,
   JoltC_Vec3_t * mMax
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
-  selfCpp->mMax = *reinterpret_cast<Vec3 *>(mMax->obj);
+  selfCpp->mMax = *static_cast<Vec3 *>(mMax->obj);
 };
 
 //endregion

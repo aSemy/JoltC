@@ -34,13 +34,14 @@ JoltC_Body_t * JoltC_BodyLockInterface_TryGetBody(
   JoltC_BodyID_t * inBodyID
 ) {
   BodyLockInterface * selfCpp = static_cast<BodyLockInterface *>(self->obj);
-  const Body * resultValue = selfCpp->TryGetBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
+  const Body * resultPtr = selfCpp->TryGetBody(
+    *inBodyIDCpp
   );
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 //endregion
 

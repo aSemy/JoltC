@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `Skeleton` instance.
+ */
 JoltC_Skeleton_t * JoltC_Skeleton_new() {
   JoltC_Skeleton_t * cInstance = new JoltC_Skeleton_t();
   Skeleton * cppInstance = new Skeleton();
@@ -24,35 +27,33 @@ long JoltC_Skeleton_AddJoint(
   long inParentIndex
 ) {
   Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
-  long result = selfCpp->AddJoint(
-    *reinterpret_cast<JPHString *>(inName->obj),
+  const JPHString * inNameCpp = static_cast<const JPHString *>(inName->obj);
+  return selfCpp->AddJoint(
+    *inNameCpp,
     inParentIndex
   );
-  return result;
-};
+}
 
 long JoltC_Skeleton_GetJointCount(
   JoltC_Skeleton_t * self
 ) {
   Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
-  long result = selfCpp->GetJointCount();
-  return result;
-};
+  return selfCpp->GetJointCount();
+}
 
 bool JoltC_Skeleton_AreJointsCorrectlyOrdered(
   JoltC_Skeleton_t * self
 ) {
   Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
-  bool result = selfCpp->AreJointsCorrectlyOrdered();
-  return result;
-};
+  return selfCpp->AreJointsCorrectlyOrdered();
+}
 
 void JoltC_Skeleton_CalculateParentJointIndices(
   JoltC_Skeleton_t * self
 ) {
   Skeleton * selfCpp = static_cast<Skeleton *>(self->obj);
   selfCpp->CalculateParentJointIndices();
-};
+}
 
 //endregion
 

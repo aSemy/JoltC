@@ -12,15 +12,14 @@ void JoltC_VehicleEngine_ClampRPM(
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
   selfCpp->ClampRPM();
-};
+}
 
 float JoltC_VehicleEngine_GetCurrentRPM(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  float result = selfCpp->GetCurrentRPM();
-  return result;
-};
+  return selfCpp->GetCurrentRPM();
+}
 
 void JoltC_VehicleEngine_SetCurrentRPM(
   JoltC_VehicleEngine_t * self,
@@ -30,26 +29,24 @@ void JoltC_VehicleEngine_SetCurrentRPM(
   selfCpp->SetCurrentRPM(
     inRPM
   );
-};
+}
 
 float JoltC_VehicleEngine_GetAngularVelocity(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  float result = selfCpp->GetAngularVelocity();
-  return result;
-};
+  return selfCpp->GetAngularVelocity();
+}
 
 float JoltC_VehicleEngine_GetTorque(
   JoltC_VehicleEngine_t * self,
   float inAcceleration
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  float result = selfCpp->GetTorque(
+  return selfCpp->GetTorque(
     inAcceleration
   );
-  return result;
-};
+}
 
 //endregion
 
@@ -59,9 +56,8 @@ float JoltC_VehicleEngine_mMaxTorque_Get(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  float result = selfCpp->mMaxTorque;
-  return result;
-};
+  return selfCpp->mMaxTorque;
+}
 
 void JoltC_VehicleEngine_mMaxTorque_Set(
   JoltC_VehicleEngine_t * self,
@@ -75,9 +71,8 @@ float JoltC_VehicleEngine_mMinRPM_Get(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  float result = selfCpp->mMinRPM;
-  return result;
-};
+  return selfCpp->mMinRPM;
+}
 
 void JoltC_VehicleEngine_mMinRPM_Set(
   JoltC_VehicleEngine_t * self,
@@ -91,9 +86,8 @@ float JoltC_VehicleEngine_mMaxRPM_Get(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  float result = selfCpp->mMaxRPM;
-  return result;
-};
+  return selfCpp->mMaxRPM;
+}
 
 void JoltC_VehicleEngine_mMaxRPM_Set(
   JoltC_VehicleEngine_t * self,
@@ -107,27 +101,27 @@ JoltC_LinearCurve_t * JoltC_VehicleEngine_mNormalizedTorque_Get(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  const LinearCurve& resultValue = selfCpp->mNormalizedTorque;
-  JoltC_LinearCurve_t* result = new JoltC_LinearCurve_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  LinearCurve * resultPtr = new LinearCurve();
+  *resultPtr = selfCpp->mNormalizedTorque;
+  JoltC_LinearCurve_t * result = new JoltC_LinearCurve_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_VehicleEngine_mNormalizedTorque_Set(
   JoltC_VehicleEngine_t * self,
   JoltC_LinearCurve_t * mNormalizedTorque
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  selfCpp->mNormalizedTorque = *reinterpret_cast<LinearCurve *>(mNormalizedTorque->obj);
+  selfCpp->mNormalizedTorque = *static_cast<LinearCurve *>(mNormalizedTorque->obj);
 };
 
 float JoltC_VehicleEngine_mInertia_Get(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  float result = selfCpp->mInertia;
-  return result;
-};
+  return selfCpp->mInertia;
+}
 
 void JoltC_VehicleEngine_mInertia_Set(
   JoltC_VehicleEngine_t * self,
@@ -141,9 +135,8 @@ float JoltC_VehicleEngine_mAngularDamping_Get(
   JoltC_VehicleEngine_t * self
 ) {
   VehicleEngine * selfCpp = static_cast<VehicleEngine *>(self->obj);
-  float result = selfCpp->mAngularDamping;
-  return result;
-};
+  return selfCpp->mAngularDamping;
+}
 
 void JoltC_VehicleEngine_mAngularDamping_Set(
   JoltC_VehicleEngine_t * self,

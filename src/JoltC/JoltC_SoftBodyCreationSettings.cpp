@@ -7,17 +7,23 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `SoftBodyCreationSettings` instance.
+ */
 JoltC_SoftBodyCreationSettings_t * JoltC_SoftBodyCreationSettings_new(
   JoltC_SoftBodySharedSettings_t * inSettings,
   JoltC_RVec3_t * inPosition,
   JoltC_Quat_t * inRotation,
   unsigned long inObjectLayer
 ) {
+  const SoftBodySharedSettings * inSettingsCpp = static_cast<const SoftBodySharedSettings *>(inSettings->obj);
+  RVec3 * inPositionCpp = static_cast<RVec3 *>(inPosition->obj);
+  Quat * inRotationCpp = static_cast<Quat *>(inRotation->obj);
   JoltC_SoftBodyCreationSettings_t * cInstance = new JoltC_SoftBodyCreationSettings_t();
   SoftBodyCreationSettings * cppInstance = new SoftBodyCreationSettings(
-    reinterpret_cast<SoftBodySharedSettings *>(inSettings->obj),
-    *reinterpret_cast<RVec3 *>(inPosition->obj),
-    *reinterpret_cast<Quat *>(inRotation->obj),
+    inSettingsCpp,
+    *inPositionCpp,
+    *inRotationCpp,
     inObjectLayer
   );
   cInstance->obj = cppInstance;
@@ -32,45 +38,46 @@ JoltC_RVec3_t * JoltC_SoftBodyCreationSettings_mPosition_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  const RVec3& resultValue = selfCpp->mPosition;
-  JoltC_RVec3_t* result = new JoltC_RVec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  RVec3 * resultPtr = new RVec3();
+  *resultPtr = selfCpp->mPosition;
+  JoltC_RVec3_t * result = new JoltC_RVec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_SoftBodyCreationSettings_mPosition_Set(
   JoltC_SoftBodyCreationSettings_t * self,
   JoltC_RVec3_t * mPosition
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  selfCpp->mPosition = *reinterpret_cast<RVec3 *>(mPosition->obj);
+  selfCpp->mPosition = *static_cast<RVec3 *>(mPosition->obj);
 };
 
 JoltC_Quat_t * JoltC_SoftBodyCreationSettings_mRotation_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  const Quat& resultValue = selfCpp->mRotation;
-  JoltC_Quat_t* result = new JoltC_Quat_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Quat * resultPtr = new Quat();
+  *resultPtr = selfCpp->mRotation;
+  JoltC_Quat_t * result = new JoltC_Quat_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_SoftBodyCreationSettings_mRotation_Set(
   JoltC_SoftBodyCreationSettings_t * self,
   JoltC_Quat_t * mRotation
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  selfCpp->mRotation = *reinterpret_cast<Quat *>(mRotation->obj);
+  selfCpp->mRotation = *static_cast<Quat *>(mRotation->obj);
 };
 
 unsigned long long int JoltC_SoftBodyCreationSettings_mUserData_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  unsigned long long int result = selfCpp->mUserData;
-  return result;
-};
+  return selfCpp->mUserData;
+}
 
 void JoltC_SoftBodyCreationSettings_mUserData_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -84,9 +91,8 @@ unsigned long JoltC_SoftBodyCreationSettings_mObjectLayer_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  unsigned long result = selfCpp->mObjectLayer;
-  return result;
-};
+  return selfCpp->mObjectLayer;
+}
 
 void JoltC_SoftBodyCreationSettings_mObjectLayer_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -100,27 +106,27 @@ JoltC_CollisionGroup_t * JoltC_SoftBodyCreationSettings_mCollisionGroup_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  const CollisionGroup& resultValue = selfCpp->mCollisionGroup;
-  JoltC_CollisionGroup_t* result = new JoltC_CollisionGroup_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  CollisionGroup * resultPtr = new CollisionGroup();
+  *resultPtr = selfCpp->mCollisionGroup;
+  JoltC_CollisionGroup_t * result = new JoltC_CollisionGroup_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_SoftBodyCreationSettings_mCollisionGroup_Set(
   JoltC_SoftBodyCreationSettings_t * self,
   JoltC_CollisionGroup_t * mCollisionGroup
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  selfCpp->mCollisionGroup = *reinterpret_cast<CollisionGroup *>(mCollisionGroup->obj);
+  selfCpp->mCollisionGroup = *static_cast<CollisionGroup *>(mCollisionGroup->obj);
 };
 
 unsigned long JoltC_SoftBodyCreationSettings_mNumIterations_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  unsigned long result = selfCpp->mNumIterations;
-  return result;
-};
+  return selfCpp->mNumIterations;
+}
 
 void JoltC_SoftBodyCreationSettings_mNumIterations_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -134,9 +140,8 @@ float JoltC_SoftBodyCreationSettings_mLinearDamping_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  float result = selfCpp->mLinearDamping;
-  return result;
-};
+  return selfCpp->mLinearDamping;
+}
 
 void JoltC_SoftBodyCreationSettings_mLinearDamping_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -150,9 +155,8 @@ float JoltC_SoftBodyCreationSettings_mMaxLinearVelocity_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  float result = selfCpp->mMaxLinearVelocity;
-  return result;
-};
+  return selfCpp->mMaxLinearVelocity;
+}
 
 void JoltC_SoftBodyCreationSettings_mMaxLinearVelocity_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -166,9 +170,8 @@ float JoltC_SoftBodyCreationSettings_mRestitution_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  float result = selfCpp->mRestitution;
-  return result;
-};
+  return selfCpp->mRestitution;
+}
 
 void JoltC_SoftBodyCreationSettings_mRestitution_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -182,9 +185,8 @@ float JoltC_SoftBodyCreationSettings_mFriction_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  float result = selfCpp->mFriction;
-  return result;
-};
+  return selfCpp->mFriction;
+}
 
 void JoltC_SoftBodyCreationSettings_mFriction_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -198,9 +200,8 @@ float JoltC_SoftBodyCreationSettings_mPressure_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  float result = selfCpp->mPressure;
-  return result;
-};
+  return selfCpp->mPressure;
+}
 
 void JoltC_SoftBodyCreationSettings_mPressure_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -214,9 +215,8 @@ float JoltC_SoftBodyCreationSettings_mGravityFactor_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  float result = selfCpp->mGravityFactor;
-  return result;
-};
+  return selfCpp->mGravityFactor;
+}
 
 void JoltC_SoftBodyCreationSettings_mGravityFactor_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -230,9 +230,8 @@ bool JoltC_SoftBodyCreationSettings_mUpdatePosition_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  bool result = selfCpp->mUpdatePosition;
-  return result;
-};
+  return selfCpp->mUpdatePosition;
+}
 
 void JoltC_SoftBodyCreationSettings_mUpdatePosition_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -246,9 +245,8 @@ bool JoltC_SoftBodyCreationSettings_mMakeRotationIdentity_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  bool result = selfCpp->mMakeRotationIdentity;
-  return result;
-};
+  return selfCpp->mMakeRotationIdentity;
+}
 
 void JoltC_SoftBodyCreationSettings_mMakeRotationIdentity_Set(
   JoltC_SoftBodyCreationSettings_t * self,
@@ -262,9 +260,8 @@ bool JoltC_SoftBodyCreationSettings_mAllowSleeping_Get(
   JoltC_SoftBodyCreationSettings_t * self
 ) {
   SoftBodyCreationSettings * selfCpp = static_cast<SoftBodyCreationSettings *>(self->obj);
-  bool result = selfCpp->mAllowSleeping;
-  return result;
-};
+  return selfCpp->mAllowSleeping;
+}
 
 void JoltC_SoftBodyCreationSettings_mAllowSleeping_Set(
   JoltC_SoftBodyCreationSettings_t * self,

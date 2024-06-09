@@ -15,95 +15,95 @@ void JoltC_ConeConstraint_SetHalfConeAngle(
   selfCpp->SetHalfConeAngle(
     inHalfConeAngle
   );
-};
+}
 
 float JoltC_ConeConstraint_GetCosHalfConeAngle(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  float result = selfCpp->GetCosHalfConeAngle();
-  return result;
-};
+  return selfCpp->GetCosHalfConeAngle();
+}
 
 JoltC_Vec3_t * JoltC_ConeConstraint_GetTotalLambdaPosition(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  const Vec3& resultValue = selfCpp->GetTotalLambdaPosition();
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->GetTotalLambdaPosition();
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 float JoltC_ConeConstraint_GetTotalLambdaRotation(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  float result = selfCpp->GetTotalLambdaRotation();
-  return result;
-};
+  return selfCpp->GetTotalLambdaRotation();
+}
 
 JoltC_Body_t * JoltC_ConeConstraint_GetBody1(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  const Body * resultValue = selfCpp->GetBody1();
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Body * resultPtr = selfCpp->GetBody1();
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Body_t * JoltC_ConeConstraint_GetBody2(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  const Body * resultValue = selfCpp->GetBody2();
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Body * resultPtr = selfCpp->GetBody2();
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Mat44_t * JoltC_ConeConstraint_GetConstraintToBody1Matrix(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  const Mat44& resultValue = selfCpp->GetConstraintToBody1Matrix();
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_Mat44_t * JoltC_ConeConstraint_GetConstraintToBody2Matrix(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  const Mat44& resultValue = selfCpp->GetConstraintToBody2Matrix();
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 unsigned long JoltC_ConeConstraint_GetRefCount(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_ConeConstraint_AddRef(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_ConeConstraint_Release(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_EConstraintType JoltC_ConeConstraint_GetType(
   JoltC_ConeConstraint_t * self
@@ -111,7 +111,7 @@ JoltC_EConstraintType JoltC_ConeConstraint_GetType(
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
   EConstraintType result = selfCpp->GetType();
   return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
-};
+}
 
 JoltC_EConstraintSubType JoltC_ConeConstraint_GetSubType(
   JoltC_ConeConstraint_t * self
@@ -119,15 +119,14 @@ JoltC_EConstraintSubType JoltC_ConeConstraint_GetSubType(
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
   EConstraintSubType result = selfCpp->GetSubType();
   return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
-};
+}
 
 unsigned long JoltC_ConeConstraint_GetConstraintPriority(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
-};
+  return selfCpp->GetConstraintPriority();
+}
 
 void JoltC_ConeConstraint_SetConstraintPriority(
   JoltC_ConeConstraint_t * self,
@@ -137,7 +136,7 @@ void JoltC_ConeConstraint_SetConstraintPriority(
   selfCpp->SetConstraintPriority(
     inPriority
   );
-};
+}
 
 void JoltC_ConeConstraint_SetNumVelocityStepsOverride(
   JoltC_ConeConstraint_t * self,
@@ -147,15 +146,14 @@ void JoltC_ConeConstraint_SetNumVelocityStepsOverride(
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
-};
+}
 
 long JoltC_ConeConstraint_GetNumVelocityStepsOverride(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
-};
+  return selfCpp->GetNumVelocityStepsOverride();
+}
 
 void JoltC_ConeConstraint_SetNumPositionStepsOverride(
   JoltC_ConeConstraint_t * self,
@@ -165,15 +163,14 @@ void JoltC_ConeConstraint_SetNumPositionStepsOverride(
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
-};
+}
 
 long JoltC_ConeConstraint_GetNumPositionStepsOverride(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
-};
+  return selfCpp->GetNumPositionStepsOverride();
+}
 
 void JoltC_ConeConstraint_SetEnabled(
   JoltC_ConeConstraint_t * self,
@@ -183,31 +180,28 @@ void JoltC_ConeConstraint_SetEnabled(
   selfCpp->SetEnabled(
     inEnabled
   );
-};
+}
 
 bool JoltC_ConeConstraint_GetEnabled(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
-};
+  return selfCpp->GetEnabled();
+}
 
 bool JoltC_ConeConstraint_IsActive(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
-};
+  return selfCpp->IsActive();
+}
 
 unsigned long long int JoltC_ConeConstraint_GetUserData(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
-};
+  return selfCpp->GetUserData();
+}
 
 void JoltC_ConeConstraint_SetUserData(
   JoltC_ConeConstraint_t * self,
@@ -217,14 +211,14 @@ void JoltC_ConeConstraint_SetUserData(
   selfCpp->SetUserData(
     inUserData
   );
-};
+}
 
 void JoltC_ConeConstraint_ResetWarmStart(
   JoltC_ConeConstraint_t * self
 ) {
   ConeConstraint * selfCpp = static_cast<ConeConstraint *>(self->obj);
   selfCpp->ResetWarmStart();
-};
+}
 
 //endregion
 

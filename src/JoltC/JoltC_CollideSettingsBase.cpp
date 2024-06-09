@@ -35,7 +35,7 @@ JoltC_EActiveEdgeMode JoltC_CollideSettingsBase_mActiveEdgeMode_Get(
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
   EActiveEdgeMode result = selfCpp->mActiveEdgeMode;
   return static_cast<JoltC_EActiveEdgeMode>(static_cast<int>(result));
-};
+}
 
 void JoltC_CollideSettingsBase_mActiveEdgeMode_Set(
   JoltC_CollideSettingsBase_t * self,
@@ -51,7 +51,7 @@ JoltC_ECollectFacesMode JoltC_CollideSettingsBase_mCollectFacesMode_Get(
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
   ECollectFacesMode result = selfCpp->mCollectFacesMode;
   return static_cast<JoltC_ECollectFacesMode>(static_cast<int>(result));
-};
+}
 
 void JoltC_CollideSettingsBase_mCollectFacesMode_Set(
   JoltC_CollideSettingsBase_t * self,
@@ -65,9 +65,8 @@ float JoltC_CollideSettingsBase_mCollisionTolerance_Get(
   JoltC_CollideSettingsBase_t * self
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
-  float result = selfCpp->mCollisionTolerance;
-  return result;
-};
+  return selfCpp->mCollisionTolerance;
+}
 
 void JoltC_CollideSettingsBase_mCollisionTolerance_Set(
   JoltC_CollideSettingsBase_t * self,
@@ -81,9 +80,8 @@ float JoltC_CollideSettingsBase_mPenetrationTolerance_Get(
   JoltC_CollideSettingsBase_t * self
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
-  float result = selfCpp->mPenetrationTolerance;
-  return result;
-};
+  return selfCpp->mPenetrationTolerance;
+}
 
 void JoltC_CollideSettingsBase_mPenetrationTolerance_Set(
   JoltC_CollideSettingsBase_t * self,
@@ -97,18 +95,19 @@ JoltC_Vec3_t * JoltC_CollideSettingsBase_mActiveEdgeMovementDirection_Get(
   JoltC_CollideSettingsBase_t * self
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
-  const Vec3& resultValue = selfCpp->mActiveEdgeMovementDirection;
-  JoltC_Vec3_t* result = new JoltC_Vec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Vec3 * resultPtr = new Vec3();
+  *resultPtr = selfCpp->mActiveEdgeMovementDirection;
+  JoltC_Vec3_t * result = new JoltC_Vec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_CollideSettingsBase_mActiveEdgeMovementDirection_Set(
   JoltC_CollideSettingsBase_t * self,
   JoltC_Vec3_t * mActiveEdgeMovementDirection
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
-  selfCpp->mActiveEdgeMovementDirection = *reinterpret_cast<Vec3 *>(mActiveEdgeMovementDirection->obj);
+  selfCpp->mActiveEdgeMovementDirection = *static_cast<Vec3 *>(mActiveEdgeMovementDirection->obj);
 };
 
 //endregion

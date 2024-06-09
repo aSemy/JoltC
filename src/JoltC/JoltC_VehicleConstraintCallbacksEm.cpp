@@ -12,10 +12,11 @@ void JoltC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
   JoltC_VehicleConstraint_t * inConstraint
 ) {
   VehicleConstraintCallbacksEm * selfCpp = static_cast<VehicleConstraintCallbacksEm *>(self->obj);
+  VehicleConstraint * inConstraintCpp = static_cast<VehicleConstraint *>(inConstraint->obj);
   selfCpp->SetVehicleConstraint(
-    *reinterpret_cast<VehicleConstraint *>(inConstraint->obj)
+    *inConstraintCpp
   );
-};
+}
 
 //endregion
 

@@ -42,40 +42,40 @@ unsigned long JoltC_DecoratedShapeSettings_GetRefCount(
   JoltC_DecoratedShapeSettings_t * self
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_DecoratedShapeSettings_AddRef(
   JoltC_DecoratedShapeSettings_t * self
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_DecoratedShapeSettings_Release(
   JoltC_DecoratedShapeSettings_t * self
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_Shape_ShapeResult_t * JoltC_DecoratedShapeSettings_Create(
   JoltC_DecoratedShapeSettings_t * self
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
-  const Shape::ShapeResult& resultValue = selfCpp->Create();
-  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Shape::ShapeResult * resultPtr = new Shape::ShapeResult();
+  *resultPtr = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t * result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_DecoratedShapeSettings_ClearCachedResult(
   JoltC_DecoratedShapeSettings_t * self
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
   selfCpp->ClearCachedResult();
-};
+}
 
 //endregion
 
@@ -85,9 +85,8 @@ unsigned long long int JoltC_DecoratedShapeSettings_mUserData_Get(
   JoltC_DecoratedShapeSettings_t * self
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
-  unsigned long long int result = selfCpp->mUserData;
-  return result;
-};
+  return selfCpp->mUserData;
+}
 
 void JoltC_DecoratedShapeSettings_mUserData_Set(
   JoltC_DecoratedShapeSettings_t * self,

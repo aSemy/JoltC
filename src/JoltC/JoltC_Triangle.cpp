@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `Triangle` instance.
+ */
 JoltC_Triangle_t * JoltC_Triangle_new_0() {
   JoltC_Triangle_t * cInstance = new JoltC_Triangle_t();
   Triangle * cppInstance = new Triangle();
@@ -14,16 +17,22 @@ JoltC_Triangle_t * JoltC_Triangle_new_0() {
   return cInstance;
 };
 
+/**
+  Construct a new `Triangle` instance.
+ */
 JoltC_Triangle_t * JoltC_Triangle_new_1(
   JoltC_Vec3_t * inV1,
   JoltC_Vec3_t * inV2,
   JoltC_Vec3_t * inV3
 ) {
+  const Vec3 * inV1Cpp = static_cast<const Vec3 *>(inV1->obj);
+  const Vec3 * inV2Cpp = static_cast<const Vec3 *>(inV2->obj);
+  const Vec3 * inV3Cpp = static_cast<const Vec3 *>(inV3->obj);
   JoltC_Triangle_t * cInstance = new JoltC_Triangle_t();
   Triangle * cppInstance = new Triangle(
-    *reinterpret_cast<Vec3 *>(inV1->obj),
-    *reinterpret_cast<Vec3 *>(inV2->obj),
-    *reinterpret_cast<Vec3 *>(inV3->obj)
+    *inV1Cpp,
+    *inV2Cpp,
+    *inV3Cpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
@@ -40,8 +49,7 @@ size_t JoltC_Triangle_mV_Get(
   Triangle * selfCpp = static_cast<Triangle *>(self->obj);
   size_t resultSize = std::size(selfCpp->mV);
   // TODO get result array...
-  return resultSize;
-};
+}
 
 void JoltC_Triangle_mV_Set(
   JoltC_Triangle_t * self,
@@ -50,7 +58,7 @@ void JoltC_Triangle_mV_Set(
 ) {
   Triangle * selfCpp = static_cast<Triangle *>(self->obj);
   for (size_t i = 0; i < mVSize; i++) {
-    selfCpp->mV[i] = *(reinterpret_cast<Float3 *>(mV[i]->obj));
+    selfCpp->mV[i] = *(static_cast<Float3 *>(mV[i]->obj));
   };
 };
 
@@ -58,9 +66,8 @@ unsigned long JoltC_Triangle_mMaterialIndex_Get(
   JoltC_Triangle_t * self
 ) {
   Triangle * selfCpp = static_cast<Triangle *>(self->obj);
-  unsigned long result = selfCpp->mMaterialIndex;
-  return result;
-};
+  return selfCpp->mMaterialIndex;
+}
 
 void JoltC_Triangle_mMaterialIndex_Set(
   JoltC_Triangle_t * self,

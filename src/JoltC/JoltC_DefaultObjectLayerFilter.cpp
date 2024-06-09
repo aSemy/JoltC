@@ -7,13 +7,17 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `DefaultObjectLayerFilter` instance.
+ */
 JoltC_DefaultObjectLayerFilter_t * JoltC_DefaultObjectLayerFilter_new(
   JoltC_ObjectLayerPairFilter_t * inFilter,
   unsigned long inObjectLayer
 ) {
+  const ObjectLayerPairFilter * inFilterCpp = static_cast<const ObjectLayerPairFilter *>(inFilter->obj);
   JoltC_DefaultObjectLayerFilter_t * cInstance = new JoltC_DefaultObjectLayerFilter_t();
   DefaultObjectLayerFilter * cppInstance = new DefaultObjectLayerFilter(
-    *reinterpret_cast<ObjectLayerPairFilter *>(inFilter->obj),
+    *inFilterCpp,
     inObjectLayer
   );
   cInstance->obj = cppInstance;

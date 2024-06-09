@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `BroadPhaseLayerInterfaceTable` instance.
+ */
 JoltC_BroadPhaseLayerInterfaceTable_t * JoltC_BroadPhaseLayerInterfaceTable_new(
   unsigned long inNumObjectLayers,
   unsigned long inNumBroadPhaseLayers
@@ -30,19 +33,19 @@ void JoltC_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
   JoltC_BroadPhaseLayer_t * inBroadPhaseLayer
 ) {
   BroadPhaseLayerInterfaceTable * selfCpp = static_cast<BroadPhaseLayerInterfaceTable *>(self->obj);
+  const BroadPhaseLayer * inBroadPhaseLayerCpp = static_cast<const BroadPhaseLayer *>(inBroadPhaseLayer->obj);
   selfCpp->MapObjectToBroadPhaseLayer(
     inObjectLayer,
-    *reinterpret_cast<BroadPhaseLayer *>(inBroadPhaseLayer->obj)
+    *inBroadPhaseLayerCpp
   );
-};
+}
 
 unsigned long JoltC_BroadPhaseLayerInterfaceTable_GetNumBroadPhaseLayers(
   JoltC_BroadPhaseLayerInterfaceTable_t * self
 ) {
   BroadPhaseLayerInterfaceTable * selfCpp = static_cast<BroadPhaseLayerInterfaceTable *>(self->obj);
-  unsigned long result = selfCpp->GetNumBroadPhaseLayers();
-  return result;
-};
+  return selfCpp->GetNumBroadPhaseLayers();
+}
 
 //endregion
 

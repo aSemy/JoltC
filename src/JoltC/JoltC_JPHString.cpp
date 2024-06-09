@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `JPHString` instance.
+ */
 JoltC_JPHString_t * JoltC_JPHString_new(
   char* str,
   long length
@@ -28,17 +31,15 @@ const char* JoltC_JPHString_c_str(
   JoltC_JPHString_t * self
 ) {
   JPHString * selfCpp = static_cast<JPHString *>(self->obj);
-  const char* result = selfCpp->c_str();
-  return result;
-};
+  return selfCpp->c_str();
+}
 
 unsigned long JoltC_JPHString_size(
   JoltC_JPHString_t * self
 ) {
   JPHString * selfCpp = static_cast<JPHString *>(self->obj);
-  unsigned long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 //endregion
 

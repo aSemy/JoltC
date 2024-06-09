@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `TriangleList` instance.
+ */
 JoltC_TriangleList_t * JoltC_TriangleList_new() {
   JoltC_TriangleList_t * cInstance = new JoltC_TriangleList_t();
   TriangleList * cppInstance = new TriangleList();
@@ -22,17 +25,15 @@ bool JoltC_TriangleList_empty(
   JoltC_TriangleList_t * self
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_TriangleList_size(
   JoltC_TriangleList_t * self
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_Triangle_t * JoltC_TriangleList_at(
   JoltC_TriangleList_t * self,
@@ -45,17 +46,18 @@ JoltC_Triangle_t * JoltC_TriangleList_at(
   JoltC_Triangle_t* result = new JoltC_Triangle_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_TriangleList_push_back(
   JoltC_TriangleList_t * self,
   JoltC_Triangle_t * inTriangle
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
+  const Triangle * inTriangleCpp = static_cast<const Triangle *>(inTriangle->obj);
   selfCpp->push_back(
-    *reinterpret_cast<Triangle *>(inTriangle->obj)
+    *inTriangleCpp
   );
-};
+}
 
 void JoltC_TriangleList_reserve(
   JoltC_TriangleList_t * self,
@@ -65,7 +67,7 @@ void JoltC_TriangleList_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_TriangleList_resize(
   JoltC_TriangleList_t * self,
@@ -75,14 +77,14 @@ void JoltC_TriangleList_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_TriangleList_clear(
   JoltC_TriangleList_t * self
 ) {
   TriangleList * selfCpp = static_cast<TriangleList *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

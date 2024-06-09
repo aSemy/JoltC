@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `VehicleAntiRollBar` instance.
+ */
 JoltC_VehicleAntiRollBar_t * JoltC_VehicleAntiRollBar_new() {
   JoltC_VehicleAntiRollBar_t * cInstance = new JoltC_VehicleAntiRollBar_t();
   VehicleAntiRollBar * cppInstance = new VehicleAntiRollBar();
@@ -22,9 +25,8 @@ long JoltC_VehicleAntiRollBar_mLeftWheel_Get(
   JoltC_VehicleAntiRollBar_t * self
 ) {
   VehicleAntiRollBar * selfCpp = static_cast<VehicleAntiRollBar *>(self->obj);
-  long result = selfCpp->mLeftWheel;
-  return result;
-};
+  return selfCpp->mLeftWheel;
+}
 
 void JoltC_VehicleAntiRollBar_mLeftWheel_Set(
   JoltC_VehicleAntiRollBar_t * self,
@@ -38,9 +40,8 @@ long JoltC_VehicleAntiRollBar_mRightWheel_Get(
   JoltC_VehicleAntiRollBar_t * self
 ) {
   VehicleAntiRollBar * selfCpp = static_cast<VehicleAntiRollBar *>(self->obj);
-  long result = selfCpp->mRightWheel;
-  return result;
-};
+  return selfCpp->mRightWheel;
+}
 
 void JoltC_VehicleAntiRollBar_mRightWheel_Set(
   JoltC_VehicleAntiRollBar_t * self,
@@ -54,9 +55,8 @@ float JoltC_VehicleAntiRollBar_mStiffness_Get(
   JoltC_VehicleAntiRollBar_t * self
 ) {
   VehicleAntiRollBar * selfCpp = static_cast<VehicleAntiRollBar *>(self->obj);
-  float result = selfCpp->mStiffness;
-  return result;
-};
+  return selfCpp->mStiffness;
+}
 
 void JoltC_VehicleAntiRollBar_mStiffness_Set(
   JoltC_VehicleAntiRollBar_t * self,

@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `IgnoreMultipleBodiesFilter` instance.
+ */
 JoltC_IgnoreMultipleBodiesFilter_t * JoltC_IgnoreMultipleBodiesFilter_new() {
   JoltC_IgnoreMultipleBodiesFilter_t * cInstance = new JoltC_IgnoreMultipleBodiesFilter_t();
   IgnoreMultipleBodiesFilter * cppInstance = new IgnoreMultipleBodiesFilter();
@@ -23,7 +26,7 @@ void JoltC_IgnoreMultipleBodiesFilter_Clear(
 ) {
   IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
   selfCpp->Clear();
-};
+}
 
 void JoltC_IgnoreMultipleBodiesFilter_Reserve(
   JoltC_IgnoreMultipleBodiesFilter_t * self,
@@ -33,17 +36,18 @@ void JoltC_IgnoreMultipleBodiesFilter_Reserve(
   selfCpp->Reserve(
     inSize
   );
-};
+}
 
 void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
   JoltC_IgnoreMultipleBodiesFilter_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   IgnoreMultipleBodiesFilter * selfCpp = static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->IgnoreBody(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
-};
+}
 
 //endregion
 

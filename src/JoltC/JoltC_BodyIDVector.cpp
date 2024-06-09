@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `BodyIDVector` instance.
+ */
 JoltC_BodyIDVector_t * JoltC_BodyIDVector_new() {
   JoltC_BodyIDVector_t * cInstance = new JoltC_BodyIDVector_t();
   BodyIDVector * cppInstance = new BodyIDVector();
@@ -22,17 +25,15 @@ bool JoltC_BodyIDVector_empty(
   JoltC_BodyIDVector_t * self
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_BodyIDVector_size(
   JoltC_BodyIDVector_t * self
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_BodyID_t * JoltC_BodyIDVector_at(
   JoltC_BodyIDVector_t * self,
@@ -45,17 +46,18 @@ JoltC_BodyID_t * JoltC_BodyIDVector_at(
   JoltC_BodyID_t* result = new JoltC_BodyID_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_BodyIDVector_push_back(
   JoltC_BodyIDVector_t * self,
   JoltC_BodyID_t * inBodyID
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
+  const BodyID * inBodyIDCpp = static_cast<const BodyID *>(inBodyID->obj);
   selfCpp->push_back(
-    *reinterpret_cast<BodyID *>(inBodyID->obj)
+    *inBodyIDCpp
   );
-};
+}
 
 void JoltC_BodyIDVector_reserve(
   JoltC_BodyIDVector_t * self,
@@ -65,7 +67,7 @@ void JoltC_BodyIDVector_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_BodyIDVector_resize(
   JoltC_BodyIDVector_t * self,
@@ -75,14 +77,14 @@ void JoltC_BodyIDVector_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_BodyIDVector_clear(
   JoltC_BodyIDVector_t * self
 ) {
   BodyIDVector * selfCpp = static_cast<BodyIDVector *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

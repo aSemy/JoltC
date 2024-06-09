@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `PhysicsMaterialList` instance.
+ */
 JoltC_PhysicsMaterialList_t * JoltC_PhysicsMaterialList_new() {
   JoltC_PhysicsMaterialList_t * cInstance = new JoltC_PhysicsMaterialList_t();
   PhysicsMaterialList * cppInstance = new PhysicsMaterialList();
@@ -22,40 +25,39 @@ bool JoltC_PhysicsMaterialList_empty(
   JoltC_PhysicsMaterialList_t * self
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_PhysicsMaterialList_size(
   JoltC_PhysicsMaterialList_t * self
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterialList_at(
   JoltC_PhysicsMaterialList_t * self,
   long inIndex
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
-  const PhysicsMaterial * resultValue = selfCpp->at(
+  const PhysicsMaterial * resultPtr = selfCpp->at(
     inIndex
   );
-  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  JoltC_PhysicsMaterial_t * result = new JoltC_PhysicsMaterial_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_PhysicsMaterialList_push_back(
   JoltC_PhysicsMaterialList_t * self,
   JoltC_PhysicsMaterial_t * inMaterial
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
+  const PhysicsMaterial * inMaterialCpp = static_cast<const PhysicsMaterial *>(inMaterial->obj);
   selfCpp->push_back(
-    reinterpret_cast<PhysicsMaterial *>(inMaterial->obj)
+    inMaterialCpp
   );
-};
+}
 
 void JoltC_PhysicsMaterialList_reserve(
   JoltC_PhysicsMaterialList_t * self,
@@ -65,7 +67,7 @@ void JoltC_PhysicsMaterialList_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_PhysicsMaterialList_resize(
   JoltC_PhysicsMaterialList_t * self,
@@ -75,14 +77,14 @@ void JoltC_PhysicsMaterialList_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_PhysicsMaterialList_clear(
   JoltC_PhysicsMaterialList_t * self
 ) {
   PhysicsMaterialList * selfCpp = static_cast<PhysicsMaterialList *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

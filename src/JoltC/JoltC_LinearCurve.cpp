@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `LinearCurve` instance.
+ */
 JoltC_LinearCurve_t * JoltC_LinearCurve_new() {
   JoltC_LinearCurve_t * cInstance = new JoltC_LinearCurve_t();
   LinearCurve * cppInstance = new LinearCurve();
@@ -23,7 +26,7 @@ void JoltC_LinearCurve_Clear(
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
   selfCpp->Clear();
-};
+}
 
 void JoltC_LinearCurve_Reserve(
   JoltC_LinearCurve_t * self,
@@ -33,7 +36,7 @@ void JoltC_LinearCurve_Reserve(
   selfCpp->Reserve(
     inSize
   );
-};
+}
 
 void JoltC_LinearCurve_AddPoint(
   JoltC_LinearCurve_t * self,
@@ -45,41 +48,38 @@ void JoltC_LinearCurve_AddPoint(
     inX,
     inY
   );
-};
+}
 
 void JoltC_LinearCurve_Sort(
   JoltC_LinearCurve_t * self
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
   selfCpp->Sort();
-};
+}
 
 float JoltC_LinearCurve_GetMinX(
   JoltC_LinearCurve_t * self
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  float result = selfCpp->GetMinX();
-  return result;
-};
+  return selfCpp->GetMinX();
+}
 
 float JoltC_LinearCurve_GetMaxX(
   JoltC_LinearCurve_t * self
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  float result = selfCpp->GetMaxX();
-  return result;
-};
+  return selfCpp->GetMaxX();
+}
 
 float JoltC_LinearCurve_GetValue(
   JoltC_LinearCurve_t * self,
   float inX
 ) {
   LinearCurve * selfCpp = static_cast<LinearCurve *>(self->obj);
-  float result = selfCpp->GetValue(
+  return selfCpp->GetValue(
     inX
   );
-  return result;
-};
+}
 
 //endregion
 

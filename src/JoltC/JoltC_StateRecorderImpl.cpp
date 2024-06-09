@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `StateRecorderImpl` instance.
+ */
 JoltC_StateRecorderImpl_t * JoltC_StateRecorderImpl_new() {
   JoltC_StateRecorderImpl_t * cInstance = new JoltC_StateRecorderImpl_t();
   StateRecorderImpl * cppInstance = new StateRecorderImpl();
@@ -23,25 +26,25 @@ void JoltC_StateRecorderImpl_Clear(
 ) {
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
   selfCpp->Clear();
-};
+}
 
 void JoltC_StateRecorderImpl_Rewind(
   JoltC_StateRecorderImpl_t * self
 ) {
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
   selfCpp->Rewind();
-};
+}
 
 bool JoltC_StateRecorderImpl_IsEqual(
   JoltC_StateRecorderImpl_t * self,
   JoltC_StateRecorderImpl_t * inReference
 ) {
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  bool result = selfCpp->IsEqual(
-    *reinterpret_cast<StateRecorderImpl *>(inReference->obj)
+  StateRecorderImpl * inReferenceCpp = static_cast<StateRecorderImpl *>(inReference->obj);
+  return selfCpp->IsEqual(
+    *inReferenceCpp
   );
-  return result;
-};
+}
 
 void JoltC_StateRecorderImpl_SetValidating(
   JoltC_StateRecorderImpl_t * self,
@@ -51,15 +54,14 @@ void JoltC_StateRecorderImpl_SetValidating(
   selfCpp->SetValidating(
     inValidating
   );
-};
+}
 
 bool JoltC_StateRecorderImpl_IsValidating(
   JoltC_StateRecorderImpl_t * self
 ) {
   StateRecorderImpl * selfCpp = static_cast<StateRecorderImpl *>(self->obj);
-  bool result = selfCpp->IsValidating();
-  return result;
-};
+  return selfCpp->IsValidating();
+}
 
 //endregion
 

@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `SoftBodySharedSettingsFace` instance.
+ */
 JoltC_SoftBodySharedSettingsFace_t * JoltC_SoftBodySharedSettingsFace_new(
   unsigned long inVertex1,
   unsigned long inVertex2,
@@ -35,8 +38,7 @@ size_t JoltC_SoftBodySharedSettingsFace_mVertex_Get(
   SoftBodySharedSettingsFace * selfCpp = static_cast<SoftBodySharedSettingsFace *>(self->obj);
   size_t resultSize = std::size(selfCpp->mVertex);
   // TODO get result array...
-  return resultSize;
-};
+}
 
 void JoltC_SoftBodySharedSettingsFace_mVertex_Set(
   JoltC_SoftBodySharedSettingsFace_t * self,
@@ -53,9 +55,8 @@ unsigned long JoltC_SoftBodySharedSettingsFace_mMaterialIndex_Get(
   JoltC_SoftBodySharedSettingsFace_t * self
 ) {
   SoftBodySharedSettingsFace * selfCpp = static_cast<SoftBodySharedSettingsFace *>(self->obj);
-  unsigned long result = selfCpp->mMaterialIndex;
-  return result;
-};
+  return selfCpp->mMaterialIndex;
+}
 
 void JoltC_SoftBodySharedSettingsFace_mMaterialIndex_Set(
   JoltC_SoftBodySharedSettingsFace_t * self,

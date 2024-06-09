@@ -11,17 +11,15 @@ bool JoltC_ArraySoftBodySharedSettingsVertex_empty(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySoftBodySharedSettingsVertex_size(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SoftBodySharedSettingsVertex_t * JoltC_ArraySoftBodySharedSettingsVertex_at(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self,
@@ -34,17 +32,18 @@ JoltC_SoftBodySharedSettingsVertex_t * JoltC_ArraySoftBodySharedSettingsVertex_a
   JoltC_SoftBodySharedSettingsVertex_t* result = new JoltC_SoftBodySharedSettingsVertex_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsVertex_push_back(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self,
   JoltC_SoftBodySharedSettingsVertex_t * inValue
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
+  const SoftBodySharedSettingsVertex * inValueCpp = static_cast<const SoftBodySharedSettingsVertex *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SoftBodySharedSettingsVertex *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsVertex_reserve(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArraySoftBodySharedSettingsVertex_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsVertex_resize(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArraySoftBodySharedSettingsVertex_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsVertex_clear(
   JoltC_ArraySoftBodySharedSettingsVertex_t * self
 ) {
   ArraySoftBodySharedSettingsVertex * selfCpp = static_cast<ArraySoftBodySharedSettingsVertex *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

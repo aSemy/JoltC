@@ -11,17 +11,15 @@ bool JoltC_ArraySoftBodyVertex_empty(
   JoltC_ArraySoftBodyVertex_t * self
 ) {
   ArraySoftBodyVertex * selfCpp = static_cast<ArraySoftBodyVertex *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySoftBodyVertex_size(
   JoltC_ArraySoftBodyVertex_t * self
 ) {
   ArraySoftBodyVertex * selfCpp = static_cast<ArraySoftBodyVertex *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SoftBodyVertex_t * JoltC_ArraySoftBodyVertex_at(
   JoltC_ArraySoftBodyVertex_t * self,
@@ -34,17 +32,18 @@ JoltC_SoftBodyVertex_t * JoltC_ArraySoftBodyVertex_at(
   JoltC_SoftBodyVertex_t* result = new JoltC_SoftBodyVertex_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySoftBodyVertex_push_back(
   JoltC_ArraySoftBodyVertex_t * self,
   JoltC_SoftBodyVertex_t * inValue
 ) {
   ArraySoftBodyVertex * selfCpp = static_cast<ArraySoftBodyVertex *>(self->obj);
+  const SoftBodyVertex * inValueCpp = static_cast<const SoftBodyVertex *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SoftBodyVertex *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySoftBodyVertex_reserve(
   JoltC_ArraySoftBodyVertex_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArraySoftBodyVertex_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodyVertex_resize(
   JoltC_ArraySoftBodyVertex_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArraySoftBodyVertex_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodyVertex_clear(
   JoltC_ArraySoftBodyVertex_t * self
 ) {
   ArraySoftBodyVertex * selfCpp = static_cast<ArraySoftBodyVertex *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `VehicleDifferentialSettings` instance.
+ */
 JoltC_VehicleDifferentialSettings_t * JoltC_VehicleDifferentialSettings_new() {
   JoltC_VehicleDifferentialSettings_t * cInstance = new JoltC_VehicleDifferentialSettings_t();
   VehicleDifferentialSettings * cppInstance = new VehicleDifferentialSettings();
@@ -22,9 +25,8 @@ long JoltC_VehicleDifferentialSettings_mLeftWheel_Get(
   JoltC_VehicleDifferentialSettings_t * self
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
-  long result = selfCpp->mLeftWheel;
-  return result;
-};
+  return selfCpp->mLeftWheel;
+}
 
 void JoltC_VehicleDifferentialSettings_mLeftWheel_Set(
   JoltC_VehicleDifferentialSettings_t * self,
@@ -38,9 +40,8 @@ long JoltC_VehicleDifferentialSettings_mRightWheel_Get(
   JoltC_VehicleDifferentialSettings_t * self
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
-  long result = selfCpp->mRightWheel;
-  return result;
-};
+  return selfCpp->mRightWheel;
+}
 
 void JoltC_VehicleDifferentialSettings_mRightWheel_Set(
   JoltC_VehicleDifferentialSettings_t * self,
@@ -54,9 +55,8 @@ float JoltC_VehicleDifferentialSettings_mDifferentialRatio_Get(
   JoltC_VehicleDifferentialSettings_t * self
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
-  float result = selfCpp->mDifferentialRatio;
-  return result;
-};
+  return selfCpp->mDifferentialRatio;
+}
 
 void JoltC_VehicleDifferentialSettings_mDifferentialRatio_Set(
   JoltC_VehicleDifferentialSettings_t * self,
@@ -70,9 +70,8 @@ float JoltC_VehicleDifferentialSettings_mLeftRightSplit_Get(
   JoltC_VehicleDifferentialSettings_t * self
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
-  float result = selfCpp->mLeftRightSplit;
-  return result;
-};
+  return selfCpp->mLeftRightSplit;
+}
 
 void JoltC_VehicleDifferentialSettings_mLeftRightSplit_Set(
   JoltC_VehicleDifferentialSettings_t * self,
@@ -86,9 +85,8 @@ float JoltC_VehicleDifferentialSettings_mLimitedSlipRatio_Get(
   JoltC_VehicleDifferentialSettings_t * self
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
-  float result = selfCpp->mLimitedSlipRatio;
-  return result;
-};
+  return selfCpp->mLimitedSlipRatio;
+}
 
 void JoltC_VehicleDifferentialSettings_mLimitedSlipRatio_Set(
   JoltC_VehicleDifferentialSettings_t * self,
@@ -102,9 +100,8 @@ float JoltC_VehicleDifferentialSettings_mEngineTorqueRatio_Get(
   JoltC_VehicleDifferentialSettings_t * self
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
-  float result = selfCpp->mEngineTorqueRatio;
-  return result;
-};
+  return selfCpp->mEngineTorqueRatio;
+}
 
 void JoltC_VehicleDifferentialSettings_mEngineTorqueRatio_Set(
   JoltC_VehicleDifferentialSettings_t * self,

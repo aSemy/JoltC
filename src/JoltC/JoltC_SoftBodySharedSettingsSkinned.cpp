@@ -11,9 +11,8 @@ unsigned long JoltC_SoftBodySharedSettingsSkinned_mVertex_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
-  unsigned long result = selfCpp->mVertex;
-  return result;
-};
+  return selfCpp->mVertex;
+}
 
 void JoltC_SoftBodySharedSettingsSkinned_mVertex_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
@@ -30,8 +29,7 @@ size_t JoltC_SoftBodySharedSettingsSkinned_mWeights_Get(
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
   size_t resultSize = std::size(selfCpp->mWeights);
   // TODO get result array...
-  return resultSize;
-};
+}
 
 void JoltC_SoftBodySharedSettingsSkinned_mWeights_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
@@ -40,7 +38,7 @@ void JoltC_SoftBodySharedSettingsSkinned_mWeights_Set(
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
   for (size_t i = 0; i < mWeightsSize; i++) {
-    selfCpp->mWeights[i] = *(reinterpret_cast<SoftBodySharedSettingsSkinWeight *>(mWeights[i]->obj));
+    selfCpp->mWeights[i] = *(static_cast<SoftBodySharedSettingsSkinWeight *>(mWeights[i]->obj));
   };
 };
 
@@ -48,9 +46,8 @@ float JoltC_SoftBodySharedSettingsSkinned_mMaxDistance_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
-  float result = selfCpp->mMaxDistance;
-  return result;
-};
+  return selfCpp->mMaxDistance;
+}
 
 void JoltC_SoftBodySharedSettingsSkinned_mMaxDistance_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
@@ -64,9 +61,8 @@ float JoltC_SoftBodySharedSettingsSkinned_mBackStopDistance_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
-  float result = selfCpp->mBackStopDistance;
-  return result;
-};
+  return selfCpp->mBackStopDistance;
+}
 
 void JoltC_SoftBodySharedSettingsSkinned_mBackStopDistance_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
@@ -80,9 +76,8 @@ float JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
-  float result = selfCpp->mBackStopRadius;
-  return result;
-};
+  return selfCpp->mBackStopRadius;
+}
 
 void JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Set(
   JoltC_SoftBodySharedSettingsSkinned_t * self,

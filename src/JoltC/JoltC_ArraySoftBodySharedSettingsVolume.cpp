@@ -11,17 +11,15 @@ bool JoltC_ArraySoftBodySharedSettingsVolume_empty(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self
 ) {
   ArraySoftBodySharedSettingsVolume * selfCpp = static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_ArraySoftBodySharedSettingsVolume_size(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self
 ) {
   ArraySoftBodySharedSettingsVolume * selfCpp = static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_SoftBodySharedSettingsVolume_t * JoltC_ArraySoftBodySharedSettingsVolume_at(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
@@ -34,17 +32,18 @@ JoltC_SoftBodySharedSettingsVolume_t * JoltC_ArraySoftBodySharedSettingsVolume_a
   JoltC_SoftBodySharedSettingsVolume_t* result = new JoltC_SoftBodySharedSettingsVolume_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsVolume_push_back(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
   JoltC_SoftBodySharedSettingsVolume_t * inValue
 ) {
   ArraySoftBodySharedSettingsVolume * selfCpp = static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
+  const SoftBodySharedSettingsVolume * inValueCpp = static_cast<const SoftBodySharedSettingsVolume *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<SoftBodySharedSettingsVolume *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsVolume_reserve(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
@@ -54,7 +53,7 @@ void JoltC_ArraySoftBodySharedSettingsVolume_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsVolume_resize(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self,
@@ -64,14 +63,14 @@ void JoltC_ArraySoftBodySharedSettingsVolume_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_ArraySoftBodySharedSettingsVolume_clear(
   JoltC_ArraySoftBodySharedSettingsVolume_t * self
 ) {
   ArraySoftBodySharedSettingsVolume * selfCpp = static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

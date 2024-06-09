@@ -11,9 +11,8 @@ unsigned long JoltC_SoftBodySharedSettingsSkinWeight_mInvBindIndex_Get(
   JoltC_SoftBodySharedSettingsSkinWeight_t * self
 ) {
   SoftBodySharedSettingsSkinWeight * selfCpp = static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
-  unsigned long result = selfCpp->mInvBindIndex;
-  return result;
-};
+  return selfCpp->mInvBindIndex;
+}
 
 void JoltC_SoftBodySharedSettingsSkinWeight_mInvBindIndex_Set(
   JoltC_SoftBodySharedSettingsSkinWeight_t * self,
@@ -27,9 +26,8 @@ float JoltC_SoftBodySharedSettingsSkinWeight_mWeight_Get(
   JoltC_SoftBodySharedSettingsSkinWeight_t * self
 ) {
   SoftBodySharedSettingsSkinWeight * selfCpp = static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
-  float result = selfCpp->mWeight;
-  return result;
-};
+  return selfCpp->mWeight;
+}
 
 void JoltC_SoftBodySharedSettingsSkinWeight_mWeight_Set(
   JoltC_SoftBodySharedSettingsSkinWeight_t * self,

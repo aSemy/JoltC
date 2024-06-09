@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `ConvexHullShapeSettings` instance.
+ */
 JoltC_ConvexHullShapeSettings_t * JoltC_ConvexHullShapeSettings_new() {
   JoltC_ConvexHullShapeSettings_t * cInstance = new JoltC_ConvexHullShapeSettings_t();
   ConvexHullShapeSettings * cppInstance = new ConvexHullShapeSettings();
@@ -22,40 +25,40 @@ unsigned long JoltC_ConvexHullShapeSettings_GetRefCount(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_ConvexHullShapeSettings_AddRef(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_ConvexHullShapeSettings_Release(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_Shape_ShapeResult_t * JoltC_ConvexHullShapeSettings_Create(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  const Shape::ShapeResult& resultValue = selfCpp->Create();
-  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Shape::ShapeResult * resultPtr = new Shape::ShapeResult();
+  *resultPtr = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t * result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_ConvexHullShapeSettings_ClearCachedResult(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
   selfCpp->ClearCachedResult();
-};
+}
 
 //endregion
 
@@ -65,27 +68,27 @@ JoltC_ArrayVec3_t * JoltC_ConvexHullShapeSettings_mPoints_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  const ArrayVec3& resultValue = selfCpp->mPoints;
-  JoltC_ArrayVec3_t* result = new JoltC_ArrayVec3_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  ArrayVec3 * resultPtr = new ArrayVec3();
+  *resultPtr = selfCpp->mPoints;
+  JoltC_ArrayVec3_t * result = new JoltC_ArrayVec3_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_ConvexHullShapeSettings_mPoints_Set(
   JoltC_ConvexHullShapeSettings_t * self,
   JoltC_ArrayVec3_t * mPoints
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  selfCpp->mPoints = *reinterpret_cast<ArrayVec3 *>(mPoints->obj);
+  selfCpp->mPoints = *static_cast<ArrayVec3 *>(mPoints->obj);
 };
 
 float JoltC_ConvexHullShapeSettings_mMaxConvexRadius_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  float result = selfCpp->mMaxConvexRadius;
-  return result;
-};
+  return selfCpp->mMaxConvexRadius;
+}
 
 void JoltC_ConvexHullShapeSettings_mMaxConvexRadius_Set(
   JoltC_ConvexHullShapeSettings_t * self,
@@ -99,9 +102,8 @@ float JoltC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  float result = selfCpp->mMaxErrorConvexRadius;
-  return result;
-};
+  return selfCpp->mMaxErrorConvexRadius;
+}
 
 void JoltC_ConvexHullShapeSettings_mMaxErrorConvexRadius_Set(
   JoltC_ConvexHullShapeSettings_t * self,
@@ -115,9 +117,8 @@ float JoltC_ConvexHullShapeSettings_mHullTolerance_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  float result = selfCpp->mHullTolerance;
-  return result;
-};
+  return selfCpp->mHullTolerance;
+}
 
 void JoltC_ConvexHullShapeSettings_mHullTolerance_Set(
   JoltC_ConvexHullShapeSettings_t * self,
@@ -131,27 +132,26 @@ JoltC_PhysicsMaterial_t * JoltC_ConvexHullShapeSettings_mMaterial_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  const PhysicsMaterial * resultValue = selfCpp->mMaterial;
-  JoltC_PhysicsMaterial_t* result = new JoltC_PhysicsMaterial_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const PhysicsMaterial * resultPtr = selfCpp->mMaterial;
+  JoltC_PhysicsMaterial_t * result = new JoltC_PhysicsMaterial_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_ConvexHullShapeSettings_mMaterial_Set(
   JoltC_ConvexHullShapeSettings_t * self,
   JoltC_PhysicsMaterial_t * mMaterial
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  selfCpp->mMaterial = reinterpret_cast<PhysicsMaterial *>(mMaterial->obj);
+  selfCpp->mMaterial = static_cast<const PhysicsMaterial *>(mMaterial->obj);
 };
 
 float JoltC_ConvexHullShapeSettings_mDensity_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  float result = selfCpp->mDensity;
-  return result;
-};
+  return selfCpp->mDensity;
+}
 
 void JoltC_ConvexHullShapeSettings_mDensity_Set(
   JoltC_ConvexHullShapeSettings_t * self,
@@ -165,9 +165,8 @@ unsigned long long int JoltC_ConvexHullShapeSettings_mUserData_Get(
   JoltC_ConvexHullShapeSettings_t * self
 ) {
   ConvexHullShapeSettings * selfCpp = static_cast<ConvexHullShapeSettings *>(self->obj);
-  unsigned long long int result = selfCpp->mUserData;
-  return result;
-};
+  return selfCpp->mUserData;
+}
 
 void JoltC_ConvexHullShapeSettings_mUserData_Set(
   JoltC_ConvexHullShapeSettings_t * self,

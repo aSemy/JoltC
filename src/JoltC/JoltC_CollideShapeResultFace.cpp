@@ -11,17 +11,15 @@ bool JoltC_CollideShapeResultFace_empty(
   JoltC_CollideShapeResultFace_t * self
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_CollideShapeResultFace_size(
   JoltC_CollideShapeResultFace_t * self
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_Vec3_t * JoltC_CollideShapeResultFace_at(
   JoltC_CollideShapeResultFace_t * self,
@@ -34,17 +32,18 @@ JoltC_Vec3_t * JoltC_CollideShapeResultFace_at(
   JoltC_Vec3_t* result = new JoltC_Vec3_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_CollideShapeResultFace_push_back(
   JoltC_CollideShapeResultFace_t * self,
   JoltC_Vec3_t * inValue
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
+  const Vec3 * inValueCpp = static_cast<const Vec3 *>(inValue->obj);
   selfCpp->push_back(
-    *reinterpret_cast<Vec3 *>(inValue->obj)
+    *inValueCpp
   );
-};
+}
 
 void JoltC_CollideShapeResultFace_resize(
   JoltC_CollideShapeResultFace_t * self,
@@ -54,14 +53,14 @@ void JoltC_CollideShapeResultFace_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_CollideShapeResultFace_clear(
   JoltC_CollideShapeResultFace_t * self
 ) {
   CollideShapeResultFace * selfCpp = static_cast<CollideShapeResultFace *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

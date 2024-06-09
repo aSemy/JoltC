@@ -7,15 +7,19 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `VehicleCollisionTesterRay` instance.
+ */
 JoltC_VehicleCollisionTesterRay_t * JoltC_VehicleCollisionTesterRay_new(
   unsigned long inObjectLayer,
   JoltC_Vec3_t * inUp,
   float inMaxSlopeAngle
 ) {
+  Vec3 * inUpCpp = static_cast<Vec3 *>(inUp->obj);
   JoltC_VehicleCollisionTesterRay_t * cInstance = new JoltC_VehicleCollisionTesterRay_t();
   VehicleCollisionTesterRay * cppInstance = new VehicleCollisionTesterRay(
     inObjectLayer,
-    *reinterpret_cast<Vec3 *>(inUp->obj),
+    *inUpCpp,
     inMaxSlopeAngle
   );
   cInstance->obj = cppInstance;
@@ -30,23 +34,22 @@ unsigned long JoltC_VehicleCollisionTesterRay_GetRefCount(
   JoltC_VehicleCollisionTesterRay_t * self
 ) {
   VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_VehicleCollisionTesterRay_AddRef(
   JoltC_VehicleCollisionTesterRay_t * self
 ) {
   VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_VehicleCollisionTesterRay_Release(
   JoltC_VehicleCollisionTesterRay_t * self
 ) {
   VehicleCollisionTesterRay * selfCpp = static_cast<VehicleCollisionTesterRay *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 

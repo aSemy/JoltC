@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `BroadPhaseLayer` instance.
+ */
 JoltC_BroadPhaseLayer_t * JoltC_BroadPhaseLayer_new(
   unsigned short inLayer
 ) {
@@ -26,9 +29,8 @@ unsigned short JoltC_BroadPhaseLayer_GetValue(
   JoltC_BroadPhaseLayer_t * self
 ) {
   BroadPhaseLayer * selfCpp = static_cast<BroadPhaseLayer *>(self->obj);
-  unsigned short result = selfCpp->GetValue();
-  return result;
-};
+  return selfCpp->GetValue();
+}
 
 //endregion
 

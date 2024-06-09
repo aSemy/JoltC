@@ -114,63 +114,64 @@ JoltC_Body_t * JoltC_TwoBodyConstraint_GetBody1(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  const Body * resultValue = selfCpp->GetBody1();
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Body * resultPtr = selfCpp->GetBody1();
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Body_t * JoltC_TwoBodyConstraint_GetBody2(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  const Body * resultValue = selfCpp->GetBody2();
-  JoltC_Body_t* result = new JoltC_Body_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const Body * resultPtr = selfCpp->GetBody2();
+  JoltC_Body_t * result = new JoltC_Body_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 JoltC_Mat44_t * JoltC_TwoBodyConstraint_GetConstraintToBody1Matrix(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  const Mat44& resultValue = selfCpp->GetConstraintToBody1Matrix();
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->GetConstraintToBody1Matrix();
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 JoltC_Mat44_t * JoltC_TwoBodyConstraint_GetConstraintToBody2Matrix(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  const Mat44& resultValue = selfCpp->GetConstraintToBody2Matrix();
-  JoltC_Mat44_t* result = new JoltC_Mat44_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Mat44 * resultPtr = new Mat44();
+  *resultPtr = selfCpp->GetConstraintToBody2Matrix();
+  JoltC_Mat44_t * result = new JoltC_Mat44_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 unsigned long JoltC_TwoBodyConstraint_GetRefCount(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_TwoBodyConstraint_AddRef(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_TwoBodyConstraint_Release(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_EConstraintType JoltC_TwoBodyConstraint_GetType(
   JoltC_TwoBodyConstraint_t * self
@@ -178,7 +179,7 @@ JoltC_EConstraintType JoltC_TwoBodyConstraint_GetType(
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
   EConstraintType result = selfCpp->GetType();
   return static_cast<JoltC_EConstraintType>(static_cast<int>(result));
-};
+}
 
 JoltC_EConstraintSubType JoltC_TwoBodyConstraint_GetSubType(
   JoltC_TwoBodyConstraint_t * self
@@ -186,15 +187,14 @@ JoltC_EConstraintSubType JoltC_TwoBodyConstraint_GetSubType(
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
   EConstraintSubType result = selfCpp->GetSubType();
   return static_cast<JoltC_EConstraintSubType>(static_cast<int>(result));
-};
+}
 
 unsigned long JoltC_TwoBodyConstraint_GetConstraintPriority(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  unsigned long result = selfCpp->GetConstraintPriority();
-  return result;
-};
+  return selfCpp->GetConstraintPriority();
+}
 
 void JoltC_TwoBodyConstraint_SetConstraintPriority(
   JoltC_TwoBodyConstraint_t * self,
@@ -204,7 +204,7 @@ void JoltC_TwoBodyConstraint_SetConstraintPriority(
   selfCpp->SetConstraintPriority(
     inPriority
   );
-};
+}
 
 void JoltC_TwoBodyConstraint_SetNumVelocityStepsOverride(
   JoltC_TwoBodyConstraint_t * self,
@@ -214,15 +214,14 @@ void JoltC_TwoBodyConstraint_SetNumVelocityStepsOverride(
   selfCpp->SetNumVelocityStepsOverride(
     inN
   );
-};
+}
 
 long JoltC_TwoBodyConstraint_GetNumVelocityStepsOverride(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  long result = selfCpp->GetNumVelocityStepsOverride();
-  return result;
-};
+  return selfCpp->GetNumVelocityStepsOverride();
+}
 
 void JoltC_TwoBodyConstraint_SetNumPositionStepsOverride(
   JoltC_TwoBodyConstraint_t * self,
@@ -232,15 +231,14 @@ void JoltC_TwoBodyConstraint_SetNumPositionStepsOverride(
   selfCpp->SetNumPositionStepsOverride(
     inN
   );
-};
+}
 
 long JoltC_TwoBodyConstraint_GetNumPositionStepsOverride(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  long result = selfCpp->GetNumPositionStepsOverride();
-  return result;
-};
+  return selfCpp->GetNumPositionStepsOverride();
+}
 
 void JoltC_TwoBodyConstraint_SetEnabled(
   JoltC_TwoBodyConstraint_t * self,
@@ -250,31 +248,28 @@ void JoltC_TwoBodyConstraint_SetEnabled(
   selfCpp->SetEnabled(
     inEnabled
   );
-};
+}
 
 bool JoltC_TwoBodyConstraint_GetEnabled(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  bool result = selfCpp->GetEnabled();
-  return result;
-};
+  return selfCpp->GetEnabled();
+}
 
 bool JoltC_TwoBodyConstraint_IsActive(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  bool result = selfCpp->IsActive();
-  return result;
-};
+  return selfCpp->IsActive();
+}
 
 unsigned long long int JoltC_TwoBodyConstraint_GetUserData(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
-  unsigned long long int result = selfCpp->GetUserData();
-  return result;
-};
+  return selfCpp->GetUserData();
+}
 
 void JoltC_TwoBodyConstraint_SetUserData(
   JoltC_TwoBodyConstraint_t * self,
@@ -284,14 +279,14 @@ void JoltC_TwoBodyConstraint_SetUserData(
   selfCpp->SetUserData(
     inUserData
   );
-};
+}
 
 void JoltC_TwoBodyConstraint_ResetWarmStart(
   JoltC_TwoBodyConstraint_t * self
 ) {
   TwoBodyConstraint * selfCpp = static_cast<TwoBodyConstraint *>(self->obj);
   selfCpp->ResetWarmStart();
-};
+}
 
 //endregion
 

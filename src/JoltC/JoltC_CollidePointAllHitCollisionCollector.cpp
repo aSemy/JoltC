@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `CollidePointAllHitCollisionCollector` instance.
+ */
 JoltC_CollidePointAllHitCollisionCollector_t * JoltC_CollidePointAllHitCollisionCollector_new() {
   JoltC_CollidePointAllHitCollisionCollector_t * cInstance = new JoltC_CollidePointAllHitCollisionCollector_t();
   CollidePointAllHitCollisionCollector * cppInstance = new CollidePointAllHitCollisionCollector();
@@ -23,42 +26,42 @@ void JoltC_CollidePointAllHitCollisionCollector_Sort(
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
   selfCpp->Sort();
-};
+}
 
 bool JoltC_CollidePointAllHitCollisionCollector_HadHit(
   JoltC_CollidePointAllHitCollisionCollector_t * self
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
-  bool result = selfCpp->HadHit();
-  return result;
-};
+  return selfCpp->HadHit();
+}
 
 void JoltC_CollidePointAllHitCollisionCollector_Reset(
   JoltC_CollidePointAllHitCollisionCollector_t * self
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
   selfCpp->Reset();
-};
+}
 
 void JoltC_CollidePointAllHitCollisionCollector_SetContext(
   JoltC_CollidePointAllHitCollisionCollector_t * self,
   JoltC_TransformedShape_t * inContext
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
+  const TransformedShape * inContextCpp = static_cast<const TransformedShape *>(inContext->obj);
   selfCpp->SetContext(
-    reinterpret_cast<TransformedShape *>(inContext->obj)
+    inContextCpp
   );
-};
+}
 
 JoltC_TransformedShape_t * JoltC_CollidePointAllHitCollisionCollector_GetContext(
   JoltC_CollidePointAllHitCollisionCollector_t * self
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
-  const TransformedShape * resultValue = selfCpp->GetContext();
-  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const TransformedShape * resultPtr = selfCpp->GetContext();
+  JoltC_TransformedShape_t * result = new JoltC_TransformedShape_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_CollidePointAllHitCollisionCollector_UpdateEarlyOutFraction(
   JoltC_CollidePointAllHitCollisionCollector_t * self,
@@ -68,7 +71,7 @@ void JoltC_CollidePointAllHitCollisionCollector_UpdateEarlyOutFraction(
   selfCpp->UpdateEarlyOutFraction(
     inFraction
   );
-};
+}
 
 void JoltC_CollidePointAllHitCollisionCollector_ResetEarlyOutFraction(
   JoltC_CollidePointAllHitCollisionCollector_t * self,
@@ -78,38 +81,35 @@ void JoltC_CollidePointAllHitCollisionCollector_ResetEarlyOutFraction(
   selfCpp->ResetEarlyOutFraction(
     inFraction
   );
-};
+}
 
 void JoltC_CollidePointAllHitCollisionCollector_ForceEarlyOut(
   JoltC_CollidePointAllHitCollisionCollector_t * self
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
   selfCpp->ForceEarlyOut();
-};
+}
 
 bool JoltC_CollidePointAllHitCollisionCollector_ShouldEarlyOut(
   JoltC_CollidePointAllHitCollisionCollector_t * self
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
-};
+  return selfCpp->ShouldEarlyOut();
+}
 
 float JoltC_CollidePointAllHitCollisionCollector_GetEarlyOutFraction(
   JoltC_CollidePointAllHitCollisionCollector_t * self
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
-};
+  return selfCpp->GetEarlyOutFraction();
+}
 
 float JoltC_CollidePointAllHitCollisionCollector_GetPositiveEarlyOutFraction(
   JoltC_CollidePointAllHitCollisionCollector_t * self
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
-};
+  return selfCpp->GetPositiveEarlyOutFraction();
+}
 
 //endregion
 
@@ -119,18 +119,19 @@ JoltC_ArrayCollidePointResult_t * JoltC_CollidePointAllHitCollisionCollector_mHi
   JoltC_CollidePointAllHitCollisionCollector_t * self
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
-  const ArrayCollidePointResult& resultValue = selfCpp->mHits;
-  JoltC_ArrayCollidePointResult_t* result = new JoltC_ArrayCollidePointResult_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  ArrayCollidePointResult * resultPtr = new ArrayCollidePointResult();
+  *resultPtr = selfCpp->mHits;
+  JoltC_ArrayCollidePointResult_t * result = new JoltC_ArrayCollidePointResult_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_CollidePointAllHitCollisionCollector_mHits_Set(
   JoltC_CollidePointAllHitCollisionCollector_t * self,
   JoltC_ArrayCollidePointResult_t * mHits
 ) {
   CollidePointAllHitCollisionCollector * selfCpp = static_cast<CollidePointAllHitCollisionCollector *>(self->obj);
-  selfCpp->mHits = *reinterpret_cast<ArrayCollidePointResult *>(mHits->obj);
+  selfCpp->mHits = *static_cast<ArrayCollidePointResult *>(mHits->obj);
 };
 
 //endregion

@@ -141,23 +141,22 @@ unsigned long JoltC_ConstraintSettings_GetRefCount(
   JoltC_ConstraintSettings_t * self
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_ConstraintSettings_AddRef(
   JoltC_ConstraintSettings_t * self
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_ConstraintSettings_Release(
   JoltC_ConstraintSettings_t * self
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 //endregion
 
@@ -167,9 +166,8 @@ bool JoltC_ConstraintSettings_mEnabled_Get(
   JoltC_ConstraintSettings_t * self
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  bool result = selfCpp->mEnabled;
-  return result;
-};
+  return selfCpp->mEnabled;
+}
 
 void JoltC_ConstraintSettings_mEnabled_Set(
   JoltC_ConstraintSettings_t * self,
@@ -183,9 +181,8 @@ long JoltC_ConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_ConstraintSettings_t * self
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  long result = selfCpp->mNumVelocityStepsOverride;
-  return result;
-};
+  return selfCpp->mNumVelocityStepsOverride;
+}
 
 void JoltC_ConstraintSettings_mNumVelocityStepsOverride_Set(
   JoltC_ConstraintSettings_t * self,
@@ -199,9 +196,8 @@ long JoltC_ConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_ConstraintSettings_t * self
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
-  long result = selfCpp->mNumPositionStepsOverride;
-  return result;
-};
+  return selfCpp->mNumPositionStepsOverride;
+}
 
 void JoltC_ConstraintSettings_mNumPositionStepsOverride_Set(
   JoltC_ConstraintSettings_t * self,

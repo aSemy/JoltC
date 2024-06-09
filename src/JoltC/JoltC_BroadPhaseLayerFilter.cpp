@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `BroadPhaseLayerFilter` instance.
+ */
 JoltC_BroadPhaseLayerFilter_t * JoltC_BroadPhaseLayerFilter_new() {
   JoltC_BroadPhaseLayerFilter_t * cInstance = new JoltC_BroadPhaseLayerFilter_t();
   BroadPhaseLayerFilter * cppInstance = new BroadPhaseLayerFilter();

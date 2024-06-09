@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `CastShapeAnyHitCollisionCollector` instance.
+ */
 JoltC_CastShapeAnyHitCollisionCollector_t * JoltC_CastShapeAnyHitCollisionCollector_new() {
   JoltC_CastShapeAnyHitCollisionCollector_t * cInstance = new JoltC_CastShapeAnyHitCollisionCollector_t();
   CastShapeAnyHitCollisionCollector * cppInstance = new CastShapeAnyHitCollisionCollector();
@@ -22,36 +25,36 @@ bool JoltC_CastShapeAnyHitCollisionCollector_HadHit(
   JoltC_CastShapeAnyHitCollisionCollector_t * self
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
-  bool result = selfCpp->HadHit();
-  return result;
-};
+  return selfCpp->HadHit();
+}
 
 void JoltC_CastShapeAnyHitCollisionCollector_Reset(
   JoltC_CastShapeAnyHitCollisionCollector_t * self
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
   selfCpp->Reset();
-};
+}
 
 void JoltC_CastShapeAnyHitCollisionCollector_SetContext(
   JoltC_CastShapeAnyHitCollisionCollector_t * self,
   JoltC_TransformedShape_t * inContext
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
+  const TransformedShape * inContextCpp = static_cast<const TransformedShape *>(inContext->obj);
   selfCpp->SetContext(
-    reinterpret_cast<TransformedShape *>(inContext->obj)
+    inContextCpp
   );
-};
+}
 
 JoltC_TransformedShape_t * JoltC_CastShapeAnyHitCollisionCollector_GetContext(
   JoltC_CastShapeAnyHitCollisionCollector_t * self
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
-  const TransformedShape * resultValue = selfCpp->GetContext();
-  JoltC_TransformedShape_t* result = new JoltC_TransformedShape_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  const TransformedShape * resultPtr = selfCpp->GetContext();
+  JoltC_TransformedShape_t * result = new JoltC_TransformedShape_t();
+  result->obj = const_cast<void *>(reinterpret_cast<const void *>(resultPtr));
   return result;
-};
+}
 
 void JoltC_CastShapeAnyHitCollisionCollector_UpdateEarlyOutFraction(
   JoltC_CastShapeAnyHitCollisionCollector_t * self,
@@ -61,7 +64,7 @@ void JoltC_CastShapeAnyHitCollisionCollector_UpdateEarlyOutFraction(
   selfCpp->UpdateEarlyOutFraction(
     inFraction
   );
-};
+}
 
 void JoltC_CastShapeAnyHitCollisionCollector_ResetEarlyOutFraction(
   JoltC_CastShapeAnyHitCollisionCollector_t * self,
@@ -71,38 +74,35 @@ void JoltC_CastShapeAnyHitCollisionCollector_ResetEarlyOutFraction(
   selfCpp->ResetEarlyOutFraction(
     inFraction
   );
-};
+}
 
 void JoltC_CastShapeAnyHitCollisionCollector_ForceEarlyOut(
   JoltC_CastShapeAnyHitCollisionCollector_t * self
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
   selfCpp->ForceEarlyOut();
-};
+}
 
 bool JoltC_CastShapeAnyHitCollisionCollector_ShouldEarlyOut(
   JoltC_CastShapeAnyHitCollisionCollector_t * self
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
-  bool result = selfCpp->ShouldEarlyOut();
-  return result;
-};
+  return selfCpp->ShouldEarlyOut();
+}
 
 float JoltC_CastShapeAnyHitCollisionCollector_GetEarlyOutFraction(
   JoltC_CastShapeAnyHitCollisionCollector_t * self
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
-  float result = selfCpp->GetEarlyOutFraction();
-  return result;
-};
+  return selfCpp->GetEarlyOutFraction();
+}
 
 float JoltC_CastShapeAnyHitCollisionCollector_GetPositiveEarlyOutFraction(
   JoltC_CastShapeAnyHitCollisionCollector_t * self
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
-  float result = selfCpp->GetPositiveEarlyOutFraction();
-  return result;
-};
+  return selfCpp->GetPositiveEarlyOutFraction();
+}
 
 //endregion
 
@@ -112,18 +112,19 @@ JoltC_ShapeCastResult_t * JoltC_CastShapeAnyHitCollisionCollector_mHit_Get(
   JoltC_CastShapeAnyHitCollisionCollector_t * self
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
-  const ShapeCastResult& resultValue = selfCpp->mHit;
-  JoltC_ShapeCastResult_t* result = new JoltC_ShapeCastResult_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  ShapeCastResult * resultPtr = new ShapeCastResult();
+  *resultPtr = selfCpp->mHit;
+  JoltC_ShapeCastResult_t * result = new JoltC_ShapeCastResult_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_CastShapeAnyHitCollisionCollector_mHit_Set(
   JoltC_CastShapeAnyHitCollisionCollector_t * self,
   JoltC_ShapeCastResult_t * mHit
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
-  selfCpp->mHit = *reinterpret_cast<ShapeCastResult *>(mHit->obj);
+  selfCpp->mHit = *static_cast<ShapeCastResult *>(mHit->obj);
 };
 
 //endregion

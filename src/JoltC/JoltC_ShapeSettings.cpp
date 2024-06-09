@@ -141,40 +141,40 @@ unsigned long JoltC_ShapeSettings_GetRefCount(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  unsigned long result = selfCpp->GetRefCount();
-  return result;
-};
+  return selfCpp->GetRefCount();
+}
 
 void JoltC_ShapeSettings_AddRef(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
   selfCpp->AddRef();
-};
+}
 
 void JoltC_ShapeSettings_Release(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
   selfCpp->Release();
-};
+}
 
 JoltC_Shape_ShapeResult_t * JoltC_ShapeSettings_Create(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  const Shape::ShapeResult& resultValue = selfCpp->Create();
-  JoltC_Shape_ShapeResult_t* result = new JoltC_Shape_ShapeResult_t();
-  result->obj = const_cast<void*>(reinterpret_cast<const void*>(&resultValue));
+  Shape::ShapeResult * resultPtr = new Shape::ShapeResult();
+  *resultPtr = selfCpp->Create();
+  JoltC_Shape_ShapeResult_t * result = new JoltC_Shape_ShapeResult_t();
+  result->obj = reinterpret_cast<void *>(resultPtr);
   return result;
-};
+}
 
 void JoltC_ShapeSettings_ClearCachedResult(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
   selfCpp->ClearCachedResult();
-};
+}
 
 //endregion
 
@@ -184,9 +184,8 @@ unsigned long long int JoltC_ShapeSettings_mUserData_Get(
   JoltC_ShapeSettings_t * self
 ) {
   ShapeSettings * selfCpp = static_cast<ShapeSettings *>(self->obj);
-  unsigned long long int result = selfCpp->mUserData;
-  return result;
-};
+  return selfCpp->mUserData;
+}
 
 void JoltC_ShapeSettings_mUserData_Set(
   JoltC_ShapeSettings_t * self,

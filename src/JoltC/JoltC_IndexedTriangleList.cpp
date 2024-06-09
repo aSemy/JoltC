@@ -7,6 +7,9 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `IndexedTriangleList` instance.
+ */
 JoltC_IndexedTriangleList_t * JoltC_IndexedTriangleList_new() {
   JoltC_IndexedTriangleList_t * cInstance = new JoltC_IndexedTriangleList_t();
   IndexedTriangleList * cppInstance = new IndexedTriangleList();
@@ -22,17 +25,15 @@ bool JoltC_IndexedTriangleList_empty(
   JoltC_IndexedTriangleList_t * self
 ) {
   IndexedTriangleList * selfCpp = static_cast<IndexedTriangleList *>(self->obj);
-  bool result = selfCpp->empty();
-  return result;
-};
+  return selfCpp->empty();
+}
 
 long JoltC_IndexedTriangleList_size(
   JoltC_IndexedTriangleList_t * self
 ) {
   IndexedTriangleList * selfCpp = static_cast<IndexedTriangleList *>(self->obj);
-  long result = selfCpp->size();
-  return result;
-};
+  return selfCpp->size();
+}
 
 JoltC_IndexedTriangle_t * JoltC_IndexedTriangleList_at(
   JoltC_IndexedTriangleList_t * self,
@@ -45,17 +46,18 @@ JoltC_IndexedTriangle_t * JoltC_IndexedTriangleList_at(
   JoltC_IndexedTriangle_t* result = new JoltC_IndexedTriangle_t();
   result->obj = reinterpret_cast<void*>(resultRef);
   return result;
-};
+}
 
 void JoltC_IndexedTriangleList_push_back(
   JoltC_IndexedTriangleList_t * self,
   JoltC_IndexedTriangle_t * inTriangle
 ) {
   IndexedTriangleList * selfCpp = static_cast<IndexedTriangleList *>(self->obj);
+  const IndexedTriangle * inTriangleCpp = static_cast<const IndexedTriangle *>(inTriangle->obj);
   selfCpp->push_back(
-    *reinterpret_cast<IndexedTriangle *>(inTriangle->obj)
+    *inTriangleCpp
   );
-};
+}
 
 void JoltC_IndexedTriangleList_reserve(
   JoltC_IndexedTriangleList_t * self,
@@ -65,7 +67,7 @@ void JoltC_IndexedTriangleList_reserve(
   selfCpp->reserve(
     inSize
   );
-};
+}
 
 void JoltC_IndexedTriangleList_resize(
   JoltC_IndexedTriangleList_t * self,
@@ -75,14 +77,14 @@ void JoltC_IndexedTriangleList_resize(
   selfCpp->resize(
     inSize
   );
-};
+}
 
 void JoltC_IndexedTriangleList_clear(
   JoltC_IndexedTriangleList_t * self
 ) {
   IndexedTriangleList * selfCpp = static_cast<IndexedTriangleList *>(self->obj);
   selfCpp->clear();
-};
+}
 
 //endregion
 

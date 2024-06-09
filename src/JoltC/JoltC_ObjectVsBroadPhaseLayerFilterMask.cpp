@@ -7,12 +7,16 @@ extern "C" {
 
 //region constructors
 
+/**
+  Construct a new `ObjectVsBroadPhaseLayerFilterMask` instance.
+ */
 JoltC_ObjectVsBroadPhaseLayerFilterMask_t * JoltC_ObjectVsBroadPhaseLayerFilterMask_new(
   JoltC_BroadPhaseLayerInterfaceMask_t * inBroadPhaseLayerInterface
 ) {
+  const BroadPhaseLayerInterfaceMask * inBroadPhaseLayerInterfaceCpp = static_cast<const BroadPhaseLayerInterfaceMask *>(inBroadPhaseLayerInterface->obj);
   JoltC_ObjectVsBroadPhaseLayerFilterMask_t * cInstance = new JoltC_ObjectVsBroadPhaseLayerFilterMask_t();
   ObjectVsBroadPhaseLayerFilterMask * cppInstance = new ObjectVsBroadPhaseLayerFilterMask(
-    *reinterpret_cast<BroadPhaseLayerInterfaceMask *>(inBroadPhaseLayerInterface->obj)
+    *inBroadPhaseLayerInterfaceCpp
   );
   cInstance->obj = cppInstance;
   return cInstance;
