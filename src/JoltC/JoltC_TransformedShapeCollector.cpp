@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_TransformedShapeCollector_destroy(
+  JoltC_TransformedShapeCollector_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<TransformedShapeCollector *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_TransformedShapeCollector_Reset(
@@ -85,7 +96,7 @@ float JoltC_TransformedShapeCollector_GetPositiveEarlyOutFraction(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

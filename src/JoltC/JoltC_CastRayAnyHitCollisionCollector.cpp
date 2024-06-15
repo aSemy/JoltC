@@ -19,6 +19,17 @@ JoltC_CastRayAnyHitCollisionCollector_t * JoltC_CastRayAnyHitCollisionCollector_
 
 //endregion
 
+//region destructor
+
+void JoltC_CastRayAnyHitCollisionCollector_destroy(
+  JoltC_CastRayAnyHitCollisionCollector_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CastRayAnyHitCollisionCollector *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_CastRayAnyHitCollisionCollector_HadHit(
@@ -125,11 +136,11 @@ void JoltC_CastRayAnyHitCollisionCollector_mHit_Set(
 ) {
   CastRayAnyHitCollisionCollector * selfCpp = static_cast<CastRayAnyHitCollisionCollector *>(self->obj);
   selfCpp->mHit = *static_cast<RayCastResult *>(mHit->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

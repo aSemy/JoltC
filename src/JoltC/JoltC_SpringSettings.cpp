@@ -19,6 +19,17 @@ JoltC_SpringSettings_t * JoltC_SpringSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_SpringSettings_destroy(
+  JoltC_SpringSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SpringSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_SpringSettings_HasStiffness(
@@ -46,7 +57,7 @@ void JoltC_SpringSettings_mMode_Set(
 ) {
   SpringSettings * selfCpp = static_cast<SpringSettings *>(self->obj);
   selfCpp->mMode = static_cast<ESpringMode>(static_cast<int>(mMode));
-};
+}
 
 float JoltC_SpringSettings_mFrequency_Get(
   JoltC_SpringSettings_t * self
@@ -61,7 +72,7 @@ void JoltC_SpringSettings_mFrequency_Set(
 ) {
   SpringSettings * selfCpp = static_cast<SpringSettings *>(self->obj);
   selfCpp->mFrequency = mFrequency;
-};
+}
 
 float JoltC_SpringSettings_mStiffness_Get(
   JoltC_SpringSettings_t * self
@@ -76,7 +87,7 @@ void JoltC_SpringSettings_mStiffness_Set(
 ) {
   SpringSettings * selfCpp = static_cast<SpringSettings *>(self->obj);
   selfCpp->mStiffness = mStiffness;
-};
+}
 
 float JoltC_SpringSettings_mDamping_Get(
   JoltC_SpringSettings_t * self
@@ -91,11 +102,11 @@ void JoltC_SpringSettings_mDamping_Set(
 ) {
   SpringSettings * selfCpp = static_cast<SpringSettings *>(self->obj);
   selfCpp->mDamping = mDamping;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

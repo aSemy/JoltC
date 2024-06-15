@@ -27,6 +27,17 @@ JoltC_OffsetCenterOfMassShape_t * JoltC_OffsetCenterOfMassShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_OffsetCenterOfMassShape_destroy(
+  JoltC_OffsetCenterOfMassShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<OffsetCenterOfMassShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Shape_t * JoltC_OffsetCenterOfMassShape_GetInnerShape(
@@ -270,7 +281,7 @@ JoltC_Shape_ShapeResult_t * JoltC_OffsetCenterOfMassShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

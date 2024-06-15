@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_VehicleConstraintSettings_t * JoltC_VehicleConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleConstraintSettings_destroy(
+  JoltC_VehicleConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_VehicleConstraintSettings_GetRefCount(
@@ -117,4 +123,3 @@ void JoltC_VehicleConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

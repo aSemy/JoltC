@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_BroadPhaseLayerInterface_destroy(
+  JoltC_BroadPhaseLayerInterface_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BroadPhaseLayerInterface *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -47,7 +58,7 @@ unsigned long JoltC_BroadPhaseLayerInterface_GetNumBroadPhaseLayers(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

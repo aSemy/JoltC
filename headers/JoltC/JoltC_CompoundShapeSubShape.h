@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CompoundShapeSubShape_destroy(
+  JoltC_CompoundShapeSubShape_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_CompoundShapeSubShape_GetPositionCOM(
@@ -44,4 +50,3 @@ void JoltC_CompoundShapeSubShape_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

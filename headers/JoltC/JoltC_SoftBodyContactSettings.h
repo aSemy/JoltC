@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyContactSettings_destroy(
+  JoltC_SoftBodyContactSettings_t * self
+);
+
+//endregion
 //region properties
 
 float JoltC_SoftBodyContactSettings_mInvMassScale1_Get(
@@ -50,4 +56,3 @@ void JoltC_SoftBodyContactSettings_mIsSensor_Set(
 #ifdef __cplusplus
 }
 #endif
-

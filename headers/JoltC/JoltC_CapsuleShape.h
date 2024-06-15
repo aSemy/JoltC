@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_CapsuleShape_t * JoltC_CapsuleShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_CapsuleShape_destroy(
+  JoltC_CapsuleShape_t * self
+);
+
+//endregion
 //region functions
 
 float JoltC_CapsuleShape_GetRadius(
@@ -139,4 +145,3 @@ JoltC_Shape_ShapeResult_t * JoltC_CapsuleShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

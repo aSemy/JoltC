@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_WheelSettingsWV_t * JoltC_WheelSettingsWV_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_WheelSettingsWV_destroy(
+  JoltC_WheelSettingsWV_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_WheelSettingsWV_GetRefCount(
@@ -216,4 +222,3 @@ void JoltC_WheelSettingsWV_mEnableSuspensionForcePoint_Set(
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleTrackSettings_destroy(
+  JoltC_VehicleTrackSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleTrackSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -33,7 +44,7 @@ void JoltC_VehicleTrackSettings_mDrivenWheel_Set(
 ) {
   VehicleTrackSettings * selfCpp = static_cast<VehicleTrackSettings *>(self->obj);
   selfCpp->mDrivenWheel = mDrivenWheel;
-};
+}
 
 JoltC_ArrayUint_t * JoltC_VehicleTrackSettings_mWheels_Get(
   JoltC_VehicleTrackSettings_t * self
@@ -52,7 +63,7 @@ void JoltC_VehicleTrackSettings_mWheels_Set(
 ) {
   VehicleTrackSettings * selfCpp = static_cast<VehicleTrackSettings *>(self->obj);
   selfCpp->mWheels = *static_cast<ArrayUint *>(mWheels->obj);
-};
+}
 
 float JoltC_VehicleTrackSettings_mInertia_Get(
   JoltC_VehicleTrackSettings_t * self
@@ -67,7 +78,7 @@ void JoltC_VehicleTrackSettings_mInertia_Set(
 ) {
   VehicleTrackSettings * selfCpp = static_cast<VehicleTrackSettings *>(self->obj);
   selfCpp->mInertia = mInertia;
-};
+}
 
 float JoltC_VehicleTrackSettings_mAngularDamping_Get(
   JoltC_VehicleTrackSettings_t * self
@@ -82,7 +93,7 @@ void JoltC_VehicleTrackSettings_mAngularDamping_Set(
 ) {
   VehicleTrackSettings * selfCpp = static_cast<VehicleTrackSettings *>(self->obj);
   selfCpp->mAngularDamping = mAngularDamping;
-};
+}
 
 float JoltC_VehicleTrackSettings_mMaxBrakeTorque_Get(
   JoltC_VehicleTrackSettings_t * self
@@ -97,7 +108,7 @@ void JoltC_VehicleTrackSettings_mMaxBrakeTorque_Set(
 ) {
   VehicleTrackSettings * selfCpp = static_cast<VehicleTrackSettings *>(self->obj);
   selfCpp->mMaxBrakeTorque = mMaxBrakeTorque;
-};
+}
 
 float JoltC_VehicleTrackSettings_mDifferentialRatio_Get(
   JoltC_VehicleTrackSettings_t * self
@@ -112,11 +123,11 @@ void JoltC_VehicleTrackSettings_mDifferentialRatio_Set(
 ) {
   VehicleTrackSettings * selfCpp = static_cast<VehicleTrackSettings *>(self->obj);
   selfCpp->mDifferentialRatio = mDifferentialRatio;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

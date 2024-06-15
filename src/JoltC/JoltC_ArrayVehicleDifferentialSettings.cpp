@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayVehicleDifferentialSettings_destroy(
+  JoltC_ArrayVehicleDifferentialSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayVehicleDifferentialSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayVehicleDifferentialSettings_empty(
@@ -64,7 +75,7 @@ void JoltC_ArrayVehicleDifferentialSettings_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_ScaledShape_t * JoltC_ScaledShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ScaledShape_destroy(
+  JoltC_ScaledShape_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_ScaledShape_GetScale(
@@ -129,4 +135,3 @@ JoltC_Shape_ShapeResult_t * JoltC_ScaledShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

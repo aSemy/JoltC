@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SliderConstraint_destroy(
+  JoltC_SliderConstraint_t * self
+);
+
+//endregion
 //region functions
 
 float JoltC_SliderConstraint_GetCurrentPosition(
@@ -190,4 +196,3 @@ void JoltC_SliderConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

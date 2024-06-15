@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleEngineSettings_destroy(
+  JoltC_VehicleEngineSettings_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -79,4 +85,3 @@ void JoltC_VehicleEngineSettings_mAngularDamping_Set(
 #ifdef __cplusplus
 }
 #endif
-

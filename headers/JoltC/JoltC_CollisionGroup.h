@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -18,6 +17,13 @@ JoltC_CollisionGroup_t * JoltC_CollisionGroup_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_CollisionGroup_destroy(
+  JoltC_CollisionGroup_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_CollisionGroup_SetGroupFilter(
@@ -53,4 +59,3 @@ unsigned long JoltC_CollisionGroup_GetSubGroupID(
 #ifdef __cplusplus
 }
 #endif
-

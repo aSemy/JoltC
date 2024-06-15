@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_Body_destroy(
+  JoltC_Body_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Body *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_BodyID_t * JoltC_Body_GetID(
@@ -654,7 +665,7 @@ void JoltC_Body_SetUserData(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

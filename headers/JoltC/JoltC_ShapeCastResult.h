@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ShapeCastResult_t * JoltC_ShapeCastResult_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_ShapeCastResult_destroy(
+  JoltC_ShapeCastResult_t * self
+);
+
+//endregion
 //region properties
 
 float JoltC_ShapeCastResult_mFraction_Get(
@@ -119,4 +125,3 @@ void JoltC_ShapeCastResult_mShape2Face_Set(
 #ifdef __cplusplus
 }
 #endif
-

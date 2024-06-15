@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ConeConstraintSettings_t * JoltC_ConeConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_ConeConstraintSettings_destroy(
+  JoltC_ConeConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_ConeConstraintSettings_Create(
@@ -123,4 +129,3 @@ void JoltC_ConeConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

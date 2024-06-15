@@ -26,6 +26,17 @@ JoltC_SphereShapeSettings_t * JoltC_SphereShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SphereShapeSettings_destroy(
+  JoltC_SphereShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SphereShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_SphereShapeSettings_GetRefCount(
@@ -84,7 +95,7 @@ void JoltC_SphereShapeSettings_mRadius_Set(
 ) {
   SphereShapeSettings * selfCpp = static_cast<SphereShapeSettings *>(self->obj);
   selfCpp->mRadius = mRadius;
-};
+}
 
 JoltC_PhysicsMaterial_t * JoltC_SphereShapeSettings_mMaterial_Get(
   JoltC_SphereShapeSettings_t * self
@@ -102,7 +113,7 @@ void JoltC_SphereShapeSettings_mMaterial_Set(
 ) {
   SphereShapeSettings * selfCpp = static_cast<SphereShapeSettings *>(self->obj);
   selfCpp->mMaterial = static_cast<const PhysicsMaterial *>(mMaterial->obj);
-};
+}
 
 float JoltC_SphereShapeSettings_mDensity_Get(
   JoltC_SphereShapeSettings_t * self
@@ -117,7 +128,7 @@ void JoltC_SphereShapeSettings_mDensity_Set(
 ) {
   SphereShapeSettings * selfCpp = static_cast<SphereShapeSettings *>(self->obj);
   selfCpp->mDensity = mDensity;
-};
+}
 
 unsigned long long int JoltC_SphereShapeSettings_mUserData_Get(
   JoltC_SphereShapeSettings_t * self
@@ -132,11 +143,11 @@ void JoltC_SphereShapeSettings_mUserData_Set(
 ) {
   SphereShapeSettings * selfCpp = static_cast<SphereShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

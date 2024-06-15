@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_DistanceConstraint_destroy(
+  JoltC_DistanceConstraint_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_DistanceConstraint_SetDistance(
@@ -130,4 +136,3 @@ void JoltC_DistanceConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

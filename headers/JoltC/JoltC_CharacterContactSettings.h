@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_CharacterContactSettings_t * JoltC_CharacterContactSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_CharacterContactSettings_destroy(
+  JoltC_CharacterContactSettings_t * self
+);
+
+//endregion
 //region properties
 
 bool JoltC_CharacterContactSettings_mCanPushCharacter_Get(
@@ -38,4 +44,3 @@ void JoltC_CharacterContactSettings_mCanReceiveImpulses_Set(
 #ifdef __cplusplus
 }
 #endif
-

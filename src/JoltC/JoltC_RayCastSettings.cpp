@@ -19,6 +19,17 @@ JoltC_RayCastSettings_t * JoltC_RayCastSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_RayCastSettings_destroy(
+  JoltC_RayCastSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RayCastSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_EBackFaceMode JoltC_RayCastSettings_mBackFaceMode_Get(
@@ -35,7 +46,7 @@ void JoltC_RayCastSettings_mBackFaceMode_Set(
 ) {
   RayCastSettings * selfCpp = static_cast<RayCastSettings *>(self->obj);
   selfCpp->mBackFaceMode = static_cast<EBackFaceMode>(static_cast<int>(mBackFaceMode));
-};
+}
 
 bool JoltC_RayCastSettings_mTreatConvexAsSolid_Get(
   JoltC_RayCastSettings_t * self
@@ -50,11 +61,11 @@ void JoltC_RayCastSettings_mTreatConvexAsSolid_Set(
 ) {
   RayCastSettings * selfCpp = static_cast<RayCastSettings *>(self->obj);
   selfCpp->mTreatConvexAsSolid = mTreatConvexAsSolid;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_VehicleConstraintSettings_t * JoltC_VehicleConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleConstraintSettings_destroy(
+  JoltC_VehicleConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_VehicleConstraintSettings_GetRefCount(
@@ -63,7 +74,7 @@ void JoltC_VehicleConstraintSettings_mUp_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mUp = *static_cast<Vec3 *>(mUp->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_VehicleConstraintSettings_mForward_Get(
   JoltC_VehicleConstraintSettings_t * self
@@ -82,7 +93,7 @@ void JoltC_VehicleConstraintSettings_mForward_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mForward = *static_cast<Vec3 *>(mForward->obj);
-};
+}
 
 float JoltC_VehicleConstraintSettings_mMaxPitchRollAngle_Get(
   JoltC_VehicleConstraintSettings_t * self
@@ -97,7 +108,7 @@ void JoltC_VehicleConstraintSettings_mMaxPitchRollAngle_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mMaxPitchRollAngle = mMaxPitchRollAngle;
-};
+}
 
 JoltC_ArrayWheelSettings_t * JoltC_VehicleConstraintSettings_mWheels_Get(
   JoltC_VehicleConstraintSettings_t * self
@@ -116,7 +127,7 @@ void JoltC_VehicleConstraintSettings_mWheels_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mWheels = *static_cast<ArrayWheelSettings *>(mWheels->obj);
-};
+}
 
 JoltC_ArrayVehicleAntiRollBar_t * JoltC_VehicleConstraintSettings_mAntiRollBars_Get(
   JoltC_VehicleConstraintSettings_t * self
@@ -135,7 +146,7 @@ void JoltC_VehicleConstraintSettings_mAntiRollBars_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mAntiRollBars = *static_cast<ArrayVehicleAntiRollBar *>(mAntiRollBars->obj);
-};
+}
 
 JoltC_VehicleControllerSettings_t * JoltC_VehicleConstraintSettings_mController_Get(
   JoltC_VehicleConstraintSettings_t * self
@@ -153,7 +164,7 @@ void JoltC_VehicleConstraintSettings_mController_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mController = static_cast<VehicleControllerSettings *>(mController->obj);
-};
+}
 
 bool JoltC_VehicleConstraintSettings_mEnabled_Get(
   JoltC_VehicleConstraintSettings_t * self
@@ -168,7 +179,7 @@ void JoltC_VehicleConstraintSettings_mEnabled_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_VehicleConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_VehicleConstraintSettings_t * self
@@ -183,7 +194,7 @@ void JoltC_VehicleConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_VehicleConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_VehicleConstraintSettings_t * self
@@ -198,11 +209,11 @@ void JoltC_VehicleConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   VehicleConstraintSettings * selfCpp = static_cast<VehicleConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

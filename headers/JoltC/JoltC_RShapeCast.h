@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -17,6 +16,13 @@ JoltC_RShapeCast_t * JoltC_RShapeCast_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_RShapeCast_destroy(
+  JoltC_RShapeCast_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_RVec3_t * JoltC_RShapeCast_GetPointOnRay(
@@ -50,4 +56,3 @@ JoltC_Vec3_t * JoltC_RShapeCast_mDirection_Get(
 #ifdef __cplusplus
 }
 #endif
-

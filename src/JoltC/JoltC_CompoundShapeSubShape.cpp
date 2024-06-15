@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CompoundShapeSubShape_destroy(
+  JoltC_CompoundShapeSubShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CompoundShapeSubShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_CompoundShapeSubShape_GetPositionCOM(
@@ -49,7 +60,7 @@ void JoltC_CompoundShapeSubShape_mShape_Set(
 ) {
   CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
   selfCpp->mShape = static_cast<const Shape *>(mShape->obj);
-};
+}
 
 unsigned long JoltC_CompoundShapeSubShape_mUserData_Get(
   JoltC_CompoundShapeSubShape_t * self
@@ -64,11 +75,11 @@ void JoltC_CompoundShapeSubShape_mUserData_Set(
 ) {
   CompoundShapeSubShape * selfCpp = static_cast<CompoundShapeSubShape *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

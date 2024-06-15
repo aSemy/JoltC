@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleEngine_destroy(
+  JoltC_VehicleEngine_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_VehicleEngine_ClampRPM(
@@ -94,4 +100,3 @@ void JoltC_VehicleEngine_mAngularDamping_Set(
 #ifdef __cplusplus
 }
 #endif
-

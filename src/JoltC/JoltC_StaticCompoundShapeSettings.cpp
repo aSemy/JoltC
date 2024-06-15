@@ -19,6 +19,17 @@ JoltC_StaticCompoundShapeSettings_t * JoltC_StaticCompoundShapeSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_StaticCompoundShapeSettings_destroy(
+  JoltC_StaticCompoundShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<StaticCompoundShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_StaticCompoundShapeSettings_AddShape(
@@ -96,11 +107,11 @@ void JoltC_StaticCompoundShapeSettings_mUserData_Set(
 ) {
   StaticCompoundShapeSettings * selfCpp = static_cast<StaticCompoundShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

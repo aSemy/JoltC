@@ -27,6 +27,17 @@ JoltC_WheeledVehicleController_t * JoltC_WheeledVehicleController_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_WheeledVehicleController_destroy(
+  JoltC_WheeledVehicleController_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<WheeledVehicleController *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -203,7 +214,7 @@ void JoltC_WheeledVehicleController_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SkeletonPose_t * JoltC_SkeletonPose_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_SkeletonPose_destroy(
+  JoltC_SkeletonPose_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_SkeletonPose_SetSkeleton(
@@ -64,4 +70,3 @@ void JoltC_SkeletonPose_CalculateJointStates(
 #ifdef __cplusplus
 }
 #endif
-

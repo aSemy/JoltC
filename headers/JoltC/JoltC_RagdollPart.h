@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_RagdollPart_destroy(
+  JoltC_RagdollPart_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_ShapeSettings_t * JoltC_RagdollPart_GetShapeSettings(
@@ -318,4 +324,3 @@ void JoltC_RagdollPart_mMassPropertiesOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

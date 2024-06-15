@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_JPHString_t * JoltC_JPHString_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_JPHString_destroy(
+  JoltC_JPHString_t * self
+);
+
+//endregion
 //region functions
 
 const char* JoltC_JPHString_c_str(
@@ -31,4 +37,3 @@ unsigned long JoltC_JPHString_size(
 #ifdef __cplusplus
 }
 #endif
-

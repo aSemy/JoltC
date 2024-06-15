@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_HingeConstraintSettings_t * JoltC_HingeConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_HingeConstraintSettings_destroy(
+  JoltC_HingeConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_HingeConstraintSettings_Create(
@@ -177,4 +183,3 @@ void JoltC_HingeConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

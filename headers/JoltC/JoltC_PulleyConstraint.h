@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PulleyConstraint_destroy(
+  JoltC_PulleyConstraint_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_PulleyConstraint_SetLength(
@@ -121,4 +127,3 @@ void JoltC_PulleyConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

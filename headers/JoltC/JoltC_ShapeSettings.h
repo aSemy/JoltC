@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ShapeSettings_destroy(
+  JoltC_ShapeSettings_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -149,4 +155,3 @@ void JoltC_ShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

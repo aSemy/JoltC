@@ -37,6 +37,17 @@ JoltC_RRayCast_t * JoltC_RRayCast_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_RRayCast_destroy(
+  JoltC_RRayCast_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RRayCast *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_RRayCast_t * JoltC_RRayCast_Transformed(
@@ -104,7 +115,7 @@ void JoltC_RRayCast_mOrigin_Set(
 ) {
   RRayCast * selfCpp = static_cast<RRayCast *>(self->obj);
   selfCpp->mOrigin = *static_cast<RVec3 *>(mOrigin->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_RRayCast_mDirection_Get(
   JoltC_RRayCast_t * self
@@ -123,11 +134,11 @@ void JoltC_RRayCast_mDirection_Set(
 ) {
   RRayCast * selfCpp = static_cast<RRayCast *>(self->obj);
   selfCpp->mDirection = *static_cast<Vec3 *>(mDirection->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

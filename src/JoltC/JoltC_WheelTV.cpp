@@ -24,6 +24,17 @@ JoltC_WheelTV_t * JoltC_WheelTV_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_WheelTV_destroy(
+  JoltC_WheelTV_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<WheelTV *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_WheelSettingsTV_t * JoltC_WheelTV_GetSettings_0(
@@ -222,7 +233,7 @@ void JoltC_WheelTV_mTrackIndex_Set(
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   selfCpp->mTrackIndex = mTrackIndex;
-};
+}
 
 float JoltC_WheelTV_mCombinedLongitudinalFriction_Get(
   JoltC_WheelTV_t * self
@@ -237,7 +248,7 @@ void JoltC_WheelTV_mCombinedLongitudinalFriction_Set(
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   selfCpp->mCombinedLongitudinalFriction = mCombinedLongitudinalFriction;
-};
+}
 
 float JoltC_WheelTV_mCombinedLateralFriction_Get(
   JoltC_WheelTV_t * self
@@ -252,7 +263,7 @@ void JoltC_WheelTV_mCombinedLateralFriction_Set(
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   selfCpp->mCombinedLateralFriction = mCombinedLateralFriction;
-};
+}
 
 float JoltC_WheelTV_mBrakeImpulse_Get(
   JoltC_WheelTV_t * self
@@ -267,11 +278,11 @@ void JoltC_WheelTV_mBrakeImpulse_Set(
 ) {
   WheelTV * selfCpp = static_cast<WheelTV *>(self->obj);
   selfCpp->mBrakeImpulse = mBrakeImpulse;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

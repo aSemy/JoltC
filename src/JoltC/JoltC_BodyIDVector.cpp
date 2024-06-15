@@ -19,6 +19,17 @@ JoltC_BodyIDVector_t * JoltC_BodyIDVector_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_BodyIDVector_destroy(
+  JoltC_BodyIDVector_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BodyIDVector *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_BodyIDVector_empty(
@@ -88,7 +99,7 @@ void JoltC_BodyIDVector_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

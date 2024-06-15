@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_HeightFieldShapeSettings_t * JoltC_HeightFieldShapeSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_HeightFieldShapeSettings_destroy(
+  JoltC_HeightFieldShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_HeightFieldShapeSettings_GetRefCount(
@@ -152,4 +158,3 @@ void JoltC_HeightFieldShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

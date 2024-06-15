@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SliderConstraintSettings_t * JoltC_SliderConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_SliderConstraintSettings_destroy(
+  JoltC_SliderConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_SliderConstraintSettings_Create(
@@ -186,4 +192,3 @@ void JoltC_SliderConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

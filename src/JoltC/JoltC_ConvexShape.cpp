@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ConvexShape_destroy(
+  JoltC_ConvexShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ConvexShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -313,7 +324,7 @@ JoltC_Shape_ShapeResult_t * JoltC_ConvexShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

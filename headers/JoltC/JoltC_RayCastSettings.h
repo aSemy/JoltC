@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_RayCastSettings_t * JoltC_RayCastSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_RayCastSettings_destroy(
+  JoltC_RayCastSettings_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_EBackFaceMode JoltC_RayCastSettings_mBackFaceMode_Get(
@@ -38,4 +44,3 @@ void JoltC_RayCastSettings_mTreatConvexAsSolid_Set(
 #ifdef __cplusplus
 }
 #endif
-

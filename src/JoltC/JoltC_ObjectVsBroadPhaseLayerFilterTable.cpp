@@ -31,7 +31,18 @@ JoltC_ObjectVsBroadPhaseLayerFilterTable_t * JoltC_ObjectVsBroadPhaseLayerFilter
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectVsBroadPhaseLayerFilterTable_destroy(
+  JoltC_ObjectVsBroadPhaseLayerFilterTable_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ObjectVsBroadPhaseLayerFilterTable *>(self->obj);
+  free(self);
+}
+
+//endregion
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayMat44_destroy(
+  JoltC_ArrayMat44_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayMat44 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayMat44_empty(
@@ -84,7 +95,7 @@ JoltC_Mat44MemRef_t * JoltC_ArrayMat44_data(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

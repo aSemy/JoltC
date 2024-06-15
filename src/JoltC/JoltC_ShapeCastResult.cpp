@@ -19,6 +19,17 @@ JoltC_ShapeCastResult_t * JoltC_ShapeCastResult_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ShapeCastResult_destroy(
+  JoltC_ShapeCastResult_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ShapeCastResult *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 float JoltC_ShapeCastResult_mFraction_Get(
@@ -34,7 +45,7 @@ void JoltC_ShapeCastResult_mFraction_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mFraction = mFraction;
-};
+}
 
 bool JoltC_ShapeCastResult_mIsBackFaceHit_Get(
   JoltC_ShapeCastResult_t * self
@@ -49,7 +60,7 @@ void JoltC_ShapeCastResult_mIsBackFaceHit_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mIsBackFaceHit = mIsBackFaceHit;
-};
+}
 
 JoltC_Vec3_t * JoltC_ShapeCastResult_mContactPointOn1_Get(
   JoltC_ShapeCastResult_t * self
@@ -68,7 +79,7 @@ void JoltC_ShapeCastResult_mContactPointOn1_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mContactPointOn1 = *static_cast<Vec3 *>(mContactPointOn1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_ShapeCastResult_mContactPointOn2_Get(
   JoltC_ShapeCastResult_t * self
@@ -87,7 +98,7 @@ void JoltC_ShapeCastResult_mContactPointOn2_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mContactPointOn2 = *static_cast<Vec3 *>(mContactPointOn2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_ShapeCastResult_mPenetrationAxis_Get(
   JoltC_ShapeCastResult_t * self
@@ -106,7 +117,7 @@ void JoltC_ShapeCastResult_mPenetrationAxis_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mPenetrationAxis = *static_cast<Vec3 *>(mPenetrationAxis->obj);
-};
+}
 
 float JoltC_ShapeCastResult_mPenetrationDepth_Get(
   JoltC_ShapeCastResult_t * self
@@ -121,7 +132,7 @@ void JoltC_ShapeCastResult_mPenetrationDepth_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mPenetrationDepth = mPenetrationDepth;
-};
+}
 
 JoltC_SubShapeID_t * JoltC_ShapeCastResult_mSubShapeID1_Get(
   JoltC_ShapeCastResult_t * self
@@ -140,7 +151,7 @@ void JoltC_ShapeCastResult_mSubShapeID1_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mSubShapeID1 = *static_cast<SubShapeID *>(mSubShapeID1->obj);
-};
+}
 
 JoltC_SubShapeID_t * JoltC_ShapeCastResult_mSubShapeID2_Get(
   JoltC_ShapeCastResult_t * self
@@ -159,7 +170,7 @@ void JoltC_ShapeCastResult_mSubShapeID2_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mSubShapeID2 = *static_cast<SubShapeID *>(mSubShapeID2->obj);
-};
+}
 
 JoltC_BodyID_t * JoltC_ShapeCastResult_mBodyID2_Get(
   JoltC_ShapeCastResult_t * self
@@ -178,7 +189,7 @@ void JoltC_ShapeCastResult_mBodyID2_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mBodyID2 = *static_cast<BodyID *>(mBodyID2->obj);
-};
+}
 
 JoltC_CollideShapeResultFace_t * JoltC_ShapeCastResult_mShape1Face_Get(
   JoltC_ShapeCastResult_t * self
@@ -197,7 +208,7 @@ void JoltC_ShapeCastResult_mShape1Face_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mShape1Face = *static_cast<CollideShapeResultFace *>(mShape1Face->obj);
-};
+}
 
 JoltC_CollideShapeResultFace_t * JoltC_ShapeCastResult_mShape2Face_Get(
   JoltC_ShapeCastResult_t * self
@@ -216,11 +227,11 @@ void JoltC_ShapeCastResult_mShape2Face_Set(
 ) {
   ShapeCastResult * selfCpp = static_cast<ShapeCastResult *>(self->obj);
   selfCpp->mShape2Face = *static_cast<CollideShapeResultFace *>(mShape2Face->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

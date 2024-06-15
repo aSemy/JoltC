@@ -23,6 +23,17 @@ JoltC_BroadPhaseLayerInterfaceMask_t * JoltC_BroadPhaseLayerInterfaceMask_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BroadPhaseLayerInterfaceMask_destroy(
+  JoltC_BroadPhaseLayerInterfaceMask_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BroadPhaseLayerInterfaceMask *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_BroadPhaseLayerInterfaceMask_ConfigureLayer(
@@ -49,7 +60,7 @@ unsigned long JoltC_BroadPhaseLayerInterfaceMask_GetNumBroadPhaseLayers(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

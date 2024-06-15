@@ -19,6 +19,17 @@ JoltC_ObjectLayerFilter_t * JoltC_ObjectLayerFilter_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectLayerFilter_destroy(
+  JoltC_ObjectLayerFilter_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ObjectLayerFilter *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -50,7 +61,7 @@ JoltC_ObjectLayerFilter_t * JoltC_ObjectLayerFilter_From_SpecifiedObjectLayerFil
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

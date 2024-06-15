@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CollideShapeResultFace_destroy(
+  JoltC_CollideShapeResultFace_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_CollideShapeResultFace_empty(
@@ -41,4 +47,3 @@ void JoltC_CollideShapeResultFace_clear(
 #ifdef __cplusplus
 }
 #endif
-

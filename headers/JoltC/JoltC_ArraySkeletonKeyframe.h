@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ArraySkeletonKeyframe_t * JoltC_ArraySkeletonKeyframe_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_ArraySkeletonKeyframe_destroy(
+  JoltC_ArraySkeletonKeyframe_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArraySkeletonKeyframe_empty(
@@ -52,4 +58,3 @@ void JoltC_ArraySkeletonKeyframe_clear(
 #ifdef __cplusplus
 }
 #endif
-

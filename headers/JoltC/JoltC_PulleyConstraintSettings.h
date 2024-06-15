@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_PulleyConstraintSettings_t * JoltC_PulleyConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_PulleyConstraintSettings_destroy(
+  JoltC_PulleyConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_PulleyConstraintSettings_Create(
@@ -141,4 +147,3 @@ void JoltC_PulleyConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

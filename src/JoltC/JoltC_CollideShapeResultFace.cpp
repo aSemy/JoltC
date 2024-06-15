@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CollideShapeResultFace_destroy(
+  JoltC_CollideShapeResultFace_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CollideShapeResultFace *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_CollideShapeResultFace_empty(
@@ -64,7 +75,7 @@ void JoltC_CollideShapeResultFace_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

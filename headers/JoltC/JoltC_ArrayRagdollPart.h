@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ArrayRagdollPart_t * JoltC_ArrayRagdollPart_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_ArrayRagdollPart_destroy(
+  JoltC_ArrayRagdollPart_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArrayRagdollPart_empty(
@@ -52,4 +58,3 @@ void JoltC_ArrayRagdollPart_clear(
 #ifdef __cplusplus
 }
 #endif
-

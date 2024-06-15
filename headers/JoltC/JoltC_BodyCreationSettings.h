@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -20,6 +19,13 @@ JoltC_BodyCreationSettings_t * JoltC_BodyCreationSettings_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_BodyCreationSettings_destroy(
+  JoltC_BodyCreationSettings_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -334,4 +340,3 @@ void JoltC_BodyCreationSettings_mMassPropertiesOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

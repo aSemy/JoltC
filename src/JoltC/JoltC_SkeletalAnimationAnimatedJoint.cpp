@@ -19,6 +19,17 @@ JoltC_SkeletalAnimationAnimatedJoint_t * JoltC_SkeletalAnimationAnimatedJoint_ne
 
 //endregion
 
+//region destructor
+
+void JoltC_SkeletalAnimationAnimatedJoint_destroy(
+  JoltC_SkeletalAnimationAnimatedJoint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SkeletalAnimationAnimatedJoint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_JPHString_t * JoltC_SkeletalAnimationAnimatedJoint_mJointName_Get(
@@ -38,7 +49,7 @@ void JoltC_SkeletalAnimationAnimatedJoint_mJointName_Set(
 ) {
   SkeletalAnimationAnimatedJoint * selfCpp = static_cast<SkeletalAnimationAnimatedJoint *>(self->obj);
   selfCpp->mJointName = *static_cast<JPHString *>(mJointName->obj);
-};
+}
 
 JoltC_ArraySkeletonKeyframe_t * JoltC_SkeletalAnimationAnimatedJoint_mKeyframes_Get(
   JoltC_SkeletalAnimationAnimatedJoint_t * self
@@ -57,11 +68,11 @@ void JoltC_SkeletalAnimationAnimatedJoint_mKeyframes_Set(
 ) {
   SkeletalAnimationAnimatedJoint * selfCpp = static_cast<SkeletalAnimationAnimatedJoint *>(self->obj);
   selfCpp->mKeyframes = *static_cast<ArraySkeletonKeyframe *>(mKeyframes->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

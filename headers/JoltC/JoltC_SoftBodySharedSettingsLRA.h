@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_SoftBodySharedSettingsLRA_t * JoltC_SoftBodySharedSettingsLRA_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsLRA_destroy(
+  JoltC_SoftBodySharedSettingsLRA_t * self
+);
+
+//endregion
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsLRA_mVertex_Get(
@@ -44,4 +50,3 @@ void JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Set(
 #ifdef __cplusplus
 }
 #endif
-

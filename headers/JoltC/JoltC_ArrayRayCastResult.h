@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayRayCastResult_destroy(
+  JoltC_ArrayRayCastResult_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArrayRayCastResult_empty(
@@ -46,4 +52,3 @@ void JoltC_ArrayRayCastResult_clear(
 #ifdef __cplusplus
 }
 #endif
-

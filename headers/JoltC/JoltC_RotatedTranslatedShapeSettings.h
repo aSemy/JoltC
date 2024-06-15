@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_RotatedTranslatedShapeSettings_t * JoltC_RotatedTranslatedShapeSettings_ne
 
 //endregion
 
+//region destructor
+
+void JoltC_RotatedTranslatedShapeSettings_destroy(
+  JoltC_RotatedTranslatedShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_RotatedTranslatedShapeSettings_GetRefCount(
@@ -75,4 +81,3 @@ void JoltC_RotatedTranslatedShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

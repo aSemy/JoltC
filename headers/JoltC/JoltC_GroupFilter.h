@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_GroupFilter_destroy(
+  JoltC_GroupFilter_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -37,4 +43,3 @@ void JoltC_GroupFilter_Release(
 #ifdef __cplusplus
 }
 #endif
-

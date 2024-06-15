@@ -24,6 +24,17 @@ JoltC_Wheel_t * JoltC_Wheel_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_Wheel_destroy(
+  JoltC_Wheel_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Wheel *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -219,7 +230,7 @@ float JoltC_Wheel_GetLateralLambda(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_LinearCurve_t * JoltC_LinearCurve_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_LinearCurve_destroy(
+  JoltC_LinearCurve_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<LinearCurve *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_LinearCurve_Clear(
@@ -83,7 +94,7 @@ float JoltC_LinearCurve_GetValue(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

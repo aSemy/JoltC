@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_BroadPhaseLayerInterface_destroy(
+  JoltC_BroadPhaseLayerInterface_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -43,4 +49,3 @@ unsigned long JoltC_BroadPhaseLayerInterface_GetNumBroadPhaseLayers(
 #ifdef __cplusplus
 }
 #endif
-

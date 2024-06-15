@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyVertexTraits_destroy(
+  JoltC_SoftBodyVertexTraits_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodyVertexTraits *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 unsigned long JoltC_SoftBodyVertexTraits_mPreviousPositionOffset_Get(
@@ -27,7 +38,7 @@ unsigned long JoltC_SoftBodyVertexTraits_mVelocityOffset_Get(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

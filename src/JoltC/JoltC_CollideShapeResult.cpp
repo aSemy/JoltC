@@ -19,6 +19,17 @@ JoltC_CollideShapeResult_t * JoltC_CollideShapeResult_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_CollideShapeResult_destroy(
+  JoltC_CollideShapeResult_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CollideShapeResult *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -51,7 +62,7 @@ void JoltC_CollideShapeResult_mContactPointOn1_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mContactPointOn1 = *static_cast<Vec3 *>(mContactPointOn1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_CollideShapeResult_mContactPointOn2_Get(
   JoltC_CollideShapeResult_t * self
@@ -70,7 +81,7 @@ void JoltC_CollideShapeResult_mContactPointOn2_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mContactPointOn2 = *static_cast<Vec3 *>(mContactPointOn2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_CollideShapeResult_mPenetrationAxis_Get(
   JoltC_CollideShapeResult_t * self
@@ -89,7 +100,7 @@ void JoltC_CollideShapeResult_mPenetrationAxis_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mPenetrationAxis = *static_cast<Vec3 *>(mPenetrationAxis->obj);
-};
+}
 
 float JoltC_CollideShapeResult_mPenetrationDepth_Get(
   JoltC_CollideShapeResult_t * self
@@ -104,7 +115,7 @@ void JoltC_CollideShapeResult_mPenetrationDepth_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mPenetrationDepth = mPenetrationDepth;
-};
+}
 
 JoltC_SubShapeID_t * JoltC_CollideShapeResult_mSubShapeID1_Get(
   JoltC_CollideShapeResult_t * self
@@ -123,7 +134,7 @@ void JoltC_CollideShapeResult_mSubShapeID1_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mSubShapeID1 = *static_cast<SubShapeID *>(mSubShapeID1->obj);
-};
+}
 
 JoltC_SubShapeID_t * JoltC_CollideShapeResult_mSubShapeID2_Get(
   JoltC_CollideShapeResult_t * self
@@ -142,7 +153,7 @@ void JoltC_CollideShapeResult_mSubShapeID2_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mSubShapeID2 = *static_cast<SubShapeID *>(mSubShapeID2->obj);
-};
+}
 
 JoltC_BodyID_t * JoltC_CollideShapeResult_mBodyID2_Get(
   JoltC_CollideShapeResult_t * self
@@ -161,7 +172,7 @@ void JoltC_CollideShapeResult_mBodyID2_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mBodyID2 = *static_cast<BodyID *>(mBodyID2->obj);
-};
+}
 
 JoltC_CollideShapeResultFace_t * JoltC_CollideShapeResult_mShape1Face_Get(
   JoltC_CollideShapeResult_t * self
@@ -180,7 +191,7 @@ void JoltC_CollideShapeResult_mShape1Face_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mShape1Face = *static_cast<CollideShapeResultFace *>(mShape1Face->obj);
-};
+}
 
 JoltC_CollideShapeResultFace_t * JoltC_CollideShapeResult_mShape2Face_Get(
   JoltC_CollideShapeResult_t * self
@@ -199,11 +210,11 @@ void JoltC_CollideShapeResult_mShape2Face_Set(
 ) {
   CollideShapeResult * selfCpp = static_cast<CollideShapeResult *>(self->obj);
   selfCpp->mShape2Face = *static_cast<CollideShapeResultFace *>(mShape2Face->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

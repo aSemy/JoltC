@@ -19,6 +19,17 @@ JoltC_PulleyConstraintSettings_t * JoltC_PulleyConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_PulleyConstraintSettings_destroy(
+  JoltC_PulleyConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PulleyConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_PulleyConstraintSettings_Create(
@@ -77,7 +88,7 @@ void JoltC_PulleyConstraintSettings_mSpace_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mBodyPoint1_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -96,7 +107,7 @@ void JoltC_PulleyConstraintSettings_mBodyPoint1_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mBodyPoint1 = *static_cast<RVec3 *>(mBodyPoint1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mFixedPoint1_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -115,7 +126,7 @@ void JoltC_PulleyConstraintSettings_mFixedPoint1_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mFixedPoint1 = *static_cast<RVec3 *>(mFixedPoint1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mBodyPoint2_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -134,7 +145,7 @@ void JoltC_PulleyConstraintSettings_mBodyPoint2_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mBodyPoint2 = *static_cast<RVec3 *>(mBodyPoint2->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_PulleyConstraintSettings_mFixedPoint2_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -153,7 +164,7 @@ void JoltC_PulleyConstraintSettings_mFixedPoint2_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mFixedPoint2 = *static_cast<RVec3 *>(mFixedPoint2->obj);
-};
+}
 
 float JoltC_PulleyConstraintSettings_mRatio_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -168,7 +179,7 @@ void JoltC_PulleyConstraintSettings_mRatio_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mRatio = mRatio;
-};
+}
 
 float JoltC_PulleyConstraintSettings_mMinLength_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -183,7 +194,7 @@ void JoltC_PulleyConstraintSettings_mMinLength_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mMinLength = mMinLength;
-};
+}
 
 float JoltC_PulleyConstraintSettings_mMaxLength_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -198,7 +209,7 @@ void JoltC_PulleyConstraintSettings_mMaxLength_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mMaxLength = mMaxLength;
-};
+}
 
 bool JoltC_PulleyConstraintSettings_mEnabled_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -213,7 +224,7 @@ void JoltC_PulleyConstraintSettings_mEnabled_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_PulleyConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -228,7 +239,7 @@ void JoltC_PulleyConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_PulleyConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_PulleyConstraintSettings_t * self
@@ -243,11 +254,11 @@ void JoltC_PulleyConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   PulleyConstraintSettings * selfCpp = static_cast<PulleyConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

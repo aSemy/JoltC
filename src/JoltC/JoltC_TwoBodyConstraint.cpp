@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_TwoBodyConstraint_destroy(
+  JoltC_TwoBodyConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<TwoBodyConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -290,7 +301,7 @@ void JoltC_TwoBodyConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

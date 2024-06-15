@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_CharacterVirtual_ExtendedUpdateSettings_t * JoltC_CharacterVirtual_Extende
 
 //endregion
 
+//region destructor
+
+void JoltC_CharacterVirtual_ExtendedUpdateSettings_destroy(
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mStickToFloorStepDown_Get(
@@ -74,4 +80,3 @@ void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepDownExtra_Set(
 #ifdef __cplusplus
 }
 #endif
-

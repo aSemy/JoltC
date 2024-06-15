@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayCollidePointResult_destroy(
+  JoltC_ArrayCollidePointResult_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayCollidePointResult *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayCollidePointResult_empty(
@@ -74,7 +85,7 @@ void JoltC_ArrayCollidePointResult_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

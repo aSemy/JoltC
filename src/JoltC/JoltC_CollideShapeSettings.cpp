@@ -19,6 +19,17 @@ JoltC_CollideShapeSettings_t * JoltC_CollideShapeSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_CollideShapeSettings_destroy(
+  JoltC_CollideShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CollideShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 float JoltC_CollideShapeSettings_mMaxSeparationDistance_Get(
@@ -34,7 +45,7 @@ void JoltC_CollideShapeSettings_mMaxSeparationDistance_Set(
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
   selfCpp->mMaxSeparationDistance = mMaxSeparationDistance;
-};
+}
 
 JoltC_EBackFaceMode JoltC_CollideShapeSettings_mBackFaceMode_Get(
   JoltC_CollideShapeSettings_t * self
@@ -50,7 +61,7 @@ void JoltC_CollideShapeSettings_mBackFaceMode_Set(
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
   selfCpp->mBackFaceMode = static_cast<EBackFaceMode>(static_cast<int>(mBackFaceMode));
-};
+}
 
 JoltC_EActiveEdgeMode JoltC_CollideShapeSettings_mActiveEdgeMode_Get(
   JoltC_CollideShapeSettings_t * self
@@ -66,7 +77,7 @@ void JoltC_CollideShapeSettings_mActiveEdgeMode_Set(
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
   selfCpp->mActiveEdgeMode = static_cast<EActiveEdgeMode>(static_cast<int>(mActiveEdgeMode));
-};
+}
 
 JoltC_ECollectFacesMode JoltC_CollideShapeSettings_mCollectFacesMode_Get(
   JoltC_CollideShapeSettings_t * self
@@ -82,7 +93,7 @@ void JoltC_CollideShapeSettings_mCollectFacesMode_Set(
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
   selfCpp->mCollectFacesMode = static_cast<ECollectFacesMode>(static_cast<int>(mCollectFacesMode));
-};
+}
 
 float JoltC_CollideShapeSettings_mCollisionTolerance_Get(
   JoltC_CollideShapeSettings_t * self
@@ -97,7 +108,7 @@ void JoltC_CollideShapeSettings_mCollisionTolerance_Set(
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
   selfCpp->mCollisionTolerance = mCollisionTolerance;
-};
+}
 
 float JoltC_CollideShapeSettings_mPenetrationTolerance_Get(
   JoltC_CollideShapeSettings_t * self
@@ -112,7 +123,7 @@ void JoltC_CollideShapeSettings_mPenetrationTolerance_Set(
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
   selfCpp->mPenetrationTolerance = mPenetrationTolerance;
-};
+}
 
 JoltC_Vec3_t * JoltC_CollideShapeSettings_mActiveEdgeMovementDirection_Get(
   JoltC_CollideShapeSettings_t * self
@@ -131,11 +142,11 @@ void JoltC_CollideShapeSettings_mActiveEdgeMovementDirection_Set(
 ) {
   CollideShapeSettings * selfCpp = static_cast<CollideShapeSettings *>(self->obj);
   selfCpp->mActiveEdgeMovementDirection = *static_cast<Vec3 *>(mActiveEdgeMovementDirection->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

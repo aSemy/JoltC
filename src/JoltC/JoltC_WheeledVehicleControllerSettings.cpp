@@ -19,6 +19,17 @@ JoltC_WheeledVehicleControllerSettings_t * JoltC_WheeledVehicleControllerSetting
 
 //endregion
 
+//region destructor
+
+void JoltC_WheeledVehicleControllerSettings_destroy(
+  JoltC_WheeledVehicleControllerSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<WheeledVehicleControllerSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -51,7 +62,7 @@ void JoltC_WheeledVehicleControllerSettings_mEngine_Set(
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   selfCpp->mEngine = *static_cast<VehicleEngineSettings *>(mEngine->obj);
-};
+}
 
 JoltC_VehicleTransmissionSettings_t * JoltC_WheeledVehicleControllerSettings_mTransmission_Get(
   JoltC_WheeledVehicleControllerSettings_t * self
@@ -70,7 +81,7 @@ void JoltC_WheeledVehicleControllerSettings_mTransmission_Set(
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   selfCpp->mTransmission = *static_cast<VehicleTransmissionSettings *>(mTransmission->obj);
-};
+}
 
 JoltC_ArrayVehicleDifferentialSettings_t * JoltC_WheeledVehicleControllerSettings_mDifferentials_Get(
   JoltC_WheeledVehicleControllerSettings_t * self
@@ -89,7 +100,7 @@ void JoltC_WheeledVehicleControllerSettings_mDifferentials_Set(
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   selfCpp->mDifferentials = *static_cast<ArrayVehicleDifferentialSettings *>(mDifferentials->obj);
-};
+}
 
 float JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Get(
   JoltC_WheeledVehicleControllerSettings_t * self
@@ -104,11 +115,11 @@ void JoltC_WheeledVehicleControllerSettings_mDifferentialLimitedSlipRatio_Set(
 ) {
   WheeledVehicleControllerSettings * selfCpp = static_cast<WheeledVehicleControllerSettings *>(self->obj);
   selfCpp->mDifferentialLimitedSlipRatio = mDifferentialLimitedSlipRatio;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

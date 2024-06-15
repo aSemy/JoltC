@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_AABoxCast_t * JoltC_AABoxCast_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_AABoxCast_destroy(
+  JoltC_AABoxCast_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_AABox_t * JoltC_AABoxCast_mBox_Get(
@@ -38,4 +44,3 @@ void JoltC_AABoxCast_mDirection_Set(
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_SkeletalAnimation_t * JoltC_SkeletalAnimation_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_SkeletalAnimation_destroy(
+  JoltC_SkeletalAnimation_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SkeletalAnimation *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_SkeletalAnimation_GetDuration(
@@ -63,7 +74,7 @@ JoltC_ArraySkeletonAnimatedJoint_t * JoltC_SkeletalAnimation_GetAnimatedJoints(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

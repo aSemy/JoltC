@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_IgnoreMultipleBodiesFilter_t * JoltC_IgnoreMultipleBodiesFilter_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_IgnoreMultipleBodiesFilter_destroy(
+  JoltC_IgnoreMultipleBodiesFilter_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_IgnoreMultipleBodiesFilter_Clear(
@@ -34,4 +40,3 @@ void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
 #ifdef __cplusplus
 }
 #endif
-

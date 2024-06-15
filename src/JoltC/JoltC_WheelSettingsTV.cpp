@@ -19,6 +19,17 @@ JoltC_WheelSettingsTV_t * JoltC_WheelSettingsTV_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_WheelSettingsTV_destroy(
+  JoltC_WheelSettingsTV_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<WheelSettingsTV *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_WheelSettingsTV_GetRefCount(
@@ -59,7 +70,7 @@ void JoltC_WheelSettingsTV_mLongitudinalFriction_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mLongitudinalFriction = mLongitudinalFriction;
-};
+}
 
 float JoltC_WheelSettingsTV_mLateralFriction_Get(
   JoltC_WheelSettingsTV_t * self
@@ -74,7 +85,7 @@ void JoltC_WheelSettingsTV_mLateralFriction_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mLateralFriction = mLateralFriction;
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettingsTV_mPosition_Get(
   JoltC_WheelSettingsTV_t * self
@@ -93,7 +104,7 @@ void JoltC_WheelSettingsTV_mPosition_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mPosition = *static_cast<Vec3 *>(mPosition->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettingsTV_mSuspensionForcePoint_Get(
   JoltC_WheelSettingsTV_t * self
@@ -112,7 +123,7 @@ void JoltC_WheelSettingsTV_mSuspensionForcePoint_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mSuspensionForcePoint = *static_cast<Vec3 *>(mSuspensionForcePoint->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettingsTV_mSuspensionDirection_Get(
   JoltC_WheelSettingsTV_t * self
@@ -131,7 +142,7 @@ void JoltC_WheelSettingsTV_mSuspensionDirection_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mSuspensionDirection = *static_cast<Vec3 *>(mSuspensionDirection->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettingsTV_mSteeringAxis_Get(
   JoltC_WheelSettingsTV_t * self
@@ -150,7 +161,7 @@ void JoltC_WheelSettingsTV_mSteeringAxis_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mSteeringAxis = *static_cast<Vec3 *>(mSteeringAxis->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettingsTV_mWheelUp_Get(
   JoltC_WheelSettingsTV_t * self
@@ -169,7 +180,7 @@ void JoltC_WheelSettingsTV_mWheelUp_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mWheelUp = *static_cast<Vec3 *>(mWheelUp->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettingsTV_mWheelForward_Get(
   JoltC_WheelSettingsTV_t * self
@@ -188,7 +199,7 @@ void JoltC_WheelSettingsTV_mWheelForward_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mWheelForward = *static_cast<Vec3 *>(mWheelForward->obj);
-};
+}
 
 JoltC_SpringSettings_t * JoltC_WheelSettingsTV_mSuspensionSpring_Get(
   JoltC_WheelSettingsTV_t * self
@@ -207,7 +218,7 @@ void JoltC_WheelSettingsTV_mSuspensionSpring_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mSuspensionSpring = *static_cast<SpringSettings *>(mSuspensionSpring->obj);
-};
+}
 
 float JoltC_WheelSettingsTV_mSuspensionMinLength_Get(
   JoltC_WheelSettingsTV_t * self
@@ -222,7 +233,7 @@ void JoltC_WheelSettingsTV_mSuspensionMinLength_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mSuspensionMinLength = mSuspensionMinLength;
-};
+}
 
 float JoltC_WheelSettingsTV_mSuspensionMaxLength_Get(
   JoltC_WheelSettingsTV_t * self
@@ -237,7 +248,7 @@ void JoltC_WheelSettingsTV_mSuspensionMaxLength_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mSuspensionMaxLength = mSuspensionMaxLength;
-};
+}
 
 float JoltC_WheelSettingsTV_mSuspensionPreloadLength_Get(
   JoltC_WheelSettingsTV_t * self
@@ -252,7 +263,7 @@ void JoltC_WheelSettingsTV_mSuspensionPreloadLength_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mSuspensionPreloadLength = mSuspensionPreloadLength;
-};
+}
 
 float JoltC_WheelSettingsTV_mRadius_Get(
   JoltC_WheelSettingsTV_t * self
@@ -267,7 +278,7 @@ void JoltC_WheelSettingsTV_mRadius_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mRadius = mRadius;
-};
+}
 
 float JoltC_WheelSettingsTV_mWidth_Get(
   JoltC_WheelSettingsTV_t * self
@@ -282,7 +293,7 @@ void JoltC_WheelSettingsTV_mWidth_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mWidth = mWidth;
-};
+}
 
 bool JoltC_WheelSettingsTV_mEnableSuspensionForcePoint_Get(
   JoltC_WheelSettingsTV_t * self
@@ -297,11 +308,11 @@ void JoltC_WheelSettingsTV_mEnableSuspensionForcePoint_Set(
 ) {
   WheelSettingsTV * selfCpp = static_cast<WheelSettingsTV *>(self->obj);
   selfCpp->mEnableSuspensionForcePoint = mEnableSuspensionForcePoint;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

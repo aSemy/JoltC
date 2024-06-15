@@ -19,6 +19,17 @@ JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_BroadPhaseCastResult_destroy(
+  JoltC_BroadPhaseCastResult_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BroadPhaseCastResult *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -62,7 +73,7 @@ void JoltC_BroadPhaseCastResult_mBodyID_Set(
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
   selfCpp->mBodyID = *static_cast<BodyID *>(mBodyID->obj);
-};
+}
 
 float JoltC_BroadPhaseCastResult_mFraction_Get(
   JoltC_BroadPhaseCastResult_t * self
@@ -77,11 +88,11 @@ void JoltC_BroadPhaseCastResult_mFraction_Set(
 ) {
   BroadPhaseCastResult * selfCpp = static_cast<BroadPhaseCastResult *>(self->obj);
   selfCpp->mFraction = mFraction;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

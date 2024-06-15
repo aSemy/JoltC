@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -18,6 +17,13 @@ JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_SoftBodySharedSettingsDihedra
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsDihedralBend_destroy(
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self
+);
+
+//endregion
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsDihedralBend_mVertex_Get(
@@ -55,4 +61,3 @@ void JoltC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Set(
 #ifdef __cplusplus
 }
 #endif
-

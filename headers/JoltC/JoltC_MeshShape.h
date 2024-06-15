@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_MeshShape_destroy(
+  JoltC_MeshShape_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_MeshShape_GetRefCount(
@@ -112,4 +118,3 @@ JoltC_Shape_ShapeResult_t * JoltC_MeshShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_PhysicsMaterialList_t * JoltC_PhysicsMaterialList_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_PhysicsMaterialList_destroy(
+  JoltC_PhysicsMaterialList_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_PhysicsMaterialList_empty(
@@ -52,4 +58,3 @@ void JoltC_PhysicsMaterialList_clear(
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyContactSettings_destroy(
+  JoltC_SoftBodyContactSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodyContactSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 float JoltC_SoftBodyContactSettings_mInvMassScale1_Get(
@@ -20,7 +31,7 @@ void JoltC_SoftBodyContactSettings_mInvMassScale1_Set(
 ) {
   SoftBodyContactSettings * selfCpp = static_cast<SoftBodyContactSettings *>(self->obj);
   selfCpp->mInvMassScale1 = mInvMassScale1;
-};
+}
 
 float JoltC_SoftBodyContactSettings_mInvMassScale2_Get(
   JoltC_SoftBodyContactSettings_t * self
@@ -35,7 +46,7 @@ void JoltC_SoftBodyContactSettings_mInvMassScale2_Set(
 ) {
   SoftBodyContactSettings * selfCpp = static_cast<SoftBodyContactSettings *>(self->obj);
   selfCpp->mInvMassScale2 = mInvMassScale2;
-};
+}
 
 float JoltC_SoftBodyContactSettings_mInvInertiaScale2_Get(
   JoltC_SoftBodyContactSettings_t * self
@@ -50,7 +61,7 @@ void JoltC_SoftBodyContactSettings_mInvInertiaScale2_Set(
 ) {
   SoftBodyContactSettings * selfCpp = static_cast<SoftBodyContactSettings *>(self->obj);
   selfCpp->mInvInertiaScale2 = mInvInertiaScale2;
-};
+}
 
 bool JoltC_SoftBodyContactSettings_mIsSensor_Get(
   JoltC_SoftBodyContactSettings_t * self
@@ -65,11 +76,11 @@ void JoltC_SoftBodyContactSettings_mIsSensor_Set(
 ) {
   SoftBodyContactSettings * selfCpp = static_cast<SoftBodyContactSettings *>(self->obj);
   selfCpp->mIsSensor = mIsSensor;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

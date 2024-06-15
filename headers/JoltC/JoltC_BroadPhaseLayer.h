@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,6 +13,13 @@ JoltC_BroadPhaseLayer_t * JoltC_BroadPhaseLayer_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BroadPhaseLayer_destroy(
+  JoltC_BroadPhaseLayer_t * self
+);
+
+//endregion
 //region functions
 
 unsigned short JoltC_BroadPhaseLayer_GetValue(
@@ -26,4 +32,3 @@ unsigned short JoltC_BroadPhaseLayer_GetValue(
 #ifdef __cplusplus
 }
 #endif
-

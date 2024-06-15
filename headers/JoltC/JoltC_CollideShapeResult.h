@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_CollideShapeResult_t * JoltC_CollideShapeResult_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_CollideShapeResult_destroy(
+  JoltC_CollideShapeResult_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -112,4 +118,3 @@ void JoltC_CollideShapeResult_mShape2Face_Set(
 #ifdef __cplusplus
 }
 #endif
-

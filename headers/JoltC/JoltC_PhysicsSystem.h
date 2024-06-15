@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PhysicsSystem_destroy(
+  JoltC_PhysicsSystem_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_PhysicsSystem_SetGravity(
@@ -156,4 +162,3 @@ bool JoltC_PhysicsSystem_WereBodiesInContact(
 #ifdef __cplusplus
 }
 #endif
-

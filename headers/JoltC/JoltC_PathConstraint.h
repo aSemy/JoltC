@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PathConstraint_destroy(
+  JoltC_PathConstraint_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_PathConstraint_SetPath(
@@ -157,4 +163,3 @@ void JoltC_PathConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

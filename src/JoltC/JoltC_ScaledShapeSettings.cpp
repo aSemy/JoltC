@@ -27,6 +27,17 @@ JoltC_ScaledShapeSettings_t * JoltC_ScaledShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ScaledShapeSettings_destroy(
+  JoltC_ScaledShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ScaledShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_ScaledShapeSettings_GetRefCount(
@@ -89,7 +100,7 @@ void JoltC_ScaledShapeSettings_mScale_Set(
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
   selfCpp->mScale = *static_cast<Vec3 *>(mScale->obj);
-};
+}
 
 unsigned long long int JoltC_ScaledShapeSettings_mUserData_Get(
   JoltC_ScaledShapeSettings_t * self
@@ -104,11 +115,11 @@ void JoltC_ScaledShapeSettings_mUserData_Set(
 ) {
   ScaledShapeSettings * selfCpp = static_cast<ScaledShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

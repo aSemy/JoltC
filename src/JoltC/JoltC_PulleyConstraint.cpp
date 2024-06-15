@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PulleyConstraint_destroy(
+  JoltC_PulleyConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PulleyConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_PulleyConstraint_SetLength(
@@ -220,7 +231,7 @@ void JoltC_PulleyConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

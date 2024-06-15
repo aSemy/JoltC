@@ -19,6 +19,17 @@ JoltC_TransformedShape_t * JoltC_TransformedShape_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_TransformedShape_destroy(
+  JoltC_TransformedShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<TransformedShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_TransformedShape_CastRay_0(
@@ -288,7 +299,7 @@ void JoltC_TransformedShape_mShapePositionCOM_Set(
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mShapePositionCOM = *static_cast<RVec3 *>(mShapePositionCOM->obj);
-};
+}
 
 JoltC_Quat_t * JoltC_TransformedShape_mShapeRotation_Get(
   JoltC_TransformedShape_t * self
@@ -307,7 +318,7 @@ void JoltC_TransformedShape_mShapeRotation_Set(
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mShapeRotation = *static_cast<Quat *>(mShapeRotation->obj);
-};
+}
 
 JoltC_Shape_t * JoltC_TransformedShape_mShape_Get(
   JoltC_TransformedShape_t * self
@@ -325,7 +336,7 @@ void JoltC_TransformedShape_mShape_Set(
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mShape = static_cast<const Shape *>(mShape->obj);
-};
+}
 
 JoltC_Float3_t * JoltC_TransformedShape_mShapeScale_Get(
   JoltC_TransformedShape_t * self
@@ -344,7 +355,7 @@ void JoltC_TransformedShape_mShapeScale_Set(
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mShapeScale = *static_cast<Float3 *>(mShapeScale->obj);
-};
+}
 
 JoltC_BodyID_t * JoltC_TransformedShape_mBodyID_Get(
   JoltC_TransformedShape_t * self
@@ -363,11 +374,11 @@ void JoltC_TransformedShape_mBodyID_Set(
 ) {
   TransformedShape * selfCpp = static_cast<TransformedShape *>(self->obj);
   selfCpp->mBodyID = *static_cast<BodyID *>(mBodyID->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

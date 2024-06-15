@@ -19,6 +19,17 @@ JoltC_VehicleAntiRollBar_t * JoltC_VehicleAntiRollBar_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleAntiRollBar_destroy(
+  JoltC_VehicleAntiRollBar_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleAntiRollBar *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 long JoltC_VehicleAntiRollBar_mLeftWheel_Get(
@@ -34,7 +45,7 @@ void JoltC_VehicleAntiRollBar_mLeftWheel_Set(
 ) {
   VehicleAntiRollBar * selfCpp = static_cast<VehicleAntiRollBar *>(self->obj);
   selfCpp->mLeftWheel = mLeftWheel;
-};
+}
 
 long JoltC_VehicleAntiRollBar_mRightWheel_Get(
   JoltC_VehicleAntiRollBar_t * self
@@ -49,7 +60,7 @@ void JoltC_VehicleAntiRollBar_mRightWheel_Set(
 ) {
   VehicleAntiRollBar * selfCpp = static_cast<VehicleAntiRollBar *>(self->obj);
   selfCpp->mRightWheel = mRightWheel;
-};
+}
 
 float JoltC_VehicleAntiRollBar_mStiffness_Get(
   JoltC_VehicleAntiRollBar_t * self
@@ -64,11 +75,11 @@ void JoltC_VehicleAntiRollBar_mStiffness_Set(
 ) {
   VehicleAntiRollBar * selfCpp = static_cast<VehicleAntiRollBar *>(self->obj);
   selfCpp->mStiffness = mStiffness;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_BroadPhaseLayerInterfaceTable_t * JoltC_BroadPhaseLayerInterfaceTable_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BroadPhaseLayerInterfaceTable_destroy(
+  JoltC_BroadPhaseLayerInterfaceTable_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
@@ -33,4 +39,3 @@ unsigned long JoltC_BroadPhaseLayerInterfaceTable_GetNumBroadPhaseLayers(
 #ifdef __cplusplus
 }
 #endif
-

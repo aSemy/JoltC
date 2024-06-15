@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ContactSettings_t * JoltC_ContactSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_ContactSettings_destroy(
+  JoltC_ContactSettings_t * self
+);
+
+//endregion
 //region properties
 
 float JoltC_ContactSettings_mCombinedFriction_Get(
@@ -101,4 +107,3 @@ void JoltC_ContactSettings_mRelativeAngularSurfaceVelocity_Set(
 #ifdef __cplusplus
 }
 #endif
-

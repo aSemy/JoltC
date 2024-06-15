@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_GroupFilter_destroy(
+  JoltC_GroupFilter_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<GroupFilter *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -43,7 +54,7 @@ void JoltC_GroupFilter_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -27,6 +27,17 @@ JoltC_MotorcycleController_t * JoltC_MotorcycleController_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_MotorcycleController_destroy(
+  JoltC_MotorcycleController_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<MotorcycleController *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_MotorcycleController_GetWheelBase(
@@ -214,7 +225,7 @@ void JoltC_MotorcycleController_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

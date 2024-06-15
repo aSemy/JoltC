@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterial_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_PhysicsMaterial_destroy(
+  JoltC_PhysicsMaterial_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_PhysicsMaterial_GetRefCount(
@@ -32,4 +38,3 @@ void JoltC_PhysicsMaterial_Release(
 #ifdef __cplusplus
 }
 #endif
-

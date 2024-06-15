@@ -19,6 +19,17 @@ JoltC_PointConstraintSettings_t * JoltC_PointConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_PointConstraintSettings_destroy(
+  JoltC_PointConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PointConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_PointConstraintSettings_Create(
@@ -77,7 +88,7 @@ void JoltC_PointConstraintSettings_mSpace_Set(
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 JoltC_RVec3_t * JoltC_PointConstraintSettings_mPoint1_Get(
   JoltC_PointConstraintSettings_t * self
@@ -96,7 +107,7 @@ void JoltC_PointConstraintSettings_mPoint1_Set(
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mPoint1 = *static_cast<RVec3 *>(mPoint1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_PointConstraintSettings_mPoint2_Get(
   JoltC_PointConstraintSettings_t * self
@@ -115,7 +126,7 @@ void JoltC_PointConstraintSettings_mPoint2_Set(
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mPoint2 = *static_cast<RVec3 *>(mPoint2->obj);
-};
+}
 
 bool JoltC_PointConstraintSettings_mEnabled_Get(
   JoltC_PointConstraintSettings_t * self
@@ -130,7 +141,7 @@ void JoltC_PointConstraintSettings_mEnabled_Set(
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_PointConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_PointConstraintSettings_t * self
@@ -145,7 +156,7 @@ void JoltC_PointConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_PointConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_PointConstraintSettings_t * self
@@ -160,11 +171,11 @@ void JoltC_PointConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   PointConstraintSettings * selfCpp = static_cast<PointConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

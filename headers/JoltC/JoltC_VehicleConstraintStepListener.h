@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,8 +13,14 @@ JoltC_VehicleConstraintStepListener_t * JoltC_VehicleConstraintStepListener_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleConstraintStepListener_destroy(
+  JoltC_VehicleConstraintStepListener_t * self
+);
+
+//endregion
 
 #ifdef __cplusplus
 }
 #endif
-

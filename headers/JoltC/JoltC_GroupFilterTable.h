@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,6 +13,13 @@ JoltC_GroupFilterTable_t * JoltC_GroupFilterTable_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_GroupFilterTable_destroy(
+  JoltC_GroupFilterTable_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_GroupFilterTable_DisableCollision(
@@ -52,4 +58,3 @@ void JoltC_GroupFilterTable_Release(
 #ifdef __cplusplus
 }
 #endif
-

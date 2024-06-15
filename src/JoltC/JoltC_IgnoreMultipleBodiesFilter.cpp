@@ -19,6 +19,17 @@ JoltC_IgnoreMultipleBodiesFilter_t * JoltC_IgnoreMultipleBodiesFilter_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_IgnoreMultipleBodiesFilter_destroy(
+  JoltC_IgnoreMultipleBodiesFilter_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<IgnoreMultipleBodiesFilter *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_IgnoreMultipleBodiesFilter_Clear(
@@ -51,7 +62,7 @@ void JoltC_IgnoreMultipleBodiesFilter_IgnoreBody(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

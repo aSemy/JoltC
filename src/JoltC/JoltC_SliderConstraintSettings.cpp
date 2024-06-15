@@ -19,6 +19,17 @@ JoltC_SliderConstraintSettings_t * JoltC_SliderConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_SliderConstraintSettings_destroy(
+  JoltC_SliderConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SliderConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_SliderConstraintSettings_Create(
@@ -77,7 +88,7 @@ void JoltC_SliderConstraintSettings_mSpace_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 bool JoltC_SliderConstraintSettings_mAutoDetectPoint_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -92,7 +103,7 @@ void JoltC_SliderConstraintSettings_mAutoDetectPoint_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mAutoDetectPoint = mAutoDetectPoint;
-};
+}
 
 JoltC_RVec3_t * JoltC_SliderConstraintSettings_mPoint1_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -111,7 +122,7 @@ void JoltC_SliderConstraintSettings_mPoint1_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mPoint1 = *static_cast<RVec3 *>(mPoint1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SliderConstraintSettings_mSliderAxis1_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -130,7 +141,7 @@ void JoltC_SliderConstraintSettings_mSliderAxis1_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mSliderAxis1 = *static_cast<Vec3 *>(mSliderAxis1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SliderConstraintSettings_mNormalAxis1_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -149,7 +160,7 @@ void JoltC_SliderConstraintSettings_mNormalAxis1_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mNormalAxis1 = *static_cast<Vec3 *>(mNormalAxis1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_SliderConstraintSettings_mPoint2_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -168,7 +179,7 @@ void JoltC_SliderConstraintSettings_mPoint2_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mPoint2 = *static_cast<RVec3 *>(mPoint2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SliderConstraintSettings_mSliderAxis2_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -187,7 +198,7 @@ void JoltC_SliderConstraintSettings_mSliderAxis2_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mSliderAxis2 = *static_cast<Vec3 *>(mSliderAxis2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SliderConstraintSettings_mNormalAxis2_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -206,7 +217,7 @@ void JoltC_SliderConstraintSettings_mNormalAxis2_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mNormalAxis2 = *static_cast<Vec3 *>(mNormalAxis2->obj);
-};
+}
 
 float JoltC_SliderConstraintSettings_mLimitsMin_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -221,7 +232,7 @@ void JoltC_SliderConstraintSettings_mLimitsMin_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mLimitsMin = mLimitsMin;
-};
+}
 
 float JoltC_SliderConstraintSettings_mLimitsMax_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -236,7 +247,7 @@ void JoltC_SliderConstraintSettings_mLimitsMax_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mLimitsMax = mLimitsMax;
-};
+}
 
 JoltC_SpringSettings_t * JoltC_SliderConstraintSettings_mLimitsSpringSettings_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -255,7 +266,7 @@ void JoltC_SliderConstraintSettings_mLimitsSpringSettings_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mLimitsSpringSettings = *static_cast<SpringSettings *>(mLimitsSpringSettings->obj);
-};
+}
 
 float JoltC_SliderConstraintSettings_mMaxFrictionForce_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -270,7 +281,7 @@ void JoltC_SliderConstraintSettings_mMaxFrictionForce_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mMaxFrictionForce = mMaxFrictionForce;
-};
+}
 
 JoltC_MotorSettings_t * JoltC_SliderConstraintSettings_mMotorSettings_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -289,7 +300,7 @@ void JoltC_SliderConstraintSettings_mMotorSettings_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mMotorSettings = *static_cast<MotorSettings *>(mMotorSettings->obj);
-};
+}
 
 bool JoltC_SliderConstraintSettings_mEnabled_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -304,7 +315,7 @@ void JoltC_SliderConstraintSettings_mEnabled_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_SliderConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -319,7 +330,7 @@ void JoltC_SliderConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_SliderConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_SliderConstraintSettings_t * self
@@ -334,11 +345,11 @@ void JoltC_SliderConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   SliderConstraintSettings * selfCpp = static_cast<SliderConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

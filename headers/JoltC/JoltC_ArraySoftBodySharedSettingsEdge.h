@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArraySoftBodySharedSettingsEdge_destroy(
+  JoltC_ArraySoftBodySharedSettingsEdge_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsEdge_empty(
@@ -46,4 +52,3 @@ void JoltC_ArraySoftBodySharedSettingsEdge_clear(
 #ifdef __cplusplus
 }
 #endif
-

@@ -24,7 +24,18 @@ JoltC_ObjectVsBroadPhaseLayerFilterMask_t * JoltC_ObjectVsBroadPhaseLayerFilterM
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectVsBroadPhaseLayerFilterMask_destroy(
+  JoltC_ObjectVsBroadPhaseLayerFilterMask_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ObjectVsBroadPhaseLayerFilterMask *>(self->obj);
+  free(self);
+}
+
+//endregion
+
 #ifdef __cplusplus
 }
 #endif
-

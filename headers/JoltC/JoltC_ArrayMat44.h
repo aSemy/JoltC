@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayMat44_destroy(
+  JoltC_ArrayMat44_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArrayMat44_empty(
@@ -50,4 +56,3 @@ JoltC_Mat44MemRef_t * JoltC_ArrayMat44_data(
 #ifdef __cplusplus
 }
 #endif
-

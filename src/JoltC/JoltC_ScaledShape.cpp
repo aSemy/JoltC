@@ -27,6 +27,17 @@ JoltC_ScaledShape_t * JoltC_ScaledShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ScaledShape_destroy(
+  JoltC_ScaledShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ScaledShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_ScaledShape_GetScale(
@@ -281,7 +292,7 @@ JoltC_Shape_ShapeResult_t * JoltC_ScaledShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

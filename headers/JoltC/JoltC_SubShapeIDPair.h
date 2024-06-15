@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SubShapeIDPair_t * JoltC_SubShapeIDPair_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_SubShapeIDPair_destroy(
+  JoltC_SubShapeIDPair_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_BodyID_t * JoltC_SubShapeIDPair_GetBody1ID(
@@ -36,4 +42,3 @@ JoltC_SubShapeID_t * JoltC_SubShapeIDPair_GetSubShapeID2(
 #ifdef __cplusplus
 }
 #endif
-

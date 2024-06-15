@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_SphereShapeSettings_t * JoltC_SphereShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SphereShapeSettings_destroy(
+  JoltC_SphereShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_SphereShapeSettings_GetRefCount(
@@ -83,4 +89,3 @@ void JoltC_SphereShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

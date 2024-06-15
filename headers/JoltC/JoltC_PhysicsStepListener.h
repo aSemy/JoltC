@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PhysicsStepListener_destroy(
+  JoltC_PhysicsStepListener_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -21,4 +27,3 @@ JoltC_PhysicsStepListener_t * JoltC_PhysicsStepListener_From_VehicleConstraintSt
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleTransmission_destroy(
+  JoltC_VehicleTransmission_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_VehicleTransmission_Set(
@@ -121,4 +127,3 @@ void JoltC_VehicleTransmission_mClutchStrength_Set(
 #ifdef __cplusplus
 }
 #endif
-

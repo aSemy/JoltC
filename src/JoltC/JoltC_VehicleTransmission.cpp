@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleTransmission_destroy(
+  JoltC_VehicleTransmission_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleTransmission *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_VehicleTransmission_Set(
@@ -65,7 +76,7 @@ void JoltC_VehicleTransmission_mMode_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mMode = static_cast<ETransmissionMode>(static_cast<int>(mMode));
-};
+}
 
 JoltC_ArrayFloat_t * JoltC_VehicleTransmission_mGearRatios_Get(
   JoltC_VehicleTransmission_t * self
@@ -84,7 +95,7 @@ void JoltC_VehicleTransmission_mGearRatios_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mGearRatios = *static_cast<ArrayFloat *>(mGearRatios->obj);
-};
+}
 
 JoltC_ArrayFloat_t * JoltC_VehicleTransmission_mReverseGearRatios_Get(
   JoltC_VehicleTransmission_t * self
@@ -103,7 +114,7 @@ void JoltC_VehicleTransmission_mReverseGearRatios_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mReverseGearRatios = *static_cast<ArrayFloat *>(mReverseGearRatios->obj);
-};
+}
 
 float JoltC_VehicleTransmission_mSwitchTime_Get(
   JoltC_VehicleTransmission_t * self
@@ -118,7 +129,7 @@ void JoltC_VehicleTransmission_mSwitchTime_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mSwitchTime = mSwitchTime;
-};
+}
 
 float JoltC_VehicleTransmission_mClutchReleaseTime_Get(
   JoltC_VehicleTransmission_t * self
@@ -133,7 +144,7 @@ void JoltC_VehicleTransmission_mClutchReleaseTime_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mClutchReleaseTime = mClutchReleaseTime;
-};
+}
 
 float JoltC_VehicleTransmission_mSwitchLatency_Get(
   JoltC_VehicleTransmission_t * self
@@ -148,7 +159,7 @@ void JoltC_VehicleTransmission_mSwitchLatency_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mSwitchLatency = mSwitchLatency;
-};
+}
 
 float JoltC_VehicleTransmission_mShiftUpRPM_Get(
   JoltC_VehicleTransmission_t * self
@@ -163,7 +174,7 @@ void JoltC_VehicleTransmission_mShiftUpRPM_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mShiftUpRPM = mShiftUpRPM;
-};
+}
 
 float JoltC_VehicleTransmission_mShiftDownRPM_Get(
   JoltC_VehicleTransmission_t * self
@@ -178,7 +189,7 @@ void JoltC_VehicleTransmission_mShiftDownRPM_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mShiftDownRPM = mShiftDownRPM;
-};
+}
 
 float JoltC_VehicleTransmission_mClutchStrength_Get(
   JoltC_VehicleTransmission_t * self
@@ -193,11 +204,11 @@ void JoltC_VehicleTransmission_mClutchStrength_Set(
 ) {
   VehicleTransmission * selfCpp = static_cast<VehicleTransmission *>(self->obj);
   selfCpp->mClutchStrength = mClutchStrength;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

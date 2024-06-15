@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_Skeleton_t * JoltC_Skeleton_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_Skeleton_destroy(
+  JoltC_Skeleton_t * self
+);
+
+//endregion
 //region functions
 
 long JoltC_Skeleton_AddJoint(
@@ -38,4 +44,3 @@ void JoltC_Skeleton_CalculateParentJointIndices(
 #ifdef __cplusplus
 }
 #endif
-

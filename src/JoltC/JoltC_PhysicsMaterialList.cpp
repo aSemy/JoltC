@@ -19,6 +19,17 @@ JoltC_PhysicsMaterialList_t * JoltC_PhysicsMaterialList_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_PhysicsMaterialList_destroy(
+  JoltC_PhysicsMaterialList_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PhysicsMaterialList *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_PhysicsMaterialList_empty(
@@ -88,7 +99,7 @@ void JoltC_PhysicsMaterialList_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

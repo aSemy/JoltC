@@ -19,6 +19,17 @@ JoltC_CastShapeAnyHitCollisionCollector_t * JoltC_CastShapeAnyHitCollisionCollec
 
 //endregion
 
+//region destructor
+
+void JoltC_CastShapeAnyHitCollisionCollector_destroy(
+  JoltC_CastShapeAnyHitCollisionCollector_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_CastShapeAnyHitCollisionCollector_HadHit(
@@ -125,11 +136,11 @@ void JoltC_CastShapeAnyHitCollisionCollector_mHit_Set(
 ) {
   CastShapeAnyHitCollisionCollector * selfCpp = static_cast<CastShapeAnyHitCollisionCollector *>(self->obj);
   selfCpp->mHit = *static_cast<ShapeCastResult *>(mHit->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

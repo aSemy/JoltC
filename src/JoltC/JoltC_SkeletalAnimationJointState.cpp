@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SkeletalAnimationJointState_destroy(
+  JoltC_SkeletalAnimationJointState_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SkeletalAnimationJointState *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -63,7 +74,7 @@ void JoltC_SkeletalAnimationJointState_mTranslation_Set(
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
   selfCpp->mTranslation = *static_cast<Vec3 *>(mTranslation->obj);
-};
+}
 
 JoltC_Quat_t * JoltC_SkeletalAnimationJointState_mRotation_Get(
   JoltC_SkeletalAnimationJointState_t * self
@@ -82,11 +93,11 @@ void JoltC_SkeletalAnimationJointState_mRotation_Set(
 ) {
   SkeletalAnimationJointState * selfCpp = static_cast<SkeletalAnimationJointState *>(self->obj);
   selfCpp->mRotation = *static_cast<Quat *>(mRotation->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

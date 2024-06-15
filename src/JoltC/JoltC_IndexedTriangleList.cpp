@@ -19,6 +19,17 @@ JoltC_IndexedTriangleList_t * JoltC_IndexedTriangleList_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_IndexedTriangleList_destroy(
+  JoltC_IndexedTriangleList_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<IndexedTriangleList *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_IndexedTriangleList_empty(
@@ -88,7 +99,7 @@ void JoltC_IndexedTriangleList_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

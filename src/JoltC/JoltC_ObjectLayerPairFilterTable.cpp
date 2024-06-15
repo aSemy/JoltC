@@ -23,6 +23,17 @@ JoltC_ObjectLayerPairFilterTable_t * JoltC_ObjectLayerPairFilterTable_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectLayerPairFilterTable_destroy(
+  JoltC_ObjectLayerPairFilterTable_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ObjectLayerPairFilterTable *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_ObjectLayerPairFilterTable_GetNumObjectLayers(
@@ -70,7 +81,7 @@ bool JoltC_ObjectLayerPairFilterTable_ShouldCollide(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

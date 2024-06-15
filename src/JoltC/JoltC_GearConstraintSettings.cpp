@@ -19,6 +19,17 @@ JoltC_GearConstraintSettings_t * JoltC_GearConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_GearConstraintSettings_destroy(
+  JoltC_GearConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<GearConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_GearConstraintSettings_SetRatio(
@@ -89,7 +100,7 @@ void JoltC_GearConstraintSettings_mSpace_Set(
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 JoltC_Vec3_t * JoltC_GearConstraintSettings_mHingeAxis1_Get(
   JoltC_GearConstraintSettings_t * self
@@ -108,7 +119,7 @@ void JoltC_GearConstraintSettings_mHingeAxis1_Set(
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->mHingeAxis1 = *static_cast<Vec3 *>(mHingeAxis1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_GearConstraintSettings_mHingeAxis2_Get(
   JoltC_GearConstraintSettings_t * self
@@ -127,7 +138,7 @@ void JoltC_GearConstraintSettings_mHingeAxis2_Set(
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->mHingeAxis2 = *static_cast<Vec3 *>(mHingeAxis2->obj);
-};
+}
 
 float JoltC_GearConstraintSettings_mRatio_Get(
   JoltC_GearConstraintSettings_t * self
@@ -142,7 +153,7 @@ void JoltC_GearConstraintSettings_mRatio_Set(
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->mRatio = mRatio;
-};
+}
 
 bool JoltC_GearConstraintSettings_mEnabled_Get(
   JoltC_GearConstraintSettings_t * self
@@ -157,7 +168,7 @@ void JoltC_GearConstraintSettings_mEnabled_Set(
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_GearConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_GearConstraintSettings_t * self
@@ -172,7 +183,7 @@ void JoltC_GearConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_GearConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_GearConstraintSettings_t * self
@@ -187,11 +198,11 @@ void JoltC_GearConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   GearConstraintSettings * selfCpp = static_cast<GearConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

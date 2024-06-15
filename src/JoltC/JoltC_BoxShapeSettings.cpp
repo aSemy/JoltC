@@ -29,6 +29,17 @@ JoltC_BoxShapeSettings_t * JoltC_BoxShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BoxShapeSettings_destroy(
+  JoltC_BoxShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BoxShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_BoxShapeSettings_GetRefCount(
@@ -91,7 +102,7 @@ void JoltC_BoxShapeSettings_mHalfExtent_Set(
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
   selfCpp->mHalfExtent = *static_cast<Vec3 *>(mHalfExtent->obj);
-};
+}
 
 float JoltC_BoxShapeSettings_mConvexRadius_Get(
   JoltC_BoxShapeSettings_t * self
@@ -106,7 +117,7 @@ void JoltC_BoxShapeSettings_mConvexRadius_Set(
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
   selfCpp->mConvexRadius = mConvexRadius;
-};
+}
 
 JoltC_PhysicsMaterial_t * JoltC_BoxShapeSettings_mMaterial_Get(
   JoltC_BoxShapeSettings_t * self
@@ -124,7 +135,7 @@ void JoltC_BoxShapeSettings_mMaterial_Set(
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
   selfCpp->mMaterial = static_cast<const PhysicsMaterial *>(mMaterial->obj);
-};
+}
 
 float JoltC_BoxShapeSettings_mDensity_Get(
   JoltC_BoxShapeSettings_t * self
@@ -139,7 +150,7 @@ void JoltC_BoxShapeSettings_mDensity_Set(
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
   selfCpp->mDensity = mDensity;
-};
+}
 
 unsigned long long int JoltC_BoxShapeSettings_mUserData_Get(
   JoltC_BoxShapeSettings_t * self
@@ -154,11 +165,11 @@ void JoltC_BoxShapeSettings_mUserData_Set(
 ) {
   BoxShapeSettings * selfCpp = static_cast<BoxShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

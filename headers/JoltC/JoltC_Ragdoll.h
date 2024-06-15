@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,6 +13,13 @@ JoltC_Ragdoll_t * JoltC_Ragdoll_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_Ragdoll_destroy(
+  JoltC_Ragdoll_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_Ragdoll_AddToPhysicsSystem(
@@ -140,4 +146,3 @@ JoltC_RagdollSettings_t * JoltC_Ragdoll_GetRagdollSettings(
 #ifdef __cplusplus
 }
 #endif
-

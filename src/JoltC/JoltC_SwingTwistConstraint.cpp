@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SwingTwistConstraint_destroy(
+  JoltC_SwingTwistConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SwingTwistConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetLocalSpacePosition1(
@@ -483,7 +494,7 @@ void JoltC_SwingTwistConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

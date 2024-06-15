@@ -19,6 +19,17 @@ JoltC_ArrayRagdollPart_t * JoltC_ArrayRagdollPart_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ArrayRagdollPart_destroy(
+  JoltC_ArrayRagdollPart_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayRagdollPart *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayRagdollPart_empty(
@@ -88,7 +99,7 @@ void JoltC_ArrayRagdollPart_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

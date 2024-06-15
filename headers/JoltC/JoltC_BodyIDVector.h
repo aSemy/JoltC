@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_BodyIDVector_t * JoltC_BodyIDVector_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_BodyIDVector_destroy(
+  JoltC_BodyIDVector_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_BodyIDVector_empty(
@@ -52,4 +58,3 @@ void JoltC_BodyIDVector_clear(
 #ifdef __cplusplus
 }
 #endif
-

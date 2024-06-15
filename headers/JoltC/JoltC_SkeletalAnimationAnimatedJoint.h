@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SkeletalAnimationAnimatedJoint_t * JoltC_SkeletalAnimationAnimatedJoint_ne
 
 //endregion
 
+//region destructor
+
+void JoltC_SkeletalAnimationAnimatedJoint_destroy(
+  JoltC_SkeletalAnimationAnimatedJoint_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_JPHString_t * JoltC_SkeletalAnimationAnimatedJoint_mJointName_Get(
@@ -38,4 +44,3 @@ void JoltC_SkeletalAnimationAnimatedJoint_mKeyframes_Set(
 #ifdef __cplusplus
 }
 #endif
-

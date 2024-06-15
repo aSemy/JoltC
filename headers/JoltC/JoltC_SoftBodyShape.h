@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyShape_destroy(
+  JoltC_SoftBodyShape_t * self
+);
+
+//endregion
 //region functions
 
 const unsigned long JoltC_SoftBodyShape_GetSubShapeIDBits(
@@ -121,4 +127,3 @@ JoltC_Shape_ShapeResult_t * JoltC_SoftBodyShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

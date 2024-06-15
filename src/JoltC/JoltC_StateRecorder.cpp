@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_StateRecorder_destroy(
+  JoltC_StateRecorder_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<StateRecorder *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -39,7 +50,7 @@ bool JoltC_StateRecorder_IsValidating(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

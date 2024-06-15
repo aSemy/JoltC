@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_RotatedTranslatedShape_destroy(
+  JoltC_RotatedTranslatedShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RotatedTranslatedShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Quat_t * JoltC_RotatedTranslatedShape_GetRotation(
@@ -270,7 +281,7 @@ JoltC_Shape_ShapeResult_t * JoltC_RotatedTranslatedShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

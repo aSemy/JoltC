@@ -19,6 +19,17 @@ JoltC_ArraySkeletonAnimatedJoint_t * JoltC_ArraySkeletonAnimatedJoint_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ArraySkeletonAnimatedJoint_destroy(
+  JoltC_ArraySkeletonAnimatedJoint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArraySkeletonAnimatedJoint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArraySkeletonAnimatedJoint_empty(
@@ -88,7 +99,7 @@ void JoltC_ArraySkeletonAnimatedJoint_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

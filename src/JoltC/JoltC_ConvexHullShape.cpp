@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ConvexHullShape_destroy(
+  JoltC_ConvexHullShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ConvexHullShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_ConvexHullShape_GetDensity(
@@ -255,7 +266,7 @@ JoltC_Shape_ShapeResult_t * JoltC_ConvexHullShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

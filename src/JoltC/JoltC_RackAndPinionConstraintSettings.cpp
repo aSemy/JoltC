@@ -19,6 +19,17 @@ JoltC_RackAndPinionConstraintSettings_t * JoltC_RackAndPinionConstraintSettings_
 
 //endregion
 
+//region destructor
+
+void JoltC_RackAndPinionConstraintSettings_destroy(
+  JoltC_RackAndPinionConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RackAndPinionConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_RackAndPinionConstraintSettings_SetRatio(
@@ -91,7 +102,7 @@ void JoltC_RackAndPinionConstraintSettings_mSpace_Set(
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 JoltC_Vec3_t * JoltC_RackAndPinionConstraintSettings_mHingeAxis_Get(
   JoltC_RackAndPinionConstraintSettings_t * self
@@ -110,7 +121,7 @@ void JoltC_RackAndPinionConstraintSettings_mHingeAxis_Set(
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
   selfCpp->mHingeAxis = *static_cast<Vec3 *>(mHingeAxis->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_RackAndPinionConstraintSettings_mSliderAxis_Get(
   JoltC_RackAndPinionConstraintSettings_t * self
@@ -129,7 +140,7 @@ void JoltC_RackAndPinionConstraintSettings_mSliderAxis_Set(
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
   selfCpp->mSliderAxis = *static_cast<Vec3 *>(mSliderAxis->obj);
-};
+}
 
 float JoltC_RackAndPinionConstraintSettings_mRatio_Get(
   JoltC_RackAndPinionConstraintSettings_t * self
@@ -144,7 +155,7 @@ void JoltC_RackAndPinionConstraintSettings_mRatio_Set(
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
   selfCpp->mRatio = mRatio;
-};
+}
 
 bool JoltC_RackAndPinionConstraintSettings_mEnabled_Get(
   JoltC_RackAndPinionConstraintSettings_t * self
@@ -159,7 +170,7 @@ void JoltC_RackAndPinionConstraintSettings_mEnabled_Set(
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_RackAndPinionConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_RackAndPinionConstraintSettings_t * self
@@ -174,7 +185,7 @@ void JoltC_RackAndPinionConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_RackAndPinionConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_RackAndPinionConstraintSettings_t * self
@@ -189,11 +200,11 @@ void JoltC_RackAndPinionConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   RackAndPinionConstraintSettings * selfCpp = static_cast<RackAndPinionConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

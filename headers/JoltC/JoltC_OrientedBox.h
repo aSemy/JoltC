@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -17,6 +16,13 @@ JoltC_OrientedBox_t * JoltC_OrientedBox_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_OrientedBox_destroy(
+  JoltC_OrientedBox_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_Mat44_t * JoltC_OrientedBox_mOrientation_Get(
@@ -43,4 +49,3 @@ void JoltC_OrientedBox_mHalfExtents_Set(
 #ifdef __cplusplus
 }
 #endif
-

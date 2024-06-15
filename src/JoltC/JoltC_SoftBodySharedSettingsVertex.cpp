@@ -19,6 +19,17 @@ JoltC_SoftBodySharedSettingsVertex_t * JoltC_SoftBodySharedSettingsVertex_new() 
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsVertex_destroy(
+  JoltC_SoftBodySharedSettingsVertex_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsVertex *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mPosition_Get(
@@ -38,7 +49,7 @@ void JoltC_SoftBodySharedSettingsVertex_mPosition_Set(
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   selfCpp->mPosition = *static_cast<Float3 *>(mPosition->obj);
-};
+}
 
 JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mVelocity_Get(
   JoltC_SoftBodySharedSettingsVertex_t * self
@@ -57,7 +68,7 @@ void JoltC_SoftBodySharedSettingsVertex_mVelocity_Set(
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   selfCpp->mVelocity = *static_cast<Float3 *>(mVelocity->obj);
-};
+}
 
 float JoltC_SoftBodySharedSettingsVertex_mInvMass_Get(
   JoltC_SoftBodySharedSettingsVertex_t * self
@@ -72,11 +83,11 @@ void JoltC_SoftBodySharedSettingsVertex_mInvMass_Set(
 ) {
   SoftBodySharedSettingsVertex * selfCpp = static_cast<SoftBodySharedSettingsVertex *>(self->obj);
   selfCpp->mInvMass = mInvMass;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

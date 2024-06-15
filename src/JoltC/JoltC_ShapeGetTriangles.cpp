@@ -36,6 +36,17 @@ JoltC_ShapeGetTriangles_t * JoltC_ShapeGetTriangles_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ShapeGetTriangles_destroy(
+  JoltC_ShapeGetTriangles_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ShapeGetTriangles *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 long JoltC_ShapeGetTriangles_GetNumTriangles(
@@ -74,7 +85,7 @@ JoltC_PhysicsMaterial_t * JoltC_ShapeGetTriangles_GetMaterial(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -39,6 +39,17 @@ JoltC_IndexedTriangle_t * JoltC_IndexedTriangle_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_IndexedTriangle_destroy(
+  JoltC_IndexedTriangle_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<IndexedTriangle *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 size_t JoltC_IndexedTriangle_mIdx_Get(
@@ -59,7 +70,7 @@ void JoltC_IndexedTriangle_mIdx_Set(
   for (size_t i = 0; i < mIdxSize; i++) {
     selfCpp->mIdx[i] = mIdx[i];
   };
-};
+}
 
 unsigned long JoltC_IndexedTriangle_mMaterialIndex_Get(
   JoltC_IndexedTriangle_t * self
@@ -74,11 +85,11 @@ void JoltC_IndexedTriangle_mMaterialIndex_Set(
 ) {
   IndexedTriangle * selfCpp = static_cast<IndexedTriangle *>(self->obj);
   selfCpp->mMaterialIndex = mMaterialIndex;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

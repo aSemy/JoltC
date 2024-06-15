@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyManifold_destroy(
+  JoltC_SoftBodyManifold_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_ArraySoftBodyVertex_t * JoltC_SoftBodyManifold_GetVertices(
@@ -38,4 +44,3 @@ JoltC_BodyID_t * JoltC_SoftBodyManifold_GetContactBodyID(
 #ifdef __cplusplus
 }
 #endif
-

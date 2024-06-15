@@ -28,6 +28,17 @@ JoltC_CapsuleShapeSettings_t * JoltC_CapsuleShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_CapsuleShapeSettings_destroy(
+  JoltC_CapsuleShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CapsuleShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_CapsuleShapeSettings_GetRefCount(
@@ -86,7 +97,7 @@ void JoltC_CapsuleShapeSettings_mRadius_Set(
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mRadius = mRadius;
-};
+}
 
 float JoltC_CapsuleShapeSettings_mHalfHeightOfCylinder_Get(
   JoltC_CapsuleShapeSettings_t * self
@@ -101,7 +112,7 @@ void JoltC_CapsuleShapeSettings_mHalfHeightOfCylinder_Set(
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mHalfHeightOfCylinder = mHalfHeightOfCylinder;
-};
+}
 
 JoltC_PhysicsMaterial_t * JoltC_CapsuleShapeSettings_mMaterial_Get(
   JoltC_CapsuleShapeSettings_t * self
@@ -119,7 +130,7 @@ void JoltC_CapsuleShapeSettings_mMaterial_Set(
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mMaterial = static_cast<const PhysicsMaterial *>(mMaterial->obj);
-};
+}
 
 float JoltC_CapsuleShapeSettings_mDensity_Get(
   JoltC_CapsuleShapeSettings_t * self
@@ -134,7 +145,7 @@ void JoltC_CapsuleShapeSettings_mDensity_Set(
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mDensity = mDensity;
-};
+}
 
 unsigned long long int JoltC_CapsuleShapeSettings_mUserData_Get(
   JoltC_CapsuleShapeSettings_t * self
@@ -149,11 +160,11 @@ void JoltC_CapsuleShapeSettings_mUserData_Set(
 ) {
   CapsuleShapeSettings * selfCpp = static_cast<CapsuleShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

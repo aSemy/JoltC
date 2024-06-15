@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_BroadPhaseCastResult_t * JoltC_BroadPhaseCastResult_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_BroadPhaseCastResult_destroy(
+  JoltC_BroadPhaseCastResult_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -57,4 +63,3 @@ void JoltC_BroadPhaseCastResult_mFraction_Set(
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ConstraintSettings_destroy(
+  JoltC_ConstraintSettings_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -159,4 +165,3 @@ void JoltC_ConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

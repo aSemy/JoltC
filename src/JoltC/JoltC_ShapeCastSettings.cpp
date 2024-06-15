@@ -19,6 +19,17 @@ JoltC_ShapeCastSettings_t * JoltC_ShapeCastSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ShapeCastSettings_destroy(
+  JoltC_ShapeCastSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ShapeCastSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_EBackFaceMode JoltC_ShapeCastSettings_mBackFaceModeTriangles_Get(
@@ -35,7 +46,7 @@ void JoltC_ShapeCastSettings_mBackFaceModeTriangles_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mBackFaceModeTriangles = static_cast<EBackFaceMode>(static_cast<int>(mBackFaceModeTriangles));
-};
+}
 
 JoltC_EBackFaceMode JoltC_ShapeCastSettings_mBackFaceModeConvex_Get(
   JoltC_ShapeCastSettings_t * self
@@ -51,7 +62,7 @@ void JoltC_ShapeCastSettings_mBackFaceModeConvex_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mBackFaceModeConvex = static_cast<EBackFaceMode>(static_cast<int>(mBackFaceModeConvex));
-};
+}
 
 bool JoltC_ShapeCastSettings_mUseShrunkenShapeAndConvexRadius_Get(
   JoltC_ShapeCastSettings_t * self
@@ -66,7 +77,7 @@ void JoltC_ShapeCastSettings_mUseShrunkenShapeAndConvexRadius_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mUseShrunkenShapeAndConvexRadius = mUseShrunkenShapeAndConvexRadius;
-};
+}
 
 bool JoltC_ShapeCastSettings_mReturnDeepestPoint_Get(
   JoltC_ShapeCastSettings_t * self
@@ -81,7 +92,7 @@ void JoltC_ShapeCastSettings_mReturnDeepestPoint_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mReturnDeepestPoint = mReturnDeepestPoint;
-};
+}
 
 JoltC_EActiveEdgeMode JoltC_ShapeCastSettings_mActiveEdgeMode_Get(
   JoltC_ShapeCastSettings_t * self
@@ -97,7 +108,7 @@ void JoltC_ShapeCastSettings_mActiveEdgeMode_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mActiveEdgeMode = static_cast<EActiveEdgeMode>(static_cast<int>(mActiveEdgeMode));
-};
+}
 
 JoltC_ECollectFacesMode JoltC_ShapeCastSettings_mCollectFacesMode_Get(
   JoltC_ShapeCastSettings_t * self
@@ -113,7 +124,7 @@ void JoltC_ShapeCastSettings_mCollectFacesMode_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mCollectFacesMode = static_cast<ECollectFacesMode>(static_cast<int>(mCollectFacesMode));
-};
+}
 
 float JoltC_ShapeCastSettings_mCollisionTolerance_Get(
   JoltC_ShapeCastSettings_t * self
@@ -128,7 +139,7 @@ void JoltC_ShapeCastSettings_mCollisionTolerance_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mCollisionTolerance = mCollisionTolerance;
-};
+}
 
 float JoltC_ShapeCastSettings_mPenetrationTolerance_Get(
   JoltC_ShapeCastSettings_t * self
@@ -143,7 +154,7 @@ void JoltC_ShapeCastSettings_mPenetrationTolerance_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mPenetrationTolerance = mPenetrationTolerance;
-};
+}
 
 JoltC_Vec3_t * JoltC_ShapeCastSettings_mActiveEdgeMovementDirection_Get(
   JoltC_ShapeCastSettings_t * self
@@ -162,11 +173,11 @@ void JoltC_ShapeCastSettings_mActiveEdgeMovementDirection_Set(
 ) {
   ShapeCastSettings * selfCpp = static_cast<ShapeCastSettings *>(self->obj);
   selfCpp->mActiveEdgeMovementDirection = *static_cast<Vec3 *>(mActiveEdgeMovementDirection->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

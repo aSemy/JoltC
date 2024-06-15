@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_PathConstraintSettings_t * JoltC_PathConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_PathConstraintSettings_destroy(
+  JoltC_PathConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_PathConstraintSettings_Create(
@@ -132,4 +138,3 @@ void JoltC_PathConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

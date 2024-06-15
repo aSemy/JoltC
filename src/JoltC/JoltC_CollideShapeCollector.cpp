@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CollideShapeCollector_destroy(
+  JoltC_CollideShapeCollector_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CollideShapeCollector *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -116,7 +127,7 @@ float JoltC_CollideShapeCollector_GetPositiveEarlyOutFraction(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

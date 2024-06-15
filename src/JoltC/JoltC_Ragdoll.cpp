@@ -24,6 +24,17 @@ JoltC_Ragdoll_t * JoltC_Ragdoll_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_Ragdoll_destroy(
+  JoltC_Ragdoll_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Ragdoll *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_Ragdoll_AddToPhysicsSystem(
@@ -290,7 +301,7 @@ JoltC_RagdollSettings_t * JoltC_Ragdoll_GetRagdollSettings(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

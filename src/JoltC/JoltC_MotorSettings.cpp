@@ -19,6 +19,17 @@ JoltC_MotorSettings_t * JoltC_MotorSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_MotorSettings_destroy(
+  JoltC_MotorSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<MotorSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_SpringSettings_t * JoltC_MotorSettings_mSpringSettings_Get(
@@ -38,7 +49,7 @@ void JoltC_MotorSettings_mSpringSettings_Set(
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
   selfCpp->mSpringSettings = *static_cast<SpringSettings *>(mSpringSettings->obj);
-};
+}
 
 float JoltC_MotorSettings_mMinForceLimit_Get(
   JoltC_MotorSettings_t * self
@@ -53,7 +64,7 @@ void JoltC_MotorSettings_mMinForceLimit_Set(
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
   selfCpp->mMinForceLimit = mMinForceLimit;
-};
+}
 
 float JoltC_MotorSettings_mMaxForceLimit_Get(
   JoltC_MotorSettings_t * self
@@ -68,7 +79,7 @@ void JoltC_MotorSettings_mMaxForceLimit_Set(
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
   selfCpp->mMaxForceLimit = mMaxForceLimit;
-};
+}
 
 float JoltC_MotorSettings_mMinTorqueLimit_Get(
   JoltC_MotorSettings_t * self
@@ -83,7 +94,7 @@ void JoltC_MotorSettings_mMinTorqueLimit_Set(
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
   selfCpp->mMinTorqueLimit = mMinTorqueLimit;
-};
+}
 
 float JoltC_MotorSettings_mMaxTorqueLimit_Get(
   JoltC_MotorSettings_t * self
@@ -98,11 +109,11 @@ void JoltC_MotorSettings_mMaxTorqueLimit_Set(
 ) {
   MotorSettings * selfCpp = static_cast<MotorSettings *>(self->obj);
   selfCpp->mMaxTorqueLimit = mMaxTorqueLimit;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

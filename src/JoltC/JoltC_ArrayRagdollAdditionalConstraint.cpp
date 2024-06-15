@@ -19,6 +19,17 @@ JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_ArrayRagdollAdditionalConstrain
 
 //endregion
 
+//region destructor
+
+void JoltC_ArrayRagdollAdditionalConstraint_destroy(
+  JoltC_ArrayRagdollAdditionalConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayRagdollAdditionalConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayRagdollAdditionalConstraint_empty(
@@ -88,7 +99,7 @@ void JoltC_ArrayRagdollAdditionalConstraint_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

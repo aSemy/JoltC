@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -17,6 +16,13 @@ JoltC_CylinderShape_t * JoltC_CylinderShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_CylinderShape_destroy(
+  JoltC_CylinderShape_t * self
+);
+
+//endregion
 //region functions
 
 float JoltC_CylinderShape_GetRadius(
@@ -140,4 +146,3 @@ JoltC_Shape_ShapeResult_t * JoltC_CylinderShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_BroadPhaseQuery_destroy(
+  JoltC_BroadPhaseQuery_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BroadPhaseQuery *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_BroadPhaseQuery_CastRay(
@@ -131,7 +142,7 @@ void JoltC_BroadPhaseQuery_CastAABox(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

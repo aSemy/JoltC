@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsSkinWeight_destroy(
+  JoltC_SoftBodySharedSettingsSkinWeight_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsSkinWeight_mInvBindIndex_Get(
@@ -20,7 +31,7 @@ void JoltC_SoftBodySharedSettingsSkinWeight_mInvBindIndex_Set(
 ) {
   SoftBodySharedSettingsSkinWeight * selfCpp = static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
   selfCpp->mInvBindIndex = mInvBindIndex;
-};
+}
 
 float JoltC_SoftBodySharedSettingsSkinWeight_mWeight_Get(
   JoltC_SoftBodySharedSettingsSkinWeight_t * self
@@ -35,11 +46,11 @@ void JoltC_SoftBodySharedSettingsSkinWeight_mWeight_Set(
 ) {
   SoftBodySharedSettingsSkinWeight * selfCpp = static_cast<SoftBodySharedSettingsSkinWeight *>(self->obj);
   selfCpp->mWeight = mWeight;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

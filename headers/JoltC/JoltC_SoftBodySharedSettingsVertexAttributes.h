@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_SoftBodySharedSettingsVer
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsVertexAttributes_destroy(
+  JoltC_SoftBodySharedSettingsVertexAttributes_t * self
+);
+
+//endregion
 //region properties
 
 float JoltC_SoftBodySharedSettingsVertexAttributes_mCompliance_Get(
@@ -65,4 +71,3 @@ void JoltC_SoftBodySharedSettingsVertexAttributes_mLRAMaxDistanceMultiplier_Set(
 #ifdef __cplusplus
 }
 #endif
-

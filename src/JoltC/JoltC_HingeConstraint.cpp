@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_HingeConstraint_destroy(
+  JoltC_HingeConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<HingeConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_HingeConstraint_GetCurrentAngle(
@@ -364,7 +375,7 @@ void JoltC_HingeConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

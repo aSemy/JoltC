@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_DistanceConstraint_destroy(
+  JoltC_DistanceConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<DistanceConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_DistanceConstraint_SetDistance(
@@ -241,7 +252,7 @@ void JoltC_DistanceConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

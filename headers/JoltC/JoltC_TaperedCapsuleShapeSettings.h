@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -17,6 +16,13 @@ JoltC_TaperedCapsuleShapeSettings_t * JoltC_TaperedCapsuleShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_TaperedCapsuleShapeSettings_destroy(
+  JoltC_TaperedCapsuleShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_TaperedCapsuleShapeSettings_GetRefCount(
@@ -103,4 +109,3 @@ void JoltC_TaperedCapsuleShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

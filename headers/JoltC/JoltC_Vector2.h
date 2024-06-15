@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_Vector2_t * JoltC_Vector2_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_Vector2_destroy(
+  JoltC_Vector2_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_Vector2_SetZero(
@@ -73,4 +79,3 @@ float JoltC_Vector2_Dot(
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_RackAndPinionConstraint_destroy(
+  JoltC_RackAndPinionConstraint_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_RackAndPinionConstraint_SetConstraints(
@@ -113,4 +119,3 @@ void JoltC_RackAndPinionConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

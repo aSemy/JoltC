@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleTrack_destroy(
+  JoltC_VehicleTrack_t * self
+);
+
+//endregion
 //region properties
 
 float JoltC_VehicleTrack_mAngularVelocity_Get(
@@ -77,4 +83,3 @@ void JoltC_VehicleTrack_mDifferentialRatio_Set(
 #ifdef __cplusplus
 }
 #endif
-

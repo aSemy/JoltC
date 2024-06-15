@@ -37,6 +37,17 @@ JoltC_AABox_t * JoltC_AABox_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_AABox_destroy(
+  JoltC_AABox_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<AABox *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_AABox_t * JoltC_AABox_sBiggest() {
@@ -79,7 +90,7 @@ void JoltC_AABox_mMin_Set(
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
   selfCpp->mMin = *static_cast<Vec3 *>(mMin->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_AABox_mMax_Get(
   JoltC_AABox_t * self
@@ -98,11 +109,11 @@ void JoltC_AABox_mMax_Set(
 ) {
   AABox * selfCpp = static_cast<AABox *>(self->obj);
   selfCpp->mMax = *static_cast<Vec3 *>(mMax->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

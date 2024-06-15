@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_RayCastResult_t * JoltC_RayCastResult_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_RayCastResult_destroy(
+  JoltC_RayCastResult_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_RayCastResult_Reset(
@@ -55,4 +61,3 @@ void JoltC_RayCastResult_mFraction_Set(
 #ifdef __cplusplus
 }
 #endif
-

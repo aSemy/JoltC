@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleEngineSettings_destroy(
+  JoltC_VehicleEngineSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleEngineSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -33,7 +44,7 @@ void JoltC_VehicleEngineSettings_mMaxTorque_Set(
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mMaxTorque = mMaxTorque;
-};
+}
 
 float JoltC_VehicleEngineSettings_mMinRPM_Get(
   JoltC_VehicleEngineSettings_t * self
@@ -48,7 +59,7 @@ void JoltC_VehicleEngineSettings_mMinRPM_Set(
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mMinRPM = mMinRPM;
-};
+}
 
 float JoltC_VehicleEngineSettings_mMaxRPM_Get(
   JoltC_VehicleEngineSettings_t * self
@@ -63,7 +74,7 @@ void JoltC_VehicleEngineSettings_mMaxRPM_Set(
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mMaxRPM = mMaxRPM;
-};
+}
 
 JoltC_LinearCurve_t * JoltC_VehicleEngineSettings_mNormalizedTorque_Get(
   JoltC_VehicleEngineSettings_t * self
@@ -82,7 +93,7 @@ void JoltC_VehicleEngineSettings_mNormalizedTorque_Set(
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mNormalizedTorque = *static_cast<LinearCurve *>(mNormalizedTorque->obj);
-};
+}
 
 float JoltC_VehicleEngineSettings_mInertia_Get(
   JoltC_VehicleEngineSettings_t * self
@@ -97,7 +108,7 @@ void JoltC_VehicleEngineSettings_mInertia_Set(
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mInertia = mInertia;
-};
+}
 
 float JoltC_VehicleEngineSettings_mAngularDamping_Get(
   JoltC_VehicleEngineSettings_t * self
@@ -112,11 +123,11 @@ void JoltC_VehicleEngineSettings_mAngularDamping_Set(
 ) {
   VehicleEngineSettings * selfCpp = static_cast<VehicleEngineSettings *>(self->obj);
   selfCpp->mAngularDamping = mAngularDamping;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

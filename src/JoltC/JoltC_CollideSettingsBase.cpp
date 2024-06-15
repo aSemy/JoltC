@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CollideSettingsBase_destroy(
+  JoltC_CollideSettingsBase_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CollideSettingsBase *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -43,7 +54,7 @@ void JoltC_CollideSettingsBase_mActiveEdgeMode_Set(
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
   selfCpp->mActiveEdgeMode = static_cast<EActiveEdgeMode>(static_cast<int>(mActiveEdgeMode));
-};
+}
 
 JoltC_ECollectFacesMode JoltC_CollideSettingsBase_mCollectFacesMode_Get(
   JoltC_CollideSettingsBase_t * self
@@ -59,7 +70,7 @@ void JoltC_CollideSettingsBase_mCollectFacesMode_Set(
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
   selfCpp->mCollectFacesMode = static_cast<ECollectFacesMode>(static_cast<int>(mCollectFacesMode));
-};
+}
 
 float JoltC_CollideSettingsBase_mCollisionTolerance_Get(
   JoltC_CollideSettingsBase_t * self
@@ -74,7 +85,7 @@ void JoltC_CollideSettingsBase_mCollisionTolerance_Set(
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
   selfCpp->mCollisionTolerance = mCollisionTolerance;
-};
+}
 
 float JoltC_CollideSettingsBase_mPenetrationTolerance_Get(
   JoltC_CollideSettingsBase_t * self
@@ -89,7 +100,7 @@ void JoltC_CollideSettingsBase_mPenetrationTolerance_Set(
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
   selfCpp->mPenetrationTolerance = mPenetrationTolerance;
-};
+}
 
 JoltC_Vec3_t * JoltC_CollideSettingsBase_mActiveEdgeMovementDirection_Get(
   JoltC_CollideSettingsBase_t * self
@@ -108,11 +119,11 @@ void JoltC_CollideSettingsBase_mActiveEdgeMovementDirection_Set(
 ) {
   CollideSettingsBase * selfCpp = static_cast<CollideSettingsBase *>(self->obj);
   selfCpp->mActiveEdgeMovementDirection = *static_cast<Vec3 *>(mActiveEdgeMovementDirection->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

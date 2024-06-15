@@ -19,6 +19,17 @@ JoltC_VehicleDifferentialSettings_t * JoltC_VehicleDifferentialSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleDifferentialSettings_destroy(
+  JoltC_VehicleDifferentialSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleDifferentialSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 long JoltC_VehicleDifferentialSettings_mLeftWheel_Get(
@@ -34,7 +45,7 @@ void JoltC_VehicleDifferentialSettings_mLeftWheel_Set(
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
   selfCpp->mLeftWheel = mLeftWheel;
-};
+}
 
 long JoltC_VehicleDifferentialSettings_mRightWheel_Get(
   JoltC_VehicleDifferentialSettings_t * self
@@ -49,7 +60,7 @@ void JoltC_VehicleDifferentialSettings_mRightWheel_Set(
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
   selfCpp->mRightWheel = mRightWheel;
-};
+}
 
 float JoltC_VehicleDifferentialSettings_mDifferentialRatio_Get(
   JoltC_VehicleDifferentialSettings_t * self
@@ -64,7 +75,7 @@ void JoltC_VehicleDifferentialSettings_mDifferentialRatio_Set(
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
   selfCpp->mDifferentialRatio = mDifferentialRatio;
-};
+}
 
 float JoltC_VehicleDifferentialSettings_mLeftRightSplit_Get(
   JoltC_VehicleDifferentialSettings_t * self
@@ -79,7 +90,7 @@ void JoltC_VehicleDifferentialSettings_mLeftRightSplit_Set(
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
   selfCpp->mLeftRightSplit = mLeftRightSplit;
-};
+}
 
 float JoltC_VehicleDifferentialSettings_mLimitedSlipRatio_Get(
   JoltC_VehicleDifferentialSettings_t * self
@@ -94,7 +105,7 @@ void JoltC_VehicleDifferentialSettings_mLimitedSlipRatio_Set(
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
   selfCpp->mLimitedSlipRatio = mLimitedSlipRatio;
-};
+}
 
 float JoltC_VehicleDifferentialSettings_mEngineTorqueRatio_Get(
   JoltC_VehicleDifferentialSettings_t * self
@@ -109,11 +120,11 @@ void JoltC_VehicleDifferentialSettings_mEngineTorqueRatio_Set(
 ) {
   VehicleDifferentialSettings * selfCpp = static_cast<VehicleDifferentialSettings *>(self->obj);
   selfCpp->mEngineTorqueRatio = mEngineTorqueRatio;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

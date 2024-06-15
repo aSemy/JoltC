@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PointConstraint_destroy(
+  JoltC_PointConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PointConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_PointConstraint_GetLocalSpacePoint1(
@@ -220,7 +231,7 @@ void JoltC_PointConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

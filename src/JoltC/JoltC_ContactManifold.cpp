@@ -19,6 +19,17 @@ JoltC_ContactManifold_t * JoltC_ContactManifold_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ContactManifold_destroy(
+  JoltC_ContactManifold_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ContactManifold *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_ContactManifold_t * JoltC_ContactManifold_SwapShapes(
@@ -81,7 +92,7 @@ void JoltC_ContactManifold_mBaseOffset_Set(
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
   selfCpp->mBaseOffset = *static_cast<RVec3 *>(mBaseOffset->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_ContactManifold_mWorldSpaceNormal_Get(
   JoltC_ContactManifold_t * self
@@ -100,7 +111,7 @@ void JoltC_ContactManifold_mWorldSpaceNormal_Set(
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
   selfCpp->mWorldSpaceNormal = *static_cast<Vec3 *>(mWorldSpaceNormal->obj);
-};
+}
 
 float JoltC_ContactManifold_mPenetrationDepth_Get(
   JoltC_ContactManifold_t * self
@@ -115,7 +126,7 @@ void JoltC_ContactManifold_mPenetrationDepth_Set(
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
   selfCpp->mPenetrationDepth = mPenetrationDepth;
-};
+}
 
 JoltC_SubShapeID_t * JoltC_ContactManifold_mSubShapeID1_Get(
   JoltC_ContactManifold_t * self
@@ -134,7 +145,7 @@ void JoltC_ContactManifold_mSubShapeID1_Set(
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
   selfCpp->mSubShapeID1 = *static_cast<SubShapeID *>(mSubShapeID1->obj);
-};
+}
 
 JoltC_SubShapeID_t * JoltC_ContactManifold_mSubShapeID2_Get(
   JoltC_ContactManifold_t * self
@@ -153,7 +164,7 @@ void JoltC_ContactManifold_mSubShapeID2_Set(
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
   selfCpp->mSubShapeID2 = *static_cast<SubShapeID *>(mSubShapeID2->obj);
-};
+}
 
 JoltC_ContactPoints_t * JoltC_ContactManifold_mRelativeContactPointsOn1_Get(
   JoltC_ContactManifold_t * self
@@ -172,7 +183,7 @@ void JoltC_ContactManifold_mRelativeContactPointsOn1_Set(
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
   selfCpp->mRelativeContactPointsOn1 = *static_cast<ContactPoints *>(mRelativeContactPointsOn1->obj);
-};
+}
 
 JoltC_ContactPoints_t * JoltC_ContactManifold_mRelativeContactPointsOn2_Get(
   JoltC_ContactManifold_t * self
@@ -191,11 +202,11 @@ void JoltC_ContactManifold_mRelativeContactPointsOn2_Set(
 ) {
   ContactManifold * selfCpp = static_cast<ContactManifold *>(self->obj);
   selfCpp->mRelativeContactPointsOn2 = *static_cast<ContactPoints *>(mRelativeContactPointsOn2->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_Vector2_t * JoltC_Vector2_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_Vector2_destroy(
+  JoltC_Vector2_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Vector2 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_Vector2_SetZero(
@@ -146,7 +157,7 @@ float JoltC_Vector2_Dot(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

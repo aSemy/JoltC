@@ -19,6 +19,17 @@ JoltC_BodyFilter_t * JoltC_BodyFilter_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_BodyFilter_destroy(
+  JoltC_BodyFilter_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BodyFilter *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -41,7 +52,7 @@ JoltC_BodyFilter_t * JoltC_BodyFilter_From_IgnoreMultipleBodiesFilter(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

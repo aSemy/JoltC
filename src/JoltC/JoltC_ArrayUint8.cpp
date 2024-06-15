@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayUint8_destroy(
+  JoltC_ArrayUint8_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayUint8 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayUint8_empty(
@@ -80,7 +91,7 @@ JoltC_Uint8MemRef_t * JoltC_ArrayUint8_data(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

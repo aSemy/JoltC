@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_TaperedCapsuleShape_destroy(
+  JoltC_TaperedCapsuleShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<TaperedCapsuleShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_TaperedCapsuleShape_GetDensity(
@@ -255,7 +266,7 @@ JoltC_Shape_ShapeResult_t * JoltC_TaperedCapsuleShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

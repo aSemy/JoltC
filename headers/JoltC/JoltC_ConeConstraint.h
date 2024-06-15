@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ConeConstraint_destroy(
+  JoltC_ConeConstraint_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_ConeConstraint_SetHalfConeAngle(
@@ -120,4 +126,3 @@ void JoltC_ConeConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_HeightFieldShapeSettings_t * JoltC_HeightFieldShapeSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_HeightFieldShapeSettings_destroy(
+  JoltC_HeightFieldShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<HeightFieldShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_HeightFieldShapeSettings_GetRefCount(
@@ -81,7 +92,7 @@ void JoltC_HeightFieldShapeSettings_mOffset_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mOffset = *static_cast<Vec3 *>(mOffset->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_HeightFieldShapeSettings_mScale_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -100,7 +111,7 @@ void JoltC_HeightFieldShapeSettings_mScale_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mScale = *static_cast<Vec3 *>(mScale->obj);
-};
+}
 
 long JoltC_HeightFieldShapeSettings_mSampleCount_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -115,7 +126,7 @@ void JoltC_HeightFieldShapeSettings_mSampleCount_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mSampleCount = mSampleCount;
-};
+}
 
 float JoltC_HeightFieldShapeSettings_mMinHeightValue_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -130,7 +141,7 @@ void JoltC_HeightFieldShapeSettings_mMinHeightValue_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mMinHeightValue = mMinHeightValue;
-};
+}
 
 float JoltC_HeightFieldShapeSettings_mMaxHeightValue_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -145,7 +156,7 @@ void JoltC_HeightFieldShapeSettings_mMaxHeightValue_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mMaxHeightValue = mMaxHeightValue;
-};
+}
 
 long JoltC_HeightFieldShapeSettings_mBlockSize_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -160,7 +171,7 @@ void JoltC_HeightFieldShapeSettings_mBlockSize_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mBlockSize = mBlockSize;
-};
+}
 
 long JoltC_HeightFieldShapeSettings_mBitsPerSample_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -175,7 +186,7 @@ void JoltC_HeightFieldShapeSettings_mBitsPerSample_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mBitsPerSample = mBitsPerSample;
-};
+}
 
 JoltC_ArrayFloat_t * JoltC_HeightFieldShapeSettings_mHeightSamples_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -194,7 +205,7 @@ void JoltC_HeightFieldShapeSettings_mHeightSamples_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mHeightSamples = *static_cast<ArrayFloat *>(mHeightSamples->obj);
-};
+}
 
 JoltC_ArrayUint8_t * JoltC_HeightFieldShapeSettings_mMaterialIndices_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -213,7 +224,7 @@ void JoltC_HeightFieldShapeSettings_mMaterialIndices_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mMaterialIndices = *static_cast<ArrayUint8 *>(mMaterialIndices->obj);
-};
+}
 
 JoltC_PhysicsMaterialList_t * JoltC_HeightFieldShapeSettings_mMaterials_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -232,7 +243,7 @@ void JoltC_HeightFieldShapeSettings_mMaterials_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mMaterials = *static_cast<PhysicsMaterialList *>(mMaterials->obj);
-};
+}
 
 float JoltC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -247,7 +258,7 @@ void JoltC_HeightFieldShapeSettings_mActiveEdgeCosThresholdAngle_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mActiveEdgeCosThresholdAngle = mActiveEdgeCosThresholdAngle;
-};
+}
 
 unsigned long long int JoltC_HeightFieldShapeSettings_mUserData_Get(
   JoltC_HeightFieldShapeSettings_t * self
@@ -262,11 +273,11 @@ void JoltC_HeightFieldShapeSettings_mUserData_Set(
 ) {
   HeightFieldShapeSettings * selfCpp = static_cast<HeightFieldShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

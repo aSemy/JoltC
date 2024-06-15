@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_RackAndPinionConstraintSettings_t * JoltC_RackAndPinionConstraintSettings_
 
 //endregion
 
+//region destructor
+
+void JoltC_RackAndPinionConstraintSettings_destroy(
+  JoltC_RackAndPinionConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_RackAndPinionConstraintSettings_SetRatio(
@@ -112,4 +118,3 @@ void JoltC_RackAndPinionConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

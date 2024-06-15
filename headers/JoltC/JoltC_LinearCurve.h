@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_LinearCurve_t * JoltC_LinearCurve_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_LinearCurve_destroy(
+  JoltC_LinearCurve_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_LinearCurve_Clear(
@@ -52,4 +58,3 @@ float JoltC_LinearCurve_GetValue(
 #ifdef __cplusplus
 }
 #endif
-

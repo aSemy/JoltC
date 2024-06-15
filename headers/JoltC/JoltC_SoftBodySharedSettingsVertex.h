@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SoftBodySharedSettingsVertex_t * JoltC_SoftBodySharedSettingsVertex_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsVertex_destroy(
+  JoltC_SoftBodySharedSettingsVertex_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_Float3_t * JoltC_SoftBodySharedSettingsVertex_mPosition_Get(
@@ -47,4 +53,3 @@ void JoltC_SoftBodySharedSettingsVertex_mInvMass_Set(
 #ifdef __cplusplus
 }
 #endif
-

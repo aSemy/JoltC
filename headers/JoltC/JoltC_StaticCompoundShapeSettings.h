@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_StaticCompoundShapeSettings_t * JoltC_StaticCompoundShapeSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_StaticCompoundShapeSettings_destroy(
+  JoltC_StaticCompoundShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_StaticCompoundShapeSettings_AddShape(
@@ -61,4 +67,3 @@ void JoltC_StaticCompoundShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

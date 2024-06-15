@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_NarrowPhaseQuery_destroy(
+  JoltC_NarrowPhaseQuery_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<NarrowPhaseQuery *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_NarrowPhaseQuery_CastRay(
@@ -160,7 +171,7 @@ void JoltC_NarrowPhaseQuery_CollectTransformedShapes(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

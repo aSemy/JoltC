@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ContactListener_destroy(
+  JoltC_ContactListener_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ContactListener *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -18,7 +29,7 @@ JoltC_ContactListener_t * JoltC_ContactListener_From_ContactListenerEm(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

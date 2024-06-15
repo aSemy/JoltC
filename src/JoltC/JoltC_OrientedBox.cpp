@@ -37,6 +37,17 @@ JoltC_OrientedBox_t * JoltC_OrientedBox_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_OrientedBox_destroy(
+  JoltC_OrientedBox_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<OrientedBox *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_Mat44_t * JoltC_OrientedBox_mOrientation_Get(
@@ -56,7 +67,7 @@ void JoltC_OrientedBox_mOrientation_Set(
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
   selfCpp->mOrientation = *static_cast<Mat44 *>(mOrientation->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_OrientedBox_mHalfExtents_Get(
   JoltC_OrientedBox_t * self
@@ -75,11 +86,11 @@ void JoltC_OrientedBox_mHalfExtents_Set(
 ) {
   OrientedBox * selfCpp = static_cast<OrientedBox *>(self->obj);
   selfCpp->mHalfExtents = *static_cast<Vec3 *>(mHalfExtents->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

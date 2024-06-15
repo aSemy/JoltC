@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SpringSettings_t * JoltC_SpringSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_SpringSettings_destroy(
+  JoltC_SpringSettings_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_SpringSettings_HasStiffness(
@@ -64,4 +70,3 @@ void JoltC_SpringSettings_mDamping_Set(
 #ifdef __cplusplus
 }
 #endif
-

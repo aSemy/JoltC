@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -17,6 +16,13 @@ JoltC_AABox_t * JoltC_AABox_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_AABox_destroy(
+  JoltC_AABox_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_AABox_t * JoltC_AABox_sBiggest();
@@ -54,4 +60,3 @@ void JoltC_AABox_mMax_Set(
 #ifdef __cplusplus
 }
 #endif
-

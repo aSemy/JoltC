@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_MeshShape_destroy(
+  JoltC_MeshShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<MeshShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_MeshShape_GetRefCount(
@@ -238,7 +249,7 @@ JoltC_Shape_ShapeResult_t * JoltC_MeshShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

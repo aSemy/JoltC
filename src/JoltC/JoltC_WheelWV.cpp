@@ -24,6 +24,17 @@ JoltC_WheelWV_t * JoltC_WheelWV_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_WheelWV_destroy(
+  JoltC_WheelWV_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<WheelWV *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_WheelSettingsWV_t * JoltC_WheelWV_GetSettings_0(
@@ -222,7 +233,7 @@ void JoltC_WheelWV_mLongitudinalSlip_Set(
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mLongitudinalSlip = mLongitudinalSlip;
-};
+}
 
 float JoltC_WheelWV_mLateralSlip_Get(
   JoltC_WheelWV_t * self
@@ -237,7 +248,7 @@ void JoltC_WheelWV_mLateralSlip_Set(
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mLateralSlip = mLateralSlip;
-};
+}
 
 float JoltC_WheelWV_mCombinedLongitudinalFriction_Get(
   JoltC_WheelWV_t * self
@@ -252,7 +263,7 @@ void JoltC_WheelWV_mCombinedLongitudinalFriction_Set(
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mCombinedLongitudinalFriction = mCombinedLongitudinalFriction;
-};
+}
 
 float JoltC_WheelWV_mCombinedLateralFriction_Get(
   JoltC_WheelWV_t * self
@@ -267,7 +278,7 @@ void JoltC_WheelWV_mCombinedLateralFriction_Set(
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mCombinedLateralFriction = mCombinedLateralFriction;
-};
+}
 
 float JoltC_WheelWV_mBrakeImpulse_Get(
   JoltC_WheelWV_t * self
@@ -282,11 +293,11 @@ void JoltC_WheelWV_mBrakeImpulse_Set(
 ) {
   WheelWV * selfCpp = static_cast<WheelWV *>(self->obj);
   selfCpp->mBrakeImpulse = mBrakeImpulse;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

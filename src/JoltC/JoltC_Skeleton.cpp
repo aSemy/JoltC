@@ -19,6 +19,17 @@ JoltC_Skeleton_t * JoltC_Skeleton_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_Skeleton_destroy(
+  JoltC_Skeleton_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Skeleton *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 long JoltC_Skeleton_AddJoint(
@@ -57,7 +68,7 @@ void JoltC_Skeleton_CalculateParentJointIndices(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

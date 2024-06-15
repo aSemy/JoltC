@@ -19,6 +19,17 @@ JoltC_HingeConstraintSettings_t * JoltC_HingeConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_HingeConstraintSettings_destroy(
+  JoltC_HingeConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<HingeConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_HingeConstraintSettings_Create(
@@ -77,7 +88,7 @@ void JoltC_HingeConstraintSettings_mSpace_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 JoltC_RVec3_t * JoltC_HingeConstraintSettings_mPoint1_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -96,7 +107,7 @@ void JoltC_HingeConstraintSettings_mPoint1_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mPoint1 = *static_cast<RVec3 *>(mPoint1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_HingeConstraintSettings_mHingeAxis1_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -115,7 +126,7 @@ void JoltC_HingeConstraintSettings_mHingeAxis1_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mHingeAxis1 = *static_cast<Vec3 *>(mHingeAxis1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_HingeConstraintSettings_mNormalAxis1_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -134,7 +145,7 @@ void JoltC_HingeConstraintSettings_mNormalAxis1_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mNormalAxis1 = *static_cast<Vec3 *>(mNormalAxis1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_HingeConstraintSettings_mPoint2_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -153,7 +164,7 @@ void JoltC_HingeConstraintSettings_mPoint2_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mPoint2 = *static_cast<RVec3 *>(mPoint2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_HingeConstraintSettings_mHingeAxis2_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -172,7 +183,7 @@ void JoltC_HingeConstraintSettings_mHingeAxis2_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mHingeAxis2 = *static_cast<Vec3 *>(mHingeAxis2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_HingeConstraintSettings_mNormalAxis2_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -191,7 +202,7 @@ void JoltC_HingeConstraintSettings_mNormalAxis2_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mNormalAxis2 = *static_cast<Vec3 *>(mNormalAxis2->obj);
-};
+}
 
 float JoltC_HingeConstraintSettings_mLimitsMin_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -206,7 +217,7 @@ void JoltC_HingeConstraintSettings_mLimitsMin_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mLimitsMin = mLimitsMin;
-};
+}
 
 float JoltC_HingeConstraintSettings_mLimitsMax_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -221,7 +232,7 @@ void JoltC_HingeConstraintSettings_mLimitsMax_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mLimitsMax = mLimitsMax;
-};
+}
 
 JoltC_SpringSettings_t * JoltC_HingeConstraintSettings_mLimitsSpringSettings_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -240,7 +251,7 @@ void JoltC_HingeConstraintSettings_mLimitsSpringSettings_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mLimitsSpringSettings = *static_cast<SpringSettings *>(mLimitsSpringSettings->obj);
-};
+}
 
 float JoltC_HingeConstraintSettings_mMaxFrictionTorque_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -255,7 +266,7 @@ void JoltC_HingeConstraintSettings_mMaxFrictionTorque_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mMaxFrictionTorque = mMaxFrictionTorque;
-};
+}
 
 JoltC_MotorSettings_t * JoltC_HingeConstraintSettings_mMotorSettings_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -274,7 +285,7 @@ void JoltC_HingeConstraintSettings_mMotorSettings_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mMotorSettings = *static_cast<MotorSettings *>(mMotorSettings->obj);
-};
+}
 
 bool JoltC_HingeConstraintSettings_mEnabled_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -289,7 +300,7 @@ void JoltC_HingeConstraintSettings_mEnabled_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_HingeConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -304,7 +315,7 @@ void JoltC_HingeConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_HingeConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_HingeConstraintSettings_t * self
@@ -319,11 +330,11 @@ void JoltC_HingeConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   HingeConstraintSettings * selfCpp = static_cast<HingeConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

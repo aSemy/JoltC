@@ -19,6 +19,17 @@ JoltC_FixedConstraintSettings_t * JoltC_FixedConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_FixedConstraintSettings_destroy(
+  JoltC_FixedConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<FixedConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_FixedConstraintSettings_Create(
@@ -77,7 +88,7 @@ void JoltC_FixedConstraintSettings_mSpace_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 bool JoltC_FixedConstraintSettings_mAutoDetectPoint_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -92,7 +103,7 @@ void JoltC_FixedConstraintSettings_mAutoDetectPoint_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mAutoDetectPoint = mAutoDetectPoint;
-};
+}
 
 JoltC_RVec3_t * JoltC_FixedConstraintSettings_mPoint1_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -111,7 +122,7 @@ void JoltC_FixedConstraintSettings_mPoint1_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mPoint1 = *static_cast<RVec3 *>(mPoint1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisX1_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -130,7 +141,7 @@ void JoltC_FixedConstraintSettings_mAxisX1_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mAxisX1 = *static_cast<Vec3 *>(mAxisX1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisY1_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -149,7 +160,7 @@ void JoltC_FixedConstraintSettings_mAxisY1_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mAxisY1 = *static_cast<Vec3 *>(mAxisY1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_FixedConstraintSettings_mPoint2_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -168,7 +179,7 @@ void JoltC_FixedConstraintSettings_mPoint2_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mPoint2 = *static_cast<RVec3 *>(mPoint2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisX2_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -187,7 +198,7 @@ void JoltC_FixedConstraintSettings_mAxisX2_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mAxisX2 = *static_cast<Vec3 *>(mAxisX2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_FixedConstraintSettings_mAxisY2_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -206,7 +217,7 @@ void JoltC_FixedConstraintSettings_mAxisY2_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mAxisY2 = *static_cast<Vec3 *>(mAxisY2->obj);
-};
+}
 
 bool JoltC_FixedConstraintSettings_mEnabled_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -221,7 +232,7 @@ void JoltC_FixedConstraintSettings_mEnabled_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_FixedConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -236,7 +247,7 @@ void JoltC_FixedConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_FixedConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_FixedConstraintSettings_t * self
@@ -251,11 +262,11 @@ void JoltC_FixedConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   FixedConstraintSettings * selfCpp = static_cast<FixedConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

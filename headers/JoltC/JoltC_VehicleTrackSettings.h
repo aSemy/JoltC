@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleTrackSettings_destroy(
+  JoltC_VehicleTrackSettings_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -79,4 +85,3 @@ void JoltC_VehicleTrackSettings_mDifferentialRatio_Set(
 #ifdef __cplusplus
 }
 #endif
-

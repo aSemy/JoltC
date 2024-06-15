@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PathConstraintPathEm_destroy(
+  JoltC_PathConstraintPathEm_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_PathConstraintPathEm_IsLooping(
@@ -35,4 +41,3 @@ void JoltC_PathConstraintPathEm_Release(
 #ifdef __cplusplus
 }
 #endif
-

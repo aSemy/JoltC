@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,6 +13,13 @@ JoltC_WheelTV_t * JoltC_WheelTV_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_WheelTV_destroy(
+  JoltC_WheelTV_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_WheelSettingsTV_t * JoltC_WheelTV_GetSettings_0(
@@ -145,4 +151,3 @@ void JoltC_WheelTV_mBrakeImpulse_Set(
 #ifdef __cplusplus
 }
 #endif
-

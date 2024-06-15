@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CollideSettingsBase_destroy(
+  JoltC_CollideSettingsBase_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -77,4 +83,3 @@ void JoltC_CollideSettingsBase_mActiveEdgeMovementDirection_Set(
 #ifdef __cplusplus
 }
 #endif
-

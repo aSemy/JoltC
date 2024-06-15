@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsSkinned_destroy(
+  JoltC_SoftBodySharedSettingsSkinned_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsSkinned_mVertex_Get(
@@ -20,7 +31,7 @@ void JoltC_SoftBodySharedSettingsSkinned_mVertex_Set(
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
   selfCpp->mVertex = mVertex;
-};
+}
 
 size_t JoltC_SoftBodySharedSettingsSkinned_mWeights_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self,
@@ -40,7 +51,7 @@ void JoltC_SoftBodySharedSettingsSkinned_mWeights_Set(
   for (size_t i = 0; i < mWeightsSize; i++) {
     selfCpp->mWeights[i] = *(static_cast<SoftBodySharedSettingsSkinWeight *>(mWeights[i]->obj));
   };
-};
+}
 
 float JoltC_SoftBodySharedSettingsSkinned_mMaxDistance_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self
@@ -55,7 +66,7 @@ void JoltC_SoftBodySharedSettingsSkinned_mMaxDistance_Set(
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
   selfCpp->mMaxDistance = mMaxDistance;
-};
+}
 
 float JoltC_SoftBodySharedSettingsSkinned_mBackStopDistance_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self
@@ -70,7 +81,7 @@ void JoltC_SoftBodySharedSettingsSkinned_mBackStopDistance_Set(
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
   selfCpp->mBackStopDistance = mBackStopDistance;
-};
+}
 
 float JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Get(
   JoltC_SoftBodySharedSettingsSkinned_t * self
@@ -85,11 +96,11 @@ void JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Set(
 ) {
   SoftBodySharedSettingsSkinned * selfCpp = static_cast<SoftBodySharedSettingsSkinned *>(self->obj);
   selfCpp->mBackStopRadius = mBackStopRadius;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

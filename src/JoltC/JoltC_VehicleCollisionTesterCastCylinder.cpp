@@ -25,6 +25,17 @@ JoltC_VehicleCollisionTesterCastCylinder_t * JoltC_VehicleCollisionTesterCastCyl
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleCollisionTesterCastCylinder_destroy(
+  JoltC_VehicleCollisionTesterCastCylinder_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleCollisionTesterCastCylinder *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_VehicleCollisionTesterCastCylinder_GetRefCount(
@@ -50,7 +61,7 @@ void JoltC_VehicleCollisionTesterCastCylinder_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

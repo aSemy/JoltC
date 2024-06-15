@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_MotionProperties_destroy(
+  JoltC_MotionProperties_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -226,4 +232,3 @@ unsigned long JoltC_MotionProperties_GetNumPositionStepsOverride(
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SkeletalAnimationKeyframe_t * JoltC_SkeletalAnimationKeyframe_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_SkeletalAnimationKeyframe_destroy(
+  JoltC_SkeletalAnimationKeyframe_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_SkeletalAnimationKeyframe_FromMatrix(
@@ -60,4 +66,3 @@ void JoltC_SkeletalAnimationKeyframe_mRotation_Set(
 #ifdef __cplusplus
 }
 #endif
-

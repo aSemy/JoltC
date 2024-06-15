@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_RagdollSettings_t * JoltC_RagdollSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_RagdollSettings_destroy(
+  JoltC_RagdollSettings_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_RagdollSettings_Stabilize(
@@ -80,4 +86,3 @@ void JoltC_RagdollSettings_mAdditionalConstraints_Set(
 #ifdef __cplusplus
 }
 #endif
-

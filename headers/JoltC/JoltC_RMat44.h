@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_RMat44_t * JoltC_RMat44_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_RMat44_destroy(
+  JoltC_RMat44_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_RMat44_t * JoltC_RMat44_sZero();
@@ -146,4 +152,3 @@ void JoltC_RMat44_SetColumn4(
 #ifdef __cplusplus
 }
 #endif
-

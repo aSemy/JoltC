@@ -29,6 +29,17 @@ JoltC_BoxShape_t * JoltC_BoxShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BoxShape_destroy(
+  JoltC_BoxShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BoxShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_BoxShape_GetHalfExtent(
@@ -290,7 +301,7 @@ JoltC_Shape_ShapeResult_t * JoltC_BoxShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

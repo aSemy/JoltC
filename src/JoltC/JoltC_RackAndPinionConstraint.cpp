@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_RackAndPinionConstraint_destroy(
+  JoltC_RackAndPinionConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RackAndPinionConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_RackAndPinionConstraint_SetConstraints(
@@ -208,7 +219,7 @@ void JoltC_RackAndPinionConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_SubShapeID_t * JoltC_SubShapeID_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_SubShapeID_destroy(
+  JoltC_SubShapeID_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SubShapeID *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 const long JoltC_SubShapeID_GetValue(
@@ -40,7 +51,7 @@ void JoltC_SubShapeID_SetValue(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

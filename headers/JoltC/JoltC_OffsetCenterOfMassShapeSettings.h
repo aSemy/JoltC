@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_OffsetCenterOfMassShapeSettings_t * JoltC_OffsetCenterOfMassShapeSettings_
 
 //endregion
 
+//region destructor
+
+void JoltC_OffsetCenterOfMassShapeSettings_destroy(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_OffsetCenterOfMassShapeSettings_GetRefCount(
@@ -65,4 +71,3 @@ void JoltC_OffsetCenterOfMassShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

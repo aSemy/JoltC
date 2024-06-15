@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_GearConstraintSettings_t * JoltC_GearConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_GearConstraintSettings_destroy(
+  JoltC_GearConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_GearConstraintSettings_SetRatio(
@@ -111,4 +117,3 @@ void JoltC_GearConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

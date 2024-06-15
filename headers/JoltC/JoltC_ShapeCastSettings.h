@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ShapeCastSettings_t * JoltC_ShapeCastSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_ShapeCastSettings_destroy(
+  JoltC_ShapeCastSettings_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_EBackFaceMode JoltC_ShapeCastSettings_mBackFaceModeTriangles_Get(
@@ -101,4 +107,3 @@ void JoltC_ShapeCastSettings_mActiveEdgeMovementDirection_Set(
 #ifdef __cplusplus
 }
 #endif
-

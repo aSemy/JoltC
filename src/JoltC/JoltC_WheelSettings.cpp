@@ -19,6 +19,17 @@ JoltC_WheelSettings_t * JoltC_WheelSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_WheelSettings_destroy(
+  JoltC_WheelSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<WheelSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -85,7 +96,7 @@ void JoltC_WheelSettings_mPosition_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mPosition = *static_cast<Vec3 *>(mPosition->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettings_mSuspensionForcePoint_Get(
   JoltC_WheelSettings_t * self
@@ -104,7 +115,7 @@ void JoltC_WheelSettings_mSuspensionForcePoint_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mSuspensionForcePoint = *static_cast<Vec3 *>(mSuspensionForcePoint->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettings_mSuspensionDirection_Get(
   JoltC_WheelSettings_t * self
@@ -123,7 +134,7 @@ void JoltC_WheelSettings_mSuspensionDirection_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mSuspensionDirection = *static_cast<Vec3 *>(mSuspensionDirection->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettings_mSteeringAxis_Get(
   JoltC_WheelSettings_t * self
@@ -142,7 +153,7 @@ void JoltC_WheelSettings_mSteeringAxis_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mSteeringAxis = *static_cast<Vec3 *>(mSteeringAxis->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettings_mWheelUp_Get(
   JoltC_WheelSettings_t * self
@@ -161,7 +172,7 @@ void JoltC_WheelSettings_mWheelUp_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mWheelUp = *static_cast<Vec3 *>(mWheelUp->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_WheelSettings_mWheelForward_Get(
   JoltC_WheelSettings_t * self
@@ -180,7 +191,7 @@ void JoltC_WheelSettings_mWheelForward_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mWheelForward = *static_cast<Vec3 *>(mWheelForward->obj);
-};
+}
 
 JoltC_SpringSettings_t * JoltC_WheelSettings_mSuspensionSpring_Get(
   JoltC_WheelSettings_t * self
@@ -199,7 +210,7 @@ void JoltC_WheelSettings_mSuspensionSpring_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mSuspensionSpring = *static_cast<SpringSettings *>(mSuspensionSpring->obj);
-};
+}
 
 float JoltC_WheelSettings_mSuspensionMinLength_Get(
   JoltC_WheelSettings_t * self
@@ -214,7 +225,7 @@ void JoltC_WheelSettings_mSuspensionMinLength_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mSuspensionMinLength = mSuspensionMinLength;
-};
+}
 
 float JoltC_WheelSettings_mSuspensionMaxLength_Get(
   JoltC_WheelSettings_t * self
@@ -229,7 +240,7 @@ void JoltC_WheelSettings_mSuspensionMaxLength_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mSuspensionMaxLength = mSuspensionMaxLength;
-};
+}
 
 float JoltC_WheelSettings_mSuspensionPreloadLength_Get(
   JoltC_WheelSettings_t * self
@@ -244,7 +255,7 @@ void JoltC_WheelSettings_mSuspensionPreloadLength_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mSuspensionPreloadLength = mSuspensionPreloadLength;
-};
+}
 
 float JoltC_WheelSettings_mRadius_Get(
   JoltC_WheelSettings_t * self
@@ -259,7 +270,7 @@ void JoltC_WheelSettings_mRadius_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mRadius = mRadius;
-};
+}
 
 float JoltC_WheelSettings_mWidth_Get(
   JoltC_WheelSettings_t * self
@@ -274,7 +285,7 @@ void JoltC_WheelSettings_mWidth_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mWidth = mWidth;
-};
+}
 
 bool JoltC_WheelSettings_mEnableSuspensionForcePoint_Get(
   JoltC_WheelSettings_t * self
@@ -289,11 +300,11 @@ void JoltC_WheelSettings_mEnableSuspensionForcePoint_Set(
 ) {
   WheelSettings * selfCpp = static_cast<WheelSettings *>(self->obj);
   selfCpp->mEnableSuspensionForcePoint = mEnableSuspensionForcePoint;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

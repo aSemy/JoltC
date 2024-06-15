@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_PhysicsSettings_t * JoltC_PhysicsSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_PhysicsSettings_destroy(
+  JoltC_PhysicsSettings_t * self
+);
+
+//endregion
 //region properties
 
 long JoltC_PhysicsSettings_mMaxInFlightBodyPairs_Get(
@@ -254,4 +260,3 @@ void JoltC_PhysicsSettings_mCheckActiveEdges_Set(
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_RMat44_t * JoltC_RMat44_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_RMat44_destroy(
+  JoltC_RMat44_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RMat44 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_RMat44_t * JoltC_RMat44_sZero() {
@@ -369,7 +380,7 @@ void JoltC_RMat44_SetColumn4(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayFloat_destroy(
+  JoltC_ArrayFloat_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayFloat *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayFloat_empty(
@@ -80,7 +91,7 @@ JoltC_FloatMemRef_t * JoltC_ArrayFloat_data(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

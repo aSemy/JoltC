@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsSkinWeight_destroy(
+  JoltC_SoftBodySharedSettingsSkinWeight_t * self
+);
+
+//endregion
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsSkinWeight_mInvBindIndex_Get(
@@ -32,4 +38,3 @@ void JoltC_SoftBodySharedSettingsSkinWeight_mWeight_Set(
 #ifdef __cplusplus
 }
 #endif
-

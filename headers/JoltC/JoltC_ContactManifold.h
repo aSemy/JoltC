@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ContactManifold_t * JoltC_ContactManifold_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_ContactManifold_destroy(
+  JoltC_ContactManifold_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_ContactManifold_t * JoltC_ContactManifold_SwapShapes(
@@ -101,4 +107,3 @@ void JoltC_ContactManifold_mRelativeContactPointsOn2_Set(
 #ifdef __cplusplus
 }
 #endif
-

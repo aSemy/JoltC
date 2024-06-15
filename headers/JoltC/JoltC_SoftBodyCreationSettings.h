@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -17,6 +16,13 @@ JoltC_SoftBodyCreationSettings_t * JoltC_SoftBodyCreationSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodyCreationSettings_destroy(
+  JoltC_SoftBodyCreationSettings_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_RVec3_t * JoltC_SoftBodyCreationSettings_mPosition_Get(
@@ -160,4 +166,3 @@ void JoltC_SoftBodyCreationSettings_mAllowSleeping_Set(
 #ifdef __cplusplus
 }
 #endif
-

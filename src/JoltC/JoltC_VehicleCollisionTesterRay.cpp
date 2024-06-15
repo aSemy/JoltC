@@ -28,6 +28,17 @@ JoltC_VehicleCollisionTesterRay_t * JoltC_VehicleCollisionTesterRay_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleCollisionTesterRay_destroy(
+  JoltC_VehicleCollisionTesterRay_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleCollisionTesterRay *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_VehicleCollisionTesterRay_GetRefCount(
@@ -53,7 +64,7 @@ void JoltC_VehicleCollisionTesterRay_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_BoxShapeSettings_t * JoltC_BoxShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BoxShapeSettings_destroy(
+  JoltC_BoxShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_BoxShapeSettings_GetRefCount(
@@ -93,4 +99,3 @@ void JoltC_BoxShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

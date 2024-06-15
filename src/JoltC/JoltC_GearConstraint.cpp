@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_GearConstraint_destroy(
+  JoltC_GearConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<GearConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_GearConstraint_SetConstraints(
@@ -208,7 +219,7 @@ void JoltC_GearConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

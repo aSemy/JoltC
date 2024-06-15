@@ -27,6 +27,17 @@ JoltC_SoftBodySharedSettingsLRA_t * JoltC_SoftBodySharedSettingsLRA_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsLRA_destroy(
+  JoltC_SoftBodySharedSettingsLRA_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsLRA *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsLRA_mVertex_Get(
@@ -47,7 +58,7 @@ void JoltC_SoftBodySharedSettingsLRA_mVertex_Set(
   for (size_t i = 0; i < mVertexSize; i++) {
     selfCpp->mVertex[i] = mVertex[i];
   };
-};
+}
 
 float JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Get(
   JoltC_SoftBodySharedSettingsLRA_t * self
@@ -62,11 +73,11 @@ void JoltC_SoftBodySharedSettingsLRA_mMaxDistance_Set(
 ) {
   SoftBodySharedSettingsLRA * selfCpp = static_cast<SoftBodySharedSettingsLRA *>(self->obj);
   selfCpp->mMaxDistance = mMaxDistance;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

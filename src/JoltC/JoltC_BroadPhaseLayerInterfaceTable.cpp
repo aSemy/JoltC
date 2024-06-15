@@ -25,6 +25,17 @@ JoltC_BroadPhaseLayerInterfaceTable_t * JoltC_BroadPhaseLayerInterfaceTable_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BroadPhaseLayerInterfaceTable_destroy(
+  JoltC_BroadPhaseLayerInterfaceTable_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BroadPhaseLayerInterfaceTable *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_BroadPhaseLayerInterfaceTable_MapObjectToBroadPhaseLayer(
@@ -49,7 +60,7 @@ unsigned long JoltC_BroadPhaseLayerInterfaceTable_GetNumBroadPhaseLayers(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

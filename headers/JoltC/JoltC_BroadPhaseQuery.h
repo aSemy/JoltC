@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_BroadPhaseQuery_destroy(
+  JoltC_BroadPhaseQuery_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_BroadPhaseQuery_CastRay(
@@ -63,4 +69,3 @@ void JoltC_BroadPhaseQuery_CastAABox(
 #ifdef __cplusplus
 }
 #endif
-

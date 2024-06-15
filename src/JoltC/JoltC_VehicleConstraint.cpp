@@ -27,6 +27,17 @@ JoltC_VehicleConstraint_t * JoltC_VehicleConstraint_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleConstraint_destroy(
+  JoltC_VehicleConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_VehicleConstraint_SetMaxPitchRollAngle(
@@ -328,7 +339,7 @@ void JoltC_VehicleConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

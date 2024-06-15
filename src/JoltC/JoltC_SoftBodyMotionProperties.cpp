@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyMotionProperties_destroy(
+  JoltC_SoftBodyMotionProperties_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodyMotionProperties *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_SoftBodySharedSettings_t * JoltC_SoftBodyMotionProperties_GetSettings(
@@ -659,7 +670,7 @@ unsigned long JoltC_SoftBodyMotionProperties_GetNumPositionStepsOverride(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

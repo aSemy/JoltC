@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleConstraintCallbacksEm_destroy(
+  JoltC_VehicleConstraintCallbacksEm_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleConstraintCallbacksEm *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
@@ -20,7 +31,7 @@ void JoltC_VehicleConstraintCallbacksEm_SetVehicleConstraint(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

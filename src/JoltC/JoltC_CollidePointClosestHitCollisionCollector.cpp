@@ -19,6 +19,17 @@ JoltC_CollidePointClosestHitCollisionCollector_t * JoltC_CollidePointClosestHitC
 
 //endregion
 
+//region destructor
+
+void JoltC_CollidePointClosestHitCollisionCollector_destroy(
+  JoltC_CollidePointClosestHitCollisionCollector_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CollidePointClosestHitCollisionCollector *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_CollidePointClosestHitCollisionCollector_HadHit(
@@ -125,11 +136,11 @@ void JoltC_CollidePointClosestHitCollisionCollector_mHit_Set(
 ) {
   CollidePointClosestHitCollisionCollector * selfCpp = static_cast<CollidePointClosestHitCollisionCollector *>(self->obj);
   selfCpp->mHit = *static_cast<CollidePointResult *>(mHit->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_TriangleList_t * JoltC_TriangleList_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_TriangleList_destroy(
+  JoltC_TriangleList_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_TriangleList_empty(
@@ -52,4 +58,3 @@ void JoltC_TriangleList_clear(
 #ifdef __cplusplus
 }
 #endif
-

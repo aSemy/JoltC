@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_BoxShape_t * JoltC_BoxShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BoxShape_destroy(
+  JoltC_BoxShape_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_BoxShape_GetHalfExtent(
@@ -135,4 +141,3 @@ JoltC_Shape_ShapeResult_t * JoltC_BoxShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

@@ -27,6 +27,17 @@ JoltC_TrackedVehicleController_t * JoltC_TrackedVehicleController_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_TrackedVehicleController_destroy(
+  JoltC_TrackedVehicleController_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<TrackedVehicleController *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_TrackedVehicleController_SetDriverInput(
@@ -171,7 +182,7 @@ void JoltC_TrackedVehicleController_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

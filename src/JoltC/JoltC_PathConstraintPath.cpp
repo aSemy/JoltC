@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PathConstraintPath_destroy(
+  JoltC_PathConstraintPath_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PathConstraintPath *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -60,7 +71,7 @@ void JoltC_PathConstraintPath_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

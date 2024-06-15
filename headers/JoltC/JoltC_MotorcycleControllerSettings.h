@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_MotorcycleControllerSettings_t * JoltC_MotorcycleControllerSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_MotorcycleControllerSettings_destroy(
+  JoltC_MotorcycleControllerSettings_t * self
+);
+
+//endregion
 //region properties
 
 float JoltC_MotorcycleControllerSettings_mMaxLeanAngle_Get(
@@ -110,4 +116,3 @@ void JoltC_MotorcycleControllerSettings_mDifferentialLimitedSlipRatio_Set(
 #ifdef __cplusplus
 }
 #endif
-

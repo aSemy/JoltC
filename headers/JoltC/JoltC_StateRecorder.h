@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_StateRecorder_destroy(
+  JoltC_StateRecorder_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -34,4 +40,3 @@ bool JoltC_StateRecorder_IsValidating(
 #ifdef __cplusplus
 }
 #endif
-

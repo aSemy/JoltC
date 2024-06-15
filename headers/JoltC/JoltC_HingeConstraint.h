@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_HingeConstraint_destroy(
+  JoltC_HingeConstraint_t * self
+);
+
+//endregion
 //region functions
 
 float JoltC_HingeConstraint_GetCurrentAngle(
@@ -190,4 +196,3 @@ void JoltC_HingeConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

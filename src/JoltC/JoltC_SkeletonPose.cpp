@@ -19,6 +19,17 @@ JoltC_SkeletonPose_t * JoltC_SkeletonPose_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_SkeletonPose_destroy(
+  JoltC_SkeletonPose_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SkeletonPose *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_SkeletonPose_SetSkeleton(
@@ -123,7 +134,7 @@ void JoltC_SkeletonPose_CalculateJointStates(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

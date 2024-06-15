@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleController_destroy(
+  JoltC_VehicleController_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleController *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -61,7 +72,7 @@ void JoltC_VehicleController_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

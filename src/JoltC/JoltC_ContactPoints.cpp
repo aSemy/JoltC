@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ContactPoints_destroy(
+  JoltC_ContactPoints_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ContactPoints *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ContactPoints_empty(
@@ -64,7 +75,7 @@ void JoltC_ContactPoints_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

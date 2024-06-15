@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_HeightFieldShape_destroy(
+  JoltC_HeightFieldShape_t * self
+);
+
+//endregion
 //region functions
 
 long JoltC_HeightFieldShape_GetSampleCount(
@@ -184,4 +190,3 @@ JoltC_Shape_ShapeResult_t * JoltC_HeightFieldShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

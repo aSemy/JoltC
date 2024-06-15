@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_RagdollPart_destroy(
+  JoltC_RagdollPart_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RagdollPart *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_ShapeSettings_t * JoltC_RagdollPart_GetShapeSettings(
@@ -98,7 +109,7 @@ void JoltC_RagdollPart_mToParent_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mToParent = static_cast<TwoBodyConstraintSettings *>(mToParent->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_RagdollPart_mPosition_Get(
   JoltC_RagdollPart_t * self
@@ -117,7 +128,7 @@ void JoltC_RagdollPart_mPosition_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mPosition = *static_cast<RVec3 *>(mPosition->obj);
-};
+}
 
 JoltC_Quat_t * JoltC_RagdollPart_mRotation_Get(
   JoltC_RagdollPart_t * self
@@ -136,7 +147,7 @@ void JoltC_RagdollPart_mRotation_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mRotation = *static_cast<Quat *>(mRotation->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_RagdollPart_mLinearVelocity_Get(
   JoltC_RagdollPart_t * self
@@ -155,7 +166,7 @@ void JoltC_RagdollPart_mLinearVelocity_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mLinearVelocity = *static_cast<Vec3 *>(mLinearVelocity->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_RagdollPart_mAngularVelocity_Get(
   JoltC_RagdollPart_t * self
@@ -174,7 +185,7 @@ void JoltC_RagdollPart_mAngularVelocity_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mAngularVelocity = *static_cast<Vec3 *>(mAngularVelocity->obj);
-};
+}
 
 unsigned long long int JoltC_RagdollPart_mUserData_Get(
   JoltC_RagdollPart_t * self
@@ -189,7 +200,7 @@ void JoltC_RagdollPart_mUserData_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 unsigned long JoltC_RagdollPart_mObjectLayer_Get(
   JoltC_RagdollPart_t * self
@@ -204,7 +215,7 @@ void JoltC_RagdollPart_mObjectLayer_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mObjectLayer = mObjectLayer;
-};
+}
 
 JoltC_CollisionGroup_t * JoltC_RagdollPart_mCollisionGroup_Get(
   JoltC_RagdollPart_t * self
@@ -223,7 +234,7 @@ void JoltC_RagdollPart_mCollisionGroup_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mCollisionGroup = *static_cast<CollisionGroup *>(mCollisionGroup->obj);
-};
+}
 
 JoltC_EMotionType JoltC_RagdollPart_mMotionType_Get(
   JoltC_RagdollPart_t * self
@@ -239,7 +250,7 @@ void JoltC_RagdollPart_mMotionType_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mMotionType = static_cast<EMotionType>(static_cast<int>(mMotionType));
-};
+}
 
 JoltC_EAllowedDOFs JoltC_RagdollPart_mAllowedDOFs_Get(
   JoltC_RagdollPart_t * self
@@ -255,7 +266,7 @@ void JoltC_RagdollPart_mAllowedDOFs_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mAllowedDOFs = static_cast<EAllowedDOFs>(static_cast<int>(mAllowedDOFs));
-};
+}
 
 bool JoltC_RagdollPart_mAllowDynamicOrKinematic_Get(
   JoltC_RagdollPart_t * self
@@ -270,7 +281,7 @@ void JoltC_RagdollPart_mAllowDynamicOrKinematic_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mAllowDynamicOrKinematic = mAllowDynamicOrKinematic;
-};
+}
 
 bool JoltC_RagdollPart_mIsSensor_Get(
   JoltC_RagdollPart_t * self
@@ -285,7 +296,7 @@ void JoltC_RagdollPart_mIsSensor_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mIsSensor = mIsSensor;
-};
+}
 
 bool JoltC_RagdollPart_mUseManifoldReduction_Get(
   JoltC_RagdollPart_t * self
@@ -300,7 +311,7 @@ void JoltC_RagdollPart_mUseManifoldReduction_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mUseManifoldReduction = mUseManifoldReduction;
-};
+}
 
 bool JoltC_RagdollPart_mCollideKinematicVsNonDynamic_Get(
   JoltC_RagdollPart_t * self
@@ -315,7 +326,7 @@ void JoltC_RagdollPart_mCollideKinematicVsNonDynamic_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mCollideKinematicVsNonDynamic = mCollideKinematicVsNonDynamic;
-};
+}
 
 bool JoltC_RagdollPart_mApplyGyroscopicForce_Get(
   JoltC_RagdollPart_t * self
@@ -330,7 +341,7 @@ void JoltC_RagdollPart_mApplyGyroscopicForce_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mApplyGyroscopicForce = mApplyGyroscopicForce;
-};
+}
 
 JoltC_EMotionQuality JoltC_RagdollPart_mMotionQuality_Get(
   JoltC_RagdollPart_t * self
@@ -346,7 +357,7 @@ void JoltC_RagdollPart_mMotionQuality_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mMotionQuality = static_cast<EMotionQuality>(static_cast<int>(mMotionQuality));
-};
+}
 
 bool JoltC_RagdollPart_mEnhancedInternalEdgeRemoval_Get(
   JoltC_RagdollPart_t * self
@@ -361,7 +372,7 @@ void JoltC_RagdollPart_mEnhancedInternalEdgeRemoval_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mEnhancedInternalEdgeRemoval = mEnhancedInternalEdgeRemoval;
-};
+}
 
 bool JoltC_RagdollPart_mAllowSleeping_Get(
   JoltC_RagdollPart_t * self
@@ -376,7 +387,7 @@ void JoltC_RagdollPart_mAllowSleeping_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mAllowSleeping = mAllowSleeping;
-};
+}
 
 float JoltC_RagdollPart_mFriction_Get(
   JoltC_RagdollPart_t * self
@@ -391,7 +402,7 @@ void JoltC_RagdollPart_mFriction_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mFriction = mFriction;
-};
+}
 
 float JoltC_RagdollPart_mRestitution_Get(
   JoltC_RagdollPart_t * self
@@ -406,7 +417,7 @@ void JoltC_RagdollPart_mRestitution_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mRestitution = mRestitution;
-};
+}
 
 float JoltC_RagdollPart_mLinearDamping_Get(
   JoltC_RagdollPart_t * self
@@ -421,7 +432,7 @@ void JoltC_RagdollPart_mLinearDamping_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mLinearDamping = mLinearDamping;
-};
+}
 
 float JoltC_RagdollPart_mAngularDamping_Get(
   JoltC_RagdollPart_t * self
@@ -436,7 +447,7 @@ void JoltC_RagdollPart_mAngularDamping_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mAngularDamping = mAngularDamping;
-};
+}
 
 float JoltC_RagdollPart_mMaxLinearVelocity_Get(
   JoltC_RagdollPart_t * self
@@ -451,7 +462,7 @@ void JoltC_RagdollPart_mMaxLinearVelocity_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mMaxLinearVelocity = mMaxLinearVelocity;
-};
+}
 
 float JoltC_RagdollPart_mMaxAngularVelocity_Get(
   JoltC_RagdollPart_t * self
@@ -466,7 +477,7 @@ void JoltC_RagdollPart_mMaxAngularVelocity_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mMaxAngularVelocity = mMaxAngularVelocity;
-};
+}
 
 float JoltC_RagdollPart_mGravityFactor_Get(
   JoltC_RagdollPart_t * self
@@ -481,7 +492,7 @@ void JoltC_RagdollPart_mGravityFactor_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mGravityFactor = mGravityFactor;
-};
+}
 
 unsigned long JoltC_RagdollPart_mNumVelocityStepsOverride_Get(
   JoltC_RagdollPart_t * self
@@ -496,7 +507,7 @@ void JoltC_RagdollPart_mNumVelocityStepsOverride_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 unsigned long JoltC_RagdollPart_mNumPositionStepsOverride_Get(
   JoltC_RagdollPart_t * self
@@ -511,7 +522,7 @@ void JoltC_RagdollPart_mNumPositionStepsOverride_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 JoltC_EOverrideMassProperties JoltC_RagdollPart_mOverrideMassProperties_Get(
   JoltC_RagdollPart_t * self
@@ -527,7 +538,7 @@ void JoltC_RagdollPart_mOverrideMassProperties_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mOverrideMassProperties = static_cast<EOverrideMassProperties>(static_cast<int>(mOverrideMassProperties));
-};
+}
 
 float JoltC_RagdollPart_mInertiaMultiplier_Get(
   JoltC_RagdollPart_t * self
@@ -542,7 +553,7 @@ void JoltC_RagdollPart_mInertiaMultiplier_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mInertiaMultiplier = mInertiaMultiplier;
-};
+}
 
 JoltC_MassProperties_t * JoltC_RagdollPart_mMassPropertiesOverride_Get(
   JoltC_RagdollPart_t * self
@@ -561,11 +572,11 @@ void JoltC_RagdollPart_mMassPropertiesOverride_Set(
 ) {
   RagdollPart * selfCpp = static_cast<RagdollPart *>(self->obj);
   selfCpp->mMassPropertiesOverride = *static_cast<MassProperties *>(mMassPropertiesOverride->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -29,6 +29,17 @@ JoltC_SoftBodySharedSettingsFace_t * JoltC_SoftBodySharedSettingsFace_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsFace_destroy(
+  JoltC_SoftBodySharedSettingsFace_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsFace *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsFace_mVertex_Get(
@@ -49,7 +60,7 @@ void JoltC_SoftBodySharedSettingsFace_mVertex_Set(
   for (size_t i = 0; i < mVertexSize; i++) {
     selfCpp->mVertex[i] = mVertex[i];
   };
-};
+}
 
 unsigned long JoltC_SoftBodySharedSettingsFace_mMaterialIndex_Get(
   JoltC_SoftBodySharedSettingsFace_t * self
@@ -64,11 +75,11 @@ void JoltC_SoftBodySharedSettingsFace_mMaterialIndex_Set(
 ) {
   SoftBodySharedSettingsFace * selfCpp = static_cast<SoftBodySharedSettingsFace *>(self->obj);
   selfCpp->mMaterialIndex = mMaterialIndex;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

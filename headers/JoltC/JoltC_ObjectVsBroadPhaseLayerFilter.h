@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectVsBroadPhaseLayerFilter_destroy(
+  JoltC_ObjectVsBroadPhaseLayerFilter_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -41,4 +47,3 @@ JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_ObjectVsBroadPhaseLayerFilter_From
 #ifdef __cplusplus
 }
 #endif
-

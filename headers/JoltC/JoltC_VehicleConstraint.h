@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_VehicleConstraint_t * JoltC_VehicleConstraint_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleConstraint_destroy(
+  JoltC_VehicleConstraint_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_VehicleConstraint_SetMaxPitchRollAngle(
@@ -163,4 +169,3 @@ void JoltC_VehicleConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

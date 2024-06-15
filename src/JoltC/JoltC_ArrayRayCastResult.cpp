@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayRayCastResult_destroy(
+  JoltC_ArrayRayCastResult_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayRayCastResult *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayRayCastResult_empty(
@@ -74,7 +85,7 @@ void JoltC_ArrayRayCastResult_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

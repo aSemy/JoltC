@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArraySoftBodySharedSettingsSkinned_destroy(
+  JoltC_ArraySoftBodySharedSettingsSkinned_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArraySoftBodySharedSettingsSkinned *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsSkinned_empty(
@@ -74,7 +85,7 @@ void JoltC_ArraySoftBodySharedSettingsSkinned_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

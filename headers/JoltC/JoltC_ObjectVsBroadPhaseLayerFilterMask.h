@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,8 +13,14 @@ JoltC_ObjectVsBroadPhaseLayerFilterMask_t * JoltC_ObjectVsBroadPhaseLayerFilterM
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectVsBroadPhaseLayerFilterMask_destroy(
+  JoltC_ObjectVsBroadPhaseLayerFilterMask_t * self
+);
+
+//endregion
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_CharacterVirtual_ExtendedUpdateSettings_t * JoltC_CharacterVirtual_Extende
 
 //endregion
 
+//region destructor
+
+void JoltC_CharacterVirtual_ExtendedUpdateSettings_destroy(
+  JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mStickToFloorStepDown_Get(
@@ -38,7 +49,7 @@ void JoltC_CharacterVirtual_ExtendedUpdateSettings_mStickToFloorStepDown_Set(
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
   selfCpp->mStickToFloorStepDown = *static_cast<Vec3 *>(mStickToFloorStepDown->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepUp_Get(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
@@ -57,7 +68,7 @@ void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepUp_Set(
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
   selfCpp->mWalkStairsStepUp = *static_cast<Vec3 *>(mWalkStairsStepUp->obj);
-};
+}
 
 float JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsMinStepForward_Get(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
@@ -72,7 +83,7 @@ void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsMinStepForward_Set
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
   selfCpp->mWalkStairsMinStepForward = mWalkStairsMinStepForward;
-};
+}
 
 float JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepForwardTest_Get(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
@@ -87,7 +98,7 @@ void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepForwardTest_Se
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
   selfCpp->mWalkStairsStepForwardTest = mWalkStairsStepForwardTest;
-};
+}
 
 float JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsCosAngleForwardContact_Get(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
@@ -102,7 +113,7 @@ void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsCosAngleForwardCon
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
   selfCpp->mWalkStairsCosAngleForwardContact = mWalkStairsCosAngleForwardContact;
-};
+}
 
 JoltC_Vec3_t * JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepDownExtra_Get(
   JoltC_CharacterVirtual_ExtendedUpdateSettings_t * self
@@ -121,11 +132,11 @@ void JoltC_CharacterVirtual_ExtendedUpdateSettings_mWalkStairsStepDownExtra_Set(
 ) {
   CharacterVirtual::ExtendedUpdateSettings * selfCpp = static_cast<CharacterVirtual::ExtendedUpdateSettings *>(self->obj);
   selfCpp->mWalkStairsStepDownExtra = *static_cast<Vec3 *>(mWalkStairsStepDownExtra->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

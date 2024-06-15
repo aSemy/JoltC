@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CollidePointCollector_destroy(
+  JoltC_CollidePointCollector_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -78,4 +84,3 @@ float JoltC_CollidePointCollector_GetPositiveEarlyOutFraction(
 #ifdef __cplusplus
 }
 #endif
-

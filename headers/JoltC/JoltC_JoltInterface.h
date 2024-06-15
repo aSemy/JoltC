@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,6 +13,13 @@ JoltC_JoltInterface_t * JoltC_JoltInterface_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_JoltInterface_destroy(
+  JoltC_JoltInterface_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_JoltInterface_Step(
@@ -48,4 +54,3 @@ unsigned long long int JoltC_JoltInterface_sGetFreeMemory();
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PhysicsSystem_destroy(
+  JoltC_PhysicsSystem_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PhysicsSystem *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_PhysicsSystem_SetGravity(
@@ -348,7 +359,7 @@ bool JoltC_PhysicsSystem_WereBodiesInContact(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

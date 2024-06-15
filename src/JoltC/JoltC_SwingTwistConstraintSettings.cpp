@@ -19,6 +19,17 @@ JoltC_SwingTwistConstraintSettings_t * JoltC_SwingTwistConstraintSettings_new() 
 
 //endregion
 
+//region destructor
+
+void JoltC_SwingTwistConstraintSettings_destroy(
+  JoltC_SwingTwistConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SwingTwistConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_SwingTwistConstraintSettings_Create(
@@ -77,7 +88,7 @@ void JoltC_SwingTwistConstraintSettings_mSpace_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 JoltC_RVec3_t * JoltC_SwingTwistConstraintSettings_mPosition1_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -96,7 +107,7 @@ void JoltC_SwingTwistConstraintSettings_mPosition1_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mPosition1 = *static_cast<RVec3 *>(mPosition1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraintSettings_mTwistAxis1_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -115,7 +126,7 @@ void JoltC_SwingTwistConstraintSettings_mTwistAxis1_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mTwistAxis1 = *static_cast<Vec3 *>(mTwistAxis1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraintSettings_mPlaneAxis1_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -134,7 +145,7 @@ void JoltC_SwingTwistConstraintSettings_mPlaneAxis1_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mPlaneAxis1 = *static_cast<Vec3 *>(mPlaneAxis1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_SwingTwistConstraintSettings_mPosition2_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -153,7 +164,7 @@ void JoltC_SwingTwistConstraintSettings_mPosition2_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mPosition2 = *static_cast<RVec3 *>(mPosition2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraintSettings_mTwistAxis2_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -172,7 +183,7 @@ void JoltC_SwingTwistConstraintSettings_mTwistAxis2_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mTwistAxis2 = *static_cast<Vec3 *>(mTwistAxis2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraintSettings_mPlaneAxis2_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -191,7 +202,7 @@ void JoltC_SwingTwistConstraintSettings_mPlaneAxis2_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mPlaneAxis2 = *static_cast<Vec3 *>(mPlaneAxis2->obj);
-};
+}
 
 JoltC_ESwingType JoltC_SwingTwistConstraintSettings_mSwingType_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -207,7 +218,7 @@ void JoltC_SwingTwistConstraintSettings_mSwingType_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mSwingType = static_cast<ESwingType>(static_cast<int>(mSwingType));
-};
+}
 
 float JoltC_SwingTwistConstraintSettings_mNormalHalfConeAngle_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -222,7 +233,7 @@ void JoltC_SwingTwistConstraintSettings_mNormalHalfConeAngle_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mNormalHalfConeAngle = mNormalHalfConeAngle;
-};
+}
 
 float JoltC_SwingTwistConstraintSettings_mPlaneHalfConeAngle_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -237,7 +248,7 @@ void JoltC_SwingTwistConstraintSettings_mPlaneHalfConeAngle_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mPlaneHalfConeAngle = mPlaneHalfConeAngle;
-};
+}
 
 float JoltC_SwingTwistConstraintSettings_mTwistMinAngle_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -252,7 +263,7 @@ void JoltC_SwingTwistConstraintSettings_mTwistMinAngle_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mTwistMinAngle = mTwistMinAngle;
-};
+}
 
 float JoltC_SwingTwistConstraintSettings_mTwistMaxAngle_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -267,7 +278,7 @@ void JoltC_SwingTwistConstraintSettings_mTwistMaxAngle_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mTwistMaxAngle = mTwistMaxAngle;
-};
+}
 
 float JoltC_SwingTwistConstraintSettings_mMaxFrictionTorque_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -282,7 +293,7 @@ void JoltC_SwingTwistConstraintSettings_mMaxFrictionTorque_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mMaxFrictionTorque = mMaxFrictionTorque;
-};
+}
 
 JoltC_MotorSettings_t * JoltC_SwingTwistConstraintSettings_mSwingMotorSettings_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -301,7 +312,7 @@ void JoltC_SwingTwistConstraintSettings_mSwingMotorSettings_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mSwingMotorSettings = *static_cast<MotorSettings *>(mSwingMotorSettings->obj);
-};
+}
 
 JoltC_MotorSettings_t * JoltC_SwingTwistConstraintSettings_mTwistMotorSettings_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -320,7 +331,7 @@ void JoltC_SwingTwistConstraintSettings_mTwistMotorSettings_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mTwistMotorSettings = *static_cast<MotorSettings *>(mTwistMotorSettings->obj);
-};
+}
 
 bool JoltC_SwingTwistConstraintSettings_mEnabled_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -335,7 +346,7 @@ void JoltC_SwingTwistConstraintSettings_mEnabled_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_SwingTwistConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -350,7 +361,7 @@ void JoltC_SwingTwistConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_SwingTwistConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_SwingTwistConstraintSettings_t * self
@@ -365,11 +376,11 @@ void JoltC_SwingTwistConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   SwingTwistConstraintSettings * selfCpp = static_cast<SwingTwistConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

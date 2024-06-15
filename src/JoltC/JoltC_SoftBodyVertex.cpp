@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyVertex_destroy(
+  JoltC_SoftBodyVertex_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodyVertex *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mPreviousPosition_Get(
@@ -24,7 +35,7 @@ void JoltC_SoftBodyVertex_mPreviousPosition_Set(
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   selfCpp->mPreviousPosition = *static_cast<Vec3 *>(mPreviousPosition->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mPosition_Get(
   JoltC_SoftBodyVertex_t * self
@@ -43,7 +54,7 @@ void JoltC_SoftBodyVertex_mPosition_Set(
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   selfCpp->mPosition = *static_cast<Vec3 *>(mPosition->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SoftBodyVertex_mVelocity_Get(
   JoltC_SoftBodyVertex_t * self
@@ -62,7 +73,7 @@ void JoltC_SoftBodyVertex_mVelocity_Set(
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   selfCpp->mVelocity = *static_cast<Vec3 *>(mVelocity->obj);
-};
+}
 
 float JoltC_SoftBodyVertex_mInvMass_Get(
   JoltC_SoftBodyVertex_t * self
@@ -77,11 +88,11 @@ void JoltC_SoftBodyVertex_mInvMass_Set(
 ) {
   SoftBodyVertex * selfCpp = static_cast<SoftBodyVertex *>(self->obj);
   selfCpp->mInvMass = mInvMass;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

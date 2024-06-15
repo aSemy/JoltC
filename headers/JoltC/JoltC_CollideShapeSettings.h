@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_CollideShapeSettings_t * JoltC_CollideShapeSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_CollideShapeSettings_destroy(
+  JoltC_CollideShapeSettings_t * self
+);
+
+//endregion
 //region properties
 
 float JoltC_CollideShapeSettings_mMaxSeparationDistance_Get(
@@ -83,4 +89,3 @@ void JoltC_CollideShapeSettings_mActiveEdgeMovementDirection_Set(
 #ifdef __cplusplus
 }
 #endif
-

@@ -31,6 +31,17 @@ JoltC_SoftBodySharedSettingsDihedralBend_t * JoltC_SoftBodySharedSettingsDihedra
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsDihedralBend_destroy(
+  JoltC_SoftBodySharedSettingsDihedralBend_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsDihedralBend *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsDihedralBend_mVertex_Get(
@@ -51,7 +62,7 @@ void JoltC_SoftBodySharedSettingsDihedralBend_mVertex_Set(
   for (size_t i = 0; i < mVertexSize; i++) {
     selfCpp->mVertex[i] = mVertex[i];
   };
-};
+}
 
 float JoltC_SoftBodySharedSettingsDihedralBend_mCompliance_Get(
   JoltC_SoftBodySharedSettingsDihedralBend_t * self
@@ -66,7 +77,7 @@ void JoltC_SoftBodySharedSettingsDihedralBend_mCompliance_Set(
 ) {
   SoftBodySharedSettingsDihedralBend * selfCpp = static_cast<SoftBodySharedSettingsDihedralBend *>(self->obj);
   selfCpp->mCompliance = mCompliance;
-};
+}
 
 float JoltC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Get(
   JoltC_SoftBodySharedSettingsDihedralBend_t * self
@@ -81,11 +92,11 @@ void JoltC_SoftBodySharedSettingsDihedralBend_mInitialAngle_Set(
 ) {
   SoftBodySharedSettingsDihedralBend * selfCpp = static_cast<SoftBodySharedSettingsDihedralBend *>(self->obj);
   selfCpp->mInitialAngle = mInitialAngle;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

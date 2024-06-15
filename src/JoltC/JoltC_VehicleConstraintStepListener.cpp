@@ -24,7 +24,18 @@ JoltC_VehicleConstraintStepListener_t * JoltC_VehicleConstraintStepListener_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleConstraintStepListener_destroy(
+  JoltC_VehicleConstraintStepListener_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleConstraintStepListener *>(self->obj);
+  free(self);
+}
+
+//endregion
+
 #ifdef __cplusplus
 }
 #endif
-

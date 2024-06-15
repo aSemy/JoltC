@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_TwoBodyConstraint_destroy(
+  JoltC_TwoBodyConstraint_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -184,4 +190,3 @@ void JoltC_TwoBodyConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

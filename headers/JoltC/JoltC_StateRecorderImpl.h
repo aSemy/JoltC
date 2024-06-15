@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_StateRecorderImpl_t * JoltC_StateRecorderImpl_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_StateRecorderImpl_destroy(
+  JoltC_StateRecorderImpl_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_StateRecorderImpl_Clear(
@@ -42,4 +48,3 @@ bool JoltC_StateRecorderImpl_IsValidating(
 #ifdef __cplusplus
 }
 #endif
-

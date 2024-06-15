@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_SoftBodySharedSettingsEdge_t * JoltC_SoftBodySharedSettingsEdge_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsEdge_destroy(
+  JoltC_SoftBodySharedSettingsEdge_t * self
+);
+
+//endregion
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsEdge_mVertex_Get(
@@ -53,4 +59,3 @@ void JoltC_SoftBodySharedSettingsEdge_mCompliance_Set(
 #ifdef __cplusplus
 }
 #endif
-

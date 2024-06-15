@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyContactListener_destroy(
+  JoltC_SoftBodyContactListener_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -21,4 +27,3 @@ JoltC_SoftBodyContactListener_t * JoltC_SoftBodyContactListener_From_SoftBodyCon
 #ifdef __cplusplus
 }
 #endif
-

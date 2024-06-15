@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -19,6 +18,13 @@ JoltC_Quat_t * JoltC_Quat_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_Quat_destroy(
+  JoltC_Quat_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Quat_t * JoltC_Quat_sZero();
@@ -196,4 +202,3 @@ JoltC_Quat_t * JoltC_Quat_SLERP(
 #ifdef __cplusplus
 }
 #endif
-

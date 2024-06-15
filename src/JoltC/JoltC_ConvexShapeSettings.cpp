@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ConvexShapeSettings_destroy(
+  JoltC_ConvexShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ConvexShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -124,7 +135,7 @@ void JoltC_ConvexShapeSettings_mMaterial_Set(
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
   selfCpp->mMaterial = static_cast<const PhysicsMaterial *>(mMaterial->obj);
-};
+}
 
 float JoltC_ConvexShapeSettings_mDensity_Get(
   JoltC_ConvexShapeSettings_t * self
@@ -139,7 +150,7 @@ void JoltC_ConvexShapeSettings_mDensity_Set(
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
   selfCpp->mDensity = mDensity;
-};
+}
 
 unsigned long long int JoltC_ConvexShapeSettings_mUserData_Get(
   JoltC_ConvexShapeSettings_t * self
@@ -154,11 +165,11 @@ void JoltC_ConvexShapeSettings_mUserData_Set(
 ) {
   ConvexShapeSettings * selfCpp = static_cast<ConvexShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

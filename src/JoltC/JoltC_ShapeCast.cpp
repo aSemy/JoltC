@@ -33,6 +33,17 @@ JoltC_ShapeCast_t * JoltC_ShapeCast_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ShapeCast_destroy(
+  JoltC_ShapeCast_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ShapeCast *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_ShapeCast_GetPointOnRay(
@@ -98,7 +109,7 @@ JoltC_Vec3_t * JoltC_ShapeCast_mDirection_Get(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

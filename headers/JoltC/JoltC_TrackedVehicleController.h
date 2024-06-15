@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_TrackedVehicleController_t * JoltC_TrackedVehicleController_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_TrackedVehicleController_destroy(
+  JoltC_TrackedVehicleController_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_TrackedVehicleController_SetDriverInput(
@@ -92,4 +98,3 @@ void JoltC_TrackedVehicleController_Release(
 #ifdef __cplusplus
 }
 #endif
-

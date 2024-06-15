@@ -19,6 +19,17 @@ JoltC_RagdollSettings_t * JoltC_RagdollSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_RagdollSettings_destroy(
+  JoltC_RagdollSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RagdollSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_RagdollSettings_Stabilize(
@@ -103,7 +114,7 @@ void JoltC_RagdollSettings_mSkeleton_Set(
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
   selfCpp->mSkeleton = static_cast<Skeleton *>(mSkeleton->obj);
-};
+}
 
 JoltC_ArrayRagdollPart_t * JoltC_RagdollSettings_mParts_Get(
   JoltC_RagdollSettings_t * self
@@ -122,7 +133,7 @@ void JoltC_RagdollSettings_mParts_Set(
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
   selfCpp->mParts = *static_cast<ArrayRagdollPart *>(mParts->obj);
-};
+}
 
 JoltC_ArrayRagdollAdditionalConstraint_t * JoltC_RagdollSettings_mAdditionalConstraints_Get(
   JoltC_RagdollSettings_t * self
@@ -141,11 +152,11 @@ void JoltC_RagdollSettings_mAdditionalConstraints_Set(
 ) {
   RagdollSettings * selfCpp = static_cast<RagdollSettings *>(self->obj);
   selfCpp->mAdditionalConstraints = *static_cast<ArrayRagdollAdditionalConstraint *>(mAdditionalConstraints->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

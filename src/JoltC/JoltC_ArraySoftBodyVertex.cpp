@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArraySoftBodyVertex_destroy(
+  JoltC_ArraySoftBodyVertex_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArraySoftBodyVertex *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArraySoftBodyVertex_empty(
@@ -74,7 +85,7 @@ void JoltC_ArraySoftBodyVertex_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

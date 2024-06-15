@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -28,6 +27,13 @@ JoltC_Vec4_t * JoltC_Vec4_new_3(
 
 //endregion
 
+//region destructor
+
+void JoltC_Vec4_destroy(
+  JoltC_Vec4_t * self
+);
+
+//endregion
 //region functions
 
 float JoltC_Vec4_GetX(
@@ -85,4 +91,3 @@ float JoltC_Vec4_GetComponent(
 #ifdef __cplusplus
 }
 #endif
-

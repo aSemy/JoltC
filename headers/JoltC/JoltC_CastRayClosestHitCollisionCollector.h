@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_CastRayClosestHitCollisionCollector_t * JoltC_CastRayClosestHitCollisionCo
 
 //endregion
 
+//region destructor
+
+void JoltC_CastRayClosestHitCollisionCollector_destroy(
+  JoltC_CastRayClosestHitCollisionCollector_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_CastRayClosestHitCollisionCollector_HadHit(
@@ -76,4 +82,3 @@ void JoltC_CastRayClosestHitCollisionCollector_mHit_Set(
 #ifdef __cplusplus
 }
 #endif
-

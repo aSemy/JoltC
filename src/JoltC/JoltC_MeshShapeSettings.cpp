@@ -58,6 +58,17 @@ JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_2(
 
 //endregion
 
+//region destructor
+
+void JoltC_MeshShapeSettings_destroy(
+  JoltC_MeshShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<MeshShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_MeshShapeSettings_Sanitize(
@@ -127,7 +138,7 @@ void JoltC_MeshShapeSettings_mTriangleVertices_Set(
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
   selfCpp->mTriangleVertices = *static_cast<VertexList *>(mTriangleVertices->obj);
-};
+}
 
 JoltC_IndexedTriangleList_t * JoltC_MeshShapeSettings_mIndexedTriangles_Get(
   JoltC_MeshShapeSettings_t * self
@@ -146,7 +157,7 @@ void JoltC_MeshShapeSettings_mIndexedTriangles_Set(
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
   selfCpp->mIndexedTriangles = *static_cast<IndexedTriangleList *>(mIndexedTriangles->obj);
-};
+}
 
 JoltC_PhysicsMaterialList_t * JoltC_MeshShapeSettings_mMaterials_Get(
   JoltC_MeshShapeSettings_t * self
@@ -165,7 +176,7 @@ void JoltC_MeshShapeSettings_mMaterials_Set(
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
   selfCpp->mMaterials = *static_cast<PhysicsMaterialList *>(mMaterials->obj);
-};
+}
 
 unsigned long JoltC_MeshShapeSettings_mMaxTrianglesPerLeaf_Get(
   JoltC_MeshShapeSettings_t * self
@@ -180,7 +191,7 @@ void JoltC_MeshShapeSettings_mMaxTrianglesPerLeaf_Set(
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
   selfCpp->mMaxTrianglesPerLeaf = mMaxTrianglesPerLeaf;
-};
+}
 
 float JoltC_MeshShapeSettings_mActiveEdgeCosThresholdAngle_Get(
   JoltC_MeshShapeSettings_t * self
@@ -195,7 +206,7 @@ void JoltC_MeshShapeSettings_mActiveEdgeCosThresholdAngle_Set(
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
   selfCpp->mActiveEdgeCosThresholdAngle = mActiveEdgeCosThresholdAngle;
-};
+}
 
 unsigned long long int JoltC_MeshShapeSettings_mUserData_Get(
   JoltC_MeshShapeSettings_t * self
@@ -210,11 +221,11 @@ void JoltC_MeshShapeSettings_mUserData_Set(
 ) {
   MeshShapeSettings * selfCpp = static_cast<MeshShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

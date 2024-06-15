@@ -27,6 +27,17 @@ JoltC_OffsetCenterOfMassShapeSettings_t * JoltC_OffsetCenterOfMassShapeSettings_
 
 //endregion
 
+//region destructor
+
+void JoltC_OffsetCenterOfMassShapeSettings_destroy(
+  JoltC_OffsetCenterOfMassShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_OffsetCenterOfMassShapeSettings_GetRefCount(
@@ -89,7 +100,7 @@ void JoltC_OffsetCenterOfMassShapeSettings_mOffset_Set(
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
   selfCpp->mOffset = *static_cast<Vec3 *>(mOffset->obj);
-};
+}
 
 unsigned long long int JoltC_OffsetCenterOfMassShapeSettings_mUserData_Get(
   JoltC_OffsetCenterOfMassShapeSettings_t * self
@@ -104,11 +115,11 @@ void JoltC_OffsetCenterOfMassShapeSettings_mUserData_Set(
 ) {
   OffsetCenterOfMassShapeSettings * selfCpp = static_cast<OffsetCenterOfMassShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

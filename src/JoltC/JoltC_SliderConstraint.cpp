@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SliderConstraint_destroy(
+  JoltC_SliderConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SliderConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_SliderConstraint_GetCurrentPosition(
@@ -364,7 +375,7 @@ void JoltC_SliderConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

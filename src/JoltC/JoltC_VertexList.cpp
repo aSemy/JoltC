@@ -19,6 +19,17 @@ JoltC_VertexList_t * JoltC_VertexList_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_VertexList_destroy(
+  JoltC_VertexList_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VertexList *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_VertexList_empty(
@@ -88,7 +99,7 @@ void JoltC_VertexList_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

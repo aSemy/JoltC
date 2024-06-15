@@ -19,6 +19,17 @@ JoltC_ConeConstraintSettings_t * JoltC_ConeConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ConeConstraintSettings_destroy(
+  JoltC_ConeConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ConeConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_ConeConstraintSettings_Create(
@@ -77,7 +88,7 @@ void JoltC_ConeConstraintSettings_mSpace_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 JoltC_RVec3_t * JoltC_ConeConstraintSettings_mPoint1_Get(
   JoltC_ConeConstraintSettings_t * self
@@ -96,7 +107,7 @@ void JoltC_ConeConstraintSettings_mPoint1_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mPoint1 = *static_cast<RVec3 *>(mPoint1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_ConeConstraintSettings_mTwistAxis1_Get(
   JoltC_ConeConstraintSettings_t * self
@@ -115,7 +126,7 @@ void JoltC_ConeConstraintSettings_mTwistAxis1_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mTwistAxis1 = *static_cast<Vec3 *>(mTwistAxis1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_ConeConstraintSettings_mPoint2_Get(
   JoltC_ConeConstraintSettings_t * self
@@ -134,7 +145,7 @@ void JoltC_ConeConstraintSettings_mPoint2_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mPoint2 = *static_cast<RVec3 *>(mPoint2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_ConeConstraintSettings_mTwistAxis2_Get(
   JoltC_ConeConstraintSettings_t * self
@@ -153,7 +164,7 @@ void JoltC_ConeConstraintSettings_mTwistAxis2_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mTwistAxis2 = *static_cast<Vec3 *>(mTwistAxis2->obj);
-};
+}
 
 float JoltC_ConeConstraintSettings_mHalfConeAngle_Get(
   JoltC_ConeConstraintSettings_t * self
@@ -168,7 +179,7 @@ void JoltC_ConeConstraintSettings_mHalfConeAngle_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mHalfConeAngle = mHalfConeAngle;
-};
+}
 
 bool JoltC_ConeConstraintSettings_mEnabled_Get(
   JoltC_ConeConstraintSettings_t * self
@@ -183,7 +194,7 @@ void JoltC_ConeConstraintSettings_mEnabled_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_ConeConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_ConeConstraintSettings_t * self
@@ -198,7 +209,7 @@ void JoltC_ConeConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_ConeConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_ConeConstraintSettings_t * self
@@ -213,11 +224,11 @@ void JoltC_ConeConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   ConeConstraintSettings * selfCpp = static_cast<ConeConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

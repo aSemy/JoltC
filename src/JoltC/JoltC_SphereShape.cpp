@@ -26,6 +26,17 @@ JoltC_SphereShape_t * JoltC_SphereShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SphereShape_destroy(
+  JoltC_SphereShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SphereShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_SphereShape_GetRadius(
@@ -283,7 +294,7 @@ JoltC_Shape_ShapeResult_t * JoltC_SphereShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

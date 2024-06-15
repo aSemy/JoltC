@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_RagdollAdditionalConstraint_destroy(
+  JoltC_RagdollAdditionalConstraint_t * self
+);
+
+//endregion
 //region properties
 
 size_t JoltC_RagdollAdditionalConstraint_mBodyIdx_Get(
@@ -34,4 +40,3 @@ void JoltC_RagdollAdditionalConstraint_mConstraint_Set(
 #ifdef __cplusplus
 }
 #endif
-

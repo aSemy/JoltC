@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_TransformedShapeCollector_destroy(
+  JoltC_TransformedShapeCollector_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_TransformedShapeCollector_Reset(
@@ -53,4 +59,3 @@ float JoltC_TransformedShapeCollector_GetPositiveEarlyOutFraction(
 #ifdef __cplusplus
 }
 #endif
-

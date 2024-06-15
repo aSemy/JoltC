@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_ArraySkeletonAnimatedJoint_t * JoltC_ArraySkeletonAnimatedJoint_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_ArraySkeletonAnimatedJoint_destroy(
+  JoltC_ArraySkeletonAnimatedJoint_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArraySkeletonAnimatedJoint_empty(
@@ -52,4 +58,3 @@ void JoltC_ArraySkeletonAnimatedJoint_clear(
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_HeightFieldShape_destroy(
+  JoltC_HeightFieldShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<HeightFieldShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 long JoltC_HeightFieldShape_GetSampleCount(
@@ -389,7 +400,7 @@ JoltC_Shape_ShapeResult_t * JoltC_HeightFieldShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

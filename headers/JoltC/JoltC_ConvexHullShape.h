@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ConvexHullShape_destroy(
+  JoltC_ConvexHullShape_t * self
+);
+
+//endregion
 //region functions
 
 float JoltC_ConvexHullShape_GetDensity(
@@ -121,4 +127,3 @@ JoltC_Shape_ShapeResult_t * JoltC_ConvexHullShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

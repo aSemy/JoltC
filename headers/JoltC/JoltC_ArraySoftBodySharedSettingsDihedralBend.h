@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArraySoftBodySharedSettingsDihedralBend_destroy(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsDihedralBend_empty(
@@ -46,4 +52,3 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_clear(
 #ifdef __cplusplus
 }
 #endif
-

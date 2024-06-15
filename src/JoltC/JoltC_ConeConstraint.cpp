@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ConeConstraint_destroy(
+  JoltC_ConeConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ConeConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_ConeConstraint_SetHalfConeAngle(
@@ -222,7 +233,7 @@ void JoltC_ConeConstraint_ResetWarmStart(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

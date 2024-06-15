@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleControllerSettings_destroy(
+  JoltC_VehicleControllerSettings_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -35,4 +41,3 @@ JoltC_VehicleControllerSettings_t * JoltC_VehicleControllerSettings_From_Motorcy
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_Shape_ShapeResult_destroy(
+  JoltC_Shape_ShapeResult_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_Shape_ShapeResult_IsValid(
@@ -34,4 +40,3 @@ void JoltC_Shape_ShapeResult_Clear(
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_PhysicsMaterial_t * JoltC_PhysicsMaterial_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_PhysicsMaterial_destroy(
+  JoltC_PhysicsMaterial_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PhysicsMaterial *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_PhysicsMaterial_GetRefCount(
@@ -44,7 +55,7 @@ void JoltC_PhysicsMaterial_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

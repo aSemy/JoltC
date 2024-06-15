@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_JoltSettings_t * JoltC_JoltSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_JoltSettings_destroy(
+  JoltC_JoltSettings_t * self
+);
+
+//endregion
 //region properties
 
 unsigned long JoltC_JoltSettings_mMaxBodies_Get(
@@ -74,4 +80,3 @@ void JoltC_JoltSettings_mObjectLayerPairFilter_Set(
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_WheeledVehicleController_t * JoltC_WheeledVehicleController_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_WheeledVehicleController_destroy(
+  JoltC_WheeledVehicleController_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -115,4 +121,3 @@ void JoltC_WheeledVehicleController_Release(
 #ifdef __cplusplus
 }
 #endif
-

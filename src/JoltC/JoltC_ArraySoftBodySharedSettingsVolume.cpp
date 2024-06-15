@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArraySoftBodySharedSettingsVolume_destroy(
+  JoltC_ArraySoftBodySharedSettingsVolume_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArraySoftBodySharedSettingsVolume *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsVolume_empty(
@@ -74,7 +85,7 @@ void JoltC_ArraySoftBodySharedSettingsVolume_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_RotatedTranslatedShape_destroy(
+  JoltC_RotatedTranslatedShape_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Quat_t * JoltC_RotatedTranslatedShape_GetRotation(
@@ -124,4 +130,3 @@ JoltC_Shape_ShapeResult_t * JoltC_RotatedTranslatedShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

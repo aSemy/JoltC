@@ -28,6 +28,17 @@ JoltC_CapsuleShape_t * JoltC_CapsuleShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_CapsuleShape_destroy(
+  JoltC_CapsuleShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CapsuleShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_CapsuleShape_GetRadius(
@@ -292,7 +303,7 @@ JoltC_Shape_ShapeResult_t * JoltC_CapsuleShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

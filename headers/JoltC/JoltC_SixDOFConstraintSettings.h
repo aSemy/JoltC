@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SixDOFConstraintSettings_t * JoltC_SixDOFConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_SixDOFConstraintSettings_destroy(
+  JoltC_SixDOFConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_SixDOFConstraintSettings_MakeFreeAxis(
@@ -223,4 +229,3 @@ void JoltC_SixDOFConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

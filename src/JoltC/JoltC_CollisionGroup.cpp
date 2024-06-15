@@ -38,6 +38,17 @@ JoltC_CollisionGroup_t * JoltC_CollisionGroup_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_CollisionGroup_destroy(
+  JoltC_CollisionGroup_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CollisionGroup *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_CollisionGroup_SetGroupFilter(
@@ -97,7 +108,7 @@ unsigned long JoltC_CollisionGroup_GetSubGroupID(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

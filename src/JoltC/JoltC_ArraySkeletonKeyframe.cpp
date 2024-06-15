@@ -19,6 +19,17 @@ JoltC_ArraySkeletonKeyframe_t * JoltC_ArraySkeletonKeyframe_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ArraySkeletonKeyframe_destroy(
+  JoltC_ArraySkeletonKeyframe_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArraySkeletonKeyframe *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArraySkeletonKeyframe_empty(
@@ -88,7 +99,7 @@ void JoltC_ArraySkeletonKeyframe_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

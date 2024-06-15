@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_SwingTwistConstraintSettings_t * JoltC_SwingTwistConstraintSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_SwingTwistConstraintSettings_destroy(
+  JoltC_SwingTwistConstraintSettings_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_SwingTwistConstraintSettings_Create(
@@ -204,4 +210,3 @@ void JoltC_SwingTwistConstraintSettings_mNumPositionStepsOverride_Set(
 #ifdef __cplusplus
 }
 #endif
-

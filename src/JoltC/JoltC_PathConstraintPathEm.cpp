@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_PathConstraintPathEm_destroy(
+  JoltC_PathConstraintPathEm_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PathConstraintPathEm *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_PathConstraintPathEm_IsLooping(
@@ -47,7 +58,7 @@ void JoltC_PathConstraintPathEm_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsInvBind_destroy(
+  JoltC_SoftBodySharedSettingsInvBind_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Get(
@@ -20,7 +31,7 @@ void JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Set(
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   selfCpp->mJointIndex = mJointIndex;
-};
+}
 
 JoltC_Mat44_t * JoltC_SoftBodySharedSettingsInvBind_mInvBind_Get(
   JoltC_SoftBodySharedSettingsInvBind_t * self
@@ -39,11 +50,11 @@ void JoltC_SoftBodySharedSettingsInvBind_mInvBind_Set(
 ) {
   SoftBodySharedSettingsInvBind * selfCpp = static_cast<SoftBodySharedSettingsInvBind *>(self->obj);
   selfCpp->mInvBind = *static_cast<Mat44 *>(mInvBind->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

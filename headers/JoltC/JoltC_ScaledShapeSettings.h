@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_ScaledShapeSettings_t * JoltC_ScaledShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ScaledShapeSettings_destroy(
+  JoltC_ScaledShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_ScaledShapeSettings_GetRefCount(
@@ -65,4 +71,3 @@ void JoltC_ScaledShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

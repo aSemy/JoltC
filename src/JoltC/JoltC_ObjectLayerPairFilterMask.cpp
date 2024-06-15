@@ -19,6 +19,17 @@ JoltC_ObjectLayerPairFilterMask_t * JoltC_ObjectLayerPairFilterMask_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectLayerPairFilterMask_destroy(
+  JoltC_ObjectLayerPairFilterMask_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ObjectLayerPairFilterMask *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_ObjectLayerPairFilterMask_sGetObjectLayer(
@@ -61,7 +72,7 @@ bool JoltC_ObjectLayerPairFilterMask_ShouldCollide(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

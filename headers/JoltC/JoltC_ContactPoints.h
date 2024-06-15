@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ContactPoints_destroy(
+  JoltC_ContactPoints_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ContactPoints_empty(
@@ -41,4 +47,3 @@ void JoltC_ContactPoints_clear(
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_MassProperties_t * JoltC_MassProperties_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_MassProperties_destroy(
+  JoltC_MassProperties_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<MassProperties *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_MassProperties_SetMassAndInertiaOfSolidBox(
@@ -109,7 +120,7 @@ void JoltC_MassProperties_mMass_Set(
 ) {
   MassProperties * selfCpp = static_cast<MassProperties *>(self->obj);
   selfCpp->mMass = mMass;
-};
+}
 
 JoltC_Mat44_t * JoltC_MassProperties_mInertia_Get(
   JoltC_MassProperties_t * self
@@ -128,11 +139,11 @@ void JoltC_MassProperties_mInertia_Set(
 ) {
   MassProperties * selfCpp = static_cast<MassProperties *>(self->obj);
   selfCpp->mInertia = *static_cast<Mat44 *>(mInertia->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

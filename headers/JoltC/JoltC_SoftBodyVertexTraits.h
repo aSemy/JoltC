@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyVertexTraits_destroy(
+  JoltC_SoftBodyVertexTraits_t * self
+);
+
+//endregion
 //region properties
 
 unsigned long JoltC_SoftBodyVertexTraits_mPreviousPositionOffset_Get(
@@ -26,4 +32,3 @@ unsigned long JoltC_SoftBodyVertexTraits_mVelocityOffset_Get(
 #ifdef __cplusplus
 }
 #endif
-

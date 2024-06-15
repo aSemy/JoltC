@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_VehicleCollisionTesterRay_t * JoltC_VehicleCollisionTesterRay_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleCollisionTesterRay_destroy(
+  JoltC_VehicleCollisionTesterRay_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_VehicleCollisionTesterRay_GetRefCount(
@@ -36,4 +42,3 @@ void JoltC_VehicleCollisionTesterRay_Release(
 #ifdef __cplusplus
 }
 #endif
-

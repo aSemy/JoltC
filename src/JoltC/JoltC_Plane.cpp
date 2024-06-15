@@ -26,6 +26,17 @@ JoltC_Plane_t * JoltC_Plane_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_Plane_destroy(
+  JoltC_Plane_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Plane *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_Plane_GetNormal(
@@ -148,7 +159,7 @@ float JoltC_Plane_SignedDistance(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

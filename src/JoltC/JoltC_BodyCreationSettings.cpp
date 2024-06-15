@@ -45,6 +45,17 @@ JoltC_BodyCreationSettings_t * JoltC_BodyCreationSettings_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_BodyCreationSettings_destroy(
+  JoltC_BodyCreationSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BodyCreationSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -152,7 +163,7 @@ void JoltC_BodyCreationSettings_mPosition_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mPosition = *static_cast<RVec3 *>(mPosition->obj);
-};
+}
 
 JoltC_Quat_t * JoltC_BodyCreationSettings_mRotation_Get(
   JoltC_BodyCreationSettings_t * self
@@ -171,7 +182,7 @@ void JoltC_BodyCreationSettings_mRotation_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mRotation = *static_cast<Quat *>(mRotation->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_BodyCreationSettings_mLinearVelocity_Get(
   JoltC_BodyCreationSettings_t * self
@@ -190,7 +201,7 @@ void JoltC_BodyCreationSettings_mLinearVelocity_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mLinearVelocity = *static_cast<Vec3 *>(mLinearVelocity->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_BodyCreationSettings_mAngularVelocity_Get(
   JoltC_BodyCreationSettings_t * self
@@ -209,7 +220,7 @@ void JoltC_BodyCreationSettings_mAngularVelocity_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mAngularVelocity = *static_cast<Vec3 *>(mAngularVelocity->obj);
-};
+}
 
 unsigned long long int JoltC_BodyCreationSettings_mUserData_Get(
   JoltC_BodyCreationSettings_t * self
@@ -224,7 +235,7 @@ void JoltC_BodyCreationSettings_mUserData_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 unsigned long JoltC_BodyCreationSettings_mObjectLayer_Get(
   JoltC_BodyCreationSettings_t * self
@@ -239,7 +250,7 @@ void JoltC_BodyCreationSettings_mObjectLayer_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mObjectLayer = mObjectLayer;
-};
+}
 
 JoltC_CollisionGroup_t * JoltC_BodyCreationSettings_mCollisionGroup_Get(
   JoltC_BodyCreationSettings_t * self
@@ -258,7 +269,7 @@ void JoltC_BodyCreationSettings_mCollisionGroup_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mCollisionGroup = *static_cast<CollisionGroup *>(mCollisionGroup->obj);
-};
+}
 
 JoltC_EMotionType JoltC_BodyCreationSettings_mMotionType_Get(
   JoltC_BodyCreationSettings_t * self
@@ -274,7 +285,7 @@ void JoltC_BodyCreationSettings_mMotionType_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mMotionType = static_cast<EMotionType>(static_cast<int>(mMotionType));
-};
+}
 
 JoltC_EAllowedDOFs JoltC_BodyCreationSettings_mAllowedDOFs_Get(
   JoltC_BodyCreationSettings_t * self
@@ -290,7 +301,7 @@ void JoltC_BodyCreationSettings_mAllowedDOFs_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mAllowedDOFs = static_cast<EAllowedDOFs>(static_cast<int>(mAllowedDOFs));
-};
+}
 
 bool JoltC_BodyCreationSettings_mAllowDynamicOrKinematic_Get(
   JoltC_BodyCreationSettings_t * self
@@ -305,7 +316,7 @@ void JoltC_BodyCreationSettings_mAllowDynamicOrKinematic_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mAllowDynamicOrKinematic = mAllowDynamicOrKinematic;
-};
+}
 
 bool JoltC_BodyCreationSettings_mIsSensor_Get(
   JoltC_BodyCreationSettings_t * self
@@ -320,7 +331,7 @@ void JoltC_BodyCreationSettings_mIsSensor_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mIsSensor = mIsSensor;
-};
+}
 
 bool JoltC_BodyCreationSettings_mUseManifoldReduction_Get(
   JoltC_BodyCreationSettings_t * self
@@ -335,7 +346,7 @@ void JoltC_BodyCreationSettings_mUseManifoldReduction_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mUseManifoldReduction = mUseManifoldReduction;
-};
+}
 
 bool JoltC_BodyCreationSettings_mCollideKinematicVsNonDynamic_Get(
   JoltC_BodyCreationSettings_t * self
@@ -350,7 +361,7 @@ void JoltC_BodyCreationSettings_mCollideKinematicVsNonDynamic_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mCollideKinematicVsNonDynamic = mCollideKinematicVsNonDynamic;
-};
+}
 
 bool JoltC_BodyCreationSettings_mApplyGyroscopicForce_Get(
   JoltC_BodyCreationSettings_t * self
@@ -365,7 +376,7 @@ void JoltC_BodyCreationSettings_mApplyGyroscopicForce_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mApplyGyroscopicForce = mApplyGyroscopicForce;
-};
+}
 
 JoltC_EMotionQuality JoltC_BodyCreationSettings_mMotionQuality_Get(
   JoltC_BodyCreationSettings_t * self
@@ -381,7 +392,7 @@ void JoltC_BodyCreationSettings_mMotionQuality_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mMotionQuality = static_cast<EMotionQuality>(static_cast<int>(mMotionQuality));
-};
+}
 
 bool JoltC_BodyCreationSettings_mEnhancedInternalEdgeRemoval_Get(
   JoltC_BodyCreationSettings_t * self
@@ -396,7 +407,7 @@ void JoltC_BodyCreationSettings_mEnhancedInternalEdgeRemoval_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mEnhancedInternalEdgeRemoval = mEnhancedInternalEdgeRemoval;
-};
+}
 
 bool JoltC_BodyCreationSettings_mAllowSleeping_Get(
   JoltC_BodyCreationSettings_t * self
@@ -411,7 +422,7 @@ void JoltC_BodyCreationSettings_mAllowSleeping_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mAllowSleeping = mAllowSleeping;
-};
+}
 
 float JoltC_BodyCreationSettings_mFriction_Get(
   JoltC_BodyCreationSettings_t * self
@@ -426,7 +437,7 @@ void JoltC_BodyCreationSettings_mFriction_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mFriction = mFriction;
-};
+}
 
 float JoltC_BodyCreationSettings_mRestitution_Get(
   JoltC_BodyCreationSettings_t * self
@@ -441,7 +452,7 @@ void JoltC_BodyCreationSettings_mRestitution_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mRestitution = mRestitution;
-};
+}
 
 float JoltC_BodyCreationSettings_mLinearDamping_Get(
   JoltC_BodyCreationSettings_t * self
@@ -456,7 +467,7 @@ void JoltC_BodyCreationSettings_mLinearDamping_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mLinearDamping = mLinearDamping;
-};
+}
 
 float JoltC_BodyCreationSettings_mAngularDamping_Get(
   JoltC_BodyCreationSettings_t * self
@@ -471,7 +482,7 @@ void JoltC_BodyCreationSettings_mAngularDamping_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mAngularDamping = mAngularDamping;
-};
+}
 
 float JoltC_BodyCreationSettings_mMaxLinearVelocity_Get(
   JoltC_BodyCreationSettings_t * self
@@ -486,7 +497,7 @@ void JoltC_BodyCreationSettings_mMaxLinearVelocity_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mMaxLinearVelocity = mMaxLinearVelocity;
-};
+}
 
 float JoltC_BodyCreationSettings_mMaxAngularVelocity_Get(
   JoltC_BodyCreationSettings_t * self
@@ -501,7 +512,7 @@ void JoltC_BodyCreationSettings_mMaxAngularVelocity_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mMaxAngularVelocity = mMaxAngularVelocity;
-};
+}
 
 float JoltC_BodyCreationSettings_mGravityFactor_Get(
   JoltC_BodyCreationSettings_t * self
@@ -516,7 +527,7 @@ void JoltC_BodyCreationSettings_mGravityFactor_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mGravityFactor = mGravityFactor;
-};
+}
 
 unsigned long JoltC_BodyCreationSettings_mNumVelocityStepsOverride_Get(
   JoltC_BodyCreationSettings_t * self
@@ -531,7 +542,7 @@ void JoltC_BodyCreationSettings_mNumVelocityStepsOverride_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 unsigned long JoltC_BodyCreationSettings_mNumPositionStepsOverride_Get(
   JoltC_BodyCreationSettings_t * self
@@ -546,7 +557,7 @@ void JoltC_BodyCreationSettings_mNumPositionStepsOverride_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 JoltC_EOverrideMassProperties JoltC_BodyCreationSettings_mOverrideMassProperties_Get(
   JoltC_BodyCreationSettings_t * self
@@ -562,7 +573,7 @@ void JoltC_BodyCreationSettings_mOverrideMassProperties_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mOverrideMassProperties = static_cast<EOverrideMassProperties>(static_cast<int>(mOverrideMassProperties));
-};
+}
 
 float JoltC_BodyCreationSettings_mInertiaMultiplier_Get(
   JoltC_BodyCreationSettings_t * self
@@ -577,7 +588,7 @@ void JoltC_BodyCreationSettings_mInertiaMultiplier_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mInertiaMultiplier = mInertiaMultiplier;
-};
+}
 
 JoltC_MassProperties_t * JoltC_BodyCreationSettings_mMassPropertiesOverride_Get(
   JoltC_BodyCreationSettings_t * self
@@ -596,11 +607,11 @@ void JoltC_BodyCreationSettings_mMassPropertiesOverride_Set(
 ) {
   BodyCreationSettings * selfCpp = static_cast<BodyCreationSettings *>(self->obj);
   selfCpp->mMassPropertiesOverride = *static_cast<MassProperties *>(mMassPropertiesOverride->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

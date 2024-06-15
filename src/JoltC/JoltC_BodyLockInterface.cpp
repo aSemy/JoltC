@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_BodyLockInterface_destroy(
+  JoltC_BodyLockInterface_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BodyLockInterface *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -45,7 +56,7 @@ JoltC_Body_t * JoltC_BodyLockInterface_TryGetBody(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

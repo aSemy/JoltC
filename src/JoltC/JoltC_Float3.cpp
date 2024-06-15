@@ -27,6 +27,17 @@ JoltC_Float3_t * JoltC_Float3_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_Float3_destroy(
+  JoltC_Float3_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Float3 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_Float3_Equals(
@@ -68,7 +79,7 @@ void JoltC_Float3_x_Set(
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   selfCpp->x = x;
-};
+}
 
 float JoltC_Float3_y_Get(
   JoltC_Float3_t * self
@@ -83,7 +94,7 @@ void JoltC_Float3_y_Set(
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   selfCpp->y = y;
-};
+}
 
 float JoltC_Float3_z_Get(
   JoltC_Float3_t * self
@@ -98,11 +109,11 @@ void JoltC_Float3_z_Set(
 ) {
   Float3 * selfCpp = static_cast<Float3 *>(self->obj);
   selfCpp->z = z;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

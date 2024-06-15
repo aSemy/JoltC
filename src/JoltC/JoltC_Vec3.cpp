@@ -52,6 +52,17 @@ JoltC_Vec3_t * JoltC_Vec3_new_2(
 
 //endregion
 
+//region destructor
+
+void JoltC_Vec3_destroy(
+  JoltC_Vec3_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Vec3 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_Vec3_sZero() {
@@ -510,7 +521,7 @@ JoltC_Vec3_t * JoltC_Vec3_GetSign(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

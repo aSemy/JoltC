@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -18,6 +17,13 @@ JoltC_Triangle_t * JoltC_Triangle_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_Triangle_destroy(
+  JoltC_Triangle_t * self
+);
+
+//endregion
 //region properties
 
 size_t JoltC_Triangle_mV_Get(
@@ -46,4 +52,3 @@ void JoltC_Triangle_mMaterialIndex_Set(
 #ifdef __cplusplus
 }
 #endif
-

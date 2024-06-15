@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_HeightFieldShapeConstantValues_destroy(
+  JoltC_HeightFieldShapeConstantValues_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<HeightFieldShapeConstantValues *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 const float JoltC_HeightFieldShapeConstantValues_cNoCollisionValue_Get(
@@ -15,7 +26,7 @@ const float JoltC_HeightFieldShapeConstantValues_cNoCollisionValue_Get(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_StateRecorderImpl_t * JoltC_StateRecorderImpl_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_StateRecorderImpl_destroy(
+  JoltC_StateRecorderImpl_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<StateRecorderImpl *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_StateRecorderImpl_Clear(
@@ -65,7 +76,7 @@ bool JoltC_StateRecorderImpl_IsValidating(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

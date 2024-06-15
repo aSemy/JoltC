@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayVec3_destroy(
+  JoltC_ArrayVec3_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayVec3 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayVec3_empty(
@@ -84,7 +95,7 @@ JoltC_Vec3MemRef_t * JoltC_ArrayVec3_data(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

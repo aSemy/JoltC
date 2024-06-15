@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_TwoBodyConstraintSettings_destroy(
+  JoltC_TwoBodyConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<TwoBodyConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -174,7 +185,7 @@ void JoltC_TwoBodyConstraintSettings_mEnabled_Set(
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_TwoBodyConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_TwoBodyConstraintSettings_t * self
@@ -189,7 +200,7 @@ void JoltC_TwoBodyConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_TwoBodyConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_TwoBodyConstraintSettings_t * self
@@ -204,11 +215,11 @@ void JoltC_TwoBodyConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   TwoBodyConstraintSettings * selfCpp = static_cast<TwoBodyConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

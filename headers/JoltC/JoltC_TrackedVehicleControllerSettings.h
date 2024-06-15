@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_TrackedVehicleControllerSettings_t * JoltC_TrackedVehicleControllerSetting
 
 //endregion
 
+//region destructor
+
+void JoltC_TrackedVehicleControllerSettings_destroy(
+  JoltC_TrackedVehicleControllerSettings_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_VehicleEngineSettings_t * JoltC_TrackedVehicleControllerSettings_mEngine_Get(
@@ -49,4 +55,3 @@ void JoltC_TrackedVehicleControllerSettings_mTracks_Set(
 #ifdef __cplusplus
 }
 #endif
-

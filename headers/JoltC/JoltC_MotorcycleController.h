@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_MotorcycleController_t * JoltC_MotorcycleController_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_MotorcycleController_destroy(
+  JoltC_MotorcycleController_t * self
+);
+
+//endregion
 //region functions
 
 float JoltC_MotorcycleController_GetWheelBase(
@@ -117,4 +123,3 @@ void JoltC_MotorcycleController_Release(
 #ifdef __cplusplus
 }
 #endif
-

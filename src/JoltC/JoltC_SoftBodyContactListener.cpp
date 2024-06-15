@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyContactListener_destroy(
+  JoltC_SoftBodyContactListener_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodyContactListener *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -18,7 +29,7 @@ JoltC_SoftBodyContactListener_t * JoltC_SoftBodyContactListener_From_SoftBodyCon
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

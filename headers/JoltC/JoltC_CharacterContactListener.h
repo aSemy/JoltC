@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CharacterContactListener_destroy(
+  JoltC_CharacterContactListener_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -21,4 +27,3 @@ JoltC_CharacterContactListener_t * JoltC_CharacterContactListener_From_Character
 #ifdef __cplusplus
 }
 #endif
-

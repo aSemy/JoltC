@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArraySoftBodySharedSettingsDihedralBend_destroy(
+  JoltC_ArraySoftBodySharedSettingsDihedralBend_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArraySoftBodySharedSettingsDihedralBend *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsDihedralBend_empty(
@@ -74,7 +85,7 @@ void JoltC_ArraySoftBodySharedSettingsDihedralBend_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

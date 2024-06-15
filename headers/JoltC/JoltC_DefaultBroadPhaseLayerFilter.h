@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,8 +14,14 @@ JoltC_DefaultBroadPhaseLayerFilter_t * JoltC_DefaultBroadPhaseLayerFilter_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_DefaultBroadPhaseLayerFilter_destroy(
+  JoltC_DefaultBroadPhaseLayerFilter_t * self
+);
+
+//endregion
 
 #ifdef __cplusplus
 }
 #endif
-

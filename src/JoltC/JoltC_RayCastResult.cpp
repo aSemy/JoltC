@@ -19,6 +19,17 @@ JoltC_RayCastResult_t * JoltC_RayCastResult_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_RayCastResult_destroy(
+  JoltC_RayCastResult_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RayCastResult *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_RayCastResult_Reset(
@@ -49,7 +60,7 @@ void JoltC_RayCastResult_mSubShapeID2_Set(
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   selfCpp->mSubShapeID2 = *static_cast<SubShapeID *>(mSubShapeID2->obj);
-};
+}
 
 JoltC_BodyID_t * JoltC_RayCastResult_mBodyID_Get(
   JoltC_RayCastResult_t * self
@@ -68,7 +79,7 @@ void JoltC_RayCastResult_mBodyID_Set(
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   selfCpp->mBodyID = *static_cast<BodyID *>(mBodyID->obj);
-};
+}
 
 float JoltC_RayCastResult_mFraction_Get(
   JoltC_RayCastResult_t * self
@@ -83,11 +94,11 @@ void JoltC_RayCastResult_mFraction_Set(
 ) {
   RayCastResult * selfCpp = static_cast<RayCastResult *>(self->obj);
   selfCpp->mFraction = mFraction;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

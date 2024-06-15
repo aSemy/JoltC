@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyShape_destroy(
+  JoltC_SoftBodyShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodyShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 const unsigned long JoltC_SoftBodyShape_GetSubShapeIDBits(
@@ -256,7 +267,7 @@ JoltC_Shape_ShapeResult_t * JoltC_SoftBodyShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

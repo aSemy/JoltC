@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_VehicleTrack_destroy(
+  JoltC_VehicleTrack_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<VehicleTrack *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 float JoltC_VehicleTrack_mAngularVelocity_Get(
@@ -20,7 +31,7 @@ void JoltC_VehicleTrack_mAngularVelocity_Set(
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
   selfCpp->mAngularVelocity = mAngularVelocity;
-};
+}
 
 long JoltC_VehicleTrack_mDrivenWheel_Get(
   JoltC_VehicleTrack_t * self
@@ -35,7 +46,7 @@ void JoltC_VehicleTrack_mDrivenWheel_Set(
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
   selfCpp->mDrivenWheel = mDrivenWheel;
-};
+}
 
 JoltC_ArrayUint_t * JoltC_VehicleTrack_mWheels_Get(
   JoltC_VehicleTrack_t * self
@@ -54,7 +65,7 @@ void JoltC_VehicleTrack_mWheels_Set(
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
   selfCpp->mWheels = *static_cast<ArrayUint *>(mWheels->obj);
-};
+}
 
 float JoltC_VehicleTrack_mInertia_Get(
   JoltC_VehicleTrack_t * self
@@ -69,7 +80,7 @@ void JoltC_VehicleTrack_mInertia_Set(
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
   selfCpp->mInertia = mInertia;
-};
+}
 
 float JoltC_VehicleTrack_mAngularDamping_Get(
   JoltC_VehicleTrack_t * self
@@ -84,7 +95,7 @@ void JoltC_VehicleTrack_mAngularDamping_Set(
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
   selfCpp->mAngularDamping = mAngularDamping;
-};
+}
 
 float JoltC_VehicleTrack_mMaxBrakeTorque_Get(
   JoltC_VehicleTrack_t * self
@@ -99,7 +110,7 @@ void JoltC_VehicleTrack_mMaxBrakeTorque_Set(
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
   selfCpp->mMaxBrakeTorque = mMaxBrakeTorque;
-};
+}
 
 float JoltC_VehicleTrack_mDifferentialRatio_Get(
   JoltC_VehicleTrack_t * self
@@ -114,11 +125,11 @@ void JoltC_VehicleTrack_mDifferentialRatio_Set(
 ) {
   VehicleTrack * selfCpp = static_cast<VehicleTrack *>(self->obj);
   selfCpp->mDifferentialRatio = mDifferentialRatio;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

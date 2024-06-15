@@ -37,6 +37,17 @@ JoltC_RVec3_t * JoltC_RVec3_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_RVec3_destroy(
+  JoltC_RVec3_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RVec3 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_RVec3_t * JoltC_RVec3_sZero() {
@@ -427,7 +438,7 @@ JoltC_RVec3_t * JoltC_RVec3_GetSign(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

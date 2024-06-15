@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_TaperedCapsuleShape_destroy(
+  JoltC_TaperedCapsuleShape_t * self
+);
+
+//endregion
 //region functions
 
 float JoltC_TaperedCapsuleShape_GetDensity(
@@ -121,4 +127,3 @@ JoltC_Shape_ShapeResult_t * JoltC_TaperedCapsuleShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

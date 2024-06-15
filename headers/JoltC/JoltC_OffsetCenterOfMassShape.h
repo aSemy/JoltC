@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_OffsetCenterOfMassShape_t * JoltC_OffsetCenterOfMassShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_OffsetCenterOfMassShape_destroy(
+  JoltC_OffsetCenterOfMassShape_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Shape_t * JoltC_OffsetCenterOfMassShape_GetInnerShape(
@@ -125,4 +131,3 @@ JoltC_Shape_ShapeResult_t * JoltC_OffsetCenterOfMassShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

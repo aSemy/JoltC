@@ -19,6 +19,17 @@ JoltC_SixDOFConstraintSettings_t * JoltC_SixDOFConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_SixDOFConstraintSettings_destroy(
+  JoltC_SixDOFConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SixDOFConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_SixDOFConstraintSettings_MakeFreeAxis(
@@ -136,7 +147,7 @@ void JoltC_SixDOFConstraintSettings_mSpace_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mSpace = static_cast<EConstraintSpace>(static_cast<int>(mSpace));
-};
+}
 
 JoltC_RVec3_t * JoltC_SixDOFConstraintSettings_mPosition1_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -155,7 +166,7 @@ void JoltC_SixDOFConstraintSettings_mPosition1_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mPosition1 = *static_cast<RVec3 *>(mPosition1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisX1_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -174,7 +185,7 @@ void JoltC_SixDOFConstraintSettings_mAxisX1_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mAxisX1 = *static_cast<Vec3 *>(mAxisX1->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisY1_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -193,7 +204,7 @@ void JoltC_SixDOFConstraintSettings_mAxisY1_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mAxisY1 = *static_cast<Vec3 *>(mAxisY1->obj);
-};
+}
 
 JoltC_RVec3_t * JoltC_SixDOFConstraintSettings_mPosition2_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -212,7 +223,7 @@ void JoltC_SixDOFConstraintSettings_mPosition2_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mPosition2 = *static_cast<RVec3 *>(mPosition2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisX2_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -231,7 +242,7 @@ void JoltC_SixDOFConstraintSettings_mAxisX2_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mAxisX2 = *static_cast<Vec3 *>(mAxisX2->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_SixDOFConstraintSettings_mAxisY2_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -250,7 +261,7 @@ void JoltC_SixDOFConstraintSettings_mAxisY2_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mAxisY2 = *static_cast<Vec3 *>(mAxisY2->obj);
-};
+}
 
 size_t JoltC_SixDOFConstraintSettings_mMaxFriction_Get(
   JoltC_SixDOFConstraintSettings_t * self,
@@ -270,7 +281,7 @@ void JoltC_SixDOFConstraintSettings_mMaxFriction_Set(
   for (size_t i = 0; i < mMaxFrictionSize; i++) {
     selfCpp->mMaxFriction[i] = mMaxFriction[i];
   };
-};
+}
 
 JoltC_ESwingType JoltC_SixDOFConstraintSettings_mSwingType_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -286,7 +297,7 @@ void JoltC_SixDOFConstraintSettings_mSwingType_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mSwingType = static_cast<ESwingType>(static_cast<int>(mSwingType));
-};
+}
 
 size_t JoltC_SixDOFConstraintSettings_mLimitMin_Get(
   JoltC_SixDOFConstraintSettings_t * self,
@@ -306,7 +317,7 @@ void JoltC_SixDOFConstraintSettings_mLimitMin_Set(
   for (size_t i = 0; i < mLimitMinSize; i++) {
     selfCpp->mLimitMin[i] = mLimitMin[i];
   };
-};
+}
 
 size_t JoltC_SixDOFConstraintSettings_mLimitMax_Get(
   JoltC_SixDOFConstraintSettings_t * self,
@@ -326,7 +337,7 @@ void JoltC_SixDOFConstraintSettings_mLimitMax_Set(
   for (size_t i = 0; i < mLimitMaxSize; i++) {
     selfCpp->mLimitMax[i] = mLimitMax[i];
   };
-};
+}
 
 size_t JoltC_SixDOFConstraintSettings_mLimitsSpringSettings_Get(
   JoltC_SixDOFConstraintSettings_t * self,
@@ -346,7 +357,7 @@ void JoltC_SixDOFConstraintSettings_mLimitsSpringSettings_Set(
   for (size_t i = 0; i < mLimitsSpringSettingsSize; i++) {
     selfCpp->mLimitsSpringSettings[i] = *(static_cast<SpringSettings *>(mLimitsSpringSettings[i]->obj));
   };
-};
+}
 
 size_t JoltC_SixDOFConstraintSettings_mMotorSettings_Get(
   JoltC_SixDOFConstraintSettings_t * self,
@@ -366,7 +377,7 @@ void JoltC_SixDOFConstraintSettings_mMotorSettings_Set(
   for (size_t i = 0; i < mMotorSettingsSize; i++) {
     selfCpp->mMotorSettings[i] = *(static_cast<MotorSettings *>(mMotorSettings[i]->obj));
   };
-};
+}
 
 bool JoltC_SixDOFConstraintSettings_mEnabled_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -381,7 +392,7 @@ void JoltC_SixDOFConstraintSettings_mEnabled_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_SixDOFConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -396,7 +407,7 @@ void JoltC_SixDOFConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_SixDOFConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_SixDOFConstraintSettings_t * self
@@ -411,11 +422,11 @@ void JoltC_SixDOFConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   SixDOFConstraintSettings * selfCpp = static_cast<SixDOFConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

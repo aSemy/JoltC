@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -18,6 +17,13 @@ JoltC_RVec3_t * JoltC_RVec3_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_RVec3_destroy(
+  JoltC_RVec3_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_RVec3_t * JoltC_RVec3_sZero();
@@ -183,4 +189,3 @@ JoltC_RVec3_t * JoltC_RVec3_GetSign(
 #ifdef __cplusplus
 }
 #endif
-

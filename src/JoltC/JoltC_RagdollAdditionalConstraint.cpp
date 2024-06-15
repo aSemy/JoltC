@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_RagdollAdditionalConstraint_destroy(
+  JoltC_RagdollAdditionalConstraint_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RagdollAdditionalConstraint *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 size_t JoltC_RagdollAdditionalConstraint_mBodyIdx_Get(
@@ -25,7 +36,7 @@ void JoltC_RagdollAdditionalConstraint_mBodyIdx_Set(
   for (size_t i = 0; i < mBodyIdxSize; i++) {
     selfCpp->mBodyIdx[i] = mBodyIdx[i];
   };
-};
+}
 
 JoltC_TwoBodyConstraintSettings_t * JoltC_RagdollAdditionalConstraint_mConstraint_Get(
   JoltC_RagdollAdditionalConstraint_t * self
@@ -43,11 +54,11 @@ void JoltC_RagdollAdditionalConstraint_mConstraint_Set(
 ) {
   RagdollAdditionalConstraint * selfCpp = static_cast<RagdollAdditionalConstraint *>(self->obj);
   selfCpp->mConstraint = static_cast<TwoBodyConstraintSettings *>(mConstraint->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

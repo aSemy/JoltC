@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_GearConstraint_destroy(
+  JoltC_GearConstraint_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_GearConstraint_SetConstraints(
@@ -113,4 +119,3 @@ void JoltC_GearConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

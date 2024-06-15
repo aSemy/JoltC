@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_StaticCompoundShape_destroy(
+  JoltC_StaticCompoundShape_t * self
+);
+
+//endregion
 //region functions
 
 long JoltC_StaticCompoundShape_GetNumSubShapes(
@@ -121,4 +127,3 @@ JoltC_Shape_ShapeResult_t * JoltC_StaticCompoundShape_ScaleShape(
 #ifdef __cplusplus
 }
 #endif
-

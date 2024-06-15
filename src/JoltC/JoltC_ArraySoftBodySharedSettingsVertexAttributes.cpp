@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_destroy(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArraySoftBodySharedSettingsVertexAttributes *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsVertexAttributes_empty(
@@ -84,7 +95,7 @@ JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_ArraySoftBodySharedSettin
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

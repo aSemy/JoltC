@@ -24,7 +24,18 @@ JoltC_IgnoreSingleBodyFilter_t * JoltC_IgnoreSingleBodyFilter_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_IgnoreSingleBodyFilter_destroy(
+  JoltC_IgnoreSingleBodyFilter_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<IgnoreSingleBodyFilter *>(self->obj);
+  free(self);
+}
+
+//endregion
+
 #ifdef __cplusplus
 }
 #endif
-

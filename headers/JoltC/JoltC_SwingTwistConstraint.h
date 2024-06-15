@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SwingTwistConstraint_destroy(
+  JoltC_SwingTwistConstraint_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_SwingTwistConstraint_GetLocalSpacePosition1(
@@ -237,4 +243,3 @@ void JoltC_SwingTwistConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

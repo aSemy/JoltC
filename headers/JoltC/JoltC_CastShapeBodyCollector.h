@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CastShapeBodyCollector_destroy(
+  JoltC_CastShapeBodyCollector_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_CastShapeBodyCollector_Reset(
@@ -53,4 +59,3 @@ float JoltC_CastShapeBodyCollector_GetPositiveEarlyOutFraction(
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,6 +13,13 @@ JoltC_ObjectLayerPairFilterTable_t * JoltC_ObjectLayerPairFilterTable_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectLayerPairFilterTable_destroy(
+  JoltC_ObjectLayerPairFilterTable_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_ObjectLayerPairFilterTable_GetNumObjectLayers(
@@ -44,4 +50,3 @@ bool JoltC_ObjectLayerPairFilterTable_ShouldCollide(
 #ifdef __cplusplus
 }
 #endif
-

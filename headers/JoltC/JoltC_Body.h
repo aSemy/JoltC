@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_Body_destroy(
+  JoltC_Body_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_BodyID_t * JoltC_Body_GetID(
@@ -308,4 +314,3 @@ void JoltC_Body_SetUserData(
 #ifdef __cplusplus
 }
 #endif
-

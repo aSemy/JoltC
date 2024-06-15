@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CompoundShape_destroy(
+  JoltC_CompoundShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CompoundShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -273,7 +284,7 @@ JoltC_Shape_ShapeResult_t * JoltC_CompoundShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

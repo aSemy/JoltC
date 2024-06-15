@@ -19,7 +19,18 @@ JoltC_ShapeFilter_t * JoltC_ShapeFilter_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ShapeFilter_destroy(
+  JoltC_ShapeFilter_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ShapeFilter *>(self->obj);
+  free(self);
+}
+
+//endregion
+
 #ifdef __cplusplus
 }
 #endif
-

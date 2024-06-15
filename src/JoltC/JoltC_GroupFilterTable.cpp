@@ -23,6 +23,17 @@ JoltC_GroupFilterTable_t * JoltC_GroupFilterTable_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_GroupFilterTable_destroy(
+  JoltC_GroupFilterTable_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<GroupFilterTable *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_GroupFilterTable_DisableCollision(
@@ -84,7 +95,7 @@ void JoltC_GroupFilterTable_Release(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

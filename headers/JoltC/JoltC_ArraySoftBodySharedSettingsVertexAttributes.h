@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArraySoftBodySharedSettingsVertexAttributes_destroy(
+  JoltC_ArraySoftBodySharedSettingsVertexAttributes_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArraySoftBodySharedSettingsVertexAttributes_empty(
@@ -50,4 +56,3 @@ JoltC_SoftBodySharedSettingsVertexAttributes_t * JoltC_ArraySoftBodySharedSettin
 #ifdef __cplusplus
 }
 #endif
-

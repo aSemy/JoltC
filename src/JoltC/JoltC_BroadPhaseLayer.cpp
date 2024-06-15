@@ -23,6 +23,17 @@ JoltC_BroadPhaseLayer_t * JoltC_BroadPhaseLayer_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_BroadPhaseLayer_destroy(
+  JoltC_BroadPhaseLayer_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BroadPhaseLayer *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned short JoltC_BroadPhaseLayer_GetValue(
@@ -34,7 +45,7 @@ unsigned short JoltC_BroadPhaseLayer_GetValue(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

@@ -33,6 +33,17 @@ JoltC_BodyID_t * JoltC_BodyID_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_BodyID_destroy(
+  JoltC_BodyID_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BodyID *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_BodyID_GetIndex(
@@ -51,7 +62,7 @@ unsigned long JoltC_BodyID_GetIndexAndSequenceNumber(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

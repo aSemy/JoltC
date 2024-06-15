@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayWheelSettings_destroy(
+  JoltC_ArrayWheelSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ArrayWheelSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 bool JoltC_ArrayWheelSettings_empty(
@@ -64,7 +75,7 @@ void JoltC_ArrayWheelSettings_clear(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

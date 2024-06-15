@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_CollidePointResult_t * JoltC_CollidePointResult_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_CollidePointResult_destroy(
+  JoltC_CollidePointResult_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_BodyID_t * JoltC_CollidePointResult_mBodyID_Get(
@@ -38,4 +44,3 @@ void JoltC_CollidePointResult_mSubShapeID2_Set(
 #ifdef __cplusplus
 }
 #endif
-

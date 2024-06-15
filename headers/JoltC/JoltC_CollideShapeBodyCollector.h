@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CollideShapeBodyCollector_destroy(
+  JoltC_CollideShapeBodyCollector_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_CollideShapeBodyCollector_Reset(
@@ -53,4 +59,3 @@ float JoltC_CollideShapeBodyCollector_GetPositiveEarlyOutFraction(
 #ifdef __cplusplus
 }
 #endif
-

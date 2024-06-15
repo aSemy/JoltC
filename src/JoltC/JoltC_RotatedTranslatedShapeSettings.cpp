@@ -30,6 +30,17 @@ JoltC_RotatedTranslatedShapeSettings_t * JoltC_RotatedTranslatedShapeSettings_ne
 
 //endregion
 
+//region destructor
+
+void JoltC_RotatedTranslatedShapeSettings_destroy(
+  JoltC_RotatedTranslatedShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<RotatedTranslatedShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_RotatedTranslatedShapeSettings_GetRefCount(
@@ -92,7 +103,7 @@ void JoltC_RotatedTranslatedShapeSettings_mPosition_Set(
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
   selfCpp->mPosition = *static_cast<Vec3 *>(mPosition->obj);
-};
+}
 
 JoltC_Quat_t * JoltC_RotatedTranslatedShapeSettings_mRotation_Get(
   JoltC_RotatedTranslatedShapeSettings_t * self
@@ -111,7 +122,7 @@ void JoltC_RotatedTranslatedShapeSettings_mRotation_Set(
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
   selfCpp->mRotation = *static_cast<Quat *>(mRotation->obj);
-};
+}
 
 unsigned long long int JoltC_RotatedTranslatedShapeSettings_mUserData_Get(
   JoltC_RotatedTranslatedShapeSettings_t * self
@@ -126,11 +137,11 @@ void JoltC_RotatedTranslatedShapeSettings_mUserData_Set(
 ) {
   RotatedTranslatedShapeSettings * selfCpp = static_cast<RotatedTranslatedShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

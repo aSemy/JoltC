@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_CollideShapeAllHitCollisionCollector_t * JoltC_CollideShapeAllHitCollision
 
 //endregion
 
+//region destructor
+
+void JoltC_CollideShapeAllHitCollisionCollector_destroy(
+  JoltC_CollideShapeAllHitCollisionCollector_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_CollideShapeAllHitCollisionCollector_Sort(
@@ -80,4 +86,3 @@ void JoltC_CollideShapeAllHitCollisionCollector_mHits_Set(
 #ifdef __cplusplus
 }
 #endif
-

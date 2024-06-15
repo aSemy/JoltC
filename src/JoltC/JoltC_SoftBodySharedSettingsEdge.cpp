@@ -27,6 +27,17 @@ JoltC_SoftBodySharedSettingsEdge_t * JoltC_SoftBodySharedSettingsEdge_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsEdge_destroy(
+  JoltC_SoftBodySharedSettingsEdge_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsEdge *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsEdge_mVertex_Get(
@@ -47,7 +58,7 @@ void JoltC_SoftBodySharedSettingsEdge_mVertex_Set(
   for (size_t i = 0; i < mVertexSize; i++) {
     selfCpp->mVertex[i] = mVertex[i];
   };
-};
+}
 
 float JoltC_SoftBodySharedSettingsEdge_mRestLength_Get(
   JoltC_SoftBodySharedSettingsEdge_t * self
@@ -62,7 +73,7 @@ void JoltC_SoftBodySharedSettingsEdge_mRestLength_Set(
 ) {
   SoftBodySharedSettingsEdge * selfCpp = static_cast<SoftBodySharedSettingsEdge *>(self->obj);
   selfCpp->mRestLength = mRestLength;
-};
+}
 
 float JoltC_SoftBodySharedSettingsEdge_mCompliance_Get(
   JoltC_SoftBodySharedSettingsEdge_t * self
@@ -77,11 +88,11 @@ void JoltC_SoftBodySharedSettingsEdge_mCompliance_Set(
 ) {
   SoftBodySharedSettingsEdge * selfCpp = static_cast<SoftBodySharedSettingsEdge *>(self->obj);
   selfCpp->mCompliance = mCompliance;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

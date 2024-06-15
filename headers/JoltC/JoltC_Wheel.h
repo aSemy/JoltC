@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -14,6 +13,13 @@ JoltC_Wheel_t * JoltC_Wheel_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_Wheel_destroy(
+  JoltC_Wheel_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -119,4 +125,3 @@ float JoltC_Wheel_GetLateralLambda(
 #ifdef __cplusplus
 }
 #endif
-

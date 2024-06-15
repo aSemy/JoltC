@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyManifold_destroy(
+  JoltC_SoftBodyManifold_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodyManifold *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_ArraySoftBodyVertex_t * JoltC_SoftBodyManifold_GetVertices(
@@ -77,7 +88,7 @@ JoltC_BodyID_t * JoltC_SoftBodyManifold_GetContactBodyID(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

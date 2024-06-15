@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_CharacterVirtualSettings_t * JoltC_CharacterVirtualSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_CharacterVirtualSettings_destroy(
+  JoltC_CharacterVirtualSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_CharacterVirtualSettings_GetRefCount(
@@ -189,4 +195,3 @@ void JoltC_CharacterVirtualSettings_mShape_Set(
 #ifdef __cplusplus
 }
 #endif
-

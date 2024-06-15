@@ -30,6 +30,17 @@ JoltC_TaperedCapsuleShapeSettings_t * JoltC_TaperedCapsuleShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_TaperedCapsuleShapeSettings_destroy(
+  JoltC_TaperedCapsuleShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<TaperedCapsuleShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_TaperedCapsuleShapeSettings_GetRefCount(
@@ -88,7 +99,7 @@ void JoltC_TaperedCapsuleShapeSettings_mHalfHeightOfTaperedCylinder_Set(
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
   selfCpp->mHalfHeightOfTaperedCylinder = mHalfHeightOfTaperedCylinder;
-};
+}
 
 float JoltC_TaperedCapsuleShapeSettings_mTopRadius_Get(
   JoltC_TaperedCapsuleShapeSettings_t * self
@@ -103,7 +114,7 @@ void JoltC_TaperedCapsuleShapeSettings_mTopRadius_Set(
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
   selfCpp->mTopRadius = mTopRadius;
-};
+}
 
 float JoltC_TaperedCapsuleShapeSettings_mBottomRadius_Get(
   JoltC_TaperedCapsuleShapeSettings_t * self
@@ -118,7 +129,7 @@ void JoltC_TaperedCapsuleShapeSettings_mBottomRadius_Set(
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
   selfCpp->mBottomRadius = mBottomRadius;
-};
+}
 
 JoltC_PhysicsMaterial_t * JoltC_TaperedCapsuleShapeSettings_mMaterial_Get(
   JoltC_TaperedCapsuleShapeSettings_t * self
@@ -136,7 +147,7 @@ void JoltC_TaperedCapsuleShapeSettings_mMaterial_Set(
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
   selfCpp->mMaterial = static_cast<const PhysicsMaterial *>(mMaterial->obj);
-};
+}
 
 float JoltC_TaperedCapsuleShapeSettings_mDensity_Get(
   JoltC_TaperedCapsuleShapeSettings_t * self
@@ -151,7 +162,7 @@ void JoltC_TaperedCapsuleShapeSettings_mDensity_Set(
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
   selfCpp->mDensity = mDensity;
-};
+}
 
 unsigned long long int JoltC_TaperedCapsuleShapeSettings_mUserData_Get(
   JoltC_TaperedCapsuleShapeSettings_t * self
@@ -166,11 +177,11 @@ void JoltC_TaperedCapsuleShapeSettings_mUserData_Set(
 ) {
   TaperedCapsuleShapeSettings * selfCpp = static_cast<TaperedCapsuleShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

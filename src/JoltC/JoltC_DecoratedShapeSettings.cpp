@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_DecoratedShapeSettings_destroy(
+  JoltC_DecoratedShapeSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<DecoratedShapeSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -94,11 +105,11 @@ void JoltC_DecoratedShapeSettings_mUserData_Set(
 ) {
   DecoratedShapeSettings * selfCpp = static_cast<DecoratedShapeSettings *>(self->obj);
   selfCpp->mUserData = mUserData;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_TransformedShape_t * JoltC_TransformedShape_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_TransformedShape_destroy(
+  JoltC_TransformedShape_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_TransformedShape_CastRay_0(
@@ -165,4 +171,3 @@ void JoltC_TransformedShape_mBodyID_Set(
 #ifdef __cplusplus
 }
 #endif
-

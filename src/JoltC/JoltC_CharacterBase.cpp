@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CharacterBase_destroy(
+  JoltC_CharacterBase_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CharacterBase *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -172,7 +183,7 @@ JoltC_BodyID_t * JoltC_CharacterBase_GetGroundBodyID(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

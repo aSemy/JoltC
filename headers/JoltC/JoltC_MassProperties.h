@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_MassProperties_t * JoltC_MassProperties_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_MassProperties_destroy(
+  JoltC_MassProperties_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_MassProperties_SetMassAndInertiaOfSolidBox(
@@ -73,4 +79,3 @@ void JoltC_MassProperties_mInertia_Set(
 #ifdef __cplusplus
 }
 #endif
-

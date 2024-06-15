@@ -19,6 +19,17 @@ JoltC_AABoxCast_t * JoltC_AABoxCast_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_AABoxCast_destroy(
+  JoltC_AABoxCast_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<AABoxCast *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_AABox_t * JoltC_AABoxCast_mBox_Get(
@@ -38,7 +49,7 @@ void JoltC_AABoxCast_mBox_Set(
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
   selfCpp->mBox = *static_cast<AABox *>(mBox->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_AABoxCast_mDirection_Get(
   JoltC_AABoxCast_t * self
@@ -57,11 +68,11 @@ void JoltC_AABoxCast_mDirection_Set(
 ) {
   AABoxCast * selfCpp = static_cast<AABoxCast *>(self->obj);
   selfCpp->mDirection = *static_cast<Vec3 *>(mDirection->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

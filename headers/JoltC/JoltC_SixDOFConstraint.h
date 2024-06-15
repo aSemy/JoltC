@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SixDOFConstraint_destroy(
+  JoltC_SixDOFConstraint_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_SixDOFConstraint_SetTranslationLimits(
@@ -250,4 +256,3 @@ void JoltC_SixDOFConstraint_ResetWarmStart(
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_SkeletalAnimationKeyframe_t * JoltC_SkeletalAnimationKeyframe_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_SkeletalAnimationKeyframe_destroy(
+  JoltC_SkeletalAnimationKeyframe_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SkeletalAnimationKeyframe *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_SkeletalAnimationKeyframe_FromMatrix(
@@ -60,7 +71,7 @@ void JoltC_SkeletalAnimationKeyframe_mTime_Set(
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   selfCpp->mTime = mTime;
-};
+}
 
 JoltC_Vec3_t * JoltC_SkeletalAnimationKeyframe_mTranslation_Get(
   JoltC_SkeletalAnimationKeyframe_t * self
@@ -79,7 +90,7 @@ void JoltC_SkeletalAnimationKeyframe_mTranslation_Set(
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   selfCpp->mTranslation = *static_cast<Vec3 *>(mTranslation->obj);
-};
+}
 
 JoltC_Quat_t * JoltC_SkeletalAnimationKeyframe_mRotation_Get(
   JoltC_SkeletalAnimationKeyframe_t * self
@@ -98,11 +109,11 @@ void JoltC_SkeletalAnimationKeyframe_mRotation_Set(
 ) {
   SkeletalAnimationKeyframe * selfCpp = static_cast<SkeletalAnimationKeyframe *>(self->obj);
   selfCpp->mRotation = *static_cast<Quat *>(mRotation->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

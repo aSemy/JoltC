@@ -40,6 +40,17 @@ JoltC_Triangle_t * JoltC_Triangle_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_Triangle_destroy(
+  JoltC_Triangle_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Triangle *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 size_t JoltC_Triangle_mV_Get(
@@ -60,7 +71,7 @@ void JoltC_Triangle_mV_Set(
   for (size_t i = 0; i < mVSize; i++) {
     selfCpp->mV[i] = *(static_cast<Float3 *>(mV[i]->obj));
   };
-};
+}
 
 unsigned long JoltC_Triangle_mMaterialIndex_Get(
   JoltC_Triangle_t * self
@@ -75,11 +86,11 @@ void JoltC_Triangle_mMaterialIndex_Set(
 ) {
   Triangle * selfCpp = static_cast<Triangle *>(self->obj);
   selfCpp->mMaterialIndex = mMaterialIndex;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

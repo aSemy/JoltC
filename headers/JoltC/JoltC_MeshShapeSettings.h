@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -23,6 +22,13 @@ JoltC_MeshShapeSettings_t * JoltC_MeshShapeSettings_new_2(
 
 //endregion
 
+//region destructor
+
+void JoltC_MeshShapeSettings_destroy(
+  JoltC_MeshShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_MeshShapeSettings_Sanitize(
@@ -113,4 +119,3 @@ void JoltC_MeshShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

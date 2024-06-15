@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsInvBind_destroy(
+  JoltC_SoftBodySharedSettingsInvBind_t * self
+);
+
+//endregion
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsInvBind_mJointIndex_Get(
@@ -32,4 +38,3 @@ void JoltC_SoftBodySharedSettingsInvBind_mInvBind_Set(
 #ifdef __cplusplus
 }
 #endif
-

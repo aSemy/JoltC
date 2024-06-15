@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_MotorSettings_t * JoltC_MotorSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_MotorSettings_destroy(
+  JoltC_MotorSettings_t * self
+);
+
+//endregion
 //region properties
 
 JoltC_SpringSettings_t * JoltC_MotorSettings_mSpringSettings_Get(
@@ -65,4 +71,3 @@ void JoltC_MotorSettings_mMaxTorqueLimit_Set(
 #ifdef __cplusplus
 }
 #endif
-

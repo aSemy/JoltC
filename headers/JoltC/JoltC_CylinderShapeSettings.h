@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -17,6 +16,13 @@ JoltC_CylinderShapeSettings_t * JoltC_CylinderShapeSettings_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_CylinderShapeSettings_destroy(
+  JoltC_CylinderShapeSettings_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_CylinderShapeSettings_GetRefCount(
@@ -103,4 +109,3 @@ void JoltC_CylinderShapeSettings_mUserData_Set(
 #ifdef __cplusplus
 }
 #endif
-

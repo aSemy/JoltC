@@ -19,6 +19,17 @@ JoltC_SoftBodySharedSettings_t * JoltC_SoftBodySharedSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettings_destroy(
+  JoltC_SoftBodySharedSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 unsigned long JoltC_SoftBodySharedSettings_GetRefCount(
@@ -144,7 +155,7 @@ void JoltC_SoftBodySharedSettings_mVertices_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mVertices = *static_cast<ArraySoftBodySharedSettingsVertex *>(mVertices->obj);
-};
+}
 
 JoltC_ArraySoftBodySharedSettingsFace_t * JoltC_SoftBodySharedSettings_mFaces_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -163,7 +174,7 @@ void JoltC_SoftBodySharedSettings_mFaces_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mFaces = *static_cast<ArraySoftBodySharedSettingsFace *>(mFaces->obj);
-};
+}
 
 JoltC_ArraySoftBodySharedSettingsEdge_t * JoltC_SoftBodySharedSettings_mEdgeConstraints_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -182,7 +193,7 @@ void JoltC_SoftBodySharedSettings_mEdgeConstraints_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mEdgeConstraints = *static_cast<ArraySoftBodySharedSettingsEdge *>(mEdgeConstraints->obj);
-};
+}
 
 JoltC_ArraySoftBodySharedSettingsDihedralBend_t * JoltC_SoftBodySharedSettings_mDihedralBendConstraints_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -201,7 +212,7 @@ void JoltC_SoftBodySharedSettings_mDihedralBendConstraints_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mDihedralBendConstraints = *static_cast<ArraySoftBodySharedSettingsDihedralBend *>(mDihedralBendConstraints->obj);
-};
+}
 
 JoltC_ArraySoftBodySharedSettingsVolume_t * JoltC_SoftBodySharedSettings_mVolumeConstraints_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -220,7 +231,7 @@ void JoltC_SoftBodySharedSettings_mVolumeConstraints_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mVolumeConstraints = *static_cast<ArraySoftBodySharedSettingsVolume *>(mVolumeConstraints->obj);
-};
+}
 
 JoltC_ArraySoftBodySharedSettingsSkinned_t * JoltC_SoftBodySharedSettings_mSkinnedConstraints_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -239,7 +250,7 @@ void JoltC_SoftBodySharedSettings_mSkinnedConstraints_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mSkinnedConstraints = *static_cast<ArraySoftBodySharedSettingsSkinned *>(mSkinnedConstraints->obj);
-};
+}
 
 JoltC_ArraySoftBodySharedSettingsInvBind_t * JoltC_SoftBodySharedSettings_mInvBindMatrices_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -258,7 +269,7 @@ void JoltC_SoftBodySharedSettings_mInvBindMatrices_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mInvBindMatrices = *static_cast<ArraySoftBodySharedSettingsInvBind *>(mInvBindMatrices->obj);
-};
+}
 
 JoltC_ArraySoftBodySharedSettingsLRA_t * JoltC_SoftBodySharedSettings_mLRAConstraints_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -277,7 +288,7 @@ void JoltC_SoftBodySharedSettings_mLRAConstraints_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mLRAConstraints = *static_cast<ArraySoftBodySharedSettingsLRA *>(mLRAConstraints->obj);
-};
+}
 
 JoltC_PhysicsMaterialList_t * JoltC_SoftBodySharedSettings_mMaterials_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -296,7 +307,7 @@ void JoltC_SoftBodySharedSettings_mMaterials_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mMaterials = *static_cast<PhysicsMaterialList *>(mMaterials->obj);
-};
+}
 
 float JoltC_SoftBodySharedSettings_mVertexRadius_Get(
   JoltC_SoftBodySharedSettings_t * self
@@ -311,11 +322,11 @@ void JoltC_SoftBodySharedSettings_mVertexRadius_Set(
 ) {
   SoftBodySharedSettings * selfCpp = static_cast<SoftBodySharedSettings *>(self->obj);
   selfCpp->mVertexRadius = mVertexRadius;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

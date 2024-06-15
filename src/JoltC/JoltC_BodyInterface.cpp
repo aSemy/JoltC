@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_BodyInterface_destroy(
+  JoltC_BodyInterface_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<BodyInterface *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Body_t * JoltC_BodyInterface_CreateBody(
@@ -960,7 +971,7 @@ void JoltC_BodyInterface_InvalidateContactCache(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

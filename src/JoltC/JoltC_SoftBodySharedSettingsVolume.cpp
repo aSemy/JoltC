@@ -31,6 +31,17 @@ JoltC_SoftBodySharedSettingsVolume_t * JoltC_SoftBodySharedSettingsVolume_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsVolume_destroy(
+  JoltC_SoftBodySharedSettingsVolume_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SoftBodySharedSettingsVolume *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 size_t JoltC_SoftBodySharedSettingsVolume_mVertex_Get(
@@ -51,7 +62,7 @@ void JoltC_SoftBodySharedSettingsVolume_mVertex_Set(
   for (size_t i = 0; i < mVertexSize; i++) {
     selfCpp->mVertex[i] = mVertex[i];
   };
-};
+}
 
 float JoltC_SoftBodySharedSettingsVolume_mSixRestVolume_Get(
   JoltC_SoftBodySharedSettingsVolume_t * self
@@ -66,7 +77,7 @@ void JoltC_SoftBodySharedSettingsVolume_mSixRestVolume_Set(
 ) {
   SoftBodySharedSettingsVolume * selfCpp = static_cast<SoftBodySharedSettingsVolume *>(self->obj);
   selfCpp->mSixRestVolume = mSixRestVolume;
-};
+}
 
 float JoltC_SoftBodySharedSettingsVolume_mCompliance_Get(
   JoltC_SoftBodySharedSettingsVolume_t * self
@@ -81,11 +92,11 @@ void JoltC_SoftBodySharedSettingsVolume_mCompliance_Set(
 ) {
   SoftBodySharedSettingsVolume * selfCpp = static_cast<SoftBodySharedSettingsVolume *>(self->obj);
   selfCpp->mCompliance = mCompliance;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

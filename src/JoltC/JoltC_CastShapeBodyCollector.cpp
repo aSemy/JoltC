@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CastShapeBodyCollector_destroy(
+  JoltC_CastShapeBodyCollector_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CastShapeBodyCollector *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_CastShapeBodyCollector_Reset(
@@ -85,7 +96,7 @@ float JoltC_CastShapeBodyCollector_GetPositiveEarlyOutFraction(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

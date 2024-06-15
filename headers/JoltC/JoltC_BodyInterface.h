@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_BodyInterface_destroy(
+  JoltC_BodyInterface_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Body_t * JoltC_BodyInterface_CreateBody(
@@ -400,4 +406,3 @@ void JoltC_BodyInterface_InvalidateContactCache(
 #ifdef __cplusplus
 }
 #endif
-

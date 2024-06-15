@@ -33,6 +33,17 @@ JoltC_CharacterVirtual_t * JoltC_CharacterVirtual_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_CharacterVirtual_destroy(
+  JoltC_CharacterVirtual_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CharacterVirtual *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 void JoltC_CharacterVirtual_SetListener(
@@ -640,7 +651,7 @@ JoltC_BodyID_t * JoltC_CharacterVirtual_GetGroundBodyID(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

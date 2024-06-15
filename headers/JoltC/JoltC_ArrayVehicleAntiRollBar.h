@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayVehicleAntiRollBar_destroy(
+  JoltC_ArrayVehicleAntiRollBar_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArrayVehicleAntiRollBar_empty(
@@ -41,4 +47,3 @@ void JoltC_ArrayVehicleAntiRollBar_clear(
 #ifdef __cplusplus
 }
 #endif
-

@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_MotionProperties_destroy(
+  JoltC_MotionProperties_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<MotionProperties *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -466,7 +477,7 @@ unsigned long JoltC_MotionProperties_GetNumPositionStepsOverride(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

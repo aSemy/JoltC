@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SkeletalAnimationJointState_destroy(
+  JoltC_SkeletalAnimationJointState_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -56,4 +62,3 @@ void JoltC_SkeletalAnimationJointState_mRotation_Set(
 #ifdef __cplusplus
 }
 #endif
-

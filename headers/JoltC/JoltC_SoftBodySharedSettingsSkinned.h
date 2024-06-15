@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodySharedSettingsSkinned_destroy(
+  JoltC_SoftBodySharedSettingsSkinned_t * self
+);
+
+//endregion
 //region properties
 
 unsigned long JoltC_SoftBodySharedSettingsSkinned_mVertex_Get(
@@ -61,4 +67,3 @@ void JoltC_SoftBodySharedSettingsSkinned_mBackStopRadius_Set(
 #ifdef __cplusplus
 }
 #endif
-

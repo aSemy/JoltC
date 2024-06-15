@@ -23,7 +23,18 @@ JoltC_SpecifiedObjectLayerFilter_t * JoltC_SpecifiedObjectLayerFilter_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_SpecifiedObjectLayerFilter_destroy(
+  JoltC_SpecifiedObjectLayerFilter_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<SpecifiedObjectLayerFilter *>(self->obj);
+  free(self);
+}
+
+//endregion
+
 #ifdef __cplusplus
 }
 #endif
-

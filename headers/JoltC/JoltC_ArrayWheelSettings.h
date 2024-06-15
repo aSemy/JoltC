@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ArrayWheelSettings_destroy(
+  JoltC_ArrayWheelSettings_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_ArrayWheelSettings_empty(
@@ -41,4 +47,3 @@ void JoltC_ArrayWheelSettings_clear(
 #ifdef __cplusplus
 }
 #endif
-

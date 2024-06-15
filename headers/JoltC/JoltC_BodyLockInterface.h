@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_BodyLockInterface_destroy(
+  JoltC_BodyLockInterface_t * self
+);
+
+//endregion
 //region converters
 
 /**
@@ -37,4 +43,3 @@ JoltC_Body_t * JoltC_BodyLockInterface_TryGetBody(
 #ifdef __cplusplus
 }
 #endif
-

@@ -19,6 +19,17 @@ JoltC_CollidePointResult_t * JoltC_CollidePointResult_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_CollidePointResult_destroy(
+  JoltC_CollidePointResult_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CollidePointResult *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 JoltC_BodyID_t * JoltC_CollidePointResult_mBodyID_Get(
@@ -38,7 +49,7 @@ void JoltC_CollidePointResult_mBodyID_Set(
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
   selfCpp->mBodyID = *static_cast<BodyID *>(mBodyID->obj);
-};
+}
 
 JoltC_SubShapeID_t * JoltC_CollidePointResult_mSubShapeID2_Get(
   JoltC_CollidePointResult_t * self
@@ -57,11 +68,11 @@ void JoltC_CollidePointResult_mSubShapeID2_Set(
 ) {
   CollidePointResult * selfCpp = static_cast<CollidePointResult *>(self->obj);
   selfCpp->mSubShapeID2 = *static_cast<SubShapeID *>(mSubShapeID2->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

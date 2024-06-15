@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_CharacterBaseSettings_destroy(
+  JoltC_CharacterBaseSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CharacterBaseSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -62,7 +73,7 @@ void JoltC_CharacterBaseSettings_mUp_Set(
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mUp = *static_cast<Vec3 *>(mUp->obj);
-};
+}
 
 JoltC_Plane_t * JoltC_CharacterBaseSettings_mSupportingVolume_Get(
   JoltC_CharacterBaseSettings_t * self
@@ -81,7 +92,7 @@ void JoltC_CharacterBaseSettings_mSupportingVolume_Set(
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mSupportingVolume = *static_cast<Plane *>(mSupportingVolume->obj);
-};
+}
 
 float JoltC_CharacterBaseSettings_mMaxSlopeAngle_Get(
   JoltC_CharacterBaseSettings_t * self
@@ -96,7 +107,7 @@ void JoltC_CharacterBaseSettings_mMaxSlopeAngle_Set(
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mMaxSlopeAngle = mMaxSlopeAngle;
-};
+}
 
 JoltC_Shape_t * JoltC_CharacterBaseSettings_mShape_Get(
   JoltC_CharacterBaseSettings_t * self
@@ -114,11 +125,11 @@ void JoltC_CharacterBaseSettings_mShape_Set(
 ) {
   CharacterBaseSettings * selfCpp = static_cast<CharacterBaseSettings *>(self->obj);
   selfCpp->mShape = static_cast<const Shape *>(mShape->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

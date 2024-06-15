@@ -1,11 +1,17 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_SoftBodyMotionProperties_destroy(
+  JoltC_SoftBodyMotionProperties_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_SoftBodySharedSettings_t * JoltC_SoftBodyMotionProperties_GetSettings(
@@ -306,4 +312,3 @@ unsigned long JoltC_SoftBodyMotionProperties_GetNumPositionStepsOverride(
 #ifdef __cplusplus
 }
 #endif
-

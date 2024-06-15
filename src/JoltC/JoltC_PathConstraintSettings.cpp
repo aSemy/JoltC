@@ -19,6 +19,17 @@ JoltC_PathConstraintSettings_t * JoltC_PathConstraintSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_PathConstraintSettings_destroy(
+  JoltC_PathConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<PathConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 JoltC_Constraint_t * JoltC_PathConstraintSettings_Create(
@@ -79,7 +90,7 @@ void JoltC_PathConstraintSettings_mPath_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mPath = static_cast<const PathConstraintPath *>(mPath->obj);
-};
+}
 
 JoltC_Vec3_t * JoltC_PathConstraintSettings_mPathPosition_Get(
   JoltC_PathConstraintSettings_t * self
@@ -98,7 +109,7 @@ void JoltC_PathConstraintSettings_mPathPosition_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mPathPosition = *static_cast<Vec3 *>(mPathPosition->obj);
-};
+}
 
 JoltC_Quat_t * JoltC_PathConstraintSettings_mPathRotation_Get(
   JoltC_PathConstraintSettings_t * self
@@ -117,7 +128,7 @@ void JoltC_PathConstraintSettings_mPathRotation_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mPathRotation = *static_cast<Quat *>(mPathRotation->obj);
-};
+}
 
 float JoltC_PathConstraintSettings_mPathFraction_Get(
   JoltC_PathConstraintSettings_t * self
@@ -132,7 +143,7 @@ void JoltC_PathConstraintSettings_mPathFraction_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mPathFraction = mPathFraction;
-};
+}
 
 float JoltC_PathConstraintSettings_mMaxFrictionForce_Get(
   JoltC_PathConstraintSettings_t * self
@@ -147,7 +158,7 @@ void JoltC_PathConstraintSettings_mMaxFrictionForce_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mMaxFrictionForce = mMaxFrictionForce;
-};
+}
 
 JoltC_EPathRotationConstraintType JoltC_PathConstraintSettings_mRotationConstraintType_Get(
   JoltC_PathConstraintSettings_t * self
@@ -163,7 +174,7 @@ void JoltC_PathConstraintSettings_mRotationConstraintType_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mRotationConstraintType = static_cast<EPathRotationConstraintType>(static_cast<int>(mRotationConstraintType));
-};
+}
 
 JoltC_MotorSettings_t * JoltC_PathConstraintSettings_mPositionMotorSettings_Get(
   JoltC_PathConstraintSettings_t * self
@@ -182,7 +193,7 @@ void JoltC_PathConstraintSettings_mPositionMotorSettings_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mPositionMotorSettings = *static_cast<MotorSettings *>(mPositionMotorSettings->obj);
-};
+}
 
 bool JoltC_PathConstraintSettings_mEnabled_Get(
   JoltC_PathConstraintSettings_t * self
@@ -197,7 +208,7 @@ void JoltC_PathConstraintSettings_mEnabled_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_PathConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_PathConstraintSettings_t * self
@@ -212,7 +223,7 @@ void JoltC_PathConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_PathConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_PathConstraintSettings_t * self
@@ -227,11 +238,11 @@ void JoltC_PathConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   PathConstraintSettings * selfCpp = static_cast<PathConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

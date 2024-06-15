@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -17,6 +16,13 @@ JoltC_CharacterVirtual_t * JoltC_CharacterVirtual_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_CharacterVirtual_destroy(
+  JoltC_CharacterVirtual_t * self
+);
+
+//endregion
 //region functions
 
 void JoltC_CharacterVirtual_SetListener(
@@ -288,4 +294,3 @@ JoltC_BodyID_t * JoltC_CharacterVirtual_GetGroundBodyID(
 #ifdef __cplusplus
 }
 #endif
-

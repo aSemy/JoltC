@@ -5,6 +5,17 @@
 extern "C" {
 #endif
 
+//region destructor
+
+void JoltC_ConstraintSettings_destroy(
+  JoltC_ConstraintSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ConstraintSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -175,7 +186,7 @@ void JoltC_ConstraintSettings_mEnabled_Set(
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   selfCpp->mEnabled = mEnabled;
-};
+}
 
 long JoltC_ConstraintSettings_mNumVelocityStepsOverride_Get(
   JoltC_ConstraintSettings_t * self
@@ -190,7 +201,7 @@ void JoltC_ConstraintSettings_mNumVelocityStepsOverride_Set(
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   selfCpp->mNumVelocityStepsOverride = mNumVelocityStepsOverride;
-};
+}
 
 long JoltC_ConstraintSettings_mNumPositionStepsOverride_Get(
   JoltC_ConstraintSettings_t * self
@@ -205,11 +216,11 @@ void JoltC_ConstraintSettings_mNumPositionStepsOverride_Set(
 ) {
   ConstraintSettings * selfCpp = static_cast<ConstraintSettings *>(self->obj);
   selfCpp->mNumPositionStepsOverride = mNumPositionStepsOverride;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

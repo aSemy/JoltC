@@ -19,6 +19,17 @@ JoltC_ObjectLayerPairFilter_t * JoltC_ObjectLayerPairFilter_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_ObjectLayerPairFilter_destroy(
+  JoltC_ObjectLayerPairFilter_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<ObjectLayerPairFilter *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region converters
 
 /**
@@ -57,7 +68,7 @@ bool JoltC_ObjectLayerPairFilter_ShouldCollide(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

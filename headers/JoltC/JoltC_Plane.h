@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -15,6 +14,13 @@ JoltC_Plane_t * JoltC_Plane_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_Plane_destroy(
+  JoltC_Plane_t * self
+);
+
+//endregion
 //region functions
 
 JoltC_Vec3_t * JoltC_Plane_GetNormal(
@@ -69,4 +75,3 @@ float JoltC_Plane_SignedDistance(
 #ifdef __cplusplus
 }
 #endif
-

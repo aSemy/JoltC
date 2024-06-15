@@ -19,6 +19,17 @@ JoltC_CharacterContactSettings_t * JoltC_CharacterContactSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_CharacterContactSettings_destroy(
+  JoltC_CharacterContactSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CharacterContactSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 bool JoltC_CharacterContactSettings_mCanPushCharacter_Get(
@@ -34,7 +45,7 @@ void JoltC_CharacterContactSettings_mCanPushCharacter_Set(
 ) {
   CharacterContactSettings * selfCpp = static_cast<CharacterContactSettings *>(self->obj);
   selfCpp->mCanPushCharacter = mCanPushCharacter;
-};
+}
 
 bool JoltC_CharacterContactSettings_mCanReceiveImpulses_Get(
   JoltC_CharacterContactSettings_t * self
@@ -49,11 +60,11 @@ void JoltC_CharacterContactSettings_mCanReceiveImpulses_Set(
 ) {
   CharacterContactSettings * selfCpp = static_cast<CharacterContactSettings *>(self->obj);
   selfCpp->mCanReceiveImpulses = mCanReceiveImpulses;
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

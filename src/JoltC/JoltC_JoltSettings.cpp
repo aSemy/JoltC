@@ -19,6 +19,17 @@ JoltC_JoltSettings_t * JoltC_JoltSettings_new() {
 
 //endregion
 
+//region destructor
+
+void JoltC_JoltSettings_destroy(
+  JoltC_JoltSettings_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<JoltSettings *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region properties
 
 unsigned long JoltC_JoltSettings_mMaxBodies_Get(
@@ -34,7 +45,7 @@ void JoltC_JoltSettings_mMaxBodies_Set(
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
   selfCpp->mMaxBodies = mMaxBodies;
-};
+}
 
 unsigned long JoltC_JoltSettings_mMaxBodyPairs_Get(
   JoltC_JoltSettings_t * self
@@ -49,7 +60,7 @@ void JoltC_JoltSettings_mMaxBodyPairs_Set(
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
   selfCpp->mMaxBodyPairs = mMaxBodyPairs;
-};
+}
 
 unsigned long JoltC_JoltSettings_mMaxContactConstraints_Get(
   JoltC_JoltSettings_t * self
@@ -64,7 +75,7 @@ void JoltC_JoltSettings_mMaxContactConstraints_Set(
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
   selfCpp->mMaxContactConstraints = mMaxContactConstraints;
-};
+}
 
 JoltC_BroadPhaseLayerInterface_t * JoltC_JoltSettings_mBroadPhaseLayerInterface_Get(
   JoltC_JoltSettings_t * self
@@ -82,7 +93,7 @@ void JoltC_JoltSettings_mBroadPhaseLayerInterface_Set(
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
   selfCpp->mBroadPhaseLayerInterface = static_cast<BroadPhaseLayerInterface *>(mBroadPhaseLayerInterface->obj);
-};
+}
 
 JoltC_ObjectVsBroadPhaseLayerFilter_t * JoltC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Get(
   JoltC_JoltSettings_t * self
@@ -100,7 +111,7 @@ void JoltC_JoltSettings_mObjectVsBroadPhaseLayerFilter_Set(
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
   selfCpp->mObjectVsBroadPhaseLayerFilter = static_cast<ObjectVsBroadPhaseLayerFilter *>(mObjectVsBroadPhaseLayerFilter->obj);
-};
+}
 
 JoltC_ObjectLayerPairFilter_t * JoltC_JoltSettings_mObjectLayerPairFilter_Get(
   JoltC_JoltSettings_t * self
@@ -118,11 +129,11 @@ void JoltC_JoltSettings_mObjectLayerPairFilter_Set(
 ) {
   JoltSettings * selfCpp = static_cast<JoltSettings *>(self->obj);
   selfCpp->mObjectLayerPairFilter = static_cast<ObjectLayerPairFilter *>(mObjectLayerPairFilter->obj);
-};
+}
 
 //endregion
+
 
 #ifdef __cplusplus
 }
 #endif
-

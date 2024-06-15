@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -12,6 +11,13 @@ JoltC_VehicleDifferentialSettings_t * JoltC_VehicleDifferentialSettings_new();
 
 //endregion
 
+//region destructor
+
+void JoltC_VehicleDifferentialSettings_destroy(
+  JoltC_VehicleDifferentialSettings_t * self
+);
+
+//endregion
 //region properties
 
 long JoltC_VehicleDifferentialSettings_mLeftWheel_Get(
@@ -74,4 +80,3 @@ void JoltC_VehicleDifferentialSettings_mEngineTorqueRatio_Set(
 #ifdef __cplusplus
 }
 #endif
-

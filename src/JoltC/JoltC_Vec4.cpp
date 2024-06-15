@@ -71,6 +71,17 @@ JoltC_Vec4_t * JoltC_Vec4_new_3(
 
 //endregion
 
+//region destructor
+
+void JoltC_Vec4_destroy(
+  JoltC_Vec4_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<Vec4 *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_Vec4_GetX(
@@ -169,7 +180,7 @@ float JoltC_Vec4_GetComponent(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

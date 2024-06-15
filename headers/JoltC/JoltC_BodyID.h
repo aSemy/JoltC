@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_BodyID_t * JoltC_BodyID_new_1(
 
 //endregion
 
+//region destructor
+
+void JoltC_BodyID_destroy(
+  JoltC_BodyID_t * self
+);
+
+//endregion
 //region functions
 
 unsigned long JoltC_BodyID_GetIndex(
@@ -32,4 +38,3 @@ unsigned long JoltC_BodyID_GetIndexAndSequenceNumber(
 #ifdef __cplusplus
 }
 #endif
-

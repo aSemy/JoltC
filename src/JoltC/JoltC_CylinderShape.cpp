@@ -30,6 +30,17 @@ JoltC_CylinderShape_t * JoltC_CylinderShape_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_CylinderShape_destroy(
+  JoltC_CylinderShape_t * self
+){
+  if (self == NULL) return;
+  delete static_cast<CylinderShape *>(self->obj);
+  free(self);
+}
+
+//endregion
 //region functions
 
 float JoltC_CylinderShape_GetRadius(
@@ -294,7 +305,7 @@ JoltC_Shape_ShapeResult_t * JoltC_CylinderShape_ScaleShape(
 
 //endregion
 
+
 #ifdef __cplusplus
 }
 #endif
-

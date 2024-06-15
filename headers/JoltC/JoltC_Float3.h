@@ -1,5 +1,4 @@
 #pragma once
-
 #include "JoltC/JoltC_types.h"
 
 #ifdef __cplusplus
@@ -16,6 +15,13 @@ JoltC_Float3_t * JoltC_Float3_new(
 
 //endregion
 
+//region destructor
+
+void JoltC_Float3_destroy(
+  JoltC_Float3_t * self
+);
+
+//endregion
 //region functions
 
 bool JoltC_Float3_Equals(
@@ -65,4 +71,3 @@ void JoltC_Float3_z_Set(
 #ifdef __cplusplus
 }
 #endif
-
